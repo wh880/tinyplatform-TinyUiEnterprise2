@@ -81,14 +81,11 @@
 			<version>${project.version}</version>
 		</dependency>
 
-
 		<dependency>
 			<groupId>org.tinygroup</groupId>
 			<artifactId>org.tinygroup.ui.gridsystems</artifactId>
 			<version>${project.version}</version>
 		</dependency>
-
-
 
 		<dependency>
 			<groupId>org.tinygroup</groupId>
@@ -133,8 +130,6 @@
 			<artifactId>org.tinygroup.ui.umeditor</artifactId>
 			<version>${project.version}</version>
 		</dependency>
-
-
 
 		 <dependency>
 			<groupId>org.tinygroup</groupId>

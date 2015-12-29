@@ -84,6 +84,10 @@ button.close{padding:0;cursor:pointer;background:transparent;border: 0;-webkit-a
 .line-boxs{border:solid 1px #ddd;padding:10px}
 .line-boxs p{border:solid 1px #eed;padding-left:5px;}
 
+/*组件统计*/
+.tinyStatistical .tinyOffset{margin-left:-58px}
+.tinyStatistical .tinyOffset i{color:#c30}
+
 /*easy饼图数据统计显示布局样式在实际运用中是去除的*/
 .percentage {display:inline-block;}
 .percentage,
