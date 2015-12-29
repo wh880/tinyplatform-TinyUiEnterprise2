@@ -6,7 +6,7 @@
 		<version>2.0.31-SNAPSHOT</version>
 	</parent>
 	<artifactId>org.tinygroup.ui.web</artifactId>
-	<name>web</name>
+	<name>tinyFlatUi</name>
 	<packaging>war</packaging>
 	<url>http://maven.apache.org</url>
 	<build>
