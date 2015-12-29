@@ -4,7 +4,7 @@
     <li>第1参数为按钮class背景颜色</li>
     <li>第2参数为按钮Value值</li>
     <li>第3参数为提示倒计时</li>
-    <li>第3参数为提示框一MAP</li>
+    <li>第4参数为提示框一MAP</li>
 </ul>
 #end
 #showExample("/page/uedTips/uedTip01.page")

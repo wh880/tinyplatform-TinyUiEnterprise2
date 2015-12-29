@@ -1,30 +1,9 @@
 <script type="text/javascript">
-	var initPieChart = function() {
-		$('.percentage').easyPieChart({
-			animate: 1000
-		});
-		$('.percentage-light').easyPieChart({
-			barColor: function(percent) {
-				percent /= 100;
-				return "rgb(" + Math.round(255 * (1-percent)) + ", " + Math.round(255 * percent) + ", 0)";
-			},
-			trackColor: '#666',
-			scaleColor: false,
-			lineCap: 'butt',
-			lineWidth: 15,
-			animate: 1000
-		});
-
-	};
-</script>
-<script type="text/javascript">
 $(document).ready(function(){
    initPieChart();
 });
-
 </script>
-
-<p class="percentage" data-percent="55"><span>55</span>%</p>
-<p class="percentage" data-percent="46"><span>46</span>%</p>
-<p class="percentage" data-percent="92"><span>92</span>%</p>
-<p class="percentage" data-percent="84"><span>752</span>MB</p>
+#@ringChart("55" "%")55#end
+#@ringChart("46" "%")46#end
+#@ringChart("92" "%")92#end
+#@ringChart("84" "MB")752#end

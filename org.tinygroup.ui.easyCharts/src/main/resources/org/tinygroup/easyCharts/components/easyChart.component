@@ -1,0 +1,17 @@
+#*
+* ringChart easy饼图
+*
+* * @param ringdata  data数据
+* * @param ringPercentage  单位
+* * @param ringdataMap  参数Map
+*#
+#macro ringChart(ringdata ringPercentage ringdataMap)
+<p class="percentage" data-percent="${ringdata}" #mapToHtml(ringdataMap)><span>#bodyContent</span>${ringPercentage}</p>
+<script type="text/javascript">
+    var initPieChart = function() {
+        $('.percentage').easyPieChart({
+            animate: 1000
+        });
+    };
+</script>
+#end
