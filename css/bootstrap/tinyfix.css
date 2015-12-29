@@ -1,0 +1,57 @@
+/*标签项*/
+/*成功*/
+.badge-default {
+  background-color: #777777;
+}
+.badge-default[href] {
+  background-color: #777777;
+}
+/*成功*/
+.badge-success {
+  background-color: #5cb85c;
+}
+.badge-success[href] {
+  background-color: #5cb85c;
+}
+/*错误*/
+.badge-warning {
+  background-color: #f0ad4e;
+}
+.badge-warning[href] {
+  background-color: #f0ad4e;
+}
+/*危险*/
+.badge-danger {
+  background-color: #d9534f;
+}
+.badge-danger[href] {
+  background-color: #d9534f;
+}
+/*重要*/
+.badge-important {
+  background-color: #b94a48;
+}
+.badge-important[href] {
+  background-color: #b94a48;
+}
+/*金额*/
+.badge-price {
+  background-color: #ff6600;
+}
+.badge-price[href] {
+  background-color: #ff6600;
+}
+/*信息*/
+.badge-info {
+  background-color: #5bc0de;
+}
+.badge-info[href] {
+  background-color: #5bc0de;
+}
+/*相反*/
+.badge-inverse {
+  background-color: #1a1a1a;
+}
+.badge-inverse[href] {
+  background-color: #1a1a1a;
+}

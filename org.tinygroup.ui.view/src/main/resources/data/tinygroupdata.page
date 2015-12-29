@@ -1,0 +1,38 @@
+<table class="table tinytable table table-hover" id="group-Table">
+    #@thead()
+        #@tr()  ##class 为sorting 表票可排序 为sorting_desc(正序为为sorting_asc) 为当前倒序
+            #@tinyTh()#end
+            #@tinyTh()姓名#end
+            #@tinyTh()城市#end
+            #@tinyTh()办公室#end
+            #@tinyTh()年龄#end
+            #@tinyTh()就职日期#end
+            #@tinyTh()薪资#end
+            #@tinyTh()操作#end
+        #end
+    #end
+    #@tbody()
+        #for(var:[1..3])
+
+            <tr class="show-group" data-tr="data-g-${var}"><td><span class="icon-chevron-right"></span></td><td>刘云山${page}${var}</td><td>北京</td><td>中南海</td><td>71</td><td>2013/03/25</td><td class="sorting_1">￥300,800</td><td><a title="编辑" modal-title="编辑" class="ml-5" data-target="#myModalModal" data-toggle="modal" data-height="290" data-width="504" href="#link("/page/user-add.pagelet")" style="text-decoration:none"><i class="icon-edit"></i></a> #@tinyTableItemRemove(call("link","/action/del.pagelet") var)<i class="icon-remove"></i>#end
+            </td></tr>
+            #for(var2:[1..4])
+                <tr class="data-g-${var} hide">
+                    <td></td><td>刘云山${page}${var}</td><td>北京2</td><td>中南海1</td><td>71</td><td>2013/03/25</td><td
+                        class="sorting_1">￥300,800</td><td>222
+                </td>
+                </tr>
+            #end
+        #end
+    #end
+</table>
+
+<script>
+    $(function(){
+        $("#group-Table").off("click",">tbody>tr>td").on("click",".show-group",function(e){
+            $(this).find(".glyphicon").toggleClass("glyphicon-chevron-right glyphicon-chevron-down");
+            $("#group-Table>tbody").children("tr."+$(this).attr("data-tr")).toggle();
+        });
+    })
+</script>
+

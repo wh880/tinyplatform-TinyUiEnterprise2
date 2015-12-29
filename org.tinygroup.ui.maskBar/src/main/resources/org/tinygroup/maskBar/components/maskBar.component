@@ -1,0 +1,34 @@
+#macro maskWraper(wraperStyle wraperClass )
+	<div class="maskWraper ${wraperClass}" style="${wraperStyle}">
+		#bodyContent
+	</div>
+<script type="text/javascript">
+    $(function(){
+        $.tinyhover('.maskWraper');
+    });
+</script>
+#end
+
+#macro maskImg(imgSrc imgWidth imgHeight)
+	<img#if(imgSrc) src="#link(imgSrc)"#end#if(imgWidth) width="${imgWidth}"#end#if(imgHeight) height="${imgHeight}"#end>
+#end
+
+#macro mask(barBaseClass barClass)
+	<div class="${barBaseClass} ${barClass}">
+		<div class="text-c pd-5">
+			#bodyContent
+		</div>
+	</div>
+#end
+
+#macro maskBar()
+#@mask("maskBar" barClass)
+	#bodyContent
+#end
+#end
+
+#macro maskBox()
+#@mask("maskBox" barClass)
+	#bodyContent
+#end
+#end

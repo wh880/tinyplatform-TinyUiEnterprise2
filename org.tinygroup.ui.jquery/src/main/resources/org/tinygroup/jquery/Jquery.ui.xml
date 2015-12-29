@@ -1,0 +1,9 @@
+<ui-components>
+    <ui-component name="tiny.ui.jquery">
+        <js-resource>
+		  /org/tinygroup/jquery/js/jquery.1.11.3.min.js,
+		  /org/tinygroup/jquery/js/jquery.brower.js
+	</js-resource>
+	<description>必须使用的jquery包 (http://jquery.com)</description>
+    </ui-component>
+</ui-components>

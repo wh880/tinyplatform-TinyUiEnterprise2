@@ -1,0 +1,11 @@
+<p>这是段落，向下10像素间距</p>
+<p><small>小型文本，是父容器字体大小的85%</small></p>
+<p><strong>重要文本，加粗显示</strong></p>
+<p><em>被强调的文本，斜体显示</em></p>
+<p><u>带下划线的文本</u></p>
+<cite>引用的内容</cite><p><mark>突出显示文本</mark></p>
+<p><del>带删除线的文本</del></p>
+<p class="uppercase">tiny 大写字母</p>
+<p class="lowercase">TINY 小写字母</p>
+<p class="capitalize">tiny 首字母大写</p>
+

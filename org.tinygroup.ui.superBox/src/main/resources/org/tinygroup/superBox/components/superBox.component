@@ -1,0 +1,31 @@
+#*
+* superbox 响应式图库布局
+*
+* @param superboxId ID
+* @param superboxMap Map自定义
+*#
+#macro superbox(superboxId superboxMap)
+<div class="superbox"#if(superboxId) id="${superboxId}"#end#mapToHtml(superboxMap)>
+    #bodyContent
+    <script>
+        $(function() {
+            // Call SuperBox
+            $('.superbox').SuperBox();
+        });
+    </script>
+    <p class="superbox-float"></p>
+</div>
+#end
+#*
+* superboxList 响应式图库列表
+*
+* @param imgSrc 图片url
+* @param imgSrc 图片data url
+* @param imgAlt Alt
+*#
+#macro superboxList(imgSrc imgData imgAlt)
+<div class="superbox-list">
+    <img src="${imgSrc}" data-img="${imgData}" alt="${imgAlt}" class="superbox-img" />
+    #bodyContent
+</div>
+#end

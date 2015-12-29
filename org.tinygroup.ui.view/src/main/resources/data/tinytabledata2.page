@@ -1,0 +1,9 @@
+#set(records=52,temp=1,pagesize=temp.parseInt(pagesize),page=temp.parseInt(page),pagesize=pagesize<100?pagesize:100)
+#if (pagesize>records-pagesize*(page-1))
+#set(pagesize=records-(page-1)*pagesize)
+#end
+#setTinyItemCount(records)
+#for(var:[1..pagesize])
+<tr><td><input type="checkbox" value="1" name=""></td><td>刘云山${var}-${page}</td><td>北京</td><td>中南海</td><td>71</td><td>2013/03/25</td><td class="sorting_1">￥300,800</td><td><a title="编辑" modal-title="编辑" class="ml-5" data-target="#myModal" data-toggle="modal" data-height="290" data-width="504" href="#link("/page/user-add.pagelet")" style="text-decoration:none"><i class="icon-edit"></i></a> <a title="删除" href="javascript:;" style="text-decoration:none" class="ml-5 delBtn"><i class="icon-trash"></i></a></td></tr>
+#end
+

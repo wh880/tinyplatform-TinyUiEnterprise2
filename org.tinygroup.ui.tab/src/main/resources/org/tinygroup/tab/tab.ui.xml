@@ -1,0 +1,11 @@
+<ui-components>
+    <ui-component name="tiny.ui.tab" dependencies="tiny.ui.bootstrap">
+        <css-resource>
+		  /org/tinygroup/tab/css/tab.css,
+	</css-resource>
+	<js-resource>
+		/org/tinygroup/tab/js/tab.js,
+	</js-resource>
+	<description>选项卡(www.bootcss.com) (www.h-ui.net)</description>
+    </ui-component>
+</ui-components>

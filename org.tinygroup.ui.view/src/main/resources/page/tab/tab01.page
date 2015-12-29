@@ -1,0 +1,25 @@
+<div id="tid1224745160">
+    <div class="tabBar cl ">
+<span>
+	选项卡一
+   </span>
+<span>
+	选项卡二
+   </span>
+<span>
+	选项卡三
+   </span>
+    </div>
+    <div class="tabCon bk_gray pd-10">
+        内容一
+    </div>
+    <div class="tabCon bk_gray pd-10">
+        内容二
+    </div>
+    <div class="tabCon bk_gray pd-10">
+        内容三
+    </div>
+</div>
+<script type="text/javascript">
+    $.Huitab("#tid1224745160>.tabBar>span","#tid1224745160>.tabCon","Current","click","0");
+</script>

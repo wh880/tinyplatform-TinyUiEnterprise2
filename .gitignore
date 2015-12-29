@@ -1,0 +1,27 @@
+*.class
+
+# Package Files #
+
+*.war
+*.ear
+
+.project
+.classpath
+*.log
+target/
+target/*
+.settings/
+.settings/*
+*.iml
+
+.idea/
+bin/
+bin/*
+
+ajianold/
+ajianold/*
+
+*.bak
+
+/tinyuisampleweb
+/org.tinygroup.tinyuioldfix

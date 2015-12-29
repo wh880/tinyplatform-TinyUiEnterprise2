@@ -1,0 +1,47 @@
+<h2>1 进度条</h2>
+<p>为了组件方便使用，<code>#processBar</code>在第二个参数后面增加progress-bar-striped为条纹状，宏参数如下：</p>
+<table class="table table-bordered table-borderno">
+    <thead>
+    <tr>
+        <th>警告框</th>
+        <th>参数</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>
+            #@processBar("40" "progress-bar-success progress-bar-striped active")#end
+        </td>
+        <td>
+            <code>40</code>（百分比） <code>progress-bar-success progress-bar-striped active</code>（颜色 条纹 动画） 第三个参数类在父元素上（必要时使用）
+        </td>
+    </tr>
+    <tr>
+        <td>
+            #@processBar("48" "progress-bar-info")#end
+        </td>
+        <td>
+            <code>30</code>（百分比） <code>alert-info</code>（颜色） 第三个参数类在父元素上（必要时使用）
+        </td>
+    </tr>
+    <tr>
+        <td>
+            #@processBar("60" "progress-bar-warning")#end
+        </td>
+        <td>
+            <code>60</code>（百分比） <code>progress-bar-warning</code>（颜色） 第三个参数类在父元素上（必要时使用）
+        </td>
+    </tr>
+    <tr>
+        <td>
+            #@processBar("80" "progress-bar-danger")#end
+        </td>
+        <td>
+            <code>80</code>（百分比） <code>progress-bar-danger</code>（颜色） 第三个参数类在父元素上（必要时使用）
+        </td>
+    </tr>
+    </tbody>
+</table>
+#showExample("/page/progress/progress01.page")
+
+#@showPack()org.tinygroup.ui.bootstrap#end

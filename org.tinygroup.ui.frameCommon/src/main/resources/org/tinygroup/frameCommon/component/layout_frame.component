@@ -1,0 +1,230 @@
+#*
+	本component封装default.layout中的公共宏
+*#
+
+#macro getMenuId()
+	#for(var:menuList)#if(var?.url.startsWith(tinyRequestRequestURI))#set(activeMenuId=var.id)#break#end#end
+#end
+
+#macro TnavItem(navItemId navTitle navItemHref navItemIcon navItemWarning navItemWarningCls)
+	<li#if(navItemId==activeMenuId) class="active"#set(pagePostionTitle=pagePostionTitle+"<li>"+navTitle+"</li>")#end>
+		<a href="#link(navItemHref)" class="navitem" title="${navTitle}" data-treeid="${navItemId}">#if(navItemIcon)<i class="menu-icon fa ${navItemIcon}"></i>#{end}<span class="mm-text">${navTitle}</span>
+			#@navWarning(navItemWarningCls)${navItemWarning}#end
+		</a>
+	</li>
+#end
+
+#macro navDropDownMenu(dropdownMenuId dropdownMenuTitle dropdownMenuIcon navDropDownMenuWarning navDropDownMenuWarningCls)
+	#set(dropdownMenuId=dropdownMenuId+".")
+	<li class="mm-dropdown#if(dropdownMenuId && activeMenuId && activeMenuId?.startsWith(dropdownMenuId)) open#set(pagePostionTitle=pagePostionTitle+'<li>'+dropdownMenuTitle+'</li>')#if(activePath)	#set(activePath=activePath+dropdownMenuId)#{else}#set(activePath=dropdownMenuId)#end#end">
+		<a href="javascript:void(0);" data-treeid="${dropdownMenuId}">#if(dropdownMenuIcon)<i class="menu-icon fa ${dropdownMenuIcon}"></i>#end<span class="mm-text">${dropdownMenuTitle}</span>
+		#@navWarning(navDropDownMenuWarningCls)${navDropDownMenuWarning}#end
+		</a>
+		<ul>
+			#bodyContent
+		</ul>
+	</li>
+#end
+#macro TnavItems(menuId title mapInfo)
+	<li class="mm-dropdown ${mapInfo?.class}#if(activeMenuId?.startsWith(menuId+".")) open#set(pagePostionTitle=pagePostionTitle+'<li>'+title+'</li>')#end">
+		<a href="javascript:void(0);" data-treeid="${menuId}">#if(mapInfo?.ico)<i class="menu-icon fa ${mapInfo?.ico}"></i>#end<span class="mm-text">${title}</span>
+		#@navWarning(mapInfo?.warningCls)${mapInfo?.warning}#end
+		</a>
+		<ul>
+			#bodyContent
+		</ul>
+	</li>
+#end
+
+
+#macro navDropDownMenuNoicon(navDropDownMenuNoiconId navDropDownMenuNoiconTitle navDropDownMenuNoiconWarning navDropDownMenuNoiconWarningCls)
+	#@navDropDownMenu(navDropDownMenuNoiconId,navDropDownMenuNoiconTitle,"",navDropDownMenuNoiconWarning,navDropDownMenuNoiconWarningCls)
+		#bodyContent
+	#end
+#end
+
+#macro navWarning(navWarningCls)
+	#if(navWarningCls)<span class="${navWarningCls}">#bodyContent</span>#end
+#end
+
+
+#macro navigationMenu()
+	<ul class="navigation">
+		#bodyContent
+	</ul>
+#end
+
+
+
+#macro navLogoHeader(navLogoHeaderLogo navLogoHeaderLogoTitle navLogoHeaderLogoLink)
+	<!-- navbar-header start-->
+			<div class="navbar-header">
+				<!-- Logo -->
+				<a href="#if(navLogoHeaderLogoLink)#link(navLogoHeaderLogoLink)#{else}javascript:void(0);#end" class="navbar-brand">
+					<div><img title="${navLogoHeaderLogoTitle}"#if(navLogoHeaderLogo) src="#link(navLogoHeaderLogo)"#end></div>
+					<!--TinyAdmin-->
+				</a>
+
+				<!-- navbar-toggle start -->
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navbar-collapse"><i class="navbar-icon fa fa-bars"></i></button>
+				<!-- navbar-toggle end -->
+			</div>
+#end
+
+
+
+
+#macro getTopMenuId()#if(activeMenuId&&activeMenuId.indexOf(".")>-1)#set(topMenuId=activeMenuId.substring(0,activeMenuId.indexOf(".")))#end#end
+
+
+
+
+#macro tipsDropdown(tipsDropdownTip tipsDropdownIcon tipsDropdownTxt tipsDropdownMore tipsDropdownType tipsDropdownHight)
+								<a href="javascript:void(0);${tipsDropdownType}" class="dropdown-toggle" data-toggle="dropdown">
+									<span class="label">${tipsDropdownTip}</span>
+									<i class="nav-icon fa ${tipsDropdownIcon}"></i>
+									<span class="small-screen-text">${tipsDropdownTxt}</span>
+								</a>
+
+								<!-- NOTIFICATIONS -->
+
+								<!-- Javascript -->
+								<script>
+									init.push(function () {
+										$('#main-navbar-${tipsDropdownType}').slimScroll({ height: ${tipsDropdownHight?:"250"}});
+									});
+								</script>
+								<!-- / Javascript -->
+
+								<div class="dropdown-menu widget-${tipsDropdownType} no-padding" style="width: 300px">
+									<div class="${tipsDropdownType}-list" id="main-navbar-${tipsDropdownType}">
+										#bodyContent
+									</div> <!-- / .notifications-list -->
+									<a href="javascript:void(0);" class="${tipsDropdownType}-link">${tipsDropdownMore}</a>
+								</div>
+								<!-- / .dropdown-menu -->
+#end
+
+
+
+
+#macro notificationItem(notificationItemTitle notificationItemLevel notificationItemTime notificationItemIcon)
+	<div class="notification">
+		<div class="notification-title ${notificationItemLevel}">${notificationItemTitle}</div>
+		<div class="notification-description">#bodyContent</div>
+		<div class="notification-ago">${notificationItemTime}</div>
+		<div class="notification-icon fa ${notificationItemIcon}"></div>
+	</div>
+#end
+
+#macro messageItem(messageItemImg messageItemFrom messageItemFromLink messageItemTime messageItemAlt messageItemContentHref)
+	<div class="message">
+			<img src="#link(messageItemImg)" alt="${messageItemAlt}" class="message-avatar">
+			<a href="#if(messageItemContentHref)${messageItemContentHref}#{else}javascript:void(0);#end" class="message-subject">#bodyContent</a>
+			<div class="message-description">
+				来自 <a href="#link(messageItemFromLink)">${messageItemFrom}</a>
+				&nbsp;&nbsp;&nbsp;&nbsp;
+				${messageItemTime}
+			</div>
+	</div> <!-- / .message -->
+#end
+
+#macro mainWrapper()
+<div id="main-wrapper">
+    #bodyContent
+</div>
+#end
+
+
+#macro contentWrapper()
+<div class="postion-nav">
+    <ul class="breadcrumb">
+        <li class="text-light-gray">所在位置： </li>
+        #bodyContent
+    </ul>
+</div>
+#end
+#macro rowFrame()
+<div class="row">
+    #bodyContent
+</div>
+#end
+#macro mainNavbar(mainNavbarHeadLogo mainNavbarTitle navLogoHeaderLink)
+<div id="main-navbar" class="navbar navbar-inverse" role="navigation">
+    <!-- Main menu toggle -->
+    <button type="button" id="main-menu-toggle"><i class="navbar-icon fa fa-bars icon"></i><span class="hide-menu-text"></span></button>
+
+    <div class="navbar-inner">
+		#navLogoHeader(mainNavbarHeadLogo mainNavbarTitle navLogoHeaderLink)
+        <div id="main-navbar-collapse" class="collapse navbar-collapse main-navbar-collapse">
+            <div>
+                #bodyContent
+            </div>
+        </div> <!-- main-navbar-collapse end -->
+    </div> <!-- navbar-inner end -->
+</div> <!-- main-navbar end -->
+#end
+#macro navbarNav()
+<ul class="nav navbar-nav">
+    #bodyContent
+</ul>
+#end
+#macro navbarNavItem(dropdownLiTxt dropdownLiLink navbarNavItemMap)
+<li#mapToHtml(navbarNavItemMap)>
+    <a href="#link(dropdownLiLink)">${dropdownLiTxt}</a>
+    #bodyContent
+</li>
+#end
+#macro navbarDropdownMenu(navbarDropdownMenuTxt navbarDropdownMenuLink)
+<li class="dropdown">
+    <a href="#if(navbarDropdownMenuLink)#link(navbarDropdownMenuLink)#{else}javascript:void(0);#end" class="dropdown-toggle" data-toggle="dropdown">${navbarDropdownMenuTxt}</a>
+    <ul class="dropdown-menu">
+        #bodyContent
+    </ul>
+</li>
+#end
+#macro divider()
+<li class="divider"></li>
+#end
+#macro rightNavBar()
+<div class="right clearfix">
+    <ul class="nav navbar-nav pull-right right-navbar-nav">
+        #bodyContent
+    </ul>
+</div>
+#end
+#macro notifyDropdown(tipsDropdownTip tipsDropdownIcon tipsDropdownTxt tipsDropdownMore tipsDropdownHight)
+	#@tipsDropdown(tipsDropdownTip tipsDropdownIcon tipsDropdownTxt tipsDropdownMore "notifications" tipsDropdownHight)
+    #bodyContent
+	#end
+#end
+#macro messagesDropdown(tipsDropdownTip tipsDropdownIcon tipsDropdownTxt tipsDropdownMore tipsDropdownHight)
+	#@tipsDropdown(tipsDropdownTip tipsDropdownIcon tipsDropdownTxt tipsDropdownMore "notifications" tipsDropdownHight)
+    #bodyContent
+	#end
+#end
+#macro mainMenu()
+<div id="main-menu" role="navigation">
+    <div id="main-menu-inner">
+        #bodyContent
+    </div>
+</div>
+<div id="main-menu-bg"></div>
+#end
+#macro menuHead(menuHeadTxtSlim menuHeadTxtBold menuHeadId menuHeadImg menuHeadAlt)
+<div class="menu-content top"#if(menuHeadId) id="${menuHeadId}"#end>
+    <div>
+        <div class="text-bg">#if(menuHeadTxtSlim)<span class="text-slim">${menuHeadTxtSlim}</span>#end #if(menuHeadTxtBold)<span class="text-semibold">${menuHeadTxtBold}</span>#end</div>
+        <img src="#if(menuHeadImg)#link(menuHeadImg)#end" alt="${menuHeadAlt}" class="">
+        <div class="btn-group">
+            #bodyContent
+        </div>
+	##<a href="javascript:void(0);" class="close">&times;</a>
+    </div>
+</div>
+#end
+#macro navCenterItem(navCenterItemLink)
+<div class="menu-content">
+    <a href="#if(navCenterItemLink)#link(navCenterItemLink)#{else}javascript:void(0);#end" class="btn btn-primary btn-block btn-outline dark">#bodyContent</a>
+</div>
+#end

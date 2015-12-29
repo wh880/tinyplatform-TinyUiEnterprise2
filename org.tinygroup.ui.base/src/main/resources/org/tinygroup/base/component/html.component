@@ -1,0 +1,180 @@
+#**
+*div标签
+**#
+#macro div(divMap)<div#mapToHtml(divMap)>#bodyContent</div>#end
+
+#**
+*span标签
+**#
+#macro span(spanMap)<span#mapToHtml(spanMap)>#bodyContent</span>#end
+
+#**
+*p标签
+**#
+#macro p(pMap)<p#mapToHtml(pMap)>#bodyContent</p>#end
+
+#**
+*ol标签
+**#
+#macro ol(olMap)<ol#mapToHtml(olMap)>#bodyContent</ol>
+#end
+
+#**
+*ul标签
+**#
+#macro ul(ulMap)<ul#mapToHtml(ulMap)>#bodyContent</ul>
+#end
+
+#**
+*li标签
+**#
+#macro li(liMap)<li#mapToHtml(liMap)>#bodyContent</li>#end
+
+#**
+*table标签
+**#
+#macro table(tableMap)<table#mapToHtml(tableMap)>#bodyContent</table>#end
+
+#**
+*tr标签
+**#
+#macro tr(trMap)<tr#mapToHtml(trMap)>#bodyContent</tr>#end
+
+#**
+*td标签
+**#
+#macro td(tdMap)<td#mapToHtml(tdMap)>#bodyContent</td>#end
+
+#**
+*th标签
+**#
+#macro th(thMap)<th#mapToHtml(thMap)>#bodyContent</th>#end
+
+#**
+*thead标签
+**#
+#macro thead(theadMap)<thead#mapToHtml(theadMap)>#bodyContent</thead>#end
+
+#**
+*tbody标签
+**#
+#macro tbody(tbodyMap)<tbody#mapToHtml(tbodyMap)>#bodyContent</tbody>#end
+
+#**
+*tfoot标签
+**#
+#macro tfoot(tfootMap)<tfoot#mapToHtml(tfootMap)>#bodyContent</tfoot>#end
+
+#**
+*h1标签
+**#
+#macro h1(h1Map)<h1#mapToHtml(h1Map)>#bodyContent</h1>#end
+
+#**
+*h2标签
+**#
+#macro h2(h1Map)<h2#mapToHtml(h2Map)>#bodyContent</h2>#end
+
+#**
+*h3标签
+**#
+#macro h3(h1Map)<h3#mapToHtml(h3Map)>#bodyContent</h3>#end
+
+#**
+*h4标签
+**#
+#macro h4(h1Map)<h4#mapToHtml(h4Map)>#bodyContent</h4>#end
+
+#**
+*h5标签
+**#
+#macro h5(h1Map)<h5#mapToHtml(h5Map)>#bodyContent</h5>#end
+
+#**
+*h6标签
+**#
+#macro h6(h1Map)<h6#mapToHtml(h6Map)>#bodyContent</h6>#end
+
+#*标签
+**#
+#macro a(aHref aMap)<a href="${aHref}"#mapToHtml(aMap)>#bodyContent</a>#end
+
+#**
+*img标签
+**#
+#macro img(imgSrc imgMap)<img src="${imgSrc}#mapToHtml(imgMap)"/>#end
+
+#**
+*hr标签
+**#
+#macro hr(hrMap)<hr#mapToHtml(hrMap)"/>#end
+
+#**
+*b标签
+**#
+#macro b(bMap)<b#mapToHtml(bMap)>#bodyContent</b>#end
+
+#**
+*dl标签
+**#
+#macro dl(dlMap)<dl#mapToHtml(dlMap)>#bodyContent</dl>#end
+
+#**
+*dd标签
+**#
+#macro dd(dlMap)<dd#mapToHtml(ddMap)>#bodyContent</dd>#end
+
+#**
+*dt标签
+**#
+#macro dt(dtMap)<dt#mapToHtml(dtMap)>#bodyContent</dt>#end
+
+#**
+*em标签
+**#
+#macro em(emMap)<em#mapToHtml(emMap)>#bodyContent</em>#end
+
+#**
+*strong标签
+**#
+#macro strong(strongMap)<strong#mapToHtml(strongMap)>#bodyContent</strong>#end
+
+#**
+*font标签
+**#
+#macro font(fontMap)<font#mapToHtml(fontMap)>#bodyContent</font>#end
+
+#**
+*header标签
+**#
+#macro header(headerMap)<header#mapToHtml(headerMap)>#bodyContent</header>#end
+
+#**
+*nav标签
+**#
+#macro nav(navMap)<nav#mapToHtml(navMap)>#bodyContent</nav>#end
+
+#**
+*footer标签
+**#
+#macro footer(footerMap)<footer#mapToHtml(footerMap)>#bodyContent</footer>#end
+
+#**
+*form标签
+**#
+#macro form(formAction formMap)<form action="${formAction}"#mapToHtml(formMap)>#bodyContent</form>#end
+
+#**
+*u标签
+**#
+#macro u(uMap)<u#mapToHtml(uMap)>#bodyContent</u>#end
+
+#**
+*s标签
+**#
+#macro s(sMap)<s#mapToHtml(sMap)>#bodyContent</s>#end
+
+#**
+*i标签
+**#
+#macro i(iMap)<i#mapToHtml(iMap)>#bodyContent</i>#end

@@ -1,0 +1,11 @@
+<ui-components>
+    <ui-component name="tiny.ui.tpl.green" dependencies="tiny.ui.frameCommon">
+        <css-resource>
+            /org/tinygroup/themes/green.css
+		</css-resource>
+		<js-codelet>
+           tinyTplList.push({sort:6, name: 'green',  title: '绿色', img: contextPath+'/img/themes/green.png'});
+        </js-codelet>
+		<description>TinyUi框架模板绿色</description>
+    </ui-component>
+</ui-components>

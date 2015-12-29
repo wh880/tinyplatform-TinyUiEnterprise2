@@ -1,0 +1,17 @@
+<ui-components>
+    <ui-component name="tiny.ui.mmGrid" dependencies="tiny.ui.jquery">
+        <css-resource>
+		  /org/tinygroup/mmGrid/src/mmGrid.css,
+		  /org/tinygroup/mmGrid/src/theme/bootstrap/mmGrid-bootstrap.css,
+		  /org/tinygroup/mmGrid/src/mmPaginator.css,
+		  /org/tinygroup/mmGrid/src/theme/bootstrap/mmPaginator-bootstrap.css
+	</css-resource>
+	<js-resource>
+		  /org/tinygroup/mmGrid/examples/js/plugins.js,
+		  /org/tinygroup/mmGrid/examples/js/vendor/json2.js,
+		  /org/tinygroup/mmGrid/src/mmGrid.js,
+		  /org/tinygroup/mmGrid/src/mmPaginator.js,
+	</js-resource>
+	<description>mmGrid数据表格 (http://miemiedev.github.io/mmGrid)</description>
+    </ui-component>
+</ui-components>

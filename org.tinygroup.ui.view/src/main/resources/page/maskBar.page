@@ -1,0 +1,9 @@
+<h2>1 遮罩条</h2>
+#@showInfo()自适应高度，默认隐藏，鼠标经过，从底部滑出显示。#end
+#showExample("/page/maskBar/maskBar01.page")
+
+<h2>1 遮罩块</h2>
+#@showInfo()模块内100%高度，默认隐藏，鼠标经过显示。#end
+#showExample("/page/maskBar/maskBar02.page")
+
+#@showPack()org.tinygroup.ui.maskbar#end

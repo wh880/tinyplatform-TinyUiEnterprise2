@@ -1,0 +1,12 @@
+<ui-components>
+    <ui-component name="tiny.ui.bootstrapDate" dependencies="tiny.ui.base">
+        <css-resource>
+          /org/tinygroup/bootstrapDate/css/daterangepicker-bs3.css
+    </css-resource>
+    <js-resource>
+		/org/tinygroup/bootstrapDate/js/daterangepicker.js,
+		/org/tinygroup/bootstrapDate/js/WdatePicker.js
+    </js-resource>
+	<description>日期控件 (www.17sucai.com)</description>
+    </ui-component>
+</ui-components>

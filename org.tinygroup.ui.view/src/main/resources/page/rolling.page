@@ -1,0 +1,28 @@
+<h2>1 上下滚动</h2>
+#@showInfo() 温馨提示：通过以下示例调用不同主体宏实现不同效果，改变参数来个性化设置，也方便用户使用及查看宏代码和html代码。
+<ul class="mt-10">
+    <li>第1参数为</li>
+    <li>第2参数为</li>
+</ul>
+#end
+#showExample("/page/rolling/rolling01.page")
+
+<h2>2 左右自动滚动，带控制</h2>
+#@showInfo() 温馨提示：通过以下示例调用不同主体宏实现不同效果，改变参数来个性化设置，也方便用户使用及查看宏代码和html代码。
+<ul class="mt-10">
+    <li>第1参数为</li>
+    <li>第2参数为</li>
+</ul>
+#end
+#showExample("/page/rolling/rolling02.page")
+
+<h2>3 自动上下滚动，带控制</h2>
+#@showInfo() 温馨提示：通过以下示例调用不同主体宏实现不同效果，改变参数来个性化设置，也方便用户使用及查看宏代码和html代码。
+<ul class="mt-10">
+    <li>第1参数为</li>
+    <li>第2参数为</li>
+</ul>
+#end
+#showExample("/page/rolling/rolling03.page")
+
+#@showPack()org.tinygroup.ui.rolling#end

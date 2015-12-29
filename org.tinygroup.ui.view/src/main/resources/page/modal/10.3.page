@@ -1,0 +1,11 @@
+#@toolTipDefault("默认的 Tooltip")	默认的 Tooltip#end
+#@leftToolTip("左侧的 Tooltip" "btn btn-default")左侧的 Tooltip#end
+#@topToolTip("顶部的 Tooltip" "btn btn-default")顶部的 Tooltip#end
+#@bottomToolTip("底部的 Tooltip" "btn btn-default")底部的 Tooltip#end
+#@rightToolTip("右侧的 Tooltip" "btn btn-default")	右侧的 Tooltip#end
+#tooltipButtonInit("[data-toggle='tooltip']")
+<script type="text/javascript">
+<!--
+	console.log($("[data-toggle='tooltip']").tooltip)
+-->
+</script>

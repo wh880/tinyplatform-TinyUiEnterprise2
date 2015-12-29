@@ -1,0 +1,14 @@
+<ui-components>
+    <ui-component name="tiny.ui.highCharts" dependencies="tiny.ui.jquery">
+		<css-resource>
+			/org/tinygroup/highCharts/css/highCharts.css
+		</css-resource>
+		<js-resource>
+		  /org/tinygroup/highCharts/js/highcharts.js,
+		  /org/tinygroup/highCharts/js/exporting.js,
+		  /org/tinygroup/highCharts/js/data.js,
+		  /org/tinygroup/highCharts/js/highcharts-3d.js
+		</js-resource>
+		<description>highCharts图表 (www.hcharts.cn)</description>
+    </ui-component>
+</ui-components>

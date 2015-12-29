@@ -1,0 +1,16 @@
+<p class="c-red">红色字体</p>
+<p class="c-green">绿色字体</p>
+<p class="c-blue">蓝色字体</p>
+<p class="c-white"><span style="background-color:#06C">白色字体，为了看到效果，加个背景</span></p>
+<p class="c-black">黑色字体</p>
+<p class="c-gray">灰色字体</p>
+<p class="c-999">浅灰色字体</p>
+<p class="c-orange">橙色字体</p>
+
+<p class="text-muteds">柔和</p>
+<p class="text-primarys">重要</p>
+<p class="text-warnings">警告</p>
+<p class="text-errors">错误</p>
+<p class="text-dangers">危险</p>
+<p class="text-successes">成功</p>
+<p class="text-infos">信息</p>

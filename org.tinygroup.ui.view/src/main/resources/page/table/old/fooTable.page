@@ -1,0 +1,139 @@
+#@fooTable("toggle-arrow-tiny" "8") ##8是指每页8条数据
+	#@thead()
+		#@tr()
+			#@footh(dataToggle="true")产品#end
+			#@footh()姓名#end
+			#@footh()电话#end
+			#@footh()邮箱#end
+			#@footh(dataHide="all")公司#end ##dataHide被隐藏的数据可以展开显示
+			#@footh(dataHide="all")部门#end
+			#@footh(dataHide="all")参数#end
+			#@footh(dataHide="all")采购数量#end
+			#@footh(dataHide="all")日期#end
+			#@footh()操作#end
+		#end
+	#end
+	#@tbody()
+		#@tr()
+			#@footd()Tiny模板引擎之2015工具介绍#end
+			#@footd()李鹏#end
+			#@footd()18816846785#end
+			#@footd()76358600@qq.com#end
+			#@footd()杭州××××有限公司#end
+			#@footd()技术研发部#end
+			#@footd()0.52/1.561#end
+			#@footd()1600#end
+			#@footd()2015-09-16#end
+			#@footd()<a href="#">#fooIcon("fa-check")通过</a>#end
+		#end
+		#@tr()
+			#@footd()Tiny框架功能概要#end
+			#@footd()李瑞环#end
+			#@footd()18216846785#end
+			#@footd()76358600@qq.com#end
+			#@footd()杭州××××有限公司#end
+			#@footd()技术研发部#end
+			#@footd()0.52/1.561#end
+			#@footd()1200#end
+			#@footd()2015-09-15#end
+			#@footd()<a href="#">#fooIcon("fa-check")通过</a>#end
+		#end
+		#@tr()
+			#@footd()快速搭建Tiny开发项目#end
+			#@footd()李长春#end
+			#@footd()18616846685#end
+			#@footd()76358600@qq.com#end
+			#@footd()杭州××××有限公司#end
+			#@footd()技术研发部#end
+			#@footd()0.52/1.561#end
+			#@footd()1000#end
+			#@footd()2015-09-14#end
+			#@footd()<a href="#">#fooIcon("fa-check")通过</a>#end
+		#end
+		#@tr()
+			#@footd()Tiny框架设计原则#end
+			#@footd()李克强#end
+			#@footd()18258812685#end
+			#@footd()76358600@qq.com#end
+			#@footd()杭州××××有限公司#end
+			#@footd()技术研发部#end
+			#@footd()0.32/1.661#end
+			#@footd()800#end
+			#@footd()2015-09-13#end
+			#@footd()<a href="#">#fooIcon("fa-check")通过</a>#end
+		#end
+		#@tr()
+			#@footd()Tiny框架设计理念#end
+			#@footd()李源潮#end
+			#@footd()18258812768#end
+			#@footd()76358600@qq.com#end
+			#@footd()杭州××××有限公司#end
+			#@footd()技术研发部#end
+			#@footd()0.62/1.861#end
+			#@footd()600#end
+			#@footd()2015-09-12#end
+			#@footd()<a href="#">#fooIcon("fa-check")通过</a>#end
+		#end
+		#@tr()
+			#@footd()Tiny模板引擎之2015工具介绍#end
+			#@footd()李岚清#end
+			#@footd()18816846785#end
+			#@footd()76358600@qq.com#end
+			#@footd()杭州××××有限公司#end
+			#@footd()技术研发部#end
+			#@footd()0.52/1.561#end
+			#@footd()1600#end
+			#@footd()2015-09-16#end
+			#@footd()<a href="#">#fooIcon("fa-check")通过</a>#end
+		#end
+		#@tr()
+			#@footd()Tiny框架功能概要#end
+			#@footd()李继耐#end
+			#@footd()18216846785#end
+			#@footd()76358600@qq.com#end
+			#@footd()杭州××××有限公司#end
+			#@footd()技术研发部#end
+			#@footd()0.52/1.561#end
+			#@footd()1200#end
+			#@footd()2015-09-15#end
+			#@footd()<a href="#">#fooIcon("fa-check")通过</a>#end
+		#end
+		#@tr()
+			#@footd()快速搭建Tiny开发项目#end
+			#@footd()李铁映#end
+			#@footd()18616846685#end
+			#@footd()76358600@qq.com#end
+			#@footd()杭州××××有限公司#end
+			#@footd()技术研发部#end
+			#@footd()0.52/1.561#end
+			#@footd()1000#end
+			#@footd()2015-09-14#end
+			#@footd()<a href="#">#fooIcon("fa-check")通过</a>#end
+		#end
+		#@tr()
+			#@footd()Tiny框架设计原则#end
+			#@footd()李克强#end
+			#@footd()18258812685#end
+			#@footd()76358600@qq.com#end
+			#@footd()杭州××××有限公司#end
+			#@footd()技术研发部#end
+			#@footd()0.32/1.661#end
+			#@footd()800#end
+			#@footd()2015-09-13#end
+			#@footd()<a href="#">#fooIcon("fa-check")通过</a>#end
+		#end
+	#end
+	#@tfoot()
+		#@tr()
+			#@footd(footdColspan="5")
+				<ul class="pagination pull-right"></ul>
+			#end
+		#end
+	#end
+#end
+<!-- 全局js -->
+<script>
+	$(document).ready(function() {
+		$('.footable').footable();
+	});
+</script>

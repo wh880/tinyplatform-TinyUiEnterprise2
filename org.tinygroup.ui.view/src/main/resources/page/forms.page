@@ -1,0 +1,5 @@
+#@uiPageTitle()表单#end
+
+#showExample("/page/form/baseInput.page")
+#showExample("/page/form/checkbox.page")
+#@showPack() org.tinygroup.ui.form #end

@@ -1,0 +1,28 @@
+
+
+
+
+#@aModal("#myModal" "测试标题" "600" "" "btn radius btn-primary size-L" "/page/icon.pagelet")弹出对话框#end
+#@aModal("#stack1" "测试标题2" "600" "200" "demo radius btn btn-primary size-L")多个弹出层#end
+
+
+##普通弹出层
+#dialog("myModal")
+
+<!--打开多个弹出层-->
+
+#@dialog("stack1")
+    <p>第一个弹出层内容</p>
+    <input data-tabindex="1" type="text">
+    <input data-tabindex="2" type="text">
+    #@btnModal("#stack2" "第二个层" 500 300 "btn radius")弹出第二个弹出层#end
+#end
+
+#@dialog("stack2")
+    <p>第二个弹出层内容</p>
+    <input data-tabindex="1" type="text">
+    <input data-tabindex="2" type="text">
+    #@btnModal("#stack3" "btn radius")弹出第三个弹出层#end
+#end
+
+#@dialog("stack3")第三个弹出层内容#end

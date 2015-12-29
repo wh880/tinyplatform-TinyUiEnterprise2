@@ -1,0 +1,55 @@
+##import("/org/tinygroup/button/components/button_smart.component")
+
+#@tipFrame("示例::" ".btn .bg-color-blueLight .txt-color-white")
+                 可以给按钮增加Css格式，各种存在的样式都可以加到按钮上来形成独特风格的按钮 
+#end
+#@ulDemoBtns(ulClass="demo-btns")
+    #@smartLi()
+        #@aTxtWhiteButton("bg-color-blueLight" "javascript:void(0);").bg-color-blueLight#end
+    #end
+    #@smartLi()
+        #@aTxtWhiteButton("bg-color-blue" "javascript:void(0);").bg-color-blue#end
+    #end
+    #@smartLi()
+        #@aTxtWhiteButton("bg-color-teal" "javascript:void(0);").bg-color-teal#end
+    #end
+    #@smartLi()
+        #@aTxtWhiteButton("bg-color-blueDark" "javascript:void(0);").bg-color-blueDark#end
+    #end
+    #@smartLi()
+        #@aTxtWhiteButton("bg-color-green" "javascript:void(0);").bg-color-green#end
+    #end
+    #@smartLi()
+        #@aTxtWhiteButton("bg-color-greenDark" "javascript:void(0);").bg-color-greenDark#end
+    #end
+    #@smartLi()
+        #@aTxtWhiteButton("bg-color-greenLight" "javascript:void(0);").bg-color-greenLight#end
+    #end
+    #@smartLi()
+        #@aTxtWhiteButton("bg-color-purple" "javascript:void(0);").bg-color-purple#end
+    #end
+    #@smartLi()
+        #@aTxtWhiteButton("bg-color-magenta" "javascript:void(0);").bg-color-magenta#end
+    #end
+    #@smartLi()
+        #@aTxtWhiteButton("bg-color-pink" "javascript:void(0);").bg-color-pink#end
+    #end
+    #@smartLi()
+        #@aTxtWhiteButton("bg-color-pinkDark" "javascript:void(0);").bg-color-pinkDark#end
+    #end
+    #@smartLi()
+        #@aTxtWhiteButton("bg-color-yellow" "javascript:void(0);").bg-color-yellow#end
+    #end
+    #@smartLi()
+        #@aTxtWhiteButton("bg-color-orange" "javascript:void(0);").bg-color-orange#end
+    #end
+    #@smartLi()
+        #@aTxtWhiteButton("bg-color-red" "javascript:void(0);").bg-color-red#end
+    #end
+    #@smartLi()
+        #@aTxtWhiteButton("bg-color-redLight" "javascript:void(0);").bg-color-redLight#end
+    #end
+    #@li()
+        #@aTxtDarkDefaultButton("javascript:void(0);").btn-default#end
+    #end
+#end

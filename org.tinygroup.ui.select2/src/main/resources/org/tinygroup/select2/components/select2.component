@@ -1,0 +1,122 @@
+#*
+* tSelect2 下拉框
+*
+* @param name 表单名称
+* @param value 表单值
+* @param mapInfo 标签的其它属性
+*#
+#macro tSelect2(name value mapInfo)
+    #set(sid=mapInfo?.id?:fmt("sid%d",rand()))
+<select name="${name}" class="form-control" #mapToHtml(mapInfo) id="${sid}">
+    #bodyContent
+</select>
+<script type="text/javascript">
+    $(function(){
+        $("#${sid}").each(function() {
+            var that=this;
+            var placeholder = $(that).attr("placeholder") ? $(this).attr("placeholder") : "";
+            $(this).select2({
+                allowClear: true,
+                placeholder: placeholder
+            });
+        });
+        #if(value)
+            var valuestr="${value}";
+            var values=valuestr.split(",");
+            if(values.length>1){
+                $("#${sid}").val(values).trigger("change");
+            }else{
+                $("#${sid}").val(valuestr).trigger("change");
+            }
+        #end
+    });
+</script>
+#end
+#*
+* tSelect2Fix 下拉框底部附加信息
+*
+* @param selectName 被附加的lect 表单名
+*#
+#macro tSelect2Fix(selectName)#set(fixId=fmt("fid%d",rand()))
+<div class="fixtools hide" id="${fixId}"><div class="fixselect2foot">#bodyContent</div></div>
+<script type="text/javascript">
+    $(function(){
+        var $select=$("select[name='${selectName}']");
+        var fixId=$select.attr("id")+"-fix";
+        var isinit=false;
+        $select.on("select2:open", function (e) {
+    if(!isinit){
+        $(".select2-results:first").append($("#${fixId}").html());
+            $(".select2-results:first").on("click","a",function(){
+            $select.select2("close");
+        })
+        isinit=true;
+        }
+        });
+    });
+</script>
+#end
+#*
+* tSelect2F 下拉框容器传参用
+*
+* @param sid 表单id
+*#
+#macro telect2F()#set(sid=sid?:fmt("sid%d",rand()))
+#bodyContent
+#end
+#*
+* tSelect2Ajax 下拉框Ajax传参模式
+*
+* @param inputName 表单名称
+* @param inputValue 表单值
+* @param dataUrl ajax地址
+* @param sMapInfo 标签的其它属性 其中dataId dataText此二属性可定义后台返回的KEY value值 
+* @param fixMap ajax传值时额外的信息
+*#
+#macro tSelect2Ajax(inputName inputValue dataUrl sMapInfo fixMap)#set(sid=sMapInfo?.id?:fmt("s2id%d",rand()),dataId=sMapInfo?.dataId?:"id",dataText=sMapInfo?.dataText?:"text")
+<select id="${sid}" name="${inputName}" class="form-control" value="${inputValue}"#mapToHtml(sMapInfo)#mapToHtml(fixMap)/></select>
+<script type="text/javascript">
+    $(function(){
+        var _inputVal=$("#${sid}");
+        $.ajax({
+            url:"${dataUrl}",
+            type:"get",
+            data:{select2Init:"true",initKey:_inputVal.attr("value")},
+            dataType:"json",
+            success:function(reData){
+                for(var i= 0,l=reData.length;i<l;i++){
+                    _inputVal.append('<option value="'+reData[i].${dataId}+'" selected="selected">'+reData[i].${dataText}+'</option>')
+                }
+                initSelect2();
+            }
+        });
+        function initSelect2() {
+            var placeholder = _inputVal.attr("placeholder") ? _inputVal.attr("placeholder") : "";
+            _inputVal.select2({
+                ajax: {
+                    url: "${dataUrl}",
+                    dataType: 'json',
+                    delay: 250,
+                    data: function (term, page) {
+                        var data = {#foreach(var:fixMap)${var.key}:_inputVal.attr("${var.key}"),#{end} key:term};
+                        return data;
+                    },
+                    processResults: function (reData, params) {
+                        var data = [];
+                        for (var i = 0, l = reData.length; i < l; i++) {
+                            data.push({id: reData[i].${dataId}, text: reData[i].${dataText}})
+                        }
+                        return {results: data};
+                    },
+                    cache: true
+                },
+                escapeMarkup: function (markup) {
+                    return markup;
+                },
+                placeholder: placeholder,
+                allowClear: true,
+            });
+        }
+    })
+</script>
+#end

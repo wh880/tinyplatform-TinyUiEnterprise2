@@ -1,0 +1,90 @@
+#*#@highChart("barColumn1" "min-width:700px;height:400px")#end
+<style>
+.highcharts-tracker{opacity:0.8;filter:alpha(opacity=0.8); /* 针对 IE8 以及更早的版本 */}
+</style>
+<script type="text/javascript">
+	$(function () { 
+    $('#barColumn1').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: '每天BUG统计'
+        },
+        xAxis: {
+            categories: ['2015-10-28', '2015-10-29', '2015-10-30']
+        },
+        yAxis: {
+            title: {
+                text: ''
+            }
+        },
+        series: [{
+            name: '新增BUG',
+            data: [1, 7, 4],
+        },]
+    });
+});				
+</script>*#
+#@highChart("barColumn" "min-width:700px;height:400px")#end
+
+<script type="text/javascript">
+	$(function () {
+    var colors = Highcharts.getOptions().colors,
+        categories = ['2015-10-28', '2015-10-29', '2015-10-30', '2015-10-31'],
+        name = '每天解决BUG',
+        data = [{
+                y: 23,
+                color: colors[3],
+                drilldown: {
+                    color: colors[3]
+                }
+            },{
+                y: 8,
+                color: colors[4],
+                drilldown: {
+                    color: colors[3]
+                }
+            }, {
+                y: 12,
+                color: colors[8],
+                drilldown: {
+                    color: colors[3]
+                }
+            }, 
+            , {
+                y: 15,
+                color: colors[9],
+                drilldown: {
+                    color: colors[3]
+                }
+            }, ];
+
+    var chart = $('#barColumn').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: '每天解决BUG'
+        },
+        xAxis: {
+            categories: categories
+        },
+        
+        tooltip: {
+            formatter: function() {
+                var point = this.point,
+                    s = this.x +'<br/>解决BUG<b>'+ this.y +'</b>个<br/>';
+                	return s;
+            }
+        },
+        series: [{
+            name: name,
+            data: data,
+            color: 'white'
+        }],
+       
+    })
+    .highcharts(); // return chart
+});
+</script>

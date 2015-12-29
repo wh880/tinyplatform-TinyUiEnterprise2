@@ -1,0 +1,12 @@
+<ui-components>
+    <ui-component name="tiny.ui.timeline" dependencies="tiny.ui.base">
+        <css-resource>
+		  /org/tinygroup/timeline/css/history.css
+	</css-resource>
+	<js-resource>
+		  /org/tinygroup/timeline/js/main.js,
+		  /org/tinygroup/timeline/js/jquery.timelinr.js
+	</js-resource>
+	<description>时间轴 (www.lanrentuku.com)(www.csslab.cl)</description>
+    </ui-component>
+</ui-components>

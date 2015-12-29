@@ -1,0 +1,28 @@
+<style>
+    /*.prj-list{width:700px;}*/
+    .prj-list ul,.prj-list li{list-style:none;padding:0;margin:0}
+    .prj-list li{width:150px;margin:8px 10px;background:#fff;float:left;padding:5px 10px;box-sizing: border-box;border:3px solid #eee;position:relative;cursor:pointer}
+    .prj-list li.active .active-ico{position: absolute;right:5px;top:8px;color:#090}
+    .prj-list li i{margin-right:5px}
+    .prj-list li.active{border-color:#090;color:#090}
+</style>
+
+
+<div class="prj-list">
+    <ul class="clear">
+        <li class="active"><i class="fa fa-android"></i>SMDP<i class="fa fa-check active-ico"></i></li>
+        #for(var:[1..15])
+        <li><i class="fa fa-android"></i>SMDP</li>
+        <li><i class="fa fa-android"></i>Tiny</li>
+        #end
+    </ul>
+</div>
+<script type="text/javascript">
+    $(function(){
+        $(".prj-list").on("click",">ul>li",function(){
+            var activeNode=$(".prj-list>ul>li.active>i.active-ico");
+            $(".prj-list>ul>li").removeClass("active");
+            $(this).addClass("active").append(activeNode)
+        })
+    })
+</script>

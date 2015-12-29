@@ -1,0 +1,70 @@
+#macro error404Box(errorBoxId errorBoxClass)
+		<div#if(errorBoxId) id="${errorBoxId}"#end class="row padding-10 ${errorBoxClass}">
+			<div class="text-center error-box">
+				#bodyContent
+			</div>
+		</div>
+#end
+
+#macro head404(head404Id)
+	<h1#if(head404Id) id="${head404Id}"#end class="error-text-2 bounceInDown animated">
+		#bodyContent
+		<span class="particle particle--c"></span><span class="particle particle--a"></span><span class="particle particle--b"></span>
+	</h1>
+	
+#end
+
+#macro headdesc(head2Id)
+	<h2#if(head2Id) id="${head2Id}"#end class="font-xl">#@strong()<i class="fa fa-fw fa-warning fa-lg text-warning"></i> 页面 <u>未</u> 找到#end</h2>
+#end
+
+#macro errorLead()
+	<p class="lead">
+		#bodyContent
+	</p>
+#end
+
+#macro errorFontMd()
+	<p class="font-md">
+		#@B()
+			#bodyContent					
+		#end
+	</p>
+#end
+
+#macro error404Tips(msg404 tip lead)
+	#@head404()${msg404}#end
+	#@headdesc()${tip}#end
+	#br()
+	#@errorLead()
+		${lead}
+	#end
+#end
+
+#macro errorSearch(searchboxId searchboxName searchboxValue searchPlaceHolder errorSearchId errorSearchClass)
+	<div#if(errorSearchId) id="${errorSearchId}"#end class="error-search well well-lg padding-10 ${errorSearchClass}">
+		<div class="input-group">
+			<input class="form-control input-lg" type="text"#if(searchPlaceHolder) placeholder="${searchPlaceHolder}"#{end}#if(searchboxId) id="${searchboxId}"#end 
+			#if(searchboxName) name="${searchboxName}"#{end}#if(searchboxValue) value="${searchboxValue}"#end>
+			<span class="input-group-addon"><i class="fa fa-fw fa-lg fa-search"></i></span>
+		</div>
+	</div>
+#end
+
+#macro errorlinkMenu(menuId)
+	<div#if(menuId) id="${menuId}"#end class="row">
+		<div class="col-sm-12">
+			<ul class="list-inline">
+				#bodyContent
+			</ul>
+		</div>
+	</div>
+#end
+
+#macro errorlinkItem(linkitemHref)
+	<li>
+		&nbsp;#@a(aHref=linkitemHref)
+			#bodyContent
+		#end&nbsp;
+	</li>
+#end

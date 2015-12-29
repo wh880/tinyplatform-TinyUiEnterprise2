@@ -1,0 +1,37 @@
+<h2>1 投票图表</h2>
+#@showInfo() <code>温馨提示：</code>调用需要宏代码，添加依赖即可生效。#end
+#showExample("/page/charts/voteChart.page")
+
+#@showPack()org.tinygroup.ui.votecharts#end
+
+<h2>2 饼状图比例分布图</h2>
+#@showInfo() <code>温馨提示：</code>调用需要宏代码，添加依赖即可生效。#end
+#showExample("/page/charts/pieChart.page")
+
+#@showPack()org.tinygroup.ui.piecharts#end
+
+<h2>3 easy饼图数据统计</h2>
+#@showInfo() <code>温馨提示：</code>调用需要宏代码，添加依赖即可生效。#end
+<table class="table table-bordered table-borderno">
+    <thead>
+    <tr>
+        <th>饼图</th>
+        <th>参数</th>
+        <th>描述</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>
+
+        </td>
+        <td>
+            <code>btn-block</code>
+        </td>
+        <td></td>
+    </tr>
+    </tbody>
+</table>
+#showExample("/page/charts/easyChart.page")
+
+#@showPack()org.tinygroup.ui.easycharts#end

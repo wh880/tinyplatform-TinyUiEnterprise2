@@ -1,0 +1,5 @@
+#@navJustified()
+    #@presentation("#" "active")首页#end
+    #@presentation("#")配置文件#end
+    #@presentation("#")消息#end
+#end

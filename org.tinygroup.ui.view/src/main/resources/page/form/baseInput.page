@@ -1,0 +1,173 @@
+<div>
+
+    <!-- Input Fields -->
+    <div class="panel">
+        <div class="panel-heading">
+            <span class="panel-title">标准表单</span>
+        </div>
+        <div class="panel-body">
+
+            <form class="form-horizontal" role="form">
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">信息</label>
+                    <div class="col-lg-8">
+                        <div class="bs-component">
+                            <p class="form-control-static text-muted">email@example.com</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputStandard" class="col-lg-3 control-label">标准</label>
+                    <div class="col-lg-8">
+                        <div class="bs-component">
+                            <input type="text" id="inputStandard" class="form-control" placeholder="Type Here...">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputSelect" class="col-lg-3 control-label">下拉</label>
+                    <div class="col-lg-8">
+                        <div class="bs-component">
+                            <select class="form-control">
+                                <option>Option 1</option>
+                                <option>Option 2</option>
+                                <option>Option 3</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="disabledInput" class="col-lg-3 control-label">禁用</label>
+                    <div class="col-lg-8">
+                        <div class="bs-component">
+                            <input class="form-control" id="disabledInput" type="text" placeholder="A Disabled Form" disabled="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-lg-3 control-label" for="textArea2">文本框</label>
+                    <div class="col-lg-8">
+                        <div class="bs-component">
+                            <textarea class="form-control" id="textArea2" rows="3"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-3 control-label" for="textArea3">禁用文本框</label>
+                    <div class="col-lg-8">
+                        <div class="bs-component">
+                            <textarea class="form-control" id="textArea3" rows="3" disabled=""></textarea>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- Field Icons -->
+    <div class="panel">
+        <div class="panel-heading">
+            <span class="panel-title">图标组合</span>
+        </div>
+        <div class="panel-body">
+            <form class="form-horizontal" role="form">
+                <label class="col-md-3 text-right">图标</label>
+                <div class="col-md-8">
+                    <div class="form-group">
+                        <div class="bs-component">
+                            <div class="input-group">
+                          <span class="input-group-addon">
+                            <i class="fa fa-envelope-o"></i>
+                          </span>
+                                <input class="form-control" type="text" placeholder="Email address">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="bs-component">
+                            <div class="input-group">
+                          <span class="input-group-addon">
+                            <i class="fa fa-key"></i>
+                          </span>
+                                <input class="form-control" type="password" placeholder="Password">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="bs-component">
+                            <div class="input-group">
+                                <input class="form-control" type="text" placeholder="Numbers">
+                                <span class="input-group-addon">00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="bs-component">
+                            <div class="input-group">
+                                <input class="form-control" type="password" placeholder="Money">
+                          <span class="input-group-addon">
+                            <i class="fa fa-usd"></i>
+                          </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    <!-- Field Options -->
+    <div class="panel">
+        <div class="panel-heading">
+            <span class="panel-title">表单尺寸</span>
+        </div>
+        <div class="panel-body">
+            <form class="form-horizontal" role="form">
+                <div class="form-group">
+                    <label class="col-lg-3 control-label" for="inputSmall">小</label>
+                    <div class="col-lg-8">
+                        <div class="bs-component">
+                            <input id="inputSmall" class="form-control input-sm" type="text" placeholder=".input-sm">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-3 control-label" for="inputDefault">默认</label>
+                    <div class="col-lg-8">
+                        <div class="bs-component">
+                            <input id="inputDefault" class="form-control" type="text" placeholder="default style">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-3 control-label" for="inputLarge">大</label>
+                    <div class="col-lg-8">
+                        <div class="bs-component">
+                            <input id="inputLarge" class="form-control input-lg" type="text" placeholder=".input-lg">
+                        </div>
+                    </div>
+                </div>
+                <div class="bs-component">
+                    <div class="row form-group">
+                        <label class="col-md-3 text-right">长度</label>
+                        <div class="col-xs-1">
+                            <input type="text" class="form-control" placeholder=".col-xs-1">
+                        </div>
+                        <div class="col-xs-3">
+                            <input type="text" class="form-control" placeholder=".col-xs-3">
+                        </div>
+                        <div class="col-xs-4">
+                            <input type="text" class="form-control" placeholder=".col-xs-4">
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+
+</div>

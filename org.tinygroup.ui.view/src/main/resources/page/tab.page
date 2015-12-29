@@ -1,0 +1,13 @@
+#@h2()1 点击切换#end
+#@p()通过简单的宏调用达到选项卡效果。#end
+#showExample("/page/tab/tab01.page")
+
+#@h2()2 鼠标滑动切换#end
+#@p()Jquery鼠标滑动切换，便于嵌套上面选项卡内。#end
+#showExample("/page/tab/tab02.page")
+
+#@h2()3 选项卡#end
+#@p()选项卡#end
+#showExample("/page/tab/tab03.page")
+
+#@showPack()org.tinygroup.ui.tab#end

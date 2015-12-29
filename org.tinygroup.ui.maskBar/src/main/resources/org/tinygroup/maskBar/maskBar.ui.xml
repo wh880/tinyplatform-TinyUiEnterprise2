@@ -1,0 +1,8 @@
+<ui-components>
+    <ui-component name="tiny.ui.maskBar" dependencies="tiny.ui.bootstrap">
+        <css-resource>
+		  /org/tinygroup/maskBar/css/maskBar.css,
+	</css-resource>
+	<description>遮罩 (www.h-ui.net)</description>
+    </ui-component>
+</ui-components>

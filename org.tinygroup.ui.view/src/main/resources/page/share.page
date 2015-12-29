@@ -1,0 +1,3 @@
+<h2>1 分享</h2>
+#@showInfo() <code>温馨提示：</code> 直接调用百度分享。更多样式设置请登录百度分享设置并获取代码  http://share.baidu.com/code#end
+#showExample("/page/share/share.page")

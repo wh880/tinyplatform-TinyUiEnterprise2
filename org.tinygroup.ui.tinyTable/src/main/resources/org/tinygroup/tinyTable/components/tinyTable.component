@@ -1,0 +1,526 @@
+#macro setTinyItemCount(num)<input type="hidden" name="records" value="${num}"/>#end
+
+#macro tinyTh(mapInfo)
+	<th#mapToHtml(mapInfo)><div style="${mapInfo?.style};white-space: nowrap;margin-right:5px;">#bodyContent</div></th>
+#end
+
+#macro setTinyTablePageSize(sizeList sizeHide)
+	#if(sizeHide=="hide")
+		<input type="hidden" name="pagesize" id="${tableId}pageSize" value="${sizeList[0]}">
+	#else
+	<span class="r">
+			每页显示条数
+			<select class="form-control" name="pagesize" id="${tableId}pageSize">
+			#for(size:sizeList)
+				<option value="${size}"${pagesize==size?" selected":""}>${size}</option>#{end}
+				<option value="100000000">全部</option>
+			</select>
+	</span>
+	#end
+#end
+
+#macro tinyTable(tableId showType)
+	#if(!showType)
+		#set(showType="ajax")
+	#end
+	#if(!tableId)
+		#set(tableId=fmt("tinytbl%d",rand()))
+	#{end}
+	#bodyContent
+#end
+#macro tinyTableReload(tsid)
+#set(tsid=tsid?:(tableId?:"xx2"));
+<script type="text/javascript">
+<!--
+	$("#${tsid}").trigger("initnav");
+//-->
+</script>
+#end
+
+#macro tinyTableBeforeSend()#end ##钩子 给提交前做参数处理使用
+#macro setTinyTableMsg()
+<div class="tb-msg-box hide">#bodyContent</div>
+#end
+
+#macro tinyTablePageNavAjax(currentPage)#set(currentPage=currentPage?:page?:1)
+<div class="tinytableNav">
+    <div class="pagination-sm r" id="${tableId}-nav"></div>
+    显示 <span id="${tableId}-currentItemInfo"></span> 总共有 <span id="${tableId}-allnum">${itemNum}</span> 条目 <span id="${tableId}-msgInfo"></span>
+</div>
+<script type="text/javascript">
+    $(function(){
+        $("#${tableId}").on("initnav refresh init",function(){//currentPage
+            var url="${dataUrl}";
+            $("#${tableId}pageSize").attr("name","");
+            if($("#${tableId}form").size()>0){
+                #tinyTableBeforeSend()
+                var currenturl=url+(url.indexOf("?")>0?"&":"?")+$("#${tableId}form").formSerialize();
+                $('#${tableId}').attr("data-url",currenturl);
+            }//if(!currentPage) currentPage=1;
+            getInfo(${currentPage},1);
+        });
+        function getInfo(page,initnav){
+            var order;
+            var ordertype;
+            var pageSize=$("#${tableId}pageSize").val();
+            if(!pageSize) pageSize=10;
+            if($("#${tableId} th.sorting_desc").size()>0){
+                order=$("#${tableId} th.sorting_desc").eq(0).attr("rel");
+                ordertype="desc";
+            }else if($("#${tableId} th.sorting_asc").size()>0){
+                order=$("#${tableId} th.sorting_asc").eq(0).attr("rel");
+                ordertype="asc";
+            }
+            $.ajax({
+                type: "GET",
+                url: $('#${tableId}').attr("data-url"),//"${dataUrl}",
+                data:{ page: page,pagesize:pageSize,pageSize:pageSize,order:order,ordertype:ordertype,orderType:ordertype,limit:pageSize,start:(page-1)*pageSize,tinytableid:"${tableId}",fixcache:Math.random()},
+                dataType: "html",
+                cache:false,
+                success: function(a) {
+                    var $tpl=$("<div></div>").html(a);
+                    var msgInfo=$tpl.children("div.tb-msg-box").html();
+                    $("#${tableId}-msgInfo").html(msgInfo);
+                    var nums=$tpl.children("input[name=records]").val();
+                    $("#${tableId}>tbody").remove();
+                    var firstTagName=$tpl.children(":first").get(0).tagName.toLowerCase();
+                    if (firstTagName == "meta" || firstTagName == "html" || firstTagName == "body") {
+                        a = "<div style='text-align:center'>系统错误</div>";
+                    }
+                    if(!nums&&firstTagName!="<tr>"){
+                        $('#${tableId}-nav').parent().hide();
+                        $("#${tableId}").append("<tbody><tr><td colspan='20'>"+a+"</td><tr></tbody>");
+                    }else{
+                        $('#${tableId}-nav').parent().show();
+                        $("#${tableId}").append("<tbody>"+a+"</tbody>");
+                    }
+                    if(initnav!=undefined){
+                        $('#${tableId}').attr("data-num",nums);
+                        $("#${tableId}-allnum").html($('#${tableId}').attr("data-num"));
+                        setPageList(nums,pageSize,page)
+                    }
+                    var pageMaxNum=page*pageSize;
+                    if(page*pageSize>parseInt($('#${tableId}').attr("data-num"))){
+                        pageMaxNum=$('#${tableId}').attr("data-num");
+                    }
+                    var pageMinNum=(page-1)*pageSize+1;
+                    if(nums==0){
+                        pageMinNum=pageMaxNum=0;
+                    }
+                    $("#${tableId}-currentItemInfo").html(pageMinNum+"-"+pageMaxNum);
+                }
+            });
+        }
+        function setPageList(nums,pageSize,currentPage){
+            var showcontent=false;
+            $('#${tableId}-nav').html("<div></div>");
+            if(nums==0) return false;
+            if(!currentPage) currentPage=1;
+            var totalPages=Math.ceil(nums/pageSize);
+            $('#${tableId}-nav div').twbsPagination({
+                totalPages: totalPages,
+                visiblePages: totalPages>7?7:totalPages,
+                startPage:currentPage,
+                onPageClick:function(event, page) {
+                    if(!showcontent){
+                        showcontent=true;
+                        return;
+                    }
+                    getInfo(page);
+                },
+                hrefVariable:"pagenum",
+                version: '1.1'
+            });
+        }
+        $("#${tableId}").trigger("initnav");
+        $("#${tableId}pageSize").on("change",function(){
+            $("#${tableId}").trigger("initnav");
+        });
+        $("#${tableId}").on("click","th.sorting",function(){
+            var hasdesc=false;
+            if($(this).hasClass("sorting_desc")){
+                hasdesc=true;
+            }
+            $("#${tableId} th").removeClass("sorting_desc sorting_asc");
+            if(hasdesc){
+                $(this).addClass("sorting_asc");
+            }else{
+                $(this).addClass("sorting_desc");
+            }
+            $("#${tableId}").trigger("initnav");
+        });
+    });
+</script>
+#end
+
+#macro tinyTablePageNav()
+#set(page=page?:1)
+	<div class="tinytableNav">
+		<div class="pagination-sm r" id="${tableId}-nav"></div>
+		显示 <span id="${tableId}-currentItemInfo"></span> 总共有 <span id="${tableId}-allnum">${itemNum}</span> 条目
+	</div>
+	<script type="text/javascript">
+	$(function(){
+		if (!${itemNum}){
+			return;
+		}
+		function ${tableId}InitPageList(){
+			if($("#${tableId}form").size()>0){
+				$("#${tableId}form").submit();
+			}
+		}
+		$('#${tableId}-nav').html("<div></div>");
+		var page=${page}
+		var pageSize=$("#${tableId}pageSize").val();
+		if(!pageSize) pageSize=10;
+		var totalPages=Math.ceil(${itemNum}/pageSize);
+		var url="${dataUrl}";
+		url=url.replace(/\?$/,"").replace(/[&\?]page=[0-9]*/,"");
+		var ${tableId}Nav=$('#${tableId}-nav div').twbsPagination({
+			totalPages: totalPages,
+			visiblePages: totalPages>7?7:totalPages,
+			startPage:page,
+			href:url+(url.indexOf("?") < 0?"?":"&")+"page=pagenum",
+			hrefVariable:"pagenum",
+			version: '1.1'
+		});
+		var pageMaxNum=page*pageSize;
+		if(page*pageSize>${itemNum}){
+			pageMaxNum=${itemNum}
+		}
+		$("#${tableId}-currentItemInfo").html(((page-1)*pageSize+1)+"-"+pageMaxNum);
+		$("#${tableId}pageSize").on("change",function(){
+			${tableId}InitPageList();
+			return false
+		});
+		$("#${tableId}").on("click","th.sorting",function(){
+			var hasdesc=false;
+			if($(this).hasClass("sorting_desc")){
+				hasdesc=true;
+			}
+			$("#${tableId} th").removeClass("sorting_desc sorting_asc");
+			if(hasdesc){
+				$(this).addClass("sorting_asc");
+				$("#${tableId}ordertype").val("asc");
+			}else{
+				$(this).addClass("sorting_desc");
+				$("#${tableId}ordertype").val("desc");
+			}
+			$("#${tableId}order").val($(this).attr("rel"));
+			${tableId}InitPageList();
+			return false
+		});
+		$("#${tableId} th").removeClass("sorting_desc sorting_asc");
+		#if(order)
+		$("#${tableId} th").each(function(index){
+			if($(this).attr("rel")=="${order}"){
+				if("${ordertype}"=="asc")
+					$(this).addClass("sorting_asc");
+				else
+					$(this).addClass("sorting_desc");
+				return false;
+			}
+		});
+		#end
+	});
+	</script>
+#end
+#macro tinyTableContent(dataUrl currentPage itemNum)
+	<div class="clear"></div>
+	<div class="table-responsive">
+	<table class="dataTable tinytable table table-hover" id="${tableId}" data-url="${dataUrl}">
+		#bodyContent
+		<tbody id="${tableId}-Body">
+		</tbody>
+	</table>
+	</div>
+	#if(showType=="ajax")
+		#tinyTablePageNavAjax(currentPage)
+	#else
+		#tinyTablePageNav()
+	#end
+	<script type="text/javascript">
+	$(function(){
+		$("#${tableId} th input:checkbox").on("click" , function(){
+			var that = this;
+			$(this).closest("table").find("tr > td:first-child input:checkbox").each(function(){
+				if (this.disabled){
+					return;
+				}
+				this.checked = that.checked;
+			});
+		});
+		$("#${tableId}").on("click", ".Item-Remove", function () {
+			var that = this;
+			layer.confirm('确定要删除该记录？', function (index) {
+				$.ajax({
+					url:$(that).attr("data-url"),
+					data:{id:$(that).attr("data-id")},
+					dataType:"json",
+					success:function(data){
+						if(data.status=="success"||data.status=="y"){
+							layer.msg(data.info, 2, 1);
+							setTimeout(function(){
+								layer.closeAll();
+								$("#${tableId}").trigger("refresh");
+							},300);
+						}else{
+							var msg=data.info?data.info:"系统出错";
+							layer.msg(msg);
+						}
+					},
+					error: function() {
+						layer.msg("系统出错");
+					}
+				});
+
+			});
+	  }).on("click",">tbody>tr>td",function(e){
+		if($(this).find("a,input,button").size()==0){
+			$(this).parent().find("input[type=checkbox]").trigger("click");
+		}
+	  });
+	});
+</script>
+#end
+#macro tinyTableFrom()
+	#@tinyTableForm()
+		#bodyContent
+	#end
+#end
+
+#macro tinyTableForm()
+	<form id="${tableId}form" action="" method="get" class="form form-inline">
+		#if(showType!="ajax")
+			<input type="hidden" id="${tableId}order" name="order" value="${order}"/><input type="hidden" id="${tableId}ordertype" name="ordertype" value="${ordertype}"/>
+		#end
+		#bodyContent
+	</form>
+	<script type="text/javascript">
+	<!--
+		$(function(){
+			$("#${tableId}form").on("submit",function(){
+				#if(showType=="ajax")
+					$("#${tableId}").trigger("initnav");
+					return false;
+				#end
+			});
+		});
+	//-->
+	</script>
+#end
+
+#macro tinyTableItemRemove(doActionUrl itemId)
+<a href="javascript:;" class="Item-Remove" data-url="${doActionUrl}" data-id="${itemId}">#bodyContent</a>
+#end
+
+#macro mulOperation(operation doActionUrl map)<span id="${operation}-${tableId}">#bodyContent</span><script type="text/javascript">
+ $(function(){
+  $("#${operation}-${tableId}").on("click",function() {
+		var checklist = [];
+		 $("#${tableId}>tbody>tr>td input[type=checkbox]:checked").each(function (e) {
+			  checklist.push($(this).val());
+		 });
+		if(checklist.length==0){
+			layer.msg("请选择记录")
+			 return false;
+		 }
+		layer.confirm("请确认?",function() {
+			 $.ajax({
+				  url: "${doActionUrl}",
+				  data: {ids: checklist.join(","), itemId: checklist, action: "${operation}"#mapToJson(map)},
+				  dataType: "json",
+				  success: function (data) {
+						if (data.status=="success"||data.status=="y") {
+							 if(data.url){
+								 var url=data.url;
+								 if(url.indexOf("http://")==-1){
+									url=contextPath+url;
+								 }
+								 window.location.href=url;
+							 }else{
+								layer.msg(data.info,2, 1);
+								$("#${tableId}").trigger("initnav");
+							 }
+						}else{
+							 layer.msg(data.info);
+						}
+				  },
+				  traditional:true,
+				  error:function(){
+					  layer.msg("系统出错，请确认你的请求地址");
+				  }
+			 })
+		});
+		//return false;
+  })
+ });
+</script>#end
+
+
+#macro tinyTableNonavpage(dataUrl itemNum)
+<div class="clear"></div>
+<div class="table-responsive">
+    <table class="dataTable tinytable table table-hover" id="${tableId}" data-url="${dataUrl}">
+        #bodyContent
+        <tbody id="${tableId}-Body">
+        </tbody>
+    </table>
+</div>
+    #if(showType=="ajax")
+        #tinyTablePageNonavAjax()
+    #else
+        #tinyTablePageNav()
+    #end
+<script type="text/javascript">
+    $(function(){
+        $("#${tableId} th input:checkbox").on("click" , function(){
+            var that = this;
+            $(this).closest("table").find("tr > td:first-child input:checkbox").each(function(){
+                if (this.disabled){
+                    return;
+                }
+                this.checked = that.checked;
+            });
+        });
+        $("#${tableId}").on("click", ".Item-Remove", function () {
+            var that = this;
+            layer.confirm('确定要删除该记录？', function (index) {
+                $.ajax({
+                    url:$(that).attr("data-url"),
+                    data:{id:$(that).attr("data-id")},
+                    dataType:"json",
+                    success:function(data){
+                        if(data.status=="success"||data.status=="y"){
+                            layer.msg(data.info, 2, 1);
+                            setTimeout(function(){
+                                layer.closeAll();
+                                $("#${tableId}").trigger("initnav");
+                            },300);
+                        }else{
+                            var msg=data.info?data.info:"系统出错";
+                            layer.msg(msg);
+                        }
+                    },
+                    error: function() {
+                        layer.msg("系统出错");
+                    }
+                });
+
+            });
+        }).on("click",">tbody>tr>td",function(e){
+            if($(this).find("a,input,button").size()==0){
+                $(this).parent().find("input[type=checkbox]").trigger("click");
+            }
+        });
+    });
+</script>
+#end
+##数据表格 无分页
+#macro tinyTablePageNonavAjax()
+<script type="text/javascript">
+    $(function(){
+        $("#${tableId}").on("initnav refresh init",function(isinit){
+            var url="${dataUrl}";
+            $("#${tableId}pageSize").attr("name","");
+            //var pageSize=$("#${tableId}pageSize").val();
+            //var data={page: 1,pagesize:pageSize};
+            if($("#${tableId}form").size()>0){
+            ##//$(this).trigger("beforeSend");
+                #tinyTableBeforeSend()
+                var currenturl=url+(url.indexOf("?")>0?"&":"?")+$("#${tableId}form").formSerialize();
+                $('#${tableId}').attr("data-url",currenturl);
+                //console.log(currenturl);
+            }
+            getInfo(1,1);
+        });
+        function getInfo(page,initnav){
+            var order;
+            var ordertype;
+            var pageSize=$("#${tableId}pageSize").val();
+            if(!pageSize) pageSize=10;
+            if($("#${tableId} th.sorting_desc").size()>0){
+                order=$("#${tableId} th.sorting_desc").eq(0).attr("rel");
+                ordertype="desc";
+            }else if($("#${tableId} th.sorting_asc").size()>0){
+                order=$("#${tableId} th.sorting_asc").eq(0).attr("rel");
+                ordertype="asc";
+            }
+            $.ajax({
+                type: "GET",
+                url: $('#${tableId}').attr("data-url"),//"${dataUrl}",
+                data:{ page: page,pagesize:pageSize,order:order,ordertype:ordertype,limit:pageSize,start:(page-1)*pageSize,tinytableid:"${tableId}"},
+                dataType: "html",
+                cache: !0,
+                beforeSend: function() {
+                    //$("#${tableId}-Body").html('<tr><td colspan="20" class="tinytableLoading"> 加载...</td></tr>');
+                },
+                success: function(a) {
+                    $("#${tableId} tbody").remove();
+                    $("#${tableId}").append("<tbody>"+a+"</tbody>");
+                    //$("#${tableId}-Body").html(a);
+                    /*css({
+                             opacity: "0.0"
+                        }).html(a).delay(50).animate({
+                             opacity: "1.0"
+                        },
+                    300);*/
+                    if(initnav!=undefined){
+                        var nums=$("<div></div>").html(a).find("input[name=records]").val();
+                        $('#${tableId}').attr("data-num",nums);
+                        $("#${tableId}-allnum").html($('#${tableId}').attr("data-num"));
+                        setPageList(nums,pageSize)
+                    }
+                    var pageMaxNum=page*pageSize;
+                    if(page*pageSize>parseInt($('#${tableId}').attr("data-num"))){
+                        pageMaxNum=$('#${tableId}').attr("data-num");
+                    }
+                    var pageMinNum=(page-1)*pageSize+1;
+                    if(nums==0){
+                        pageMinNum=pageMaxNum=0;
+                    }
+                    $("#${tableId}-currentItemInfo").html(pageMinNum+"-"+pageMaxNum);
+                }
+            });
+        }
+        function setPageList(nums,pageSize){
+            var showcontent=false;
+            $('#${tableId}-nav').html("<div></div>");
+            if(nums==0) return false;
+            var totalPages=Math.ceil(nums/pageSize);
+            $('#${tableId}-nav div').twbsPagination({
+                totalPages: totalPages,
+                visiblePages: totalPages>7?7:totalPages,
+                startPage:1,
+                onPageClick:function(event, page) {
+                    if(!showcontent){
+                        showcontent=true;
+                        return;
+                    }
+                    getInfo(page);
+                },
+                hrefVariable:"pagenum",
+                version: '1.1'
+            });
+        }
+        $("#${tableId}").trigger("initnav");
+        $("#${tableId}pageSize").on("change",function(){
+            $("#${tableId}").trigger("initnav");
+            //${tableId}setPageList();
+        });
+        $("#${tableId}").on("click","th.sorting",function(){
+            var hasdesc=false;
+            if($(this).hasClass("sorting_desc")){
+                hasdesc=true;
+            }
+            $("#${tableId} th").removeClass("sorting_desc sorting_asc");
+            if(hasdesc){
+                $(this).addClass("sorting_asc");
+            }else{
+                $(this).addClass("sorting_desc");
+            }
+            $("#${tableId}").trigger("initnav");
+        });
+    });
+</script>
+#end

@@ -1,0 +1,7 @@
+#@mainNav()
+    #@navInfo("#" "current")首页#end
+    #@navInfo("#")核心#end
+    #@navInfo("#")扩展#end
+    #@navInfo("#")案例#end
+    #@navInfo("#")联系我们#end
+#end

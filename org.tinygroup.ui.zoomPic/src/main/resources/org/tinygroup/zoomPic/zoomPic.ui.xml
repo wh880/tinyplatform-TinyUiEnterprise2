@@ -1,0 +1,11 @@
+<ui-components>
+    <ui-component name="tiny.ui.zoomPic" dependencies="tiny.ui.jquery">
+		<css-resource>
+			/org/tinygroup/zoomPic/css/zoomPic.css
+		</css-resource>
+		<js-resource>
+		  /org/tinygroup/zoomPic/js/zoominfo.js
+		</js-resource>
+		<description>zoomPic图片列表 (www.jqueryba.com)</description>
+    </ui-component>
+</ui-components>

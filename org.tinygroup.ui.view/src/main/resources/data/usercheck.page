@@ -1,0 +1,6 @@
+#set(username=param.toString())
+#if(username.length()<5)
+{"info":"验证不通过！","status":"n"}
+#else
+{"info":"","status":"y"}
+#end

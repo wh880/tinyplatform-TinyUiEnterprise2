@@ -1,0 +1,7 @@
+<h2>1 缩略图</h2>
+#showExample("/page/thumbnails/thumbnails01.page")
+
+<h2>2 图片信息列表</h2>
+#showExample("/page/thumbnails/thumbnails02.page")
+
+#@showPack()org.tinygroup.ui.bootstrap#end

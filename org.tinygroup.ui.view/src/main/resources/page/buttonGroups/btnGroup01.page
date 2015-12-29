@@ -1,0 +1,6 @@
+<div class="btn-group">
+	#@btnGroupItem("btn-primary")左边按钮#end
+	#@btnGroupItem("btn-default")中间按钮#end
+	#@btnGroupItem("btn-default")中间按钮#end
+	#@btnGroupItem("btn-default")右边按钮#end
+</div>

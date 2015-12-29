@@ -1,0 +1,22 @@
+<ui-components>
+    <ui-component name="tiny.ui.syntaxhighlighter" dependencies="tiny.ui.jquery">
+        <css-resource>
+		/org/tinygroup/syntaxhighlighter/styles/shCore.css
+		</css-resource>
+        <js-resource>
+            /org/tinygroup/syntaxhighlighter/scripts/shCore.js,
+            <!-- /org/tinygroup/syntaxhighlighter/scripts/shAutoloader.js, -->
+            /org/tinygroup/syntaxhighlighter/scripts/shBrushCss.js,
+            /org/tinygroup/syntaxhighlighter/scripts/shBrushJava.js,
+            /org/tinygroup/syntaxhighlighter/scripts/shBrushJScript.js,
+            /org/tinygroup/syntaxhighlighter/scripts/shBrushXml.js,
+			/org/tinygroup/syntaxhighlighter/scripts/shBrushTiny.js
+        </js-resource>
+        <js-codelet>
+            $(document).ready(function(){
+                SyntaxHighlighter.highlight();
+            });
+        </js-codelet>
+		<description>代码高亮 (http://alexgorbatchev.com/SyntaxHighlighter)</description>
+    </ui-component>
+</ui-components>

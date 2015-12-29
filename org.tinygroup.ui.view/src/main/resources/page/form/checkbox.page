@@ -1,0 +1,558 @@
+<div>
+
+    <!-- Checkboxes/Radios -->
+    <div class="panel">
+        <div class="panel-heading">
+            <span class="panel-title">系统默认</span>
+        </div>
+        <div class="panel-body">
+            <form class="form-horizontal" role="form">
+                <div class="form-group">
+                    <label class="col-md-3 control-label">单选</label>
+                    <div class="col-md-9">
+                        <div class="bs-component">
+                            <label class="radio-inline mr10">
+                                <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">1
+                            </label>
+                            <label class="radio-inline mr10">
+                                <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">2
+                            </label>
+                            <label class="radio-inline mr10">
+                                <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">3
+                            </label>
+                            <label class="radio-inline mr10">
+                                <input type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option4">4
+                            </label>
+                            <label class="radio-inline mr10">
+                                <input type="radio" name="inlineRadioOptions" id="inlineRadio5" value="option5">5
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group mb25">
+                    <label class="col-md-3 control-label">多选</label>
+                    <div class="col-md-9">
+                        <div class="bs-component">
+                            <label class="checkbox-inline mr10">
+                                <input type="checkbox" id="inlineCheckbox1" value="option1">1
+                            </label>
+                            <label class="checkbox-inline mr10">
+                                <input type="checkbox" id="inlineCheckbox2" value="option2">2
+                            </label>
+                            <label class="checkbox-inline mr10">
+                                <input type="checkbox" id="inlineCheckbox3" value="option3">3
+                            </label>
+                            <label class="checkbox-inline mr10">
+                                <input type="checkbox" id="inlineCheckbox4" value="option4">4
+                            </label>
+                            <label class="checkbox-inline mr10">
+                                <input type="checkbox" id="inlineCheckbox5" value="option5">5
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Custom Checkboxes -->
+    <div class="panel">
+        <div class="panel-heading">
+            <span class="panel-title">自定义多选</span>
+        </div>
+        <div class="panel-body bg-light pt20 pbn pl30">
+            <div class="row">
+                <div class="col-sm-6">
+                    <form class="form-horizontal" method="get">
+
+                        <div class="form-group">
+                            <div class="col-sm-12 pl-15">
+
+                                <div class="bs-component">
+                                    <div class="checkbox-custom checkbox-disabled mb-10">
+                                        <input type="checkbox" checked="" disabled="" id="checkboxDefault1">
+                                        <label for="checkboxDefault1">Checked &amp; Disabled</label>
+                                    </div>
+                                </div>
+                                <div class="bs-component">
+                                    <div class="checkbox-custom checkbox-disabled">
+                                        <input type="checkbox" disabled="" id="checkboxDefault2">
+                                        <label for="checkboxExample2">Disabled</label>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-sm-6">
+                    <form class="form-horizontal" method="get">
+
+                        <div class="form-group">
+                            <div class="col-sm-12 pl-15">
+                                <div class="bs-component">
+                                    <div class="checkbox-custom fill checkbox-disabled mb-10">
+                                        <input type="checkbox" checked="" disabled="" id="checkboxDefault11">
+                                        <label for="checkboxDefault11">Checked &amp; Disabled</label>
+                                    </div>
+                                </div>
+                                <div class="bs-component">
+                                    <div class="checkbox-custom fill checkbox-disabled">
+                                        <input type="checkbox" disabled="" id="checkboxDefault12">
+                                        <label for="checkboxExample12">Disabled</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="panel-body pl30 pb5">
+            <div class="row">
+                <div class="col-sm-6">
+                    <form class="form-horizontal" method="get">
+                        <label class="control-label mb-15">Checkboxes</label>
+                        <div class="form-group">
+                            <div class="col-sm-12 pl-15">
+                                <div class="bs-component">
+                                    <div class="checkbox-custom mb-5">
+                                        <input type="checkbox" checked="" id="checkboxDefault3">
+                                        <label for="checkboxDefault3">Default</label>
+                                    </div>
+                                </div>
+                                <div class="bs-component">
+                                    <div class="checkbox-custom checkbox-primary mb-5">
+                                        <input type="checkbox" checked="" id="checkboxExample4">
+                                        <label for="checkboxExample4">Primary</label>
+                                    </div>
+                                </div>
+                                <div class="bs-component">
+
+                                    <div class="checkbox-custom checkbox-success mb-5">
+                                        <input type="checkbox" checked="" id="checkboxExample5">
+                                        <label for="checkboxExample5">Success</label>
+                                    </div>
+
+                                </div>
+                                <div class="bs-component">
+                                    <div class="checkbox-custom checkbox-info mb-5">
+                                        <input type="checkbox" checked="" id="checkboxExample6">
+                                        <label for="checkboxExample6">Info</label>
+                                    </div>
+
+                                </div>
+                                <div class="bs-component">
+                                    <div class="checkbox-custom checkbox-warning mb-5">
+                                        <input type="checkbox" checked="" id="checkboxExample7">
+                                        <label for="checkboxExample7">Warning</label>
+                                    </div>
+
+                                </div>
+                                <div class="bs-component">
+                                    <div class="checkbox-custom checkbox-danger mb-5">
+                                        <input type="checkbox" checked="" id="checkboxExample8">
+                                        <label for="checkboxExample8">Danger</label>
+                                    </div>
+
+                                </div>
+                                <div class="bs-component">
+                                    <div class="checkbox-custom checkbox-alert mb-5">
+                                        <input type="checkbox" checked="" id="checkboxExample9">
+                                        <label for="checkboxExample9">Alert</label>
+                                    </div>
+
+                                </div>
+                                <div class="bs-component">
+                                    <div class="checkbox-custom checkbox-system mb-5">
+                                        <input type="checkbox" checked="" id="checkboxExample10">
+                                        <label for="checkboxExample10">System</label>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-sm-6">
+                    <form class="form-horizontal" method="get">
+                        <label class="control-label mb-15">Checkboxes</label>
+                        <div class="form-group">
+                            <div class="col-sm-12 pl-15">
+
+                                <div class="bs-component">
+                                    <div class="checkbox-custom fill mb-5">
+                                        <input type="checkbox" checked="" id="checkboxDefault13">
+                                        <label for="checkboxDefault13">Default</label>
+                                    </div>
+                                </div>
+                                <div class="bs-component">
+                                    <div class="checkbox-custom fill checkbox-primary mb-5">
+                                        <input type="checkbox" checked="" id="checkboxExample14">
+                                        <label for="checkboxExample14">Primary</label>
+                                    </div>
+                                </div>
+                                <div class="bs-component">
+                                    <div class="checkbox-custom fill checkbox-success mb-5">
+                                        <input type="checkbox" checked="" id="checkboxExample15">
+                                        <label for="checkboxExample15">Success</label>
+                                    </div>
+                                </div>
+                                <div class="bs-component">
+                                    <div class="checkbox-custom fill checkbox-info mb-5">
+                                        <input type="checkbox" checked="" id="checkboxExample16">
+                                        <label for="checkboxExample16">Info</label>
+                                    </div>
+                                </div>
+                                <div class="bs-component">
+                                    <div class="checkbox-custom fill checkbox-warning mb-5">
+                                        <input type="checkbox" checked="" id="checkboxExample17">
+                                        <label for="checkboxExample17">Warning</label>
+                                    </div>
+                                </div>
+                                <div class="bs-component">
+                                    <div class="checkbox-custom fill checkbox-danger mb-5">
+                                        <input type="checkbox" checked="" id="checkboxExample18">
+                                        <label for="checkboxExample18">Danger</label>
+                                    </div>
+                                </div>
+                                <div class="bs-component">
+                                    <div class="checkbox-custom fill checkbox-alert mb-5">
+                                        <input type="checkbox" checked="" id="checkboxExample19">
+                                        <label for="checkboxExample19">Alert</label>
+                                    </div>
+                                </div>
+                                <div class="bs-component">
+                                    <div class="checkbox-custom fill checkbox-system mb-5">
+                                        <input type="checkbox" checked="" id="checkboxExample20">
+                                        <label for="checkboxExample20">System</label>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Custom Radios -->
+    <div class="panel">
+        <div class="panel-heading">
+            <span class="panel-title">自定义单选</span>
+        </div>
+        <div class="panel-body bg-light pt20 pbn pl30">
+            <div class="row">
+                <div class="col-sm-6">
+                    <form class="form-horizontal" method="get">
+
+                        <div class="form-group">
+                            <div class="col-sm-12 pl-15">
+
+
+                                <div class="bs-component">
+                                    <div class="radio-custom radio-disabled mb-10">
+                                        <input type="radio" id="radioExample1" name="radioExample" disabled="" checked="">
+                                        <label for="radioExample1">Checked &amp; Disabled</label>
+                                    </div>
+                                </div>
+                                <div class="bs-component">
+                                    <div class="radio-custom radio-disabled">
+                                        <input type="radio" id="radioExample2" name="radioExample" disabled="">
+                                        <label for="radioExample2">Disabled</label>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-sm-6">
+                    <form class="form-horizontal" method="get">
+
+                        <div class="form-group">
+                            <div class="col-sm-12 pl-15">
+
+                                <div class="bs-component">
+                                    <div class="radio-custom square radio-disabled mb-10">
+                                        <input type="radio" id="radioExample11" name="radioExample" disabled="" checked="">
+                                        <label for="radioExample11">Checked &amp; Disabled</label>
+                                    </div>
+                                </div>
+                                <div class="bs-component">
+                                    <div class="radio-custom square radio-disabled">
+                                        <input type="radio" id="radioExample12" name="radioExample" disabled="">
+                                        <label for="radioExample12">Disabled</label>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="panel-body pl30 pb15">
+            <div class="row">
+                <div class="col-sm-6">
+                    <form class="form-horizontal form-bordered" method="get">
+                        <label class="control-label mb-15">Radios</label>
+                        <div class="form-group">
+                            <div class="col-sm-12 pl-15">
+
+
+                                <div class="bs-component">
+                                    <div class="radio-custom mb-5">
+                                        <input type="radio" id="radioExample3" name="radioExample">
+                                        <label for="radioExample3">Default</label>
+                                    </div>
+                                </div>
+                                <div class="bs-component">
+                                    <div class="radio-custom radio-primary mb-5">
+                                        <input type="radio" id="radioExample4" name="radioExample">
+                                        <label for="radioExample4">Primary</label>
+                                    </div>
+                                </div>
+                                <div class="bs-component">
+                                    <div class="radio-custom radio-success mb-5">
+                                        <input type="radio" id="radioExample5" name="radioExample">
+                                        <label for="radioExample5">Success</label>
+                                    </div>
+                                </div>
+                                <div class="bs-component">
+                                    <div class="radio-custom radio-info mb-5">
+                                        <input type="radio" id="radioExample6" name="radioExample">
+                                        <label for="radioExample6">Info</label>
+                                    </div>
+                                </div>
+                                <div class="bs-component">
+                                    <div class="radio-custom radio-warning mb-5">
+                                        <input type="radio" id="radioExample7" name="radioExample">
+                                        <label for="radioExample7">Warning</label>
+                                    </div>
+                                </div>
+                                <div class="bs-component">
+                                    <div class="radio-custom radio-danger mb-5">
+                                        <input type="radio" id="radioExample8" name="radioExample">
+                                        <label for="radioExample8">Danger</label>
+                                    </div>
+                                </div>
+                                <div class="bs-component">
+                                    <div class="radio-custom radio-alert mb-5">
+                                        <input type="radio" id="radioExample9" name="radioExample">
+                                        <label for="radioExample9">Alert</label>
+                                    </div>
+                                </div>
+                                <div class="bs-component">
+                                    <div class="radio-custom radio-system mb-5">
+                                        <input type="radio" id="radioExample10" name="radioExample">
+                                        <label for="radioExample10">System</label>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-sm-6">
+                    <form class="form-horizontal form-bordered" method="get">
+                        <label class="control-label mb-15">Alt Radios</label>
+                        <div class="form-group">
+                            <div class="col-sm-12 pl-15">
+
+
+                                <div class="bs-component">
+                                    <div class="radio-custom square mb-5">
+                                        <input type="radio" id="radioExample13" name="radioExample">
+                                        <label for="radioExample13">Default</label>
+                                    </div>
+                                </div>
+                                <div class="bs-component">
+                                    <div class="radio-custom square radio-primary mb-5">
+                                        <input type="radio" id="radioExample14" name="radioExample">
+                                        <label for="radioExample14">Primary</label>
+                                    </div>
+                                </div>
+                                <div class="bs-component">
+                                    <div class="radio-custom square radio-success mb-5">
+                                        <input type="radio" id="radioExample15" name="radioExample">
+                                        <label for="radioExample15">Success</label>
+                                    </div>
+                                </div>
+                                <div class="bs-component">
+                                    <div class="radio-custom square radio-info mb-5">
+                                        <input type="radio" id="radioExample16" name="radioExample">
+                                        <label for="radioExample16">Info</label>
+                                    </div>
+                                </div>
+                                <div class="bs-component">
+                                    <div class="radio-custom square radio-warning mb-5">
+                                        <input type="radio" id="radioExample17" name="radioExample">
+                                        <label for="radioExample17">Warning</label>
+                                    </div>
+                                </div>
+                                <div class="bs-component">
+                                    <div class="radio-custom square radio-danger mb-5">
+                                        <input type="radio" id="radioExample18" name="radioExample">
+                                        <label for="radioExample18">Danger</label>
+                                    </div>
+                                </div>
+                                <div class="bs-component">
+                                    <div class="radio-custom square radio-alert mb-5">
+                                        <input type="radio" id="radioExample19" name="radioExample">
+                                        <label for="radioExample19">Alert</label>
+                                    </div>
+                                </div>
+                                <div class="bs-component">
+                                    <div class="radio-custom square radio-system mb-5">
+                                        <input type="radio" id="radioExample20" name="radioExample">
+                                        <label for="radioExample20">System</label>
+                                    </div>
+
+                                    <div id="source-button" class="btn btn-primary btn-xs" style="display: none;">&lt; &gt;</div></div>
+
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Custom Switches -->
+    <div class="panel">
+        <div class="panel-heading">
+            <span class="panel-title">自定义开关</span>
+        </div>
+        <div class="panel-body">
+            <form class="form-horizontal" role="form">
+                <div class="form-group">
+                    <label class="col-md-3 control-label">开关</label>
+                    <div class="col-md-9">
+
+                        <div class="bs-component">
+                            <div class="switch switch-info switch-inline">
+                                <input id="exampleCheckboxSwitch1" type="checkbox" checked="">
+                                <label for="exampleCheckboxSwitch1"></label>
+                            </div>
+                            <div class="switch switch-primary switch-inline">
+                                <input id="exampleCheckboxSwitch2" type="checkbox" checked="">
+                                <label for="exampleCheckboxSwitch2"></label>
+                            </div>
+                            <div class="switch switch-warning switch-inline">
+                                <input id="exampleCheckboxSwitch3" type="checkbox" checked="">
+                                <label for="exampleCheckboxSwitch3"></label>
+                            </div>
+                            <div class="switch switch-alert switch-inline">
+                                <input id="exampleCheckboxSwitch4" type="checkbox" checked="">
+                                <label for="exampleCheckboxSwitch4"></label>
+                            </div>
+                            <div class="switch switch-success switch-inline">
+                                <input id="exampleCheckboxSwitch5" type="checkbox" checked="">
+                                <label for="exampleCheckboxSwitch5"></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">圆角</label>
+                    <div class="col-md-9">
+
+                        <div class="bs-component">
+                            <div class="switch switch-info round switch-inline">
+                                <input id="exampleCheckboxSwitch6" type="checkbox" checked="">
+                                <label for="exampleCheckboxSwitch6"></label>
+                            </div>
+                            <div class="switch switch-primary round switch-inline">
+                                <input id="exampleCheckboxSwitch7" type="checkbox" checked="">
+                                <label for="exampleCheckboxSwitch7"></label>
+                            </div>
+                            <div class="switch switch-warning round switch-inline">
+                                <input id="exampleCheckboxSwitch8" type="checkbox" checked="">
+                                <label for="exampleCheckboxSwitch8"></label>
+                            </div>
+                            <div class="switch switch-alert round switch-inline">
+                                <input id="exampleCheckboxSwitch9" type="checkbox" checked="">
+                                <label for="exampleCheckboxSwitch9"></label>
+                            </div>
+                            <div class="switch switch-success round switch-inline">
+                                <input id="exampleCheckboxSwitch10" type="checkbox" checked="">
+                                <label for="exampleCheckboxSwitch10"></label>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">单选开关</label>
+                    <div class="col-md-9">
+
+                        <div class="bs-component">
+                            <div class="switch switch-info switch-inline">
+                                <input id="exampleRadioSwitch11" type="radio" name="testGroup" checked="">
+                                <label for="exampleRadioSwitch11"></label>
+                            </div>
+                            <div class="switch switch-primary switch-inline">
+                                <input id="exampleRadioSwitch12" type="radio" name="testGroup">
+                                <label for="exampleRadioSwitch12"></label>
+                            </div>
+                            <div class="switch switch-warning switch-inline">
+                                <input id="exampleRadioSwitch13" type="radio" name="testGroup">
+                                <label for="exampleRadioSwitch13"></label>
+                            </div>
+                            <div class="switch switch-alert switch-inline">
+                                <input id="exampleRadioSwitch14" type="radio" name="testGroup">
+                                <label for="exampleRadioSwitch14"></label>
+                            </div>
+                            <div class="switch switch-success switch-inline">
+                                <input id="exampleRadioSwitch15" type="radio" name="testGroup">
+                                <label for="exampleRadioSwitch15"></label>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="form-group mbn">
+                    <label class="col-md-3 control-label">尺寸</label>
+                    <div class="col-md-9">
+                        <div class="bs-component">
+                            <!-- Switch Size - LG -->
+                            <div class="switch switch-info switch-lg switch-inline">
+                                <input id="exampleRadioSwitch16" type="radio" name="testGroup2" checked="">
+                                <label for="exampleRadioSwitch16"></label>
+                            </div>
+                            <!-- Switch Size - Default -->
+                            <div class="switch switch-primary switch-inline">
+                                <input id="exampleRadioSwitch17" type="radio" name="testGroup2">
+                                <label for="exampleRadioSwitch17"></label>
+                            </div>
+                            <!-- Switch Size - SM -->
+                            <div class="switch switch-warning switch-sm switch-inline">
+                                <input id="exampleRadioSwitch18" type="radio" name="testGroup2">
+                                <label for="exampleRadioSwitch18"></label>
+                            </div>
+
+                            <!-- Switch Size - XS -->
+                            <div class="switch switch-alert switch-xs switch-inline">
+                                <input id="exampleRadioSwitch19" type="radio" name="testGroup2">
+                                <label for="exampleRadioSwitch19"></label>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+  
+
+</div>

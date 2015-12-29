@@ -1,0 +1,67 @@
+#*
+lang的可选值有：
+bash, shell
+css
+js, jscript, javascript
+java
+xml
+plain, text
+sql
+xml, xhtml, xslt, html, xhtml
+*#
+
+#macro syntaxHighlighter(language)
+##<script type="syntaxhighlighter"  class="brush: ${language}"/>
+<pre class="brush: ${language}">
+#bodyContent
+</pre>
+##</script>
+#end
+
+#macro bashSyntaxHighlighter()
+#@syntaxHighlighter("bash")
+#bodyContent
+#end
+#end
+
+#macro htmlSyntaxHighlighter()
+#@syntaxHighlighter("html")
+#bodyContent
+#end
+#end
+
+#macro cssSyntaxHighlighter()
+#@syntaxHighlighter("css")
+#bodyContent
+#end
+#end
+
+#macro jsSyntaxHighlighter()
+#@syntaxHighlighter("js")
+#bodyContent
+#end
+#end
+
+#macro javaSyntaxHighlighter()
+#@syntaxHighlighter("java")
+#bodyContent
+#end
+#end
+
+#macro xmlSyntaxHighlighter()
+#@syntaxHighlighter("xml")
+#bodyContent
+#end
+#end
+
+#macro plainSyntaxHighlighter()
+#@syntaxHighlighter("plain")
+#bodyContent
+#end
+#end
+
+#macro sqlSyntaxHighlighter()
+#@syntaxHighlighter("sql")
+#bodyContent
+#end
+#end

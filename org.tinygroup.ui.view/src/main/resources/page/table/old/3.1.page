@@ -1,0 +1,27 @@
+##import("/org/tinygroup/table/components/table.component")
+ #@table()
+    #@thead()
+      #@tr()
+        #@th()表头#end
+        #@th()表头#end
+        #@th()表头#end
+      #end
+    #end
+    #@tbody()
+      #@tr()
+        #@th()类别#end
+        #@td()表格内容#end
+        #@td()表格内容#end
+      #end
+      #@tr()
+        #@th()类别#end
+        #@td()表格内容#end
+        #@td()表格内容#end
+      #end
+      #@tr()
+        #@th()类别#end
+        #@td()表格内容#end
+        #@td()表格内容#end
+      #end
+    #end
+  #end

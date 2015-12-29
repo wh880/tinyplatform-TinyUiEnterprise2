@@ -1,0 +1,52 @@
+#@pieChart(pieChartStyle="width:600px;margin:0 auto;")
+		<!---myTable5 start---->
+	   <table id='myTable5'>
+			<caption>会员地区分布</caption>
+			<thead>
+				<tr>
+					<th></th>
+					<th>河北</th>
+					<th>河南</th>
+					<th>湖北</th>
+					<th>湖南</th>
+					<th>山东</th>
+					<th>山西</th>
+
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th>1200</th>
+					<td>540</td>
+					<td>300</td>
+					<td>150</td>
+					<td>180</td>
+					<td>120</td>
+					<td>180</td>
+				</tr>
+			</tbody>
+		</table>
+		<!---myTable5 end---->
+		<!---myTable1 start---->
+	   <table id='myTable1'>
+			<caption>会员性别分布</caption>
+			<thead>
+				<tr>
+					<th></th>
+					<th>男</th>
+					<th>女</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th>1000</th>
+					<td>450</td>
+					<td>550</td>
+					</tr>
+			</tbody>
+		</table>
+		<!---myTable1 end---->
+	#end
+
+#pieChartInit("#myTable5" "PieChart" "No of players" "Month",600,350)
+#pieChartInit("#myTable1" "PieChart" "No of players" "Month",600,350)

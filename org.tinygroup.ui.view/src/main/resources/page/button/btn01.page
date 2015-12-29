@@ -1,0 +1,3 @@
+#@tButton("btn-info")信息#end
+#@aButton("btn-success")成功#end
+#@inputButton("btn-danger")警告#end

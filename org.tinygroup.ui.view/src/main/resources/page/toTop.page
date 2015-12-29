@@ -1,0 +1,5 @@
+<h2>1 返回顶部</h2>
+#@showInfo() <code>温馨提示：</code>无需添加任何代码，添加依赖即可生效。#end
+#showExample("/page/toTop/toTop.page")
+
+#@showPack()org.tinygroup.ui.totop#end

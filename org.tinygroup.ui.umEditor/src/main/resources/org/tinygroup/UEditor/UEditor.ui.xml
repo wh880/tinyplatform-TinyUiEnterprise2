@@ -1,0 +1,19 @@
+<ui-components>
+    <ui-component name="tiny.ui.umEditor" dependencies="tiny.ui.jquery">
+		<css-resource>
+			/org/tinygroup/UEditor/css.css
+		</css-resource>
+		<js-resource>
+		  /org/tinygroup/UEditor/umeditor.config.js,
+		  /org/tinygroup/UEditor/umeditor.js,
+		  /org/tinygroup/UEditor/lang/zh-cn/zh-cn.js,
+		  /org/tinygroup/UEditor/dialogs/link/link.js,
+		  /org/tinygroup/UEditor/dialogs/image/image.js,
+		  /org/tinygroup/UEditor/dialogs/video/video.js,
+		  /org/tinygroup/UEditor/dialogs/map/map.js,
+		  /org/tinygroup/UEditor/dialogs/formula/formula.js,
+		  /org/tinygroup/UEditor/dialogs/emotion/emotion.js
+		</js-resource>
+		<description>UEditor编辑器 (http://ueditor.baidu.com)</description>
+    </ui-component>
+</ui-components>

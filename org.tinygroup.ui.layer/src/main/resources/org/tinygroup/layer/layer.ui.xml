@@ -1,0 +1,12 @@
+<ui-components>
+    <ui-component name="tiny.ui.layer" dependencies="tiny.ui.jquery">
+		<js-resource>
+		  /org/tinygroup/layer/layer.min.js,
+		  /org/tinygroup/layer/extend/layer.ext.js
+		</js-resource>
+		<css-resource>
+		  /org/tinygroup/layer/skin/layer.css
+		</css-resource>
+		<description>layer弹出框 (http://layer.layui.com)</description>
+    </ui-component>
+</ui-components>

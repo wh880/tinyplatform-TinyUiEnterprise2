@@ -1,0 +1,12 @@
+<ui-components>
+    <ui-component name="tiny.ui.select2" dependencies="tiny.ui.base"><!-- ,containerPlus -->
+    <css-resource>
+		/org/tinygroup/select2/css/css.css,
+	</css-resource>
+	<js-resource>
+		/org/tinygroup/select2/js/select2.min.js,
+		/org/tinygroup/select2/js/select2_locale_zh-CN.js
+	</js-resource>
+	<description>SELECT拉下框 (github.com/select2)</description>
+    </ui-component>
+</ui-components>

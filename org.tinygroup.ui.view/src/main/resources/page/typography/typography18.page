@@ -1,0 +1,36 @@
+#@shadeStandard("4" "40%")
+<p>调用#@shadeStandard宏即可完成阴影布局</p>
+#end
+#@shadeLifted("4" "40%")
+<p>调用 #@shadeLifted宏即可完成阴影布局</p>
+#end
+#@shadePerspective("4" "40%")
+<p>调用#@shadePerspective宏即可完成阴影布局</p>
+#end
+#@shadeRaised("4" "40%")
+<p>调用#@shadeRaised宏即可完成阴影布局</p>
+#end
+#@shadeSidesVt1("4" "40%")
+<p>调用#@shadeStandard宏即可完成阴影布局</p>
+#end
+#@shadeSidesVt2("4" "40%")
+<p>调用#@shadeSidesVt2宏即可完成阴影布局</p>
+#end
+#@shadeSidesHz1("4" "40%")
+<p>调用#@shadeSidesHz1宏即可完成阴影布局</p>
+#end
+#@shadeSidesHz2("4" "40%")
+<p>调用#@shadeSidesHz2宏即可完成阴影布局</p>
+#end
+#@shadeRotated("4" "40%")
+<p>调用#@shadeRotated宏即可完成阴影布局</p>
+#end
+#@rotatedLifted("4" "40%")
+<p>调用#@rotatedLifted宏即可完成阴影布局</p>
+#end
+#@rotatedPerspective("4" "40%")
+<p>调用#@rotatedPerspective宏即可完成阴影布局</p>
+#end
+#@rotatedRaised("4" "40%")
+<p>调用#@rotatedRaised宏即可完成阴影布局</p>
+#end

@@ -1,0 +1,11 @@
+<ui-components>
+    <ui-component name="tiny.ui.webupload" dependencies="tiny.ui.base">
+        <css-resource>
+		  /org/tinygroup/webupload/lib/webuploader.css,
+	</css-resource>
+	<js-resource>
+		  /org/tinygroup/webupload/lib/webuploader.min.js
+	</js-resource>
+	<description>多文件上传 (http://fex.baidu.com/webuploader)</description>
+    </ui-component>
+</ui-components>

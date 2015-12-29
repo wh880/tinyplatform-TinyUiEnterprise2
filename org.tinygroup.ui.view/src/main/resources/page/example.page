@@ -1,0 +1,5 @@
+<h2>1 案例框</h2>
+#@showInfo() <code>温馨提示：</code>案例框内放自己的案例内容。#end
+#showExample("/page/example/example.page")
+
+#@showPack()org.tinygroup.ui.example#end

@@ -1,0 +1,37 @@
+#macro dateMultipleSelect(name mapInfo)
+#set(dmsid=fmt("dms%d",rand()))
+<div class="date-Multiple-Select">
+<div class="dms-showrap">
+<select name="${name}" id="${dmsid}-sel" class="form-control select2" multiple="multiple" #mapToHtml(mapInfo)></select></div>
+<span class="dms-selrap">
+<i class="fa fa-calendar"></i>
+<span id="${dmsid}" class="dms-dateinput"/></span>
+</span>
+</div>
+<script type="text/javascript">
+	$(function(){
+		var $select=$("#${dmsid}-sel");
+		$select.select2();
+		$("#${dmsid}").on("click",function(){
+			var that=this;
+			WdatePicker({
+				startDate:'%y-%M-01',dateFmt:"yyyy-MM-dd",
+				onpicked:function(){
+					setDate($(that).html())
+				}
+			})
+		});
+		function setDate(pickdate){
+			$select.append('<option value="'+pickdate+'" >'+pickdate+'</option>');
+			var selv=new Array();
+			selv=$select.select2("val");
+			selv.push(pickdate);
+			$select.val(selv).trigger("change");
+		}
+		#bodyContent
+	});
+</script>
+#end
+#macro setDateMultiple(date)
+	setDate("${date}");
+#end

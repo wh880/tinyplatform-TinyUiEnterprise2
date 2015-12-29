@@ -1,0 +1,91 @@
+<style>
+    .main_image,.main_image li span{height:420px;}
+    div.flicking_con a {
+        background: url("/web/img/btn_main_img.png") no-repeat 0px 0px; margin: 0px; padding: 0px; width: 21px; height: 21px; text-indent: -1000px; float: left; display: block;
+    }
+    .main_image li .img_1 {
+        background: url("/web/img/img_main_1.jpg") no-repeat top;
+    }
+    .main_image li .img_2 {
+        background: url("/web/img/img_main_1.jpg") no-repeat top;
+    }
+    .main_image li .img_3 {
+        background: url("/web/img/img_main_1.jpg") no-repeat top;
+    }
+    .main_image li .img_4 {
+        background: url("/web/img/img_main_1.jpg") no-repeat top;
+    }
+    .main_image li .img_5 {
+        background: url("/web/img/img_main_1.jpg") no-repeat top;
+    }
+    #btn_prev {
+        background: url("/web/img/hover_left.png") no-repeat left top; left:12px;
+    }
+    #btn_next {
+        background: url("/web/img/hover_right.png") no-repeat right top; right:12px;
+    }
+</style>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".main_visual").hover(function(){
+            $("#btn_prev,#btn_next").fadeIn()
+        },function(){
+            $("#btn_prev,#btn_next").fadeOut()
+        });
+			$dragBln = false;
+        $(".main_image").touchSlider({
+            flexible : true,
+            speed : 200,
+            btn_prev : $("#btn_prev"),
+            btn_next : $("#btn_next"),
+            paging : $(".flicking_con a"),
+            counter : function (e) {
+                $(".flicking_con a").removeClass("on").eq(e.current-1).addClass("on");
+            }
+        });
+        $(".main_image").bind("mousedown", function() {
+			$dragBln = false;
+        })
+        $(".main_image").bind("dragstart", function() {
+			$dragBln = true;
+        })
+        $(".main_image a").click(function() {
+            if($dragBln) {
+                return false;
+            }
+        })
+        timer = setInterval(function() { $("#btn_next").click();}, 5000);
+        $(".main_visual").hover(function() {
+            clearInterval(timer);
+        }, function() {
+            timer = setInterval(function() { $("#btn_next").click();}, 5000);
+        })
+        $(".main_image").bind("touchstart", function() {
+            clearInterval(timer);
+        }).bind("touchend", function() {
+            timer = setInterval(function() { $("#btn_next").click();}, 5000);
+        })
+    });
+</script>
+<div class="main_visual">
+    <div class="main_image">
+        <ul>
+            <li><span class="img_1"></span></li>
+            <li><span class="img_2"></span></li>
+            <li><span class="img_3"></span></li>
+            <li><span class="img_4"></span></li>
+            <li><span class="img_5"></span></li>
+        </ul>
+        <a id="btn_prev" href="javascript:;"></a>
+        <a id="btn_next" href="javascript:;"></a>
+    </div>
+    <div class="flicking_con">
+        <div class="flicking_inner">
+            <a href="javascript:;">1</a>
+            <a href="javascript:;">2</a>
+            <a href="javascript:;">3</a>
+            <a href="javascript:;">4</a>
+            <a href="javascript:;">5</a>
+        </div>
+    </div>
+</div>

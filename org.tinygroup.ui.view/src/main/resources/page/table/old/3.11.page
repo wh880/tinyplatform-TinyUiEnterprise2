@@ -1,0 +1,13 @@
+##import("/org/tinygroup/mmGrid/components/mmGrid.component")
+#@mmButtonDiv("margin-bottom: 5px;" "toolbarInfo")
+    #@mmButton("btnAdd")添加到第三行#end
+    #@mmButton("btnAddArr")添加列表到第二行#end
+    #@mmButton("btnRemove")删除第二行#end
+    #@mmButton("btnRemoveSelected")删除选择的行#end
+    #@mmButton("btnRemoveAll")删除全部行#end
+    #@mmButton("btnUpdate")更新第二行#end
+    #@mmSearchInput("查询条件:股票代码" "secucode" "" "margin-left:20px;")#end
+    #@mmSearchButton("btnSearch")搜索#end
+#end
+#mmtable("mmg")
+#@mmPageDiv("pg" "text-align: right;")#end

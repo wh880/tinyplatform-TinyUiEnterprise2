@@ -1,0 +1,7 @@
+#macro voteChart(dataPercent titleColor barColor voteChartId voteChartClass)
+	<div#if(voteChartId) id="${voteChartId}"#end class="skillbar clearfix ${voteChartClass}" data-percent="${dataPercent}">
+		<div class="skillbar-title" style="background:${titleColor};"><span>#bodyContent</span></div>
+		<div class="skillbar-bar" style="background:${barColor};"></div>
+		<div class="skill-bar-percent">${dataPercent}</div>
+	</div>
+#end

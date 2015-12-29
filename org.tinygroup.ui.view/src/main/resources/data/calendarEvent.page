@@ -1,0 +1,67 @@
+#@tinyForm("thisform" call("link","/data/Validform_post.html") "post" {"class":""})
+	#@elementItem()
+		#@colLabel()是否删除：#end
+		#@formControlDiv("col-8")
+			#Tswitcher("isvip" ["不是","是"] "不是")##第二个为选中与非选中时的值为一数组 第三参数为数据库返回时的数据
+		#end
+	#end
+	#@elementItem()
+		#@colLabel()名称：#end
+		#@formControlDiv("col-8")
+			#tinyInput("text" "email" ""{"placeholder":"名称","datatype":"*","id":"email"})
+		#end
+		#@validateDiv("col-2")#end
+	#end
+
+	#@elementItem()
+		#@colLabel()下拉：#end
+		#@formControlDiv("col-8")
+			#@tinySelect("lang" "zh" {"class":"input-text select2"})
+				#@tinyOptionItem("zh")中国#end
+				#@tinyOptionItem("en")英国#end
+				#@tinyOptionItem("ta")泰国#end
+			#end
+		#end
+		#@validateDiv("col-2")#end
+	#end
+
+
+	#@elementItem()
+		#@colLabel()备注：#end
+		#@formControlDiv("col-8")
+			#@Teditor("contentId" "contentName" {"initialFrameHeight":"700"})最后一个MAP参数为Ueditor的初始化参数 会自动带入 #end
+		#end
+		#@validateDiv("col-2")#end
+	#end
+
+#end
+
+<script type="text/javascript">
+
+$(function(){
+  $("form[name=thisform").Validform({
+	tiptype:2,
+	beforeSubmit:function(curform){
+		$(curform).ajaxSubmit({
+			dataType:"json",
+			success:function(data){
+				if(data.status=="y"){
+					layer.msg(data.info,2,1,function(){
+						try{
+							$(curform).closest(".modal").trigger("close");//当弹出框时触发弹出框关闭
+							$("#${fcid}").trigger("refresh"); ////日历更新
+						}catch(e){console.log(e)}
+					});
+				}else{
+					layer.msg(data.info);
+				}
+			},
+			error:function(){
+				layer.msg(data.info);
+			}
+		});
+		return false;
+	}
+ });
+});
+</script>

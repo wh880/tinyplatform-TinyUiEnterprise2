@@ -1,0 +1,187 @@
+<style>
+.container {
+    margin: auto;
+}
+
+.easyChart {
+    float: left;
+    margin: 10px;
+}
+
+.percentage,
+.easyLabel {
+    text-align: center;
+    color: #333;
+    font-weight: 100;
+    font-size: 1.2em;
+    margin-bottom: 0.3em;
+}
+
+.credits {
+    padding-top: 0.5em;
+    clear: both;
+    color: #999;
+}
+
+.credits a {
+    color:#333;
+}
+
+.easyDark {
+    background:#2c3e50;
+}
+
+.easyDark .percentage-light,
+.easyDark .easyLabel {
+    text-align: center;
+    color: #999;
+    font-weight: 100;
+    font-size: 1.2em;
+    margin-bottom: 0.3em;
+}
+
+
+.updateBtn {
+  -webkit-box-shadow: inset 0 0 1px #000, inset 0 1px 0 1px rgba(255,255,255,0.2), 0 1px 1px -1px rgba(0, 0, 0, .5);
+  -moz-box-shadow: inset 0 0 1px #000, inset 0 1px 0 1px rgba(255,255,255,0.2), 0 1px 1px -1px rgba(0, 0, 0, .5);
+  box-shadow: inset 0 0 1px #000, inset 0 1px 0 1px rgba(255,255,255,0.2), 0 1px 1px -1px rgba(0, 0, 0, .5);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  padding: 6px 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  display: block;
+  margin: auto;
+  max-width: 200px;
+  text-align: center;
+  background-color: #5c5c5c;
+  background-image: -moz-linear-gradient(top, #666666, #4d4d4d);
+  background-image: -ms-linear-gradient(top, #666666, #4d4d4d);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#666666), to(#4d4d4d));
+  background-image: -webkit-linear-gradient(top, #666666, #4d4d4d);
+  background-image: -o-linear-gradient(top, #666666, #4d4d4d);
+  background-image: linear-gradient(top, #666666, #4d4d4d);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#666666', endColorstr='#4d4d4d', GradientType=0);
+  color: #ffffff;
+  text-shadow: 0 1px 1px #333333;
+}
+.updateBtn:hover {
+  color: #ffffff;
+  text-decoration: none;
+  background-color: #616161;
+  background-image: -moz-linear-gradient(top, #6b6b6b, #525252);
+  background-image: -ms-linear-gradient(top, #6b6b6b, #525252);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#6b6b6b), to(#525252));
+  background-image: -webkit-linear-gradient(top, #6b6b6b, #525252);
+  background-image: -o-linear-gradient(top, #6b6b6b, #525252);
+  background-image: linear-gradient(top, #6b6b6b, #525252);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#6b6b6b', endColorstr='#525252', GradientType=0);
+}
+.updateBtn:active {
+  background-color: #575757;
+  background-image: -moz-linear-gradient(top, #616161, #474747);
+  background-image: -ms-linear-gradient(top, #616161, #474747);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#616161), to(#474747));
+  background-image: -webkit-linear-gradient(top, #616161, #474747);
+  background-image: -o-linear-gradient(top, #616161, #474747);
+  background-image: linear-gradient(top, #616161, #474747);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#616161', endColorstr='#474747', GradientType=0);
+  -webkit-transform: translate(0, 1px);
+  -moz-transform: translate(0, 1px);
+  -ms-transform: translate(0, 1px);
+  -o-transform: translate(0, 1px);
+  transform: translate(0, 1px);
+}
+.updateBtn:disabled {
+  background-color: #dddddd;
+  background-image: -moz-linear-gradient(top, #e7e7e7, #cdcdcd);
+  background-image: -ms-linear-gradient(top, #e7e7e7, #cdcdcd);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#e7e7e7), to(#cdcdcd));
+  background-image: -webkit-linear-gradient(top, #e7e7e7, #cdcdcd);
+  background-image: -o-linear-gradient(top, #e7e7e7, #cdcdcd);
+  background-image: linear-gradient(top, #e7e7e7, #cdcdcd);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e7e7e7', endColorstr='#cdcdcd', GradientType=0);
+  color: #939393;
+  text-shadow: 0 1px 1px #fff;
+}
+.boxBtn{margin-top:12px;}
+.boxBtn a:focus{color:#fff}
+</style>
+<script type="text/javascript">
+	var initPieChart = function() {
+		$('.percentage').easyPieChart({
+			animate: 1000
+		});
+		$('.percentage-light').easyPieChart({
+			barColor: function(percent) {
+				percent /= 100;
+				return "rgb(" + Math.round(255 * (1-percent)) + ", " + Math.round(255 * percent) + ", 0)";
+			},
+			trackColor: '#666',
+			scaleColor: false,
+			lineCap: 'butt',
+			lineWidth: 15,
+			animate: 1000
+		});
+
+		$('.updateEasyPieChart').on('click', function(e) {
+		  e.preventDefault();
+		  $('.percentage, .percentage-light').each(function() {
+			var newValue = Math.round(100*Math.random());
+			$(this).data('easyPieChart').update(newValue);
+			$('span', this).text(newValue);
+		  });
+		});
+	};
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+   initPieChart();
+});
+</script>
+<div class="container">
+		<div class="easyChart">
+			<div class="percentage" data-percent="55"><span>55</span>%</div>
+			<div class="easyLabel">新的访问</div>
+		</div>
+		<div class="easyChart">
+			<div class="percentage" data-percent="46"><span>46</span>%</div>
+			<div class="easyLabel">跳出率</div>
+		</div>
+		<div class="easyChart">
+			<div class="percentage" data-percent="92"><span>92</span>%</div>
+			<div class="easyLabel">服务器负载</div>
+		</div>
+		<div class="easyChart">
+			<div class="percentage" data-percent="84"><span>752</span>MB</div>
+			<div class="easyLabel">使用的RAM</div>
+		</div>
+		<div style="clear:both;"></div>
+		<div class="easyDark">
+			<div class="easyChart">
+				<div class="percentage-light" data-percent="55"><span>55</span>%</div>
+				<div class="easyLabel">新的访问</div>
+			</div>
+			<div class="easyChart">
+				<div class="percentage-light" data-percent="46"><span>46</span>%</div>
+				<div class="easyLabel">跳出率</div>
+			</div>
+			<div class="easyChart">
+				<div class="percentage-light" data-percent="92"><span>92</span>%</div>
+				<div class="easyLabel">服务器负载</div>
+			</div>
+			<div class="easyChart">
+				<div class="percentage-light" data-percent="84"><span>752</span>MB</div>
+				<div class="easyLabel">使用的RAM</div>
+			</div>
+			<div style="clear:both;"></div>
+		</div>
+
+		<div class="boxBtn"><a href="#" class="updateBtn updateEasyPieChart">更新饼图</a></div>
+
+	</div>

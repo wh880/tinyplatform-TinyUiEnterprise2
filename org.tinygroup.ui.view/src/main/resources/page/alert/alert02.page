@@ -1,0 +1,4 @@
+#@alertItem("alert-warning alert-dismissible")
+    #@alertBtn()&times;#end
+    #faIcon("warning")&nbsp;<strong>警告!</strong> 更好的检查自己,你不是太好了。
+#end

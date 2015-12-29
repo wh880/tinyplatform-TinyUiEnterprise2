@@ -1,0 +1,11 @@
+#*
+* exampleView宏
+*
+* @param exampleClass 可带入额外的样式类 在使用中基本不用
+*#
+
+#macro exampleView(exampleClass)
+	<div class="codeView bs-docs-example ${exampleClass}">
+		#bodyContent
+	</div>
+#end
