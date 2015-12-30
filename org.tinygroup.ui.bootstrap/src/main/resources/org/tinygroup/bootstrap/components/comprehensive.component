@@ -53,18 +53,3 @@
 </div>
 #end
 
-
-#*
-* processBars 条纹效果进度条
-*
-* * @param processValue  进度数
-* * @param processClass  改变颜色值
-* * @param rapClass  父元素class
-*#
-#macro processBars(processValue processClass rapClass)
-<div class="progress ${rapClass}">
-    <div class="progress-bar ${processClass} progress-bar-striped" role="progressbar" aria-valuenow="${processValue}" aria-valuemin="0" aria-valuemax="100" style="min-width:2em;width: ${processValue}%">
-        ${processValue}% #bodyContent
-    </div>
-</div>
-#end
