@@ -1,0 +1,38 @@
+##tab头部项
+#macro tabHeadCol(colClass)
+<span#if(colClass) class="${colClass}"#end>
+    #bodyContent
+</span>
+#end
+
+#macro tabBodyCol(bodyColClass)
+<div class="tabCon bk_gray ${bodyColClass}">
+    #bodyContent
+</div>
+#end
+
+* tabMove 选项卡鼠标滑动切换
+*
+* @param tableType 定义ID
+*#
+#macro Ttab(Ttab)#set(tabid=Ttab?:fmt("tid%d",rand()))
+<div id="${tabid}">
+    #bodyContent
+</div>
+<script type="text/javascript">
+    $.Huitab("#${tabid}>.tabBar>span","#${tabid}>.tabCon","Current","click","0");
+</script>
+#end
+
+* tabMove 选项卡鼠标滑动切换
+*
+* @param tabID 定义ID
+*#
+#macro tabMove(tabID)#set(tabid=tabID?:fmt("tid%d",rand()))
+<div id="${tabid}">
+    #bodyContent
+</div>
+<script type="text/javascript">
+    $.Huitab("#${tabid}>.tabBar>span","#${tabid}>.tabCon","Current","mousemove","1");
+</script>
+#end

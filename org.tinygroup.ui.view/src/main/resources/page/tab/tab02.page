@@ -1,15 +1,10 @@
-<div id="tid1703788171">
-    <div class="tabBar cl ">
-        <span>选项卡一</span>
-        <span>选项卡二</span>
-        <span>选项卡三</span>
-    </div>
-    <div class="tabCon bk_gray pd-10">内容一</div>
-    <div class="tabCon bk_gray pd-10">内容二
-    </div>
-    <div class="tabCon bk_gray pd-10">内容三
-    </div>
+#@tabMove("tabMove")
+<div class="tabBar cl">
+    #@tabHeadCol()选项卡一#end
+    #@tabHeadCol()选项卡二#end
+    #@tabHeadCol()选项卡三#end
 </div>
-<script type="text/javascript">
-    $.Huitab("#tid1703788171>.tabBar>span","#tid1703788171>.tabCon","Current","mousemove","1");
-</script>
+    #@tabBodyCol("pd-10")内容一#end
+    #@tabBodyCol("pd-10")内容二#end
+    #@tabBodyCol("pd-10")内容三#end
+#end

@@ -193,7 +193,7 @@
 					#TnavItem("6.1" "图片" "/page/picture.page")
 					#TnavItem("6.2" "缩略图" "/page/thumbnails.page")
 					#TnavItem("6.3" "媒体插入" "/page/media.page")
-					#TnavItem("6.4" "广告" "/page/ad.page")
+					#*#TnavItem("6.4" "广告" "/page/ad.page")*#
 					#TnavItem("6.5" "UED提示" "/page/uedTips.page")
 				#end
 				#@TnavItems("7" "交互" {"ico":"fa-random"})
