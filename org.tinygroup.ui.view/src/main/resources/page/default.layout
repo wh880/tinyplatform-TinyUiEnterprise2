@@ -35,13 +35,13 @@
 			#end
 			#if(component.jsCodelet)
 				<script>
-$!{component.jsCodelet}
-</script>
-			#end
-			#if(component.cssCodelet)
-				<style>
-$!{component.cssCodelet}
-</style>
+				$!{component.jsCodelet}
+				</script>
+							#end
+							#if(component.cssCodelet)
+								<style>
+				$!{component.cssCodelet}
+				</style>
 			#end
 			#if(component.compatibilityResources)
 				#set(resources=component.compatibilityResources.getCompatibilityResources())
