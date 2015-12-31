@@ -1,0 +1,100 @@
+#@mainPageContent("mainContent")				
+#@boxTitle("更多演示")
+	视图控制(列表、网格和大视图)
+#end
+#@viewBox("views-box")
+	#@iosJplistButton()操作列表#end
+		#@topPanel()					
+			
+			#@resetButton()重置#end
+			#@jplistDropMenu("paging")
+					#@jplistDropdownItem("5")每页5#end
+					#@jplistDropdownItem("10" "10")每页10#end
+					#@jplistDropdownItem("15")每页15#end
+					#@jplistDropdownItem("all")全部#end
+			#end
+			#@jplistDropMenu("sort")
+					#@jplistSortItem("default")排序#end	
+					#@jplistSortItem(".title" "asc" "text")标题 A-Z#end
+					#@jplistSortItem(".title" "desc" "text")标题 Z-A#end
+					#@jplistSortItem(".desc" "asc" "text")描述 A-Z#end
+					#@jplistSortItem(".desc" "desc" "text")描述 Z-A#end
+					#@jplistSortItem(".like" "asc" "number" "true")人气升序#end
+					#@jplistSortItem(".like" "desc" "number")人气降序#end
+					#@jplistSortItem(".date" "asc" "datetime")日期升序#end
+					#@jplistSortItem(".date" "desc" "datetime")日期降序#end
+			#end
+			#textFilterBox("根据标题过滤" ".title")
+			#textFilterBox("描述过滤" ".desc")
+			#@jplistViewMenu()
+				#viewButton("jplist-list-view")
+				#viewButton("jplist-grid-view")
+				#viewButton("jplist-thumbs-view")
+			#end
+			#@pagingInfo()第{current}页  共{pages}页#end
+			#paginationBar()
+		#end
+		
+		#@imgBoxMenu()
+			#@imgBoxItem("/img/thumbs-450/arch-2.jpg")#@imgBoxTxt("2015-06-06" "Tiny体系" "25 人浏览")通过Tiny框架，可以做到业务单元的热部署，使得功能的增加与减少不再需要重启动容器，同时也解决了Tiny之间的依赖关系。#end#end
+			#@imgBoxItem("/img/thumbs-450/autumn-1.jpg")#@imgBoxTxt("2015-06-05" "文件遍历体系" "12 人浏览")通过构建文件遍历框架，使得对整个环境中的文件系统的遍历，不管实际有多少种文件需要遍历处理，都可以通过框架一次扫描而就，大大提升性能，同时避免代码重复。#end#end
+			#@imgBoxItem("/img/thumbs-450/arch-1.jpg")#@imgBoxTxt("2015-06-04" "UI管理体系" "5 人浏览")在Web应用中，CSS,JS的顺序、依赖相关的问题是非常复杂的，TinyUI引擎，可以方便的解决CSS,JS 等的依赖、顺序、合并、打包等相关问题。#end#end							
+			#@imgBoxItem("/img/thumbs-450/book-1.jpg")#@imgBoxTxt("2015-06-03" "应用配置体系" "100人喜欢")Tiny框架把应用的配置即可以合并为一个文件，也可以分解成N个文件，不同的模块又可以独立处理自己的配置相关逻辑，同时当应用配置变化的时候又可以通过订阅发布机制让配置及时生效。#end#end						
+			#@imgBoxItem("/img/thumbs-450/business-1.jpg")#@imgBoxTxt("2015-06-02" "元数据体系")通过元数据管理体系，可以快速构建跨数据平台的应用，同时也可以让数据应用写升级SQL脚本的日子一去不复返。 #end#end
+			#@imgBoxItem("/img/thumbs-450/calendar-1.jpg")#@imgBoxTxt("2015-06-02" "应用启动体系")Tiny框架把一个应用的启动，分成若干个过程，这样就可以把复杂的问题简单体。#end#end
+			#@imgBoxItem("/img/thumbs-450/car-1.jpg")#@imgBoxTxt("2015-06-01" "分布式计算框架")提供了基于职介所、工头、工人、工作模式的多机协作分布式计算功能。支持任务分解、合并，支持工作序列化，永不丢失等等诸多特性。 #end#end
+			#@imgBoxItem("/img/thumbs-450/christmas-1.jpg")#@imgBoxTxt("2015-05-31" " DBRouter")基于JDBC3和JBC4规范的数据库集群及分库分表方案，提供数据库集群、分库、分表等方面的强力支持，支持各种数据库。在限定之外的SQL语句都可以支持。对上层应用影响最少的数据库集群及分库分表方案。#end#end
+			#@imgBoxItem("/img/thumbs-450/christmas-2.jpg")#@imgBoxTxt("2015-05-25" "Web层框加")这一次提供的内容太多，不一定说全。支持web.xml不用修改方案，这样大大有利于模块化及后期的维护。提供了页面流支持。提供了rewrite支持。提供了文件上传支持。提供了安全过滤。提供了No session支持。提供了Bigpipe支持。提供了压缩输出支持。提供了对象组装支持。#end#end
+			#@imgBoxItem("/img/thumbs-450/christmas-3.jpg")#@imgBoxTxt("2015-05-22" "校验框架")提供前后台校验规则一次性编写，前后台同时生效。#end#end
+			#@imgBoxItem("/img/thumbs-450/city-1.jpg")#@imgBoxTxt("2015-05-20" "流程引擎")支持组件任意自行扩展，支持面向对象特性，如：流程继承、节点覆盖重写等，同时提供灵活的异常捕获机制，同时还支持流程重入，也就是说流程的执行不一定非从流程的第一个节点起执行。正因为流程可重入的特性，基于其提供了页面流的支持，工作流引擎理论上也是可以的，不过还没有开始。 #end#end
+			#@imgBoxItem("/img/thumbs-450/city-2.jpg")#@imgBoxTxt("2015-05-18" "网络爬虫支持")资源获取集成了HttpClient，Html解析采用内嵌html解析方案，上手简单，可以避免多次抓取，死循环等等，在普通 应用场景应用已经足够了。 #end#end
+			#@imgBoxItem("/img/thumbs-450/coffee-grass.jpg")#@imgBoxTxt("2015-05-16" "Xml及Html解析")内嵌高性能Xml及Html解析，尤其是在遍历方面性能比一般解析器高太多，非常适合一次解析之后需要进行大量遍历的场景。同时，对于中文标签及属性有良好支持，有非常强的容错性，即使Html不符合规范，大多数据情况也可以正确解析。最差的情况也会给出一个不正确的Dom，而不是抛错退出。#end#end
+			#@imgBoxItem("/img/thumbs-450/coins.jpg")#@imgBoxTxt("2015-05-15" "应用安装框架")应用安装框架用于解决软件升级过程中的数据库表结构调整，初始化数据插入等等处理，不论经历了多少个版本变迁，都可以使得应用无工作量自动升级完毕。有过大型工程实践经验的人，会知道这个功能可以带来多少便捷及节点多少开发及维护工作量。 #end#end
+			#@imgBoxItem("/img/thumbs-450/crayons.jpg")#@imgBoxTxt("2015-05-12" "数据库访问框架")Tiny框架本身不拒绝任何ORM方案，但是内嵌也增加了一个小的跨数据库数据访问方案，不用写POJO，不用写DAO，直接就可以完成各种数据库处理。并且可以与Hibernate，iBatis等框架进行集成。 #end#end
+			#@imgBoxItem("/img/thumbs-450/cupcakes.jpg")#@imgBoxTxt("2015-05-10" " 元数据加载框架")支持定义各种元数据并加载之，元数据主要包含类型定义(屏蔽不同数据库及编程语言之差异)，业务类型定义（使得业务类型有含义），标准字段定义（业务中只能使用标准字段）等等，通过这些元数据的定义，可以方便的进行跨数据库，跨编程语言运行(只适合流程编排式开发)。 #end#end
+			#@imgBoxItem("/img/thumbs-450/eggs-nest.jpg")#@imgBoxTxt("2015-05-08" "基础组件")主要包含线程组，对象池，优先队列等实现。#end#end
+			#@imgBoxItem("/img/thumbs-450/flower-1.jpg")#@imgBoxTxt("2015-05-06" "VFS虚拟文件系统")用于统一对各种异构文件来源的文件进行统一化操作的封装，支持本地文件，URL文件，FTP文件，ZIP，JAR文件等的统一化访问，当然也可以通过扩展支持更多的文件来源。 #end#end
+			#@imgBoxItem("/img/thumbs-450/flower-2.jpg")#@imgBoxTxt("2015-04-06" "文档生成框架")用于生成各种类型文本内容，比如:xml，比如：源代码，比如:word，pdf，excel等等。当然，它只是个框架，里面已经内嵌了一些组件，但是真正要用得好，还是需要进行组件扩展的。#end#end
+			#@imgBoxItem("/img/thumbs-450/flower-3.jpg")#@imgBoxTxt("2015-03-06" "上下文支持 Plant")提供了强大的上下文支持，支持上下文嵌套。正有了上下文的支持，才使得变量的复制仅在跨节点时才会发生。节省了系统开销，内存占用，简化了框架实现难度。 #end#end
+			#@imgBoxItem("/img/thumbs-450/fountain.jpg")#@imgBoxTxt("2015-02-06" "字典框架")字典框架用于通过各种加载方式加载系统中用到的字典项并对外提供字典服务。 #end#end
+			#@imgBoxItem("/img/thumbs-450/leaves.jpg")#@imgBoxTxt("2015-01-06" "JSP运行引擎")JSP运行引擎是由Jasper引擎改进而来，主要的改进目的是解决模块化的问题，也就是说把JSP放入Jar包的支持。 #end#end
+			#@imgBoxItem("/img/thumbs-450/lichterman.jpg")#@imgBoxTxt("2014-01-06" "UI引擎")UI引擎用于查找当前运行环境中存在的UI组件，并加载之，并提供JS合并及CSS合并等相关处理。同时提供了强大的基于布局和页面的展现支持。同时，高度的组件化，使得复用别人的组件和自己开发组件一样方便。同时还提供了JS，CSS加载时序的处理，使得开发人员不必再关心这些引入顺序问题。#end#end
+			#@imgBoxItem("/img/thumbs-450/pinecone.jpg")#@imgBoxTxt("2014-02-06" "缓冲框架")通过查找是否存在缓冲的实现方案，如果有，且加载并启动之。#end#end
+			#@imgBoxItem("/img/thumbs-450/river-1.jpg")#@imgBoxTxt("2014-03-06" "服务加载框架")服务加载框架用于把在本地运行环境中的服务加载起来并在通用事件处理框架中进行注册。#end#end
+			#@imgBoxItem("/img/thumbs-450/river-2.jpg")#@imgBoxTxt("2014-04-06" "通用事件处理框架")通用事件处理插件用于对外提供统一的基于服务的访问方式，而不用关心服务的真正生产者在哪里，所以也就无所谓本地服务和远程服务。 #end#end
+			#@imgBoxItem("/img/thumbs-450/sunset-1.jpg")#@imgBoxTxt("2014-05-06" "插件框架")插件框架主要解决启动及停止，还有要解决启动及停止时序。第一版的插件框架是支持热插拔的，但是由于要考虑的问题及多，投入产出比太不经济，再一个由于Tiny框架是SOA架构模式的，因此可以通过集群当中不同的机器进行分别维护来解决热插拔的问题，因此现在改成非热插拔的方式了。#end#end
+			#@imgBoxItem("/img/thumbs-450/tree.jpg")#@imgBoxTxt("2014-06-06" "文件扫描")Tiny框架采用了扔进去不用管的的组合模式，实际上是因为有文件扫描器进行扫描、处理，才得以实现的。可以说文件扫描是模块化的基石。#end#end
+			#@imgBoxItem("/img/thumbs-450/winter-1.jpg")#@imgBoxTxt("2014-07-06" "应用启动")不管是普通控制台应用还是Web应用，都有一个启动过程。应用启动用于加载配置，分发配置，启动文件扫描，启动插件框架，等等处理。这个一般使用默认实现即可，当然，如果要深入调整启动方式，也可以自行实现。#end#end
+			#@imgBoxItem("/img/thumbs-450/winter-2.jpg")#@imgBoxTxt("2014-08-06" "TinyAdmin的展现")现在使用起来就方便多了，不必引入js和css及图像文件，字体文件等等，直接进行Pom依赖即可，结合到Tiny框架中，还提供了更容易使用的宏，提供了样式文件合并压缩，JS文件压缩合并，做前端的小朋友们的好日子来了。#end#end
+			#@imgBoxItem("/img/thumbs-450/winter-sun.jpg")#@imgBoxTxt("2014-09-06" "Tiny框架")用于提供系统配置加载与分发，同时提供默认配置及应用级配置两套配置方案，并以应用级配置方案为主，也就是说应用级的配置参数可以覆盖默认配置。这样做有个好处，就是如果不配置应用级配置，那么默认配置也可以上你玩得很好...#end#end
+			#@imgBoxItem("/img/thumbs-450/woodstump.jpg")#@imgBoxTxt("2014-10-06" "如何...")葡萄牙债务危机后开放50万欧元购房移民（又称“黄金居留权”），到今年4月共揽金14.4亿欧元，获得签证的2378名外籍人士中，有1909人来自中国。为了吸引更多的中国人来买欧盟户口...#end#end
+		#end	
+		#@noresultTip()没有找到结果！#end
+		#@iosJplistButton()操作列表#end
+		
+		<!-- panel -->
+		#@bottomPanel()						
+									
+		#@jplistDropMenu("paging" "true")
+			#@jplistDropdownItem("5")每页5#end
+			#@jplistDropdownItem("10" "10")每页10#end
+			#@jplistDropdownItem("15")每页15#end
+			#@jplistDropdownItem("all")全部 #end
+		#end
+		#@jplistDropMenu("sort" "true")
+			#@jplistSortItem("default")排序方式#end
+			#@jplistSortItem(".title" "asc" "text")标题 A-Z#end
+			#@jplistSortItem(".title" "desc" "text")标题 Z-A#end
+			#@jplistSortItem(".desc" "asc" "text")描述 A-Z#end
+			#@jplistSortItem(".desc" "desc" "text")描述 Z-A#end
+			#@jplistSortItem(".like" "asc" "number" "true")人气升序#end
+			#@jplistSortItem(".like" "desc" "number")人气降序#end
+			#@jplistSortItem(".date" "asc" "datetime")日期升序#end
+			#@jplistSortItem(".date" "desc" "datetime")日期降序#end
+		#end
+			#@pagingInfo(){start} - {end} 共 {all}#end
+			#paginationBar()			
+		#end
+	#end
+#end
+#viewBoxInit("#views-box")

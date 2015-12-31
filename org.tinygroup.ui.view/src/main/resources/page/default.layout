@@ -245,7 +245,7 @@
 				#@TnavItems("10" "其它" {"ico":"fa-files-o"})
 					#TnavItem("10.1" "错误404" "/page/error404.page")
 					#TnavItem("10.2" "错误500" "/page/error500.page")
-					#TnavItem("10.3" "登录注册" "/page/loginRegistered.page")
+					#*#TnavItem("10.3" "登录注册" "/page/loginRegistered.page")*#
 					#TnavItem("10.4" "屏幕内图片加载" "/page/loadscrollingpic.page")
 					#TnavItem("10.9" "视图控制" "/page/viewsControl.page")
 					#TnavItem("10.10" "图标控制" "/page/iconTab.page")

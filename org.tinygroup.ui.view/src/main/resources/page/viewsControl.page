@@ -1,0 +1,4 @@
+<h2>1 视图控制</h2>
+#showExample("/page/viewsControl/viewsControl.page")
+
+#@showPack()org.tinygroup.ui.viewscontrol#end
