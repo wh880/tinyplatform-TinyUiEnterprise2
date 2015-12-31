@@ -1,0 +1,71 @@
+###import("/org/tinygroup/error404/components/error404.component")
+#*@error404Box()
+        #error404Tips(" Error 404 " "页面 <u>未</u> 找到" "您要求的网页无法找到，请联系您的网络管理员或请再试一次。在您的浏览器中，点击<b>回退</b> 按钮，退回到之前的页面。")
+        #@errorFontMd()
+            ... 没起作用？那么请尝试以下搜索功能?
+        #end
+        #br()
+        #errorSearch(searchboxId="search-error" searchPlaceHolder="请重新尝试一次")
+        #@errorlinkMenu()
+            #@errorlinkItem("javascript:void(0);")首页#end
+            #@errorlinkItem("javascript:void(0);")图库#end
+            #@errorlinkItem("javascript:void(0);")日程表#end
+            #@errorlinkItem("javascript:void(0);")统计#end
+            #@errorlinkItem("javascript:void(0);")我的主页#end
+        #end
+#end
+*#
+<div class="row padding-10">
+	<div class="text-center error-box">
+		<h1 class="error-text-2 bounceInDown animated"> Error 404 <span class="particle particle--c"></span><span class="particle particle--a"></span><span class="particle particle--b"></span></h1>
+		<h2 class="font-xl"><strong><i class="fa fa-fw fa-warning fa-lg text-warning"></i> 页面 <u>未</u> 找到</strong></h2>
+		<br />
+		<p class="lead">
+			您要求的网页无法找到，请联系您的网络管理员或请再试一次。在您的浏览器中，点击 <b>回退</b> 按钮，退回到之前的页面。
+		</p>
+		<p class="font-md">
+			<b>... 没起作用？那么请尝试以下搜索功能?</b>
+		</p>
+		<br>
+		<div class="error-search well well-lg padding-10">
+			<div class="input-group">
+				<input class="form-control input-lg" type="text" placeholder="请重新尝试一次" id="search-error">
+				<span class="input-group-addon"><i class="fa fa-fw fa-lg fa-search"></i></span>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-12">
+				<ul class="list-inline">
+					<li>
+						&nbsp;<a href="javascript:void(0);">首页</a>&nbsp;
+					</li>
+					<li>
+						.
+					</li>
+					<li>
+						&nbsp;<a href="javascript:void(0);">图库</a>&nbsp;
+					</li>
+					<li>
+						.
+					</li>
+					<li>
+						&nbsp;<a href="javascript:void(0);">日程表</a>&nbsp;
+					</li>
+					<li>
+						.
+					</li>
+					<li>
+						&nbsp;<a href="javascript:void(0);">统计</a>&nbsp;
+					</li>
+					<li>
+						.
+					</li>
+					<li>
+						&nbsp;<a href="javascript:void(0);">我的主页</a>&nbsp;
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
