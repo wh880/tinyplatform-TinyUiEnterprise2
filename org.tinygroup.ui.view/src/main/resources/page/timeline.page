@@ -1,0 +1,9 @@
+<h2>1 纵向时间轴</h2>
+#@showInfo()当前选中状态添加参数<code>current</code>即可。#end
+#showExample("/page/timeline/timeline01.page")
+
+<h2>2 横向时间轴</h2>
+#@showInfo()当前选中状态添加参数<code>current</code>即可。#end
+#showExample("/page/timeline/timeline02.page")
+
+#@showPack()org.tinygroup.ui.timeline#end

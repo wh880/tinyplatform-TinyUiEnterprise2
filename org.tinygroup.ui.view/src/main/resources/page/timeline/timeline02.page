@@ -1,0 +1,72 @@
+<script type="text/javascript">
+    $(function(){
+        $().timelinr()
+    });
+</script>
+<style>
+    #timeline,#dates,#issues,#issues li {width:1000px;}
+</style>
+<div  id="timeline"  >
+    <ul id="dates" >
+        <li><a href="#2017">2017</a></li>
+        <li><a href="#2016">2016</a></li>
+        <li><a href="#2015">2015</a></li>
+        <li><a href="#2014">2014</a></li>
+        <li><a href="#2013">2013</a></li>
+        <li><a href="#2012">2012</a></li>
+        <li><a href="#2011">2011</a></li>
+    </ul>
+    <ul id="issues" >
+        <li  id="2017" >
+            <div   class="informationShow" >
+                <img src="../img/car.png" width="256" height="256" />
+                <h1>2017</h1>
+                <p>发布全新Tiny框架的6.0版本,升级全新默认界面和工具，新增大量爽功能</p>
+            </div>
+        </li>
+        <li  id="2016" >
+            <div   class="informationShow" >
+                <img src="../img/car.png" width="256" height="256" />
+                <h1>2016</h1>
+                <p>塔罗大道先读本科，又在清华攻实硕士，虽然实践经验稍有不足，但是基本功扎实，上手迅捷，迅速成为团队骨干，发现诸多BUG，也提出了许多好的改进建议，整理了大量的文档，对于Tiny框架的完善做出了非常大的贡献。</p>
+            </div>
+        </li>
+        <li  id="2015" >
+            <div   class="informationShow" >
+                <img src="../img/car.png" width="256" height="256" />
+                <h1>2015</h1>
+                <p>Tiny框架发布1.2.0版本，由于核心的集群算法进行了升级，导致兼容性有明显区别，因此Tiny框架升级到1.2.0牍本。</p>
+            </div>
+        </li>
+        <li  id="2014" >
+            <div   class="informationShow" >
+                <img src="../img/car.png" width="256" height="256" />
+                <h1>2014</h1>
+                <p>达达同学精于Eclipse插件开发，达达同学的加入，弥补了团队中没有开发Eclipse插件的短板，由于达达的加入，许多配套的Eclipse插件逐步丰满起来，Tiny框架的开发效率也更高，更专业。</p>
+            </div>
+        </li>
+        <li  id="2013" >
+            <div   class="informationShow" >
+                <img src="../img/car.png" width="256" height="256" />
+                <h1>2013</h1>
+                <p>Nishihe达人出手不凡，刚加入就解决了Tiny服务透明发布为WebService的重大难题，后来由于工作需要外派到其他项目组服务了相当长一段时间，现在回归，主要从事前台UI方面的一个组件封装方面的工作。</p>
+            </div>
+        </li>
+        <li  id="2012" >
+            <div   class="informationShow" >
+                <img src="../img/car.png" width="256" height="256" />
+                <h1>2012</h1>
+                <p>Tiny框架在0.0.1版本之上，做了大量的扩展，比如：分布式计算框架等等，由于升级内容太多，因此直接由0.0.1升级到0.1.1版本。</p>
+            </div>
+        </li>
+        <li  id="2011" >
+            <div   class="informationShow" >
+                <img src="../img/car.png" width="256" height="256" />
+                <h1>2011</h1>
+                <p>由于第一个产品在整个开发期当中，都稳定，高效，同时Tiny框架声明的各种良好特性也得到了良好的印证，因此第二个产品就自然而然开始了。</p>
+            </div>
+        </li>
+    </ul>
+    <a href="#" id="next">+</a>
+    <a href="#" id="prev">-</a>
+</div>
