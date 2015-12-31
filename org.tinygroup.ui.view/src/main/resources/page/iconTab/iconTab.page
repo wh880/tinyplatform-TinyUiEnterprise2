@@ -1,0 +1,49 @@
+##import("/org/tinygroup/iconTab/components/iconTab.component")
+#@softFunction()
+	#@softConIconMenus()
+			#@softConMenu("pic_fun_adm" "/img/icontab/pic_fun_adm_hover.gif")#@softConMenuTxt("color:#008dd9")A类选项#end#end
+			#@softConMenu("pic_fun_crm" "/img/icontab/pic_fun_crm.gif")#@softConMenuTxt()B类选项#end#end
+			#@softConMenu("pic_fun_project" "/img/icontab/pic_fun_project.gif")#@softConMenuTxt()C类选项#end#end
+			#@softConMenu("pic_fun_k" "/img/icontab/pic_fun_k.gif")#@softConMenuTxt()D类选项#end#end
+			#@softConMenu("pic_fun_mobile" "/img/icontab/pic_fun_mobile.gif")#@softConMenuTxt()E类选项#end#end	
+	#end
+	#softConSubMenuCursor("/img/icontab/line_select_001.gif);")
+	#@softConSubMenus()
+		#@subMenulist("xzgl")
+			#@subMenuItem("/img/icontab/pic_fun_adm_detailed_001.gif" "自定义门户" "function1")个性化设置桌面门户，可根据需要创建功能模块组别；全面掌握...#end
+			#@subMenuItem("/img/icontab/pic_fun_adm_detailed_002.gif" "智能流程" "function1")根据企业模式与业务需求，轻松、智能的对流程节点、处理方式...#end
+			#@subMenuItem("/img/icontab/pic_fun_adm_detailed_003.gif" "即时通讯" "function1")集成即时通讯工具，闲暇时置于桌面右下角；出现待办事宜时...#end
+			#@subMenuItem("/img/icontab/pic_fun_adm_detailed_004.gif" "人力资源" "function2")建立企业的人才资源库，以备不时之需；实现对人才信息的多维...#end
+		#end
+	
+		#@subMenulist("crm" "display:none")
+			#@subMenuItem("/img/icontab/pic_fun_crm_detailed_001.gif" "客户管理" "function1")创建企业的客户资源库，维护客户的综合信息；及时、定期跟进...#end
+			#@subMenuItem("/img/icontab/pic_fun_crm_detailed_002.gif" "销售管理" "function1")提供多样化的销售管理机制，实现销售过程的流程控制与维护...#end
+			#@subMenuItem("/img/icontab/pic_fun_crm_detailed_003.gif" "合同管理" "function1")统一管理合同信息，形成企业的知识库；提供应用插件，实现合...#end
+			#@subMenuItem("/img/icontab/pic_fun_crm_detailed_004.gif" "供应商管理" "function2")建立企业的供应商资源，完善企业供应链；在实际的业务操作...#end
+		#end
+	
+		#@subMenulist("xmgl" "display:none")
+			#@subMenuItem("/img/icontab/pic_fun_project_detailed_001.gif" "计划任务" "function1")在线、实时创建维护项目计划，并可向他人发起项目任务，指...#end
+			#@subMenuItem("/img/icontab/pic_fun_project_detailed_002.gif" "甘特图" "function1")在线编辑项目甘特图，可与专业工具媲美，而且操作更为简单...#end
+			#@subMenuItem("/img/icontab/pic_fun_project_detailed_003.gif" "项目汇报" "function1")定期汇报项目的最新进展，将汇报与具体的项目进行绑定；领导...#end
+			#@subMenuItem("/img/icontab/pic_fun_project_detailed_004.gif" "项目汇报" "function2")自动提取项目计划、任务中的员工工作量，以不同的颜色标识员...#end
+		#end
+	
+		#@subMenulist("zsgl" "display:none")
+			#@subMenuItem("/img/icontab/pic_fun_k_detailed_001.gif" "文件柜" "function1")创建个人文件柜，将个人的重要文件存储至平台，随时随地查看...#end
+			#@subMenuItem("/img/icontab/pic_fun_k_detailed_002.gif" "个人网盘" "function1")平台提供的个人网盘，由员工个人进行管理，可根据需要创建不...#end
+			#@subMenuItem("/img/icontab/pic_fun_k_detailed_003.gif" "文件共享" "function1")员工可将个人网盘中的文件与他人共享，实现资源文件在企业内...#end
+			#@subMenuItem("/img/icontab/pic_fun_k_detailed_004.gif" "权限控制" "function2")以用户、用户组、部门为单位进行严密的权限设置，为秘密文件...#end
+		#end
+	
+		#@subMenulist("ydbg" "display:none")
+			#@subMenuItem("/img/icontab/pic_fun_mobile_detailed_001.gif" "文件柜" "function1")企业通讯录，无需手动录入，自动加载平台员工的联系方式；可...#end
+			#@subMenuItem("/img/icontab/pic_fun_mobile_detailed_002.gif" "个人网盘" "function1")即使不在电脑前，也无需等待。通过手机端的移动审批可快速的...#end
+			#@subMenuItem("/img/icontab/pic_fun_mobile_detailed_003.gif" "文件共享" "function1")制定个人的日程安排，支持对周期性日程的批量添加，并可设置...#end
+			#@subMenuItem("/img/icontab/pic_fun_mobile_detailed_004.gif" "权限控制" "function2")外出无法签到，也不再是难事；通过手机端即可实现快速的签...#end
+		#end
+	#end
+#end
+
+#iconTabInit()
