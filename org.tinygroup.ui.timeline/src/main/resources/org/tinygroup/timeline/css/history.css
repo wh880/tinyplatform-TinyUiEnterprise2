@@ -1,5 +1,6 @@
 .history-date h2,.history-date h3{ margin:0; padding:0; }
-
+ul li{list-style-type:none}
+.history-date ul{margin-left:-39px;}
 /*history*/
 .history { background:url(../images/line04.gif) repeat-y 187px 0; overflow:hidden; position:relative;}
 .history-date { overflow:hidden;}
@@ -30,7 +31,6 @@
 
 .history-date h2.first .more-history {font-size: 16px; background: transparent; margin-left: 30px;}
 .history-date h2.first .more-history:hover {text-decoration: underline;}
-
 
 /*核心样式*/
 #timeline {

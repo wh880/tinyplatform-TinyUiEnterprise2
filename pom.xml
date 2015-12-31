@@ -73,5 +73,6 @@
 		<module>org.tinygroup.ui.easyCharts</module>
 		<module>org.tinygroup.ui.highCharts</module>
 		<module>org.tinygroup.ui.burndownChart</module>
+		<module>org.tinygroup.ui.timeline</module>
     </modules>
 </project>
