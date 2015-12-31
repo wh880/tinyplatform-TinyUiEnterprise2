@@ -3,12 +3,12 @@
 通过Ui封装 使用者相关组件添加相关依赖包就OK了，会很方便、快捷的达到自己想要的效果。比bootstrap更懂中国！
 #end
 
-#@h2()2.组件包#end
+<h2 class="title-box">2.组件包</h2>
 <pre class="prettyprint">
 	#foreach(component in uiengine.getHealthUiComponents())
         <span class="pun">├──</span> <span class="tWidth">org.tinygroup.${component.name}</span>${component.description}#end
     <div class="tinyStatistical">
-        <b class="tinyOffset">共<i><span class="ncount">${uiengine.getHealthUiComponents()?.size()}</span></i>个组件</span><b>
+        <b class="tinyOffset">共<i><span class="ncount">${uiengine.getHealthUiComponents()?.size()}</span></i>个组件</span></b>
     </div>
 </pre>
 #@setTourbus("tourbus-show")
@@ -16,7 +16,7 @@
 	#@setTourbusIntro("新功能向导")
     下面将给您介绍我们的产品特色及使用方法
 	#end
-	#@setTourbusItem("#uiinfo" "315" "bottom" "center")这是标题#end
+	#@setTourbusItem(".title-box" "315" "bottom" "left")这是标题#end
 
 	#@setTourbusItem(".ncount" "315" "right" "center")
     组件个数
