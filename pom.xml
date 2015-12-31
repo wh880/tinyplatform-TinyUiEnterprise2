@@ -75,6 +75,7 @@
 		<module>org.tinygroup.ui.burndownChart</module>
 		<module>org.tinygroup.ui.timeline</module>
 		<module>org.tinygroup.ui.viewsControl</module>
+		<module>org.tinygroup.ui.iconTab</module>
 		
     </modules>
 </project>

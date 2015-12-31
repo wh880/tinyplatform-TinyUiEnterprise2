@@ -1,0 +1,8 @@
+<ui-components>
+    <ui-component name="tiny.ui.iconTab" dependencies="tiny.ui.jquery">
+        <css-resource>
+		  /org/tinygroup/iconTab/css/iconTab.css,
+	</css-resource>
+	<description>图标控制选项卡 (www.jsdaima.com)</description>
+    </ui-component>
+</ui-components>
