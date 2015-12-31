@@ -6,7 +6,6 @@
 #dialog("myModal")
 
 <!--打开多个弹出层-->
-
 #@dialog("stack1")
     <p>第一个弹出层内容</p>
     <input data-tabindex="1" type="text">
