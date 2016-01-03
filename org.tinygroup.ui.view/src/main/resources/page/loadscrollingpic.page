@@ -1,5 +1,5 @@
 #macro delayImg(src mapInfo)
-	<img src="#link("/org/tinygroup/thumbnails/img/pic.png")" original="#link(src)" #getMapInfo(mapInfo)/>
+	<img src="#link("/img/pic.png")" original="#link(src)" #getMapInfo(mapInfo)/>
 #end
 
 <style type="text/css">

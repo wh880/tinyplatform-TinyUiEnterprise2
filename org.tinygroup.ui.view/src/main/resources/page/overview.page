@@ -24,7 +24,7 @@ $(function(){
 	$(".ui-module-view").each(function(){
         var content=$(this).html();
         content=content.replace(/tiny\.ui./,"");
-		content=content.tolowercase();
+		content=content.toLowerCase();
         $(this).html(content);
 	})
 })
