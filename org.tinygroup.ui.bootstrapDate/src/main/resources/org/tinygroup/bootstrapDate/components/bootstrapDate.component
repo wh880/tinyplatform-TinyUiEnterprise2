@@ -11,7 +11,7 @@
 			$("#${dateputId}").on("click",function(){
 				WdatePicker({
 					startDate:'%y-%M-01 00:00:00',dateFmt:dateFormat,
-					onpicked:function(){$("input[name='${name}']").trigger('blur')}
+					onpicked:function(){$("input[name='${name}']").trigger('blur change')}
 				})
 			});
 		});
@@ -37,7 +37,7 @@
         $("#${dateId}-rap").daterangepicker({
             timePicker:showTime,timePickerIncrement:1,timePicker12Hour:false,timePickerSeconds:true,startDate:datestr,endDate:datestr2,format:dateFormat
         }).on("apply.daterangepicker",function(e,_this){
-            $("#${dateId}").val(_this.startDate.format(dateFormat)).trigger("blur").siblings("input:first").val(_this.endDate.format(dateFormat)).trigger("blur");
+            $("#${dateId}").val(_this.startDate.format(dateFormat)).trigger("blur change").siblings("input:first").val(_this.endDate.format(dateFormat)).trigger("blur change");
         });
     });
 </script>

@@ -369,7 +369,7 @@ $(function(){
 *#
 
 #macro operateMoreLess(listMap)#set(oid=fmt("oid%d",rand()))
-<span id="${oid}-add"#mapToHtml(listMap)><i class="fa faplus"></i></span>
+<span id="${oid}-add"#mapToHtml(listMap)><i class="fa fa-plus"></i></span>
 <span id="${oid}-less"#mapToHtml(listMap)><i class="fa fa-minus"></i></span>
 <script type="text/javascript">
     $(function(){
