@@ -6,7 +6,7 @@
 #showExample("/page/picture/picture02.page")
 #@showPack()org.tinygroup.ui.bootstrap#end
 
-<h2>2 图片变焦收缩</h2>
+<h2>3 图片变焦收缩</h2>
 #showExample("/page/picture/picture03.page")
 #@showPack()org.tinygroup.ui.zoompic#end
 
