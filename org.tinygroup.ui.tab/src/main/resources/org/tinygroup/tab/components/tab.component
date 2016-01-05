@@ -10,7 +10,7 @@
     #bodyContent
 </div>
 #end
-
+#*
 * tabMove 选项卡鼠标滑动切换
 *
 * @param tableType 定义ID
@@ -23,7 +23,7 @@
     $.Huitab("#${tabid}>.tabBar>span","#${tabid}>.tabCon","Current","click","0");
 </script>
 #end
-
+#*
 * tabMove 选项卡鼠标滑动切换
 *
 * @param tabID 定义ID
@@ -36,3 +36,4 @@
     $.Huitab("#${tabid}>.tabBar>span","#${tabid}>.tabCon","Current","mousemove","1");
 </script>
 #end
+
