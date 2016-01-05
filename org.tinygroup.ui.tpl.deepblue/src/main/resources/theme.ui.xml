@@ -1,0 +1,11 @@
+<ui-components>
+    <ui-component name="tiny.ui.tpl.deepblue" dependencies="tiny.ui.frameCommon">
+        <css-resource>
+            /static/org/tinygroup/themes/deepblue.css
+		</css-resource>
+		<js-codelet>
+           tinyTplList.push({sort:3, name: 'deepblue',  title: '深蓝', img: contextPath+'/img/themes/deepblue.png' });
+        </js-codelet>
+		<description>TinyUi框架模板深蓝</description>
+    </ui-component>
+</ui-components>

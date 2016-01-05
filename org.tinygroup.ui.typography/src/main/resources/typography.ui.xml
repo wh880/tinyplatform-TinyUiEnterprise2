@@ -1,0 +1,8 @@
+<ui-components>
+    <ui-component name="tiny.ui.typography" dependencies="tiny.ui.base">
+        <css-resource>
+		  /static/org/tinygroup/typography/css/typography.css,
+	</css-resource>
+	<description>排版（一般都能用到）(www.bootcss.com) (www.h-ui.net)</description>
+    </ui-component>
+</ui-components>

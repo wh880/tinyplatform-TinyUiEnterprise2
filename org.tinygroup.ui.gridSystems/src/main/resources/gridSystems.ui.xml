@@ -1,0 +1,8 @@
+<ui-components>
+    <ui-component name="tiny.ui.gridSystems" dependencies="tiny.ui.bootstrap">
+        <css-resource>
+		  /static/org/tinygroup/gridSystems/css/gridSystems.css,
+	</css-resource>
+	<description>栅格系统（布局）</description>
+    </ui-component>
+</ui-components>

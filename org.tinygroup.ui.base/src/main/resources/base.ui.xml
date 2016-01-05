@@ -1,14 +1,14 @@
 <ui-components>
     <ui-component name="tiny.ui.base" dependencies="tiny.ui.moment,tiny.ui.bootstrap,tiny.ui.layer,tiny.ui.jqueryUi,tiny.ui.fontIco,tiny.ui.animation">
 		<js-resource>
-			/org/tinygroup/base/js/pixel-slimscroll.js,
-			/org/tinygroup/base/js/fastclick-0.6.11.js,
-			/org/tinygroup/base/js/jquery.cookie.js,
-			<!-- /org/tinygroup/base/js/html5shiv.min.js, -->
-			/org/tinygroup/base/js/tinyui.js,
+			/static/org/tinygroup/base/js/pixel-slimscroll.js,
+			/static/org/tinygroup/base/js/fastclick-0.6.11.js,
+			/static/org/tinygroup/base/js/jquery.cookie.js,
+			<!-- /static/org/tinygroup/base/js/html5shiv.min.js, -->
+			/static/org/tinygroup/base/js/tinyui.js,
 		</js-resource>
 		<css-resource>
-			/org/tinygroup/base/css/base.css
+			/static/org/tinygroup/base/css/base.css
 		</css-resource>
 	<description>基础包</description>
     </ui-component>

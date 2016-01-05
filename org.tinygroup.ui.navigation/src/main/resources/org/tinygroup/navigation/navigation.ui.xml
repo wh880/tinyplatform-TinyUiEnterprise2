@@ -1,9 +1,0 @@
-<ui-components>
-    <ui-component name="tiny.ui.navigation" dependencies="tiny.ui.base">
-        <css-resource>
-		  /org/tinygroup/navigation/css/navigation.css,
-	</css-resource>
-	<js-resource></js-resource>
-	<description>导航(www.runoob.com)</description>
-    </ui-component>
-</ui-components>

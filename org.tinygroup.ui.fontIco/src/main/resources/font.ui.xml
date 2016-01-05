@@ -1,0 +1,8 @@
+<ui-components>
+    <ui-component name="tiny.ui.fontIco">
+		<css-resource>
+		  /static/org/tinygroup/fontIco/css/font-awesome.css
+		</css-resource>
+		<description>字体图标 (http://FontAwesome.com)</description>
+    </ui-component>
+</ui-components>

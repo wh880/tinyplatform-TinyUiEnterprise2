@@ -1,10 +1,10 @@
 <ui-components>
     <ui-component name="tiny.ui.burndownChart" dependencies="tiny.ui.jquery">
 		<css-resource>
-			/org/tinygroup/burndownChart/css/burndownChart.css
+			/static/org/tinygroup/burndownChart/css/burndownChart.css
 		</css-resource>
 		<js-resource>
-		  /org/tinygroup/burndownChart/js/burndownChart.js,
+		  /static/org/tinygroup/burndownChart/js/burndownChart.js,
 		</js-resource>
 		<description>燃尽图表 (http://zui.sexy)</description>
     </ui-component>

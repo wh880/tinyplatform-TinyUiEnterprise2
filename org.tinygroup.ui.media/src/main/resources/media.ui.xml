@@ -1,0 +1,8 @@
+<ui-components>
+    <ui-component name="tiny.ui.media" dependencies="tiny.ui.base">
+        <css-resource>
+		  /static/org/tinygroup/media/css/media.css,
+	</css-resource>
+	<description>媒体 (www.runoob.com)</description>
+    </ui-component>
+</ui-components>
