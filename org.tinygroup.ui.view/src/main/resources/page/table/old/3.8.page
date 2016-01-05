@@ -1,4 +1,4 @@
-##import("/org/tinygroup/table/components/table.component")
+
   #@tableBgBordered()
     #@theadMenu()        #@th(thStyle="width:20%")Class#end     #@th()描述#end    #end
     #@tbody()

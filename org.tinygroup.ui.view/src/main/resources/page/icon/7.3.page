@@ -1,4 +1,4 @@
-##import("/org/tinygroup/icon/components/icon.component")
+
 ##@iconBtnGroup()
 	#@p()
 		#@attrIconButton()#end

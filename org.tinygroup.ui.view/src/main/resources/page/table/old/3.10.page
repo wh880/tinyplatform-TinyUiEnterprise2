@@ -1,5 +1,5 @@
-##import("/org/tinygroup/table/components/table.component")
-##import("/org/tinygroup/button/components/button_smart.component")
+
+
 #@datatablesInitSimple("#example")#end
 #@divDataTablebox()
     #@tableHeaderBar()标准数据表 #end

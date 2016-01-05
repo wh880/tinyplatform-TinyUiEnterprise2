@@ -1,4 +1,4 @@
-##import("/org/tinygroup/table/components/table.component")
+
 #@borderedTable()
     #@theadCenterMenu()   #@th()对齐方式#end        #@th()类名#end  #end
     #@tbody()

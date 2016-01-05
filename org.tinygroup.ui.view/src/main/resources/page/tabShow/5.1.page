@@ -1,4 +1,4 @@
-#@tabShowFrame("/org/tinygroup/tabShow/data/menuData.js")
+#@tabShowFrame("/static/org/tinygroup/tabShow/data/menuData.js")
     #@tabShowFrameHead()
         <h4 class="logoBox"><img src="#link("/img/logo_min.png")"></h4>
         <ul class="linkInfo">

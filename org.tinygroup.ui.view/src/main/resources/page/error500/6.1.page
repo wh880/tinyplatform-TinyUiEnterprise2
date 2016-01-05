@@ -1,4 +1,4 @@
-###import("/org/tinygroup/error500/components/error500.component")
+#
 #*
 #@error500Box()
         #@head500() Error 500#end

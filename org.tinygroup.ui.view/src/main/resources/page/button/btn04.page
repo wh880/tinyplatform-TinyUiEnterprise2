@@ -1,4 +1,4 @@
-##import("/org/tinygroup/button/components/button_smart.component")
+
 
 #@tipFrame("示例::" ".btn .bg-color-blueLight .txt-color-white")
                  可以给按钮增加Css格式，各种存在的样式都可以加到按钮上来形成独特风格的按钮 

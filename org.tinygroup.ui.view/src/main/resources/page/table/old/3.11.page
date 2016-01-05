@@ -1,4 +1,4 @@
-##import("/org/tinygroup/mmGrid/components/mmGrid.component")
+
 #@mmButtonDiv("margin-bottom: 5px;" "toolbarInfo")
     #@mmButton("btnAdd")添加到第三行#end
     #@mmButton("btnAddArr")添加列表到第二行#end

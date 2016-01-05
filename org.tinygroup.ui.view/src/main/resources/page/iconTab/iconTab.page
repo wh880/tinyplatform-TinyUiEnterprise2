@@ -1,4 +1,4 @@
-##import("/org/tinygroup/iconTab/components/iconTab.component")
+
 #@softFunction()
 	#@softConIconMenus()
 			#@softConMenu("pic_fun_adm" "/img/icontab/pic_fun_adm_hover.gif")#@softConMenuTxt("color:#008dd9")A类选项#end#end

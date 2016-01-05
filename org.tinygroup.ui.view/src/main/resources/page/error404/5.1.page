@@ -1,4 +1,4 @@
-###import("/org/tinygroup/error404/components/error404.component")
+#
 #*@error404Box()
         #error404Tips(" Error 404 " "页面 <u>未</u> 找到" "您要求的网页无法找到，请联系您的网络管理员或请再试一次。在您的浏览器中，点击<b>回退</b> 按钮，退回到之前的页面。")
         #@errorFontMd()

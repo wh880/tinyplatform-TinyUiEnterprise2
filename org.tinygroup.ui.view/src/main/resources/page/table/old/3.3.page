@@ -1,4 +1,4 @@
-##import("/org/tinygroup/table/components/table.component")
+
   #@tableBg()
     #@thead()
       #@tr()
