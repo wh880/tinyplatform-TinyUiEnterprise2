@@ -1,0 +1,8 @@
+@charset "utf-8";
+.tabBar {border-bottom:1px solid #ccb}
+.tabBar span {background-color:#e8e8e8;cursor:pointer;display:inline-block;float:left;font-weight:bold;height:30px;line-height:30px;padding:0 15px}
+.tabBar span.Current{background-color:#368;color:#fff}
+.tabCon {display:none}
+
+/*tabs*/
+.tabs-content{padding:15px;}
