@@ -128,7 +128,7 @@
     })();
 	//console.log(URL);
 	//URL=contextPath;
-	URL=contextPath+"/org/tinygroup/UEditor/";
+	URL=contextPath+"/static/org/tinygroup/UEditor/";
 	//	console.log(URL);
 	//var URL = window.UMEDITOR_HOME_URL;
     /**

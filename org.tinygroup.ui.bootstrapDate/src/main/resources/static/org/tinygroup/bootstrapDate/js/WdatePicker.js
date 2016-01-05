@@ -466,7 +466,7 @@ var $dp, WdatePicker;
 			C();
 
 			function C() {
-				var A=contextPath+"/org/tinygroup/bootstrapDate/";
+				var A=contextPath+"/static/org/tinygroup/bootstrapDate/";
 				var _ = J.getRealLang();
 				K.lang = _.name;
 				K.skin = J.skin;
