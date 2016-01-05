@@ -1,12 +1,5 @@
-<div id="marquee" class="marquee ">
-    <div id="holder">
-        <ul>
-            <li>第一条数据</li>
-            <li>第二条数据</li>
-            <li>第三条数据</li>
-        </ul>
-    </div>
-</div>
-<script type="text/javascript">
-    marquee(22,30,3000);/*移动高度,移动速度,间隔时间*/
-</script>
+#@marqueeUp("22" "30" "3000")
+    <li>第一条数据</li>
+    <li>第二条数据</li>
+    <li>第三条数据</li>
+#end

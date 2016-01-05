@@ -1,26 +1,7 @@
-<div class="rollpic cl ">
-    <a href="javascript:void(0)" class="prev "></a>
-    <div class="rollpicshow">
-        <ul>
-            <li><img width="170" height="143" title="" src="${TINY_CONTEXT_PATH}/img/pic.jpg"></li>
-            <li><img width="170" height="143" title="" src="${TINY_CONTEXT_PATH}/img/pic.jpg"></li>
-            <li><img width="170" height="143" title="" src="${TINY_CONTEXT_PATH}/img/pic.jpg"></li>
-            <li><img width="170" height="143" title="" src="${TINY_CONTEXT_PATH}/img/pic.jpg"></li>
-            <li><img width="170" height="143" title="" src="${TINY_CONTEXT_PATH}/img/pic.jpg"></li>
-        </ul>
-    </div>
-    <a href="javascript:void(0)" class="next "></a>
-</div>
-
-<script type="text/javascript">
-    $(function(){
-        /*左右自动滚动，带控制*/
-        $(".rollpicshow").jCarouselLite({
-            auto: 2000000,/*自动播放间隔时间*/
-            speed: 500,/*速度*/
-            btnNext:".next",/*向前滚动*/
-            btnPrev:".prev",/*向后滚动*/
-            visible:3 /*显示数量*/
-        });
-    });
-</script>
+#@rollBoxs("2000000" "500" "3")
+        <li><img width="170" height="143" title="" src="${TINY_CONTEXT_PATH}/img/pic.jpg"></li>
+        <li><img width="170" height="143" title="" src="${TINY_CONTEXT_PATH}/img/pic.jpg"></li>
+        <li><img width="170" height="143" title="" src="${TINY_CONTEXT_PATH}/img/pic.jpg"></li>
+        <li><img width="170" height="143" title="" src="${TINY_CONTEXT_PATH}/img/pic.jpg"></li>
+        <li><img width="170" height="143" title="" src="${TINY_CONTEXT_PATH}/img/pic.jpg"></li>
+#end

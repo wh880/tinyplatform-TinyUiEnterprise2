@@ -1,0 +1,54 @@
+#*
+* marqueeUp 跑马灯向上移动
+*
+* * @param moveHeight  移动高度值
+* * @param moveSpeed  移动速度值
+* * @param moveTime  间隔时间值
+* * @param marqueeMap  Map项
+*#
+#macro marqueeUp(moveHeight moveSpeed moveTime marqueeMap)
+<div id="marquee" class="marquee"#mapToHtml(marqueeMap)>
+    <div id="holder">
+        <ul>
+            #bodyContent
+        </ul>
+    </div>
+</div>
+<script type="text/javascript">
+    marquee(${moveHeight},${moveSpeed},${moveTime});/*移动高度,移动速度,间隔时间*/
+</script>
+#end
+
+#*
+* rollBoxs 左右自动滚动，带控制
+*
+* * @param rollAuto  自动播放间隔时间值
+* * @param rollSpeed  速度值
+* * @param rollVisible  显示数量值
+* * @param rollMap  Map项
+*
+*#
+#macro rollBoxs(rollAuto rollSpeed rollVisible rollMap)
+<div class="rollpic cl"#mapToHtml(rollMap)>
+    <a href="javascript:void(0)" class="prev"></a>
+    <div class="rollpicshow">
+        <ul>
+            #bodyContent
+        </ul>
+    </div>
+    <a href="javascript:void(0)" class="next"></a>
+</div>
+
+<script type="text/javascript">
+    $(function(){
+        /*左右自动滚动，带控制*/
+        $(".rollpicshow").jCarouselLite({
+            auto: ${rollAuto},/*自动播放间隔时间*/
+            speed: ${rollSpeed},/*速度*/
+            btnNext:".next",/*向前滚动*/
+            btnPrev:".prev",/*向后滚动*/
+            visible:${rollVisible} /*显示数量*/
+        });
+    });
+</script>
+#end
