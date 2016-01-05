@@ -1,15 +1,14 @@
 <!-- Nav tabs -->
-<ul class="nav nav-tabs">
-    <li class="active"><a href="#home" data-toggle="tab">首页</a></li>
-    <li><a href="#profile" data-toggle="tab">配置文件</a></li>
-    <li><a href="#messages" data-toggle="tab">消息</a></li>
-    <li><a href="#settings" data-toggle="tab">设置</a></li>
-</ul>
-
+#@navTabs()
+    #@tabsInfo("home" "active")首页#end
+    #@tabsInfo("profile")配置文件#end
+    #@tabsInfo("messages")消息#end
+    #@tabsInfo("settings")设置#end
+#end
 <!-- Tab panes -->
-<div class="tab-content tabs-content">
-    <div class="tab-pane active" id="home">111</div>
-    <div class="tab-pane" id="profile">222</div>
-    <div class="tab-pane" id="messages">333</div>
-    <div class="tab-pane" id="settings">444</div>
-</div>
+#@tabPanes()
+    #@tabContent("home" "active")111#end
+    #@tabContent("profile")222#end
+    #@tabContent("messages")333#end
+    #@tabContent("settings")444#end
+#end

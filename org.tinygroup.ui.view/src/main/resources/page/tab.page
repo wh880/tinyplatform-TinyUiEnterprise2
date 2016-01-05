@@ -7,7 +7,6 @@
 #showExample("/page/tab/tab02.page")
 
 #@h2()3 选项卡#end
-#@p()选项卡#end
 #showExample("/page/tab/tab03.page")
 
 #@showPack()org.tinygroup.ui.tab#end
