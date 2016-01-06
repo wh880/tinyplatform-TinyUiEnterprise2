@@ -178,6 +178,41 @@ $(function(){
 #end
 
 #*
+* tSubmitInput input type=submit 宏
+*
+* @param inputName 表单名称
+* @param value 表单值
+* @param mapInfo 额外的参数可自动带入input表单
+
+*#
+#macro tSubmitInput(inputName value mapInfo)
+	<input type="submit" name="${inputName}" value="${value}" class="form-control #getMapVal("class",mapInfo)" #mapToHtml(mapInfo)/>
+#end
+
+#*
+* tButtonInput input type=button 宏
+*
+* @param inputName 表单名称
+* @param value 表单值
+* @param mapInfo 额外的参数可自动带入input表单
+
+*#
+#macro tButtonInput(inputName value mapInfo)
+	<input type="button" name="${inputName}" value="${value}" class="form-control #getMapVal("class",mapInfo)" #mapToHtml(mapInfo)/>
+#end
+
+#*
+* tPassInput input type=hidden 宏
+*
+* @param inputName 表单名称
+* @param value 表单值
+* @param mapInfo 额外的参数可自动带入input表单
+
+*#
+#macro tHiddenInput(inputName value mapInfo)
+	<input type="hidden" name="${inputName}" value="${value}" class="form-control #getMapVal("class",mapInfo)" #mapToHtml(mapInfo)/>
+#end
+#*
 * tSelect 对应标标签select
 *
 * @param name 表单名称

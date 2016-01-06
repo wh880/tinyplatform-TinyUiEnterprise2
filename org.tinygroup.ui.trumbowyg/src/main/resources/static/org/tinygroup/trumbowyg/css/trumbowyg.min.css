@@ -1,6 +1,6 @@
 /** Trumbowyg v2.0.0-beta.5 - A lightweight WYSIWYG editor - alex-d.github.io/Trumbowyg - License MIT - Author : Alexandre Demode (Alex-D) / alex-d.fr */
 .trumbowyg-box *,.trumbowyg-box ::after,.trumbowyg-box ::before{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
-.trumbowyg-box,.trumbowyg-editor{display:block;position:relative;border:1px solid #DDD;min-height:100px;z-index:99}
+.trumbowyg-box,.trumbowyg-editor{display:block;position:relative;border:1px solid #DDD;min-height:100px;z-index:1}
 .trumbowyg-box .trumbowyg-editor{margin:0 auto}
 .trumbowyg-box.trumbowyg-fullscreen{background:#FEFEFE}
 .trumbowyg-editor,.trumbowyg-textarea{position:relative;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;padding:1% 2%;width:100%;border-style:none;resize:none;outline:0}
