@@ -280,7 +280,11 @@
 				</div>
 			#end
 			<div id="tinyfooter">
-				<div class="tinyfooterrap"><span class="right">浙ICP备14043110号-1</span>TinyGroup官方网站 &copy; 2013-${formatDate(now(),"yyyy")}</div>
+				<div class="tinyfooterrap">
+				<span class="right">
+					<a class="record-num" target="_blank" href="http://www.beianbeian.com/search/tinygroup.org">浙ICP备14043110号-1</a>
+				</span>
+				TinyGroup官方网站 &copy; 2013-${formatDate(now(),"yyyy")}</div>
 			</div>
 		</div>
 	#end
