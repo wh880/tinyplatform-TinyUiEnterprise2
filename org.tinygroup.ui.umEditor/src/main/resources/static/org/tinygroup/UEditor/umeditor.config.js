@@ -129,7 +129,7 @@
     if(typeof(contextPath)=="undefined"){
         contextPath='';
     }
-    URL=contextPath+"/org/tinygroup/UEditor/";
+    URL=contextPath+"/static/org/tinygroup/UEditor/";
     //var URL = window.UMEDITOR_HOME_URL;
     /**
      * 配置项主体。注意，此处所有涉及到路径的配置别遗漏URL变量。
