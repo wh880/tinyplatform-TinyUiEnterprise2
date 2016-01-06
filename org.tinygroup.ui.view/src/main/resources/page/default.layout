@@ -92,11 +92,20 @@
 		<!--<![endif]-->
 		<script src="${TINY_CONTEXT_PATH}/uiengine.uijs"></script>
 	#end
+
+	
     <link href="${TINY_CONTEXT_PATH}/css/tinyui.css" rel="stylesheet" />
+
+	<link href="${TINY_CONTEXT_PATH}/css/ui-production.min.css" rel="stylesheet" />
+	<link href="${TINY_CONTEXT_PATH}/css/rtl.min.css" rel="stylesheet" />
+	<link href="${TINY_CONTEXT_PATH}/css/widgets.min.css" rel="stylesheet" />
 </head>
 <body class=" main-menu-animated">
 <script>var init = [];</script>
 <script src="${TINY_CONTEXT_PATH}/js/setting.js"></script>
+	<script src="${TINY_CONTEXT_PATH}/js/app.config.js"></script>
+	<script src="${TINY_CONTEXT_PATH}/js/jarvis.widget.min.js"></script>
+	<script src="${TINY_CONTEXT_PATH}/js/app.min.js"></script>
 	#@mainWrapper()
 		#@mainNavbar("/img/main-navbar-logo.png" "Tinyframework")
 			#@navbarNav()
