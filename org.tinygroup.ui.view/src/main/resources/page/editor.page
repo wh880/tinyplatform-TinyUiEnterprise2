@@ -5,6 +5,8 @@
 
 #showExample("/page/editor/tbeditor.page")
 
+#showExample("/page/editor/umEditor.page")
+
 ###showExample("/page/editor/tbeditormini.page" "trumbowyg简单版")
 
 #@showPack()org.tinygroup.ui.trumbowyg#end

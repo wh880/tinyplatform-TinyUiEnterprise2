@@ -126,18 +126,18 @@
 
 
     })();
-	//console.log(URL);
-	//URL=contextPath;
-	URL=contextPath+"/static/org/tinygroup/UEditor/";
-	//	console.log(URL);
-	//var URL = window.UMEDITOR_HOME_URL;
+    if(typeof(contextPath)=="undefined"){
+        contextPath='';
+    }
+    URL=contextPath+"/org/tinygroup/UEditor/";
+    //var URL = window.UMEDITOR_HOME_URL;
     /**
      * 配置项主体。注意，此处所有涉及到路径的配置别遗漏URL变量。
      */
-	var imageUrl=contextPath+"/savepic.umupload"
-	if(typeof(UPLOAD_ACTION_URL)!="undefined"&&UPLOAD_ACTION_URL){
-		 imageUrl=UPLOAD_ACTION_URL;
-	}
+    var imageUrl=contextPath+"/savepic.umupload";
+    if(typeof(UPLOAD_ACTION_URL)!="undefined"&&UPLOAD_ACTION_URL){
+        imageUrl=UPLOAD_ACTION_URL;
+    }
     window.UMEDITOR_CONFIG = {
 
         //为编辑器实例添加一个路径，这个不能被注释
@@ -145,7 +145,7 @@
 
         //图片上传配置区
         ,imageUrl:imageUrl             //图片上传提交地址
-        ,imagePath:URL                     //图片修正地址，引用了fixedImagePath,如有特殊需求，可自行配置
+        ,imagePath:contextPath                     //图片修正地址，引用了fixedImagePath,如有特殊需求，可自行配置
         ,imageFieldName:"upfile"                   //图片数据的key,若此处修改，需要在后台对应文件修改对应参数
 
 
