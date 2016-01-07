@@ -95,10 +95,6 @@
 
 	
     <link href="${TINY_CONTEXT_PATH}/css/tinyui.css" rel="stylesheet" />
-
-	<link href="${TINY_CONTEXT_PATH}/css/ui-production.min.css" rel="stylesheet" />
-	<link href="${TINY_CONTEXT_PATH}/css/rtl.min.css" rel="stylesheet" />
-	<link href="${TINY_CONTEXT_PATH}/css/widgets.min.css" rel="stylesheet" />
 </head>
 <body class=" main-menu-animated">
 <script>var init = [];</script>
