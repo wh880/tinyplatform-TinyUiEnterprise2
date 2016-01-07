@@ -76,6 +76,7 @@
 		<module>org.tinygroup.ui.timeline</module>
 		<module>org.tinygroup.ui.viewsControl</module>
 		<module>org.tinygroup.ui.iconTab</module>
+		<module>org.tinygroup.ui.widget</module>
 		
     </modules>
 </project>
