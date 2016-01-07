@@ -1,524 +1,463 @@
- <div class="row"> 
-   <div id="tinypagecontent" style="min-height:490px"> 
-    <script type="text/javascript">
+<script type="text/javascript">
 	$(function() {
 		pageSetUp();
 	});
 </script> 
-    <div class="mainPage"> 
-     <!-- widget-grid --> 
-     <section id="widget-grid"> 
-      <!-- start row --> 
-      <div class="row"> 
-       <article class="col-xs-12 col-sm-12 col-md-12 col-lg-6 sortable-grid ui-sortable"> 
-        <!-- new widget --> 
-        <div class="jarviswidget jarviswidget-color-blueDark jarviswidget-sortable" id="wid-id-1" data-widget-editbutton="false" data-widget-fullscreenbutton="false" role="widget"> 
-         <header role="heading">
-          <div class="jarviswidget-ctrls" role="menu"> 
-           <a href="javascript:void(0);" class="button-icon jarviswidget-toggle-btn" rel="tooltip" title="" data-placement="bottom" data-original-title="折叠"><i class="fa fa-minus "></i></a> 
-           <a href="javascript:void(0);" class="button-icon jarviswidget-delete-btn" rel="tooltip" title="" data-placement="bottom" data-original-title="删除"><i class="fa fa-times"></i></a>
-          </div>
-          <div class="widget-toolbar" role="menu">
-           <a data-toggle="dropdown" class="dropdown-toggle color-box selector" href="javascript:void(0);"></a>
-           <ul class="dropdown-menu arrow-box-up-right color-select pull-right">
-            <li><span class="bg-color-green" data-widget-setstyle="jarviswidget-color-green" rel="tooltip" data-placement="left" data-original-title="绿草色"></span></li>
-            <li><span class="bg-color-greenDark" data-widget-setstyle="jarviswidget-color-greenDark" rel="tooltip" data-placement="top" data-original-title="深绿色"></span></li>
-            <li><span class="bg-color-greenLight" data-widget-setstyle="jarviswidget-color-greenLight" rel="tooltip" data-placement="top" data-original-title="亮绿色"></span></li>
-            <li><span class="bg-color-purple" data-widget-setstyle="jarviswidget-color-purple" rel="tooltip" data-placement="top" data-original-title="紫色"></span></li>
-            <li><span class="bg-color-magenta" data-widget-setstyle="jarviswidget-color-magenta" rel="tooltip" data-placement="top" data-original-title="品红色"></span></li>
-            <li><span class="bg-color-pink" data-widget-setstyle="jarviswidget-color-pink" rel="tooltip" data-placement="right" data-original-title="粉红色"></span></li>
-            <li><span class="bg-color-pinkDark" data-widget-setstyle="jarviswidget-color-pinkDark" rel="tooltip" data-placement="left" data-original-title="褪粉色"></span></li>
-            <li><span class="bg-color-blueLight" data-widget-setstyle="jarviswidget-color-blueLight" rel="tooltip" data-placement="top" data-original-title="浅蓝色"></span></li>
-            <li><span class="bg-color-teal" data-widget-setstyle="jarviswidget-color-teal" rel="tooltip" data-placement="top" data-original-title="青色"></span></li>
-            <li><span class="bg-color-blue" data-widget-setstyle="jarviswidget-color-blue" rel="tooltip" data-placement="top" data-original-title="海洋蓝色"></span></li>
-            <li><span class="bg-color-blueDark" data-widget-setstyle="jarviswidget-color-blueDark" rel="tooltip" data-placement="top" data-original-title="深灰色"></span></li>
-            <li><span class="bg-color-darken" data-widget-setstyle="jarviswidget-color-darken" rel="tooltip" data-placement="right" data-original-title="黑色"></span></li>
-            <li><span class="bg-color-yellow" data-widget-setstyle="jarviswidget-color-yellow" rel="tooltip" data-placement="left" data-original-title="土黄色"></span></li>
-            <li><span class="bg-color-orange" data-widget-setstyle="jarviswidget-color-orange" rel="tooltip" data-placement="bottom" data-original-title="Orange"></span></li>
-            <li><span class="bg-color-orangeDark" data-widget-setstyle="jarviswidget-color-orangeDark" rel="tooltip" data-placement="bottom" data-original-title="暗橙色"></span></li>
-            <li><span class="bg-color-red" data-widget-setstyle="jarviswidget-color-red" rel="tooltip" data-placement="bottom" data-original-title="玫瑰红"></span></li>
-            <li><span class="bg-color-redLight" data-widget-setstyle="jarviswidget-color-redLight" rel="tooltip" data-placement="bottom" data-original-title="淡红色"></span></li>
-            <li><span class="bg-color-white" data-widget-setstyle="jarviswidget-color-white" rel="tooltip" data-placement="right" data-original-title="Purity"></span></li>
-            <li><a href="javascript:void(0);" class="jarviswidget-remove-colors" data-widget-setstyle="" rel="tooltip" data-placement="bottom" data-original-title="重置部件颜色">重置</a></li>
-           </ul>
-          </div> 
-          <span class="widget-icon"><i class="fa fa-comments txt-color-white"></i></span> 
-          <h2>地域分布</h2> 
-          <div class="widget-toolbar" role="menu"> 
-           <!-- add: non-hidden - to disable auto hide --> 
-           <div class="btn-group"> 
-            <button class="btn dropdown-toggle btn-xs btn-success" data-toggle="dropdown"> 下拉&nbsp;<i class="fa fa-caret-down"></i> </button> 
-            <ul class="dropdown-menu pull-right js-status-update"> 
-             <li> <a href="javascript:void(0);"><i class="fa fa-circle txt-color-green"></i>&nbsp;下拉一</a> </li> 
-             <li> <a href="javascript:void(0);"><i class="fa fa-circle txt-color-red"></i>&nbsp;下拉二</a> </li> 
-             <li> <a href="javascript:void(0);"><i class="fa fa-circle fa-circle txt-color-orange"></i>&nbsp;下拉三</a> </li> 
-            </ul> 
+<div class="mainPage"> 
+   <div class="headerTitle"> 
+    <div class="col-xs-12 col-sm-7 col-md-7 col-lg-4"> 
+     <h2 class="nav-title"><i class="fa navTitleIcon"></i> 首页 <span>&gt; 我的仪表盘</span></h2> 
+    </div> 
+    <div class="col-xs-12 col-sm-5 col-md-5 col-lg-8"> 
+     <ul id="sparks"> 
+      <li class="sparks-info"> <h5> 个人收入 <span class="txt-color-blue">$47,171</span></h5> 
+       <div class="sparkline txt-color-blue hidden-mobile hidden-md hidden-sm">
+         1300, 1877, 2500, 2577, 2000, 2100, 3000, 2700, 3631, 2471, 2700, 3631, 2471 
+       </div> </li> 
+      <li class="sparks-info"> <h5> 站点流量 <span class="txt-color-purple"><i class="fa fa-arrow-circle-up"></i>&nbsp;45%</span></h5> 
+       <div class="sparkline txt-color-purple hidden-mobile hidden-md hidden-sm">
+         110,150,300,130,400,240,220,310,220,300, 270, 210 
+       </div> </li> 
+      <li class="sparks-info"> <h5> 站点营收 <span class="txt-color-greenDark"><i class="fa fa-shopping-cart"></i>&nbsp;2447</span></h5> 
+       <div class="sparkline txt-color-purple hidden-mobile hidden-md hidden-sm">
+         110,150,300,130,400,240,220,310,220,300, 270, 210 
+       </div> </li> 
+     </ul> 
+    </div> 
+   </div> 
+   <!-- widget-grid --> 
+   <section id="widget-grid"> 
+    <div class="row"> 
+     <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12"> 
+      <!-- new widget --> 
+      <div class="jarviswidget " id="wid-id-0" data-widget-colorbutton="false" data-widget-fullscreenbutton="false" data-widget-togglebutton="false" data-widget-editbutton="false" data-widget-deletebutton="false"> 
+       <header> 
+        <span class="widget-icon"><i class="fa  icon-bar-chart"></i></span> 
+        <h2>即时动态</h2> 
+        <ul class="nav nav-tabs pull-right" id="myTab"> 
+         <li class="active"> <a data-toggle="tab" href="#s1"><i class="fa fa-clock-o"></i> <span class="hidden-mobile hidden-tablet">即时状态</span></a> </li> 
+         <li> <a data-toggle="tab" href="#s2"><i class="fa fa-facebook"></i> <span class="hidden-mobile hidden-tablet">社会网络</span></a> </li> 
+        </ul> 
+       </header> 
+       <!-- widget div--> 
+       <div class="no-padding"> 
+        <div class="widget-body"> 
+         <!-- content --> 
+         <div id="myTabContent" class="tab-content"> 
+          <div class="tab-pane fade active in padding-10 no-padding-bottom" id="s1"> 
+           <div class="row no-space"> 
+            <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8"> 
+             22222222222222222
+            </div> 
+            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 show-stats"> 
+             <div class="row"> 
+              <div class="col-xs-6 col-sm-6 col-md-12 col-lg-12"> 
+               <span class="text">我的任务<span class="pull-right">130/200</span> </span> 
+               <div class="progress"> 
+                <div class="progress-bar bg-color-blueDark" style="width:65%;"></div> 
+               </div> 
+              </div> 
+              <div class="col-xs-6 col-sm-6 col-md-12 col-lg-12"> 
+               <span class="text">数据传输<span class="pull-right">440GB</span> </span> 
+               <div class="progress"> 
+                <div class="progress-bar bg-color-blue" style="width:34%;"></div> 
+               </div> 
+              </div> 
+              <div class="col-xs-6 col-sm-6 col-md-12 col-lg-12"> 
+               <span class="text">修复BUG<span class="pull-right">77%</span> </span> 
+               <div class="progress"> 
+                <div class="progress-bar bg-color-blue" style="width:77%;"></div> 
+               </div> 
+              </div> 
+              <div class="col-xs-6 col-sm-6 col-md-12 col-lg-12"> 
+               <span class="text">用户测试<span class="pull-right">8天</span> </span> 
+               <div class="progress"> 
+                <div class="progress-bar bg-color-greenLight" style="width:84%;"></div> 
+               </div> 
+              </div> 
+              <span class="show-stat-buttons "> <span class="col-xs-12 col-sm-6 col-md-6 col-lg-6"> <a href="javascript:void(0);" class="btn btn-block hidden-xs btn-default">生成PDF</a> </span> <span class="col-xs-12 col-sm-6 col-md-6 col-lg-6"> <a href="javascript:void(0);" class="btn btn-block hidden-xs btn-default">报告问题</a> </span> </span> 
+             </div> 
+            </div> 
+           </div> 
+           <div class="show-stat-microcharts"> 
+            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3"> 
+             <div class="easy-pie-chart txt-color-orangeDark" data-percent="33" data-pie-size="50"> 
+              <span class="percent percent-sign">35</span> 
+             </div> 
+             <span class="easy-pie-title">&nbsp;服务器负载&nbsp;<i class="fa fa-caret-up icon-color-bad"></i> </span> 
+             <ul class="smaller-stat hidden-sm pull-right"> 
+              <li> <span class="label bg-color-greenLight"><i class="fa fa-caret-up"></i> 97%</span> </li> 
+              <li> <span class="label bg-color-blueLight"><i class="fa fa-caret-down"></i> 44%</span> </li> 
+             </ul> 
+             <div class="sparkline pull-right txt-color-greenLight" data-sparkline-type="line" data-sparkline-height="33px" data-sparkline-width="70px" data-fill-color="transparent">
+               130, 187, 250, 257, 200, 210, 300, 260, 363, 267, 270, 363, 247 
+             </div> 
+            </div> 
+            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3"> 
+             <div class="easy-pie-chart txt-color-greenLight" data-percent="78" data-pie-size="50"> 
+              <span class="percent percent-sign">78</span> 
+             </div> 
+             <span class="easy-pie-title">&nbsp; 磁盘使用率&nbsp;<i class="fa fa-caret-down icon-color-good"></i> </span> 
+             <ul class="smaller-stat hidden-sm pull-right"> 
+              <li> <span class="label bg-color-blueDark"><i class="fa fa-caret-up"></i> 76%</span> </li> 
+              <li> <span class="label bg-color-blue"><i class="fa fa-caret-down"></i> 3%</span> </li> 
+             </ul> 
+             <div class="sparkline pull-right txt-color-blue" data-sparkline-type="line" data-sparkline-height="33px" data-sparkline-width="70px" data-fill-color="transparent">
+               257, 200, 210, 300, 270, 363, 130, 187, 250, 247, 270, 363, 247 
+             </div> 
+            </div> 
+            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3"> 
+             <div class="easy-pie-chart txt-color-blue" data-percent="23" data-pie-size="50"> 
+              <span class="percent percent-sign">23</span> 
+             </div> 
+             <span class="easy-pie-title">&nbsp;传输情况&nbsp;<i class="fa fa-caret-up icon-color-good"></i> </span> 
+             <ul class="smaller-stat hidden-sm pull-right"> 
+              <li> <span class="label bg-color-darken"><i class="fa fa-caret-up"></i> 10GB</span> </li> 
+              <li> <span class="label bg-color-blueDark"><i class="fa fa-caret-down"></i> 10%</span> </li> 
+             </ul> 
+             <div class="sparkline pull-right txt-color-darken" data-sparkline-type="line" data-sparkline-height="33px" data-sparkline-width="70px" data-fill-color="transparent">
+               200, 210, 363, 247, 300, 270, 130, 187, 250, 257, 363, 247, 270 
+             </div> 
+            </div> 
+            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3"> 
+             <div class="easy-pie-chart txt-color-darken" data-percent="36" data-pie-size="50"> 
+              <span class="percent percent-sign">36</span> 
+             </div> 
+             <span class="easy-pie-title">&nbsp;温度&nbsp;<i class="fa fa-caret-down icon-color-good"></i> </span> 
+             <ul class="smaller-stat hidden-sm pull-right"> 
+              <li> <span class="label bg-color-red"><i class="fa fa-caret-up"></i> 124</span> </li> 
+              <li> <span class="label bg-color-blue"><i class="fa fa-caret-down"></i> 40 F</span> </li> 
+             </ul> 
+             <div class="sparkline pull-right txt-color-red" data-sparkline-type="line" data-sparkline-height="33px" data-sparkline-width="70px" data-fill-color="transparent">
+               2700, 3631, 2471, 2700, 3631, 2471, 1300, 1877, 2500, 2577, 2000, 2100, 3000 
+             </div> 
+            </div> 
            </div> 
           </div> 
-          <span class="jarviswidget-loader"><i class="fa fa-refresh fa-spin"></i></span>
-         </header> 
-         <!-- widget edit box --> 
-         <div class="panel-success widget-support-tickets " id="dashboard-support-tickets" role="content"> 
-          <!-- start table --> 
-          <table class="table table-striped table-hover table-condensed "> 
-           <thead> 
-            <tr> 
-             <th>国家</th> 
-             <th>访问数</th> 
-             <th class="text-c">用户活动情况</th> 
-             <th class="text-c">在线</th> 
-             <th class="text-c">性别比例</th> 
-            </tr> 
-           </thead> 
-           <tbody> 
-            <tr> 
-             <td><a href="javascript:void(0);">美国</a></td> 
-             <td>4,977</td> 
-             <td class="text-align-center"> 
-              <div class="sparkline txt-color-blue text-align-center " data-sparkline-height="22px" data-sparkline-width="90px" data-sparkline-barwidth="2">
-               <canvas width="50" height="22" style="display: inline-block; width: 50px; height: 22px; vertical-align: top;"></canvas>
-              </div> </td> 
-             <td class="text-align-center">163</td> 
-             <td class="text-align-center"> 
-              <div class="sparkline display-inline " data-sparkline-type="pie" data-sparkline-piecolor="[&quot;#E979BB&quot;, &quot;#57889C&quot;]" data-sparkline-offset="90" data-sparkline-piesize="23px">
-               <canvas width="23" height="23" style="display: inline-block; width: 23px; height: 23px; vertical-align: top;"></canvas>
-              </div> 
-              <div class="btn-group pull-right"> 
-               <button class="btn btn-xs btn-default" data-toggle="dropdown"> <i class="fa fa-lg fa-cog"></i> </button> 
-               <ul class="dropdown-menu"> 
-                <li> <a href="javascript:void(0);"> <i class="fa fa-lg fa-fw fa-file txt-color-greenLight"></i> <span>PDF</span> </a> </li> 
-                <li> <a href="javascript:void(0);"> <i class="fa fa-lg fa-fw fa-times txt-color-red"></i> <span>删除</span> </a> </li> 
-                <li class="divider"></li> 
-                <li class="text-align-center"> <a href="javascript:void(0);">取消</a> </li> 
-               </ul> 
-              </div> </td> 
-            </tr> 
-            <tr> 
-             <td><a href="javascript:void(0);">英国</a></td> 
-             <td>4,658</td> 
-             <td class="text-align-center"> 
-              <div class="sparkline txt-color-blue text-align-center " data-sparkline-height="22px" data-sparkline-width="90px" data-sparkline-barwidth="2">
-               <canvas width="50" height="22" style="display: inline-block; width: 50px; height: 22px; vertical-align: top;"></canvas>
-              </div> </td> 
-             <td class="text-align-center">182</td> 
-             <td class="text-align-center"> 
-              <div class="sparkline display-inline " data-sparkline-type="pie" data-sparkline-piecolor="[&quot;#E979BB&quot;, &quot;#57889C&quot;]" data-sparkline-offset="90" data-sparkline-piesize="23px">
-               <canvas width="23" height="23" style="display: inline-block; width: 23px; height: 23px; vertical-align: top;"></canvas>
-              </div> 
-              <div class="btn-group pull-right"> 
-               <button class="btn btn-xs btn-default" data-toggle="dropdown"> <i class="fa fa-lg fa-cog"></i> </button> 
-               <ul class="dropdown-menu"> 
-                <li> <a href="javascript:void(0);"> <i class="fa fa-lg fa-fw fa-file txt-color-greenLight"></i> <span>PDF</span> </a> </li> 
-                <li> <a href="javascript:void(0);"> <i class="fa fa-lg fa-fw fa-times txt-color-red"></i> <span>删除</span> </a> </li> 
-                <li class="divider"></li> 
-                <li class="text-align-center"> <a href="javascript:void(0);">取消</a> </li> 
-               </ul> 
-              </div> </td> 
-            </tr> 
-            <tr> 
-             <td><a href="javascript:void(0);">法国</a></td> 
-             <td>4,386</td> 
-             <td class="text-align-center"> 
-              <div class="sparkline txt-color-blue text-align-center " data-sparkline-height="22px" data-sparkline-width="90px" data-sparkline-barwidth="2">
-               <canvas width="50" height="22" style="display: inline-block; width: 50px; height: 22px; vertical-align: top;"></canvas>
-              </div> </td> 
-             <td class="text-align-center">183</td> 
-             <td class="text-align-center"> 
-              <div class="sparkline display-inline " data-sparkline-type="pie" data-sparkline-piecolor="[&quot;#E979BB&quot;, &quot;#57889C&quot;]" data-sparkline-offset="90" data-sparkline-piesize="23px">
-               <canvas width="23" height="23" style="display: inline-block; width: 23px; height: 23px; vertical-align: top;"></canvas>
-              </div> 
-              <div class="btn-group pull-right"> 
-               <button class="btn btn-xs btn-default" data-toggle="dropdown"> <i class="fa fa-lg fa-cog"></i> </button> 
-               <ul class="dropdown-menu"> 
-                <li> <a href="javascript:void(0);"> <i class="fa fa-lg fa-fw fa-file txt-color-greenLight"></i> <span>PDF</span> </a> </li> 
-                <li> <a href="javascript:void(0);"> <i class="fa fa-lg fa-fw fa-times txt-color-red"></i> <span>删除</span> </a> </li> 
-                <li class="divider"></li> 
-                <li class="text-align-center"> <a href="javascript:void(0);">取消</a> </li> 
-               </ul> 
-              </div> </td> 
-            </tr> 
-            <tr> 
-             <td><a href="javascript:void(0);">德国</a></td> 
-             <td>4,977</td> 
-             <td class="text-align-center"> 
-              <div class="sparkline txt-color-blue text-align-center " data-sparkline-height="22px" data-sparkline-width="90px" data-sparkline-barwidth="2">
-               <canvas width="50" height="22" style="display: inline-block; width: 50px; height: 22px; vertical-align: top;"></canvas>
-              </div> </td> 
-             <td class="text-align-center">123</td> 
-             <td class="text-align-center"> 
-              <div class="sparkline display-inline " data-sparkline-type="pie" data-sparkline-piecolor="[&quot;#E979BB&quot;, &quot;#57889C&quot;]" data-sparkline-offset="90" data-sparkline-piesize="23px">
-               <canvas width="23" height="23" style="display: inline-block; width: 23px; height: 23px; vertical-align: top;"></canvas>
-              </div> 
-              <div class="btn-group pull-right"> 
-               <button class="btn btn-xs btn-default" data-toggle="dropdown"> <i class="fa fa-lg fa-cog"></i> </button> 
-               <ul class="dropdown-menu"> 
-                <li> <a href="javascript:void(0);"> <i class="fa fa-lg fa-fw fa-file txt-color-greenLight"></i> <span>PDF</span> </a> </li> 
-                <li> <a href="javascript:void(0);"> <i class="fa fa-lg fa-fw fa-times txt-color-red"></i> <span>删除</span> </a> </li> 
-                <li class="divider"></li> 
-                <li class="text-align-center"> <a href="javascript:void(0);">取消</a> </li> 
-               </ul> 
-              </div> </td> 
-            </tr> 
-            <tr> 
-             <td><a href="javascript:void(0);">俄国</a></td> 
-             <td>3,688</td> 
-             <td class="text-align-center"> 
-              <div class="sparkline txt-color-blue text-align-center " data-sparkline-height="22px" data-sparkline-width="90px" data-sparkline-barwidth="2">
-               <canvas width="50" height="22" style="display: inline-block; width: 50px; height: 22px; vertical-align: top;"></canvas>
-              </div> </td> 
-             <td class="text-align-center">116</td> 
-             <td class="text-align-center"> 
-              <div class="sparkline display-inline " data-sparkline-type="pie" data-sparkline-piecolor="[&quot;#E979BB&quot;, &quot;#57889C&quot;]" data-sparkline-offset="90" data-sparkline-piesize="23px">
-               <canvas width="23" height="23" style="display: inline-block; width: 23px; height: 23px; vertical-align: top;"></canvas>
-              </div> 
-              <div class="btn-group pull-right"> 
-               <button class="btn btn-xs btn-default" data-toggle="dropdown"> <i class="fa fa-lg fa-cog"></i> </button> 
-               <ul class="dropdown-menu"> 
-                <li> <a href="javascript:void(0);"> <i class="fa fa-lg fa-fw fa-file txt-color-greenLight"></i> <span>PDF</span> </a> </li> 
-                <li> <a href="javascript:void(0);"> <i class="fa fa-lg fa-fw fa-times txt-color-red"></i> <span>删除</span> </a> </li> 
-                <li class="divider"></li> 
-                <li class="text-align-center"> <a href="javascript:void(0);">取消</a> </li> 
-               </ul> 
-              </div> </td> 
-            </tr> 
-            <tr> 
-             <td><a href="javascript:void(0);">中国</a></td> 
-             <td>3,927</td> 
-             <td class="text-align-center"> 
-              <div class="sparkline txt-color-blue text-align-center " data-sparkline-height="22px" data-sparkline-width="90px" data-sparkline-barwidth="2">
-               <canvas width="50" height="22" style="display: inline-block; width: 50px; height: 22px; vertical-align: top;"></canvas>
-              </div> </td> 
-             <td class="text-align-center">193</td> 
-             <td class="text-align-center"> 
-              <div class="sparkline display-inline " data-sparkline-type="pie" data-sparkline-piecolor="[&quot;#E979BB&quot;, &quot;#57889C&quot;]" data-sparkline-offset="90" data-sparkline-piesize="23px">
-               <canvas width="23" height="23" style="display: inline-block; width: 23px; height: 23px; vertical-align: top;"></canvas>
-              </div> 
-              <div class="btn-group pull-right"> 
-               <button class="btn btn-xs btn-default" data-toggle="dropdown"> <i class="fa fa-lg fa-cog"></i> </button> 
-               <ul class="dropdown-menu"> 
-                <li> <a href="javascript:void(0);"> <i class="fa fa-lg fa-fw fa-file txt-color-greenLight"></i> <span>PDF</span> </a> </li> 
-                <li> <a href="javascript:void(0);"> <i class="fa fa-lg fa-fw fa-times txt-color-red"></i> <span>删除</span> </a> </li> 
-                <li class="divider"></li> 
-                <li class="text-align-center"> <a href="javascript:void(0);">取消</a> </li> 
-               </ul> 
-              </div> </td> 
-            </tr> 
-            <tr> 
-             <td><a href="javascript:void(0);">韩国</a></td> 
-             <td>3,896</td> 
-             <td class="text-align-center"> 
-              <div class="sparkline txt-color-blue text-align-center " data-sparkline-height="22px" data-sparkline-width="90px" data-sparkline-barwidth="2">
-               <canvas width="50" height="22" style="display: inline-block; width: 50px; height: 22px; vertical-align: top;"></canvas>
-              </div> </td> 
-             <td class="text-align-center">164</td> 
-             <td class="text-align-center"> 
-              <div class="sparkline display-inline " data-sparkline-type="pie" data-sparkline-piecolor="[&quot;#E979BB&quot;, &quot;#57889C&quot;]" data-sparkline-offset="90" data-sparkline-piesize="23px">
-               <canvas width="23" height="23" style="display: inline-block; width: 23px; height: 23px; vertical-align: top;"></canvas>
-              </div> 
-              <div class="btn-group pull-right"> 
-               <button class="btn btn-xs btn-default" data-toggle="dropdown"> <i class="fa fa-lg fa-cog"></i> </button> 
-               <ul class="dropdown-menu"> 
-                <li> <a href="javascript:void(0);"> <i class="fa fa-lg fa-fw fa-file txt-color-greenLight"></i> <span>PDF</span> </a> </li> 
-                <li> <a href="javascript:void(0);"> <i class="fa fa-lg fa-fw fa-times txt-color-red"></i> <span>删除</span> </a> </li> 
-                <li class="divider"></li> 
-                <li class="text-align-center"> <a href="javascript:void(0);">取消</a> </li> 
-               </ul> 
-              </div> </td> 
-            </tr> 
-            <tr> 
-             <td><a href="javascript:void(0);">泰国</a></td> 
-             <td>3,621</td> 
-             <td class="text-align-center"> 
-              <div class="sparkline txt-color-blue text-align-center " data-sparkline-height="22px" data-sparkline-width="90px" data-sparkline-barwidth="2">
-               <canvas width="50" height="22" style="display: inline-block; width: 50px; height: 22px; vertical-align: top;"></canvas>
-              </div> </td> 
-             <td class="text-align-center">162</td> 
-             <td class="text-align-center"> 
-              <div class="sparkline display-inline " data-sparkline-type="pie" data-sparkline-piecolor="[&quot;#E979BB&quot;, &quot;#57889C&quot;]" data-sparkline-offset="90" data-sparkline-piesize="23px">
-               <canvas width="23" height="23" style="display: inline-block; width: 23px; height: 23px; vertical-align: top;"></canvas>
-              </div> 
-              <div class="btn-group pull-right"> 
-               <button class="btn btn-xs btn-default" data-toggle="dropdown"> <i class="fa fa-lg fa-cog"></i> </button> 
-               <ul class="dropdown-menu"> 
-                <li> <a href="javascript:void(0);"> <i class="fa fa-lg fa-fw fa-file txt-color-greenLight"></i> <span>PDF</span> </a> </li> 
-                <li> <a href="javascript:void(0);"> <i class="fa fa-lg fa-fw fa-times txt-color-red"></i> <span>删除</span> </a> </li> 
-                <li class="divider"></li> 
-                <li class="text-align-center"> <a href="javascript:void(0);">取消</a> </li> 
-               </ul> 
-              </div> </td> 
-            </tr> 
-           </tbody> 
-           <tfoot> 
-            <tr> 
-             <td colspan="5"> 
-              <ul class="pagination pagination-xs no-margin "> 
-               <li class="prev disabled"> <a href="javascript:void(0);">上一页</a> </li> 
-               <li class="active"> <a href="javascript:void(0);">1</a> </li> 
-               <li> <a href="javascript:void(0);">2</a> </li> 
-               <li> <a href="javascript:void(0);">3</a> </li> 
-               <li class="next"> <a href="javascript:void(0);">下一页</a> </li> 
-              </ul> </td> 
-            </tr> 
-           </tfoot> 
-          </table> 
-          <!-- end table --> 
+          <!-- end s1 tab pane --> 
+          <div class="tab-pane fade " id="s2"> 
+           222222222222222
+          </div> 
+          <!-- end s2 tab pane --> 
+         </div> 
+         <!-- end content --> 
+        </div> 
+       </div> 
+       <!-- end widget div --> 
+      </div> 
+      <!-- end widget --> 
+     </article> 
+    </div> 
+    <!-- end row --> 
+    <!-- start row --> 
+    <div class="row"> 
+     <article class="col-xs-12 col-sm-12 col-md-12 col-lg-6"> 
+      <!-- new widget --> 
+      <div class="jarviswidget jarviswidget-color-blueDark" id="wid-id-1" data-widget-fullscreenbutton="false" data-widget-editbutton="false"> 
+       <header> 
+        <span class="widget-icon"><i class="fa fa-comments txt-color-white"></i></span> 
+        <h2>地域分布</h2> 
+        <div class="widget-toolbar"> 
+         <!-- add: non-hidden - to disable auto hide --> 
+         <div class="btn-group"> 
+          <button class="btn dropdown-toggle btn-xs btn-success" data-toggle="dropdown"> 下拉&nbsp;<i class="fa fa-caret-down"></i> </button> 
+          <ul class="dropdown-menu pull-right js-status-update"> 
+           <li> <a href="javascript:void(0);"><i class="fa fa-circle txt-color-green"></i>&nbsp;下拉一</a> </li> 
+           <li> <a href="javascript:void(0);"><i class="fa fa-circle txt-color-red"></i>&nbsp;下拉二</a> </li> 
+           <li> <a href="javascript:void(0);"><i class="fa fa-circle fa-circle txt-color-orange"></i>&nbsp;下拉三</a> </li> 
+          </ul> 
          </div> 
         </div> 
-        <!-- end widget --> 
-       </article> 
-       <article class="col-xs-12 col-sm-12 col-md-12 col-lg-6 sortable-grid ui-sortable"> 
-        <!-- new widget --> 
-        <div class="jarviswidget  jarviswidget-sortable" id="wid-id-3" data-widget-editbutton="false" data-widget-fullscreenbutton="false" role="widget"> 
-         <header role="heading">
-          <div class="jarviswidget-ctrls" role="menu"> 
-           <a href="javascript:void(0);" class="button-icon jarviswidget-toggle-btn" rel="tooltip" title="" data-placement="bottom" data-original-title="折叠"><i class="fa fa-minus "></i></a> 
-           <a href="javascript:void(0);" class="button-icon jarviswidget-delete-btn" rel="tooltip" title="" data-placement="bottom" data-original-title="删除"><i class="fa fa-times"></i></a>
-          </div>
-          <div class="widget-toolbar" role="menu">
-           <a data-toggle="dropdown" class="dropdown-toggle color-box selector" href="javascript:void(0);"></a>
-           <ul class="dropdown-menu arrow-box-up-right color-select pull-right">
-            <li><span class="bg-color-green" data-widget-setstyle="jarviswidget-color-green" rel="tooltip" data-placement="left" data-original-title="绿草色"></span></li>
-            <li><span class="bg-color-greenDark" data-widget-setstyle="jarviswidget-color-greenDark" rel="tooltip" data-placement="top" data-original-title="深绿色"></span></li>
-            <li><span class="bg-color-greenLight" data-widget-setstyle="jarviswidget-color-greenLight" rel="tooltip" data-placement="top" data-original-title="亮绿色"></span></li>
-            <li><span class="bg-color-purple" data-widget-setstyle="jarviswidget-color-purple" rel="tooltip" data-placement="top" data-original-title="紫色"></span></li>
-            <li><span class="bg-color-magenta" data-widget-setstyle="jarviswidget-color-magenta" rel="tooltip" data-placement="top" data-original-title="品红色"></span></li>
-            <li><span class="bg-color-pink" data-widget-setstyle="jarviswidget-color-pink" rel="tooltip" data-placement="right" data-original-title="粉红色"></span></li>
-            <li><span class="bg-color-pinkDark" data-widget-setstyle="jarviswidget-color-pinkDark" rel="tooltip" data-placement="left" data-original-title="褪粉色"></span></li>
-            <li><span class="bg-color-blueLight" data-widget-setstyle="jarviswidget-color-blueLight" rel="tooltip" data-placement="top" data-original-title="浅蓝色"></span></li>
-            <li><span class="bg-color-teal" data-widget-setstyle="jarviswidget-color-teal" rel="tooltip" data-placement="top" data-original-title="青色"></span></li>
-            <li><span class="bg-color-blue" data-widget-setstyle="jarviswidget-color-blue" rel="tooltip" data-placement="top" data-original-title="海洋蓝色"></span></li>
-            <li><span class="bg-color-blueDark" data-widget-setstyle="jarviswidget-color-blueDark" rel="tooltip" data-placement="top" data-original-title="深灰色"></span></li>
-            <li><span class="bg-color-darken" data-widget-setstyle="jarviswidget-color-darken" rel="tooltip" data-placement="right" data-original-title="黑色"></span></li>
-            <li><span class="bg-color-yellow" data-widget-setstyle="jarviswidget-color-yellow" rel="tooltip" data-placement="left" data-original-title="土黄色"></span></li>
-            <li><span class="bg-color-orange" data-widget-setstyle="jarviswidget-color-orange" rel="tooltip" data-placement="bottom" data-original-title="Orange"></span></li>
-            <li><span class="bg-color-orangeDark" data-widget-setstyle="jarviswidget-color-orangeDark" rel="tooltip" data-placement="bottom" data-original-title="暗橙色"></span></li>
-            <li><span class="bg-color-red" data-widget-setstyle="jarviswidget-color-red" rel="tooltip" data-placement="bottom" data-original-title="玫瑰红"></span></li>
-            <li><span class="bg-color-redLight" data-widget-setstyle="jarviswidget-color-redLight" rel="tooltip" data-placement="bottom" data-original-title="淡红色"></span></li>
-            <li><span class="bg-color-white" data-widget-setstyle="jarviswidget-color-white" rel="tooltip" data-placement="right" data-original-title="Purity"></span></li>
-            <li><a href="javascript:void(0);" class="jarviswidget-remove-colors" data-widget-setstyle="" rel="tooltip" data-placement="bottom" data-original-title="重置部件颜色">重置</a></li>
-           </ul>
-          </div> 
-          <span class="widget-icon"><i class="fa fa-map-marker"></i></span> 
-          <h2>项目动态</h2> 
-          <div class="widget-toolbar hidden-mobile" role="menu"> 
-           <span class="onoffswitch-title"><i class="fa fa-location-arrow"></i>&nbsp;实时</span> 
-           <span class="onoffswitch"> <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" checked="checked" id="myonoffswitch" /> <label class="onoffswitch-label" for="myonoffswitch"> <span class="onoffswitch-inner" data-swchon-text="是" data-swchoff-text="否"></span> <span class="onoffswitch-switch"></span> </label> </span> 
-          </div> 
-          <span class="jarviswidget-loader"><i class="fa fa-refresh fa-spin"></i></span>
-         </header> 
-         <div class="panel-body widgetDrag" id="infoent" role="content"> 
-          <!-- storeInfo --> 
-          <div class="slimScrollDiv" style="position: relative; width: auto; height: 326px;">
-           <div class="storeInfo" style="width: auto; height: 326px;"> 
-            <div class="panel-success widget-support-tickets "> 
-             <div class="panel-body tab-content-padding"> 
-              <!-- Panel padding, without vertical padding --> 
-              <div class="panel-padding no-padding-vr"> 
-               <div class="ticket"> 
-                <span class="label label-success ticket-label">在进行中</span> 
-                <a href="#" title="" class="ticket-title">OA管理项目<span>[#201798]</span></a> 
-                <span class="ticket-info"> 
-                 <!-- 由&nbsp; --><a href="#" title="">张小三</a>&nbsp;今天 </span> 
-               </div> 
-               <div class="ticket"> 
-                <span class="label label-warning ticket-label">等待</span> 
-                <a href="#" title="" class="ticket-title">P2P管理项目<span>[#201797]</span></a> 
-                <span class="ticket-info"> 
-                 <!-- 由&nbsp; --><a href="#" title="">李小四</a>&nbsp;1天前 </span> 
-               </div> 
-               <div class="ticket"> 
-                <span class="label label-info ticket-label">在进行中</span> 
-                <a href="#" title="" class="ticket-title"> <i class="fa fa-warning text-danger"></i> O2O管理项目<span>[#201796]</span></a> 
-                <span class="ticket-info"> 
-                 <!-- 由&nbsp; --><a href="#" title="">王晓武</a>&nbsp;2天前 </span> 
-               </div> 
-               <div class="ticket"> 
-                <span class="label label-danger ticket-label">已拒绝</span> 
-                <a href="#" title="" class="ticket-title">B2B管理项目<span>[#201795]</span></a> 
-                <span class="ticket-info"> 
-                 <!-- 由&nbsp; --><a href="#" title="">刘老大</a>&nbsp;3天前 </span> 
-               </div> 
-               <div class="ticket"> 
-                <span class="label label-success ticket-label">已解决</span> 
-                <a href="#" title="" class="ticket-title">B2C管理项目<span>[#201690]</span></a> 
-                <span class="ticket-info"> 
-                 <!-- 由&nbsp; --><a href="#" title="">马小龙</a>&nbsp;4天前 </span> 
-               </div> 
-               <div class="ticket"> 
-                <span class="label label-success ticket-label">已解决</span> 
-                <a href="#" title="" class="ticket-title">官网后台管理<span>[#261793]</span></a> 
-                <span class="ticket-info"> 
-                 <!-- 由&nbsp; --><a href="#" title="">胡锦涛</a>&nbsp;5天前 </span> 
-               </div> 
-               <div class="ticket"> 
-                <span class="label label-info ticket-label">在进行中</span> 
-                <a href="#" title="" class="ticket-title"> <i class="fa fa-warning text-danger"></i> 专线宝项目<span>[#281690]</span></a> 
-                <span class="ticket-info"> 
-                 <!-- 由&nbsp; --><a href="#" title="">习近平</a>&nbsp;6天前 </span> 
-               </div> 
-              </div> 
-             </div> 
-             <!-- / .panel-body --> 
+       </header> 
+       <!-- widget edit box --> 
+       <div class="panel-success widget-support-tickets " id="dashboard-support-tickets"> 
+        <!-- start table --> 
+        <table class="table table-striped table-hover table-condensed "> 
+         <thead> 
+          <tr> 
+           <th>国家</th> 
+           <th>访问数</th> 
+           <th class="text-c">用户活动情况</th> 
+           <th class="text-c">在线</th> 
+           <th class="text-c">性别比例</th> 
+          </tr> 
+         </thead> 
+         <tbody> 
+          <tr> 
+           <td><a href="javascript:void(0);">美国</a></td> 
+           <td>4,977</td> 
+           <td class="text-align-center"> 
+            <div class="sparkline txt-color-blue text-align-center " data-sparkline-height="22px" data-sparkline-width="90px" data-sparkline-barwidth="2">
+              2700, 3631, 2471, 1300, 1877, 2500, 2577, 2700, 3631, 2471, 2000, 2100, 3000 
+            </div> </td> 
+           <td class="text-align-center">163</td> 
+           <td class="text-align-center"> 
+            <div class="sparkline display-inline " data-sparkline-type="pie" data-sparkline-piecolor="[&quot;#E979BB&quot;, &quot;#57889C&quot;]" data-sparkline-offset="90" data-sparkline-piesize="23px">
+              17,83 
             </div> 
-            <!-- / .panel --> 
-           </div>
-           <div class="slimScrollBar" style="width: 7px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 7px; z-index: 99; right: 1px; height: 235.124px; background: rgb(136, 136, 136);"></div>
-           <div class="slimScrollRail" style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; opacity: 0.2; z-index: 90; right: 1px; background: rgb(51, 51, 51);"></div>
+            <div class="btn-group pull-right"> 
+             <button class="btn btn-xs btn-default" data-toggle="dropdown"> <i class="fa fa-lg fa-cog"></i> </button> 
+             <ul class="dropdown-menu"> 
+              <li> <a href="javascript:void(0);"> <i class="fa fa-lg fa-fw fa-file txt-color-greenLight"></i> <span>PDF</span> </a> </li> 
+              <li> <a href="javascript:void(0);"> <i class="fa fa-lg fa-fw fa-times txt-color-red"></i> <span>删除</span> </a> </li> 
+              <li class="divider"></li> 
+              <li class="text-align-center"> <a href="javascript:void(0);">取消</a> </li> 
+             </ul> 
+            </div> </td> 
+          </tr> 
+          <tr> 
+           <td><a href="javascript:void(0);">英国</a></td> 
+           <td>4,658</td> 
+           <td class="text-align-center"> 
+            <div class="sparkline txt-color-blue text-align-center " data-sparkline-height="22px" data-sparkline-width="90px" data-sparkline-barwidth="2">
+              1000, 1100, 3030, 1300, -1877, -2500, -2577, -2700, 3631, 2471, 4700, 1631, 2471 
+            </div> </td> 
+           <td class="text-align-center">182</td> 
+           <td class="text-align-center"> 
+            <div class="sparkline display-inline " data-sparkline-type="pie" data-sparkline-piecolor="[&quot;#E979BB&quot;, &quot;#57889C&quot;]" data-sparkline-offset="90" data-sparkline-piesize="23px">
+              22,88 
+            </div> 
+            <div class="btn-group pull-right"> 
+             <button class="btn btn-xs btn-default" data-toggle="dropdown"> <i class="fa fa-lg fa-cog"></i> </button> 
+             <ul class="dropdown-menu"> 
+              <li> <a href="javascript:void(0);"> <i class="fa fa-lg fa-fw fa-file txt-color-greenLight"></i> <span>PDF</span> </a> </li> 
+              <li> <a href="javascript:void(0);"> <i class="fa fa-lg fa-fw fa-times txt-color-red"></i> <span>删除</span> </a> </li> 
+              <li class="divider"></li> 
+              <li class="text-align-center"> <a href="javascript:void(0);">取消</a> </li> 
+             </ul> 
+            </div> </td> 
+          </tr> 
+          <tr> 
+           <td><a href="javascript:void(0);">法国</a></td> 
+           <td>4,386</td> 
+           <td class="text-align-center"> 
+            <div class="sparkline txt-color-blue text-align-center " data-sparkline-height="22px" data-sparkline-width="90px" data-sparkline-barwidth="2">
+              3631, 1471, 2400, 3631, 471, 1300, 1177, 2500, 2577, 3000, 4100, 3000, 7700 
+            </div> </td> 
+           <td class="text-align-center">183</td> 
+           <td class="text-align-center"> 
+            <div class="sparkline display-inline " data-sparkline-type="pie" data-sparkline-piecolor="[&quot;#E979BB&quot;, &quot;#57889C&quot;]" data-sparkline-offset="90" data-sparkline-piesize="23px">
+              10,90 
+            </div> 
+            <div class="btn-group pull-right"> 
+             <button class="btn btn-xs btn-default" data-toggle="dropdown"> <i class="fa fa-lg fa-cog"></i> </button> 
+             <ul class="dropdown-menu"> 
+              <li> <a href="javascript:void(0);"> <i class="fa fa-lg fa-fw fa-file txt-color-greenLight"></i> <span>PDF</span> </a> </li> 
+              <li> <a href="javascript:void(0);"> <i class="fa fa-lg fa-fw fa-times txt-color-red"></i> <span>删除</span> </a> </li> 
+              <li class="divider"></li> 
+              <li class="text-align-center"> <a href="javascript:void(0);">取消</a> </li> 
+             </ul> 
+            </div> </td> 
+          </tr> 
+          <tr> 
+           <td><a href="javascript:void(0);">德国</a></td> 
+           <td>4,977</td> 
+           <td class="text-align-center"> 
+            <div class="sparkline txt-color-blue text-align-center " data-sparkline-height="22px" data-sparkline-width="90px" data-sparkline-barwidth="2">
+              2700, 3631, 2471, 1300, 1877, 2500, 2577, 2700, 3631, 2471, 2000, 2100, 3000 
+            </div> </td> 
+           <td class="text-align-center">123</td> 
+           <td class="text-align-center"> 
+            <div class="sparkline display-inline " data-sparkline-type="pie" data-sparkline-piecolor="[&quot;#E979BB&quot;, &quot;#57889C&quot;]" data-sparkline-offset="90" data-sparkline-piesize="23px">
+              34,66 
+            </div> 
+            <div class="btn-group pull-right"> 
+             <button class="btn btn-xs btn-default" data-toggle="dropdown"> <i class="fa fa-lg fa-cog"></i> </button> 
+             <ul class="dropdown-menu"> 
+              <li> <a href="javascript:void(0);"> <i class="fa fa-lg fa-fw fa-file txt-color-greenLight"></i> <span>PDF</span> </a> </li> 
+              <li> <a href="javascript:void(0);"> <i class="fa fa-lg fa-fw fa-times txt-color-red"></i> <span>删除</span> </a> </li> 
+              <li class="divider"></li> 
+              <li class="text-align-center"> <a href="javascript:void(0);">取消</a> </li> 
+             </ul> 
+            </div> </td> 
+          </tr> 
+          <tr> 
+           <td><a href="javascript:void(0);">俄国</a></td> 
+           <td>3,688</td> 
+           <td class="text-align-center"> 
+            <div class="sparkline txt-color-blue text-align-center " data-sparkline-height="22px" data-sparkline-width="90px" data-sparkline-barwidth="2">
+              2700, 1877, 2500, 2577, 2000, 3631, 2471, -2700, -3631, 2471, 1300, 2100, 3000 
+            </div> </td> 
+           <td class="text-align-center">116</td> 
+           <td class="text-align-center"> 
+            <div class="sparkline display-inline " data-sparkline-type="pie" data-sparkline-piecolor="[&quot;#E979BB&quot;, &quot;#57889C&quot;]" data-sparkline-offset="90" data-sparkline-piesize="23px">
+              75,25 
+            </div> 
+            <div class="btn-group pull-right"> 
+             <button class="btn btn-xs btn-default" data-toggle="dropdown"> <i class="fa fa-lg fa-cog"></i> </button> 
+             <ul class="dropdown-menu"> 
+              <li> <a href="javascript:void(0);"> <i class="fa fa-lg fa-fw fa-file txt-color-greenLight"></i> <span>PDF</span> </a> </li> 
+              <li> <a href="javascript:void(0);"> <i class="fa fa-lg fa-fw fa-times txt-color-red"></i> <span>删除</span> </a> </li> 
+              <li class="divider"></li> 
+              <li class="text-align-center"> <a href="javascript:void(0);">取消</a> </li> 
+             </ul> 
+            </div> </td> 
+          </tr> 
+          <tr> 
+           <td><a href="javascript:void(0);">中国</a></td> 
+           <td>3,927</td> 
+           <td class="text-align-center"> 
+            <div class="sparkline txt-color-blue text-align-center " data-sparkline-height="22px" data-sparkline-width="90px" data-sparkline-barwidth="2">
+              1300, 1877, 2500, 2577, 2000, 2100, 3000, -2471, -2700, -3631, -2471, 2700, 3631 
+            </div> </td> 
+           <td class="text-align-center">193</td> 
+           <td class="text-align-center"> 
+            <div class="sparkline display-inline " data-sparkline-type="pie" data-sparkline-piecolor="[&quot;#E979BB&quot;, &quot;#57889C&quot;]" data-sparkline-offset="90" data-sparkline-piesize="23px">
+              50,50 
+            </div> 
+            <div class="btn-group pull-right"> 
+             <button class="btn btn-xs btn-default" data-toggle="dropdown"> <i class="fa fa-lg fa-cog"></i> </button> 
+             <ul class="dropdown-menu"> 
+              <li> <a href="javascript:void(0);"> <i class="fa fa-lg fa-fw fa-file txt-color-greenLight"></i> <span>PDF</span> </a> </li> 
+              <li> <a href="javascript:void(0);"> <i class="fa fa-lg fa-fw fa-times txt-color-red"></i> <span>删除</span> </a> </li> 
+              <li class="divider"></li> 
+              <li class="text-align-center"> <a href="javascript:void(0);">取消</a> </li> 
+             </ul> 
+            </div> </td> 
+          </tr> 
+          <tr> 
+           <td><a href="javascript:void(0);">韩国</a></td> 
+           <td>3,896</td> 
+           <td class="text-align-center"> 
+            <div class="sparkline txt-color-blue text-align-center " data-sparkline-height="22px" data-sparkline-width="90px" data-sparkline-barwidth="2">
+              5, 34, 10, 1, 4, 6, -9, -1, 0, 0, 5, 6, 7 
+            </div> </td> 
+           <td class="text-align-center">164</td> 
+           <td class="text-align-center"> 
+            <div class="sparkline display-inline " data-sparkline-type="pie" data-sparkline-piecolor="[&quot;#E979BB&quot;, &quot;#57889C&quot;]" data-sparkline-offset="90" data-sparkline-piesize="23px">
+              12,82 
+            </div> 
+            <div class="btn-group pull-right"> 
+             <button class="btn btn-xs btn-default" data-toggle="dropdown"> <i class="fa fa-lg fa-cog"></i> </button> 
+             <ul class="dropdown-menu"> 
+              <li> <a href="javascript:void(0);"> <i class="fa fa-lg fa-fw fa-file txt-color-greenLight"></i> <span>PDF</span> </a> </li> 
+              <li> <a href="javascript:void(0);"> <i class="fa fa-lg fa-fw fa-times txt-color-red"></i> <span>删除</span> </a> </li> 
+              <li class="divider"></li> 
+              <li class="text-align-center"> <a href="javascript:void(0);">取消</a> </li> 
+             </ul> 
+            </div> </td> 
+          </tr> 
+          <tr> 
+           <td><a href="javascript:void(0);">泰国</a></td> 
+           <td>3,621</td> 
+           <td class="text-align-center"> 
+            <div class="sparkline txt-color-blue text-align-center " data-sparkline-height="22px" data-sparkline-width="90px" data-sparkline-barwidth="2">
+              2400, 3631, 2471, 1300, 1877, 2400, 2577, 2700, 3631, 2471, 1600, 2800, 3000 
+            </div> </td> 
+           <td class="text-align-center">162</td> 
+           <td class="text-align-center"> 
+            <div class="sparkline display-inline " data-sparkline-type="pie" data-sparkline-piecolor="[&quot;#E979BB&quot;, &quot;#57889C&quot;]" data-sparkline-offset="90" data-sparkline-piesize="23px">
+              10,13 
+            </div> 
+            <div class="btn-group pull-right"> 
+             <button class="btn btn-xs btn-default" data-toggle="dropdown"> <i class="fa fa-lg fa-cog"></i> </button> 
+             <ul class="dropdown-menu"> 
+              <li> <a href="javascript:void(0);"> <i class="fa fa-lg fa-fw fa-file txt-color-greenLight"></i> <span>PDF</span> </a> </li> 
+              <li> <a href="javascript:void(0);"> <i class="fa fa-lg fa-fw fa-times txt-color-red"></i> <span>删除</span> </a> </li> 
+              <li class="divider"></li> 
+              <li class="text-align-center"> <a href="javascript:void(0);">取消</a> </li> 
+             </ul> 
+            </div> </td> 
+          </tr> 
+         </tbody> 
+         <tfoot> 
+          <tr> 
+           <td colspan="5"> 
+            <ul class="pagination pagination-xs no-margin "> 
+             <li class="prev disabled"> <a href="javascript:void(0);">上一页</a> </li> 
+             <li class="active"> <a href="javascript:void(0);">1</a> </li> 
+             <li> <a href="javascript:void(0);">2</a> </li> 
+             <li> <a href="javascript:void(0);">3</a> </li> 
+             <li class="next"> <a href="javascript:void(0);">下一页</a> </li> 
+            </ul> </td> 
+          </tr> 
+         </tfoot> 
+        </table> 
+        <!-- end table --> 
+       </div> 
+      </div> 
+      <!-- end widget --> 
+     </article> 
+     <article class="col-xs-12 col-sm-12 col-md-12 col-lg-6"> 
+      <!-- new widget --> 
+      <div class="jarviswidget " id="wid-id-3" data-widget-fullscreenbutton="false" data-widget-editbutton="false"> 
+       <header> 
+        <span class="widget-icon"><i class="fa fa-map-marker"></i></span> 
+        <h2>项目动态</h2> 
+        <div class="widget-toolbar hidden-mobile"> 
+         <span class="onoffswitch-title"><i class="fa fa-location-arrow"></i>&nbsp;实时</span> 
+         <span class="onoffswitch"> <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" checked="checked" id="myonoffswitch" /> <label class="onoffswitch-label" for="myonoffswitch"> <span class="onoffswitch-inner" data-swchon-text="是" data-swchoff-text="否"></span> <span class="onoffswitch-switch"></span> </label> </span> 
+        </div> 
+       </header> 
+       <div class="panel-body widgetDrag" id="infoent"> 
+        <!-- storeInfo --> 
+        <div class="storeInfo"> 
+         <div class="panel-success widget-support-tickets "> 
+          <div class="panel-body tab-content-padding"> 
+           <!-- Panel padding, without vertical padding --> 
+           <div class="panel-padding no-padding-vr"> 
+            <div class="ticket"> 
+             <span class="label label-success ticket-label">在进行中</span> 
+             <a href="#" title="" class="ticket-title">OA管理项目<span>[#201798]</span></a> 
+             <span class="ticket-info"> 
+              <!-- 由&nbsp; --><a href="#" title="">张小三</a>&nbsp;今天 </span> 
+            </div> 
+            <div class="ticket"> 
+             <span class="label label-warning ticket-label">等待</span> 
+             <a href="#" title="" class="ticket-title">P2P管理项目<span>[#201797]</span></a> 
+             <span class="ticket-info"> 
+              <!-- 由&nbsp; --><a href="#" title="">李小四</a>&nbsp;1天前 </span> 
+            </div> 
+            <div class="ticket"> 
+             <span class="label label-info ticket-label">在进行中</span> 
+             <a href="#" title="" class="ticket-title"> <i class="fa fa-warning text-danger"></i> O2O管理项目<span>[#201796]</span></a> 
+             <span class="ticket-info"> 
+              <!-- 由&nbsp; --><a href="#" title="">王晓武</a>&nbsp;2天前 </span> 
+            </div> 
+            <div class="ticket"> 
+             <span class="label label-danger ticket-label">已拒绝</span> 
+             <a href="#" title="" class="ticket-title">B2B管理项目<span>[#201795]</span></a> 
+             <span class="ticket-info"> 
+              <!-- 由&nbsp; --><a href="#" title="">刘老大</a>&nbsp;3天前 </span> 
+            </div> 
+            <div class="ticket"> 
+             <span class="label label-success ticket-label">已解决</span> 
+             <a href="#" title="" class="ticket-title">B2C管理项目<span>[#201690]</span></a> 
+             <span class="ticket-info"> 
+              <!-- 由&nbsp; --><a href="#" title="">马小龙</a>&nbsp;4天前 </span> 
+            </div> 
+            <div class="ticket"> 
+             <span class="label label-success ticket-label">已解决</span> 
+             <a href="#" title="" class="ticket-title">官网后台管理<span>[#261793]</span></a> 
+             <span class="ticket-info"> 
+              <!-- 由&nbsp; --><a href="#" title="">胡锦涛</a>&nbsp;5天前 </span> 
+            </div> 
+            <div class="ticket"> 
+             <span class="label label-info ticket-label">在进行中</span> 
+             <a href="#" title="" class="ticket-title"> <i class="fa fa-warning text-danger"></i> 专线宝项目<span>[#281690]</span></a> 
+             <span class="ticket-info"> 
+              <!-- 由&nbsp; --><a href="#" title="">习近平</a>&nbsp;6天前 </span> 
+            </div> 
+           </div> 
           </div> 
-          <!--end storeInfo--> 
-          <!-- Javascript --> 
-          <script>
+          <!-- / .panel-body --> 
+         </div> 
+         <!-- / .panel --> 
+        </div> 
+        <!--end storeInfo--> 
+        <!-- Javascript --> 
+        <script>
 		init.push(function () {
 			$('#infoent > div').slimScroll({height:326, alwaysVisible:true, color:'#888',allowPageScroll:true });
 		})
 	</script> 
-          <!-- Javascript end --> 
-         </div> 
-         <!-- end content --> 
-        </div> 
-        <!-- end widget div --> 
-       </article> 
+        <!-- Javascript end --> 
+       </div> 
+       <!-- end content --> 
       </div> 
-      <!-- end row --> 
-     </section> 
+      <!-- end widget div --> 
+     </article> 
     </div> 
-    <script type="text/javascript">
-	// PAGE RELATED SCRIPTS
-	/* chart colors default */
-	var $chrt_border_color = "#efefef";
-	var $chrt_grid_color = "#DDD"
-	var $chrt_main = "#E24913";
-	/* red       */
-	var $chrt_second = "#6595b4";
-	/* blue      */
-	var $chrt_third = "#FF9F01";
-	/* orange    */
-	var $chrt_fourth = "#7e9d3a";
-	/* green     */
-	var $chrt_fifth = "#BD362F";
-	/* dark red  */
-	var $chrt_mono = "#000";
-
-	$(function() {
-		/* sales chart */
-		var thistime=parseInt(moment().add(-8,'hours').format('X'));
-		//console.log(thistime);
-		if ($("#saleschart").length) {
-			var d = [[1, 50], [2, 120], [3, 87], [4, 77], [5, 436], [6, 575], [7, 736], [8, 86], [9, 676]];
-
-			for (var i = 0; i < d.length; i++)
-				d[i][0] = (thistime-i*60*60*24)*1000;
-				//d[i][0]=i+1
-
-
-			//console.log(d);
-			var options = {
-				xaxis : {
-					mode : "time",
-					tickLength : 5
-					// ticks: [[0, "zero"], [1, "one mark"], [2, "two marks"]]
-				},
-				series : {
-					lines : {
-						show : true,
-						lineWidth : 1,
-						fill : true,
-						fillColor : {
-							colors : [{
-								opacity : 0.1
-							}, {
-								opacity : 0.15
-							}]
-						}
-					},
-					//points: { show: true },
-					shadowSize : 0
-				},
-				selection : {
-					mode : "x"
-				},
-				grid : {
-					hoverable : true,
-					clickable : true,
-					tickColor : $chrt_border_color,
-					borderWidth : 0,
-					borderColor : $chrt_border_color,
-				},
-				tooltip : true,
-				tooltipOpts : {
-					content : "<b>%x</b>访问量   <span>%y</span>",
-					dateFormat : "%Y-%m-%d",
-					defaultTheme : false
-				},
-				colors : [$chrt_second],
-
-			};
-
-			var plot = $.plot($("#saleschart"), [d], options);
-		};
-		/* end sales chart */
-		/* bar chart */
-		if ($("#bar-chart").length) {
-			var data1 = [];
-			for (var i = 0; i <= 12; i += 1)
-				data1.push([i, parseInt(Math.random() * 30)]);
-
-			var data2 = [];
-			for (var i = 0; i <= 12; i += 1)
-				data2.push([i, parseInt(Math.random() * 30)]);
-
-			var data3 = [];
-			for (var i = 0; i <= 12; i += 1)
-				data3.push([i, parseInt(Math.random() * 30)]);
-
-			var ds = new Array();
-
-			ds.push({
-				data : data1,
-				bars : {
-					show : true,
-					barWidth : 0.2,
-					order: 1,
-				}
-			});
-			ds.push({
-				data : data2,
-				bars : {
-					show: true,
-					barWidth : 0.2,
-					order: 2
-				}
-			});
-			ds.push({
-				data : data3,
-				bars : {
-					show : true,
-					barWidth: 0.2,
-					order: 3
-				}
-			});
-
-			//Display graph
-			$.plot($("#bar-chart"), ds, {
-				colors: [$chrt_second, $chrt_fourth, "#666", "#BBB"],
-				grid: {
-					show : true,
-					hoverable: true,
-					clickable: true,
-					tickColor: $chrt_border_color,
-					borderWidth : 0,
-					borderColor : $chrt_border_color,
-				},
-				legend: true,
-				tooltip: true,
-				tooltipOpts: {
-					content: "<b>%x</b> = <span>%y</span>",
-					defaultTheme: false
-				}
-
-			});
-		}
-	});
-</script> 
-   </div> 
-  </div>
+    <!-- end row --> 
+   </section> 
+  </div> 
