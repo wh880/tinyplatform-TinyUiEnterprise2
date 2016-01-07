@@ -30,7 +30,70 @@
                             <div id="myTabContent" class="tab-content">
                                 <div class="tab-pane fade active in padding-10 no-padding-bottom" id="s1">
                                     <div class="row no-space">
-                                        <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">2222</div>
+                                        <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+                                           <div style="margin-bottom:-50px;">#@highChart("barColumn" "min-width:100%;height:260px")#end</div>
+
+                                            <script type="text/javascript">
+                                                $(function () {
+                                                    var colors = Highcharts.getOptions().colors,
+                                                            categories = ['2015-10-28', '2015-10-29', '2015-10-30', '2015-10-31'],
+                                                            name = '每天解决BUG',
+                                                            data = [{
+                                                                y: 23,
+                                                                color: colors[3],
+                                                                drilldown: {
+                                                                    color: colors[3]
+                                                                }
+                                                            },{
+                                                                y: 8,
+                                                                color: colors[4],
+                                                                drilldown: {
+                                                                    color: colors[3]
+                                                                }
+                                                            }, {
+                                                                y: 12,
+                                                                color: colors[8],
+                                                                drilldown: {
+                                                                    color: colors[3]
+                                                                }
+                                                            },
+                                                                , {
+                                                                    y: 15,
+                                                                    color: colors[9],
+                                                                    drilldown: {
+                                                                        color: colors[3]
+                                                                    }
+                                                                }, ];
+
+                                                    var chart = $('#barColumn').highcharts({
+                                                                chart: {
+                                                                    type: 'column'
+                                                                },
+                                                                title: {
+                                                                    text: '每天解决BUG'
+                                                                },
+                                                                xAxis: {
+                                                                    categories: categories
+                                                                },
+
+                                                                tooltip: {
+                                                                    formatter: function() {
+                                                                        var point = this.point,
+                                                                                s = this.x +'<br/>解决BUG<b>'+ this.y +'</b>个<br/>';
+                                                                        return s;
+                                                                    }
+                                                                },
+                                                                series: [{
+                                                                    name: name,
+                                                                    data: data,
+                                                                    color: 'white'
+                                                                }],
+
+                                                            })
+                                                            .highcharts(); // return chart
+                                                });
+                                            </script>
+                                        </div>
                                         <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 show-stats">
                                             <div class="row">
                                                 <div class="col-xs-6 col-sm-6 col-md-12 col-lg-12">
@@ -74,8 +137,89 @@
                                     </div>
                                 </div>
                                 <!-- end s1 tab pane -->
-                                <div class="tab-pane fade " id="s2">
-                                    222222222222222
+                                <div class="tab-pane fade pd-10" id="s2">
+                                    #@highChart("dynamicContainer" "min-width:100%;height:232px")#end
+
+                                    <script type="text/javascript">
+                                        $(function () {
+                                            $(document).ready(function() {
+                                                Highcharts.setOptions({
+                                                    global: {
+                                                        useUTC: false
+                                                    }
+                                                });
+
+                                                var chart;
+                                                $('#dynamicContainer').highcharts({
+                                                    chart: {
+                                                        type: 'spline',
+                                                        animation: Highcharts.svg, // 不要在旧动画IE
+                                                        marginRight: 10,
+                                                        events: {
+                                                            load: function() {
+
+                                                                // 设置图表每秒钟的更新
+                                                                var series = this.series[0];
+                                                                setInterval(function() {
+                                                                    var x = (new Date()).getTime(), // 当前时间
+                                                                            y = Math.random();
+                                                                    series.addPoint([x, y], true, true);
+                                                                }, 1000);
+                                                            }
+                                                        }
+                                                    },
+                                                    title: {
+                                                        text: '现场随机数据'
+                                                    },
+                                                    xAxis: {
+                                                        type: 'datetime',
+                                                        tickPixelInterval: 150
+                                                    },
+                                                    yAxis: {
+                                                        title: {
+                                                            text: 'Value'
+                                                        },
+                                                        plotLines: [{
+                                                            value: 0,
+                                                            width: 1,
+                                                            color: '#808080'
+                                                        }]
+                                                    },
+                                                    tooltip: {
+                                                        formatter: function() {
+                                                            return '<b>'+ this.series.name +'</b><br/>'+
+                                                                    Highcharts.dateFormat('%Y-%m-%d %H:%M:%S', this.x) +'<br/>'+
+                                                                    Highcharts.numberFormat(this.y, 2);
+                                                        }
+                                                    },
+                                                    legend: {
+                                                        enabled: false
+                                                    },
+                                                    exporting: {
+                                                        enabled: false
+                                                    },
+                                                    series: [{
+                                                        name: 'Random data',
+                                                        data: (function() {
+                                                            // 生成随机数据的数组
+                                                            var data = [],
+                                                                    time = (new Date()).getTime(),
+                                                                    i;
+
+                                                            for (i = -19; i <= 0; i++) {
+                                                                data.push({
+                                                                    x: time + i * 1000,
+                                                                    y: Math.random()
+                                                                });
+                                                            }
+                                                            return data;
+                                                        })()
+                                                    }]
+                                                });
+                                            });
+
+                                        });
+                                    </script>
                                 </div>
                                 <!-- end s2 tab pane -->
                             </div>
@@ -127,50 +271,6 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td><a href="javascript:void(0);">美国</a></td>
-                                <td>4,977</td>
-                                <td>正常</td>
-                                <td>163</td>
-                                <td class="text-center">
-                                    <div class="btn-group">
-                                        <button class="btn btn-xs btn-default" data-toggle="dropdown"><i
-                                                class="fa fa-lg fa-cog"></i></button>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="javascript:void(0);"> <i
-                                                    class="fa fa-lg fa-fw fa-file txt-color-greenLight"></i>
-                                                <span>PDF</span> </a></li>
-                                            <li><a href="javascript:void(0);"> <i
-                                                    class="fa fa-lg fa-fw fa-times txt-color-red"></i> <span>删除</span>
-                                            </a></li>
-                                            <li class="divider"></li>
-                                            <li class="text-align-center"><a href="javascript:void(0);">取消</a></li>
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><a href="javascript:void(0);">美国</a></td>
-                                <td>4,977</td>
-                                <td>正常</td>
-                                <td>163</td>
-                                <td class="text-center">
-                                    <div class="btn-group">
-                                        <button class="btn btn-xs btn-default" data-toggle="dropdown"><i
-                                                class="fa fa-lg fa-cog"></i></button>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="javascript:void(0);"> <i
-                                                    class="fa fa-lg fa-fw fa-file txt-color-greenLight"></i>
-                                                <span>PDF</span> </a></li>
-                                            <li><a href="javascript:void(0);"> <i
-                                                    class="fa fa-lg fa-fw fa-times txt-color-red"></i> <span>删除</span>
-                                            </a></li>
-                                            <li class="divider"></li>
-                                            <li class="text-align-center"><a href="javascript:void(0);">取消</a></li>
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
                             <tr>
                                 <td><a href="javascript:void(0);">美国</a></td>
                                 <td>4,977</td>
@@ -402,7 +502,7 @@
                         <script>
                             init.push(function () {
                                 $('#infoent > div').slimScroll({
-                                    height: 318,
+                                    height: 260,
                                     alwaysVisible: true,
                                     color: '#888',
                                     allowPageScroll: true
