@@ -103,8 +103,6 @@
 <body class=" main-menu-animated">
 <script>var init = [];</script>
 <script src="${TINY_CONTEXT_PATH}/js/setting.js"></script>
-	
-	<script src="${TINY_CONTEXT_PATH}/js/tiny-admin.min.js"></script>
 	#@mainWrapper()
 		#@mainNavbar("/img/main-navbar-logo.png" "Tinyframework")
 			#@navbarNav()

@@ -1,9 +1,8 @@
 <ui-components>
     <ui-component name="tiny.ui.widget" dependencies="tiny.ui.jqueryUi">
 		<js-resource>
-		  /static/org/tinygroup/widget/js/app.config.js,
 		  /static/org/tinygroup/widget/js/jarvis.widget.min.js,
-		  /static/org/tinygroup/widget/js/app.min.js
+		  /static/org/tinygroup/widget/js/widget.init.js
 		</js-resource>
 		<description>小部件(基于jqueryUi)</description>
     </ui-component>
