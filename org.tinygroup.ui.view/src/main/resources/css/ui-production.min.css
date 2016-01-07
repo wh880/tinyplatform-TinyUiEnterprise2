@@ -12516,7 +12516,7 @@ table.fc-border-separate {
 	background: #3276b1
 }
 article.sortable-grid {
-	min-height: 30px
+	min-height: 30px;
 }
 .jarviswidget {
 	margin: 0 0 30px;
@@ -12643,8 +12643,9 @@ article.sortable-grid {
 }
 .jarviswidget .widget-body {
 	min-height: 100px;
+	overflow: hidden;
 	position: relative;
-	padding-bottom: 13px
+	padding-bottom:2px
 }
 .jarviswidget .widget-body.widget-hide-overflow {
 	overflow: hidden

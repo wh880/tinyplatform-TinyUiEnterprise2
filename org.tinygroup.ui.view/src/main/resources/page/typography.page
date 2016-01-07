@@ -49,7 +49,7 @@
 #showExample("/page/typography/typography09.page" )
 
 #@h2()10 内填充#end
-#@showInfo()<code>.pt</code>表示上边距，<code>.pb</code>表示下边距，<code>.pl</code>表示左边距，<code>.pr</code>表示右边距，<code>.md</code>表示上下左右边距 类：（mt-5，mt-10...mt-45，mt-50）#end
+#@showInfo()<code>.pt</code>表示上边距，<code>.pb</code>表示下边距，<code>.pl</code>表示左边距，<code>.pr</code>表示右边距，<code>.pd</code>表示上下左右边距 类：（mt-5，mt-10...mt-45，mt-50）#end
 <div class="pd-10" style="background:#e5e5e5; border:solid 1px #ddd">
     <div class=" pd-10" style=" background:#fff">
         10像素填充，来点背景效果更明显
