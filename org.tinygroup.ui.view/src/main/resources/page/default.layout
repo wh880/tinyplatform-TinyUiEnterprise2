@@ -106,6 +106,7 @@
 	<script src="${TINY_CONTEXT_PATH}/js/app.config.js"></script>
 	<script src="${TINY_CONTEXT_PATH}/js/jarvis.widget.min.js"></script>
 	<script src="${TINY_CONTEXT_PATH}/js/app.min.js"></script>
+	<script src="${TINY_CONTEXT_PATH}/js/tiny-admin.min.js"></script>
 	#@mainWrapper()
 		#@mainNavbar("/img/main-navbar-logo.png" "Tinyframework")
 			#@navbarNav()
