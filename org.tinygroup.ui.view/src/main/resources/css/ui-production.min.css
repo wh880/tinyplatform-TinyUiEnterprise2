@@ -8460,7 +8460,7 @@ img.away {
 	box-shadow: inset 0 -1px 0 rgba(0,0,0,.15);
 	font-weight: 700;
 	text-shadow: 0 -1px 0 rgba(0,0,0,.25);
-	background-image: url(../img/pattern/overlay-pattern.png)
+	/*background-image: url(../img/pattern/overlay-pattern.png)*/
 }
 .progress-striped .progress-bar {
 	background-image: -webkit-gradient(linear,0 100%,100% 0,color-stop(0.25,rgba(255,255,255,.15)),color-stop(0.25,transparent),color-stop(0.5,transparent),color-stop(0.5,rgba(255,255,255,.15)),color-stop(0.75,rgba(255,255,255,.15)),color-stop(0.75,transparent),to(transparent));
@@ -15093,7 +15093,7 @@ abbr.select2-search-choice-close:before {
 #sparks li {
 	display: inline-block;
 	max-height: 47px;
-	overflow: hidden;
+	/*overflow: hidden;*/
 	text-align: left;
 	box-sizing: content-box;
 	-moz-box-sizing: content-box;
