@@ -94,3 +94,5 @@ button.close{padding:0;cursor:pointer;background:transparent;border: 0;-webkit-a
 .easyLabel {text-align:center; color:#333;  font-weight: 100;  font-size: 1.2em;  margin-bottom: 0.3em;}
 .credits {padding-top: 0.5em; clear: both; color: #999; }
 .credits a {color:#333;}
+/*首页及时状态进图条*/
+.show-stats .progress{height:7px; border-radius:0; margin-top:3px; margin-bottom:15px}

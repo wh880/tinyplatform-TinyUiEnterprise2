@@ -38,7 +38,7 @@
 			<!-- <class-path path="{TINY_WEBROOT}\WEB-INF\lib" /> -->
 			<class-path path="D:\javaworkspace\tinyFlatUi\org.tinygroup.ui.base\src\main\resources" />
 			<class-path path="D:\javaworkspace\tinyFlatUi\org.tinygroup.ui.view\src\main\resources" />
-			<class-path path="F:\test\TinyUiComponentNew\TinyUiNew\tinyFlatUi\org.tinygroup.ui.view\src\main\resources" />
+			<class-path path="F:\test\TinyUiComponentNew\TinyUiEnterprise2\org.tinygroup.ui.view\src\main\resources" />
 		</class-paths>
 		<include-patterns>
 			<include-pattern pattern="org\.tinygroup\.(.)*\.jar" />
