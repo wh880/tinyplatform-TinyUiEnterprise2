@@ -18,6 +18,40 @@
                         <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
                             <div style="margin-bottom:-50px;">#@highChart(
                                             "barColumn" "min-width:100%;height:260px")#end</div>
+<script type="text/javascript">
+    $(function () {
+        setup_widgets()
+    });
+</script>
+<div class="mainPage">
+
+    <!-- widget-grid -->
+    <section id="widget-grid">
+        <div class="row">
+            <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <!-- new widget -->
+                <div class="jarviswidget " id="wid-id-0" data-widget-colorbutton="false"
+                     data-widget-fullscreenbutton="false" data-widget-togglebutton="false"
+                     data-widget-editbutton="false" data-widget-deletebutton="false">
+                    <header>
+                        <span class="widget-icon"><i class="fa  fa-bar-chart"></i></span>
+                        <h2>即时动态</h2>
+                        <ul class="nav nav-tabs pull-right" id="myTab">
+                            <li class="active"><a data-toggle="tab" href="#s1"><i class="fa fa-clock-o"></i> <span
+                                    class="hidden-mobile hidden-tablet">即时状态</span></a></li>
+                            <li><a data-toggle="tab" href="#s2"><i class="fa fa-facebook"></i> <span
+                                    class="hidden-mobile hidden-tablet">社会网络</span></a></li>
+                        </ul>
+                    </header>
+                    <!-- widget div-->
+                    <div class="no-padding">
+                        <div class="widget-body">
+                            <!-- content -->
+                            <div id="myTabContent" class="tab-content">
+                                <div class="tab-pane fade active in padding-10 no-padding-bottom" id="s1">
+                                    <div class="row no-space">
+                                        <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+                                           <div style="margin-bottom:-50px;">#@highChart("barColumn" "min-width:100%;height:275px")#end</div>
 
                             <script type="text/javascript">
                                 $(function () {
