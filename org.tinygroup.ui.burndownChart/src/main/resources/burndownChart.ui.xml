@@ -1,5 +1,5 @@
 <ui-components>
-    <ui-component name="tiny.ui.burndownChart" dependencies="tiny.ui.jquery">
+    <ui-component name="tiny.ui.burndownchart" dependencies="tiny.ui.jquery">
 		<css-resource>
 			/static/org/tinygroup/burndownChart/css/burndownChart.css
 		</css-resource>

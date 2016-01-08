@@ -1,5 +1,5 @@
 <ui-components>
-    <ui-component name="tiny.ui.fontIco">
+    <ui-component name="tiny.ui.fontico">
 		<css-resource>
 		  /static/org/tinygroup/fontIco/css/font-awesome.css
 		</css-resource>

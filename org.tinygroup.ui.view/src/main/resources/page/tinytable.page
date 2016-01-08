@@ -1,7 +1,10 @@
 #@tinyTable() ##ID为空则系统自动生成 带入参数则取该参数为ID
 	#@tinyTableForm()
 		<div class="well well-sm">
-			用户名:#tInput("username" "" {"size":"10","class":"input-sm"}) 城市:#tInput("city" "" {"size":"10","class":"input-sm"}) <input type="submit" class="btn btn-primary btn-sm" value="搜索" /> <input type="reset" class="btn btn-primary btn-sm" value="重置" />
+			用户名:#tInput("username" "" {"size":"10","class":"input-sm"}) 城市:
+			#tInput("city" "" {"size":"10","class":"input-sm"})
+			<input type="submit" class="btn btn-primary btn-sm" value="搜索" />
+			<input type="reset" class="btn btn-primary btn-sm" value="重置" />
 			#@tButton("primary savebutton")保存#end
             <select id="thisform-selsql" class="form-control"></select>
 		</div>

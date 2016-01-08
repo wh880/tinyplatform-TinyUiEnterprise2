@@ -1,5 +1,5 @@
 <ui-components>
-    <ui-component name="tiny.ui.highCharts" dependencies="tiny.ui.jquery">
+    <ui-component name="tiny.ui.highcharts" dependencies="tiny.ui.jquery">
 		<css-resource>
 			/static/org/tinygroup/highCharts/css/highCharts.css
 		</css-resource>

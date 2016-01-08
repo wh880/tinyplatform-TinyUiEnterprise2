@@ -1,5 +1,5 @@
 <ui-components>
-    <ui-component name="tiny.ui.widget" dependencies="tiny.ui.jqueryUi">
+    <ui-component name="tiny.ui.widget" dependencies="tiny.ui.jqueryui">
 		<css-resource>
 		  <!--/static/org/tinygroup/widget/css/ui-production.min.css,-->
 		  /static/org/tinygroup/widget/css/widgets.min.css

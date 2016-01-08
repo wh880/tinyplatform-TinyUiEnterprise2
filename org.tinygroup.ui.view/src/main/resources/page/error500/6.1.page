@@ -25,8 +25,8 @@
 			</small>
 		</p>
 		<ul class="error-search text-left font-md">
-			<li><a href="javascript:void(0);"><small>去首页 <i class="fa fa-arrow-right"></i></small></a></li>
-			<li><a href="javascript:void(0);"><small>联系TinyFramework的技术部门  <i class="fa fa-mail-forward"></i></small></a></li>
+			<li><a href="javascript:void(0);"><small>去首页 #faIcon("arrow-right")</small></a></li>
+			<li><a href="javascript:void(0);"><small>联系TinyFramework的技术部门  #faIcon("mail-forward")</small></a></li>
 			<li><a href="javascript:void(0);"><small>记录错误! </small></a></li>
 			<li><a href="javascript:void(0);"><small>返回</small></a></li>
 		</ul>

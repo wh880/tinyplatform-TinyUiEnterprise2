@@ -8,9 +8,9 @@ website:	http://code.google.com/p/jquerytree/
 
 -------------------------------------*/
 
-.ztree * {padding:0; margin:0; font-size:13px;}
-.ztree {margin:0; padding:5px 2px; color:#333}
-.ztree li{padding:0; margin:0; list-style:none; line-height:15px;margin-top:2px;margin-bottom:2px; text-align:left; white-space:nowrap; outline:0;width: 100%;overflow: hidden; -o-text-overflow: ellipsis;text-overflow:ellipsis;}
+.ztree * {padding:0; margin:0; font-size:13px;}/*padding:5px 2px;*/
+.ztree {margin:0; color:#333;padding:0;}
+.ztree li{padding:0;margin:0; list-style:none; line-height:15px;margin-top:2px;margin-bottom:2px; text-align:left; white-space:nowrap; outline:0;}
 .ztree li ul{ margin:0; padding:0 0 0 18px}
 .ztree li ul.line{ background:url(./img/line_conn.gif) 0 0 repeat-y; border:none;}
 
@@ -124,7 +124,7 @@ div.content_wrap div.left{float: left;width: 250px;}
 div.content_wrap div.right{float: right;width: 340px;}*/
 /*div.zTreeDemoBackground {width:250px;height:362px;text-align:left;}*/
 div.zTreeDemoBackground{ margin-top:-1px;}
-ul.ztree {padding-top:6px;border:1px solid #c3daf9;background: #f9f9f9;/*width:195px;height:360px;*/overflow:auto;}
+/*ul.ztree {padding-top:6px;border:1px solid #c3daf9;background: #f9f9f9;!*width:195px;height:360px;*!overflow:auto;}*/
 ul.log {border: 1px solid #617775;background: #f0f6e4;width:300px;height:170px;overflow: hidden;}
 ul.log.small {height:45px;}
 ul.log li {color: #666666;list-style: none;padding-left: 10px;}
@@ -164,4 +164,4 @@ div#rMenu ul li{margin: 1px 0;padding: 0 5px;cursor: pointer;list-style: none ou
 
 /*下拉数特殊样式*/
 .tree-sel-content{position: absolute;z-index:9999;border:1px solid #0f9ae0;border-top:0;background:#fff;padding:5px 5px 10px}
-.tree-sel-content>.ztree{margin-top:0;max-height:400px;overflow-x:hidden;overflow-y:auto;background:none;border:0;text-overflow: ellipsis}
+.tree-sel-content>.ztree{margin-top:0;max-height:400px;background:none;border:0;overflow:auto}

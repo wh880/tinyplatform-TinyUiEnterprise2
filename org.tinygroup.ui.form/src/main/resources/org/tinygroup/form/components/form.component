@@ -272,7 +272,7 @@ $(function(){
 #*<span class="input-group-addon input-file-preview hide" id="preview${fid}">预览</span>*#
     <input type="text" id="${uploadid}" name="${name}" class="form-control #getMapVal("class",mapInfo)" #mapToHtml(mapInfo)>
     <span id="${uploadid}-wrap"><input type="file" class="input-file" name="upfile" id="${uploadid}-file"></span>
-    <span class="input-group-addon"><i class="fa fa-cloud-upload"></i> 浏览</span>
+    <span class="input-group-addon">#faIcon("cloud-upload") 浏览</span>
 </div>
 <script type="text/javascript">
     $(function(){
@@ -305,7 +305,7 @@ $(function(){
 	#if(mapInfo?.preview)<span class="input-group-addon input-file-preview" id="preview${fid}">预览</span>#end
     <input type="file" id="${fid}" name="${name}" class="input-file">
     <input id="${fid}_input" name="${name}_name"  placeholder=""  value="${value}" type="text" class="form-control" #mapToHtml(mapInfo)>
-    <span class="input-group-addon"><i class="fa fa-cloud-upload"></i> 浏览</span>
+    <span class="input-group-addon">#faIcon("cloud-upload") 浏览</span>
 </div>
 <script type="text/javascript">
     $(function(){
@@ -404,8 +404,8 @@ $(function(){
 *#
 
 #macro operateMoreLess(listMap)#set(oid=fmt("oid%d",rand()))
-<span id="${oid}-add"#mapToHtml(listMap)><i class="fa fa-plus"></i></span>
-<span id="${oid}-less"#mapToHtml(listMap)><i class="fa fa-minus"></i></span>
+<span id="${oid}-add"#mapToHtml(listMap)>#faIcon("plus")</span>
+<span id="${oid}-less"#mapToHtml(listMap)>#faIcon("minus")</span>
 <script type="text/javascript">
     $(function(){
         var minsize=$("#${oid}-add").attr("data-minSize");

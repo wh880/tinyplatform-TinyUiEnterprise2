@@ -43,8 +43,6 @@
 		<module>org.tinygroup.ui.tourbus</module>
 		<module>org.tinygroup.ui.tabShow</module>
 		<module>org.tinygroup.ui.example</module>
-		<module>org.tinygroup.ui.view</module>
-		<module>org.tinygroup.ui.web</module>
 		<module>org.tinygroup.ui.typography</module>
 		<module>org.tinygroup.ui.navigation</module>
 		<module>org.tinygroup.ui.frameCommon</module>
@@ -76,7 +74,11 @@
 		<module>org.tinygroup.ui.timeline</module>
 		<module>org.tinygroup.ui.viewsControl</module>
 		<module>org.tinygroup.ui.iconTab</module>
+		<module>org.tinygroup.ui.togglebox</module>
 		<module>org.tinygroup.ui.widget</module>
-		
+
+
+		<module>org.tinygroup.ui.view</module>
+		<module>org.tinygroup.ui.web</module>
     </modules>
 </project>

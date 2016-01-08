@@ -1,5 +1,5 @@
 <ui-components>
-	<ui-component name="tiny.ui.form" dependencies="tiny.ui.base,tiny.ui.bootstrapDate,tiny.ui.zTree,tiny.ui.select2">
+	<ui-component name="tiny.ui.form" dependencies="tiny.ui.base,tiny.ui.bootstrapdate,tiny.ui.ztree,tiny.ui.select2">
 		<css-resource>
 			/static/org/tinygroup/form/css/form.css
 		</css-resource>

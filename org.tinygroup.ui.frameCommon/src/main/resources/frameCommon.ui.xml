@@ -1,5 +1,5 @@
 <ui-components>
-    <ui-component name="tiny.ui.frameCommon" dependencies="tiny.ui.base,tiny.ui.jqueryUi,tiny.ui.switcher,tiny.ui.fontIco">
+    <ui-component name="tiny.ui.frameCommon" dependencies="tiny.ui.base,tiny.ui.jqueryui,tiny.ui.switcher,tiny.ui.fontico">
         <css-resource>
 			/static/org/tinygroup/frameCommon/css/admin.css
 		</css-resource>

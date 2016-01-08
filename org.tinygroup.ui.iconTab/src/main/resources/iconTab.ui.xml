@@ -1,5 +1,5 @@
 <ui-components>
-    <ui-component name="tiny.ui.iconTab" dependencies="tiny.ui.jquery">
+    <ui-component name="tiny.ui.icontab" dependencies="tiny.ui.jquery">
         <css-resource>
 		  /static/org/tinygroup/iconTab/css/iconTab.css,
 	</css-resource>

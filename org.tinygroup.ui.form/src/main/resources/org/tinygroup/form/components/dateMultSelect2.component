@@ -4,7 +4,7 @@
 <div class="dms-showrap">
 <select name="${name}" id="${dmsid}-sel" class="form-control select2" multiple="multiple" #mapToHtml(mapInfo)></select></div>
 <span class="dms-selrap">
-<i class="fa fa-calendar"></i>
+#faIcon("calendar")
 <span id="${dmsid}" class="dms-dateinput"/></span>
 </span>
 </div>

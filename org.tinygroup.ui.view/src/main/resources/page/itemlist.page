@@ -10,10 +10,10 @@
 
 <div class="prj-list">
     <ul class="clear">
-        <li class="active"><i class="fa fa-android"></i>SMDP<i class="fa fa-check active-ico"></i></li>
+        <li class="active">#faIcon("android")SMDP<i class="fa fa-check active-ico"></i></li>
         #for(var:[1..15])
-        <li><i class="fa fa-android"></i>SMDP</li>
-        <li><i class="fa fa-android"></i>Tiny</li>
+        <li>#faIcon("android")SMDP</li>
+        <li>#faIcon("android")Tiny</li>
         #end
     </ul>
 </div>

@@ -1,0 +1,107 @@
+#macro navSelect2(name navsid)#set(navsid=navsid?:fmt("navsid%d",rand()))
+<div class="droptoprj" id="${navsid}">
+    #bodyContent
+</div>
+<script type="text/javascript">
+    <!--
+    $(function(){
+        var isinit=false;
+        $("#${navsid}-select").select2();
+        $("#${navsid}-select").on("change",function(){hidePrj()});
+        function hidePrj(){
+            $("#${navsid}-nav").removeClass("active");
+            $("#${navsid}-select").select2("close");
+            $("#${navsid}-body").hide();
+
+        }
+        $("#${navsid}-nav").click(function(e){
+            $(this).toggleClass("active")
+            if($("#${navsid}-body").css("display")=="block"){
+                hidePrj();
+            }else{
+                $("#${navsid}-body").show();
+                $("#${navsid}-select").select2("open");
+                $("#select2-drop").css("top",parseInt($("#select2-drop").css("top"))-10+"px");
+                if(!isinit){
+                    $("#select2-drop").append($("#${navsid}-fix").html());
+                    isinit=true;
+                    $("#select2-drop").on("click","a",function(){
+                        window.location.href=$(this).attr("href");
+                    });
+                }
+            }
+            e.stopPropagation();
+        });
+        $("body").on("click",function(){
+            hidePrj();
+        });
+    });
+    //-->
+</script>
+#end
+#macro navSelect2Body(bodyMapInfo)
+<div class="dropdownbody" id="${navsid}-body"#mapToHtml(bodyMapInfo)>
+    #bodyContent
+</div>
+#end
+
+#macro navSelect2Data()
+<select class="select2" name="${name}" tabindex="-1" aria-hidden="true"  id="${navsid}-select">
+    #bodyContent
+</select>
+#end
+#macro navSelect2Nav()
+<span class="toprj" id="${navsid}-nav">#bodyContent</span>
+#end
+
+#macro navSelect2Fix()
+<div class="fixtools" id="${navsid}-fix"><div class="fixselect2foot">#bodyContent</div></div>
+#end
+
+
+#macro navZtree(name navsid)#set(navsid=navsid?:fmt("sid%d",rand()))
+<div class="droptoprj" id="${navsid}">
+    #bodyContent
+</div>
+<script type="text/javascript">
+    <!--
+    $(function(){
+        var isinit=false;
+        var treeShowId=$("#${navsid}-body .tree-sel-content").attr("id");
+        var inputId=$("#${navsid}-body>input:first").attr("id");
+        function hidePrj(){
+            $("#${navsid}-body>input:first").trigger("close")
+            $("#${navsid}-body").hide();
+        }
+        $("#${navsid}-nav").click(function(e){
+            if($("#${navsid}-body").css("display")=="none"){
+                $("#${navsid}-body").show();
+                $("#${navsid}-body>input:first").trigger("click")
+            }
+            e.stopPropagation();
+        });
+        $("#"+treeShowId).off("click");
+        $("body").on("click",function(e){
+            if($(e.target).attr("type")!="text"&&$(e.target).parents("#"+treeShowId).size()==0||$(e.target).parents(".fix-part").size()){
+                hidePrj();
+            }
+        });
+
+        $("#"+inputId).on("setValue",function(){
+            $("#${navsid}-body").hide();
+            $("#${navsid}-nav span:first").html($(this).val());
+        });
+
+    });
+    //-->
+</script>
+#end
+#macro navZtreeBody(bodyMapInfo)
+<div class="dropdownbody ztree-dropdownbody" id="${navsid}-body" #mapToHtml(bodyMapInfo)>
+    #bodyContent
+</div>
+#end
+
+#macro navZtreeNav()
+<span class="toprj" id="${navsid}-nav">#bodyContent</span>
+#end

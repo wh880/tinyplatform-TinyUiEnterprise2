@@ -4,9 +4,9 @@
         <span class="widget-icon"><i class="fa  fa-bar-chart"></i></span>
         <h2>即时动态</h2>
         <ul class="nav nav-tabs pull-right" id="myTab">
-            <li class="active"><a data-toggle="tab" href="#s1"><i class="fa fa-clock-o"></i> <span
+            <li class="active"><a data-toggle="tab" href="#s1">#faIcon("clock-o") <span
                     class="hidden-mobile hidden-tablet">即时状态</span></a></li>
-            <li><a data-toggle="tab" href="#s2"><i class="fa fa-facebook"></i> <span
+            <li><a data-toggle="tab" href="#s2">#faIcon("facebook") <span
                     class="hidden-mobile hidden-tablet">社会网络</span></a></li>
         </ul>
         #end
@@ -216,9 +216,9 @@
             <div class="widget-toolbar">
                 <div class="btn-group">
                     <button class="btn dropdown-toggle btn-xs btn-success" data-toggle="dropdown">
-                        下拉&nbsp;<i class="fa fa-caret-down"></i></button>
+                        下拉&nbsp;#faIcon("caret-down")</button>
                     <ul class="dropdown-menu pull-right js-status-update">
-                        <li><a href="javascript:void(0);"><i class="fa fa-circle"></i>&nbsp;下拉一</a>
+                        <li><a href="javascript:void(0);">#faIcon("circle")&nbsp;下拉一</a>
                         </li>
                         <li><a href="javascript:void(0);"><i
                                 class="fa fa-circle"></i>&nbsp;下拉二</a>
@@ -384,10 +384,10 @@
 
     #@widgetItem(6)
         #@widgetItemHead()
-            <span class="widget-icon"><i class="fa fa-map-marker"></i></span>
+            <span class="widget-icon">#faIcon("map-marker")</span>
             <h2>项目动态</h2>
             <div class="widget-toolbar hidden-mobile">
-                <span class="onoffswitch-title"><i class="fa fa-location-arrow"></i>&nbsp;实时</span>
+                <span class="onoffswitch-title">#faIcon("location-arrow")&nbsp;实时</span>
                                 <span class="onoffswitch"> <input type="checkbox" name="onoffswitch"
                                                                   class="onoffswitch-checkbox" checked="checked"
                                                                   id="myonoffswitch"/> <label class="onoffswitch-label"

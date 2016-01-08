@@ -1,5 +1,5 @@
 <ui-components>
-    <ui-component name="tiny.ui.uedTips" dependencies="tiny.ui.jquery">
+    <ui-component name="tiny.ui.uedtips" dependencies="tiny.ui.jquery">
         <css-resource>
 		  /static/org/tinygroup/uedTips/css/uedTip.css,
 		</css-resource>

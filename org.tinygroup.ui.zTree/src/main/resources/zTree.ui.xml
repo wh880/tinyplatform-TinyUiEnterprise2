@@ -1,5 +1,5 @@
 <ui-components>
-    <ui-component name="tiny.ui.zTree" dependencies="tiny.ui.base">
+    <ui-component name="tiny.ui.ztree" dependencies="tiny.ui.base">
 		<css-resource>
 			/static/org/tinygroup/zTree/css/zTreeStyle/zTreeStyle.css
 		</css-resource>

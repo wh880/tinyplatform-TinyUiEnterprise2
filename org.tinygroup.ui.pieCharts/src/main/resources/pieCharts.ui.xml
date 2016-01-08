@@ -1,5 +1,5 @@
 <ui-components>
-    <ui-component name="tiny.ui.pieCharts" dependencies="tiny.ui.jquery">
+    <ui-component name="tiny.ui.piecharts" dependencies="tiny.ui.jquery">
 		<css-resource>
 		</css-resource>
 		<js-resource>

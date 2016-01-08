@@ -122,13 +122,13 @@
 			#end
 			</li>*#
 			<li class="fullscreen">
-				<a href="javascript:void(0);" onclick="launchFullScreen(document.documentElement);" title="全屏"><i class="fa fa-fullscreen"></i></a>
+				<a href="javascript:void(0);" onclick="launchFullScreen(document.documentElement);" title="全屏">#faIcon("fullscreen")</a>
 			</li>
 
 			<li>
 				<form class="navbar-form pull-left">
 					<input type="text" class="form-control" placeholder="查找更多...">
-					<span style="left:-27px;top:3px; position:relative;"><i class="fa fa-search"></i></span>
+					<span style="left:-27px;top:3px; position:relative;">#faIco("search")</span>
 				</form>
 			</li>
 
@@ -140,9 +140,9 @@
 				<ul class="dropdown-menu">
 					<li><a href="javascript:void(0);"><span class="label label-warning pull-right">新的</span>资料文件</a></li>
 					<li><a href="javascript:void(0);"><span class="badge badge-primary pull-right">新的</span>个人中心</a></li>
-					<li><a href="javascript:void(0);"><i class="dropdown-icon fa fa-cog"></i>&nbsp;&nbsp;设置</a></li>
+					<li><a href="javascript:void(0);">#faIco("cog")&nbsp;&nbsp;设置</a></li>
 					<li class="divider"></li>
-					<li><a href="javascript:void(0);"><i class="dropdown-icon fa fa-power-off"></i>&nbsp;&nbsp;退出</a></li>
+					<li><a href="javascript:void(0);">#faIco("power-off")&nbsp;&nbsp;退出</a></li>
 				</ul>
 			</li>
 			#end
@@ -152,10 +152,10 @@
 
 		#@mainMenu()
 			#@menuHead("欢迎您," "Liyl" "menu-content-demo" "/img/portraits/1.jpg")
-			<a href="javascript:void(0);" class="btn btn-xs btn-primary btn-outline dark"><i class="fa fa-envelope"></i></a>
-			<a href="javascript:void(0);" class="btn btn-xs btn-primary btn-outline dark"><i class="fa fa-user"></i></a>
-			<a href="javascript:void(0);" class="btn btn-xs btn-primary btn-outline dark"><i class="fa fa-cog"></i></a>
-			<a href="javascript:void(0);" class="btn btn-xs btn-danger btn-outline dark"><i class="fa fa-power-off"></i></a>
+			<a href="javascript:void(0);" class="btn btn-xs btn-primary btn-outline dark">#faIco("envelope")</a>
+			<a href="javascript:void(0);" class="btn btn-xs btn-primary btn-outline dark">#faIco("user")</a>
+			<a href="javascript:void(0);" class="btn btn-xs btn-primary btn-outline dark">#faIco("cog")</a>
+			<a href="javascript:void(0);" class="btn btn-xs btn-danger btn-outline dark">#faIco("power-off")</a>
 			#end
 			#@navigationMenu()
 				#TnavItem("0" "首页" "/page/index.page" "fa-home")

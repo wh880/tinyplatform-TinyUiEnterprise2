@@ -1,5 +1,5 @@
 <ui-components>
-    <ui-component name="tiny.ui.superBox" dependencies="tiny.ui.jquery">
+    <ui-component name="tiny.ui.superbox" dependencies="tiny.ui.jquery">
 		<css-resource>
 			/static/org/tinygroup/superBox/css/superBox.css
 		</css-resource>

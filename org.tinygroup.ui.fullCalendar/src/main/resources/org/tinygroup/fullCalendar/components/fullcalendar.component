@@ -16,7 +16,7 @@
 <script>
 	$(function(){
 		var $modalLink=$("#m${wcid}");
-		var dolink="${doAction}";
+		var dolink="#link(doAction)";
 		dolink+=dolink.indexOf("?")>-1?"&":"?";
 		dolink+="fcid=${fcid}&"
 		$("#${wcid}-showtitle").on("click",function(){
@@ -36,7 +36,7 @@
 				center: 'title',
 				right: 'next'
 			},
-			events: '${dataUrl}',
+			events: '#link(dataUrl)',
 			defaultDate:"${defaultDate}",//moment().format("YYYY-MM-DD"),
 			businessHours: true, // display business hours
 			editable: true,
@@ -145,7 +145,7 @@
 		$calendar.on("save",function(e,date,isadd){//e为对像 date为时间 isadd是否新增 //处理操作到后台
 		$.ajax({
 		  type: "GET",
-		  url: "${doAction}",
+		  url: "#link(doAction)",
 		  dataType: "html",
 		  data:{date:date,isadd:isadd},
 		  success: function(a){}

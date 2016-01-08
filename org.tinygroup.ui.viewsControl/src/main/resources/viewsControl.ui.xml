@@ -1,5 +1,5 @@
 <ui-components>
-    <ui-component name="tiny.ui.viewsControl" dependencies="tiny.ui.jquery">
+    <ui-component name="tiny.ui.viewscontrol" dependencies="tiny.ui.jquery">
         <css-resource>
 		  /static/org/tinygroup/viewsControl/css/styles.min.css,
 		  <!-- /static/org/tinygroup/viewsControl/css/jplist.min.css, -->

@@ -1,5 +1,5 @@
 <ui-components>
-    <ui-component name="tiny.ui.maskBar" dependencies="tiny.ui.bootstrap">
+    <ui-component name="tiny.ui.maskbar" dependencies="tiny.ui.bootstrap">
         <css-resource>
 		  /static/org/tinygroup/maskBar/css/maskBar.css,
 	</css-resource>

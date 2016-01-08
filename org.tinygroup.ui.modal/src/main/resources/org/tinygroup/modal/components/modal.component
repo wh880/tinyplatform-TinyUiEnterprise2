@@ -59,8 +59,8 @@ param aMap A其它额外的元素
 #macro dialog(dialogId dialogMap)
 <div id="${dialogId}" class="modal hide fade " tabindex="-1" role="dialog" aria-hidden="true"#mapToHtml(dialogMap)>
     <div class="modal-header">
-        <span class="modal-expand" data-expand="modal" ><i class="fa fa-expand"></i></span>
-        <span class="modal-close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-remove"></i></span>
+        <span class="modal-expand" data-expand="modal" >#faIcon("expand")</span>
+        <span class="modal-close" data-dismiss="modal" aria-hidden="true">#faIcon("remove")</span>
         <h3>对话框标题</h3>
     </div>
     <div class="modal-body thin-scroll">

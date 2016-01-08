@@ -79,7 +79,7 @@
                         <div class="bs-component">
                             <div class="input-group">
                           <span class="input-group-addon">
-                            <i class="fa fa-envelope-o"></i>
+                            #faIcon("envelope-o")
                           </span>
                                 <input class="form-control" type="text" placeholder="Email address">
                             </div>
@@ -89,7 +89,7 @@
                         <div class="bs-component">
                             <div class="input-group">
                           <span class="input-group-addon">
-                            <i class="fa fa-key"></i>
+                            #faIcon("key")
                           </span>
                                 <input class="form-control" type="password" placeholder="Password">
                             </div>
@@ -108,7 +108,7 @@
                             <div class="input-group">
                                 <input class="form-control" type="password" placeholder="Money">
                           <span class="input-group-addon">
-                            <i class="fa fa-usd"></i>
+                            #faIcon("usd")
                           </span>
                             </div>
                         </div>

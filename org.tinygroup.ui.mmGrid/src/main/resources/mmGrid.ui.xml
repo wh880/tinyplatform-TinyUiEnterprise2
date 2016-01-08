@@ -1,5 +1,5 @@
 <ui-components>
-    <ui-component name="tiny.ui.mmGrid" dependencies="tiny.ui.jquery">
+    <ui-component name="tiny.ui.mmgrid" dependencies="tiny.ui.jquery">
         <css-resource>
 		  /static/org/tinygroup/mmGrid/src/mmGrid.css,
 		  /static/org/tinygroup/mmGrid/src/theme/bootstrap/mmGrid-bootstrap.css,

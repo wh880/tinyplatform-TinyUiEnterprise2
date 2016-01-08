@@ -1,5 +1,5 @@
 <ui-components>
-    <ui-component name="tiny.ui.tinyTable" dependencies="tiny.ui.base">
+    <ui-component name="tiny.ui.tinytable" dependencies="tiny.ui.base">
     <css-resource>
 		  /static/org/tinygroup/tinyTable/css/tinyTable.css,
 	</css-resource>

@@ -1,0 +1,7 @@
+.droptoprj{display:inline-block;cursor:pointer;position:relative}
+.droptoprj .toprj{display:inline-block}
+.droptoprj .active{background:none}
+.droptoprj span{margin-right:5px}
+.droptoprj .dropdownbody{background:#fff;display:none;width:300px;position: absolute;  top: 100%;  left: 0;  z-index: 1000}
+.droptoprj .fixtools,.droptoprj .dropdownbody .select2-choice{display:none}
+.fixselect2foot{padding:10px 20px}

@@ -21,7 +21,7 @@
 							data-control-type="reset" 
 							data-control-name="reset" 
 							data-control-action="reset">
-							#bodyContent&nbsp;<i class="fa fa-share"></i>
+							#bodyContent&nbsp;#faIcon("share")
 						</button>
 #end
 
@@ -143,7 +143,7 @@
 #macro iosJplistButton()
 	<!-- ios button: show/hide panel -->
 	<div class="jplist-ios-button">
-		<i class="fa fa-sort"></i>
+		#faIcon("sort")
 		#bodyContent
 	</div>
 #end
