@@ -1,17 +1,17 @@
 #macro toggleBox(mapInfo)#set(toggleid=fmt("tid%d",rand()))
 <div id="${toggleid}" class="togglebox trans ${mapInfo?.class?:""}" #mapToHtml(mapInfo)>
-<div id="${toggleid}-ico" class="togglenavico trans"><i class="icon-caret-right"></i></div>
+<div id="${toggleid}-ico" class="togglenavico trans"><i class="fa fa-caret-right"></i></div>
 #bodyContent
 </div>
 <script type="text/javascript">
     <!--
     $(function(){
         if($("#${toggleid}").hasClass("open")){
-            $("#${toggleid}-ico i").attr("class","icon-caret-left");
+            $("#${toggleid}-ico i").attr("class","fa-caret-left");
         }
         $("#${toggleid}-ico").on("click",function(){
             $("#${toggleid}").toggleClass("open");
-            $(this).find("i").toggleClass("icon-caret-left icon-caret-right");
+            $(this).find("i").toggleClass("fa-caret-left fa-caret-right");
         });
     });
     //-->

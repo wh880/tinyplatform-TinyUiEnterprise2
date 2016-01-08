@@ -39,7 +39,7 @@
         <!--Jquery树形菜单组件二-->
         <div class="tree  ">
             <ul>
-                <li> <span> <i class="icon-calendar"></i> 2013年,第2周 </span>
+                <li> <span> <i class="fa fa-calendar"></i> 2013年,第2周 </span>
                     <ul>
                         <li> <span class="badge badge-success"> #faIcon("minus-circle") 星期一,1月7日:8.00小时 </span>
                             <ul>
@@ -64,7 +64,7 @@
                         </li>
                     </ul>
                 </li>
-                <li> <span> <i class="icon-calendar"></i> 2013年,第3周 </span>
+                <li> <span> <i class="fa fa-calendar"></i> 2013年,第3周 </span>
                     <ul>
                         <li> <span class="badge badge-success"> #faIcon("minus-circle") 星期一,1月14日:8.00小时 </span>
                             <ul>

@@ -6,26 +6,26 @@
     <div class="col-sm-4">
         <div class="panel panel-sm">
             <div class="panel-heading">
-                <i class="icon-sitemap"></i>
+                <i class="fa fa-sitemap"></i>
                 <strong>维护部门结构:demo</strong>
-                <span style="float:right"> <button type="submit" id="submit" class="updateBtn" title="更新排序"> <i class="icon-refresh"></i> </button> </span>
+                <span style="float:right"> <button type="submit" id="submit" class="updateBtn" title="更新排序"> <i class="fa fa-refresh"></i> </button> </span>
             </div>
             <div class="panel-body">
                 <form method="post" target="hiddenwin" action="url">
                     <ul class="treeNew">
-                        <li>技术部 <a href="javascript:void(0);" target="" data-toggle="modal" data-type="ajax" title="编辑"><i class="icon-edit"></i></a> <a href="javascript:void(0);" title="下级部门"><i class="icon-user-md"></i></a> <input type="text" name="orders[3]" id="orders[3]" value="0" style="width:30px;text-align:center" />
+                        <li>技术部 <a href="javascript:void(0);" target="" data-toggle="modal" data-type="ajax" title="编辑"><i class="fa fa-edit"></i></a> <a href="javascript:void(0);" title="下级部门"><i class="fa fa-user-md"></i></a> <input type="text" name="orders[3]" id="orders[3]" value="0" style="width:30px;text-align:center" />
                             <ul>
-                                <li>开发aa <a href="javascript:void(0);" target="" data-toggle="modal" data-type="ajax" title="编辑"><i class="icon-edit"></i></a> <a href="javascript:void(0);" title="下级部门"><i class="icon-user-md"></i></a> <input type="text" name="orders[17]" id="orders[17]" value="10" style="width:30px;text-align:center" />
+                                <li>开发aa <a href="javascript:void(0);" target="" data-toggle="modal" data-type="ajax" title="编辑"><i class="fa fa-edit"></i></a> <a href="javascript:void(0);" title="下级部门"><i class="fa fa-user-md"></i></a> <input type="text" name="orders[17]" id="orders[17]" value="10" style="width:30px;text-align:center" />
                                     <ul>
-                                        <li>部门名称 <a href="javascript:void(0);" target="" data-toggle="modal" data-type="ajax" title="编辑"><i class="icon-edit"></i></a> <a href="javascript:void(0);" title="下级部门"><i class="icon-user-md"></i></a> <input type="text" name="orders[27]" id="orders[27]" value="10" style="width:30px;text-align:center" />
+                                        <li>部门名称 <a href="javascript:void(0);" target="" data-toggle="modal" data-type="ajax" title="编辑"><i class="fa fa-edit"></i></a> <a href="javascript:void(0);" title="下级部门"><i class="fa fa-user-md"></i></a> <input type="text" name="orders[27]" id="orders[27]" value="10" style="width:30px;text-align:center" />
                                             <ul>
-                                                <li>还好还好 <a href="javascript:void(0);" target="" data-toggle="modal" data-type="ajax" title="编辑"><i class="icon-edit"></i></a> <a href="javascript:void(0);" title="下级部门"><i class="icon-user-md"></i></a> <input type="text" name="orders[29]" id="orders[29]" value="10" style="width:30px;text-align:center" /> </li>
+                                                <li>还好还好 <a href="javascript:void(0);" target="" data-toggle="modal" data-type="ajax" title="编辑"><i class="fa fa-edit"></i></a> <a href="javascript:void(0);" title="下级部门"><i class="fa fa-user-md"></i></a> <input type="text" name="orders[29]" id="orders[29]" value="10" style="width:30px;text-align:center" /> </li>
                                             </ul> </li>
-                                        <li>标题名称 <a href="javascript:void(0);" target="" data-toggle="modal" data-type="ajax" title="编辑"><i class="icon-edit"></i></a> <a href="/dept-browse-28.html" title="下级部门"><i class="icon-user-md"></i></a> <input type="text" name="orders[28]" id="orders[28]" value="20" style="width:30px;text-align:center" /> </li>
+                                        <li>标题名称 <a href="javascript:void(0);" target="" data-toggle="modal" data-type="ajax" title="编辑"><i class="fa fa-edit"></i></a> <a href="/dept-browse-28.html" title="下级部门"><i class="fa fa-user-md"></i></a> <input type="text" name="orders[28]" id="orders[28]" value="20" style="width:30px;text-align:center" /> </li>
                                     </ul> </li>
-                                <li>测试aa <a href="javascript:void(0);" target="" data-toggle="modal" data-type="ajax" title="编辑"><i class="icon-edit"></i></a> <a href="javascript:void(0);" title="下级部门"><i class="icon-user-md"></i></a> <input type="text" name="orders[18]" id="orders[18]" value="20" style="width:30px;text-align:center" /> </li>
+                                <li>测试aa <a href="javascript:void(0);" target="" data-toggle="modal" data-type="ajax" title="编辑"><i class="fa fa-edit"></i></a> <a href="javascript:void(0);" title="下级部门"><i class="fa fa-user-md"></i></a> <input type="text" name="orders[18]" id="orders[18]" value="20" style="width:30px;text-align:center" /> </li>
                             </ul> </li>
-                        <li>工程部 <a href="javascript:void(0);" target="" data-toggle="modal" data-type="ajax" title="编辑"><i class="icon-edit"></i></a> <a href="javascript:void(0);" title="下级部门"><i class="icon-user-md"></i></a> <input type="text" name="orders[9]" id="orders[9]" value="10" style="width:30px;text-align:center" /> </li>
+                        <li>工程部 <a href="javascript:void(0);" target="" data-toggle="modal" data-type="ajax" title="编辑"><i class="fa fa-edit"></i></a> <a href="javascript:void(0);" title="下级部门"><i class="fa fa-user-md"></i></a> <input type="text" name="orders[9]" id="orders[9]" value="10" style="width:30px;text-align:center" /> </li>
                     </ul>
                 </form>
             </div>
@@ -34,7 +34,7 @@
     <div class="col-sm-8">
         <div class="panel panel-sm">
             <div class="panel-heading">
-                <i class="icon-sitemap"></i>
+                <i class="fa fa-sitemap"></i>
                 <strong>下级部门</strong>
             </div>
             <div class="panel-body">
@@ -45,7 +45,7 @@
                             <td class="col-2">
                                 <nobr>
                                     <a href="javascript:void(0);">demo</a>&nbsp;
-                                    <i class="icon-angle-right"></i>&nbsp;
+                                    <i class="fa fa-angle-right"></i>&nbsp;
                                 </nobr> </td>
                             <td> <input type="text" name="depts[id3]" id="depts[id3]" value="技术部" class="form-control" /> <input type="text" name="depts[id9]" id="depts[id9]" value="工程部" class="form-control" /> <input type="text" name="depts[]" id="depts[]" value="" class="form-control" /> </td>
                         </tr>

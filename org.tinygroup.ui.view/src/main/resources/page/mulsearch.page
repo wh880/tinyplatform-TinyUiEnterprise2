@@ -1,4 +1,32 @@
 ##<span id="showsearchmore">搜索</span>
+
+<style>
+
+    /*条件查询*/
+    #showsearchmore{cursor:pointer}
+    #searchform table,.searchform table{display:inline}
+    #searchform td,.searchform td{vertical-align: middle;padding:1px!important;}
+    #searchform .form-control,.searchform .form-control{padding:0;line-height:30px;height:30px;margin-bottom:3px}
+    .w-150px{width:150px;}
+    .w-180px{margin-right:5px; width:150px;}
+    .w-90px{width:90px;}
+    .w-400px{width:360px;}
+    .w-60px{width:60px;}
+    #moreOrLite #searchlite{display:none;}
+    #moreOrLite .icon-double-angle-up{line-height:98px}
+    #moreOrLite{display:block;width:30px;position:absolute;right:0;top:8px;text-align:center}
+    #moreOrLite a{display:inline-block}
+    #moreOrLite a:hover{background:#F9F5E4}
+    #searchform,.searchform{position:relative;text-align:center;display:none;}
+    #searchform.showmore,.searchform.showmore{display:block;background:#fcf8e2;border:#f2f2f2 1px solid;padding-top:5px;margin-top: 2px;}
+    #searchform.showmore:hover,.searchform.showmore:hover{background:#fcf8e2!important;}
+    #searchbox5,#searchbox6,#searchbox2,#searchbox3{display:none}
+
+
+</style>
+
+
+#set(tinyfromid="form-mul-t1")
 <form method="get" action="" id="${tinyfromid}" class="form-condensed searchform">
 <div class="hide">
 <select id="operatortemp">
@@ -110,8 +138,8 @@
 	</tr>
 </tbody></table>
 <div id="moreOrLite">
-  <a id="searchmore" href="javascript:;" ><i class="icon-double-angle-down icon-2x"></i></a>
-  <a id="searchlite" href="javascript:;" ><i class="icon-double-angle-up icon-2x"></i></a>
+  <a id="searchmore" href="javascript:;" ><i class="fa fa-angle-double-down fa-2x"></i></a>
+  <a id="searchlite" href="javascript:;" ><i class="fa fa-angle-double-up fa-2x"></i></a>
 </div>
 </form>
 
