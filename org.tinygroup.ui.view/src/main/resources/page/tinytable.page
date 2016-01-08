@@ -1,8 +1,8 @@
 #@tinyTable() ##ID为空则系统自动生成 带入参数则取该参数为ID
 	#@tinyTableForm()
 		<div class="well well-sm">
-			用户名:#tinyInput("text" "username" "" {"size":"10","class":"input-sm"}) 城市:#tinyInput("text" "city" "" {"size":"10","class":"input-sm"}) <input type="submit" class="btn btn-primary btn-sm" value="搜索" /> <input type="reset" class="btn btn-primary btn-sm" value="重置" />
-			#tinyInput("button" "savebutton" " 保存 " {"class":"btn btn-primary"})
+			用户名:#tInput("username" "" {"size":"10","class":"input-sm"}) 城市:#tInput("city" "" {"size":"10","class":"input-sm"}) <input type="submit" class="btn btn-primary btn-sm" value="搜索" /> <input type="reset" class="btn btn-primary btn-sm" value="重置" />
+			#@tButton("primary savebutton")保存#end
             <select id="thisform-selsql" class="form-control"></select>
 		</div>
 	#end
@@ -63,7 +63,7 @@
 	#@tinyTableForm()
 		<div class="well well-sm">
 			#setTinyTablePageSize([10,20,50,100,200,300]) ##每页数据条数设置
-			用户名:#tinyInput("text" "username" username {"size":"10","class":"input-sm"}) 城市:#tinyInput("text" "city" city {"size":"10","class":"input-sm"}) <button class="btn btn-primary btn-sm">搜索</button>
+			用户名:#tInput("username" username {"size":"10","class":"input-sm"}) 城市:#tInput("city" city {"size":"10","class":"input-sm"}) <button class="btn btn-primary btn-sm">搜索</button>
 		</div>
 	#end
 	#@tinyTableContent(call("link","/data/tinytabledata.page?"+tinyRequestQueryString) 52) ##取数据地址 总数据

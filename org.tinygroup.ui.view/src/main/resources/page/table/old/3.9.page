@@ -1,9 +1,0 @@
-
-#@borderedTable()
-    #@theadCenterMenu()   #@th()对齐方式#end        #@th()类名#end  #end
-    #@tbody()
-      #@tr()        #@td()居左#end        #@td()默认#end      #end
-      #@centerAlignTr()        #@td()居中#end        #@td().text-c#end      #end
-      #@rightAlignTr()        #@td()居右#end        #@td().text-r#end      #end
-    #end
-#end
