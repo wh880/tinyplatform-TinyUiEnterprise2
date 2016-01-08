@@ -12,22 +12,23 @@
     -o-transition: all 0.5s;
     transition: all 0.5s;
 }
+.togglebox{position:relative}
 .togglebox ul,.togglebox li{margin:0;padding:0;list-style:none}
 .togglebox h3{margin:0;list-style:none}
-
-.togglebox{position:relative}
-.togglenavpart{position:absolute;width:210px;top:0;border:1px solid #eee;z-index:2}
-.togglenavico{background:#edf0f1;z-index:3;position:absolute;border:#e5e5e5 1px solid;left:0;top:40px;cursor:pointer;line-height:32px;width:11px;text-align:center;}
+.togglenavpart{position:absolute;width:210px;top:0;bottom:0;min-height:420px;border:1px solid #eee;z-index:2}
+.togglenavico{background:#edf0f1;z-index:3;position:absolute;border:#e5e5e5 1px solid;left:0;top:0;cursor:pointer;line-height:32px;width:11px;text-align:center;}
 .togglenavico:hover{background:#eee;}
-.navtitle{background:#edf0f1;font-size:13px;font-weight:bold;line-height:33px;color:#333;padding:0 10px;margin-bottom:4px}
+.navtitle{background:#edf0f1;font-size:13px;font-weight:bold;line-height:33px;color:#333;padding:0 10px;margin-bottom:4px;white-space: nowrap}
 .togglenavpart .navbody{padding:0 4px 5px;}
 .togglenavpart .treeLeftbox{padding:0;margin-top:-15px;}
-.togglenavpart .treeLeftbox ul.ztree{border:none;max-height:421px;overflow:auto}
-.togglebox .togglenavpart{left:-230px;overflow:hidden}
+.togglenavpart .treeLeftbox ul.ztree{border:none;height:421px;overflow:auto}
+.togglebox .togglenavpart{left:-230px;overflow:auto}
+.togglebox .tinyheaderTools{margin-left:15px}
+.togglebox.open .tinyheaderTools{margin-left:0}
+
 .togglebox.open .togglenavpart{display:block;left:0;}
 .togglebox.open .togglebodypart{margin-left:220px;}
-.togglebox.open .togglenavico{left:199px;top:0;background:#eee;border:#e5e5e5 1px solid;}
-.togglebox.open .togglenavico:hover{background:#f9f9f9;}
+.togglebox.open .togglenavico{left:199px;}
 
 /*与面变化 位置方式变动*/
 /*.togglebox.shrinkage .togglenavico{left:-11px;width:10px;top:0}
