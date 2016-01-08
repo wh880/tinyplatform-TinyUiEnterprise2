@@ -46,10 +46,10 @@ function setup_widgets() {
         "customButton": !1,
         "customClass": "folder-10 | next-10",
         "customStart": function () {
-            alert("Hello you, this is a custom button...")
+            //alert("Hello you, this is a custom button...")
         },
         "customEnd": function () {
-            alert("bye, till next time...")
+            //alert("bye, till next time...")
         },
         "buttonOrder": "%refresh% %custom% %edit% %toggle% %fullscreen% %delete%",
         "opacity": 1,
