@@ -233,11 +233,11 @@ $(function(){
 * @param mapInfo 额外的参数可自动带入input表单
 
 *#
-#macro tSelect2(name value mapInfo)
+#*#macro tSelect2(name value mapInfo)
 	<select name="${name}" class="form-control select2 #getMapVal("class",mapInfo)" value="${value}" #mapToHtml(mapInfo)>
 		#bodyContent
 	</select>
-#end
+#end*#
 #*
 * tOptionItem 对应标标签select 中的option 会自动选中*
 * @param optionItemVal 选项值
