@@ -7,7 +7,7 @@
     <!--
     $(function(){
         if($("#${toggleid}").hasClass("open")){
-            $("#${toggleid}-ico i").attr("class","fa-caret-left");
+            $("#${toggleid}-ico i").attr("class","fa fa-caret-right");
         }
         $("#${toggleid}-ico").on("click",function(){
             $("#${toggleid}").toggleClass("open");
