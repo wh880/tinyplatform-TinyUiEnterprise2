@@ -1,6 +1,7 @@
 @charset "utf-8";
 /*遮罩条*/
 .maskBar{position:absolute;width:100%; height:auto;left:0; bottom:-60px; right:0;background-color:#000;z-index:2; color:#fff!important;opacity:0.6;filter:alpha(opacity=60)}
+.maskBar .mask-infos{padding:5px; text-align:center}
 .maskWraper{position:relative; overflow:hidden}
 .maskWraper.hover .maskBar{bottom:0px;
   transition: bottom 200ms;
