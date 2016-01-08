@@ -44,12 +44,13 @@
                 //window.location.href="?"+qF.getVal(v);
                 // console.log(qF.getVal(v));
             });
-            $("input[name=savebutton]").on("click",function(){
+            $("button.savebutton").on("click",function(){
                 layer.prompt({title: '请输入保存名称', formType: 2}, function(text){
                     var v=form.serialize();
                     qF.add(text,v);
                     layer.closeAll();
                 });
+				return false;
             });
         })
 	</script>
