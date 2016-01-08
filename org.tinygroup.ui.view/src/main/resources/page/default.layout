@@ -218,7 +218,7 @@
 					#TnavItem("8.5" "树形视图" "/page/treeview.page")
 					#@TnavItems("8.6" "图表" {"ico":""})
 						#TnavItem("8.6.1" "图表展示" "/page/charts.page")
-						#TnavItem("8.6.2" "flot图表" "/page/flot.page")
+						#*#TnavItem("8.6.2" "flot图表" "/page/flot.page")*#
 						#TnavItem("8.6.3" "燃尽图表" "/page/burndownChart.page")
 						#TnavItem("8.6.4" "highCharts图表" "/page/highCharts.page")
 					#end

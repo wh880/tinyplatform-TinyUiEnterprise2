@@ -102,6 +102,7 @@
 .treeNew>li>ul li:last-child:after {
 	border-left: 1px solid #fff
 }
+/*
 .treeview .hitarea {
 	position: absolute;
 	left: 15px;
@@ -130,6 +131,7 @@
 .treeview .hitarea.collapsable-hitarea:before {
 	content:'\e6f2'
 }
+*/
 
 .treeview .form-control,.treeview input[type='text'] {
 	padding: 1px 2px;
