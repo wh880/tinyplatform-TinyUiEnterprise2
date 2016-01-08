@@ -137,9 +137,6 @@
 	display: inline-block
 }
 .table-form .form-control{margin-bottom:6px;}
-@font-face {
-	font-family:treeIcon;font-style:normal;font-weight:400;src:url(../treeIcon/fonts/treeIcon.eot?v=1.0.0);src:url(../treeIcon/fonts/treeIcon.eot?#iefix&v=1.0.0) format('embedded-opentype'),url(../treeIcon/fonts/treeIcon.woff?v=1.0.0) format('woff'),url(../treeIcon/fonts/treeIcon.ttf?v=1.0.0) format('truetype'),url(../treeIcon/fonts/treeIcon.svg#regular?v=1.0.0) format('svg')
-}
 
 .icon-lg:before,.icon-large:before {
 	font-size: 1.33333333em;
