@@ -15,7 +15,7 @@
 
 #macro mask(barBaseClass barClass)
 	<div class="${barBaseClass} ${barClass}">
-		<div class="text-c pd-5">
+		<div class="mask-infos">
 			#bodyContent
 		</div>
 	</div>
