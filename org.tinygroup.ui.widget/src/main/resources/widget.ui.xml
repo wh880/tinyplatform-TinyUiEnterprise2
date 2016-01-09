@@ -8,6 +8,6 @@
 		  /static/org/tinygroup/widget/js/jarvis.widget.min.js,
 		  /static/org/tinygroup/widget/js/widget.init.js
 		</js-resource>
-		<description>小部件(基于jqueryUi)</description>
+		<description>窗口小部件(基于jqueryUi)</description>
     </ui-component>
 </ui-components>
