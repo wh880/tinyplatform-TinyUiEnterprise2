@@ -1,3 +1,4 @@
+<style type="text/css">#content-wrapper{padding-left:0;padding-right:0;}</style>
 #@widgetGrid()
     #@widgetItem(12 {"colorbutton":false})
         #@widgetItemHead()
