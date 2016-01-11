@@ -111,13 +111,12 @@
                                          style="width:84%;"></div>
                                 </div>
                             </div>
-                                                    <span class="show-stat-buttons "> <span
-                                                            class="col-xs-12 col-sm-6 col-md-6 col-lg-6"> <a
-                                                            href="javascript:void(0);"
-                                                            class="btn btn-block hidden-xs btn-default">生成PDF</a> </span> <span
-                                                            class="col-xs-12 col-sm-6 col-md-6 col-lg-6"> <a
-                                                            href="javascript:void(0);"
-                                                            class="btn btn-block hidden-xs btn-default">报告问题</a> </span> </span>
+                            <span class="show-stat-buttons ">
+                                <span class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                    <a href="javascript:void(0);" class="btn btn-block hidden-xs btn-default">生成PDF</a> </span>
+                                <span class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                    <a href="javascript:void(0);" class="btn btn-block hidden-xs btn-default">报告问题</a> </span>
+                            </span>
                         </div>
                     </div>
                 </div>
