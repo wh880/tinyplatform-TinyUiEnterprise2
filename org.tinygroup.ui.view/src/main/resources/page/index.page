@@ -251,34 +251,7 @@
                         <td>正常</td>
                         <td>163</td>
                         <td class="text-center">
-                            #@tButton("btn-xs btn-default")#faIcon("search fa-lg")#end
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><a href="javascript:void(0);">美国</a></td>
-                        <td>4,977</td>
-                        <td>正常</td>
-                        <td>163</td>
-                        <td class="text-center">
-                            #@tButton("btn-xs btn-default")#faIcon("search fa-lg")#end
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><a href="javascript:void(0);">美国</a></td>
-                        <td>4,977</td>
-                        <td>正常</td>
-                        <td>163</td>
-                        <td class="text-center">
-                            #@tButton("btn-xs btn-default")#faIcon("search fa-lg")#end
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><a href="javascript:void(0);">美国</a></td>
-                        <td>4,977</td>
-                        <td>正常</td>
-                        <td>163</td>
-                        <td class="text-center">
-                            #@tButton("btn-xs btn-default")#faIcon("search fa-lg")#end
+                            #@tButton("btn-xs btn-default")#faIcon("search")#end
                         </td>
                     </tr>
                     <tr>
@@ -296,7 +269,34 @@
                         <td>正常</td>
                         <td>163</td>
                         <td class="text-center">
-                            #@tButton("btn-xs btn-default")#faIcon("search fa-lg")#end
+                            #@tButton("btn-xs btn-default")#faIcon("search")#end
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="javascript:void(0);">美国</a></td>
+                        <td>4,977</td>
+                        <td>正常</td>
+                        <td>163</td>
+                        <td class="text-center">
+                             #@tButton("btn-xs btn-default")#faIcon("search")#end
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="javascript:void(0);">美国</a></td>
+                        <td>4,977</td>
+                        <td>正常</td>
+                        <td>163</td>
+                        <td class="text-center">
+                            #@tButton("btn-xs btn-default")#faIcon("search")#end
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="javascript:void(0);">美国</a></td>
+                        <td>4,977</td>
+                        <td>正常</td>
+                        <td>163</td>
+                        <td class="text-center">
+                            #@tButton("btn-xs btn-default")#faIcon("search")#end
                         </td>
                     </tr>
                     </tbody>
