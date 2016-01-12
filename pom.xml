@@ -76,6 +76,7 @@
 		<module>org.tinygroup.ui.iconTab</module>
 		<module>org.tinygroup.ui.togglebox</module>
 		<module>org.tinygroup.ui.widget</module>
+		<module>org.tinygroup.ui.public</module>
 		<module>org.tinygroup.ui.view</module>
 		<module>org.tinygroup.ui.web</module>
     </modules>

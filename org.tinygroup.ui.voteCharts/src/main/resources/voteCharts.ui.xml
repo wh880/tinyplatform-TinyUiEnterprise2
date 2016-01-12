@@ -1,5 +1,5 @@
 <ui-components>
-    <ui-component name="tiny.ui.voteCharts" dependencies="tiny.ui.jquery">
+    <ui-component name="tiny.ui.votecharts" dependencies="tiny.ui.jquery">
 		<css-resource>
 			/static/org/tinygroup/voteCharts/css/voteCharts.css
 		</css-resource>
