@@ -61,7 +61,7 @@
 			<div class="navbar-header">
 				<!-- Logo -->
 				<a href="#if(navLogoHeaderLogoLink)#link(navLogoHeaderLogoLink)#{else}javascript:void(0);#end" class="navbar-brand">
-					<img title="${navLogoHeaderLogoTitle}"#if(navLogoHeaderLogo) src="#link(navLogoHeaderLogo)"#end>
+					<div><img title="${navLogoHeaderLogoTitle}"#if(navLogoHeaderLogo) src="#link(navLogoHeaderLogo)"#end></div>
 					<!--TinyAdmin-->
 				</a>
 
