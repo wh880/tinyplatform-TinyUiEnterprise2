@@ -1,10 +1,4 @@
 
-
-
-
-
-
-
 <div style="background:#f1f1f1;line-height:30px;padding:2px 10px">
 
 #@navZtree()
@@ -14,6 +8,23 @@
 			 #@aModal("#myModal" "增加" "600" "500" "r" "/page/form/4.6.pagelet")增加#end<a href="#link("/page/")">全部</a>
 		#end
 	#end
+#end
+
+#@navSelect2("sleProject" "sleProject")
+	#@navSelect2Nav()请选择项目<span class="caret"></span>#end
+	#@navSelect2Body({"style":"top:30px;left:-10px"})
+		#@navSelect2Data()
+		<optgroup label="请选择项目">
+			#for(var:[1..4])
+			<option value="${var}"${var==2?" selected":""}>选项${var}</option>
+		#end
+	</optgroup>
+	#end
+	#@tSelect2Fix("sleProject")
+		<a href="${TINY_CONTEXT_PATH+adminPath}/project/form">#faIcon("plus-sign")添加项目</a>
+	#end
+	#dialog("myModal")
+#end
 #end
 
 工程 项目 规划 <span id="showsearchmore">#faIcon("search")搜索</span>

@@ -3,16 +3,15 @@
     #bodyContent
 </div>
 <script type="text/javascript">
-    <!--
     $(function(){
         var isinit=false;
         $("#${navsid}-select").select2();
+        $("#${navsid}-select").parent().find("span.selection,span.dropdown-wrapper").remove();
         $("#${navsid}-select").on("change",function(){hidePrj()});
         function hidePrj(){
             $("#${navsid}-nav").removeClass("active");
             $("#${navsid}-select").select2("close");
             $("#${navsid}-body").hide();
-
         }
         $("#${navsid}-nav").click(function(e){
             $(this).toggleClass("active")
@@ -21,14 +20,8 @@
             }else{
                 $("#${navsid}-body").show();
                 $("#${navsid}-select").select2("open");
-                $("#select2-drop").css("top",parseInt($("#select2-drop").css("top"))-10+"px");
-                if(!isinit){
-                    $("#select2-drop").append($("#${navsid}-fix").html());
-                    isinit=true;
-                    $("#select2-drop").on("click","a",function(){
-                        window.location.href=$(this).attr("href");
-                    });
-                }
+                var select2Rap=$(".select2-container--open");
+                select2Rap.css("margin-top","-20px");
             }
             e.stopPropagation();
         });
@@ -36,9 +29,9 @@
             hidePrj();
         });
     });
-    //-->
 </script>
 #end
+
 #macro navSelect2Body(bodyMapInfo)
 <div class="dropdownbody" id="${navsid}-body"#mapToHtml(bodyMapInfo)>
     #bodyContent

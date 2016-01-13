@@ -49,7 +49,7 @@
         $(".select2-results:first").append($("#${fixId}").html());
             $(".select2-results:first").on("click","a",function(){
             $select.select2("close");
-        })
+        });
         isinit=true;
         }
         });
