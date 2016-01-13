@@ -1,0 +1,81 @@
+
+
+#@toggleBox({"class":"open"})##展开为class:OPEN 要附加其它的属性请用MAP带入
+	#@toggleLeft({"class":"aclass"})
+		#@settoggleLeftTitle()
+			#@navSelect2("sleProject" "sleProject")
+				#@navSelect2Nav()请选择项目<span class="caret"></span>#end
+				#@navSelect2Body({"style":"top:30px;left:-10px"})
+					#@navSelect2Data()
+                    <optgroup label="请选择项目">
+						#for(var:[1..4])
+                        <option value="${var}"${var==2?" selected":""}>选项${var}</option>
+
+                    </optgroup>
+					#end
+				#end
+				#@tSelect2Fix("sleProject")
+                <a href="${TINY_CONTEXT_PATH+adminPath}/project/form">#faIcon("plus-sign")添加项目</a>
+				#end
+			#end
+		#end
+		#end
+		#@settoggleLeftBody()
+		##include("/page/typography/1.23.page")
+			#@zTreeList(call("link","/data/ztreeData.pagelet") {"id":"demoLeft"})
+				#setzTreeValMap({"id":"modelid","name":"truename","pid":"parentid"}) ##key值为固定
+				#zTreeSetLinkUrl(call("link","/page/togglebox.page" ))
+				#zTreeSetAddUrl(call("link","/page/togglebox.page"))
+				#zTreeSetEditUrl(call("link","/page/togglebox.page"))
+				#zTreeSetDelUrl(call("link","/page/togglebox.page"))
+			#end
+
+        <script>
+            $(function(){
+                $("#changeE").click(function() {
+                    $("#demoLeft").trigger("refresh", function () {
+                        //刷新内容
+                    })
+                })
+            })
+        </script>
+		#end
+	#end
+	#@toggleRight()
+		#@tinyTable(tinytableid) ##ID为空则系统自动生成 带入参数则取该参数为ID
+        <div class="tinyheaderTools form-inline">
+			#setTinyTablePageSize([10,20,50,100,200,35]) ##每页数据条数设置
+
+            <a href="#" class="btn btn-danger btn-sm">状态</a>
+            <a href="#" class="btn btn-default btn-sm">产品</a>
+            <a href="#" class="btn btn-success btn-sm">Bug</a>
+            <a href="#" class="btn btn-primary btn-sm">工程</a>
+            <a href="#" class="btn btn-info btn-sm">历史</a>
+            <a href="#" class="btn btn-warning btn-sm">相关</a>
+        </div>
+			#@tinyTableContent(call("link","/data/tinytabledata.pagelet")) ##取数据地址 总数据
+				#@thead()
+					#@tr()  ##class 为sorting 表票可排序 为sorting_desc(正序为为sorting_asc) 为当前倒序
+						#@tinyTh({"width":"6"})<input type="checkbox" name="allck" value="">#end
+						#@tinyTh({"class":"sorting sorting_desc","rel":"sortname"})姓名#end
+						#@tinyTh({"class":"","rel":"sortname"})城市#end
+						#@tinyTh({"class":"","rel":"sortname"})办公室#end
+						#@tinyTh({"class":"sorting","rel":"sortname","style":"color:#f00"})年龄#end
+						#@tinyTh({"class":"sorting","rel":"sortname"})就职日期#end
+						#@tinyTh({"class":"sorting","rel":"sortname"})薪资#end
+						#@tinyTh({"class":"sorting","rel":"sortname"})操作#end
+					#end
+				#end
+			#end
+		##以下部分为对删除和修改的影响 因为存在不同的信息故放在外面自行更改 #dialog 配合修改使用
+        <script type="text/javascript">
+            $(function(){
+                $('#${tableId}').on('click','.delBtn',function(e){
+                    user_del(this,'1');
+                });
+            })
+        </script>
+
+		#end
+	#end
+#end
