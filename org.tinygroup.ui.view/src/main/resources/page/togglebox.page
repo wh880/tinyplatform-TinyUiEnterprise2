@@ -1,32 +1,32 @@
+
 <div style="background:#f1f1f1;line-height:30px;padding:2px 10px">
 
-#@navZtree()
-	#@navZtreeNav()<span>工程 </span>#faIcon("caret-down")#end
-	#@navZtreeBody({"style":"top:30px;left:-10px"})
-		#@treeSelect("ajian" "1" {"class":"input-text blueline","data-URL":call("link","/data/ztreeData.pagelet")})
-			 #@aModal("#myModal" "增加" "600" "500" "r" "/page/form/4.6.pagelet")增加#end<a href="#link("/page/")">全部</a>
+	#@navZtree()
+		#@navZtreeNav()<span>工程 </span>#faIcon("caret-down")#end
+		#@navZtreeBody({"style":"top:30px;left:-10px"})
+			#@treeSelect("ajian" "1" {"class":"input-text blueline","data-URL":call("link","/data/ztreeData.pagelet")})
+				#@aModal("#myModal" "增加" "600" "500" "r" "/page/form/4.6.pagelet")增加#end<a href="#link("/page/")">全部</a>
+			#end
+		#end
+	#end
+
+	#@navSelect2("sleProject" "sleProject")
+		#@navSelect2Nav()请选择项目<span class="caret"></span>#end
+		#@navSelect2Body({"style":"top:30px;left:-10px"})
+			#@navSelect2Data()
+            <optgroup label="请选择项目">
+				#for(var:[1..4])
+                <option value="${var}"${var==2?" selected":""}>选项${var}</option>
+			#end
+        </optgroup>
+		#end
+		#@tSelect2Fix("sleProject")
+            <a href="${TINY_CONTEXT_PATH+adminPath}/project/form">#faIcon("plus-sign")添加项目</a>
 		#end
 	#end
 #end
 
-#@navSelect2("sleProject" "sleProject")
-	#@navSelect2Nav()请选择项目<span class="caret"></span>#end
-	#@navSelect2Body({"style":"top:30px;left:-10px"})
-		#@navSelect2Data()
-		<optgroup label="请选择项目">
-			#for(var:[1..4])
-			<option value="${var}"${var==2?" selected":""}>选项${var}</option>
-		#end
-	</optgroup>
-	#end
-	#@tSelect2Fix("sleProject")
-		<a href="${TINY_CONTEXT_PATH+adminPath}/project/form">#faIcon("plus-sign")添加项目</a>
-	#end
-	#dialog("myModal")
-#end
-#end
-
-工程 项目 规划 <span id="showsearchmore">#faIcon("search")搜索</span>
+    工程 项目 规划 <span id="showsearchmore">#faIcon("search")搜索</span>
 </div>
 #include("/page/mulsearch.page")
 <p></p>
@@ -34,7 +34,7 @@
 	#@toggleLeft({"class":"aclass"})
 		#@settoggleLeftTitle()网站建设一期#end
 		#@settoggleLeftBody()
-			##include("/page/typography/1.23.page")
+		##include("/page/typography/1.23.page")
 			#@zTreeList(call("link","/data/ztreeData.pagelet") {"id":"demoLeft"})
 				#setzTreeValMap({"id":"modelid","name":"truename","pid":"parentid"}) ##key值为固定
 				#zTreeSetLinkUrl(call("link","/page/togglebox.page" ))
@@ -42,30 +42,30 @@
 				#zTreeSetEditUrl(call("link","/page/togglebox.page"))
 				#zTreeSetDelUrl(call("link","/page/togglebox.page"))
 			#end
-			<div class="text-align-center mt-10"><input type="button" class="btn btn-default" id="changeE" value="刷新树"/></div>
-			<script>
-				$(function(){
-					$("#changeE").click(function() {
-                        $("#demoLeft").trigger("refresh", function () {
-                            //刷新内容
-                        })
+        <div class="text-align-center mt-10"><input type="button" class="btn btn-default" id="changeE" value="刷新树"/></div>
+        <script>
+            $(function(){
+                $("#changeE").click(function() {
+                    $("#demoLeft").trigger("refresh", function () {
+                        //刷新内容
                     })
-				})
-			</script>
+                })
+            })
+        </script>
 		#end
 	#end
 	#@toggleRight()
 		#@tinyTable(tinytableid) ##ID为空则系统自动生成 带入参数则取该参数为ID
-			<div class="tinyheaderTools form-inline">
-				#setTinyTablePageSize([10,20,50,100,200,35]) ##每页数据条数设置
+        <div class="tinyheaderTools form-inline">
+			#setTinyTablePageSize([10,20,50,100,200,35]) ##每页数据条数设置
 
-				<a href="#" class="btn btn-danger btn-sm">状态</a>
-				<a href="#" class="btn btn-default btn-sm">产品</a>
-				<a href="#" class="btn btn-success btn-sm">Bug</a>
-				<a href="#" class="btn btn-primary btn-sm">工程</a>
-				<a href="#" class="btn btn-info btn-sm">历史</a>
-				<a href="#" class="btn btn-warning btn-sm">相关</a>
-            </div>
+            <a href="#" class="btn btn-danger btn-sm">状态</a>
+            <a href="#" class="btn btn-default btn-sm">产品</a>
+            <a href="#" class="btn btn-success btn-sm">Bug</a>
+            <a href="#" class="btn btn-primary btn-sm">工程</a>
+            <a href="#" class="btn btn-info btn-sm">历史</a>
+            <a href="#" class="btn btn-warning btn-sm">相关</a>
+        </div>
 			#@tinyTableContent(call("link","/data/tinytabledata.pagelet")) ##取数据地址 总数据
 				#@thead()
 					#@tr()  ##class 为sorting 表票可排序 为sorting_desc(正序为为sorting_asc) 为当前倒序
@@ -80,17 +80,18 @@
 					#end
 				#end
 			#end
-			##以下部分为对删除和修改的影响 因为存在不同的信息故放在外面自行更改 #dialog 配合修改使用
-			<script type="text/javascript">
-				$(function(){
-					$('#${tableId}').on('click','.delBtn',function(e){
-						user_del(this,'1');
-					});
-				})
-			</script>
+		##以下部分为对删除和修改的影响 因为存在不同的信息故放在外面自行更改 #dialog 配合修改使用
+        <script type="text/javascript">
+            $(function(){
+                $('#${tableId}').on('click','.delBtn',function(e){
+                    user_del(this,'1');
+                });
+            })
+        </script>
 
 		#end
 	#end
 #end
 
+#dialog("myModal")
 
