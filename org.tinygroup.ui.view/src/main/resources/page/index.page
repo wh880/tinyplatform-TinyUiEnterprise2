@@ -1,4 +1,7 @@
-<style type="text/css">#content-wrapper{padding-left:0;padding-right:0;}</style>
+<style type="text/css">#content-wrapper {
+    padding-left: 0;
+    padding-right: 0;
+}</style>
 #@widgetGrid()
     #@widgetItem(12 {"colorbutton":false})
         #@widgetItemHead()
@@ -111,13 +114,12 @@
                                          style="width:84%;"></div>
                                 </div>
                             </div>
-                                                    <span class="show-stat-buttons "> <span
-                                                            class="col-xs-12 col-sm-6 col-md-6 col-lg-6"> <a
-                                                            href="javascript:void(0);"
-                                                            class="btn btn-block hidden-xs btn-default">生成PDF</a> </span> <span
-                                                            class="col-xs-12 col-sm-6 col-md-6 col-lg-6"> <a
-                                                            href="javascript:void(0);"
-                                                            class="btn btn-block hidden-xs btn-default">报告问题</a> </span> </span>
+                            <span class="show-stat-buttons ">
+                                <span class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                    <a href="javascript:void(0);" class="btn btn-block hidden-xs btn-default">生成PDF</a> </span>
+                                <span class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                    <a href="javascript:void(0);" class="btn btn-block hidden-xs btn-default">报告问题</a> </span>
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -249,20 +251,7 @@
                         <td>正常</td>
                         <td>163</td>
                         <td class="text-center">
-                            <div class="btn-group">
-                                <button class="btn btn-xs btn-default" data-toggle="dropdown"><i
-                                        class="fa fa-lg fa-cog"></i></button>
-                                <ul class="dropdown-menu">
-                                    <li><a href="javascript:void(0);"> <i
-                                            class="fa fa-lg fa-fw fa-file txt-color-greenLight"></i>
-                                        <span>PDF</span> </a></li>
-                                    <li><a href="javascript:void(0);"> <i
-                                            class="fa fa-lg fa-fw fa-times txt-color-red"></i> <span>删除</span>
-                                    </a></li>
-                                    <li class="divider"></li>
-                                    <li class="text-align-center"><a href="javascript:void(0);">取消</a></li>
-                                </ul>
-                            </div>
+                            #@tButton("btn-xs btn-default")#faIcon("search")#end
                         </td>
                     </tr>
                     <tr>
@@ -271,20 +260,7 @@
                         <td>正常</td>
                         <td>163</td>
                         <td class="text-center">
-                            <div class="btn-group">
-                                <button class="btn btn-xs btn-default" data-toggle="dropdown"><i
-                                        class="fa fa-lg fa-cog"></i></button>
-                                <ul class="dropdown-menu">
-                                    <li><a href="javascript:void(0);"> <i
-                                            class="fa fa-lg fa-fw fa-file txt-color-greenLight"></i>
-                                        <span>PDF</span> </a></li>
-                                    <li><a href="javascript:void(0);"> <i
-                                            class="fa fa-lg fa-fw fa-times txt-color-red"></i> <span>删除</span>
-                                    </a></li>
-                                    <li class="divider"></li>
-                                    <li class="text-align-center"><a href="javascript:void(0);">取消</a></li>
-                                </ul>
-                            </div>
+                            #@tButton("btn-xs btn-default")#faIcon("search")#end
                         </td>
                     </tr>
                     <tr>
@@ -293,20 +269,7 @@
                         <td>正常</td>
                         <td>163</td>
                         <td class="text-center">
-                            <div class="btn-group">
-                                <button class="btn btn-xs btn-default" data-toggle="dropdown"><i
-                                        class="fa fa-lg fa-cog"></i></button>
-                                <ul class="dropdown-menu">
-                                    <li><a href="javascript:void(0);"> <i
-                                            class="fa fa-lg fa-fw fa-file txt-color-greenLight"></i>
-                                        <span>PDF</span> </a></li>
-                                    <li><a href="javascript:void(0);"> <i
-                                            class="fa fa-lg fa-fw fa-times txt-color-red"></i> <span>删除</span>
-                                    </a></li>
-                                    <li class="divider"></li>
-                                    <li class="text-align-center"><a href="javascript:void(0);">取消</a></li>
-                                </ul>
-                            </div>
+                            #@tButton("btn-xs btn-default")#faIcon("search")#end
                         </td>
                     </tr>
                     <tr>
@@ -315,20 +278,7 @@
                         <td>正常</td>
                         <td>163</td>
                         <td class="text-center">
-                            <div class="btn-group">
-                                <button class="btn btn-xs btn-default" data-toggle="dropdown"><i
-                                        class="fa fa-lg fa-cog"></i></button>
-                                <ul class="dropdown-menu">
-                                    <li><a href="javascript:void(0);"> <i
-                                            class="fa fa-lg fa-fw fa-file txt-color-greenLight"></i>
-                                        <span>PDF</span> </a></li>
-                                    <li><a href="javascript:void(0);"> <i
-                                            class="fa fa-lg fa-fw fa-times txt-color-red"></i> <span>删除</span>
-                                    </a></li>
-                                    <li class="divider"></li>
-                                    <li class="text-align-center"><a href="javascript:void(0);">取消</a></li>
-                                </ul>
-                            </div>
+                             #@tButton("btn-xs btn-default")#faIcon("search")#end
                         </td>
                     </tr>
                     <tr>
@@ -337,20 +287,7 @@
                         <td>正常</td>
                         <td>163</td>
                         <td class="text-center">
-                            <div class="btn-group">
-                                <button class="btn btn-xs btn-default" data-toggle="dropdown"><i
-                                        class="fa fa-lg fa-cog"></i></button>
-                                <ul class="dropdown-menu">
-                                    <li><a href="javascript:void(0);"> <i
-                                            class="fa fa-lg fa-fw fa-file txt-color-greenLight"></i>
-                                        <span>PDF</span> </a></li>
-                                    <li><a href="javascript:void(0);"> <i
-                                            class="fa fa-lg fa-fw fa-times txt-color-red"></i> <span>删除</span>
-                                    </a></li>
-                                    <li class="divider"></li>
-                                    <li class="text-align-center"><a href="javascript:void(0);">取消</a></li>
-                                </ul>
-                            </div>
+                            #@tButton("btn-xs btn-default")#faIcon("search")#end
                         </td>
                     </tr>
                     <tr>
@@ -359,20 +296,7 @@
                         <td>正常</td>
                         <td>163</td>
                         <td class="text-center">
-                            <div class="btn-group">
-                                <button class="btn btn-xs btn-default" data-toggle="dropdown"><i
-                                        class="fa fa-lg fa-cog"></i></button>
-                                <ul class="dropdown-menu">
-                                    <li><a href="javascript:void(0);"> <i
-                                            class="fa fa-lg fa-fw fa-file txt-color-greenLight"></i>
-                                        <span>PDF</span> </a></li>
-                                    <li><a href="javascript:void(0);"> <i
-                                            class="fa fa-lg fa-fw fa-times txt-color-red"></i> <span>删除</span>
-                                    </a></li>
-                                    <li class="divider"></li>
-                                    <li class="text-align-center"><a href="javascript:void(0);">取消</a></li>
-                                </ul>
-                            </div>
+                            #@tButton("btn-xs btn-default")#faIcon("search")#end
                         </td>
                     </tr>
                     </tbody>

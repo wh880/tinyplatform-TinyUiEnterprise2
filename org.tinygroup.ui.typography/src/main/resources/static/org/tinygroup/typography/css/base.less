@@ -20,11 +20,21 @@
 
 
 
-/*文字尺寸*/
-.f-12{font-size:12px}.f-14{font-size:14px}.f-16{font-size:16px}.f-18{font-size:18px}.f-20{font-size:20px}.f-25{font-size:25px}.f-30{font-size:30px}.f-40{font-size:40px}.f-50{font-size:50px}
-
-/*行高距*/
+/*文字尺寸 行高距*/
+/*.f-12{font-size:12px}.f-14{font-size:14px}.f-16{font-size:16px}.f-18{font-size:18px}.f-20{font-size:20px}.f-25{font-size:25px}.f-30{font-size:30px}.f-40{font-size:40px}.f-50{font-size:50px}*/
+.set-box-size(@size) when (@size >=12) {
+    .f-@{size}{
+        font-size:@size*1px !important;
+    }
+    .line-@{size}{
+        line-height:@size*1px !important;
+    }
+    .set-box-size((@size - 2));
+}
+.set-box-size(50);
+/*
 .line-16{line-height:16px}.line-18{line-height:18px}.line-20{line-height:20px}.line-22{line-height:22px}.line-24{line-height:24px}.line-26{line-height:26px}.l28{line-height:28px}.line-30{line-height:30px}.line-40{line-height:40px}.line-50{line-height:50px}
+*/
 
 /*文字颜色*/
 .c-red,.c-red a,a.c-red{color:red}

@@ -165,7 +165,7 @@
 					#TnavItem("2.1" "栅格系统" "/page/gridSystem.page")
 					#TnavItem("2.2" "Tabs展现" "/page/tabShow.page")
 					#TnavItem("2.3" "表格列表" "/page/tinytable.page")
-
+					#TnavItem("2.4" "togglebox" "/page/togglebox.page")
 					#*#TnavItem("2.3" "ToggleBox" "/page/togglebox.page")*#
 				#end
 				#@TnavItems("3" "基础" {"ico":"fa-desktop"})
