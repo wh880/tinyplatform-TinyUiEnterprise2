@@ -1,4 +1,36 @@
-
+#macro navSelect2(name navsid)#set(navsid=navsid?:fmt("navsid%d",rand()))
+<div class="droptoprj" id="${navsid}">
+    #bodyContent
+</div>
+<script type="text/javascript">
+    $(function(){
+        var isinit=false;
+        $("#${navsid}-select").select2();
+        $("#${navsid}-select").parent().find("span.selection").remove();
+        $("#${navsid}-select").on("change",function(){hidePrj()});
+        function hidePrj(){
+            $("#${navsid}-nav").removeClass("active");
+            $("#${navsid}-select").select2("close");
+            $("#${navsid}-body").hide();
+        }
+        $("#${navsid}-nav").click(function(e){
+            $(this).toggleClass("active")
+            if($("#${navsid}-body").css("display")=="block"){
+                hidePrj();
+            }else{
+                $("#${navsid}-body").show();
+                $("#${navsid}-select").select2("open");
+                var select2Rap=$(".select2-container--open");
+                select2Rap.css("margin-top","-20px");
+            }
+            e.stopPropagation();
+        });
+        $("body").on("click",function(){
+            hidePrj();
+        });
+    });
+</script>
+#end
 <div style="background:#f1f1f1;line-height:30px;padding:2px 10px">
 
 	#@navZtree()
