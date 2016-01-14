@@ -2,6 +2,12 @@
     $.fn.queryFor = function(sel){
         var items = [];
         var name = $(this).attr("name");
+        if(!name){
+            name=$(this).attr("id");
+        }
+        if(!name){
+            name=$(this).attr("action");
+        }
         var sel=$(sel);
         var _init = function () {
             var v = window.localStorage.getItem(name)
@@ -26,9 +32,6 @@
             if(!items) return 0;
             return items[key]["value"]
         }
-        sel.on("change",function(){
-           console.log(this.val());
-        });
         _init();
         _initSel();
         return this;

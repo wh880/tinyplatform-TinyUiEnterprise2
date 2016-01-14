@@ -449,3 +449,37 @@ $(function(){
 </script>
 #end
 
+
+#*
+* operateMoreLess 表单历史保存至客户端
+*
+* @param listMap 表单名称 data-target为操作选项的父容器  data-minSize最小个数 data-maxSize最大个数
+*#
+#macro setFormHistory()#set(fid=fmt("qid-%d",rand()))<span id="${fid}">#@tButton("primary")保存#end
+    <select id="${fid}-selsql" class="form-control"></select></span>
+<script type="text/javascript">
+    $(function(){
+        var form=$("#${fid}").closest("form");
+        var qF= form.queryFor("#${fid}-selsql");
+        $("#${fid}-selsql").on("change",function(){
+            var v=$(this).val();
+            if(v=="none") return false;
+            var fItem,formItems=qF.getVal(v).split("&");
+            for(var i= 0,l=formItems.length;i<l;i++){
+                fItem=formItems[i].split("=");
+                form.find("[name='"+decodeURI(fItem[0])+"']").val(decodeURI(fItem[1]));
+            }
+            form.trigger("submit");
+        });
+        $("#${fid} button").on("click",function(){
+            layer.prompt({title: '请输入保存名称', formType: 2}, function(text){
+                var v=form.serialize();
+                qF.add(text,v);
+                layer.closeAll();
+            });
+            return false;
+        });
+    })
+</script>
+#end
+

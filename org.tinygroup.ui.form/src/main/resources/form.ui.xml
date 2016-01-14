@@ -8,7 +8,7 @@
 			/static/org/tinygroup/form/js/jquery.form.js,
 			/static/org/tinygroup/form/js/jquery.icheck.min.js,
 			/static/org/tinygroup/form/js/ajaxfileupload.js,
-			/static/org/tinygroup/form/js/jquery.queryFor.js
+			<!--/static/org/tinygroup/form/js/jquery.queryFor.js-->
 		</js-resource>
 		<description>表单 (www.bootcss.com) (validform.rjboy.cn)</description>
 	</ui-component>
