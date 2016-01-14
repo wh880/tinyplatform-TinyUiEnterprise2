@@ -279,7 +279,7 @@
 			<!-- 主体 start -->
 			#@rowFrame()
 				${pageMenuList}
-				<div id="tinypagecontent" style="min-height:490px;padding-top: 30px;">
+				<div id="tinypagecontent" style="min-height:490px;">
 					${pageContent}
 				</div>
 			#end
