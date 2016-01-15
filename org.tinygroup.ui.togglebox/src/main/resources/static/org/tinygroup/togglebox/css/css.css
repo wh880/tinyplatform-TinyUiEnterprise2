@@ -18,7 +18,7 @@
 .togglenavpart{position:absolute;width:210px;top:0;bottom:0;min-height:420px;border:1px solid #eee;z-index:2}
 .togglenavico{background:#edf0f1;z-index:3;position:absolute;border:#e5e5e5 1px solid;left:0;top:0;cursor:pointer;line-height:32px;width:11px;text-align:center;}
 .togglenavico:hover{background:#eee;}
-.navtitle{background:#edf0f1;font-size:13px;font-weight:bold;line-height:33px;color:#333;padding:0 10px;margin-bottom:4px;white-space: nowrap}
+.navtitle{background:#edf0f1;font-size:13px;font-weight:bold;line-height:33px;color:#333;padding:0 5px;margin-bottom:4px;white-space: nowrap}
 .togglenavpart .navbody{padding:0 4px 5px;}
 .togglenavpart .treeLeftbox{padding:0;margin-top:-15px;}
 .togglenavpart .treeLeftbox ul.ztree{border:none;height:421px;overflow:auto}
