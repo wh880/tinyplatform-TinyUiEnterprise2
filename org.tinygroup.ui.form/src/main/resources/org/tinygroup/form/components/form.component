@@ -455,13 +455,15 @@ $(function(){
 *
 * @param listMap 表单名称 data-target为操作选项的父容器  data-minSize最小个数 data-maxSize最大个数
 *#
-#macro setFormHistory()#set(fid=fmt("qid-%d",rand()))<span id="${fid}">#@tButton("primary")保存#end
-    <select id="${fid}-selsql" class="form-control"></select></span>
+#macro saveFormHistory()#set(fid=fmt("qid-%d",rand()))<button class="btn btn-primary btn-sm" id="${fid}">保存</button>
+<button class="btn btn-sm no-padding no-border" style="margin-left:20px" onclick="return false">
+    <select id="${fid}-sel" class="form-control no-border-radius margin-bottom-0" style="height:31px"></select>
+</button>
 <script type="text/javascript">
     $(function(){
         var form=$("#${fid}").closest("form");
-        var qF= form.queryFor("#${fid}-selsql");
-        $("#${fid}-selsql").on("change",function(){
+        var qF= form.queryFor("#${fid}-sel");
+        $("#${fid}-sel").on("change",function(){
             var v=$(this).val();
             if(v=="none") return false;
             var fItem,formItems=qF.getVal(v).split("&");
@@ -471,7 +473,7 @@ $(function(){
             }
             form.trigger("submit");
         });
-        $("#${fid} button").on("click",function(){
+        $("#${fid}").on("click",function(){
             layer.prompt({title: '请输入保存名称', formType: 2}, function(text){
                 var v=form.serialize();
                 qF.add(text,v);
@@ -479,7 +481,11 @@ $(function(){
             });
             return false;
         });
+        $("#${fid}-btn-remove").on("click",function(){
+            qF.delete($("#${fid}-sel").val());
+            return false;
+        })
     })
 </script>
+<button class="btn btn-sm" id="${fid}-btn-remove">#fontIco("remove")</button>
 #end
-
