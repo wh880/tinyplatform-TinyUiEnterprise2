@@ -50,14 +50,17 @@
 <script type="text/javascript">
     $(function(){
         $("#${tableId}").on("initnav refresh init",function(){//currentPage
-            var url="${dataUrl}";
+            var url=$('#${tableId}').attr("data-url");
             $("#${tableId}pageSize").attr("name","");
             if($("#${tableId}form").size()>0){
                 #tinyTableBeforeSend()
-                var currenturl=url+(url.indexOf("?")>0?"&":"?")+$("#${tableId}form").formSerialize();
-                $('#${tableId}').attr("data-url",currenturl);
-            }//if(!currentPage) currentPage=1;
+                var url=url+(url.indexOf("?")>0?"&":"?")+$("#${tableId}form").formSerialize();
+            }
+            $('#${tableId}').attr("data-url-real",url);
             getInfo(${currentPage},1);
+        });
+        $("#${tableId}").on("change:url",function(e,url){
+            $(this).attr("data-url",url);
         });
         function getInfo(page,initnav){
             var order;
@@ -73,7 +76,7 @@
             }
             $.ajax({
                 type: "GET",
-                url: $('#${tableId}').attr("data-url"),//"${dataUrl}",
+                url: $('#${tableId}').attr("data-url-real")
                 data:{ page: page,pagesize:pageSize,pageSize:pageSize,order:order,ordertype:ordertype,orderType:ordertype,limit:pageSize,start:(page-1)*pageSize,tinytableid:"${tableId}",fixcache:Math.random()},
                 dataType: "html",
                 cache:false,
