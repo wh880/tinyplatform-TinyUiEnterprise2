@@ -17,7 +17,8 @@
 
   .navbar-header,
   .navbar-collapse {
-    background: @navbar-color;
+    background-color: #f78c40;
+    background-image: linear-gradient(to bottom, #f78c40, #d67632);
     .box-shadow(none);
   }
 
@@ -40,11 +41,13 @@
   }
 
   #main-menu-toggle {
-    background: @navbar-color;
-    color: @navbar-text-color;
+    background-image: linear-gradient(to bottom, #dd7c37, #b9662b);
+    color: #fff !important;
+    text-shadow: 0 -1px #985813;
+    color: #fff;
 
     .fa:before {
-      color: @navbar-text-color;
+      color:#fff;
     }
   }
 
@@ -106,10 +109,11 @@
 
     // Dropdowns
     //
-
+    .nav > li > a { color: #fff !important;}
     .nav > li > a {
       &:hover {
-        background: darken(@navbar-color, 3%);
+        background-image: linear-gradient(to bottom, #dd7c37, #b9662b);
+        color: #fff !important;
       }
     }
 
@@ -117,7 +121,7 @@
       border-top: none;
       border-bottom: none;
       margin-top: 0;
-      background: darken(@navbar-color, 3%);
+      background-image: linear-gradient(to bottom, #dd7c37, #b9662b);
     }
 
     .dropdown-menu {
@@ -126,10 +130,10 @@
       padding: 5px 0;
 
       > li > a {
-        color: @text-color;
+        color: #333 !important;
 
         &:hover {
-          background: #f6f6f6;
+          background: #eee;
         }
       }
     }
