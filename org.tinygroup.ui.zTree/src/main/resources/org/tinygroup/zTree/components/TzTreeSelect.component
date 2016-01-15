@@ -201,7 +201,7 @@ zNodes${tempid}.push({id:${id}, pId:${pid}, name:"${name}"});
 *#
 #macro zTreeList(dataurl optionMap)
 	#set(ztreeid=optionMap?.id?:fmt("zid%d",rand()))
-<ul id="${ztreeid}" class="ztree leftztree"></ul>
+<ul id="${ztreeid}" class="ztree leftztree" data-url="${dataurl}"></ul>
 <script type="text/javascript">
     <!--
     $(function(){
@@ -281,7 +281,7 @@ zNodes${tempid}.push({id:${id}, pId:${pid}, name:"${name}"});
         function refreshdata(callback){
             $.ajax({
                 type: "GET",
-                url: "${dataurl}",
+                url: $("#${ztreeid}").attr("data-url"),
                 dataType: "html",
                 success: function(data) {
                     data= eval(' ' +data+ ' ');
@@ -295,6 +295,7 @@ zNodes${tempid}.push({id:${id}, pId:${pid}, name:"${name}"});
         }
         refreshdata();
         //var zTree=$.fn.zTree.init($("#"+ztreeid), setting, zNodes);
+
         $("#${ztreeid}").on("refresh",function(e,callback){
             refreshdata(callback);
         })
