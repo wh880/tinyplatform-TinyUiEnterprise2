@@ -76,7 +76,7 @@
             }
             $.ajax({
                 type: "GET",
-                url: $('#${tableId}').attr("data-url-real")
+                url: $('#${tableId}').attr("data-url-real"),
                 data:{ page: page,pagesize:pageSize,pageSize:pageSize,order:order,ordertype:ordertype,orderType:ordertype,limit:pageSize,start:(page-1)*pageSize,tinytableid:"${tableId}",fixcache:Math.random()},
                 dataType: "html",
                 cache:false,
