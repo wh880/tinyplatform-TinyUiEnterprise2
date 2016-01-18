@@ -11,7 +11,7 @@
 var zNodes${tempid} =[];
 </script>
 <input id="${sid}" name=""  class="form-control no-radius" type="text" value="" #mapToHtml(mapInfo)/>
-<input id="${sid}-input" name="${name}" type="hidden" value="${value}" #mapToHtml(mapInfo)/>
+<input id="${sid}-input" name="${name}" type="hidden" value="${value}" data-url="${}" #mapToHtml(mapInfo)/>
 <div class="hide" id="${sid}-rap">
 <div id="${sid}-content" class="tree-sel-content t-menu-content hide">
 <ul id="ztree${sid}" class="ztree">

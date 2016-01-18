@@ -1,0 +1,21 @@
+#macro dataTable(tableMap)#set(tableId=tableId?:fmt("tid%d",rand()))
+<table id="${tableId}" class="table dataTable #getMapVal("class",tableMap)" #mapToHtml(tableMap)>
+    #bodyContent
+</table>
+<script type="text/javascript">
+    $(function() {
+        $('#${tableId}').dataTable({
+            "bSort":true,
+            "aoColumnDefs":[
+                {"bSortable": false, "aTargets": "unsortable"}
+            ],
+            "fnDrawCallback":function (){
+                $(".paginate_button").on("click",function(){
+                    $("#${tableId} tr").removeClass("selected");
+                    $("#${tableId} input:checkbox").prop("checked",false);
+                });
+            }
+        });
+    });
+</script>
+#end
