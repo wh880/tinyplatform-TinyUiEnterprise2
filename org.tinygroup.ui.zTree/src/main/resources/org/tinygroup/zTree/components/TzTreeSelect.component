@@ -406,13 +406,16 @@ zNodes${tempid}.push({id:${id}, pId:${pid}, name:"${name}"});
             }//return check;*/
         }
         function onClick(e, treeId, treeNode) {
-            //console.log(linkurl+treeNode.id);
             var id=treeNode.id;
             var url=linkurl;
             if(treeNode.id!="allcontent"){
                 url=linkurl+(linkurl.indexOf("?")>-1?"&":"?")+dataformat.id+"="+treeNode.id;
             }
-            window.location.href=url;
+            #if(optionMap?.linkAjax)
+                $(e.target).closest("a").attr("data-href",url).trigger("ztreeClick");
+            #else
+                $(e.target).closest("a").attr("href",url);
+            #end
         }
 
         var newCount = 1;
