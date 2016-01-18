@@ -95,12 +95,20 @@
 
 	
     <link href="${TINY_CONTEXT_PATH}/css/tinyui.css" rel="stylesheet" />
+	<style>
+        .menu-on-top.theme-black #main-menu .navigation li.active>a{color:#333!important;}
+        .menu-on-top.theme-black #main-menu .navigation li.active,.menu-on-top.theme-black #main-menu .navigation li a:hover{background:#fff;}
+        .menu-on-top.theme-black #main-menu .mm-dropdown ul li.active>a, .theme-black #main-menu .mmc-dropdown-open-ul li.active>a{background:#eee;color:#333;}
+        .menu-on-top.theme-black #main-menu .mm-dropdown ul li+li, .theme-black #main-menu .mmc-dropdown-open-ul li+li{border-top:#ddd 1px solid}
+        .menu-on-top.theme-gray #main-menu li>a:after,.menu-on-top.theme-gray #main-menu li>a:hover{background:#fff;}
+
+	</style>
 </head>
 <body class=" main-menu-animated">
 <script>var init = [];</script>
 <script src="${TINY_CONTEXT_PATH}/js/setting.js"></script>
 	#@mainWrapper()
-		#@mainNavbar("/img/main-navbar-logo.png" "Tinyframework")
+		#@mainNavbar("/img/logo.png" "Tinyframework")
 			#@navbarNav()
 				#navbarNavItem("切换到AJAX" "/ajax.page" {"class":"tttt"}) ###class为带到类里的值 内置ACTIVE为选中状态
 				#@navbarDropdownMenu("下拉菜单")

@@ -151,11 +151,14 @@
 #end
 #macro mainNavbar(mainNavbarHeadLogo mainNavbarTitle navLogoHeaderLink)
 <div id="main-navbar" class="navbar navbar-inverse" role="navigation">
-    <!-- Main menu toggle -->
     <button type="button" id="main-menu-toggle"><i class="navbar-icon fa fa-bars icon"></i><span class="hide-menu-text"></span></button>
-
     <div class="navbar-inner">
-		#navLogoHeader(mainNavbarHeadLogo mainNavbarTitle navLogoHeaderLink)
+        <div class="navbar-header">
+            <a href="#if(navLogoHeaderLink)#link(navLogoHeaderLink)#{else}javascript:void(0);#end" class="navbar-brand">
+                <div>#if(mainNavbarHeadLogo)<img title="${mainNavbarTitle}" id="tinyui-logo-img" src="#link(mainNavbarHeadLogo)">#else ${mainNavbarTitle}#end</div>
+        	</a>
+        	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navbar-collapse"><i class="navbar-icon fa fa-bars"></i></button>
+        </div>
         <div id="main-navbar-collapse" class="collapse navbar-collapse main-navbar-collapse">
             <div>
                 #bodyContent
