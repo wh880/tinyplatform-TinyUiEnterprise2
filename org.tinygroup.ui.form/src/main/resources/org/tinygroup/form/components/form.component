@@ -488,5 +488,5 @@ $(function(){
         })
     })
 </script>
-<button class="btn btn-sm" id="${fid}-btn-remove">#fontIco("remove")</button>
+<button class="btn btn-sm" id="${fid}-btn-remove">#faIcon("remove")</button>
 #end

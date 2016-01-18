@@ -5,7 +5,7 @@
 			#tInput("city" "" {"size":"10","class":"input-sm"})
 			<input type="submit" class="btn btn-primary btn-sm" value="搜索" />
 			<input type="reset" class="btn btn-primary btn-sm" value="重置" />
-            #setFormHistory()
+            #saveFormHistory()
 		</div>
 	#end
 	<div class="tinyheaderTools form-inline">
