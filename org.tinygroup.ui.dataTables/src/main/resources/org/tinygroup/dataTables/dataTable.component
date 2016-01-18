@@ -1,9 +1,9 @@
 #macro dataTable(tableMap)#set(tableId=tableId?:fmt("tid%d",rand()))
-<table id="${tableId}" class="table dataTable #getMapVal("class",tableMap)" #mapToHtml(tableMap)>
+<table id="${tableId}" class="table #getMapVal("class",tableMap)" #mapToHtml(tableMap)>
     #bodyContent
 </table>
 <script type="text/javascript">
-    $(function() {
+    $(function(){
         $('#${tableId}').dataTable({
             "bSort":true,
             "aoColumnDefs":[

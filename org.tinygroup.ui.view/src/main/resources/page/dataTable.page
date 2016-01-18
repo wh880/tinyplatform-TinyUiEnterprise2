@@ -1,20 +1,43 @@
+#macro dataTable(tableMap)#set(tableId=tableId?:fmt("tid%d",rand()))
+<table id="${tableId}" class="table display #getMapVal("class",tableMap)" #mapToHtml(tableMap)>
+    #bodyContent
+</table>
+<script type="text/javascript">
+    $(function(){
+        $('#${tableId}').dataTable({
+            "bSort":true,
+            "aoColumnDefs":[
+                {"bSortable": false, "aTargets": "unsortable"}
+            ],
+            "fnDrawCallback":function (){
+                $(".paginate_button").on("click",function(){
+                    $("#${tableId} tr").removeClass("selected");
+                    $("#${tableId} input:checkbox").prop("checked",false);
+                });
+            }
+        });
+    });
+</script>
+#end
+
 #@dataTable({"id":"example"})
 <thead>
     <tr>
-        <th><input type="checkbox" name="allck" value=""></th>
+        <th class="unsortable"><input type="checkbox" name="allck" value=""></th>
         <th>名称</th>
         <th>城市</th>
         <th>办公室</th>
         <th>年龄</th>
         <th>就职日期</th>
         <th>薪资</th>
-        <th>操作</th>
+        <th class="unsortable">操作</th>
     </tr>
 </thead>
 <tbody>
+#for(var:[1..300])
     <tr>
-        <td><input type="checkbox" value="1" name=""></td>
-        <td>习近平</td>
+        <td><input type="checkbox" value="${var}" name=""></td>
+        <td>习近平${var}</td>
         <td>北京</td>
         <td>中南海</td>
         <td>67</td>
@@ -25,5 +48,6 @@
             <a href="#">#faIcon("remove")删除</a>
         </td>
     </tr>
+#end
 </tbody>
 #end
