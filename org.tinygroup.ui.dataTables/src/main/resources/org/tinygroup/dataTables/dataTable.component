@@ -1,5 +1,5 @@
 #macro dataTable(tableMap)#set(tableId=tableId?:fmt("tid%d",rand()))
-<table id="${tableId}" class="table #getMapVal("class",tableMap)" #mapToHtml(tableMap)>
+<table id="${tableId}" class="table display #getMapVal("class",tableMap)" #mapToHtml(tableMap)>
     #bodyContent
 </table>
 <script type="text/javascript">
