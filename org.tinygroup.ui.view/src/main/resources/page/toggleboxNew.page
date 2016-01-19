@@ -72,7 +72,7 @@
     <script type="text/javascript">
         $(function(){
             var form=$("#${tableId}form");
-            var qF= form.queryFor("#thisform-selsql");
+            //var qF= form.queryFor("#thisform-selsql");
             $("#thisform-selsql").on("change",function(){
                 var v=$(this).val();
                 if(v=="none") return false;
@@ -83,7 +83,7 @@
             $("button.savebutton").on("click",function(){
                 layer.prompt({title: '请输入保存名称', formType: 2}, function(text){
                     var v=form.serialize();
-                    qF.add(text,v);
+                    //qF.add(text,v);
                     layer.closeAll();
                 });
                 return false;
