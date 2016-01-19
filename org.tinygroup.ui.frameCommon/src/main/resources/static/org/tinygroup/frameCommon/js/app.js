@@ -260,30 +260,20 @@
 
 
 function launchFullScreen(element) {
-  var isfull=false;
+  var request;
   if (!$('body').hasClass("full-screen")) {
-    isfull=true;
-    if (element.requestFullscreen) {
-      element.requestFullscreen();
-    } else if (element.mozRequestFullScreen) {
-      element.mozRequestFullScreen();
-    } else if (element.webkitRequestFullscreen) {
-      element.webkitRequestFullscreen();
-    } else if (element.msRequestFullscreen) {
-      element.msRequestFullscreen();
-    }
+      request = element.requestFullScreen || element.webkitRequestFullScreen || element.mozRequestFullScreen ||	element.msRequestFullScreen;
+      if(typeof request!="undefined" && request){
+          request.call(element);
+      }else{
+          alert("你的浏览器不支持，请按F11进行全屏预览");
+          return false;
+      }
   } else {
-    if (document.exitFullscreen) {
-      document.exitFullscreen();
-    } else if (document.mozCancelFullScreen) {
-      document.mozCancelFullScreen();
-    } else if (document.webkitExitFullscreen) {
-      document.webkitExitFullscreen();
-    }
-
+      request = document.cancelFullScreen|| document.webkitCancelFullScreen || document.mozCancelFullScreen || document.msCancelFullScreen || document.exitFullscreen;
+      if(typeof request!="undefined" && request){
+          request.call(document);
+      }
   }
-  try {
-    window.localStorage.tiny_FullScreen=isfull;
-  }catch (e) {}
   $('body').toggleClass("full-screen");
 }

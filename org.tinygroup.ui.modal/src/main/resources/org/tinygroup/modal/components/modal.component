@@ -78,7 +78,7 @@ param aMap A其它额外的元素
             $(this).modal('hide');
         })
         $("#${dialogId} [data-submit=modal]").off("click").on("click",function(){
-            var thisform=$(this).find("form:first");
+            var thisform=$(this).closest(".modal").find("form:first");
             if(thisform.size()){
                 thisform.get(0).submit();
             }
