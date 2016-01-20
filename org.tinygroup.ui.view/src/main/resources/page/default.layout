@@ -105,6 +105,7 @@
 			.menu-on-top.theme-gray #main-menu li>a:after,.menu-on-top.theme-gray #main-menu li>a:hover{background:#fff;}
             .menu-on-top.theme-gray #main-menu li.active>a .menu-icon,.menu-on-top.theme-gray #main-menu .navigation>li>a>span.mm-text{color:#333}
             .menu-on-top.theme-gray #main-menu li.active>a{background:#fff;color:#333;}
+            .menu-on-top.theme-lightblue #main-navbar .nav>li>a:hover .fa-fullscreen:before{color:#333;}
         }
 
 	</style>
