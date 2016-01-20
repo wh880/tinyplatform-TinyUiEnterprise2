@@ -470,7 +470,7 @@ $(function(){
             var fItem,formItems=qF.getVal(v).split("&");
             for(var i= 0,l=formItems.length;i<l;i++){
                 fItem=formItems[i].split("=");
-                form.find("[name='"+decodeURI(fItem[0])+"']").val(decodeURI(fItem[1]));
+               	form.find("[name='"+decodeURIComponent(fItem[0])+"']").val(decodeURIComponent(fItem[1]));
             }
             form.trigger("submit");
         });
