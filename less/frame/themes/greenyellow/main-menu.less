@@ -24,7 +24,7 @@
   .mmc-dropdown-open-ul {
 
     li {
-      border-bottom: 1px solid lighten(@menu-color, 4%);
+     /* border-bottom: 1px solid lighten(@menu-color, 4%);*/
     }
 
     li a {
@@ -50,8 +50,6 @@
 
       & > a {
         color: #fff;
-        background: #666;
-        border-color: @menu-active-color;
       }
     }
   }
@@ -74,13 +72,13 @@
         border-top: none;
 
         & > a {
-          background: @menu-active-color;
+          border-left:#96c045 3px solid;
         }
       }
     }
 
     li + li {
-      border-top: 1px solid @menu-color;
+      /*border-top: 1px solid @menu-color;*/
     }
   }
 
@@ -151,7 +149,8 @@
 
     .btn-outline {
       border-color: lighten(@menu-color, 4%);
-      color:#fff;
+      color:#a8adb2;
+      background:none;
 
       &:hover {
         color: #fff;
