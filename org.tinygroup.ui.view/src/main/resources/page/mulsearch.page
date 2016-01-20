@@ -1,5 +1,4 @@
-##<span id="showsearchmore">搜索</span>
-#set(tinyfromid="t-form")
+#set(tinyfromid=tinytableid+"form")
 <form method="get" action="" id="${tinyfromid}" class="form-condensed searchform">
     <div class="hide">
         <select id="operatortemp">
