@@ -28,7 +28,8 @@ html {
 body {
     background: #fff;
     color: #222;
-    padding-top: 48px
+    padding-top: 48px;
+    font-family: "微软雅黑";
 }
 
 a {
@@ -40,30 +41,7 @@ a {
     outline: 0 !important
 }
 
-h1 {
-    font: 400 36px/1.1 "Open Sans", Arial, sans-serif
-}
 
-h2 {
-    font: 400 30px/1.1 "Open Sans", Arial, sans-serif
-}
-
-h3 {
-    font: 400 26px/1.1 "Open Sans", Arial, sans-serif
-}
-
-h4 {
-    font: 400 20px/1.1 "Open Sans", Arial, sans-serif
-}
-
-h5 {
-    font: 400 16px/1.1 "Open Sans", Arial, sans-serif
-}
-
-.page_heading {
-    margin: 0 0 30px;
-    font: 400 26px/36px "Open Sans", Arial, sans-serif
-}
 
 .page_heading > span {
     display: block;
