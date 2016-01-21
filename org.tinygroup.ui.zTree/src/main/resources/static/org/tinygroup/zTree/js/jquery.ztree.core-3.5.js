@@ -1209,7 +1209,7 @@
 			return consts.className.BUTTON + " " + consts.className.LEVEL + node.level + " " + consts.className.SWITCH + " ";
 		},
 		makeNodeTarget: function(node) {
-			return (node.target || "_blank");
+			return (node.target || "_self");
 		},
 		makeNodeUrl: function(setting, node) {
 			var urlKey = setting.data.key.url;
