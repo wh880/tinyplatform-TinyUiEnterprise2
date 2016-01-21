@@ -36,6 +36,8 @@
 		resolve-classpath="true">
 		<class-paths>
 			<class-path path="D:\javaworkspace\tinyFlatUi\newWeb\view\src\main\resources" />
+			<class-path path="F:\test\TinyUiComponentNew\TinyUiEnterprise2\newWeb\view\src\main\resources" />
+
 			<!-- <class-path path="{TINY_WEBROOT}\WEB-INF\lib" /> -->			
 		</class-paths>
 		<include-patterns>
