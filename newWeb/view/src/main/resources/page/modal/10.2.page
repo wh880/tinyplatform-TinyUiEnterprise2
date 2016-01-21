@@ -1,0 +1,7 @@
+#@container(cStyle="padding: 20px 50px 10px;")
+	#@leftPopoverBtn("Popover title" "btn btn-default" "左侧的 Popover 中的一些内容")左侧的 Popover#end
+	#@topPopoverBtn("Popover title" "btn btn-primary" "顶部的 Popover 中的一些内容")顶部的 Popover#end
+	#@bottomPopoverBtn("Popover title" "btn btn-success" "底部的 Popover 中的一些内容")底部的 Popover#end
+	#@rightPopoverBtn("Popover title" "btn btn-warning" "右侧的 Popover 中的一些内容")右侧的 Popover#end
+#end
+#popoverButtonInit("[data-toggle='popover']")
