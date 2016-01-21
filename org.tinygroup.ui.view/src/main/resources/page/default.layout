@@ -130,7 +130,7 @@
 			#end
 			</li>*#
 			<li class="fullscreen">
-				<a href="javascript:void(0);" onclick="launchFullScreen(document.documentElement);" title="全屏">#faIcon("fullscreen")</a>
+				<a href="javascript:void(0);" onclick="launchFullScreen(document.documentElement);" title="全屏">#faIcon("arrows-alt")</a>
 			</li>
 
 			<li>

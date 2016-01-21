@@ -9,3 +9,19 @@
 		#bodyContent
 	</div>
 #end
+
+#macro uiPageTitle()
+<h1 class="page_title">#bodyContent</h1>
+#end
+
+#macro showInfo()
+<div class="alert alert-info mt-20">#faIcon("info-circle") #bodyContent</div>
+#end
+
+#macro showSuccess()
+<div class="alert alert-success">#faIcon("fa-info-circle") #bodyContent</div>
+#end
+
+#macro showWarning()
+<div class="alert alert-warning">#faIcon("fa-warning") #bodyContent</div>
+#end

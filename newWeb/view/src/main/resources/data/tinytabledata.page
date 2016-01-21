@@ -1,0 +1,15 @@
+#set(records=52,temp=1,pagesize=temp.parseInt(pagesize),page=temp.parseInt(page),pagesize=pagesize<100?pagesize:100)
+#if(username=="11")
+	#set(records=0,pagesize=0)
+#end
+#if (pagesize>records-pagesize*(page-1))
+#set(pagesize=records-(page-1)*pagesize)
+#end
+#setTinyItemCount(records)
+#@setTinyTableMsg()附加信息#end
+#for(var:[1..pagesize])
+#break(records==0)
+<tr><td><input type="checkbox" value="${var}" name="idCheck"></td><td>刘云山${page}${var}</td><td>北京</td><td>中南海</td><td>71</td><td>2013/03/25</td><td class="sorting_1">￥300,800</td><td><a title="编辑" modal-title="编辑" class="ml-5" data-target="#myModalModal" data-toggle="modal" data-height="290" data-width="504" href="#link("/page/user-add.pagelet")" style="text-decoration:none">#faIcon("edit")</a> #@tinyTableItemRemove(call("link","/action/del.pagelet") var)#faIcon("remove")#end
+</td></tr>
+#end
+

@@ -8,7 +8,6 @@
 	<properties>
 		<tiny_version>2.0.30</tiny_version>
 	</properties>
-
 	<groupId>org.tinygroup</groupId>
     <artifactId>tinyFlatUi</artifactId>
     <version>2.0.31-SNAPSHOT</version>
@@ -77,7 +76,10 @@
 		<module>org.tinygroup.ui.togglebox</module>
 		<module>org.tinygroup.ui.widget</module>
 		<module>org.tinygroup.ui.public</module>
+		<module>org.tinygroup.ui.tpl.light</module>
 		<module>org.tinygroup.ui.view</module>
 		<module>org.tinygroup.ui.web</module>
+		<module>org.tinygroup.ui.macro</module>
+		<module>newWeb</module>
     </modules>
 </project>

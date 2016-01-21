@@ -1,0 +1,52 @@
+#@tForm("thisform" call("link","/data/Validform_post.html") "post" {"class":""})
+	#@elementItem("用户名：")
+		#tInput("username" ""{"placeholder":"4~16个字符，字母/中文/数字/下划线","datatype":"*4-16","ajaxurl":call("link","/data/usercheck.pagelet"),"nullmsg":"用户名不能为空！","id":"username"})
+	#end
+	#@elementItem("身份证：")
+		#tInput("username" ""{"placeholder":"身份证号","datatype":"/(^[0-9]{15}$)|(^[0-9]{17}[0-9Xx]$)/","nullmsg":"身份证号不能为空！"})
+	#end
+	#@elementItem("select下拉：")
+		#@tSelect("lang" "zh" {"class":"select2","minimumResultsForSearch":"Infinity","datatype":"*","nullmsg":"","data-ajaxurl":call("link","/data/select2ajax.pagelet")})##,"multiple":"multiple"
+			#@tOptionItem()#end
+			#@tOptionItem("zh")中国#end
+			#@tOptionItem("en")英国#end
+			#@tOptionItem("ta")泰国#end
+		#end
+	#end
+
+	#@elementItem("内容：")
+		#@tTbditor("bodycontent")最后一个MAP参数为的初始化参数 会自动带入 主要设置宽高及图片上传的API配合#end
+	##  #@Teditor("contentxx2" "content22" {"initialFrameHeight":"600"})最后一个MAP参数为Ueditor的初始化参数 会自动带入 #end
+	#end
+
+#end
+
+<script type="text/javascript">
+
+$(function(){
+  $("form[name=thisform").Validform({
+	tiptype:2,
+	beforeSubmit:function(curform){
+		$(curform).ajaxSubmit({
+			dataType:"json",
+			success:function(data){
+				if(data.status=="y"){
+					layer.msg(data.info,2,1,function(){
+						try{
+							$(curform).closest(".modal").trigger("close");//当弹出框时触发弹出框关闭
+							$("#${fcid}").trigger("refresh"); ////日历更新
+						}catch(e){console.log(e)}
+					});
+				}else{
+					layer.msg(data.info);
+				}
+			},
+			error:function(){
+				layer.msg(data.info);
+			}
+		});
+		return false;
+	}
+ });
+});
+</script>
