@@ -106,7 +106,7 @@
                     </td></tr>
                     </tbody></table>
             </td>
-            <td class="w-400px form-inline">
+            <td class="w-400px form-inline" style="vertical-align:top;">
                 <div class="btn-group">
                     <button type="submit" id="submit" class="btn btn-submit btn-primary btn-sm">搜索</button>
                     <button type="button" onclick="resetForm(this)" class="btn btn-sm">重置</button>
