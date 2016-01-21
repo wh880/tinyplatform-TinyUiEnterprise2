@@ -98,7 +98,7 @@
                     </ul>
                 </div>
                 <div class="search_section hidden-sm hidden-xs">
-                    <input type="text" class="form-control input-sm">
+                    <input type="text" class="form-control input-sm" placeholder="查找更多...">
                     <button class="btn btn-link btn-sm" type="button"><span class="icon_search"></span></button>
                 </div>
             </div>
