@@ -95,20 +95,6 @@
 
 	
     <link href="${TINY_CONTEXT_PATH}/css/tinyui.css" rel="stylesheet" />
-	<style>
-		/*当头部菜单时*/
-    	@media(min-width:768px){
-			.menu-on-top.theme-black #main-menu .navigation li.active>a{color:#333!important;}
-			.menu-on-top.theme-black #main-menu .navigation li.active,.menu-on-top.theme-black #main-menu .navigation li a:hover{background:#fff;}
-			.menu-on-top.theme-black #main-menu .mm-dropdown ul li.active>a, .theme-black #main-menu .mmc-dropdown-open-ul li.active>a{background:#eee;color:#333;}
-			.menu-on-top.theme-black #main-menu .mm-dropdown ul li+li, .theme-black #main-menu .mmc-dropdown-open-ul li+li{border-top:#ddd 1px solid}
-			.menu-on-top.theme-gray #main-menu li>a:after,.menu-on-top.theme-gray #main-menu li>a:hover{background:#fff;}
-            .menu-on-top.theme-gray #main-menu li.active>a .menu-icon,.menu-on-top.theme-gray #main-menu .navigation>li>a>span.mm-text{color:#333}
-            .menu-on-top.theme-gray #main-menu li.active>a{background:#fff;color:#333;}
-            .menu-on-top.theme-lightblue #main-navbar .nav>li>a:hover .fa-fullscreen:before{color:#333;}
-        }
-
-	</style>
 </head>
 <body class=" main-menu-animated">
 <script>var init = [];</script>
