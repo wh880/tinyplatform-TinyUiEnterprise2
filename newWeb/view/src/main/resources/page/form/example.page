@@ -1,3 +1,4 @@
+<style type="text/css">.form-horizontal .form-group{margin-left:0;margin-right:0}</style>##在小屏幕下收bootstrap样式影响
 #macro operateMoreLess(listMap)#set(oid=fmt("oid%d",rand()))
 <span id="${oid}-add"#mapToHtml(listMap)><i class="glyphicon glyphicon-plus"></i></span>
 <span id="${oid}-less"#mapToHtml(listMap)><i class="glyphicon glyphicon-minus"></i></span>
