@@ -814,7 +814,7 @@ body.nooverflow {
     margin-top: 7px;
     width: 18px;
     height: 18px;
-    outline: 1px solid rgba(0,0,0,.2)
+    outline: 1px solid rgba(0,0,0,.2)!important
 }
 .widget-toolbar .dropdown-menu.color-select {
     right: -1px
