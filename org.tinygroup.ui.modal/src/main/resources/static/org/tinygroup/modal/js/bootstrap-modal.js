@@ -42,6 +42,7 @@
                         var e = $.Event('loaded');
                         that.$element.trigger(e);
                         that.removeLoading();
+                        that.layout();
                     }
                 });
             } else {
@@ -113,7 +114,7 @@
                 if (this.$element.children(".modal-body").children("div:first").height() > this.options.maxHeight) {
                     this.$element.children(".modal-body").css("height",this.options.maxHeight-37-this.$element.children(".modal-footer").height()-10+"px");
                 } else {
-                    this.$element.children(".modal-body").css("height",this.$element.children(".modal-body").height()+10);
+                    this.$element.children(".modal-body").css("height",'auto');
                 }
             }
             this.$element.css("height",this.$element.children(".modal-body").height()+37+this.$element.children(".modal-footer").height()+42+"px");
