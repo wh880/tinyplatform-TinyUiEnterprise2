@@ -20,16 +20,16 @@
 
 /*文字尺寸 行高距*/
 /*.f-12{font-size:12px}.f-14{font-size:14px}.f-16{font-size:16px}.f-18{font-size:18px}.f-20{font-size:20px}.f-25{font-size:25px}.f-30{font-size:30px}.f-40{font-size:40px}.f-50{font-size:50px}*/
-.set-box-size(@size) when (@size >=12) {
+.set-font-size(@size) when (@size >=12) {
     .f-@{size}{
         font-size:@size*1px !important;
     }
     .line-@{size}{
         line-height:@size*1px !important;
     }
-    .set-box-size((@size - 2));
+    .set-font-size((@size - 2));
 }
-.set-box-size(50);
+.set-font-size(50);
 /*
 .line-16{line-height:16px}.line-18{line-height:18px}.line-20{line-height:20px}.line-22{line-height:22px}.line-24{line-height:24px}.line-26{line-height:26px}.l28{line-height:28px}.line-30{line-height:30px}.line-40{line-height:40px}.line-50{line-height:50px}
 */
@@ -209,21 +209,33 @@
   margin:12px;
   background: #fff;
 }
-/*拖拉布局*/
-/*.jarviswidget>div.panel-body {padding:2px;}
-.jarviswidget-ctrls .jarviswidget-delete-btn{display:none}
-.jarviswidget-ctrls .button-icon{min-width:43px;}
-.widget-toolbar .dropdown-menu{min-width:132px}
-.widgetDrag .storeInfo{padding:1px;background:#fdfdfe}
-.toolbarMore .onoffswitch-title,.jarviswidget-color-blueLight>header>.toolbarMore .onoffswitch-title,.jarviswidget-color-blueLight>header .fa-comments{color:#333;}
-.jarviswidget-sortable .toolbarMore .onoffswitch-title,.jarviswidget-color-blueLight .toolbarMore .onoffswitch-title{color:#fff;}
 
-.jarviswidget .widget-support-tickets,.jarviswidget .jarviswidget-editbox{border-width:1px; padding:1px 0 1px 1px;}
-.jarviswidget .widget-support-tickets .tab-content-padding{background:#fdfdfe;box-shadow:none}
-.widget-support-tickets .table-condensed{margin-bottom:0}
-.highcharts-container .highcharts-title{display:none}
-.widget-support-tickets .table.table-condensed thead tr th{padding:8px 10px!important;background:#f7f7f7;}
-.widget-support-tickets .table.table-condensed tbody tr td{padding:3px 10px!important;}
-.padding-clear .widgetDrag,.padding-clear .slimScrollDiv .storeInfo{padding:0}
-.widget-support-tickets .table-condensed tfoot tr td,.widget-support-tickets .table-condensed tfoot .no-margin{padding-top:8px;padding-bottom:5px;}*/
 .positionInfos{color:#909191;margin-bottom:12px;}
+
+
+::-webkit-scrollbar {
+    width: 10px;
+    background: #949494;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+
+::-webkit-scrollbar-button {
+    display: none;
+}
+
+::-webkit-scrollbar-track {
+    background: #E6E6E6;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #808080;
+    border-radius: 100px;
+    -webkit-border-radius: 100px;
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: #6BC30D;
+}

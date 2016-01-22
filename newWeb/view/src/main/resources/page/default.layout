@@ -107,9 +107,9 @@
         <!-- breadcrumbs -->
         <nav id="breadcrumbs">
             <ul>
-                <li><a href="dashboard.html">Home</a></li>        </ul>
+                <li><a href="dashboard.html">首页</a></li>
+            </ul>
         </nav>
-
         <!-- main content -->
         <div id="main_wrapper">
             ${pageContent}
@@ -120,117 +120,66 @@
             <div class="menu_wrapper">
                 <ul>
                     <li class="first_level">
-                        <a href="dashboard.html">
+                        <a href="#link("/page/")">
                             #faIcon("dashboard")
-                            <span class="menu-title">Dashboard</span>
+                            <span class="menu-title">控制台</span>
 
                         </a>
                     </li>
                     <li class="first_level">
-                        <a href="javascript:void(0)">
+                        <a href="#link("/page/tinyForm.page")">
                             #faIcon("photo")
-                            <span class="menu-title">Forms</span>
+                            <span class="menu-title">表单</span>
                         </a>
-                        <ul>
-                            <li class="submenu-title">Forms</li>
-                            <li><a href="forms-regular_elements.html">Regular Elements</a></li>
-                            <li><a href="forms-extended_elements.html">Extended Elements</a></li>
-                            <li><a href="forms-gridforms.html">Gridforms</a></li>
-                            <li><a href="forms-validation.html">Validation</a></li>
-                            <li><a href="forms-wizard.html">Wizard</a></li>
-                        </ul>
                     </li>
                     <li class="first_level">
                         <a href="javascript:void(0)">
                             #faIcon("folder")
-                            <span class="menu-title">Pages</span>
-                            <span class="label label-danger">12</span>
+                            <span class="menu-title">页面</span>
+                            <span class="label label-danger">4</span>
                         </a>
                         <ul>
                             <li class="submenu-title">Pages</li>
                             <li><a href="pages-chat.html">Chat</a></li>
-                            <li><a href="pages-contact_list.html">Contact List</a></li>
-                            <li><a href="error_404.html">Error 404</a></li>
-                            <li><a href="pages-help_faq.html">Help/Faq</a></li>
-                            <li><a href="pages-invoices.html">Invoices</a></li>
+                            <li><a href="error_404.html">404</a></li>
                             <li><a href="login_page.html">Login Page</a></li>
-                            <li><a href="login_page2.html">Login Page 2</a></li>
-                            <li><a href="pages-mailbox.html">Mailbox</a></li>
-                            <li><a href="pages-mailbox_compose.html">Mailbox (compose)</a></li>
-                            <li><a href="pages-mailbox_message.html">Mailbox (details)</a></li>
-                            <li><a href="pages-search_page.html">Search Page</a></li>
-                            <li><a href="pages-user_list.html">User List</a></li>
-                            <li><a href="pages-user_profile.html">User Profile</a></li>
-                            <li><a href="pages-user_profile2.html">User Profile 2</a></li>
                         </ul>
                     </li>
-                    <li class="first_level">
-                        <a href="javascript:void(0)">
-                            #faIcon("server")
-                            <span class="menu-title">Components</span>
-                        </a>
-                        <ul>
-                            <li class="submenu-title">Components</li>
-                            <li><a href="components-bootstrap.html">Bootstrap</a></li>
-                            <li><a href="components-gallery.html">Gallery</a></li>
-                            <li><a href="components-grid.html">Grid</a></li>
-                            <li><a href="components-icons.html">Icons</a></li>
-                            <li><a href="components-notifications_popups.html">Notifications/Popups</a></li>
-                            <li><a href="components-typography.html">Typography</a></li>
-                        </ul>
-                    </li>
-                    <li class="first_level">
-                        <a href="javascript:void(0)">
-                            #faIcon("feed")
-                            <span class="menu-title">Plugins</span>
-                            <span class="label label-danger">6</span>
-                        </a>
-                        <ul>
-                            <li class="submenu-title">Plugins</li>
-                            <li><a href="plugins-ace_editor.html">Ace Editor</a></li>
-                            <li><a href="plugins-calendar.html">Calendar</a></li>
-                            <li><a href="plugins-charts.html">Charts</a></li>
-                            <li><a href="plugins-gantt_chart.html">Gantt Chart</a></li>
-                            <li><a href="plugins-google_maps.html">Google Maps</a></li>
-                            <li><a href="plugins-tables_footable.html">Tables</a></li>
-                            <li><a href="plugins-vector_maps.html">Vector Maps</a></li>
-                        </ul>
-                    </li>
-                    <li class="first_level has_submenu">
+                    <li class="first_level ">
                         <a href="javascript:void(0)">
                             #faIcon("sitemap")
-                            <span class="menu-title">Sub menu</span>
+                            <span class="menu-title">多级菜单</span>
                         </a>
                         <ul>
-                            <li class="submenu-title">Sub menu</li>
-                            <li><a href="javascript:void(0)">01. Lorem ipsum</a></li>
+                            <li class="submenu-title">一级菜单</li>
+                            <li><a href="javascript:void(0)">2级菜单</a></li>
                             <li class="has_submenu">
-                                <a href="javascript:void(0)">02. Lorem ipsum</a>
+                                <a href="javascript:void(0)">2级菜单2</a>
                                 <ul>
                                     <li class="has_submenu">
-                                        <a href="javascript:void(0)">02.1 Lorem ipsum dolor sit amet</a>
+                                        <a href="javascript:void(0)">3级菜单</a>
                                         <ul>
-                                            <li><a href="javascript:void(0)">02.1.1 Lorem ipsum</a></li>
-                                            <li><a href="javascript:void(0)">02.1.2 Lorem ipsum</a></li>
-                                            <li><a href="javascript:void(0)">02.1.3 Lorem ipsum</a></li>
-                                            <li><a href="javascript:void(0)">02.1.4 Lorem ipsum</a></li>
+                                            <li><a href="javascript:void(0)">3级菜单1</a></li>
+                                            <li><a href="javascript:void(0)">3级菜单2</a></li>
+                                            <li><a href="javascript:void(0)">3级菜单3</a></li>
+                                            <li><a href="javascript:void(0)">3级菜单4</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="javascript:void(0)">02.2 Lorem ipsum</a></li>
-                                    <li><a href="javascript:void(0)">02.3 Lorem ipsum</a></li>
-                                    <li><a href="javascript:void(0)">02.4 Lorem ipsum</a></li>
+                                    <li><a href="javascript:void(0)">02.2 菜单</a></li>
+                                    <li><a href="javascript:void(0)">02.3 菜单</a></li>
+                                    <li><a href="javascript:void(0)">02.4 菜单</a></li>
                                 </ul>
                             </li>
                             <li class="has_submenu">
-                                <a href="javascript:void(0)">03. Lorem ipsum</a>
+                                <a href="javascript:void(0)">03. 菜单</a>
                                 <ul>
-                                    <li><a href="javascript:void(0)">03.1 Lorem ipsum</a></li>
-                                    <li><a href="javascript:void(0)">03.2 Lorem ipsum</a></li>
-                                    <li><a href="javascript:void(0)">03.3 Lorem ipsum</a></li>
-                                    <li><a href="javascript:void(0)">03.4 Lorem ipsum</a></li>
+                                    <li><a href="javascript:void(0)">03.1 菜单</a></li>
+                                    <li><a href="javascript:void(0)">03.2 菜单</a></li>
+                                    <li><a href="javascript:void(0)">03.3 菜单</a></li>
+                                    <li><a href="javascript:void(0)">03.4 菜单</a></li>
                                 </ul>
                             </li>
-                            <li><a href="javascript:void(0)">04. Lorem ipsum</a></li>
+                            <li><a href="javascript:void(0)">04. 菜单</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -250,21 +199,9 @@
         <div class="style_items">
             <div class="heading_b"><span class="heading_text">颜色</span></div>
             <ul class="clearfix" id="topBar_style_switch">
-                <li class="sw_tb_style_0 style_active" title=""><span class="icon_check_alt2"></span></li>
-                <li class="sw_tb_style_1" title="topBar_style_1"><span class="icon_check_alt2"></span></li>
-                <li class="sw_tb_style_2" title="topBar_style_2"><span class="icon_check_alt2"></span></li>
-                <li class="sw_tb_style_3" title="topBar_style_3"><span class="icon_check_alt2"></span></li>
-                <li class="sw_tb_style_4" title="topBar_style_4"><span class="icon_check_alt2"></span></li>
-                <li class="sw_tb_style_5" title="topBar_style_5"><span class="icon_check_alt2"></span></li>
-                <li class="sw_tb_style_6" title="topBar_style_6"><span class="icon_check_alt2"></span></li>
-                <li class="sw_tb_style_7" title="topBar_style_7"><span class="icon_check_alt2"></span></li>
-                <li class="sw_tb_style_8" title="topBar_style_8"><span class="icon_check_alt2"></span></li>
-                <li class="sw_tb_style_9" title="topBar_style_9"><span class="icon_check_alt2"></span></li>
-                <li class="sw_tb_style_10" title="topBar_style_10"><span class="icon_check_alt2"></span></li>
-                <li class="sw_tb_style_11" title="topBar_style_11"><span class="icon_check_alt2"></span></li>
-                <li class="sw_tb_style_12" title="topBar_style_12"><span class="icon_check_alt2"></span></li>
-                <li class="sw_tb_style_13" title="topBar_style_13"><span class="icon_check_alt2"></span></li>
-                <li class="sw_tb_style_14" title="topBar_style_14"><span class="icon_check_alt2"></span></li>
+                #for(var:[0..14])
+                <li class="sw_tb_style_${var} ${varFor.index==1?"":"style_active"}" title="样式${var}">#faIcon("check")</li>
+                #end
             </ul>
         </div>
         <hr/>
@@ -276,14 +213,9 @@
             <hr/>
             <div class="heading_b"><span class="heading_text">背景</span></div>
             <ul class="clearfix">
-                <li class="sw_bg_0" title="bg_0"></li>
-                <li class="sw_bg_1" title="bg_1"></li>
-                <li class="sw_bg_2" title="bg_2"></li>
-                <li class="sw_bg_3" title="bg_3"></li>
-                <li class="sw_bg_4" title="bg_4"></li>
-                <li class="sw_bg_5" title="bg_5"></li>
-                <li class="sw_bg_6" title="bg_6"></li>
-                <li class="sw_bg_7" title="bg_7"></li>
+                #for(var:[0..7])
+                <li class="sw_bg_${var} ${varFor.index==1?"":"style_active"}">#faIcon("check")</li>
+                #end
             </ul>
             <hr/>
         </div>

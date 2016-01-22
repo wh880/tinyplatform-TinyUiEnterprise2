@@ -5,20 +5,23 @@
 <script type="text/javascript">
     $(function () {
         setup_widgets();
-        init.push(function () {
+        if(typeof($.mCustomScrollbar)!='undefined'){
+            $('.col-lg-6 .widget-body>div,.col-lg-4 .widget-body>div').mCustomScrollbar({
+                    set_height:'260px'
+             });
+        }else if(typeof($.slimScroll)!='undefined'){
             $('.col-lg-6 .widget-body>div,.col-lg-4 .widget-body>div').slimScroll({
                 height: 260,
                 alwaysVisible: true,
                 color: '#888',
                 allowPageScroll: true
             });
-        })
+        }
     });
 </script>
+#end
 
-#end
-#macro widgetMap(MapInfo)#for(var:MapInfo) data-widget-${var.key}="${var.key}"#end
-#end
+#macro widgetMap(MapInfo)#for(var:MapInfo) data-widget-${var.key}="${var.key}"#end#end
 
 ##data-widget-colorbutton="true"  data-widget-fullscreenbutton="true" data-widget-togglebutton="true"
 #macro widgetItem(col optMap)#set(widgetGridId=widgetGridId+1)

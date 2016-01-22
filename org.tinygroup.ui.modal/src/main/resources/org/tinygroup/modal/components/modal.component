@@ -10,7 +10,7 @@
 param aMap A其它额外的元素
 *#
 
-#macro aModal(aModalTarget aModalTitle aModalWidth aModalHeight aModalCass aModalUrl aMap)<a class="${aModalClass}" data-target="${aModalTarget}" data-toggle="modal" #if(aModalHeight) data-height="${aModalHeight}"#{end}#if(aModalWidth) data-width="${aModalWidth}"#{end}#if(aModalTitle) modal-title="${aModalTitle}"#{end}#if(aModalUrl) href="#link(aModalUrl)"#{end}#mapToHtml(aMap)>#bodyContent</a>#end
+#macro aModal(aModalTarget aModalTitle aModalWidth aModalHeight aModalClass aModalUrl aMap)<a class="${aModalClass}" data-target="${aModalTarget}" data-toggle="modal" #if(aModalHeight) data-height="${aModalHeight}"#{end}#if(aModalWidth) data-width="${aModalWidth}"#{end}#if(aModalTitle) modal-title="${aModalTitle}"#{end}#if(aModalUrl) href="#link(aModalUrl)"#{end}#mapToHtml(aMap)>#bodyContent</a>#end
 
 #*
 * btnModal 弹出框 生成一button标签的BT弹出框元素
