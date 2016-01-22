@@ -46,7 +46,7 @@
 .m-tab-close:hover { border:1px solid #9a9a9a; width:16px; height:16px; }
 .m-tab-list ul li.on, .m-tab-list ul li:hover { background: #fff; border-top: 2px solid #0062b1; border-left: 1px solid #cacaca; border-right: 1px solid #cacaca; }
 .m-tab-list ul li.on a { color: #0062b1; }
-.m-tab-content { width: 100%; overflow:hidden; float:left; }
+.m-tab-content { width: 100%; overflow:hidden; float:left;}
 
 /* 右键选项 */
 .m-menu { display: none; width: 120px; height: 102px; position: absolute; padding: 2px; border-width: 1px; border-style: solid; overflow: hidden; background-color: #ffffff; border-color: #ddd; color: #444; }
