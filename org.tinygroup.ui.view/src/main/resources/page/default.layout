@@ -91,73 +91,50 @@
 		<link href="${TINY_CONTEXT_PATH}/uiengine.uicss" rel="stylesheet" />
 		<!--<![endif]-->
 		<script src="${TINY_CONTEXT_PATH}/uiengine.uijs"></script>
-	#end
 
-	
+	#end
     <link href="${TINY_CONTEXT_PATH}/css/tinyui.css" rel="stylesheet" />
 </head>
 <body class=" main-menu-animated">
 <script>var init = [];</script>
 <script src="${TINY_CONTEXT_PATH}/js/setting.js"></script>
-	#@mainWrapper()
-		#@mainNavbar("/img/logo.png" "Tinyframework")
-			#@navbarNav()
-				#navbarNavItem("切换到AJAX" "/ajax.page" {"class":"tttt"}) ###class为带到类里的值 内置ACTIVE为选中状态
-				#@navbarDropdownMenu("下拉菜单")
-					#navbarNavItem("第一项" "#")
-					#navbarNavItem("第二项" "#")
-					#divider()##分割线
-					#navbarNavItem("第三项" "#")
-				#end
-			#end
-			#@rightNavBar()
-			#*<li class="nav-icon-btn nav-icon-btn-danger dropdown">
-				#@notifyDropdown(5 "fa-bullhorn" "通知" "更多的通知")
-				#include("/page/index/notify.page")
-			#end
-			</li>
-			<li class="nav-icon-btn nav-icon-btn-success dropdown">
-				#@messagesDropdown(12 "fa-envelope" "所得的消息" "更多的信息")
-					#include("/page/index/messages.page")
-			#end
-			</li>*#
-			<li class="fullscreen">
-				<a href="javascript:void(0);" onclick="launchFullScreen(document.documentElement);" title="全屏">#faIcon("arrows-alt")</a>
-			</li>
-
-			<li>
-				<form class="navbar-form pull-left">
-					<input type="text" class="form-control" placeholder="查找更多...">
-					<span style="left:-27px;top:3px; position:relative;">#faIco("search")</span>
-				</form>
-			</li>
-
-			<li class="dropdown">
-				<a href="javascript:void(0);" class="dropdown-toggle user-menu" data-toggle="dropdown">
-					<img src="${TINY_CONTEXT_PATH}/img/portraits/1.jpg" alt="">
-					<span>密缘之友</span>
-				</a>
-				<ul class="dropdown-menu">
-					<li><a href="javascript:void(0);"><span class="label label-warning pull-right">新的</span>资料文件</a></li>
-					<li><a href="javascript:void(0);"><span class="badge badge-primary pull-right">新的</span>个人中心</a></li>
-					<li><a href="javascript:void(0);">#faIco("cog")&nbsp;&nbsp;设置</a></li>
-					<li class="divider"></li>
-					<li><a href="javascript:void(0);">#faIco("power-off")&nbsp;&nbsp;退出</a></li>
-				</ul>
-			</li>
-			#end
+	<div id="main-wrapper">
+		#@mainNavbar("TINY")
+				<div class="right clearfix">
+					<ul class="nav navbar-nav pull-right right-navbar-nav">
+						<li class="fullscreen">
+							<a href="javascript:void(0);" onclick="launchFullScreen(document.documentElement);" title="全屏">#faIcon("arrows-alt")</a>
+						</li>
+						<li>
+							<form class="navbar-form pull-left">
+								<input type="text" class="form-control" value="${activeMenuId}" placeholder="查找更多...">
+								<span style="left:-27px;top:3px; position:relative;">#faIco("search")</span>
+							</form>
+						</li>
+						<li class="dropdown">
+							<a href="javascript:void(0);" class="dropdown-toggle user-menu" data-toggle="dropdown">
+								<img src="#link("/img/portraits/1.jpg")" alt="">
+								<span>密缘之友</span>
+							</a>
+							<ul class="dropdown-menu">
+								<li><a href="javascript:void(0);"><span class="label label-warning pull-right">新的</span>资料文件</a></li>
+								<li><a href="javascript:void(0);"><span class="badge badge-primary pull-right">新的</span>个人中心</a></li>
+								<li><a href="javascript:void(0);">#faIco("cog")&nbsp;&nbsp;设置</a></li>
+								<li class="divider"></li>
+								<li><a href="javascript:void(0);">#faIco("power-off")&nbsp;&nbsp;退出</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
 		#end
-
-
-
 		#@mainMenu()
 			#@menuHead("欢迎您," "Liyl" "menu-content-demo" "/img/portraits/1.jpg")
-			<a href="javascript:void(0);" class="btn btn-xs btn-primary btn-outline dark">#faIco("envelope")</a>
-			<a href="javascript:void(0);" class="btn btn-xs btn-primary btn-outline dark">#faIco("user")</a>
-			<a href="javascript:void(0);" class="btn btn-xs btn-primary btn-outline dark">#faIco("cog")</a>
-			<a href="javascript:void(0);" class="btn btn-xs btn-danger btn-outline dark">#faIco("power-off")</a>
+				<a href="javascript:void(0);" class="btn btn-xs btn-primary btn-outline dark">#faIco("envelope")</a>
+				<a href="javascript:void(0);" class="btn btn-xs btn-primary btn-outline dark">#faIco("user")</a>
+				<a href="javascript:void(0);" class="btn btn-xs btn-primary btn-outline dark">#faIco("cog")</a>
+				<a href="javascript:void(0);" class="btn btn-xs btn-danger btn-outline dark">#faIco("power-off")</a>
 			#end
-			#@navigationMenu()
+        	<ul class="navigation">
 				#TnavItem("0" "首页" "/page/index.page" "fa-home")
 				#TnavItem("1" "概述" "/page/overview.page" "fa-dashboard")
 
@@ -166,11 +143,9 @@
 					#TnavItem("2.2" "Tabs展现" "/page/tabShow.page")
 					#TnavItem("2.3" "表格列表" "/page/tinytable.page")
 					#TnavItem("2.4" "togglebox" "/page/togglebox.page")
-					#*#TnavItem("2.3" "ToggleBox" "/page/togglebox.page")*#
 				#end
 				#@TnavItems("3" "基础" {"ico":"fa-desktop"})
 					#TnavItem("3.1" "排版" "/page/typography.page")
-				##TnavItem("3.2" "代码" "/page/code.page")
 					#TnavItem("3.3" "图标" "/page/icon.page")
 					#TnavItem("3.4" "按钮" "/page/button.page")
 					#TnavItem("3.5" "按钮组" "/page/buttonGroups.page")
@@ -189,7 +164,6 @@
 					#TnavItem("5.3" "编辑器" "/page/editor.page")
 					#TnavItem("5.4" "日期控件" "/page/bootstrapDate.page")
 					#TnavItem("5.5" "下拉菜单" "/page/select2.page")
-					###TnavItem("5.6" "搜索" "/page/search.page")
 					#TnavItem("5.7" "多文件上传" "/page/webupload.page")
 					#TnavItem("5.8" "权限移动" "/page/authorlist.page")
 				#end
@@ -197,11 +171,9 @@
 					#TnavItem("6.1" "图片" "/page/picture.page")
 					#TnavItem("6.2" "缩略图" "/page/thumbnails.page")
 					#TnavItem("6.3" "媒体插入" "/page/media.page")
-					#*#TnavItem("6.4" "广告" "/page/ad.page")*#
 					#TnavItem("6.5" "UED提示" "/page/uedTips.page")
 					#@TnavItems("6.6" "图表" {"ico":""})
 						#TnavItem("6.6.1" "图表展示" "/page/charts.page")
-					#*#TnavItem("8.6.2" "flot图表" "/page/flot.page")*#
 						#TnavItem("6.6.3" "燃尽图表" "/page/burndownChart.page")
 						#TnavItem("6.6.4" "highCharts图表" "/page/highCharts.page")
 					#end
@@ -212,7 +184,6 @@
 					#TnavItem("7.3" "选项卡" "/page/tab.page")
 					#TnavItem("7.4" "对话框 弹出层" "/page/modal.page")
 					#TnavItem("7.5" "滚动" "/page/rolling.page")
-					#*#TnavItem("7.6" "标签" "/page/tags.page")*#
 					#TnavItem("7.7" "折叠" "/page/fold.page")
 					#TnavItem("7.8" "遮罩条" "/page/maskBar.page")
 				#end
@@ -228,31 +199,10 @@
 					#TnavItem("8.15" "操作向导" "/page/tourbus.page")
 					#TnavItem("8.17" "时间轴" "/page/timeline.page")
 				#end
-			#*#@TnavItems("9" "实例" {"ico":"fa-th-list"})
-                #TnavItem("9.1" "查询列表页" "/page/tinytable.pe")
-                #*
-                #TnavItem("9.1" "评论列表" "/page/comment.page")
-                #TnavItem("9.2" "用户评论" "/page/userComment.page")
-                #TnavItem("9.3" "搜索页" "/page/searchPage.page")
 
-                #@TnavItems("9.6" "邮件模板" {"ico":""})
-                    #TnavItem("9.6.1" "邮件列表" "/page/emailTemplate.page")
-                    #TnavItem("9.6.2" "邮件详情" "/page/mailDetail.page")
-                    #TnavItem("9.6.3" "编写邮件" "/page/mailCompose.page")
-                #end
-
-                #@TnavItems("9.8" "论坛" {"ico":""})
-                    #TnavItem("9.8.1" "论坛布局" "/page/forum.page")
-                    #TnavItem("9.8.2" "论坛列表" "/page/forum-topic.page")
-                    #TnavItem("9.8.3" "论坛详情" "/page/forum-post.page")
-                #end
-
-
-				#end*#
 				#@TnavItems("10" "其它" {"ico":"fa-files-o"})
 					#TnavItem("10.1" "错误404" "/page/error404.page")
 					#TnavItem("10.2" "错误500" "/page/error500.page")
-					#*#TnavItem("10.3" "登录注册" "/page/loginRegistered.page")*#
 					#TnavItem("10.4" "屏幕内图片加载" "/page/loadscrollingpic.page")
 					#TnavItem("10.9" "视图控制" "/page/viewsControl.page")
 					#TnavItem("10.10" "图标控制" "/page/iconTab.page")
@@ -270,31 +220,35 @@
 						#TnavItem("11.2.3" "二级菜单2" "second2.page")
 					#end
 				#end
-			#end <!-- navigation end -->
-			#@navCenterItem()创建页面#end
+			</ul><!-- navigation end -->
+			<div class="menu-content">
+				<a href="javascript:void(0)" class="btn btn-primary btn-block btn-outline dark">创建页面</a>
+			</div>
 		#end
 
-	<div class="content-wrapper-bg"></div>
-		<div id="content-wrapper">
-			#@contentWrapper()
-				${pagePostionTitle}
-			#end
-			<!-- 主体 start -->
-			#@rowFrame()
-				${pageMenuList}
-				<div id="tinypagecontent" style="min-height:490px;">
+		<div class="content-wrapper-bg"></div>
+			<div id="content-wrapper">
+				<div class="postion-nav">
+					<ul class="breadcrumb">
+						<li class="text-light-gray">所在位置： </li>
+						${pagePostionTitle}
+					</ul>
+				</div>
+
+				<div id="tinypagecontent" class="row" style="min-height:490px;">
 					${pageContent}
 				</div>
-			#end
-			<div id="tinyfooter">
-				<div class="tinyfooterrap">
-				<span class="right">
-					<a class="record-num" target="_blank" href="http://www.beianbeian.com/search/tinygroup.org">浙ICP备14043110号-1</a>
-				</span>
-				TinyGroup官方网站 &copy; 2013-${formatDate(now(),"yyyy")}</div>
+
+				<div id="tinyfooter">
+					<div class="tinyfooterrap">
+					<span class="right">
+						<a class="record-num" target="_blank" href="http://www.beianbeian.com/search/tinygroup.org">浙ICP备14043110号-1</a>
+					</span>
+					TinyGroup官方网站 &copy; 2013-${formatDate(now(),"yyyy")}</div>
+				</div>
 			</div>
 		</div>
-	#end
+	</div>
     <script type="text/javascript">
         init.push(function () {
             var menucount=$(".navigation:first>li").size();

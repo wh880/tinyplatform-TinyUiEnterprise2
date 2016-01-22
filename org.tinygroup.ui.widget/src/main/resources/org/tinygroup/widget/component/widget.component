@@ -5,11 +5,11 @@
 <script type="text/javascript">
     $(function () {
         setup_widgets();
-        if(typeof($.mCustomScrollbar)!='undefined'){
+        if(typeof($.fn.mCustomScrollbar)!='undefined'){
             $('.col-lg-6 .widget-body>div,.col-lg-4 .widget-body>div').mCustomScrollbar({
-                    set_height:'260px'
-             });
-        }else if(typeof($.slimScroll)!='undefined'){
+                set_height:'260px'
+            });
+        }else if(typeof($.fn.slimScroll)!='undefined'){
             $('.col-lg-6 .widget-body>div,.col-lg-4 .widget-body>div').slimScroll({
                 height: 260,
                 alwaysVisible: true,

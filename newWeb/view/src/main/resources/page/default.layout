@@ -140,7 +140,7 @@
                         </a>
                         <ul>
                             <li class="submenu-title">Pages</li>
-                            <li><a href="pages-chat.html">Chat</a></li>
+                            <li><a href="#link("/page/tinytable.page")">传统表格</a></li>
                             <li><a href="error_404.html">404</a></li>
                             <li><a href="login_page.html">Login Page</a></li>
                         </ul>

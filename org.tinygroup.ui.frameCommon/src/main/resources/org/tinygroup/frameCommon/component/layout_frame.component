@@ -14,19 +14,9 @@
 	</li>
 #end
 
-#macro navDropDownMenu(dropdownMenuId dropdownMenuTitle dropdownMenuIcon navDropDownMenuWarning navDropDownMenuWarningCls)
-	#set(dropdownMenuId=dropdownMenuId+".")
-	<li class="mm-dropdown#if(dropdownMenuId && activeMenuId && activeMenuId?.startsWith(dropdownMenuId)) open#set(pagePostionTitle=pagePostionTitle+'<li>'+dropdownMenuTitle+'</li>')#if(activePath)	#set(activePath=activePath+dropdownMenuId)#{else}#set(activePath=dropdownMenuId)#end#end">
-		<a href="javascript:void(0);" data-treeid="${dropdownMenuId}">#if(dropdownMenuIcon)<i class="menu-icon fa ${dropdownMenuIcon}"></i>#end<span class="mm-text">${dropdownMenuTitle}</span>
-		#@navWarning(navDropDownMenuWarningCls)${navDropDownMenuWarning}#end
-		</a>
-		<ul>
-			#bodyContent
-		</ul>
-	</li>
-#end
+
 #macro TnavItems(menuId title mapInfo)
-	<li class="mm-dropdown ${mapInfo?.class}#if(activeMenuId?.startsWith(menuId+".")) open#set(pagePostionTitle=pagePostionTitle+'<li>'+title+'</li>')#end">
+	<li class="mm-dropdown ${mapInfo?.get("class")}#if(activeMenuId?.startsWith(menuId+".")) open#set(pagePostionTitle=pagePostionTitle+'<li>'+title+'</li>')#end">
 		<a href="javascript:void(0);" data-treeid="${menuId}">#if(mapInfo?.ico)<i class="menu-icon fa ${mapInfo?.ico}"></i>#end<span class="mm-text">${title}</span>
 		#@navWarning(mapInfo?.warningCls)${mapInfo?.warning}#end
 		</a>
@@ -37,6 +27,18 @@
 #end
 
 
+
+#macro navDropDownMenu(dropdownMenuId dropdownMenuTitle dropdownMenuIcon navDropDownMenuWarning navDropDownMenuWarningCls)
+	#set(dropdownMenuId=dropdownMenuId+".")
+<li class="mm-dropdown#if(dropdownMenuId && activeMenuId && activeMenuId?.startsWith(dropdownMenuId)) open#set(pagePostionTitle=pagePostionTitle+'<li>'+dropdownMenuTitle+'</li>')#if(activePath)	#set(activePath=activePath+dropdownMenuId)#{else}#set(activePath=dropdownMenuId)#end#end">
+    <a href="javascript:void(0);" data-treeid="${dropdownMenuId}">#if(dropdownMenuIcon)<i class="menu-icon fa ${dropdownMenuIcon}"></i>#end<span class="mm-text">${dropdownMenuTitle}</span>
+		#@navWarning(navDropDownMenuWarningCls)${navDropDownMenuWarning}#end
+    </a>
+    <ul>
+        #bodyContent
+    </ul>
+</li>
+#end
 #macro navDropDownMenuNoicon(navDropDownMenuNoiconId navDropDownMenuNoiconTitle navDropDownMenuNoiconWarning navDropDownMenuNoiconWarningCls)
 	#@navDropDownMenu(navDropDownMenuNoiconId,navDropDownMenuNoiconTitle,"",navDropDownMenuNoiconWarning,navDropDownMenuNoiconWarningCls)
 		#bodyContent
@@ -56,7 +58,7 @@
 
 
 
-#macro navLogoHeader(navLogoHeaderLogo navLogoHeaderLogoTitle navLogoHeaderLogoLink)
+#macro navLogoHeader(navLogoHeaderLogoTitle navLogoHeaderLogo navLogoHeaderLogoLink)
 	<!-- navbar-header start-->
 			<div class="navbar-header">
 				<!-- Logo -->
