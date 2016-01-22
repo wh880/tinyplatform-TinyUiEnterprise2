@@ -1,4 +1,4 @@
-#@aModal("#myModal" "测试标题" "600" "" "btn radius btn-primary size-L" "/page/tinyForm.pagelet")弹出对话框#end
+#@aModal("#myModal" "测试标题" "600" "" "btn radius btn-primary size-L" "/page")弹出对话框#end
 #@aModal("#stack1" "测试标题2" "600" "200" "demo radius btn btn-primary size-L")多个弹出层#end
 
 
