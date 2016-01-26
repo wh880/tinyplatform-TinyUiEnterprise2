@@ -6,7 +6,7 @@
 .sortable-handle{background:#fafafa;border-left:#f9f9f9 2px solid;margin:-10px;margin-bottom:15px;padding: 6px;}
 .sortable-handle:last-child{margin-bottom:0}
 .sortable-handle:hover{background:#fcfcfc;border-left:#dde 2px solid;}
-.check-box{float:left; margin-top: -12px;}
+.sortable-handle .check-box{float:left; margin-top: -12px;}
 .main-info{width:100%;padding-left:32px;}
 .info-wrapper{margin-top:16px;}
 .infos-content{padding-top:3px;}
