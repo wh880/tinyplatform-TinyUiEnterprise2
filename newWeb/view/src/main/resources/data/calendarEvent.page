@@ -31,18 +31,18 @@ $(function(){
 			dataType:"json",
 			success:function(data){
 				if(data.status=="y"){
-					layer.msg(data.info,2,1,function(){
+					layer.msg(data.info,{icon:1},function(){
 						try{
 							$(curform).closest(".modal").trigger("close");//当弹出框时触发弹出框关闭
 							$("#${fcid}").trigger("refresh"); ////日历更新
 						}catch(e){console.log(e)}
 					});
 				}else{
-					layer.msg(data.info);
+					layer.msg(data.info,{icon:2});
 				}
 			},
 			error:function(){
-				layer.msg(data.info);
+				layer.msg(data.info,{icon:2});
 			}
 		});
 		return false;

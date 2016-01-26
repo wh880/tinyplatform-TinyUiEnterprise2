@@ -3,7 +3,7 @@
         $("#sleProject-select").on("change", function (e) {
             var projectId = $.trim($(this).val());
             if (!projectId){
-                layer.msg("请选择项目");
+                layer.msg("请选择项目",{icon:2});
                 return false;
             }
             $.cookie("currentProjectId",projectId,{path:"/",expires:365});

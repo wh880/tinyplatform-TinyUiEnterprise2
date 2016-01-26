@@ -314,9 +314,9 @@ zNodes${tempid}.push({id:${id}, pId:${pid}, name:"${name}"});
                         dataType: "json",
                         success: function(data) {
                             if(data.status=="success"||data.status=="y"){
-                                layer.msg(data.info,2,1)
+                                layer.msg(data.info,{icon: 1})
                             }else{
-                                layer.msg(data.info,2)
+                                layer.msg(data.info, {icon: 2})
                             }
                             refreshdata();
                         }
@@ -324,7 +324,7 @@ zNodes${tempid}.push({id:${id}, pId:${pid}, name:"${name}"});
                     layer.closeAll()
                 });
             }else{
-                layer.msg("修改地址不可用，操作失败")
+                layer.msg("修改地址不可用，操作失败", {icon: 2})
             }
             //className = (className === "dark" ? "":"dark");
             return false;
@@ -360,15 +360,15 @@ zNodes${tempid}.push({id:${id}, pId:${pid}, name:"${name}"});
                         success: function(data) {
                             //layer.close(e);
                             if(data.status=="success"||data.status=="y"){
-                                layer.msg(data.info,2,1)
+                                layer.msg(data.info,{icon: 1})
                             }else{
-                                layer.msg(data.info,2)
+                                layer.msg(data.info,{icon: 2})
                             }
                             refreshdata();
                         }
                     });
                 }else{
-                    layer.msg("删除地址不可用，操作失败")
+                    layer.msg("删除地址不可用，操作失败", {icon: 2})
                 }
             });
             return false;//confirm("确认删除 节点 -- " + treeNode.name + " 吗？");
@@ -434,7 +434,7 @@ zNodes${tempid}.push({id:${id}, pId:${pid}, name:"${name}"});
             var btn = $("#addBtn_"+treeNode.tId);
             if (btn) btn.bind("click", function(){
                 if(addUrl){
-                    layer.prompt({title: '请填写名称', formType: 2}, function(text){
+                    layer.prompt({title: '请填写名称', formType: 1}, function(text){
                         var data={rand:Math.random()};
                         data[dataformat.name]=text;
                         data[dataformat.pid]=treeNode.id=="allcontent"?0:treeNode.id;
@@ -446,9 +446,9 @@ zNodes${tempid}.push({id:${id}, pId:${pid}, name:"${name}"});
                             dataType: "json",
                             success: function(data) {
                                 if(data.status=="success"||data.status=="y"){
-                                    layer.msg(data.info,2,1)
+                                    layer.msg(data.info, {icon: 1})
                                 }else{
-                                    layer.msg(data.info,2)
+                                    layer.msg(data.info, {icon: 2})
                                 }
                                 refreshdata();
                             }
@@ -456,10 +456,9 @@ zNodes${tempid}.push({id:${id}, pId:${pid}, name:"${name}"});
                         layer.closeAll()
                     });
                 }else{
-                    layer.msg("新增地址不可用，操作失败");
+                    layer.msg("新增地址不可用，操作失败", {icon: 2});
                     return false;
                 }
-                //zTree.addNodes(treeNode, {id:(100 + newCount), pId:treeNode.id, name:"new node" + (newCount++),edit:true});
                 return false;
             });
         };
@@ -555,9 +554,9 @@ zNodes${tempid}.push({id:${id}, pId:${pid}, name:"${name}"});
                     dataType: "json",
                     success: function(data) {
                         if(data.status=="success"||data.status=="y"){
-                            layer.msg(data.info,2,1)
+                            layer.msg(data.info,{icon: 1})
                         }else{
-                            layer.msg(data.info,2)
+                            layer.msg(data.info, {icon: 2})
                         }
                         refreshdata();
                     }
@@ -567,9 +566,7 @@ zNodes${tempid}.push({id:${id}, pId:${pid}, name:"${name}"});
             });
         }
         function onExpand(event, treeId, treeNode) {
-            //if (treeNode === autoExpandNode) {
-            //	className = (className === "dark" ? "":"dark");
-            //}
+
         }
     });
     //-->

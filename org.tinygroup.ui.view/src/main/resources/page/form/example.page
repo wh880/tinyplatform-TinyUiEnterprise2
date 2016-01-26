@@ -197,10 +197,10 @@
                     dataType: "json",
                     success: function (data) {
                         if (data.status == "y") {
-                            layer.msg(data.info, 2, 1);
+                            layer.msg(data.info,{icon:2});
                             $(curform).closest(".modal").trigger("close");
                         } else {
-                            layer.msg(data.info);
+                            layer.msg(data.info,{icon:2});
                         }
                         try {
                             $(curform).closest(".modal").trigger("close");//当弹出框时触发弹出框关闭
@@ -210,7 +210,7 @@
                         }
                     },
                     error: function () {
-                        layer.msg(data.info);
+                        layer.msg(data.info,{icon:2});
                     }
                 });
                 return false;

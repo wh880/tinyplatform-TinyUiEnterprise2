@@ -262,18 +262,16 @@
 					dataType:"json",
 					success:function(data){
 						if(data.status=="success"||data.status=="y"){
-							layer.msg(data.info, 2, 1);
-							setTimeout(function(){
-								layer.closeAll();
-								$("#${tableId}").trigger("refresh");
-							},300);
+							layer.msg(data.info,{icon: 1},function(){
+                                $("#${tableId}").trigger("refresh");
+                            });
 						}else{
 							var msg=data.info?data.info:"系统出错";
-							layer.msg(msg);
+							layer.msg(msg,{icon: 2});
 						}
 					},
 					error: function() {
-						layer.msg("系统出错");
+						layer.msg("系统出错",{icon: 2});
 					}
 				});
 
@@ -325,7 +323,7 @@
 			  checklist.push($(this).val());
 		 });
 		if(checklist.length==0){
-			layer.msg("请选择记录")
+			layer.msg("请选择记录",{icon: 2})
 			 return false;
 		 }
 		layer.confirm("请确认?",function() {
@@ -342,16 +340,15 @@
 								 }
 								 window.location.href=url;
 							 }else{
-								layer.msg(data.info,2, 1);
-								$("#${tableId}").trigger("initnav");
+								layer.msg(data.info,{icon: 1},function(){$("#${tableId}").trigger("initnav")});
 							 }
 						}else{
-							 layer.msg(data.info);
+							 layer.msg(data.info,{icon:2});
 						}
 				  },
 				  traditional:true,
 				  error:function(){
-					  layer.msg("系统出错，请确认你的请求地址");
+					  layer.msg("系统出错，请确认你的请求地址",{icon: 2});
 				  }
 			 })
 		});
@@ -395,18 +392,16 @@
                     dataType:"json",
                     success:function(data){
                         if(data.status=="success"||data.status=="y"){
-                            layer.msg(data.info, 2, 1);
-                            setTimeout(function(){
-                                layer.closeAll();
-                                $("#${tableId}").trigger("initnav");
-                            },300);
+                            layer.msg(data.info, {icon: 1},function(){
+                                $("#${tableId}").trigger("refresh");
+                            });
                         }else{
                             var msg=data.info?data.info:"系统出错";
-                            layer.msg(msg);
+                            layer.msg(msg, {icon: 2});
                         }
                     },
                     error: function() {
-                        layer.msg("系统出错");
+                        layer.msg("系统出错", {icon: 2});
                     }
                 });
 

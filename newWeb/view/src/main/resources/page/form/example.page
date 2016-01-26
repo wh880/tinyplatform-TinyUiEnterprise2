@@ -22,7 +22,7 @@
             var targetDom=$($(this).attr("data-target"));
             if(!targetDom) return false;
             if(maxsize&&targetDom.children().size()>=maxsize){
-                layer.msg("已经有"+maxsize+"个，不能再加了");
+                layer.msg("已经有"+maxsize+"个，不能再加了",{icon:2});
                 return false;
             }
             var $item=targetDom.children(":first").clone();
@@ -37,7 +37,7 @@
                 targetDom.children().last().remove();
                 updateInputName(this);
             }else{
-                layer.msg("少于"+minsize+"个,不能再删了")
+                layer.msg("少于"+minsize+"个,不能再删了",{icon:2})
             }
 
         })
@@ -198,10 +198,10 @@
                     dataType: "json",
                     success: function (data) {
                         if (data.status == "y") {
-                            layer.msg(data.info, 2, 1);
+                            layer.msg(data.info, {icon:1});
                             $(curform).closest(".modal").trigger("close");
                         } else {
-                            layer.msg(data.info);
+                            layer.msg(data.info,{icon:2});
                         }
                         try {
                             $(curform).closest(".modal").trigger("close");//当弹出框时触发弹出框关闭
@@ -211,7 +211,7 @@
                         }
                     },
                     error: function () {
-                        layer.msg(data.info);
+                        layer.msg(data.info,{icon:2});
                     }
                 });
                 return false;

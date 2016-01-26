@@ -1,5 +1,8 @@
+
+
 #set(tinytableid="table-ss2")
-<div style="background:#f1f1f1;line-height:30px;padding:2px 10px">
+<div style="background:#f1f1f1;line-height:30px;padding:2px 10px;">
+#*
 #@navZtree()
 	#@navZtreeNav()<span>工程 </span>#faIcon("caret-down")#end
 	#@navZtreeBody({"style":"top:30px;left:-10px"})
@@ -8,9 +11,10 @@
 		#end
 	#end
 #end
+*#
 
 #@navSelect2("sleProject" "sleProject")
-	#@navSelect2Nav()请选择项目<span class="caret"></span>#end
+	#@navSelect2Nav()<span>请选择项目</span><span class="caret"></span>#end
 	#@navSelect2Body({"style":"top:30px;left:-10px"})
 		#@navSelect2Data()
 			<optgroup label="请选择项目">

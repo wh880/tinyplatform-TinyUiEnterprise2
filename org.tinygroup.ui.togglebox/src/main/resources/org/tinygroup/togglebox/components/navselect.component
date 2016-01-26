@@ -21,12 +21,15 @@
                 $("#${navsid}-body").show();
                 $("#${navsid}-select").select2("open");
                 var select2Rap=$(".select2-container--open");
-                select2Rap.css("margin-top","-20px");
+            ##select2Rap.css("margin-top","-20px");
             }
             e.stopPropagation();
         });
         $("body").on("click",function(){
             hidePrj();
+        });
+        $("#${navsid}-select").on("change",function(){
+            $("#${navsid}-nav span:first").html($(this).find("option:selected").html());
         });
     });
 </script>
