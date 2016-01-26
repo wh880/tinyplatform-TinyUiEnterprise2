@@ -8,6 +8,7 @@
     .table-info .table-info-author{display: block; float: left; width:150px;padding-right: 20px;}
     .tables-list{padding:0}
     .work-view{border-bottom:#dde 1px solid}
+    .work-view:hover{background:#eee}
     @media screen and (max-width:780px){
         .table-info .table-info-name{display:block; float:left;width:100%;margin-left:30px;margin-top: -8px;}
         .table-info .table-info-size{display:none;}
