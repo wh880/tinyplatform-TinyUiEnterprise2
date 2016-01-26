@@ -40,7 +40,7 @@
 
 #macro widgetItemBody(col)
 <div class="widget-body" style="padding:0">
-    <div style="padding:15px">
+    <div style="padding:15px;">
         #bodyContent
     </div>
 </div>

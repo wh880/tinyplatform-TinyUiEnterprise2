@@ -48,6 +48,7 @@
             <link href="${TINY_CONTEXT_PATH}/uiengine.uicss" rel="stylesheet"/>
             <script src="${TINY_CONTEXT_PATH}/uiengine.uijs"></script>
         #end
+		<link href="${TINY_CONTEXT_PATH}/css/tinyui.css" rel="stylesheet" />
     </head>
     <body class="top_menu_active side_menu_collapsed">
     <div id="page_wrapper">
