@@ -1,7 +1,7 @@
 @charset "utf-8";
 *{word-wrap:break-word}
 
-/*首页及时状态进图条*/
+/*列表*/
 .widget-toolbar{border-left:none}
 .sortable-handle{background:#fafafa;border-left:#f9f9f9 2px solid;margin:-10px;margin-bottom:15px;padding: 6px;}
 .sortable-handle:last-child{margin-bottom:0}
