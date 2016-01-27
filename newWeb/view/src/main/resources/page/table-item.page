@@ -1,4 +1,5 @@
 <style>
+    .table-header .table-title{font-size:16px}
     .table-boxs{background:#fefefe;box-shadow: 0 0 2px 1px #fdfdfd;}
     .table-header-wrap .table-header{background:#fcfcfc;height:42px;line-height:42px;padding:0 10px;}
     .table-handler-set{padding:12px 10px;border-top:#dde 1px solid}
