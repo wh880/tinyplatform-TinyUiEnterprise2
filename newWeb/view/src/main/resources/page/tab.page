@@ -1,6 +1,10 @@
+<style type="text/css">
+   #tab-items .tabBar{height:30px}
+   #tab-items .tabBar span.Current{}
+</style>
 #@widgetGrid()
     #@gridSysCol(12)
-        #@Ttab()
+        #@Ttab("tab-items")
         <div class="tabBar cl">
             #@tabHeadCol()选项卡一#end
             #@tabHeadCol()选项卡二#end
