@@ -1,8 +1,8 @@
 <style type="text/css">
    #tab-items .tabBar{height:30px}
-   #tab-items .tabBar span.Current{background:none;border-bottom:2px solid #00aeef;color:#20638f}
-   #tab-items .tabBar span{background:none;font-weight:normal}
-   #tab-items .tabCon{padding: 12px;}
+   #tab-items .tabBar span.Current{background:none;border-bottom:2px solid #00aeef;color:#212425}
+   #tab-items .tabBar span{background:none;font-weight:normal;color:#666}
+   #tab-items .tabCon{padding:12px;}
 </style>
 #@widgetGrid()
     #@gridSysCol(12)
