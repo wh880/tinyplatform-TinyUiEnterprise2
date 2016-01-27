@@ -15,16 +15,15 @@
         <meta name="description"
               content="java,j2ee,j2ee.top, tinygroup,tinygroup.org,eclipse,插件,idea,TinyFramework,悠然,悠悠然然,Tiny,Framework,CEP,通用事件处理,ui引擎,ui engine,模块化,业务单元,文档生成,xml parser,html parser,xml,html,parser,spider,网络爬虫,flow,流程,业务流,页面流,Java,SOA,框架,组件,分层,水平扩展,分区,分表,db router,db cluster,framework,框架,分布式计算,VFS,Web">
         <script>
-		var contextPath = "${TINY_CONTEXT_PATH}";#if(UPLOAD_ACTION_URL)
-		var UPLOAD_ACTION_URL = '${TINY_CONTEXT_PATH}${UPLOAD_ACTION_URL}'; #end
-
+            var contextPath = "${TINY_CONTEXT_PATH}";#if(UPLOAD_ACTION_URL)
+            var UPLOAD_ACTION_URL = '${TINY_CONTEXT_PATH}${UPLOAD_ACTION_URL}'; #end
         </script>
-
-        #if(DEBUG_MODE && DEBUG_MODE=="true2")
+        <link rel="shortcut icon" href="${TINY_CONTEXT_PATH}/img/tiny32.png">
+        #if(DEBUG_MODE && DEBUG_MODE=="true")
             #foreach(component in uiengine.getHealthUiComponents())
                 #if(component.cssResource)#set(resources=component.cssResource.split(","))
                     #foreach(path in resources)#set(path=path.trim(),newPath=path.replaceAll("[$][{]TINY_THEME[}]","${TINY_THEME}"))
-                        <link href="${TINY_CONTEXT_PATH}${newPath}" rel="stylesheet"/>
+                        <link href="${TINY_CONTEXT_PATH}${newPath}" rel="stylesheet" />
                     #end
                 #end
                 #if(component.jsResource)
@@ -35,20 +34,65 @@
                 #end
                 #if(component.jsCodelet)
                     <script>
-                        ${component.jsCodelet}
-                    </script>
+				$!{component.jsCodelet}
+				</script>
                 #end
                 #if(component.cssCodelet)
                     <style>
-				        ${component.cssCodelet}
-				    </style>
+				$!{component.cssCodelet}
+				</style>
                 #end
+                #if(component.compatibilityResources)
+                    #set(resources=component.compatibilityResources.getCompatibilityResources())
+                    #foreach(compatibilityResource in resources)
+                        #if(compatibilityResource.condition)
+                                <!--[if ${compatibilityResource.condition}]>
+                                #if(compatibilityResource.cssResource)
+                                    #set(csslist=compatibilityResource.cssResource.split(","))
+                                    #foreach(path in csslist)
+                                        #set(path=path.trim())
+                                        #set(newPath=path.replaceAll("[$][{]TINY_THEME[}]","${TINY_THEME}"))
+                                    <link href="${TINY_CONTEXT_PATH}${newPath}" rel="stylesheet" />
+                                    #end
+                                #end
+                                #if(compatibilityResource.jsResource)
+                                    #set(jslist=compatibilityResource.jsResource.split(","))
+                                    #foreach(path in jslist)
+                                        #set(path=path.trim())
+                                    <script src="${TINY_CONTEXT_PATH}${path}"></script>
+                                    #end
+                                #end
+                            <![endif]-->
+                        #end
+                    #end
+                #end
+
             #end
         #else
-            <link href="${TINY_CONTEXT_PATH}/uiengine.uicss" rel="stylesheet"/>
+            <!--[if lt ie 9]>
+                #foreach(component in uiengine.getHealthUiComponents())
+                    #if(component.cssResource)
+                        #set(resources=component.cssResource.split(","))
+                        #foreach(path in resources)
+                            #set(path=path.trim())
+                            #set(newPath=path.replaceAll("[$][{]TINY_THEME[}]","${TINY_THEME}"))
+                        <link href="${TINY_CONTEXT_PATH}${newPath}" rel="stylesheet" />
+                        #end
+                    #end
+                    #if(component.cssCodelet)
+                    <style>
+                            $!{component.cssCodelet}
+                    </style>
+                    #end
+                #end
+            <![endif]-->
+            <!--[if (gte IE 9)|!(IE)]><!-->
+            <link href="${TINY_CONTEXT_PATH}/uiengine.uicss" rel="stylesheet" />
+            <!--<![endif]-->
             <script src="${TINY_CONTEXT_PATH}/uiengine.uijs"></script>
+
         #end
-		<link href="${TINY_CONTEXT_PATH}/css/tinyui.css" rel="stylesheet" />
+        <link href="${TINY_CONTEXT_PATH}/css/tinyui.css" rel="stylesheet" />
     </head>
     <body class="top_menu_active side_menu_collapsed">
     <div id="page_wrapper">
