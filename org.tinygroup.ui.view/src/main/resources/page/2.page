@@ -1,4 +1,4 @@
-#@tForm("thisform" call("link","/data/Validform_post.html") "post" {"class":""})
+#@tForm("thisform" "/data/Validform_post.html" "post" {"class":""})
     #@elementItem("邮箱：")
         #tInput("email" ""{"placeholder":"@","datatype":"e","nullmsg":"请输入邮箱！","id":"email","class":"input-text"})
     #end

@@ -79,7 +79,7 @@
     $(function(){
         var _inputVal=$("#${sid}");
         $.ajax({
-            url:"${dataUrl}",
+            url:"#link(dataUrl)",
             type:"get",
             data:{select2Init:"true",initKey:_inputVal.attr("value")},
             dataType:"json",
@@ -94,7 +94,7 @@
             var placeholder = _inputVal.attr("placeholder") ? _inputVal.attr("placeholder") : "";
             _inputVal.select2({
                 ajax: {
-                    url: "${dataUrl}",
+                    url: "#link(dataUrl)",
                     dataType: 'json',
                     delay: 250,
                     data: function (term, page) {

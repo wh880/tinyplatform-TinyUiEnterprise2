@@ -1,0 +1,3 @@
+#macro lAjax(title,url,width,height)
+<span ly-ajax-url="#link(url)" ly-ajax-width="${width}" ly-ajax-height="${height}" ly-ajax-title="${title}">#bodyContent</span>
+#end

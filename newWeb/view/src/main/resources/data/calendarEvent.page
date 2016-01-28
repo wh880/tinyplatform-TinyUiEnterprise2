@@ -1,4 +1,4 @@
-#@tForm("thisform" call("link","/data/Validform_post.html") "post" {"class":""})
+#@tForm("thisform" "/data/Validform_post.html" "post" {"class":""})
 	#@elementItem("用户名：")
 		#tInput("username" ""{"placeholder":"4~16个字符，字母/中文/数字/下划线","datatype":"*4-16","ajaxurl":call("link","/data/usercheck.pagelet"),"nullmsg":"用户名不能为空！","id":"username"})
 	#end

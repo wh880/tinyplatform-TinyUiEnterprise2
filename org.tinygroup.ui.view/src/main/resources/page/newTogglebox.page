@@ -40,12 +40,12 @@
 		#@settoggleLeftTitle()网站建设一期#end
 		#@settoggleLeftBody()
 		##include("/page/typography/1.23.page")
-			#@zTreeList(call("link","/data/ztreeData.pagelet") {"id":"demoLeft"})
+			#@zTreeList("/data/ztreeData.pagelet" {"id":"demoLeft"})
 				#setzTreeValMap({"id":"modelid","name":"truename","pid":"parentid"}) ##key值为固定
-				#zTreeSetLinkUrl(call("link","/page/togglebox.page" ))
-				#zTreeSetAddUrl(call("link","/page/togglebox.page"))
-				#zTreeSetEditUrl(call("link","/page/togglebox.page"))
-				#zTreeSetDelUrl(call("link","/page/togglebox.page"))
+				#zTreeSetLinkUrl("/page/togglebox.page" )
+				#zTreeSetAddUrl("/page/togglebox.page")
+				#zTreeSetEditUrl("/page/togglebox.page")
+				#zTreeSetDelUrl("/page/togglebox.page")
 			#end
         <div class="text-align-center mt-10"><input type="button" class="btn btn-default" id="changeE" value="刷新树"/></div>
         <script>
@@ -71,7 +71,7 @@
             <a href="#" class="btn btn-info btn-sm">历史</a>
             <a href="#" class="btn btn-warning btn-sm">相关</a>
         </div>
-			#@tinyTableContent(call("link","/data/tinytabledata.pagelet")) ##取数据地址 总数据
+			#@tinyTableContent("/data/tinytabledata.pagelet") ##取数据地址 总数据
 				#@thead()
 					#@tr()  ##class 为sorting 表票可排序 为sorting_desc(正序为为sorting_asc) 为当前倒序
 						#@tinyTh({"width":"6"})<input type="checkbox" name="allck" value="">#end

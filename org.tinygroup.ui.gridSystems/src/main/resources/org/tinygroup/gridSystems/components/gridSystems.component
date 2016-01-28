@@ -34,7 +34,7 @@
 
 *#
 #macro gridSysRow(rowMap)
-	<div class="row cl #getMapVal("class",rowMap)"#mapToHtml(rowMap)>
+	<div class="row cl ${rowMap?.get("class")}"#mapToHtml(rowMap)>
 		#bodyContent
 	</div>
 #end
@@ -47,7 +47,7 @@
 
 *#
 #macro gridSysCol(colNum colMap)
-	<div class="col-${colNum}#getMapVal("class",colMap)"#mapToHtml(colMap)>
+	<div class="col-${colNum} ${colMap?.get("class")}"#mapToHtml(colMap)>
 		#bodyContent
 	</div>
 #end

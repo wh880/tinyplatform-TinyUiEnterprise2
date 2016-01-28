@@ -177,7 +177,7 @@
 		var pageSize=$("#${tableId}pageSize").val();
 		if(!pageSize) pageSize=10;
 		var totalPages=Math.ceil(${itemNum}/pageSize);
-		var url="${dataUrl}";
+		var url="#link(dataUrl)";
 		url=url.replace(/\?$/,"").replace(/[&\?]page=[0-9]*/,"");
 		var ${tableId}Nav=$('#${tableId}-nav div').twbsPagination({
 			totalPages: totalPages,
@@ -231,7 +231,7 @@
 #macro tinyTableContent(dataUrl currentPage itemNum)
 	<div class="clear"></div>
 	<div class="table-responsive">
-	<table class="dataTable tinytable table table-hover" id="${tableId}" data-url="${dataUrl}">
+	<table class="dataTable tinytable table table-hover" id="${tableId}" data-url="#link(dataUrl)">
 		#bodyContent
 		<tbody id="${tableId}-Body">
 		</tbody>
@@ -312,7 +312,7 @@
 #end
 
 #macro tinyTableItemRemove(doActionUrl itemId)
-<a href="javascript:;" class="Item-Remove" data-url="${doActionUrl}" data-id="${itemId}">#bodyContent</a>
+<a href="javascript:;" class="Item-Remove" data-url="#link(doActionUrl)" data-id="${itemId}">#bodyContent</a>
 #end
 
 #macro mulOperation(operation doActionUrl map)<span id="${operation}-${tableId}">#bodyContent</span><script type="text/javascript">
@@ -328,7 +328,7 @@
 		 }
 		layer.confirm("请确认?",function() {
 			 $.ajax({
-				  url: "${doActionUrl}",
+				  url: "#link(doActionUrl)",
 				  data: {ids: checklist.join(","), itemId: checklist, action: "${operation}"#mapToJson(map)},
 				  dataType: "json",
 				  success: function (data) {
@@ -361,7 +361,7 @@
 #macro tinyTableNonavpage(dataUrl itemNum)
 <div class="clear"></div>
 <div class="table-responsive">
-    <table class="dataTable tinytable table table-hover" id="${tableId}" data-url="${dataUrl}">
+    <table class="dataTable tinytable table table-hover" id="${tableId}" data-url="#link(dataUrl)">
         #bodyContent
         <tbody id="${tableId}-Body">
         </tbody>
@@ -419,7 +419,7 @@
 <script type="text/javascript">
     $(function(){
         $("#${tableId}").on("initnav refresh init",function(isinit){
-            var url="${dataUrl}";
+            var url="#link(dataUrl)";
             $("#${tableId}pageSize").attr("name","");
             //var pageSize=$("#${tableId}pageSize").val();
             //var data={page: 1,pagesize:pageSize};
@@ -446,7 +446,7 @@
             }
             $.ajax({
                 type: "GET",
-                url: $('#${tableId}').attr("data-url"),//"${dataUrl}",
+                url: $('#${tableId}').attr("data-url"),
                 data:{ page: page,pagesize:pageSize,order:order,ordertype:ordertype,limit:pageSize,start:(page-1)*pageSize,tinytableid:"${tableId}"},
                 dataType: "html",
                 cache: !0,

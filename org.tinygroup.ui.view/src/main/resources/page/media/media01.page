@@ -4,7 +4,7 @@
 <ul class="media-list">
     <li class="media">
         <a class="pull-left" href="#">
-            <img class="media-object" src="${TINY_CONTEXT_PATH}/img/pic.png"
+            <img class="media-object" src="#link("/img/pic.png")"
                  alt="通用的占位符图像">
         </a>
         <div class="media-body">
@@ -18,7 +18,7 @@
             </p>
             <div class="media">
                 <a class="pull-left" href="#">
-                    <img class="media-object" src="${TINY_CONTEXT_PATH}/img/pic.png"
+                    <img class="media-object" src="#link("/img/pic.png")"
                          alt="通用的占位符图像">
                 </a>
                 <div class="media-body">
@@ -32,7 +32,7 @@
                     </p>
                     <div class="media">
                         <a class="pull-left" href="#">
-                            <img class="media-object" src="${TINY_CONTEXT_PATH}/img/pic.png"
+                            <img class="media-object" src="#link("/img/pic.png")"
                                  alt="通用的占位符图像">
                         </a>
                         <div class="media-body">
@@ -50,7 +50,7 @@
             </div>
             <div class="media">
                 <a class="pull-left" href="#">
-                    <img class="media-object" src="${TINY_CONTEXT_PATH}/img/pic.png"
+                    <img class="media-object" src="#link("/img/pic.png")"
                          alt="通用的占位符图像">
                 </a>
                 <div class="media-body">
@@ -68,7 +68,7 @@
     </li>
     <li class="media">
         <a class="pull-left" href="#">
-            <img class="media-object" src="${TINY_CONTEXT_PATH}/img/pic.png"
+            <img class="media-object" src="#link("/img/pic.png")"
                  alt="通用的占位符图像">
         </a>
         <div class="media-body">

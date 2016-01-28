@@ -25,7 +25,7 @@
 *#
 #macro superboxList(imgSrc imgData imgAlt)
 <div class="superbox-list">
-    <img src="${imgSrc}" data-img="${imgData}" alt="${imgAlt}" class="superbox-img" />
+    <img src="#link(imgSrc)" data-img="#link(imgData)" alt="${imgAlt}" class="superbox-img" />
     #bodyContent
 </div>
 #end

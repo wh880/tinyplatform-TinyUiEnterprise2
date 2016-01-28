@@ -1,3 +1,178 @@
+#macro link(linkUrl)${(linkUrl?.startsWith("/")?TINY_CONTEXT_PATH:"")+linkUrl}#end
+
+#macro treeSelect(name value mapInfo)#set(sid=mapInfo?.id?:fmt("sid%d",rand()),tempid=fmt("sid%d",rand()))
+<script>
+    var zNodes${tempid} =[];
+</script>
+<input id="${sid}" name=""  class="form-control no-radius" type="text" value="" #mapToHtml(mapInfo)/>
+<input id="${sid}-input" name="${name}" type="hidden" value="${value}" #mapToHtml(mapInfo)/>
+<div class="hide" id="${sid}-rap">
+    <div id="${sid}-content" class="tree-sel-content t-menu-content hide">
+        <ul id="ztree${sid}" class="ztree">
+        </ul>
+        <div class="hide" id="${sid}-msg">暂无信息</div>
+        <div class="fix-part" style="padding:0 5px">#bodyContent</div>
+    ##		<span style="position:absolute;right:10px;bottom:5px;z-index:2;cursor:pointer" id="close${sid}"><i class="fa fa-remove"></i></span>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function(){
+        var setting = {
+            view: {
+                dblClickExpand: false
+            },
+            data: {
+                simpleData: {
+                    enable: true
+                }
+            },
+            callback: {
+                beforeClick: beforeClick,
+                onClick: onClick
+            }
+        };
+        var zTree;
+        var zNodes =zNodes${tempid};
+        var $treeContent=$("#ztree${sid}");
+        var $treeRap=$("#${sid}-content");
+        var $input=$("#${sid}");
+        var $inputV=$("#${sid}-input");
+        #set(dataurl=mapInfo?.get("data-URL"))
+        #if(dataurl)
+            $.ajax({
+                type: "GET",
+                url: "#link(dataurl)",
+                dataType: "json",
+                success: function(data) {
+                    zNodes=data;
+                    initzTree();
+                }
+            });
+        #else
+            initzTree();
+        #end
+        function initzTree(){
+            zTree=$.fn.zTree.init($treeContent, setting, zNodes);
+            initInputVale();
+        }
+        function initInputVale(){
+            var $val=$inputV.val();
+            if(!$val) return false;
+            for(var i=0;i<zNodes.length;i++){
+                if($val==zNodes[i].id){
+                        $input.val(zNodes[i].name);
+                        $inputV.val($val);
+                        $input.trigger("setValue",zNodes[i]);
+                    break;
+                }
+            }
+        }
+        function beforeClick(treeId, treeNode) {
+            var check = (treeNode && !treeNode.isParent);
+            if (!check) {
+                zTree.expandNode(treeNode);
+                return false;
+            }
+        }
+        function onClick(e, treeId, treeNode) {
+                $input.val(treeNode.name);
+                $inputV.val(treeNode.id);
+                $input.trigger("setValue",treeNode);
+            hideMenu();
+        }
+        function hideMenu() {
+                $treeRap.fadeOut("fast");
+            $("#${sid}-rap").append($treeRap);
+        }
+            $input.on("click",function(){
+            $("body").append($treeRap);
+        var thisOffset = $(this).offset();
+            $treeRap.css({width:$(this).css("width"),left:thisOffset.left + "px", top:thisOffset.top + $(this).outerHeight() + "px"}).slideDown("fast");
+        }).on("add",function(e,newNode){
+        zTree.addNodes(null, newNode);
+        });
+        $("body").on("click",function(e){
+            if($(e.target).attr("id")!=$input.attr("id")&&$(e.target).parents("#"+$treeRap.attr("id")).size()==0){
+                hideMenu();
+            }
+        }).on("click",".fix-part",function(e){
+            hideMenu();
+        });
+        function bfxs(zTree, nodes, tt) {
+            if (nodes.children == null) {//无子节点
+                if (nodes[zTree.setting.data.key.name].indexOf(tt) >= 0) {//无子节点，但是包含tt
+                    fjdxs(zTree, nodes);
+                }
+            }else {//有子节点
+                if (nodes[zTree.setting.data.key.name].indexOf(tt) >= 0){//有而且包含
+                    fjdxs(zTree, nodes);
+                    xsall(zTree, nodes);
+                }else {//有但不包含
+                    $.each(nodes.children, function (aa, bb) {
+                        bfxs(zTree, bb, tt);
+                    })
+                }
+            }
+        }
+        ///显示所有父节点
+        function fjdxs(zTree, nodes) {
+            if (nodes.getParentNode() == null) {
+                zTree.showNode(nodes);
+            }
+            else {
+                zTree.showNode(nodes);
+                fjdxs(zTree, nodes.getParentNode());
+            }
+        }
+        ///全显
+        function xsall(ztree, nodes) {
+            ztree.showNode(nodes);
+            if (nodes.children != null) {
+                $.each(nodes.children, function (x, y) {
+                    xsall(ztree, y);
+                })
+            }
+        }
+        ///么有子节点的直接隐藏
+        function ycall(ztree, nodes) {
+            ztree.hideNode(nodes);
+            if (nodes.children != null) {
+                $.each(nodes.children, function (x, y) {
+                    ycall(ztree, y);
+                })
+            }
+        }
+        $("#${sid}").on("propertychange input",function(){
+            var key = $(this).val();
+            var nodes = zTree.getNodes();
+            zTree.showNodes(nodes);
+            if(!key){
+                $("#${sid}-msg").hide();
+                return;
+            }
+            var zts = zTree.getNodesByParamFuzzy("name", key);
+            if (zts.length==0){
+                $("#${sid}-msg").show();
+            }else{
+                $("#${sid}-msg").hide();
+            }
+
+            $.each(nodes, function (x, y) {
+                ycall(zTree, y);
+            });
+
+            $.each(nodes, function (index, node) {
+                bfxs(zTree, node, key);
+            });
+            zTree.expandAll(true);
+        }).on("close",function(){
+            hideMenu();
+        });
+    });
+</script>
+#end
+
+
 <style type="text/css">.form-horizontal .form-group{margin-left:0;margin-right:0}</style>##在小屏幕下收bootstrap样式影响
 #macro operateMoreLess(listMap)#set(oid=fmt("oid%d",rand()))
 <span id="${oid}-add"#mapToHtml(listMap)><i class="glyphicon glyphicon-plus"></i></span>
@@ -47,7 +222,7 @@
 
 
 
-#@tForm("thisform" call("link","/data/Validform_post.html") "post" {"class":""})
+#@tForm("thisform" "/data/Validform_post.html" "post" {"class":""})
     #@elementItem("邮箱：")
         #tInput("email" ""{"placeholder":"@","datatype":"e","nullmsg":"请输入邮箱！","id":"email","class":"input-text"})
     #end
@@ -89,18 +264,18 @@
 
 
     #@elementItem("选择城市2：")
-        #treeSelect("cityid" 1 {"class":"input-text","data-URL":call("link","/data/ztreeData.pagelet")}) ##有三个参数 第一个为表单名即name 第二个为默认值 即表里里的VALUE 第三个为MAP对像可自由附加属性比如验证 样式等信息 data-URL为数据异步获取值
+        #treeSelect("cityid" 1 {"class":"input-text","data-URL":"/data/ztreeData.pagelet"}) ##有三个参数 第一个为表单名即name 第二个为默认值 即表里里的VALUE 第三个为MAP对像可自由附加属性比如验证 样式等信息 data-URL为数据异步获取值
     #end
 
     #@elementItem("Ajax数据返回：")
-        #tSelect2Ajax("sel2" "2" call("link","/data/select2ajax.pagelet") {"placeholder":"查询数据","dataId":"sid","dataText":"stext","fixDataVal":"1","datatype":"*","multiple":"multiple"} {"fixData":"pid","fix2":"ajian"})
+        #tSelect2Ajax("sel2" "2" "/data/select2ajax.pagelet" {"placeholder":"查询数据","dataId":"sid","dataText":"stext","fixDataVal":"1","datatype":"*","multiple":"multiple"} {"fixData":"pid","fix2":"ajian"})
         #@tSelect2Fix("sel2")
             #@aModal("#myModal" "新增" "600" "" "r" "/page/icon.pagelet")新增#end<a href="#">全部</a>
         #end
     #end
 
     #@elementItem("Ajax数据返回：")
-        #tSelect2Ajax("sel21" "2" call("link","/data/select2ajax.pagelet") {"placeholder":"查询数据","dataId":"sid","dataText":"stext","fixDataVal":"1","datatype":"*"} {"fixData":"pid","fix2":"ajian"})
+        #tSelect2Ajax("sel21" "2" "/data/select2ajax.pagelet" {"placeholder":"查询数据","dataId":"sid","dataText":"stext","fixDataVal":"1","datatype":"*"} {"fixData":"pid","fix2":"ajian"})
         #@tSelect2Fix("sel21")
             #@aModal("#myModal" "新增" "600" "" "r" "/page/icon.pagelet")新增#end<a href="#">全部</a>
         #end

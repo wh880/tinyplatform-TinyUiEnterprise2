@@ -46,7 +46,7 @@
 
 
 
-#@tForm("thisform" call("link","/data/Validform_post.html") "post" {"class":""})
+#@tForm("thisform" "/data/Validform_post.html" "post" {"class":""})
     #@elementItem("邮箱：")
         #tInput("email" ""{"placeholder":"@","datatype":"e","nullmsg":"请输入邮箱！","id":"email","class":"input-text"})
     #end
@@ -88,18 +88,18 @@
 
 
     #@elementItem("选择城市2：")
-        #treeSelect("cityid" 1 {"class":"input-text","data-URL":call("link","/data/ztreeData.pagelet")}) ##有三个参数 第一个为表单名即name 第二个为默认值 即表里里的VALUE 第三个为MAP对像可自由附加属性比如验证 样式等信息 data-URL为数据异步获取值
+        #treeSelect("cityid" 1 {"class":"input-text","data-URL":"/data/ztreeData.pagelet"}) ##有三个参数 第一个为表单名即name 第二个为默认值 即表里里的VALUE 第三个为MAP对像可自由附加属性比如验证 样式等信息 data-URL为数据异步获取值
     #end
 
     #@elementItem("Ajax数据返回：")
-        #tSelect2Ajax("sel2" "2" call("link","/data/select2ajax.pagelet") {"placeholder":"查询数据","dataId":"sid","dataText":"stext","fixDataVal":"1","datatype":"*","multiple":"multiple"} {"fixData":"pid","fix2":"ajian"})
+        #tSelect2Ajax("sel2" "2" "/data/select2ajax.pagelet" {"placeholder":"查询数据","dataId":"sid","dataText":"stext","fixDataVal":"1","datatype":"*","multiple":"multiple"} {"fixData":"pid","fix2":"ajian"})
         #@tSelect2Fix("sel2")
             #@aModal("#myModal" "新增" "600" "" "r" "/page/icon.pagelet")新增#end<a href="#">全部</a>
         #end
     #end
 
     #@elementItem("Ajax数据返回：")
-        #tSelect2Ajax("sel21" "2" call("link","/data/select2ajax.pagelet") {"placeholder":"查询数据","dataId":"sid","dataText":"stext","fixDataVal":"1","datatype":"*"} {"fixData":"pid","fix2":"ajian"})
+        #tSelect2Ajax("sel21" "2" "/data/select2ajax.pagelet" {"placeholder":"查询数据","dataId":"sid","dataText":"stext","fixDataVal":"1","datatype":"*"} {"fixData":"pid","fix2":"ajian"})
         #@tSelect2Fix("sel21")
             #@aModal("#myModal" "新增" "600" "" "r" "/page/icon.pagelet")新增#end<a href="#">全部</a>
         #end

@@ -24,7 +24,7 @@ gantg = new JSGantt.GanttChart('gantg',$gantt.get(0), 'day');
 		$(this).empty();
 		gantg.clearList();
 		$.ajax({
-			url:"${dataUrl}",
+			url:"#link(dataUrl)",
 			dataType:"json",
 			data:{action:"getdata"},
 			success:function(data){
@@ -32,7 +32,7 @@ gantg = new JSGantt.GanttChart('gantg',$gantt.get(0), 'day');
 				for(var i=0,l=data.length;i<l;i++){
 					_id=data[i].idName?data[i].idName:_gantTaskId;
 					data[i].pGroup=data[i].pGroup=="0"?0:data[i].pGroup;
-					gantg.AddTaskItem(new JSGantt.TaskItem(data[i].pID, data[i].pName, data[i].pStart, data[i].pEnd, colorArr[data[i].pColor], "${doURL}?"+_id+"="+data[i].pID,0,data[i].pRes,data[i].pComp,data[i].pGroup,data[i].pParent,data[i].pCaption));
+					gantg.AddTaskItem(new JSGantt.TaskItem(data[i].pID, data[i].pName, data[i].pStart, data[i].pEnd, colorArr[data[i].pColor], "#link(doURL)?"+_id+"="+data[i].pID,0,data[i].pRes,data[i].pComp,data[i].pGroup,data[i].pParent,data[i].pCaption));
 				}
 				gantg.Draw();
 				gantg.DrawDependencies();

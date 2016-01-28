@@ -14,7 +14,7 @@
 
 #macro softConMenu(softConMenuId softConMenuIcon softConMenuWidth softConMenuHeight)
 	<li>
-		<a#if(softConMenuId) id="${softConMenuId}"#end href="#"><img src="${TINY_CONTEXT_PATH}${softConMenuIcon}" width="${softConMenuWidth?:150}" height="${softConMenuHeight?:150}"/>
+		<a#if(softConMenuId) id="${softConMenuId}"#end href="#"><img src="#link(softConMenuIcon)" width="${softConMenuWidth?:150}" height="${softConMenuHeight?:150}"/>
 		#bodyContent
 		</a>
 	</li>

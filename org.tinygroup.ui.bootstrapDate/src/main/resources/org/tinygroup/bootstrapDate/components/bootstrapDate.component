@@ -1,7 +1,7 @@
 #macro dateInput(name value dateFromat mapInfo)#set(dateputId=mapInfo?.id?:fmt("dateput%d",rand()))
 	<div class="input-group">
 		<span class="input-group-addon">#faIcon("calendar")</span>
-		<input type="text" name="${name}" class="form-control #getMapVal("class",mapInfo)" id="${dateputId}" value="${value}" #mapToHtml(mapInfo)/>
+		<input type="text" name="${name}" class="form-control ${mapInfo?.get("class")}" id="${dateputId}" value="${value}" #mapToHtml(mapInfo)/>
 	</div>
 	<script type="text/javascript">
 		$(function(){

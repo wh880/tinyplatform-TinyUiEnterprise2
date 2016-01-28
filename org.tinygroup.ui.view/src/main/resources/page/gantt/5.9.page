@@ -1,1 +1,1 @@
-#gantt("GanttChartDIV" call("link","/data/gantdata.pagelet") call("link","/page/form/4.6.pagelet"))
+#gantt("GanttChartDIV" "/data/gantdata.pagelet" "/page/form/4.6.pagelet")

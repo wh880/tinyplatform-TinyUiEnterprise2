@@ -39,7 +39,7 @@
 *#
 
 #macro tForm(formname action method formMapInfo)#set(fromId=(formMapInfo?.id)?:fmt("from%d",rand()))
-<form name="${formname}" action="${action}" id="${fromId}" method="${method?:"post"}" class="form form-horizontal #getMapVal("class",formMapInfo)" #mapToHtml(formMapInfo)>
+<form name="${formname}" action="#link(action)" id="${fromId}" method="${method?:"post"}" class="form form-horizontal ${formMapInfo?.get("class")}" #mapToHtml(formMapInfo)>
 #bodyContent
 </form>
 <script type="text/javascript">
@@ -162,7 +162,7 @@ $(function(){
 
 *#
 #macro tInput(inputName value mapInfo)
-	<input type="text" name="${inputName}" value="${value}" class="form-control #getMapVal("class",mapInfo)" #mapToHtml(mapInfo)/>
+	<input type="text" name="${inputName}" value="${value}" class="form-control ${mapInfo?.get("class")}" #mapToHtml(mapInfo)/>
 #end
 
 #*
@@ -174,7 +174,7 @@ $(function(){
 
 *#
 #macro tPassInput(inputName value mapInfo)
-	<input type="password" name="${inputName}" value="${value}" class="form-control #getMapVal("class",mapInfo)" #mapToHtml(mapInfo)/>
+	<input type="password" name="${inputName}" value="${value}" class="form-control ${mapInfo?.get("class")}" #mapToHtml(mapInfo)/>
 #end
 
 #*
@@ -186,7 +186,7 @@ $(function(){
 
 *#
 #macro tSubmitInput(inputName value mapInfo)
-	<input type="submit" name="${inputName}" value="${value}" class="form-control #getMapVal("class",mapInfo)" #mapToHtml(mapInfo)/>
+	<input type="submit" name="${inputName}" value="${value}" class="form-control ${mapInfo?.get("class")}" #mapToHtml(mapInfo)/>
 #end
 
 #*
@@ -198,7 +198,7 @@ $(function(){
 
 *#
 #macro tButtonInput(inputName value mapInfo)
-	<input type="button" name="${inputName}" value="${value}" class="form-control #getMapVal("class",mapInfo)" #mapToHtml(mapInfo)/>
+	<input type="button" name="${inputName}" value="${value}" class="form-control ${mapInfo?.get("class")}" #mapToHtml(mapInfo)/>
 #end
 
 #*
@@ -210,7 +210,7 @@ $(function(){
 
 *#
 #macro tHiddenInput(inputName value mapInfo)
-	<input type="hidden" name="${inputName}" value="${value}" class="form-control #getMapVal("class",mapInfo)" #mapToHtml(mapInfo)/>
+	<input type="hidden" name="${inputName}" value="${value}" class="form-control ${mapInfo?.get("class")}" #mapToHtml(mapInfo)/>
 #end
 #*
 * tSelect 对应标标签select
@@ -221,7 +221,7 @@ $(function(){
 
 *#
 #macro tSelect(name value mapInfo)
-	<select name="${name}" class="form-control #getMapVal("class",mapInfo)" value="${value}" #mapToHtml(mapInfo)>
+	<select name="${name}" class="form-control ${mapInfo?.get("class")}" value="${value}" #mapToHtml(mapInfo)>
 		#bodyContent
 	</select>
 #end
@@ -234,7 +234,7 @@ $(function(){
 
 *#
 #*#macro tSelect2(name value mapInfo)
-	<select name="${name}" class="form-control select2 #getMapVal("class",mapInfo)" value="${value}" #mapToHtml(mapInfo)>
+	<select name="${name}" class="form-control select2 ${mapInfo?.get("class")}" value="${value}" #mapToHtml(mapInfo)>
 		#bodyContent
 	</select>
 #end*#
@@ -256,7 +256,7 @@ $(function(){
 
 *#
 #macro tTextarea(name mapInfo)
-	<textarea class="form-control #getMapVal("class",mapInfo)" name="${name}" #mapToHtml(mapInfo)>#bodyContent</textarea>
+	<textarea class="form-control ${mapInfo?.get("class")}" name="${name}" #mapToHtml(mapInfo)>#bodyContent</textarea>
 #end
 
 #*
@@ -270,7 +270,7 @@ $(function(){
 #macro tUploadInput(name value mapInfo)#set(uploadid=fmt("upload%d",rand()))
 <div class="input-group">
 #*<span class="input-group-addon input-file-preview hide" id="preview${fid}">预览</span>*#
-    <input type="text" id="${uploadid}" name="${name}" class="form-control #getMapVal("class",mapInfo)" #mapToHtml(mapInfo)>
+    <input type="text" id="${uploadid}" name="${name}" class="form-control ${mapInfo?.get("class")}" #mapToHtml(mapInfo)>
     <span id="${uploadid}-wrap"><input type="file" class="input-file" name="upfile" id="${uploadid}-file"></span>
     <span class="input-group-addon">#faIcon("cloud-upload") 浏览</span>
 </div>
@@ -278,14 +278,13 @@ $(function(){
     $(function(){
         $("#${uploadid}-wrap").on("change","#${uploadid}-file",function(){
             $.ajaxFileUpload({
-                url: '${TINY_CONTEXT_PATH}${UPLOAD_ACTION_URL}',
+                url: '#link(UPLOAD_ACTION_URL)',
                 secureuri: false,
                 fileElementId: "${uploadid}-file",
                 dataType: 'json',
                 success: function (data, status) {
                     if(data.state=="SUCCESS"){
                         $("#${uploadid}").val(data.url);
-                        //$("#showimg${uploadid}").html("<img src='${TINY_CONTEXT_PATH}"+data.url+"' width='100'>");
                     }
                 }
             });
@@ -373,12 +372,12 @@ $(function(){
 #macro tUploadInputMini(name value mapInfo)
 	#set(uploadid=fmt("upload%d",rand()))
 	<input type="hidden" class="form-control" value="${value}" name="${name}" id="${uploadid}" #mapToHtml(mapInfo)><span class="btn btn-primary upload-btn" id="${uploadid}-wrap"><i class="fa fa fa-cloud-upload"></i> 浏览文件 <input type="file" class="input-file" name="upfile" id="${uploadid}-file"></span>
-	<div id="showimg${uploadid}">#if(value)<img src="${TINY_CONTEXT_PATH}${value}" width="100" alt="" />#end</div>
+	<div id="showimg${uploadid}">#if(value)<img src="#link(value)" width="100" alt="" />#end</div>
 	<script type="text/javascript">
 	$(function(){
 		$("#${uploadid}-wrap").on("change","#${uploadid}-file",function(){
 			$.ajaxFileUpload({
-				url: '${TINY_CONTEXT_PATH}${UPLOAD_ACTION_URL}',
+				url: '#link(UPLOAD_ACTION_URL)',
 				secureuri: false,
 				fileElementId: "${uploadid}-file",
 				dataType: 'json',

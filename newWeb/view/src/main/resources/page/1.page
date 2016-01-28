@@ -1,32 +1,37 @@
-<script>
 
-    layer.config({shift: 5,icon: 2});
-    $(function() {
-        /*layer.open({
-            content: '测试回调',
-            /!*yes: function (index, layero) {
-                //do something
-                layer.close(index); //如果设定了yes回调，需进行手工关闭
-            }*!/
+#@lAjax("AJAX加载" "/page/tinyForm.pagelet")#@tButton()AJAX加载#end#end
+
+
+<script>
+    /*layer.open({
+            content: '测试AJAX',
+            yes: function (index, layero) {
+                $.get("/newWeb/page/tinyForm.pagelet",function(str){
+                    layer.closeAll();
+                    layer.open({
+                        type:1,
+                        title:"ajax",
+                        content: str,
+                        maxmin:true,
+                        area: ['80%', '70%'],
+                        yes: function (index, layero) {
+                            layer.confirm('确定关闭？', function (index) {
+                                layer.closeAll();
+                                layer.prompt({title: '输入信息', formType: 1}, function(text){
+                                    layer.closeAll();
+                                    layer.msg('确定要删除该记录？', {
+                                        icon: 1,
+                                        time: 2000, //2秒关闭（如果不配置，默认是3秒）
+                                        function(){
+                                            layer.msg('只想简单的提示',{icon:1})
+                                        }
+                                    });
+                                });
+                            });
+                        }
+                    });
+                });
+
+            }
         });*/
-        /*layer.confirm('确定要删除该记录？', function (index) {
-            layer.close(index);
-        });*/
-        /*layer.msg('确定要删除该记录？', {
-            icon: 1,
-            time: 2000 //2秒关闭（如果不配置，默认是3秒）
-        });*/
-        layer.msg('只想简单的提示',{icon:1})
-       /* $.get("/newWeb/page/tinyForm.page",function(str){
-            layer.open({
-                content: str,
-                yes: function (index, layero) {
-                    //layer.close(index);
-                }
-            });
-        });*/
-        /*layer.prompt({title: '请填写名称', formType: 1}, function(text){
-            console.log("test");
-        });*/
-    })
 </script>

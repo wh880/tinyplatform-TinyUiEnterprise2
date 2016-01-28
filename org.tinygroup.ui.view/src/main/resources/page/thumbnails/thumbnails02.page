@@ -2,7 +2,7 @@
     <div class="col-xs-6 col-md-3 col-2 whoInfo-box">
         <div class="who-info">
             <div class="thumbnail pic-avatar">
-                <img src="${TINY_CONTEXT_PATH}/img/default.jpg" alt="我是×××">
+                <img src="#link("/img/default.jpg")" alt="我是×××">
             </div>
             <div class="caption">
                 <h4>
@@ -20,7 +20,7 @@
     <div class="col-xs-6 col-md-3 col-2 whoInfo-box">
         <div class="who-info">
             <div class="thumbnail pic-avatar">
-                <img src="${TINY_CONTEXT_PATH}/img/default.jpg" alt="我是×××">
+                <img src="#link("/img/default.jpg")" alt="我是×××">
             </div>
             <div class="caption">
                 <h4>
@@ -38,7 +38,7 @@
     <div class="col-xs-6 col-md-3 col-2 whoInfo-box">
         <div class="who-info">
             <div class="thumbnail pic-avatar">
-                <img src="${TINY_CONTEXT_PATH}/img/default.jpg" alt="我是×××">
+                <img src="#link("/img/default.jpg")" alt="我是×××">
             </div>
             <div class="caption">
                 <h4>
@@ -56,7 +56,7 @@
     <div class="col-xs-6 col-md-3 col-2 whoInfo-box">
         <div class="who-info">
             <div class="thumbnail pic-avatar">
-                <img src="${TINY_CONTEXT_PATH}/img/default.jpg" alt="我是×××">
+                <img src="#link("/img/default.jpg")" alt="我是×××">
             </div>
             <div class="caption">
                 <h4>
@@ -74,7 +74,7 @@
     <div class="col-xs-6 col-md-3 col-2 whoInfo-box">
         <div class="who-info">
             <div class="thumbnail pic-avatar">
-                <img src="${TINY_CONTEXT_PATH}/img/default.jpg" alt="我是×××">
+                <img src="#link("/img/default.jpg")" alt="我是×××">
             </div>
             <div class="caption">
                 <h4>
@@ -92,7 +92,7 @@
     <div class="col-xs-6 col-md-3 col-2 whoInfo-box">
         <div class="who-info">
             <div class="thumbnail pic-avatar">
-                <img src="${TINY_CONTEXT_PATH}/img/default.jpg" alt="我是×××">
+                <img src="#link("/img/default.jpg")" alt="我是×××">
             </div>
             <div class="caption">
                 <h4>

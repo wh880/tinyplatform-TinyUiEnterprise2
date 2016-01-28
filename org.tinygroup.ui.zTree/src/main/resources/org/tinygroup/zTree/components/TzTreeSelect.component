@@ -43,11 +43,11 @@ $(function(){
 	var $treeRap=$("#${sid}-content");
 	var $input=$("#${sid}");
 	var $inputV=$("#${sid}-input");
-	#set(dataurl=call("getMapVal","data-URL",mapInfo))
+    #set(dataurl=mapInfo?.get("data-URL"))
 	#if(dataurl)
 	$.ajax({
 		type: "GET",
-		url: "${dataurl}",
+		url: "#link(dataurl)",
 		dataType: "json",
 		success: function(data) {
 			zNodes=data;
@@ -201,7 +201,7 @@ zNodes${tempid}.push({id:${id}, pId:${pid}, name:"${name}"});
 *#
 #macro zTreeList(dataurl optionMap)
 	#set(ztreeid=optionMap?.id?:fmt("zid%d",rand()))
-<ul id="${ztreeid}" class="ztree leftztree" data-url="${dataurl}"></ul>
+<ul id="${ztreeid}" class="ztree leftztree" data-url="#link(dataurl)"></ul>
 <script type="text/javascript">
     <!--
     $(function(){
@@ -579,7 +579,7 @@ zNodes${tempid}.push({id:${id}, pId:${pid}, name:"${name}"});
 * @param url ACTION 地址
 *#
 #macro zTreeSetLinkUrl(url)
-	setLinkUrl("${url}")
+	setLinkUrl("#link(url)")
 #end
 #*
 * zTreeSetAddUrl 设置添加时ACTION
@@ -587,7 +587,7 @@ zNodes${tempid}.push({id:${id}, pId:${pid}, name:"${name}"});
 * @param url ACTION 地址
 *#
 #macro zTreeSetAddUrl(url)
-	setAddUrl("${url}")
+	setAddUrl("#link(url)")
 #end
 #*
 * zTreeSetEditUrl 设置编辑时ACTION
@@ -595,7 +595,7 @@ zNodes${tempid}.push({id:${id}, pId:${pid}, name:"${name}"});
 * @param url ACTION 地址
 *#
 #macro zTreeSetEditUrl(url)
-	setEditUrl("${url}")
+	setEditUrl("#link(url)")
 #end
 #*
 * zTreeSetDelUrl 设置删除时ACTION
@@ -603,7 +603,7 @@ zNodes${tempid}.push({id:${id}, pId:${pid}, name:"${name}"});
 * @param url ACTION 地址
 *#
 #macro zTreeSetDelUrl(url)
-	setDelUrl("${url}")
+	setDelUrl("#link(url)")
 #end
 #*
 * setzTreeValMap  map 遍历

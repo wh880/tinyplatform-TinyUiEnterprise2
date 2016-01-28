@@ -10,7 +10,7 @@
 	#end
 	<div class="tinyheaderTools form-inline">
 		#setTinyTablePageSize([10,20,30]) ##每页数据条数设置
-		#@mulOperation("delall" call("link","/data/action.pagelet") {"ddd":"eee","name":"test"})<a href="javascript:;" class="btn btn-danger btn-sm">批量删除</a>#end
+		#@mulOperation("delall" "/data/action.pagelet" {"ddd":"eee","name":"test"})<a href="javascript:;" class="btn btn-danger btn-sm">批量删除</a>#end
 		<a href="#" class="btn btn-default btn-sm">产品</a>
 		<a href="#" class="btn btn-success btn-sm">Bug</a>
 		<a href="#" class="btn btn-primary btn-sm">工程</a>
@@ -19,7 +19,7 @@
 		<a href="#" class="btn btn-warning btn-sm">相关</a>
     </div>
 
-	#@tinyTableContent(call("link","/data/tinytabledata.page")) ##取数据地址 总数据
+	#@tinyTableContent("/data/tinytabledata.page") ##取数据地址 总数据
 		#@thead()
 			#@tr()  ##class 为sorting 表票可排序 为sorting_desc(正序为为sorting_asc) 为当前倒序
 				#@tinyTh()<input type="checkbox" name="allck" value="">#end
@@ -49,7 +49,7 @@
 			用户名:#tInput("username" username {"size":"10","class":"input-sm"}) 城市:#tInput("city" city {"size":"10","class":"input-sm"}) <button class="btn btn-primary btn-sm">搜索</button>
 		</div>
 	#end
-	#@tinyTableContent(call("link","/data/tinytabledata.page?"+tinyRequestQueryString) 52) ##取数据地址 总数据
+	#@tinyTableContent("/data/tinytabledata.page?"+tinyRequestQueryString 52) ##取数据地址 总数据
 		#@thead()
 			#@tr()  ##class 为sorting 表票可排序 为sorting_desc(正序为为sorting_asc) 为当前倒序
 				#@tinyTh()<input type="checkbox" name="allck" value="">#end
