@@ -1,0 +1,46 @@
+#@tForm("thisform" call("link","/data/Validform_post.html") "post" {"class":""})
+    #@elementItem("邮箱：")
+        #tInput("email" ""{"placeholder":"@","datatype":"e","nullmsg":"请输入邮箱！","id":"email","class":"input-text"})
+    #end
+    #@elementItem("身份证：")
+        #tInput("username" ""{"placeholder":"身份证号","datatype":"/(^[0-9]{15}$)|(^[0-9]{17}[0-9Xx]$)/","nullmsg":"身份证号不能为空！"})
+    #end
+#end
+<script type="text/javascript">
+    $(function () {
+        $("form[name=thisform").Validform({
+            tiptype: function (msg, o, cssctl) {
+                var objtip = $(o.obj).closest(".form-group").children(".valid-msg");
+                cssctl(objtip, o.type);
+                objtip.text(msg);
+            },
+            beforeCheck: function (curform) {
+                //在表单提交执行验证之前执行的函数，curform参数是当前表单对象。
+                //这里明确return false的话将不会继续执行验证操作;
+            },
+            beforeSubmit: function (curform) {
+                $(curform).ajaxSubmit({
+                    dataType: "json",
+                    success: function (data) {
+                        if (data.status == "y") {
+                            layer.msg(data.info,{icon:2});
+                            $(curform).closest(".modal").trigger("close");
+                        } else {
+                            layer.msg(data.info,{icon:2});
+                        }
+                        try {
+                            $(curform).closest(".modal").trigger("close");//当弹出框时触发弹出框关闭
+                            $("table.tinytable").trigger("initnav"); ////可配合TINYTABLE 做刷新
+                        } catch (e) {
+                        ##console.log(e)
+                        }
+                    },
+                    error: function () {
+                        layer.msg(data.info,{icon:2});
+                    }
+                });
+                return false;
+            }
+        });
+    })
+</script>
