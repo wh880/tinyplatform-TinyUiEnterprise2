@@ -248,7 +248,7 @@
             <div class="heading_b"><span class="heading_text">颜色</span></div>
             <ul class="clearfix" id="topBar_style_switch">
                 #for(var:[0..14])
-                <li class="sw_tb_style_${var} ${varFor.index==1?"":"style_active"}" title="样式${var}">#faIcon("check")</li>
+                <li class="sw_tb_style_${var} ${var==0?"style_active":""}" title="topBar_style_${var}">#faIcon("check")</li>
                 #end
             </ul>
         </div>
@@ -262,7 +262,7 @@
             <div class="heading_b"><span class="heading_text">背景</span></div>
             <ul class="clearfix">
                 #for(var:[0..7])
-                <li class="sw_bg_${var} ${varFor.index==1?"":"style_active"}">#faIcon("check")</li>
+                <li class="sw_bg_${var}" title="bg_${var}">#faIcon("check")</li>
                 #end
             </ul>
             <hr/>
