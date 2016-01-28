@@ -3,5 +3,5 @@
 #macro getMapVal(htmlKey,htmlMap)#for(var:htmlMap)#break(!var?.value||!var?.key)#if(var.key==htmlKey) ${var.value}#break#{end}#{end}#{end}
 #macro mapToJson(JsonMap)#for(var:JsonMap)#break(!var||!var?.key),${var.key}:"${var.value}"#{end}#end
 #macro mapToCss(cssMap)#for(var:cssMap)#break(!var?.value||!var?.key)${var.key}:${var.value};#end#end
-#macro link(linkUrl)${(linkUrl?.startsWith("/")?TINY_CONTEXT_PATH:"")+linkUrl}#end
+#macro link(linkUrl)#if(linkUrl?.startsWith(TINY_CONTEXT_PATH))${linkUrl}#{else}${(linkUrl?.startsWith("/")?TINY_CONTEXT_PATH:"")+linkUrl}#end#end
 
