@@ -3,7 +3,7 @@
     .error-box ul li{text-align:center;}
     .title-infos{font-size:116px;color:#3499db}
     .content-infos{color:#888;font-size:15px;}
-    .btn-back{margin-top:30px;background:#056dae;color:#fff;padding:10px 26px;font-size:14px;text-decoration:none;border-radius:3px;display:inline-block}
+    .btn-back{margin-top:30px;background:#056dae;color:#fff;padding:10px 25px;font-size:15px;text-decoration:none;border-radius:3px;display:inline-block}
     .btn-back:hover{background:#0775ba;color:#fff;text-decoration: none}
 </style>
 
