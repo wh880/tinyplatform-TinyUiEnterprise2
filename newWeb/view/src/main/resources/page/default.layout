@@ -191,7 +191,8 @@
                         <li><a href="#link("/page/table-item.page")">NEW表格</a></li>
                         <li><a href="#link("/page/list.page")">列表页面</a></li>
                         <li><a href="#link("/page/tab.page")">选项卡</a></li>
-                        <li><a href="error_404.html">404</a></li>
+                        <li><a href="../error/error_404.html">404</a></li>
+                        <li><a href="../error/error_500.html">500</a></li>
                         <li><a href="login_page.html">Login Page</a></li>
                     </ul>
                 </li>
