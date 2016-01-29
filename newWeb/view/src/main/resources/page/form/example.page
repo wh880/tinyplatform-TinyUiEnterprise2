@@ -1,5 +1,59 @@
 #*<style type="text/css">.form-horizontal .form-group{margin-left:0;margin-right:0}</style>*###在小屏幕下收bootstrap样式影响
+#macro tFileInput(name value mapInfo)#set(fid=mapInfo?.id?:fmt("fid%d",rand()))
+<div class="input-group">
+    #if(mapInfo?.preview)<span class="input-group-addon input-file-preview" id="preview${fid}">预览</span>#end
+    <input type="file" id="${fid}" name="${name}" class="input-file">
+    <input id="${fid}_input" name="${name}_name"  placeholder=""  value="${value}" type="text" class="form-control" #mapToHtml(mapInfo)>
+    <span class="input-group-addon">#faIcon("cloud-upload") 浏览</span>
+</div>
+<script type="text/javascript">
+    $(function(){
+        $("#${fid}").on("change",function(){
+            //console.log($(this).prev("input"));
+            $("#${fid}_input").val($(this).val())
+            //$("#${fid}_input").val($(this).val());
+        });#if(mapInfo?.preview)
+            $("#preview${fid}").on("click",function(){
+                var $file=$("#${fid}");
+                var allowExtention=".jpg,.bmp,.gif,.png";//允许上传文件的后缀名
+                var fileObj=document.getElementById("${fid}");
+                var extention=fileObj.value.substring(fileObj.value.lastIndexOf(".")+1).toLowerCase();
+                var browserVersion= window.navigator.userAgent.toUpperCase();
+                if(allowExtention.indexOf(extention)>-1){
+                    if(fileObj.files){//HTML5实现预览，兼容chrome、火狐7+等
+                        if(window.FileReader){
+                            var reader = new FileReader();
+                            reader.onload = function(e){
+                                layer.open({
+                                    title:"预览",
+                                    type:1,
+                                    content: "<div style='text-align:center'><img src='"+e.target.result+"'style='max-width:450px'></div>",
 
+                                });
+                            }
+                            try{
+                                reader.readAsDataURL(fileObj.files[0]);
+                            }catch(e){
+                                layer.msg("地址出错或浏览器不支持");
+                            }
+                        }else if(browserVersion.indexOf("SAFARI")>-1){
+                            layer.msg("不支持Safari6.0以下浏览器的图片预览!");
+                        }
+                    }else{
+                        layer.open({
+                            title:"预览",
+                            type:1,
+                            content: "<div style='text-align:center'><img src='"+e.target.result+"' style='max-width:450px'></div>",
+                            area: ['500px','500px'],
+                        });
+                    }
+                }else{
+                    layer.msg("图片类型有误");
+                }
+            });#end
+    })
+</script>
+#end
 
 
 #@tForm("thisform" "/data/Validform_post.html" "post" {"class":""})

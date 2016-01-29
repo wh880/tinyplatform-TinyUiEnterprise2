@@ -2,7 +2,7 @@
     <ui-component name="tiny.ui.widget" dependencies="tiny.ui.jqueryui">
 		<css-resource>
 		  <!--/static/org/tinygroup/widget/css/ui-production.min.css,-->
-		  /static/org/tinygroup/widget/css/widgets.min.css
+		  /static/org/tinygroup/widget/css/widgets.css
 		</css-resource>
 		<js-resource>
 		  /static/org/tinygroup/widget/js/jarvis.widget.min.js,

@@ -302,7 +302,7 @@ zNodes${tempid}.push({id:${id}, pId:${pid}, name:"${name}"});
         function beforeEditName(treeId, treeNode) {
 
             if(editUrl){
-                layer.prompt({title: '修改名称',val:treeNode.name, formType: 2}, function(text){
+                layer.prompt({title: '修改名称',value:treeNode.name, formType: 2}, function(text){
                     var data={rand:Math.random()};
                     data[dataformat.id]=treeNode.id;
                     data[dataformat.name]=text;

@@ -324,15 +324,11 @@ $(function(){
                         if(window.FileReader){
                             var reader = new FileReader();
                             reader.onload = function(e){
-                                $.layer({
-                                    shade: [0],
+                                layer.open({
+                                    title:"预览",
+                                    type:1,
+                                    content: "<div style='text-align:center'><img src='"+e.target.result+"'style='mix-width:400px'></div>",
                                     area: ['500px','500px'],
-                                    dialog: {
-                                        title:"预览",
-                                        msg: "<div style='text-align:center'><img src='"+e.target.result+"' width='350' ></div>",
-                                        btns: 1,
-                                        type: -1
-                                    }
                                 });
                             }
                             try{
@@ -344,15 +340,11 @@ $(function(){
                             layer.msg("不支持Safari6.0以下浏览器的图片预览!");
                         }
                     }else{
-                        $.layer({
-                            shade: [0],
+                        layer.open({
+                            title:"预览",
+                            type:1,
+                            content: "<div style='text-align:center'><img src='"+e.target.result+"' style='mix-width:400px'></div>",
                             area: ['500px','500px'],
-                            dialog: {
-                                title:"预览",
-                                msg: "<div style='text-align:center'><img src='"+e.target.result+"' width='350' ></div>",
-                                btns: 1,
-                                type: -1
-                            }
                         });
                     }
                 }else{

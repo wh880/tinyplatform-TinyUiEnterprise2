@@ -6,16 +6,12 @@
         <div class="widget-toolbar">
             <div class="btn-group">
                 <button class="btn dropdown-toggle btn-xs btn-default" data-toggle="dropdown">
-                    下拉&nbsp;#faIcon("caret-down")</button>
-                <ul class="dropdown-menu pull-right js-status-update">
-                    <li><a href="javascript:void(0);">#faIcon("circle")&nbsp;下拉一</a>
-                    </li>
-                    <li><a href="javascript:void(0);"><i
-                            class="fa fa-circle"></i>&nbsp;下拉二</a>
-                    </li>
-                    <li><a href="javascript:void(0);"><i
-                            class="fa fa-circle fa-circle"></i>&nbsp;下拉三</a></li>
-                </ul>
+                    状态 #faIcon("caret-down") </button>
+                    <ul class="dropdown-menu pull-right js-status-update">
+                        <li><a href="javascript:void(0);">#faIcon("circle btn-danger") 未开始</a></li>
+                        <li><a href="javascript:void(0);">#faIcon("circle btn-info") 进行中</a></li>
+                        <li><a href="javascript:void(0);">#faIcon("circle btn-success") 已结束</a></li>
+                    </ul>
             </div>
         </div>
         #end

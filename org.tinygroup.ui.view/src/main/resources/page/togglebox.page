@@ -38,7 +38,7 @@
 		#@settoggleLeftTitle()网站建设一期#end
 		#@settoggleLeftBody()
 		##include("/page/typography/1.23.page")
-			#@zTreeList("/data/ztreeData.pagelet" {"id":"demoLeft"})
+			#@zTreeList("/data/ztreeData.pagelet" {"id":"demoLeft","linkAjax":true})
 				#setzTreeValMap({"id":"modelid","name":"truename","pid":"parentid"}) ##key值为固定
 				#zTreeSetLinkUrl("/page/togglebox.page" )
 				#zTreeSetAddUrl("/page/togglebox.page")
