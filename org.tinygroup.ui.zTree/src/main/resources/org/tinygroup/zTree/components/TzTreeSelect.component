@@ -300,7 +300,6 @@ zNodes${tempid}.push({id:${id}, pId:${pid}, name:"${name}"});
             refreshdata(callback);
         })
         function beforeEditName(treeId, treeNode) {
-
             if(editUrl){
                 layer.prompt({title: '修改名称',value:treeNode.name}, function(text){
                     if(!text){ layer.msg("名称不能为空") ; return false;}
@@ -329,8 +328,7 @@ zNodes${tempid}.push({id:${id}, pId:${pid}, name:"${name}"});
             }
             //className = (className === "dark" ? "":"dark");
             return false;
-        }
-        function onNodeCreated(event, treeId, treeNode){
+        }        function onNodeCreated(event, treeId, treeNode){
             var rightWidth=3;
             if(treeNode.edit) {
                 rightWidth+=35;

@@ -54,7 +54,7 @@
     <header id="main_header">
         <div class="container-fluid">
             <div class="brand_section">
-                <a href="dashboard.html"><img src="#link("/img/logo.png")" alt="" width="63" height="26"></a>
+                <a href="dashboard.html"><img src="#link("/img/logo.png")" alt="" height="35"></a>
             </div>
             <ul class="header_notifications">
                 <li class="dropdown">
@@ -144,9 +144,10 @@
                         <li><a href="#link("/page/table-item.page")">新增表格</a></li>
                         <li><a href="#link("/page/list.page")">列表页面</a></li>
                         <li><a href="#link("/page/tab.page")">选项卡页</a></li>
-                        <li><a href="../error/error_404.html">404页面</a></li>
-                        <li><a href="../error/error_500.html">500页面</a></li>
-                        <li><a href="../login/login.html">登录页面</a></li>
+                        <li>#@lAjax("404页面" "/error/error_404.html")404页面#end</li>
+                        <li>#@lAjax("500页面" "/error/error_500.html" {"loadMode":2})500页面#end</li>
+                        <li>#@lAjax("登录页面" "/login/login.html" {"loadMode":2})登录页面#end</li>
+
                     </ul>
                 </li>
                 <li class="first_level ">

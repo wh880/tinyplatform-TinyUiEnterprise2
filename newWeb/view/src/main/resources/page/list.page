@@ -1,282 +1,133 @@
 #@widgetGrid()
-    #@widgetItem(3)
-        #@widgetItemHead()
-        <span class="widget-icon">#faIcon("map-marker")</span>
-        <h2>主要任务</h2>
-        <div class="widget-toolbar">
-            <div class="btn-group">
-                <button class="btn dropdown-toggle btn-xs btn-default" data-toggle="dropdown">
-                    状态 #faIcon("caret-down") </button>
-                    <ul class="dropdown-menu pull-right js-status-update">
-                        <li><a href="javascript:void(0);">#faIcon("circle btn-danger") 未开始</a></li>
-                        <li><a href="javascript:void(0);">#faIcon("circle btn-info") 进行中</a></li>
-                        <li><a href="javascript:void(0);">#faIcon("circle btn-success") 已结束</a></li>
-                    </ul>
+    #for(var:[1..4])
+        #@widgetItem(3)
+            #@widgetItemHead()
+            <span class="widget-icon">#faIcon("map-marker")</span>
+            <h2>主要任务</h2>
+            <div class="widget-toolbar">
+                <div class="btn-group">
+                    <button class="btn dropdown-toggle btn-xs btn-default" data-toggle="dropdown">
+                        状态 #faIcon("caret-down") </button>
+                        <ul class="dropdown-menu pull-right js-status-update">
+                            <li><a href="javascript:void(0);">#faIcon("circle text-danger") 未开始</a></li>
+                            <li><a href="javascript:void(0);">#faIcon("circle text-info") 进行中</a></li>
+                            <li><a href="javascript:void(0);">#faIcon("circle text-success") 已结束</a></li>
+                        </ul>
+                </div>
             </div>
-        </div>
+            #end
+            #@widgetItemBody()
+            <div class="sortable-handle">
+                    <span class="check-box">
+                        #tCheckbox("a", {"class":"warning"})
+                    </span>
+                <div class="main-info">
+                    <div class="content-wrapper">
+                        <div class="img-circle"><img src="#link("/img/nopic.png")" alt="" width="26" height="26"></div>
+                        <div class="infos-content">
+                            这是一条已完成的任务
+                        </div>
+                    </div>
+                    <div class="info-wrapper clearfix">
+                        <span class="label label-success">#faIcon("calendar-minus-o") 2016-01-22</span>
+                    </div>
+                </div>
+            </div>
+            <div class="sortable-handle">
+                    <span class="check-box">
+                        #tCheckbox("a", {"class":"warning"})
+                    </span>
+                <div class="main-info">
+                    <div class="content-wrapper">
+                        <div class="img-circle"><img src="#link("/img/nopic.png")" alt="" width="26" height="26"></div>
+                        <div class="infos-content">
+                            这是一条已完成的任务
+                        </div>
+                    </div>
+                    <div class="info-wrapper clearfix">
+                        <span class="label label-info">#faIcon("calendar-minus-o") 2016-01-21</span>
+                    </div>
+                </div>
+            </div>
+            <div class="sortable-handle">
+                    <span class="check-box">
+                        #tCheckbox("a", {"class":"warning"})
+                    </span>
+                <div class="main-info">
+                    <div class="content-wrapper">
+                        <div class="img-circle"><img src="#link("/img/nopic.png")" alt="" width="26" height="26"></div>
+                        <div class="infos-content">
+                            这是一条已完成的任务
+                        </div>
+                    </div>
+                    <div class="info-wrapper clearfix">
+                        <span class="label label-warning">#faIcon("calendar-minus-o") 2016-01-20</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sortable-handle">
+                    <span class="check-box">
+                        #tCheckbox("a", {"class":"warning"})
+                    </span>
+                <div class="main-info">
+                    <div class="content-wrapper">
+                        <div class="img-circle"><img src="#link("/img/nopic.png")" alt="" width="26" height="26"></div>
+                        <div class="infos-content">
+                            这是一条已完成的任务
+                        </div>
+                    </div>
+                    <div class="info-wrapper clearfix">
+                        <span class="label label-warning">#faIcon("calendar-minus-o") 2016-01-20</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sortable-handle">
+                    <span class="check-box">
+                        #tCheckbox("a", {"class":"warning"})
+                    </span>
+                <div class="main-info">
+                    <div class="content-wrapper">
+                        <div class="img-circle"><img src="#link("/img/nopic.png")" alt="" width="26" height="26"></div>
+                        <div class="infos-content">
+                            这是一条已完成的任务
+                        </div>
+                    </div>
+                    <div class="info-wrapper clearfix">
+                        <span class="label label-warning">#faIcon("calendar-minus-o") 2016-01-20</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sortable-handle">
+                    <span class="check-box">
+                        #tCheckbox("a", {"class":"warning"})
+                    </span>
+                <div class="main-info">
+                    <div class="content-wrapper">
+                        <div class="img-circle"><img src="#link("/img/nopic.png")" alt="" width="26" height="26"></div>
+                        <div class="infos-content">
+                            这是一条已完成的任务
+                        </div>
+                    </div>
+                    <div class="info-wrapper clearfix">
+                        <span class="label label-warning">#faIcon("calendar-minus-o") 2016-01-20</span>
+                    </div>
+                </div>
+            </div>
+            #end
         #end
-        #@widgetItemBody()
-        <div class="sortable-handle">
-                <span class="check-box">
-                    #tCheckbox("a", {"class":"warning"})
-                </span>
-            <div class="main-info">
-                <div class="content-wrapper">
-                    <div class="img-circle"><img src="#link("/img/nopic.png")" alt="" width="26" height="26"></div>
-                    <div class="infos-content">
-                        这是一条已完成的任务
-                    </div>
-                </div>
-                <div class="info-wrapper clearfix">
-                    <span class="label label-success">#faIcon("calendar-minus-o") 2016-01-22</span>
-                </div>
-            </div>
-        </div>
-        <div class="sortable-handle">
-                <span class="check-box">
-                    #tCheckbox("a", {"class":"warning"})
-                </span>
-            <div class="main-info">
-                <div class="content-wrapper">
-                    <div class="img-circle"><img src="#link("/img/nopic.png")" alt="" width="26" height="26"></div>
-                    <div class="infos-content">
-                        这是一条已完成的任务
-                    </div>
-                </div>
-                <div class="info-wrapper clearfix">
-                    <span class="label label-info">#faIcon("calendar-minus-o") 2016-01-21</span>
-                </div>
-            </div>
-        </div>
-        <div class="sortable-handle">
-                <span class="check-box">
-                    #tCheckbox("a", {"class":"warning"})
-                </span>
-            <div class="main-info">
-                <div class="content-wrapper">
-                    <div class="img-circle"><img src="#link("/img/nopic.png")" alt="" width="26" height="26"></div>
-                    <div class="infos-content">
-                        这是一条已完成的任务
-                    </div>
-                </div>
-                <div class="info-wrapper clearfix">
-                    <span class="label label-warning">#faIcon("calendar-minus-o") 2016-01-20</span>
-                </div>
-            </div>
-        </div>
-        #end
-    #end
-    #@widgetItem(3)
-        #@widgetItemHead()
-        <span class="widget-icon">#faIcon("map-marker")</span>
-        <h2>主要任务</h2>
-        <div class="widget-toolbar">
-            <div class="btn-group">
-                <button class="btn dropdown-toggle btn-xs btn-default" data-toggle="dropdown">
-                    下拉&nbsp;#faIcon("caret-down")</button>
-                <ul class="dropdown-menu pull-right js-status-update">
-                    <li><a href="javascript:void(0);">#faIcon("circle")&nbsp;下拉一</a>
-                    </li>
-                    <li><a href="javascript:void(0);"><i
-                            class="fa fa-circle"></i>&nbsp;下拉二</a>
-                    </li>
-                    <li><a href="javascript:void(0);"><i
-                            class="fa fa-circle fa-circle"></i>&nbsp;下拉三</a></li>
-                </ul>
-            </div>
-        </div>
-        #end
-        #@widgetItemBody()
-        <div class="sortable-handle">
-                <span class="check-box">
-                    #tCheckbox("a", {"class":"warning"})
-                </span>
-            <div class="main-info">
-                <div class="content-wrapper">
-                    <div class="img-circle"><img src="#link("/img/nopic.png")" alt="" width="26" height="26"></div>
-                    <div class="infos-content">
-                        这是一条已完成的任务
-                    </div>
-                </div>
-                <div class="info-wrapper clearfix">
-                    <span class="label label-success">#faIcon("calendar-minus-o") 2016-01-22</span>
-                </div>
-            </div>
-        </div>
-        <div class="sortable-handle">
-                <span class="check-box">
-                    #tCheckbox("a", {"class":"warning"})
-                </span>
-            <div class="main-info">
-                <div class="content-wrapper">
-                    <div class="img-circle"><img src="#link("/img/nopic.png")" alt="" width="26" height="26"></div>
-                    <div class="infos-content">
-                        这是一条已完成的任务
-                    </div>
-                </div>
-                <div class="info-wrapper clearfix">
-                    <span class="label label-info">#faIcon("calendar-minus-o") 2016-01-21</span>
-                </div>
-            </div>
-        </div>
-        <div class="sortable-handle">
-                <span class="check-box">
-                    #tCheckbox("a", {"class":"warning"})
-                </span>
-            <div class="main-info">
-                <div class="content-wrapper">
-                    <div class="img-circle"><img src="#link("/img/nopic.png")" alt="" width="26" height="26"></div>
-                    <div class="infos-content">
-                        这是一条已完成的任务
-                    </div>
-                </div>
-                <div class="info-wrapper clearfix">
-                    <span class="label label-danger">#faIcon("calendar-minus-o") 2016-01-20</span>
-                </div>
-            </div>
-        </div>
-        #end
-    #end
-    #@widgetItem(3)
-        #@widgetItemHead()
-        <span class="widget-icon">#faIcon("map-marker")</span>
-        <h2>主要任务</h2>
-        <div class="widget-toolbar">
-            <div class="btn-group">
-                <button class="btn dropdown-toggle btn-xs btn-default" data-toggle="dropdown">
-                    下拉&nbsp;#faIcon("caret-down")</button>
-                <ul class="dropdown-menu pull-right js-status-update">
-                    <li><a href="javascript:void(0);">#faIcon("circle")&nbsp;下拉一</a>
-                    </li>
-                    <li><a href="javascript:void(0);"><i
-                            class="fa fa-circle"></i>&nbsp;下拉二</a>
-                    </li>
-                    <li><a href="javascript:void(0);"><i
-                            class="fa fa-circle fa-circle"></i>&nbsp;下拉三</a></li>
-                </ul>
-            </div>
-        </div>
-        #end
-        #@widgetItemBody()
-        <div class="sortable-handle">
-                <span class="check-box">
-                    #tCheckbox("a", {"class":"warning"})
-                </span>
-            <div class="main-info">
-                <div class="content-wrapper">
-                    <div class="img-circle"><img src="#link("/img/nopic.png")" alt="" width="26" height="26"></div>
-                    <div class="infos-content">
-                        这是一条已完成的任务
-                    </div>
-                </div>
-                <div class="info-wrapper clearfix">
-                    <span class="label label-success">#faIcon("calendar-minus-o") 2016-01-22</span>
-                </div>
-            </div>
-        </div>
-        <div class="sortable-handle">
-                <span class="check-box">
-                    #tCheckbox("a", {"class":"warning"})
-                </span>
-            <div class="main-info">
-                <div class="content-wrapper">
-                    <div class="img-circle"><img src="#link("/img/nopic.png")" alt="" width="26" height="26"></div>
-                    <div class="infos-content">
-                        这是一条已完成的任务
-                    </div>
-                </div>
-                <div class="info-wrapper clearfix">
-                    <span class="label label-info">#faIcon("calendar-minus-o") 2016-01-21</span>
-                </div>
-            </div>
-        </div>
-        <div class="sortable-handle">
-                <span class="check-box">
-                    #tCheckbox("a", {"class":"warning"})
-                </span>
-            <div class="main-info">
-                <div class="content-wrapper">
-                    <div class="img-circle"><img src="#link("/img/nopic.png")" alt="" width="26" height="26"></div>
-                    <div class="infos-content">
-                        这是一条已完成的任务
-                    </div>
-                </div>
-                <div class="info-wrapper clearfix">
-                    <span class="label label-warning">#faIcon("calendar-minus-o") 2016-01-20</span>
-                </div>
-            </div>
-        </div>
-        #end
-    #end
-    #@widgetItem(3)
-        #@widgetItemHead()
-        <span class="widget-icon">#faIcon("map-marker")</span>
-        <h2>主要任务</h2>
-        <div class="widget-toolbar">
-            <div class="btn-group">
-                <button class="btn dropdown-toggle btn-xs btn-default" data-toggle="dropdown">
-                    下拉&nbsp;#faIcon("caret-down")</button>
-                <ul class="dropdown-menu pull-right js-status-update">
-                    <li><a href="javascript:void(0);">#faIcon("circle")&nbsp;下拉一</a>
-                    </li>
-                    <li><a href="javascript:void(0);"><i
-                            class="fa fa-circle"></i>&nbsp;下拉二</a>
-                    </li>
-                    <li><a href="javascript:void(0);"><i
-                            class="fa fa-circle fa-circle"></i>&nbsp;下拉三</a></li>
-                </ul>
-            </div>
-        </div>
-        #end
-        #@widgetItemBody()
-        <div class="sortable-handle">
-                <span class="check-box">
-                    #tCheckbox("a", {"class":"warning"})
-                </span>
-            <div class="main-info">
-                <div class="content-wrapper">
-                    <div class="img-circle"><img src="#link("/img/nopic.png")" alt="" width="26" height="26"></div>
-                    <div class="infos-content">
-                        这是一条已完成的任务
-                    </div>
-                </div>
-                <div class="info-wrapper clearfix">
-                    <span class="label label-success">#faIcon("calendar-minus-o") 2016-01-22</span>
-                </div>
-            </div>
-        </div>
-        <div class="sortable-handle">
-                <span class="check-box">
-                    #tCheckbox("a", {"class":"warning"})
-                </span>
-            <div class="main-info">
-                <div class="content-wrapper">
-                    <div class="img-circle"><img src="#link("/img/nopic.png")" alt="" width="26" height="26"></div>
-                    <div class="infos-content">
-                        这是一条已完成的任务
-                    </div>
-                </div>
-                <div class="info-wrapper clearfix">
-                    <span class="label label-info">#faIcon("calendar-minus-o") 2016-01-21</span>
-                </div>
-            </div>
-        </div>
-        <div class="sortable-handle">
-                <span class="check-box">
-                    #tCheckbox("a", {"class":"warning"})
-                </span>
-            <div class="main-info">
-                <div class="content-wrapper">
-                    <div class="img-circle"><img src="#link("/img/nopic.png")" alt="" width="26" height="26"></div>
-                    <div class="infos-content">
-                        这是一条已完成的任务
-                    </div>
-                </div>
-                <div class="info-wrapper clearfix">
-                    <span class="label label-danger">#faIcon("calendar-minus-o") 2016-01-20</span>
-                </div>
-            </div>
-        </div>
-        #end
+
     #end
 #end
+
+<script>
+    $(function(){
+        $('.col-lg-3 .widget-body').mCustomScrollbar({
+            set_height:'260px'
+        });
+
+    })
+
+</script>
