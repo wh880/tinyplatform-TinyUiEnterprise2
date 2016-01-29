@@ -706,7 +706,7 @@
 				//msgobj.find(".iframe").css("height",msgobj.outerHeight());
 				//msgobj.show();
 				//setCenter(msgobj,100);
-				if(msg){layer.msg(msg,2,-1);}
+				if(msg){layer.msg(msg,{icon:2});}
 			}
 
 			if(type==2 && o.obj){
@@ -1327,7 +1327,7 @@
 		msg= $.trim(msg);
 		if(!msg) return false;
 		//creatMsgbox();
-		layer.msg(msg,2,-1);
+		layer.msg(msg,{icon:2});
 		//Validform.util.showmsg.call(win,msg,1,{});
 	};
 
