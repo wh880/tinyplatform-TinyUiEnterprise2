@@ -303,6 +303,7 @@ zNodes${tempid}.push({id:${id}, pId:${pid}, name:"${name}"});
 
             if(editUrl){
                 layer.prompt({title: '修改名称',value:treeNode.name}, function(text){
+                    if(!text){ layer.msg("名称不能为空") ; return false;}
                     var data={rand:Math.random()};
                     data[dataformat.id]=treeNode.id;
                     data[dataformat.name]=text;
@@ -435,9 +436,11 @@ zNodes${tempid}.push({id:${id}, pId:${pid}, name:"${name}"});
             if (btn) btn.bind("click", function(){
                 if(addUrl){
                     layer.prompt({title: '请填写名称'}, function(text){
+                        if(!text){ layer.msg("名称不能为空") ; return false;}
                         var data={rand:Math.random()};
                         data[dataformat.name]=text;
                         data[dataformat.pid]=treeNode.id=="allcontent"?0:treeNode.id;
+
                         if(treeNode.id=="allcontent") data[dataformat.pid]=0;
                         $.ajax({
                             type: "GET",
