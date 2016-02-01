@@ -144,6 +144,7 @@
                         <li><a href="#link("/page/table-item.page")">新增表格</a></li>
                         <li><a href="#link("/page/list.page")">列表页面</a></li>
                         <li><a href="#link("/page/tab.page")">选项卡页</a></li>
+                        <li><a href="#link("/page/ok.page")">成功页面</a></li>
                         <li>#@lAjax("404页面" "/error/error_404.html")404页面#end</li>
                         <li>#@lAjax("500页面" "/error/error_500.html" {"loadMode":2})500页面#end</li>
                         <li>#@lAjax("登录页面" "/login/login.html" {"loadMode":2})登录页面#end</li>
