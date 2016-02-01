@@ -19,6 +19,7 @@
             #end
             #@widgetItemBody()
             <div class="sortable-handle t-list-item">
+
                     <span class="check-box">
                         #tCheckbox("a", {"class":"warning"})
                     </span>
@@ -26,7 +27,7 @@
                     <div class="content-wrapper">
                         <div class="img-circle"><img src="#link("/img/nopic.png")" alt="" width="26" height="26"></div>
                         <div class="infos-content">
-                            这是一条已完成的任务
+                             #@lAjax("AJAX加载" "/page/tinyForm.pagelet")这是一条已完成的任务#end
                         </div>
                     </div>
                     <div class="info-wrapper clearfix">
