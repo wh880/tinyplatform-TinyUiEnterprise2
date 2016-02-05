@@ -14,7 +14,7 @@ var zNodes${tempid} =[];
 <input id="${sid}-input" name="${name}" type="hidden" value="${value}" #mapToHtml(mapInfo)/>
 <div class="hide" id="${sid}-rap">
 <div id="${sid}-content" class="tree-sel-content t-menu-content hide">
-<ul id="ztree${sid}" class="ztree">
+<ul id="ztree${sid}" class="fa-ztree">
 </ul>
 <div class="hide" id="${sid}-msg">暂无信息</div>
 <div class="fix-part" style="padding:0 5px">#bodyContent</div>
@@ -201,7 +201,7 @@ zNodes${tempid}.push({id:${id}, pId:${pid}, name:"${name}"});
 *#
 #macro zTreeList(dataurl optionMap)
 	#set(ztreeid=optionMap?.id?:fmt("zid%d",rand()))
-<ul id="${ztreeid}" class="ztree leftztree" data-url="#link(dataurl)"></ul>
+<ul id="${ztreeid}" class="fa-ztree left-ztree" data-url="#link(dataurl)"></ul>
 <script type="text/javascript">
     <!--
     $(function(){

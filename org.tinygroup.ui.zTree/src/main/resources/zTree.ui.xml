@@ -1,7 +1,8 @@
 <ui-components>
     <ui-component name="tiny.ui.ztree" dependencies="tiny.ui.base">
 		<css-resource>
-			/static/org/tinygroup/zTree/css/zTreeStyle/zTreeStyle.css
+			<!--/static/org/tinygroup/zTree/css/zTreeStyle/zTreeStyle.css-->
+			/static/org/tinygroup/zTree/css/awesomeStyle/awesome.css
 		</css-resource>
 		<js-resource>
 			/static/org/tinygroup/zTree/js/jquery.ztree.core-3.5.js,

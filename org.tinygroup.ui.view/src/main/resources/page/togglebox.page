@@ -2,18 +2,16 @@
 
 #set(tinytableid="table-ss2")
 <div style="background:#f1f1f1;line-height:30px;padding:2px 10px;">
-#*
 #@navZtree()
 	#@navZtreeNav()<span>工程 </span>#faIcon("caret-down")#end
 	#@navZtreeBody({"style":"top:30px;left:-10px"})
-		#@treeSelect("ajian" "1" {"class":"input-text blueline","data-URL":"/data/ztreeData.pagelet"})
+		#@treeSelect("ajian" "1" {"class":"input-text ","data-URL":"/data/ztreeData.pagelet"})
 			#@aModal("#myModal" "增加" "600" "500" "r" "/page/form/4.6.pagelet")增加#end<a href="#link("/page/")">全部</a>
 		#end
 	#end
 #end
-*#
 
-#@navSelect2("sleProject" "sleProject")
+#*#@navSelect2("sleProject" "sleProject")
 	#@navSelect2Nav()<span>请选择项目</span><span class="caret"></span>#end
 	#@navSelect2Body({"style":"top:30px;left:-10px"})
 		#@navSelect2Data()
@@ -27,7 +25,7 @@
 			<a href="#">#faIcon("plus-sign")添加项目</a>
 		#end
 	#end
-#end
+#end*#
 
     工程 项目 规划 <span id="showsearchmore">#faIcon("search")搜索</span>
 </div>
