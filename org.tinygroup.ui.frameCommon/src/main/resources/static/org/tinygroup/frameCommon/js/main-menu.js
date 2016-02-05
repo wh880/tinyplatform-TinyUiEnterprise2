@@ -330,11 +330,11 @@
     $mm_nav.find('> .mm-dropdown > ul').addClass('mmc-dropdown-delay animated');
     $mm_nav.find('> li > a > .mm-text').addClass('mmc-dropdown-delay animated fadeIn');
     $mm.find('.menu-content').addClass('animated fadeIn');
-    if (elHasClass(d_body, 'main-menu-right') || (elHasClass(d_body, 'right-to-left') && !elHasClass(d_body, 'main-menu-right'))) {
+    /*if (elHasClass(d_body, 'main-menu-right') || (elHasClass(d_body, 'right-to-left') && !elHasClass(d_body, 'main-menu-right'))) {
       $mm_nav.find('> .mm-dropdown > ul').addClass('fadeInRight');
     } else {
       $mm_nav.find('> .mm-dropdown > ul').addClass('fadeInLeft');
-    }
+    }*/
     d_body.className += dsbl_animation_on.indexOf('small') === -1 ? ' animate-mm-sm' : ' dont-animate-mm-content-sm';
     d_body.className += dsbl_animation_on.indexOf('tablet') === -1 ? ' animate-mm-md' : ' dont-animate-mm-content-md';
     d_body.className += dsbl_animation_on.indexOf('desktop') === -1 ? ' animate-mm-lg' : ' dont-animate-mm-content-lg';

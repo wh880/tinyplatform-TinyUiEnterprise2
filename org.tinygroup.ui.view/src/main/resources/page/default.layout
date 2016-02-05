@@ -99,9 +99,18 @@
 <script>var init = [];</script>
 <script src="${TINY_CONTEXT_PATH}/js/setting.js"></script>
 	<div id="main-wrapper">
-		#@mainNavbar("TINY")
+		#@mainNavbar("TINY框架组件化的开发框架")
 				<div class="right clearfix">
 					<ul class="nav navbar-nav pull-right right-navbar-nav">
+                        <li class="fullscreen">
+                            <a href="/tinyuiweb/" title="Ajax模式">1.0版</a>
+                        </li>
+                        <li class="fullscreen">
+                            <a href="#link("/")" title="Ajax模式">Ajax模式</a>
+                        </li>
+                        <li class="fullscreen">
+                            <a href="#link("/page/")" title="页面跳转模式">页面跳转模式</a>
+                        </li>
 						<li class="fullscreen">
 							<a href="javascript:void(0);" onclick="launchFullScreen(document.documentElement);" title="全屏">#faIcon("arrows-alt")</a>
 						</li>
@@ -208,16 +217,16 @@
 					#TnavItem("10.10" "图标控制" "/page/iconTab.page")
 				#end
 				#@TnavItems("11" "多级导航" {"ico":"fa-sitemap","warningCls":"label label-warning","warning":"6"})
-					#TnavItem("11.1" "一级菜单" "/page/first.page")
+					#TnavItem("11.1" "一级菜单" "/page/index.page")
 					#@TnavItems("11.2" "一级菜单" {"warningCls":"label label-warning","warning":"5"})
-						#TnavItem("11.2.1" "二级菜单" "/page/second.page")
+						#TnavItem("11.2.1" "二级菜单" "/page/index.page")
 						#@TnavItems("11.2.2" "二级菜单")
 							#@TnavItems("11.2.2.1" "三级菜单")
-								#TnavItem("11.2.2.1.1" "四级菜单" "/page/fourth.page")
+								#TnavItem("11.2.2.1.1" "四级菜单" "/page/index.page")
 							#end
-							#TnavItem("11.2.2.2" "三级菜单" "/page/third.page")
+							#TnavItem("11.2.2.2" "三级菜单" "/page/index.page")
 						#end
-						#TnavItem("11.2.3" "二级菜单2" "second2.page")
+						#TnavItem("11.2.3" "二级菜单2" "/page/index.page")
 					#end
 				#end
 			</ul><!-- navigation end -->
