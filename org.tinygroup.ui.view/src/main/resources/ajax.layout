@@ -12,7 +12,7 @@ $(function(){
 		$('.postion-nav .active').html(currenttxt);
 		TinyAjaxloadContent($(e).attr("href"), $("#tinypagecontent"));
 	}
-	$("body").on("click","a:not([data-toggle=modal])",function(){
+	$("body").on("click","a:not([data-toggle=modal])[href]",function(){
 		if($(this).attr("href").indexOf(".page")=="-1") return;
 		setPageInfo(this);
 		return false;

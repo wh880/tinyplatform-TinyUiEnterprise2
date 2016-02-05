@@ -99,7 +99,7 @@
 <script>var init = [];</script>
 <script src="${TINY_CONTEXT_PATH}/js/setting.js"></script>
 	<div id="main-wrapper">
-		#@mainNavbar("TINY框架组件化的开发框架")
+		#@mainNavbar("TINY-组件化的开发框架")
 				<div class="right clearfix">
 					<ul class="nav navbar-nav pull-right right-navbar-nav">
                         <li class="fullscreen">

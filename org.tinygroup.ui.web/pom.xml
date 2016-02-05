@@ -10,7 +10,7 @@
 	<packaging>war</packaging>
 	<url>http://maven.apache.org</url>
 	<build>
-		<finalName>web</finalName>
+		<finalName>tinyuiweb2</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.tomcat.maven</groupId>
