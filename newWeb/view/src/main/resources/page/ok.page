@@ -1,7 +1,7 @@
 <style type="text/css">
     .modal-ok{text-align:center}
-    .success-icon{font-size:75px;color:#20638f;}
-    .success-desc{padding:10px 0 20px;font-size:16px;color:#666;}
+    .success-icon{font-size:68px;color:#20638f;}
+    .success-desc{padding:10px 0 20px;font-size:15px;color:#666;}
 </style>
 #@widgetGrid()
     <div class="modal-ok">
