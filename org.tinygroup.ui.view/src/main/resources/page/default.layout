@@ -99,7 +99,7 @@
 				<a href="javascript:void(0);" class="btn btn-xs btn-danger btn-outline dark">#faIco("power-off")</a>
 			#end
         	<ul class="navigation">
-				#TnavItem("0" "首页" "/page/index.page" "fa-home")
+				#TnavItem("0" "控制台" "/page/index.page" "fa-home")
 				#TnavItem("1" "概述" "/page/overview.page" "fa-dashboard")
 
 				#@TnavItems("2" "布局" {"ico":"fa-th"})

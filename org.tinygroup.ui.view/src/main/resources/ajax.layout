@@ -9,8 +9,15 @@ $(function(){
 		window.location.hash=$(e).attr("href");
 		var currenttxt=$(e).find('span:first').html();
 		$(document).attr("title",currenttxt+"--"+"TinyUiEnterprise展示");
-		$('.postion-nav .active').html(currenttxt);
+		$('.postion-nav li:last-child').html(currenttxt);
 		TinyAjaxloadContent($(e).attr("href"), $("#tinypagecontent"));
+		$("#main-menu li>a").each(function(){
+			if($(this).attr("href")==$(e).attr("href")){
+				$(this).closest("li").addClass("active");
+			}else{
+                $(this).closest("li").removeClass("active");
+			}
+		})
 	}
 	$("body").on("click","a:not([data-toggle=modal])[href]",function(){
 		if($(this).attr("href").indexOf(".page")=="-1") return;
