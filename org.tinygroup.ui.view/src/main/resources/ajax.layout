@@ -27,7 +27,6 @@ function TinyAjaxloadContent(a, b) {
         type: "GET",
         url: a,
         dataType: "html",
-        cache: !0,
         beforeSend: function() {
 		b[0] == $("#tinypagecontent")[0] && ($("html").animate({
 			scrollTop: 0
@@ -41,19 +40,12 @@ function TinyAjaxloadContent(a, b) {
 	   if(time) clearTimeout(time);
 	   b.html(a);
 
-            /*b.css({
-                opacity: "0.0"
-            }).html(a).delay(50).animate({
-                opacity: "1.0"
-            },
-            300);*/
 	   SyntaxHighlighter.highlight();
         },
         error: function() {
             b.html('<h4 class="ajax-loading-error"><i class="fa fa-warning txt-color-orangeDark"></i> Error 404! Page not found.</h4>')
         },
-        async: !0
-		//async: true
+        cache:false
     })
 }
 

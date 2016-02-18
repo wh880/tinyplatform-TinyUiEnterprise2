@@ -35,8 +35,8 @@
                 this.$element.children('.modal-body').html('<div class="clear">&nbsp;</div>');
                 $.ajax({
                     url: this.options.remote,
-                    type: "get",
-                    data:{fixcache:Math.random()},
+                    type: "GET",
+                    cache:false,
                     dataType: "html",
                     success: function (data) {
                         that.$element.children('.modal-body').children('div:first').html(data+'<div class="clear"></div>');

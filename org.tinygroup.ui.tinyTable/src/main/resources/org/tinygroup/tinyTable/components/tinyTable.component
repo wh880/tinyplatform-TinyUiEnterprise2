@@ -77,7 +77,7 @@
             $.ajax({
                 type: "GET",
                 url: $('#${tableId}').attr("data-url-real"),
-                data:{ page: page,pagesize:pageSize,pageSize:pageSize,order:order,ordertype:ordertype,orderType:ordertype,limit:pageSize,start:(page-1)*pageSize,tinytableid:"${tableId}",fixcache:Math.random()},
+                data:{ page: page,pagesize:pageSize,pageSize:pageSize,order:order,ordertype:ordertype,orderType:ordertype,limit:pageSize,start:(page-1)*pageSize,tinytableid:"${tableId}"},
                 dataType: "html",
                 cache:false,
                 success: function(a) {
@@ -449,7 +449,7 @@
                 url: $('#${tableId}').attr("data-url"),
                 data:{ page: page,pagesize:pageSize,order:order,ordertype:ordertype,limit:pageSize,start:(page-1)*pageSize,tinytableid:"${tableId}"},
                 dataType: "html",
-                cache: !0,
+                cache:false,
                 beforeSend: function() {
                     //$("#${tableId}-Body").html('<tr><td colspan="20" class="tinytableLoading"> 加载...</td></tr>');
                 },

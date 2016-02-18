@@ -49,6 +49,7 @@ $(function(){
 		type: "GET",
 		url: "#link(dataurl)",
 		dataType: "json",
+        cache:false,
 		success: function(data) {
 			zNodes=data;
 			initzTree();
@@ -282,6 +283,7 @@ zNodes${tempid}.push({id:${id}, pId:${pid}, name:"${name}"});
             $.ajax({
                 type: "GET",
                 url: $("#${ztreeid}").attr("data-url"),
+                cache:false,
                 dataType: "html",
                 success: function(data) {
                     data= eval(' ' +data+ ' ');
@@ -310,6 +312,7 @@ zNodes${tempid}.push({id:${id}, pId:${pid}, name:"${name}"});
                     $.ajax({
                         type: "GET",
                         url: editUrl,
+                        cache:false,
                         data:data,
                         dataType: "json",
                         success: function(data) {
@@ -354,6 +357,7 @@ zNodes${tempid}.push({id:${id}, pId:${pid}, name:"${name}"});
                     $.ajax({
                         type: "GET",
                         url: delUrl,
+                        cache:false,
                         data:data,
                         dataType: "json",
                         success: function(data) {
@@ -443,6 +447,7 @@ zNodes${tempid}.push({id:${id}, pId:${pid}, name:"${name}"});
                         $.ajax({
                             type: "GET",
                             url: addUrl,
+                            cache:false,
                             data:data,
                             dataType: "json",
                             success: function(data) {
@@ -551,6 +556,7 @@ zNodes${tempid}.push({id:${id}, pId:${pid}, name:"${name}"});
                 $.ajax({
                     type: "GET",
                     url: editUrl,
+                    cache:false,
                     data:data,
                     dataType: "json",
                     success: function(data) {

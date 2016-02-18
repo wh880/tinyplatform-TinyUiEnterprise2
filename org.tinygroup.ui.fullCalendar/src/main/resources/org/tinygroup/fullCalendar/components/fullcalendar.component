@@ -145,6 +145,7 @@
 		$calendar.on("save",function(e,date,isadd){//e为对像 date为时间 isadd是否新增 //处理操作到后台
 		$.ajax({
 		  type: "GET",
+		  cache:false,
 		  url: "#link(doAction)",
 		  dataType: "html",
 		  data:{date:date,isadd:isadd},
