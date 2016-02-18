@@ -14,7 +14,7 @@
                             <li><a href="javascript:void(0);">#faIcon("circle text-success") 已结束</a></li>
                         </ul>
                 </div>
-            </div>hs
+            </div>
             #end
             #@widgetItemBody()
             <div class="sortable-handle t-list-item">
