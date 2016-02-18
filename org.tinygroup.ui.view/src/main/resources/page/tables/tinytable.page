@@ -1,0 +1,37 @@
+#@tinyTable("s-table") ##ID为空则系统自动生成 带入参数则取该参数为ID
+	#@tinyTableForm()
+		<div class="well well-sm">
+			用户名:#tInput("username" "" {"size":"10","class":"input-sm"}) 城市:
+			#tInput("city" "" {"size":"10","class":"input-sm"})
+			<input type="submit" class="btn btn-primary btn-sm" value="搜索" />
+			<input type="reset" class="btn btn-primary btn-sm" value="重置" />
+            #saveFormHistory()
+		</div>
+	#end
+	<div class="tinyheaderTools form-inline">
+		#setTinyTablePageSize([10,20,30]) ##每页数据条数设置
+		#@mulOperation("delall" "/data/action.pagelet" {"ddd":"eee","name":"test"})<a href="javascript:;" class="btn btn-danger btn-sm">批量删除</a>#end
+		<a href="#" class="btn btn-default btn-sm">产品</a>
+		<a href="#" class="btn btn-success btn-sm">Bug</a>
+		<a href="#" class="btn btn-primary btn-sm">工程</a>
+		<a href="#" class="btn btn-info btn-sm">历史</a>
+		<a href="#" class="btn btn-warning btn-sm">相关</a>
+		<a href="#" class="btn btn-warning btn-sm">相关</a>
+    </div>
+	#@tinyTableContent("/data/tinytabledata.page") ##取数据地址 总数据
+		#@thead()
+			#@tr()  ##class 为sorting 表票可排序 为sorting_desc(正序为为sorting_asc) 为当前倒序
+				#@tinyTh()<input type="checkbox" name="allck" value="">#end
+				#@tinyTh({"class":"sorting sorting_desc","rel":"sortname"})姓名#end
+				#@tinyTh({"class":"","rel":"sortname"})城市#end
+				#@tinyTh({"class":"","rel":"sortname"})办公室#end
+				#@tinyTh({"class":"sorting","rel":"sortname","style":"color:#f00"})年龄#end
+				#@tinyTh({"class":"sorting","rel":"sortname"})就职日期#end
+				#@tinyTh({"class":"sorting","rel":"sortname"})薪资#end
+				#@tinyTh()操作#end
+			#end
+		#end
+	#end
+	##以下部分为对删除和修改的影响 因为存在不同的信息故放在外面自行更改 #dialog 配合修改使用
+	#hideModal("myModal")
+#end
