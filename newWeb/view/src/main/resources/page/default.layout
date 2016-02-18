@@ -53,7 +53,7 @@
         #style_switcher{top:69px}
         ##header_menu start
         .header_menu{ position:absolute; top: 0; left:100px; right:100px; text-align:center; padding: 0;}
-        .header_menu li{display:inline-block;text-align: center;border-right:1px #1D5E88 solid;height:48px;padding:9px 25px 0;}
+        .header_menu li{display:inline-block;text-align: center;height:48px;padding:9px 26px 0;}
         .header_menu li:hover{background:#326F98;}
         .header_menu li:hover a,.header_menu li:hover a:hover{color:#f60}
         .header_menu li a,.header_menu li a:visited{color:#fff}
