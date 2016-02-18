@@ -194,7 +194,7 @@
 			<div id="content-wrapper">
 				<div class="postion-nav">
 					<ul class="breadcrumb">
-						<li class="text-light-gray">所在位置： </li>
+						<li>所在位置： </li>
 						${pagePostionTitle}
 					</ul>
 				</div>

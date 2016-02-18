@@ -24,9 +24,13 @@
 .horizontal-scroll::-webkit-scrollbar-thumb {
     background: #a6a6a6
 }
-
+.horizontal-scroll.thin-scroll::-webkit-scrollbar {
+    height: 7px;
+    width:7px;
+}
 .thin-scroll::-webkit-scrollbar {
-    width: 7px
+    width: 7px;
+    height: 7px
 }
 
 .thin-scroll::-webkit-scrollbar-track {
@@ -83,4 +87,9 @@ ul::-webkit-scrollbar-thumb:window-inactive ,
 ol::-webkit-scrollbar-thumb:window-inactive ,
 p::-webkit-scrollbar-thumb:window-inactive  {
     background: rgba(0, 0, 0, .1)
+}
+
+div::-webkit-scrollbar,ol::-webkit-scrollbar,ul::-webkit-scrollbar,p::-webkit-scrollbar {
+    width: 7px;
+    height: 7px
 }
