@@ -6,11 +6,11 @@
 		<version>2.0.31-SNAPSHOT</version>
 	</parent>
 	<artifactId>org.tinygroup.ui.web</artifactId>
-	<name>tinyFlatUi</name>
+	<name>tinyuiweb2</name>
 	<packaging>war</packaging>
 	<url>http://maven.apache.org</url>
 	<build>
-		<finalName>tinyuiweb2</finalName>
+		<finalName>${project.name}</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.tomcat.maven</groupId>
@@ -20,29 +20,25 @@
 			<plugin>
 				<groupId>org.mortbay.jetty</groupId>
 				<artifactId>jetty-maven-plugin</artifactId>
-				<version>7.6.16.v20140903</version>
+				<version>8.1.16.v20140903</version>
 				<configuration>
-					<jvmArgs>-XX:PermSize=512M -XX:MaxPermSize=1024M</jvmArgs>
+					<jvmArgs>-XX:PermSize=256M -XX:MaxPermSize=1024M</jvmArgs>
+					<webApp>
+						<contextPath>/${project.name}</contextPath>
+					</webApp>
 					<connectors>
 						<connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">
 							<port>8003</port>
+							<maxIdleTime>60000</maxIdleTime>
 						</connector>
 					</connectors>
-					<webAppConfig>
-						<contextPath>/${project.name}</contextPath>
-					</webAppConfig>
-					<!--<systemProperties>-->
-						<!--<systemProperty>-->
-							<!--<name>org.mortbay.util.URI.charset</name>-->
-							<!--<value>${project.build.sourceEncoding}</value>-->
-						<!--</systemProperty>-->
-					<!--</systemProperties>-->
-					<stopKey />
-					<stopPort />
+					<stopKey>foo</stopKey>
+					<stopPort>9999</stopPort>
 				</configuration>
 			</plugin>
 		</plugins>
 	</build>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.mortbay.jetty</groupId>
