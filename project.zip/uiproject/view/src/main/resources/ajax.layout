@@ -2,43 +2,28 @@ ${pageContent}
 <script type="text/javascript">
 
 $(function(){
+	var a = location.hash.replace(/^#/, "");
+	if(!a){ a="#link("/page/index.pagelet")";}
+	TinyAjaxloadContent(a, $("#tinypagecontent"));
 	function setPageInfo(e){
-		var href=$(e).attr("href");
-		var setNavPos=false,currenttxt="";
-        window.location.hash=href;
-        TinyAjaxloadContent(href, $("#tinypagecontent"));
-		$("#main-menu-inner a").each(function(){
-			if(!setNavPos&&$(this).attr("href")==href){
-                $('.postion-nav>.breadcrumb').html('<li>所在位置： </li><li>首页</li>');
-				$(this).parents("li").find("span:first").each(function(){
-                    $('.postion-nav>.breadcrumb').append("<li>"+$(this).html()+"</li>");
-                    currenttxt=$(this).html()+"-"+currenttxt;
-				});
+		window.location.hash=$(e).attr("href");
+		var currenttxt=$(e).find('span:first').html();
+		$(document).attr("title",currenttxt+"--"+"TinyUiEnterprise展示");
+		$('.postion-nav li:last-child').html(currenttxt);
+		TinyAjaxloadContent($(e).attr("href"), $("#tinypagecontent"));
+		$("#main-menu li>a").each(function(){
+			if($(this).attr("href")==$(e).attr("href")){
 				$(this).closest("li").addClass("active");
-                setNavPos=true;
 			}else{
                 $(this).closest("li").removeClass("active");
 			}
 		})
-        $(document).attr("title",currenttxt+" TinyUiEnterprise展示");
 	}
 	$("body").on("click","a:not([data-toggle=modal])[href]",function(){
 		if($(this).attr("href").indexOf(".page")=="-1") return;
 		setPageInfo(this);
 		return false;
 	});
-    var hash = location.hash.replace(/^#/, "");
-
-    init.push(function () {
-        $("#main-menu-inner .navigation li a[href]").each(function () {
-            if ($(this).attr("href").indexOf(".page") == "-1") return true;
-            if (!hash || hash == $(this).attr("href")) {
-                $(this).parents("li").addClass("active open");
-                setPageInfo(this);
-                return false;
-            }
-        });
-    });
 });
 
 

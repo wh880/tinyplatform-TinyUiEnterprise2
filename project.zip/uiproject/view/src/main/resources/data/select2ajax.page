@@ -1,0 +1,6 @@
+#if(select2Init)
+    [{"sid":2,"stext":"xss2"}]
+#else
+    #set(pagesize=15)[#for(var:[1..pagesize])${var==1?"":","}{"sid": ${var},"stext": "xss${var}"}#end]
+#end
+

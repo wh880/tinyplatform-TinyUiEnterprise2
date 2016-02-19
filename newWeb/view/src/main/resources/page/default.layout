@@ -61,13 +61,13 @@
         .header_menu li a  i{display: block}
         ##header_menu end
         ##menu-view start
-        .menu-view{position:fixed;padding:0 15px; top: 48px;height:32px;line-height:32px;left: 0;right: 0; display: block;background: #f5f5f5;border-bottom: 1px solid #ddd; }
+        .menu-view{position:fixed;padding:0; top: 48px;height:32px;line-height:32px;left: 0;right: 0; display: block;background: #f5f5f5;border-bottom: 1px solid #ddd; }
         .meun-boxes{display:inline-block}
         .dropdown-menus,.dropdown-menus:link,.dropdown-menus:visited{color:#333}
         .dropdown-menus:hover{color:#444;text-decoration:none}
         .menu-underscore{ position:absolute; top: 0; left:180px; right:180px; text-align:center; padding: 0;}
         .menu-underscore li{display:inline-block;height:32px;padding:0 10px;}
-        .menu-underscore .active,.menu-underscore li:hover{border-bottom:#20638f 2px solid}
+        .menu-underscore .active,.menu-underscore>li:hover{border-bottom:#20638f 2px solid}
         .menu-underscore li a,.menu-underscore li a:visited{color:#333;text-decoration:none;}
         .menu-underscore li a:hover{text-decoration:none;color:#000}
         .nav-menu-right{float:right;font-size: 13px;}
@@ -76,6 +76,7 @@
         .nav-menu-right li a:hover{text-decoration:none;color:#20638f}
         ##menu-view end
         @media only screen and (max-width:780px){ .header_menu,.menu-view{display:none}.top_menu_active #main_menu{display: block}}
+        /*@media only screen and (max-width:780px){ .header_menu,menu-view{display:none}.top_menu_active #main_menu{display: block}}*/
     </style>
 </head>
 <body class="top_menu_active side_menu_collapsed">
@@ -83,7 +84,7 @@
         <header id="main_header">
             <div class="container-fluid">
                 <div class="brand_section">
-                    <a href="dashboard.html"><img src="#link("/img/logo.png")" alt="" height="35"></a>
+                    <img src="#link("/img/logo.png")" alt="" height="35">
                 </div>
                 <ul class="header_menu">
                     <li><a href="#">#faIcon("desktop")项目</a></li>
@@ -141,151 +142,72 @@
         </header>
 
         <!-- breadcrumbs -->
-        <nav id="breadcrumbs">
-            <ul>
-                <li><a href="dashboard.html">首页</a></li>
-            </ul>
-        </nav>
+##        <nav id="breadcrumbs hidden">
+##            <ul>
+##                <li><a href="dashboard.html">首页</a></li>
+##            </ul>
+##        </nav>
         <!-- main content -->
         <div id="main_wrapper">
+            <br>
             ${pageContent}
-        </div>
-        <!-- menu-underscore start-->
-        <div class="menu-view">
-            <div class="meun-boxes"><a class="dropdown-menus">示例项目 #faIcon("chevron-down")</a></div>
-            <ul class="menu-underscore">
-                <li class="active"><a href="#">任务 | #faIcon("chevron-down")</a></li>
-                <li><a href="#">分享</a></li>
-                <li><a href="#">文件</a></li>
-                <li><a href="#">日程</a></li>
-                <li><a href="#">标签</a></li>
-            </ul>
-            <ul class="nav-menu-right">
-                <li><a href="#">#faIcon("user-plus") 2</a></li>
-                <li><a href="#">#faIcon("sliders") 筛选</a></li>
-                <li><a href="#">#faIcon("list-ul") 菜单</a></li>
-            </ul>
-        </div>
-        <!-- menu-underscore end-->
-        <!-- main menu -->
-        <nav id="main_menu">
-            <div class="menu_wrapper">
-                <ul>
-                    <li class="first_level">
-                        <a href="#link("/page/")">
-                            #faIcon("dashboard")
-                            <span class="menu-title">控制台</span>
-
-                        </a>
+            <div class="menu-view">
+                <div class="meun-boxes dropdown">
+                    <div data-toggle="dropdown" style="padding-left:20px;cursor:pointer">示例项目 #faIcon("chevron-down")</div>
+                    <div class="dropdown-menu" style="width:240px;margin-top:-1px">
+                        <div id="project-list"></div>
+                    </div>
+                </div>
+                <ul class="menu-underscore">
+                    <li class="active dropdown">
+                        <a href="#" data-toggle="dropdown" >任务 | #faIcon("chevron-down")</a>
+                        <div class="dropdown-menu" style="width:240px;left:-80px;">
+                            <div id="task-list"></div>
+                        </div>
                     </li>
-                    <li class="first_level">
-                        <a href="#link("/page/tinyForm.page")">
-                            #faIcon("photo")
-                            <span class="menu-title">表单</span>
-                        </a>
-                    </li>
-                    <li class="first_level">
-                        <a href="javascript:void(0)">
-                            #faIcon("folder")
-                            <span class="menu-title">页面</span>
-                            <span class="label label-danger">4</span>
-                        </a>
-                        <ul>
-                            <li class="submenu-title">Pages</li>
-                            <li><a href="#link("/page/tinytable.page")">传统表格</a></li>
-                            <li><a href="#link("/page/table-item.page")">新增表格</a></li>
-                            <li><a href="#link("/page/list.page")">列表页面</a></li>
-                            <li><a href="#link("/page/tab.page")">选项卡页</a></li>
-                            <li><a href="#link("/page/ok.page")">成功页面</a></li>
-                            <li>#@lAjax("404页面" "/error/error_404.html")404页面#end</li>
-                            <li>#@lAjax("500页面" "/error/error_500.html" {"loadMode":2})500页面#end</li>
-                            <li>#@lAjax("登录页面" "/login/login.html" {"loadMode":2})登录页面#end</li>
-
-                        </ul>
-                    </li>
-                    <li class="first_level ">
-                        <a href="javascript:void(0)">
-                            #faIcon("sitemap")
-                            <span class="menu-title">多级菜单</span>
-                        </a>
-                        <ul>
-                            <li class="submenu-title">一级菜单</li>
-                            <li><a href="javascript:void(0)">2级菜单</a></li>
-                            <li class="has_submenu">
-                                <a href="javascript:void(0)">2级菜单2</a>
-                                <ul>
-                                    <li class="has_submenu">
-                                        <a href="javascript:void(0)">3级菜单</a>
-                                        <ul>
-                                            <li><a href="javascript:void(0)">3级菜单1</a></li>
-                                            <li><a href="javascript:void(0)">3级菜单2</a></li>
-                                            <li><a href="javascript:void(0)">3级菜单3</a></li>
-                                            <li><a href="javascript:void(0)">3级菜单4</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="javascript:void(0)">02.2 菜单</a></li>
-                                    <li><a href="javascript:void(0)">02.3 菜单</a></li>
-                                    <li><a href="javascript:void(0)">02.4 菜单</a></li>
-                                </ul>
-                            </li>
-                            <li class="has_submenu">
-                                <a href="javascript:void(0)">03. 菜单</a>
-                                <ul>
-                                    <li><a href="javascript:void(0)">03.1 菜单</a></li>
-                                    <li><a href="javascript:void(0)">03.2 菜单</a></li>
-                                    <li><a href="javascript:void(0)">03.3 菜单</a></li>
-                                    <li><a href="javascript:void(0)">03.4 菜单</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="javascript:void(0)">04. 菜单</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="#">分享</a></li>
+                    <li><a href="#">文件</a></li>
+                    <li><a href="#">日程</a></li>
+                    <li><a href="#">标签</a></li>
+                </ul>
+                <ul class="nav-menu-right">
+                    <li><a href="#link("/page/project-list.pagelet")" class="menu-right-item" title="用户管理">#faIcon("user-plus") 2</a></li>
+                    <li><a href="#link("/page/project-list.pagelet")" class="menu-right-item" title="筛选">#faIcon("sliders") 筛选</a></li>
+                    <li><a href="#link("/page/project-list.pagelet")" class="menu-right-item" title="菜单">#faIcon("list-ul") 菜单</a></li>
                 </ul>
             </div>
-            <div class="menu_toggle">
-                        <span class="icon_menu_toggle">
-                            #faIcon("angle-double-left toggle_left")
-                            #faIcon("angle-double-right toggle_right hide")
-                        </span>
-            </div>
-        </nav>
+        </div>
+        <!-- main menu -->
+        <style>
+            #body-right-part{position:fixed;width:240px;right:-240px;top:78px;border:1px solid #eee;background:#fff;bottom:0;}
+            #body-right-part.open{right:0;}
+            #body-right-part .header-part{padding:10px;background:#f1f1f1}
+            #body-right-part .header-part h3{margin:0;padding:0;font-size:16px}
+            #body-right-part hr{margin:0 0 5px}
+        </style>
 
     </div>
-    <!-- style switcher -->
-    <div id="style_switcher">
-        <a class="switcher_toggle">#faIcon("cog")</a>
-        <div class="style_items">
-            <div class="heading_b"><span class="heading_text">颜色</span></div>
-            <ul class="clearfix" id="topBar_style_switch">
-                #for(var:[0..14])
-                <li class="sw_tb_style_${var} ${var==0?" style_active
-                ":""}" title="topBar_style_${var}">#faIcon("check")</li>
-            #end
-            </ul>
+    <div id="body-right-part">
+        <div class="header-part">
+            <a class="body-right-remove pull-right" href="#">#faIcon("remove")</a><h3>内容走起</h3>
         </div>
-        <hr/>
-        <div class="clearfix hidden-sm hidden-md hidden-xs sepH_b">
-            <label>固定</label>
-            <div class="pull-right"><input type="checkbox" id="fixed_layout_switch" class="js-switch mini-switch"></div>
-        </div>
-        <div class="style_items hidden-sm hidden-md hidden-xs" id="fixed_layout_bg_switch">
-            <hr/>
-            <div class="heading_b"><span class="heading_text">背景</span></div>
-            <ul class="clearfix">
-                #for(var:[0..7])
-                <li class="sw_bg_${var}" title="bg_${var}">#faIcon("check")</li>
-            #end
-            </ul>
-            <hr/>
-        </div>
-        <div class="clearfix sepH_b">
-            <label>菜单在顶部</label>
-            <div class="pull-right"><input type="checkbox" id="top_menu_switch" class="js-switch mini-switch"></div>
-        </div>
-        <div class="clearfix sepH_b">
-            <label>隐藏位置导航</label>
-            <div class="pull-right"><input type="checkbox" id="breadcrumbs_hide" class="js-switch mini-switch"></div>
-        </div>
+        <hr>
+        <div class="body-part"></div>
     </div>
+<script>
+    $(function(){
+        $(".nav-menu-right .menu-right-item").on("click",function(){
+            $("#body-right-part>.header-part>h3").html($(this).attr("title"));
+            $("#body-right-part").removeAttr("class").addClass("open animated slideInRight").children(".body-part").load($(this).attr("href"));
+            return false;
+        });
+        $("#body-right-part>.header-part .body-right-remove").on("click",function(){
+            $("#body-right-part").toggleClass("slideInRight slideOutRight");
+            return false;
+        })
+        $("#project-list").load("#link("/page/project-list.pagelet")");
+        $("#task-list").load("#link("/page/project-list.pagelet")");
+    })
+</script>
 </body>
 </html>

@@ -1,0 +1,276 @@
+#macro operateMoreLess(listMap)#set(oid=fmt("oid%d",rand()))
+<span id="${oid}-add"#mapToHtml(listMap)><i class="glyphicon glyphicon-plus"></i></span>
+<span id="${oid}-less"#mapToHtml(listMap)><i class="glyphicon glyphicon-minus"></i></span>
+<script type="text/javascript">
+    $(function(){
+        var minsize=$("#${oid}-add").attr("data-minSize");
+        var maxsize=$("#${oid}-add").attr("data-maxSize");
+        if(!minsize) minsize=1;
+        function updateInputName(_this){
+            var targetDom=$($(_this).attr("data-target"));
+            targetDom.children().each(function(index){
+                $(this).find("input,select").each(function(){
+                    var name=$(this).attr("name");
+                    name=name.replace(/\[[0-9]*\]/,"["+index+"]");
+                    $(this).attr("name",name);
+                })
+            })
+
+        }
+        $("#${oid}-add").on("click",function(){
+            var targetDom=$($(this).attr("data-target"));
+            if(!targetDom) return false;
+            if(maxsize&&targetDom.children().size()>=maxsize){
+                layer.msg("已经有"+maxsize+"个，不能再加了");
+                return false;
+            }
+            var $item=targetDom.children(":first").clone();
+                $item.find("input:text,select").val("");
+            targetDom.append($item);
+            updateInputName(this);
+        });
+        $("#${oid}-less").on("click",function(){
+            var targetDom=$($(this).attr("data-target"));
+            if(!targetDom) return false;
+            if(targetDom.children().size()>minsize){
+                targetDom.children().last().remove();
+                updateInputName(this);
+            }else{
+                layer.msg("少于"+minsize+"个,不能再删了")
+            }
+
+        })
+    })
+</script>
+#end
+
+
+
+#@tForm("thisform" "/data/Validform_post.html" "post" {"class":""})
+    #@elementItem("邮箱：")
+        #tInput("email" ""{"placeholder":"@","datatype":"e","nullmsg":"请输入邮箱！","id":"email","class":"input-text"})
+    #end
+
+    #@elementItem("用户名：")
+        #tInput("username" ""{"placeholder":"4~16个字符，字母/中文/数字/下划线","datatype":"*4-16","ajaxurl":call("link","/data/usercheck.pagelet"),"nullmsg":"用户名不能为空！","id":"username"})
+    #end
+    #@elementItem("身份证：")
+        #tInput("username" ""{"placeholder":"身份证号","datatype":"/(^[0-9]{15}$)|(^[0-9]{17}[0-9Xx]$)/","nullmsg":"身份证号不能为空！"})
+    #end
+    #@elementItem("密码：")
+        #tPassInput("password" ""{"placeholder":"密码","datatype":"*6-18","nullmsg":"请输入密码！","autocomplete":"off","id":"password"})
+    #end
+    #@elementItem("密码验证：")
+        #tPassInput("password2" ""{"placeholder":"密码","datatype":"*6-18","nullmsg":"请再输入一次密码！","autocomplete":"off","recheck":"password","errormsg":"您两次输入的密码不一致！","id":"password2"})
+    #end
+    #@elementItem("select下拉：")
+        #@tSelect("lang" "zh" {"class":"select2","minimumResultsForSearch":"Infinity","datatype":"*","nullmsg":"","data-ajaxurl":call("link","/data/select2ajax.pagelet")})##,"multiple":"multiple"
+            #@tOptionItem()#end
+            #@tOptionItem("zh")中国#end
+            #@tOptionItem("en")英国#end
+            #@tOptionItem("ta")泰国#end
+        #end
+    #end
+
+    #@elementItem("选择城市：")
+        #@treeSelect("cityid" 41 {"class":"input-text"}) ##有三个参数 第一个为表单名即name 第二个为默认值 即表里里的VALUE 第三个为MAP对像可自由附加属性比如验证 样式等信息
+            #treeSelectItem(1 0 "北京") ##三个参数 第一个为 字段ID  第二个为上一层ID 第三个为显示信息
+            #treeSelectItem(2 0 "天津")
+            #treeSelectItem(3 0 "上海")
+            #treeSelectItem(6 0 "重庆")
+            #treeSelectItem(4 0 "河北省")
+            #treeSelectItem(41 4 "石家庄")
+            #treeSelectItem(42 4 "保定")
+            #treeSelectItem(43 4 "邯郸")
+            #treeSelectItem(44 4 "承德")
+        #end
+    #end
+
+
+    #@elementItem("选择城市2：")
+        #treeSelect("cityid" 1 {"class":"input-text","data-URL":"/data/ztreeData.pagelet"}) ##有三个参数 第一个为表单名即name 第二个为默认值 即表里里的VALUE 第三个为MAP对像可自由附加属性比如验证 样式等信息 data-URL为数据异步获取值
+    #end
+
+    #@elementItem("Ajax数据返回：")
+        #tSelect2Ajax("sel2" "2" "/data/select2ajax.pagelet" {"placeholder":"查询数据","dataId":"sid","dataText":"stext","fixDataVal":"1","datatype":"*","multiple":"multiple"} {"fixData":"pid","fix2":"ajian"})
+        #@tSelect2Fix("sel2")
+            #@aModal("#myModal" "新增" "600" "" "r" "/page/icon.pagelet")新增#end<a href="#">全部</a>
+        #end
+    #end
+
+    #@elementItem("Ajax数据返回：")
+        #tSelect2Ajax("sel21" "2" "/data/select2ajax.pagelet" {"placeholder":"查询数据","dataId":"sid","dataText":"stext","fixDataVal":"1","datatype":"*"} {"fixData":"pid","fix2":"ajian"})
+        #@tSelect2Fix("sel21")
+            #@aModal("#myModal" "新增" "600" "" "r" "/page/icon.pagelet")新增#end<a href="#">全部</a>
+        #end
+    #end
+
+
+    #@elementItem("纯上传：")
+        #tFileInput("upfile1" "" {"preview":"true"})
+    #end
+    #@elementItem("图片上传：")
+        #tUploadInput("inputImage" "" {"placeholder":"可点击图标进行上传"})
+    #end
+    #@elementItem("多项目：")
+        <div id="list-item">
+            <div class="mb-10">#tInput("username" ""{"placeholder":"4~16个字符，字母/中文/数字/下划线","datatype":"*4-16","nullmsg":"用户名不能为空！"})</div>
+            <div class="mb-10">#tInput("username" ""{"placeholder":"4~16个字符，字母/中文/数字/下划线","datatype":"*4-16","nullmsg":"用户名不能为空！"})</div>
+            <div class="mb-10">#tInput("username" ""{"placeholder":"4~16个字符，字母/中文/数字/下划线","datatype":"*4-16","nullmsg":"用户名不能为空！"})</div>
+        </div>
+        #@elementLabelFix() <div class="list-operate-more-less mt-10 mr-10">#operateMoreLess({"data-target":"#list-item","class":"","data-minSize":2})</div> #end
+    #end
+
+    #@elementItem("出生日期：")
+        #dateInput("birthday" "" "YYYY-MM-DD HH:mm:ss" {"datatype":"*","nullmsg":"日期不能为空","placeholder":"","noPick":false})
+    #end
+
+    #@elementItem("日期区间：")
+        #dateInputBetween("btime" "etime" "" "" {"style":"width:150px"})
+    #end
+    #@elementItem("所在区域：")
+        <div class="form-inline selectList">
+            #@tSelect("province" "" {"class":"province","nullmsg":"请选择省份！","datatype":"*"})
+                #@tOptionItem("")请选择省份#end
+            #end
+            #@tSelect("city" "" {"class":"city","nullmsg":"请选择城市！","datatype":"*"})
+                #@tOptionItem("")请选择城市#end
+            #end
+            #@tSelect("district" "" {"class":"district","nullmsg":"请选择地区！","datatype":"*"})
+                #@tOptionItem("")请选择地区#end
+            #end
+        </div>
+    #end
+    #@elementItem("网址：")
+        #tInput("website" ""{"placeholder":"http://","datatype":"url","nullmsg":"网址不能为空！"})
+    #end
+    #@elementItem("单选框：")
+        #@tRadioes("sex" "women" {"nullmsg":"请选择性别！","datatype":"*"})
+            #@tRadio("man")男#end
+            #@tRadio("women" {"class":"info"})女#end
+            #@tRadio("secret" {"class":"danger"})保密#end
+        #end
+    #end
+    #@elementItem("爱好：")
+        #@tCheckboxes("checkbox2" ["a","c","e"] {"nullmsg":"爱好不能为空！","datatype":"*"})
+            #@tCheckbox("a" {"class":"success"})上网#end
+            #@tCheckbox("b")喝茶#end
+            #@tCheckbox("c" {"class":"info"})打球#end
+            #@tCheckbox("d" {"class":"alert"})走路#end
+            #@tCheckbox("e" {"class":"warning"})爬山#end
+            #@tCheckbox("f" {"class":"danger"})唱歌#end
+        #end
+    #end
+    #@elementItem("描述：")
+        #@tTextarea("remark" {"placeholder":"说点什么...最少输入10个字符","row":"10","datatype":"*10-500","nullmsg":"备注不能为空！"})内容走起#end
+    #end
+    #@elementItem("内容：")
+        #@tTbditor("bodycontent")最后一个MAP参数为的初始化参数 会自动带入 主要设置宽高及图片上传的API配合#end
+        ##  #@Teditor("contentxx2" "content22" {"initialFrameHeight":"600"})最后一个MAP参数为Ueditor的初始化参数 会自动带入 #end
+    #end
+
+
+    #@elementItem()
+        #@tButton("btn-info")提交#end
+        #@aButton("btn-success")返回#end
+    #end
+
+
+
+
+#end
+#dialog("myModal2")
+<script type="text/javascript">
+    $(function () {
+        $("form[name=thisform").Validform({
+            tiptype: function (msg, o, cssctl) {
+                var objtip = $(o.obj).closest(".form-group").children(".valid-msg");
+                cssctl(objtip, o.type);
+                objtip.text(msg);
+            },
+            beforeCheck: function (curform) {
+                //在表单提交执行验证之前执行的函数，curform参数是当前表单对象。
+                //这里明确return false的话将不会继续执行验证操作;
+            },
+            beforeSubmit: function (curform) {
+                $(curform).ajaxSubmit({
+                    dataType: "json",
+                    success: function (data) {
+                        if (data.status == "y") {
+                            layer.msg(data.info,{icon:2});
+                            $(curform).closest(".modal").trigger("close");
+                        } else {
+                            layer.msg(data.info,{icon:2});
+                        }
+                        try {
+                            $(curform).closest(".modal").trigger("close");//当弹出框时触发弹出框关闭
+                            $("table.tinytable").trigger("initnav"); ////可配合TINYTABLE 做刷新
+                        } catch (e) {
+                            ##console.log(e)
+                        }
+                    },
+                    error: function () {
+                        layer.msg(data.info,{icon:2});
+                    }
+                });
+                return false;
+            }
+        });
+
+        $(".selectList").each(function(){
+            var url = "#link('/data/getDist.html')";
+            var areaJson;
+            var temp_html;
+            var oProvince = $(this).find(".province");
+            var oCity = $(this).find(".city");
+            var oDistrict = $(this).find(".district");
+            //初始化省
+            var province = function(){
+                $.each(areaJson,function(i,province){
+                    temp_html+="<option value='"+province.p+"'>"+province.p+"</option>";
+                });
+                oProvince.html(temp_html);
+                city();
+            };
+            //赋值市
+            var city = function(){
+                temp_html = "";
+                var n = oProvince.get(0).selectedIndex;
+                $.each(areaJson[n].c,function(i,city){
+                    temp_html+="<option value='"+city.ct+"'>"+city.ct+"</option>";
+                });
+                oCity.html(temp_html);
+                district();
+            };
+            //赋值县
+            var district = function(){
+                temp_html = "";
+                var m = oProvince.get(0).selectedIndex;
+                var n = oCity.get(0).selectedIndex;
+                if(typeof(areaJson[m].c[n].d) == "undefined"){
+                    oDistrict.css("display","none");
+                }else{
+                    oDistrict.css("display","inline");
+                    $.each(areaJson[m].c[n].d,function(i,district){
+                        temp_html+="<option value='"+district.dt+"'>"+district.dt+"</option>";
+                    });
+                    oDistrict.html(temp_html);
+                };
+            };
+            //选择省改变市
+            oProvince.change(function(){
+                city();
+            });
+            //选择市改变县
+            oCity.change(function(){
+                district();
+            });
+            //获取json数据
+            $.getJSON(url,function(data){
+                areaJson = data;
+                province();
+            });
+        });
+
+    })
+</script>

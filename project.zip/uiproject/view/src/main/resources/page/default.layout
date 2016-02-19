@@ -68,7 +68,7 @@
                             <a href="#link("/page/")" title="页面跳转模式">页面跳转模式</a>
                         </li>
                         <li>
-                            <a href="#link("/project.zip")" target="_blank" title="基础工程下载">基础工程下载</a>
+                            <a href="/tinyuiweb/project.zip" target="_blank" title="基础工程下载">基础工程下载</a>
                         </li>
 						<li class="fullscreen">
 							<a href="javascript:void(0);" onclick="launchFullScreen(document.documentElement);" title="全屏">#faIcon("arrows-alt")</a>
@@ -96,109 +96,27 @@
 				</div>
 		#end
 		#@mainMenu()
-##			#@menuHead("欢迎您," "Liyl" "menu-content-demo" "/img/portraits/1.jpg")
-##				<a href="javascript:void(0);" class="btn btn-xs btn-primary btn-outline dark">#faIco("envelope")</a>
-##				<a href="javascript:void(0);" class="btn btn-xs btn-primary btn-outline dark">#faIco("user")</a>
-##				<a href="javascript:void(0);" class="btn btn-xs btn-primary btn-outline dark">#faIco("cog")</a>
-##				<a href="javascript:void(0);" class="btn btn-xs btn-danger btn-outline dark">#faIco("power-off")</a>
-##			#end
+			#@menuHead("欢迎您," "Liyl" "menu-content-demo" "/img/portraits/1.jpg")
+				<a href="javascript:void(0);" class="btn btn-xs btn-primary btn-outline dark">#faIco("envelope")</a>
+				<a href="javascript:void(0);" class="btn btn-xs btn-primary btn-outline dark">#faIco("user")</a>
+				<a href="javascript:void(0);" class="btn btn-xs btn-primary btn-outline dark">#faIco("cog")</a>
+				<a href="javascript:void(0);" class="btn btn-xs btn-danger btn-outline dark">#faIco("power-off")</a>
+			#end
         	<ul class="navigation">
 				#TnavItem("0" "控制台" "/page/index.page" "fa-home")
-				#TnavItem("1" "概述" "/page/overview.page" "fa-dashboard")
 
-				#@TnavItems("2" "布局" {"ico":"fa-th"})
-					#TnavItem("2.1" "栅格系统" "/page/gridSystem.page")
-					#TnavItem("2.2" "Tabs展现" "/page/tabShow.page")
+				#@TnavItems("2" "页面" {"ico":"fa-th"})
 					#TnavItem("2.3" "表格列表" "/page/tinytable.page")
-					#TnavItem("2.4" "togglebox" "/page/togglebox.page")
+					#TnavItem("2.4" "表单" "/page/tinyform.page")
 				#end
-				#@TnavItems("3" "基础" {"ico":"fa-desktop"})
-					#TnavItem("3.1" "排版" "/page/typography.page")
-					#TnavItem("3.3" "图标" "/page/icon.page")
-					#TnavItem("3.4" "按钮" "/page/button.page")
-					#TnavItem("3.5" "按钮组" "/page/buttonGroups.page")
-					#TnavItem("3.6" "表格" "/page/tables.page")
-				#end
-				#@TnavItems("4" "元素" {"ico":"fa-wrench"})
-					#TnavItem("4.1" "便签与标号" "/page/labelBadge.page")
-					#TnavItem("4.2" "警告" "/page/alert.page")
-					#TnavItem("4.3" "进度条" "/page/progress.page")
-					#TnavItem("4.4" "界面元素" "/page/interfaceElements.page")
-					#TnavItem("4.5" "导航" "/page/nav.page")
-				#end
-				#@TnavItems("5" "表单" {"ico":"fa-tasks"})
-					#TnavItem("5.1" "表单列表" "/page/forms.page")
-					#TnavItem("5.2" "表单实例" "/page/tinyForm.page")
-					#TnavItem("5.3" "编辑器" "/page/editor.page")
-					#TnavItem("5.4" "日期控件" "/page/bootstrapDate.page")
-					#TnavItem("5.5" "下拉菜单" "/page/select2.page")
-					#TnavItem("5.7" "多文件上传" "/page/webupload.page")
-					#TnavItem("5.8" "权限移动" "/page/authorlist.page")
-				#end
-				#@TnavItems("6" "图库" {"ico":"fa-files-o"})
-					#TnavItem("6.1" "图片" "/page/picture.page")
-					#TnavItem("6.2" "缩略图" "/page/thumbnails.page")
-					#TnavItem("6.3" "媒体插入" "/page/media.page")
-					#TnavItem("6.5" "UED提示" "/page/uedTips.page")
-					#@TnavItems("6.6" "图表" {"ico":""})
-						#TnavItem("6.6.1" "图表展示" "/page/charts.page")
-						#TnavItem("6.6.3" "燃尽图表" "/page/burndownChart.page")
-						#TnavItem("6.6.4" "highCharts图表" "/page/highCharts.page")
-					#end
-				#end
-				#@TnavItems("7" "交互" {"ico":"fa-random"})
-					#TnavItem("7.1" "动画" "/page/animate.page")
-					#TnavItem("7.2" "幻灯片" "/page/unslider.page")
-					#TnavItem("7.3" "选项卡" "/page/tab.page")
-					#TnavItem("7.4" "对话框 弹出层" "/page/modal.page")
-					#TnavItem("7.5" "滚动" "/page/rolling.page")
-					#TnavItem("7.7" "折叠" "/page/fold.page")
-					#TnavItem("7.8" "遮罩条" "/page/maskBar.page")
-				#end
-				#@TnavItems("8" "部件" {"ico":"fa-legal"})
-					#TnavItem("8.1" "客服" "/page/kefu.page")
-					#TnavItem("8.2" "返回顶部" "/page/toTop.page")
-					#TnavItem("8.3" "分享" "/page/share.page")
-					#TnavItem("8.4" "案例" "/page/example.page")
-					#TnavItem("8.5" "树形视图" "/page/treeview.page")
-					#TnavItem("8.7" "日历" "/page/calendar.page")
-					#TnavItem("8.8" "背景日历" "/page/workCalendar.page")
-					#TnavItem("8.14" "Gantt图" "/page/gantt.page")
-					#TnavItem("8.15" "操作向导" "/page/tourbus.page")
-					#TnavItem("8.17" "时间轴" "/page/timeline.page")
-				#end
-
-				#@TnavItems("10" "其它" {"ico":"fa-files-o"})
-					#TnavItem("10.1" "错误404" "/page/error404.page")
-					#TnavItem("10.2" "错误500" "/page/error500.page")
-					#TnavItem("10.4" "屏幕内图片加载" "/page/loadscrollingpic.page")
-					#TnavItem("10.9" "视图控制" "/page/viewsControl.page")
-					#TnavItem("10.10" "图标控制" "/page/iconTab.page")
-				#end
-				#@TnavItems("11" "多级导航" {"ico":"fa-sitemap","warningCls":"label label-warning","warning":"6"})
-					#TnavItem("11.1" "一级菜单" "/page/index.page")
-					#@TnavItems("11.2" "一级菜单" {"warningCls":"label label-warning","warning":"5"})
-						#TnavItem("11.2.1" "二级菜单" "/page/index.page")
-						#@TnavItems("11.2.2" "二级菜单")
-							#@TnavItems("11.2.2.1" "三级菜单")
-								#TnavItem("11.2.2.1.1" "四级菜单" "/page/index.page")
-							#end
-							#TnavItem("11.2.2.2" "三级菜单" "/page/index.page")
-						#end
-						#TnavItem("11.2.3" "二级菜单2" "/page/index.page")
-					#end
-				#end
-			</ul><!-- navigation end -->
-			<div class="menu-content">
-				<a href="javascript:void(0)" class="btn btn-primary btn-block btn-outline dark">创建页面</a>
-			</div>
+			</ul>
 		#end
 
 		<div class="content-wrapper-bg"></div>
 			<div id="content-wrapper">
 				<div class="postion-nav">
 					<ul class="breadcrumb">
-						<li>所在位置： </li>
+						<li class="text-light-gray">所在位置： </li>
 						${pagePostionTitle}
 					</ul>
 				</div>

@@ -5,8 +5,7 @@
 #end
 
 #@h2()2.组件包#end
-<pre class="prettyprint">
-#foreach(component in uiengine.getHealthUiComponents())
+<pre class="prettyprint">#foreach(component in uiengine.getHealthUiComponents())
 <span class="pun">├──</span> <span class="tWidth ui-module-view">[org.tinygroup.ui.${component.name}]</span> <span class="check-link">${component.description}</span>
 #end
 <div class="tinyStatistical">
