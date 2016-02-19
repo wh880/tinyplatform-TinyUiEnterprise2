@@ -67,9 +67,8 @@
         .dropdown-menus:hover{color:#444;text-decoration:none}
         .menu-underscore{ position:absolute; top: 0; left:180px; right:180px; text-align:center; padding: 0;}
         .menu-underscore li{display:inline-block;height:32px;padding:0 10px;}
-        .menu-underscore .active{border-bottom:#20638f 2px solid}
-        .menu-underscore li:hover{border-bottom:#20638f 2px solid}
-        .menu-underscore li a,.menu-underscore li a:visited{color:#333;}
+        .menu-underscore .active,.menu-underscore li:hover{border-bottom:#20638f 2px solid}
+        .menu-underscore li a,.menu-underscore li a:visited{color:#333;text-decoration:none;}
         .menu-underscore li a:hover{text-decoration:none;color:#000}
         .nav-menu-right{float:right;font-size: 13px;}
         .nav-menu-right li{display:inline-block;height:32px;padding:0 6px;}
