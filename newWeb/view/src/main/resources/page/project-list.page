@@ -1,6 +1,6 @@
 <style type="text/css">
     .project-list .search-box,.project-list .list-item{padding:8px 12px 2px}
-    .project-list .list-item li{line-height: 20px;margin-bottom:12px;}
+    .project-list .list-item li{line-height: 20px;margin-bottom:12px;display: block}
     .project-list .list-item .group-name{border-bottom:#ddd 1px solid;padding-bottom:6px;}
     .project-list .project-item:hover{background:#f6f6f6}
     .project-item .project-pic{width:80px;height: 40px;  margin-right: 10px;  background-size:cover;  background-position: center;  background-color:#74bbd8;}
