@@ -26,7 +26,7 @@
                      style="width:34%;plus-square"></div>
             </div>
         </div>
-        <div class="add-item"> <a class="clearfix"> <div class="task-ico pull-left">#faIcon("plus-square")</div> <span>添加任务分组</span></a></div>
+        <div class="add-item"> <a class="clearfix"> <div class="task-ico pull-left">#faIcon("plus-circle")</div> <span>添加任务分组</span></a></div>
         <ul class="list-item">
             <li class="task-item">
                 <a class="clearfix"> <div class="task-ico pull-left">#faIcon("calendar-plus-o")</div> <span>今天的任务</span></a>
