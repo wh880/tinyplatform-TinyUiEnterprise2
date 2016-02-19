@@ -2,17 +2,18 @@ ${pageContent}
 <script type="text/javascript">
 
 $(function(){
-	var a = location.hash.replace(/^#/, "");
-	if(!a){ a="#link("/page/index.pagelet")";}
-	TinyAjaxloadContent(a, $("#tinypagecontent"));
 	function setPageInfo(e){
-		window.location.hash=$(e).attr("href");
+		var href=$(e).attr("href");
+		window.location.hash=href;
 		var currenttxt=$(e).find('span:first').html();
 		$(document).attr("title",currenttxt+"--"+"TinyUiEnterprise展示");
-		$('.postion-nav li:last-child').html(currenttxt);
-		TinyAjaxloadContent($(e).attr("href"), $("#tinypagecontent"));
-		$("#main-menu li>a").each(function(){
-			if($(this).attr("href")==$(e).attr("href")){
+		$('.postion-nav>.breadcrumb').html('<li>所在位置： </li><li>首页</li>');
+		TinyAjaxloadContent(href, $("#tinypagecontent"));
+		$("#main-menu-inner a").each(function(){
+			if($(this).attr("href")==href){
+				$(this).parents("li").find("span:first").each(function(){
+                    $('.postion-nav>.breadcrumb').append("<li>"+$(this).html()+"</li>");
+				});
 				$(this).closest("li").addClass("active");
 			}else{
                 $(this).closest("li").removeClass("active");
@@ -24,6 +25,17 @@ $(function(){
 		setPageInfo(this);
 		return false;
 	});
+    var hash = location.hash.replace(/^#/, "");
+    init.push(function () {
+        $("#main-menu-inner .navigation li a[href]").each(function () {
+            if ($(this).attr("href").indexOf(".page") == "-1") return true;
+            if (!hash || hash == $(this).attr("href")) {
+                $(this).parents("li").addClass("active open");
+                setPageInfo(this);
+                return false;
+            }
+        });
+    });
 });
 
 

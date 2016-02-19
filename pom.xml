@@ -6,7 +6,7 @@
         <version>2.0.30</version>
     </parent>
 	<properties>
-		<tiny_version>2.0.34-SNAPSHOT</tiny_version>
+		<tiny_version>2.0.30</tiny_version>
 	</properties>
 	<groupId>org.tinygroup</groupId>
     <artifactId>tinyFlatUi</artifactId>
