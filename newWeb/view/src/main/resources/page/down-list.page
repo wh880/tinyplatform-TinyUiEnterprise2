@@ -5,7 +5,7 @@
     .down-list .project-item:hover{background:#f6f6f6}
     .project-item .project-pic{width:38px;height:38px;border-radius:50%;  margin-right: 10px;  background-color:#74bbd8;}
 
-    .project-item a .member-info{color:#383838;overflow:hidden; text-overflow:ellipsis; white-space:nowrap;line-height:14px;}
+    .project-item a .member-info .member-name,.project-item a .member-info .member-title{color:#383838;overflow:hidden; text-overflow:ellipsis; white-space:nowrap;line-height:14px;}
     .project-item a .member-title{color:#999;}
     .project-item a:hover{text-decoration: none}
     .down-list .add-item{margin:6px 0;border-bottom:#ddd 1px solid;line-height:32px;}
