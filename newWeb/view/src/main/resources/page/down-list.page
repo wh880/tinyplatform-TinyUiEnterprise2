@@ -1,11 +1,12 @@
 <style type="text/css">
     .down-list{padding:8px 12px 2px}
     .down-list .list-item{padding:0}
-    .down-list .list-item li{padding-top:8px;}
+    .down-list .list-item li{padding-top:8px;border-bottom: 1px dashed #ddd}
     .down-list .project-item:hover{background:#f6f6f6}
     .project-item .project-pic{width:38px;height:38px;border-radius:50%;  margin-right: 10px;  background-color:#74bbd8;}
 
-    .project-item a .member-info .member-name,.project-item a .member-info .member-title{color:#383838;overflow:hidden; text-overflow:ellipsis; white-space:nowrap;line-height:14px;}
+    .project-item a .member-info .member-name,.project-item a .member-info .member-title{color:#393939;overflow:hidden; text-overflow:ellipsis; white-space:nowrap;line-height:14px;}
+    .project-item a .member-info .member-line{line-height:32px;padding-bottom:15px;}
     .project-item a .member-title{color:#999;}
     .project-item a:hover{text-decoration: none}
     .down-list .add-item{margin:6px 0;border-bottom:#ddd 1px solid;line-height:32px;}
@@ -34,6 +35,14 @@
                     <div class="member-info">
                         <p class="member-name"> <b>李</b> </p>
                         <p class="member-title"> 763586002@qq.com </p>
+                    </div>
+                </a>
+            </li>
+            <li class="project-item">
+                <a class="clearfix">
+                    <div class="project-pic pull-left" style="background:url(../img/p1.jpg) no-repeat;"></div>
+                    <div class="member-info">
+                        <div class="member-name member-line"> <b>刘</b> </div>
                     </div>
                 </a>
             </li>
