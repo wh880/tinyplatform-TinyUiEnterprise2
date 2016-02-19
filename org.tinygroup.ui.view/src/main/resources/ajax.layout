@@ -4,21 +4,23 @@ ${pageContent}
 $(function(){
 	function setPageInfo(e){
 		var href=$(e).attr("href");
-		window.location.hash=href;
-		var currenttxt=$(e).find('span:first').html();
-		$(document).attr("title",currenttxt+"--"+"TinyUiEnterprise展示");
-		$('.postion-nav>.breadcrumb').html('<li>所在位置： </li><li>首页</li>');
-		TinyAjaxloadContent(href, $("#tinypagecontent"));
+		var setNavPos=false,currenttxt="";
+        window.location.hash=href;
+        TinyAjaxloadContent(href, $("#tinypagecontent"));
 		$("#main-menu-inner a").each(function(){
-			if($(this).attr("href")==href){
+			if(!setNavPos&&$(this).attr("href")==href){
+                $('.postion-nav>.breadcrumb').html('<li>所在位置： </li><li>首页</li>');
 				$(this).parents("li").find("span:first").each(function(){
                     $('.postion-nav>.breadcrumb').append("<li>"+$(this).html()+"</li>");
+                    currenttxt=$(this).html()+"-"+currenttxt;
 				});
 				$(this).closest("li").addClass("active");
+                setNavPos=true;
 			}else{
                 $(this).closest("li").removeClass("active");
 			}
 		})
+        $(document).attr("title",currenttxt+" TinyUiEnterprise展示");
 	}
 	$("body").on("click","a:not([data-toggle=modal])[href]",function(){
 		if($(this).attr("href").indexOf(".page")=="-1") return;
@@ -26,6 +28,7 @@ $(function(){
 		return false;
 	});
     var hash = location.hash.replace(/^#/, "");
+
     init.push(function () {
         $("#main-menu-inner .navigation li a[href]").each(function () {
             if ($(this).attr("href").indexOf(".page") == "-1") return true;

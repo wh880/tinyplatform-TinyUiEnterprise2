@@ -57,14 +57,18 @@
 		#@mainNavbar("TINY-组件化的开发框架")
 				<div class="right clearfix">
 					<ul class="nav navbar-nav pull-right right-navbar-nav">
-                        <li class="fullscreen">
-                            <a href="/tinyuiweb/" title="Ajax模式">1.0版</a>
+
+                        <li>
+                            <a href="/tinyuiweb/" title="1.0版">1.0版</a>
                         </li>
-                        <li class="fullscreen">
+                        <li>
                             <a href="#link("/")" title="Ajax模式">Ajax模式</a>
                         </li>
-                        <li class="fullscreen">
+                        <li>
                             <a href="#link("/page/")" title="页面跳转模式">页面跳转模式</a>
+                        </li>
+                        <li>
+                            <a href="#link("/project.zip")" target="_blank" title="基础工程下载">基础工程下载</a>
                         </li>
 						<li class="fullscreen">
 							<a href="javascript:void(0);" onclick="launchFullScreen(document.documentElement);" title="全屏">#faIcon("arrows-alt")</a>
@@ -92,12 +96,12 @@
 				</div>
 		#end
 		#@mainMenu()
-			#@menuHead("欢迎您," "Liyl" "menu-content-demo" "/img/portraits/1.jpg")
-				<a href="javascript:void(0);" class="btn btn-xs btn-primary btn-outline dark">#faIco("envelope")</a>
-				<a href="javascript:void(0);" class="btn btn-xs btn-primary btn-outline dark">#faIco("user")</a>
-				<a href="javascript:void(0);" class="btn btn-xs btn-primary btn-outline dark">#faIco("cog")</a>
-				<a href="javascript:void(0);" class="btn btn-xs btn-danger btn-outline dark">#faIco("power-off")</a>
-			#end
+##			#@menuHead("欢迎您," "Liyl" "menu-content-demo" "/img/portraits/1.jpg")
+##				<a href="javascript:void(0);" class="btn btn-xs btn-primary btn-outline dark">#faIco("envelope")</a>
+##				<a href="javascript:void(0);" class="btn btn-xs btn-primary btn-outline dark">#faIco("user")</a>
+##				<a href="javascript:void(0);" class="btn btn-xs btn-primary btn-outline dark">#faIco("cog")</a>
+##				<a href="javascript:void(0);" class="btn btn-xs btn-danger btn-outline dark">#faIco("power-off")</a>
+##			#end
         	<ul class="navigation">
 				#TnavItem("0" "控制台" "/page/index.page" "fa-home")
 				#TnavItem("1" "概述" "/page/overview.page" "fa-dashboard")
