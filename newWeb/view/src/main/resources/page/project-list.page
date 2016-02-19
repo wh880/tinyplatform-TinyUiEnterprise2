@@ -6,7 +6,7 @@
     .project-item .project-pic{width:80px;height: 40px;  margin-right: 10px;  background-size:cover;  background-position: center;  background-color:#74bbd8;}
     .project-item a,.project-item a:link,.project-item a:visited{line-height:40px;color:#383838;overflow:hidden; text-overflow:ellipsis; white-space:nowrap;display:block}
     .project-item a:hover{text-decoration: none}
-    .project-item i{float:right;margin-right:16px; color: #a6a6a6;}
+    .project-item i{float:right;margin-right:16px; color: #a6a6a6;margin-top:10px;}
 </style>
 #@widgetGrid()
     <div class="project-list">
