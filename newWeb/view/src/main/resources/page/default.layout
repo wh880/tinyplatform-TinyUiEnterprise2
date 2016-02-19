@@ -75,7 +75,7 @@
         .nav-menu-right li a,.nav-menu-right li a:visited{color:#333;}
         .nav-menu-right li a:hover{text-decoration:none;color:#20638f}
         ##menu-view end
-        @media only screen and (max-width:780px){ .header_menu,menu-view{display:none}.top_menu_active #main_menu{display: block}}
+        @media only screen and (max-width:780px){ .header_menu,.menu-view{display:none}.top_menu_active #main_menu{display: block}}
     </style>
 </head>
 <body class="top_menu_active side_menu_collapsed">
