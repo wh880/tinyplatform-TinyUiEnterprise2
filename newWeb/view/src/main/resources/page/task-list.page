@@ -14,6 +14,7 @@
     .task-list .add-item a,.add-item a:link,.add-item a:visited{color:#333}
     .task-list .add-item .task-ico{color:#c60;margin-right:6px;}
     .task-list .add-item a:hover{color:#c60}
+    .progress-box .bg-green{background:#259b24}
 </style>
 #@widgetGrid()
     <div class="task-list">
@@ -21,7 +22,7 @@
         <div class="statistics-list">
             <span class="text"><a href="#">任务（20）</a><span class="pull-right">#faIcon("chevron-down")</span> </span>
             <div class="progress-box">
-                <div class="progress-bar bg-color-greenLight"
+                <div class="progress-bar bg-green"
                      style="width:34%;"></div>
             </div>
         </div>
