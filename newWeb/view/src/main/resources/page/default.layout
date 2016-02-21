@@ -87,7 +87,7 @@
                     <img src="#link("/img/logo.png")" alt="" height="35">
                 </div>
                 <ul class="header_menu">
-                    <li><a href="#">#faIcon("desktop")项目</a></li>
+                    <li><a href="#link("/page/list.page")">#faIcon("desktop")项目</a></li>
                     <li><a href="#">#faIcon("line-chart")企业</a></li>
                     <li><a href="#">#faIcon("street-view")我的</a></li>
                     <li><a href="#">#faIcon("calendar-check-o")日历</a></li>
