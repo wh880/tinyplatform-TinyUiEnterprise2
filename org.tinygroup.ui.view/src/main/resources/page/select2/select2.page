@@ -12,4 +12,3 @@
 #@tSelect2Fix("lang2")
     #@aModal("#myModal" "新增" "600" "" "r" "/page/icon.pagelet")新增#end<a href="#">全部</a>
 #end
-
