@@ -8,6 +8,7 @@
     #bodyContent
 </div>
 #end
+</br>
 #@widgetGrid()
     <article class="col-lg-3"> </article>
     <article class="col-lg-3"> </article>
