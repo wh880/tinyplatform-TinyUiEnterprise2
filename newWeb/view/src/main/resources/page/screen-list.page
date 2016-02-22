@@ -15,7 +15,7 @@
     .screen-list .add-item a:hover{color:#c60; text-decoration:none}
     .project-item .s-list-item .main-info{margin-top:-20px;display:block}
     .project-item .s-list-item .main-info .infos-content{overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
-    .s-list-item{margin-top:-6px;margin-bottom:6px}
+    .s-list-item{margin:-6px 0 6px 7px }
 
 </style>
 #@widgetGrid()
@@ -30,6 +30,14 @@
                 <div class="member-info">
                     <p class="member-name"> <b>李</b> </p>
                     <p class="member-title"> 763586002@qq.com <span class="c-999">2016-01-20</span></p>
+                </div>
+            </a>
+        </li>
+        <li class="project-item">
+            <a class="clearfix">
+                <div class="project-pic pull-left" style="background:url(../img/sample.jpg) no-repeat;"></div>
+                <div class="member-info">
+                    <div class="member-name member-line"> <b>刘</b> </div>
                 </div>
             </a>
         </li>

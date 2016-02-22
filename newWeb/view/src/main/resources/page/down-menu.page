@@ -16,7 +16,7 @@
 </style>
 #@widgetGrid()
     <div class="down-list">
-        <p class="search-box">#tInput("email" ""{"placeholder":" 搜索成员","class":"input-text"})</p>
+        <p class="search-box">#tInput("email" ""{"placeholder":"搜索成员","class":"input-text"})</p>
 
         <div class="add-item"> <a class="clearfix"> <div class="task-ico pull-left">#faIcon("plus-circle")</div> <span>邀请新成员</span></a></div>
         <ul class="list-item">
@@ -25,7 +25,7 @@
                     <div class="project-pic pull-left" style="background:url(../img/p1.jpg) no-repeat;"></div>
                     <div class="member-info">
                         <p class="member-name"> <b>李</b> </p>
-                        <p class="member-title"> 763586002@qq.com </p>
+                        <p class="member-title"> 763586002@qq.com <span class="c-999">2016-01-20</span></p>
                     </div>
                 </a>
             </li>
