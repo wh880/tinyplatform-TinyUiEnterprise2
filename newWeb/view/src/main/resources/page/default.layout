@@ -171,7 +171,7 @@
                 </ul>
                 <ul class="nav-menu-right">
                     <li><a href="#link("/page/down-list.pagelet")" class="menu-right-item" title="用户管理">#faIcon("user-plus") 2</a></li>
-                    <li><a href="#link("/page/project-list.pagelet")" class="menu-right-item" title="筛选">#faIcon("sliders") 筛选</a></li>
+                    <li><a href="#link("/page/screen-list.pagelet")" class="menu-right-item" title="筛选">#faIcon("sliders") 筛选</a></li>
                     <li><a href="#link("/page/down-menu.pagelet")" class="menu-right-item" title="菜单">#faIcon("list-ul") 菜单</a></li>
                 </ul>
             </div>
