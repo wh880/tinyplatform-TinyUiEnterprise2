@@ -106,20 +106,22 @@ $(function(){
 		hideMenu();
 	});
 	function bfxs(zTree, nodes, tt) {
-		if (nodes.children == null) {//无子节点
-			if (nodes[zTree.setting.data.key.name].indexOf(tt) >= 0) {//无子节点，但是包含tt
-				fjdxs(zTree, nodes);
-			}
-		}else {//有子节点
-			if (nodes[zTree.setting.data.key.name].indexOf(tt) >= 0){//有而且包含
-				fjdxs(zTree, nodes);
-				xsall(zTree, nodes);
-			}else {//有但不包含
-				$.each(nodes.children, function (aa, bb) {
-					bfxs(zTree, bb, tt);
-				})
-			}
-		}
+        tt=tt.toLowerCase();
+        var keyName=nodes[zTree.setting.data.key.name].toLowerCase()
+        if (nodes.children == null) {//无子节点
+            if (!tt||keyName.indexOf(tt) >= 0) {//无子节点，但是包含tt
+                fjdxs(zTree, nodes);
+            }
+        }else {//有子节点
+            if (!tt||keyName.indexOf(tt) >= 0){//有而且包含
+                fjdxs(zTree, nodes);
+                xsall(zTree, nodes);
+            }else {//有但不包含
+                $.each(nodes.children, function (aa, bb) {
+                    bfxs(zTree, bb, tt);
+                })
+            }
+        }
 	}
 	///显示所有父节点
 	function fjdxs(zTree, nodes) {
@@ -155,7 +157,7 @@ $(function(){
 		zTree.showNodes(nodes);
 		if(!key){
 			$("#${sid}-msg").hide();
-			return;
+			//return;
 		}
 		var zts = zTree.getNodesByParamFuzzy("name", key);
 		if (zts.length==0){
