@@ -10,7 +10,7 @@
 	</properties>
 	<groupId>org.tinygroup</groupId>
     <artifactId>tinyFlatUi</artifactId>
-    <version>2.0.34-SNAPSHOT</version>
+    <version>2.1.0</version>
     <packaging>pom</packaging>
 	<scm>
 		<connection>scm:git:git@http://git.oschina.net/tinyframework/TinyUiEnterprise2.git</connection>
