@@ -149,7 +149,6 @@
 ##        </nav>
         <!-- main content -->
         <div id="main_wrapper">
-            <br>
             ${pageContent}
             <div class="menu-view">
                 <div class="meun-boxes dropdown">
@@ -185,7 +184,6 @@
             #body-right-part .header-part h3{margin:0;padding:0;font-size:16px}
             #body-right-part hr{margin:0 0 5px}
         </style>
-
     </div>
     <div id="body-right-part">
         <div class="header-part">

@@ -11,13 +11,12 @@
     .list-item .project-item a:hover{text-decoration: none}
     .down-list .add-item{margin:6px 0;border-bottom:#ddd 1px solid;line-height:32px;}
     .down-list .add-item a,.add-item a:link,.add-item a:visited{color:#20638f;font-size:15px;}
-    .down-list .add-item .task-ico{color:#20638f;margin-right:6px;font-size:18px;}
+    .down-list .add-item .task-ico{color:#20638f;margin-right:6px;font-size:16px;}
     .down-list .add-item a:hover{color:#c60; text-decoration:none}
 </style>
 #@widgetGrid()
     <div class="down-list">
         <p class="search-box">#tInput("email" ""{"placeholder":" 搜索成员","class":"input-text"})</p>
-
         <div class="add-item"> <a class="clearfix"> <div class="task-ico pull-left">#faIcon("plus-circle")</div> <span>邀请新成员</span></a></div>
         <ul class="list-item">
             <li class="project-item">
