@@ -18,7 +18,7 @@
 </style>
 #@widgetGrid()
     <div class="task-list">
-        <p class="search-box">#tInput("email" ""{"placeholder":" 搜索分组","class":"input-text"})</p>
+        <p class="search-box">#tInput("email" ""{"placeholder":"搜索分组","class":"input-text"})</p>
         <div class="statistics-list">
             <span class="text"><a href="#">任务（20）</a><span class="pull-right">#faIcon("chevron-down")</span> </span>
             <div class="progress-box">
