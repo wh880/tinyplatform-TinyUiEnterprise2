@@ -189,7 +189,6 @@
         <div class="header-part">
             <a class="body-right-remove pull-right" href="#">#faIcon("remove")</a><h3>内容走起</h3>
         </div>
-        <hr>
         <div class="body-part"></div>
     </div>
 <script>
