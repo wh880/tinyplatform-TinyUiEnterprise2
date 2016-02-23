@@ -1,5 +1,5 @@
 <style type="text/css">
-    .down-menu{padding:8px 12px 2px}
+    .down-menu{padding:0 12px 2px}
     .down-menu .list-item{padding:0}
     .down-menu .list-item li{padding-top:8px;border-bottom: 1px dashed #ddd}
     .down-menu .project-item:hover{background:#f6f6f6}
@@ -13,9 +13,27 @@
     .down-menu .add-item a,.add-item a:link,.add-item a:visited{color:#20638f;font-size:15px;}
     .down-menu .add-item .task-ico{color:#20638f;margin-right:6px;font-size:18px;}
     .down-menu .add-item a:hover{color:#c60; text-decoration:none}
+
+    .down-menu .search-box,.down-menu .list-item,.statistics-list{padding: 0}
+    .down-menu .list-item li{line-height: 20px;margin-bottom:6px;}
+    .down-menu .task-item:hover{background:#f6f6f6}
+    .down-menu .task-item .task-ico{ margin-right:6px;}
+    .down-menu .task-item a,.task-item a:link,.task-item a:visited{line-height:30px;color:#383838;overflow:hidden; text-overflow:ellipsis; white-space:nowrap;display:block}
+    .down-menu .task-item a:hover{text-decoration: none}
 </style>
 #@widgetGrid()
     <div class="down-menu">
+        <ul class="list-item">
+            <li class="task-item">
+                <a class="clearfix"> <div class="task-ico pull-left">#faIcon("calendar-plus-o")</div> <span>今天的任务</span></a>
+            </li>
+            <li class="task-item">
+                <a class="clearfix"> <div class="task-ico pull-left">#faIcon("file-text-o")</div> <span>未完成的任务</span></a>
+            </li>
+            <li class="task-item">
+                <a class="clearfix"> <div class="task-ico pull-left">#faIcon("check-square-o")</div> <span>已完成的任务</span></a>
+            </li>
+        </ul>
         <ul class="list-item">
             <li><p class="group-name">#faIcon("tasks")&nbsp;项目动态</p></li>
             <li class="project-item">
@@ -45,5 +63,6 @@
                 </a>
             </li>
         </ul>
+
     </div>
 #end
