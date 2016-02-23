@@ -65,7 +65,7 @@
 
 #@tForm("thisform" "/data/Validform_post.html" "post" {"class":""})
     #@elementItem("邮箱：")
-        #tInput("email" ""{"placeholder":"@","datatype":"e","nullmsg":"请输入邮箱！","id":"email","class":"input-text"})
+        #tInput("email" ""{"placeholder":"@","required":"required","type":"email","nullmsg":"请输入邮箱！","id":"email","class":"input-text"})
     #end
 
     #@elementItem("用户名：")
@@ -186,7 +186,7 @@
         ##  #@Teditor("contentxx2" "content22" {"initialFrameHeight":"600"})最后一个MAP参数为Ueditor的初始化参数 会自动带入 #end
     #end
 
-
+    <div class="alert alert-success" style="display: none;"></div>
     #@elementItem()
         #@tButton("btn-info")提交#end
         #@aButton("btn-success")返回#end
@@ -199,7 +199,21 @@
 #dialog("myModal2")
 <script type="text/javascript">
     $(function () {
-        $("form[name=thisform").Validform({
+        $("form[name=thisform").bootstrapValidator({
+            submitHandler: function(validator, form, submitButton) {
+                // validator is the BootstrapValidator instance
+                // form is the jQuery object present the current form
+                form.find('.alert').html('可设置AJAX加载').show();
+            },
+            feedbackIcons: {
+                valid: 'fa fa-check',
+                invalid: 'fa fa-remove',
+                validating: 'fa fa-refresh'
+            },
+        });
+
+
+        /*Validform({
             tiptype: function (msg, o, cssctl) {
                 var objtip = $(o.obj).closest(".form-group").children(".valid-msg");
                 cssctl(objtip, o.type);
@@ -232,7 +246,7 @@
                 });
                 return false;
             }
-        });
+        });*/
         $(function(){
             $(".selectList").each(function(){
                 var url = "#link('/data/getDist.html')";

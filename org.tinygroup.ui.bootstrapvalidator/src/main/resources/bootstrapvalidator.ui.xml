@@ -1,0 +1,11 @@
+<ui-components>
+    <ui-component name="tiny.ui.bootstrapvalidator" dependencies="tiny.ui.bootstrap">
+		<js-resource>
+		  	/static/org/tinygroup/bootstrapvalidator/js/bootstrapValidator.min.js,
+		</js-resource>
+		<css-resource>
+		  	/static/org/tinygroup/bootstrapvalidator/css/bootstrapValidator.min.css
+		</css-resource>
+		<description>bootstrapvalidator (https://github.com/nghuuphuoc/bootstrapvalidator/)</description>
+    </ui-component>
+</ui-components>

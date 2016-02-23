@@ -27,5 +27,10 @@
 			<artifactId>org.tinygroup.ui.select2</artifactId>
 			<version>${project.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>org.tinygroup</groupId>
+			<artifactId>org.tinygroup.ui.bootstrapvalidator</artifactId>
+			<version>${project.version}</version>
+		</dependency>
 	</dependencies>
 </project>
