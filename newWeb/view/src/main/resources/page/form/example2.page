@@ -65,14 +65,14 @@
 
 #@tForm("thisform" "/data/Validform_post.html" "post" {"class":""})
     #@elementItem("邮箱：")
-        #tInput("email" ""{"placeholder":"@","required":"required","type":"email","nullmsg":"请输入邮箱！","id":"email","class":"input-text"})
+        #tInput("email" ""{"placeholder":"@","required":"required","nullmsg":"请输入邮箱！","id":"email","class":"input-text"})
     #end
 
     #@elementItem("用户名：")
         #tInput("username" ""{"placeholder":"4~16个字符，字母/中文/数字/下划线","datatype":"*4-16","ajaxurl":call("link","/data/usercheck.pagelet"),"nullmsg":"用户名不能为空！","id":"username"})
     #end
     #@elementItem("身份证：")
-        #tInput("username" ""{"placeholder":"身份证号","datatype":"/(^[0-9]{15}$)|(^[0-9]{17}[0-9Xx]$)/","nullmsg":"身份证号不能为空！"})
+        #tInput("ssid" ""{"placeholder":"身份证号","datatype":"/(^[0-9]{15}$)|(^[0-9]{17}[0-9Xx]$)/","nullmsg":"身份证号不能为空！","ignore":"ignore"})
     #end
     #@elementItem("密码：")
         #tPassInput("password" ""{"placeholder":"密码","datatype":"*6-18","nullmsg":"请输入密码！","autocomplete":"off","id":"password"})
@@ -199,17 +199,18 @@
 #dialog("myModal2")
 <script type="text/javascript">
     $(function () {
+        var form=$("form[name=thisform");
+        form.find("input[datatype],select[datatype],textarea[datatype]").each(function(){
+            var datatype=$(this).attr("datatype");
+            if(!datatype)  return;
+            $(this).attr("required","required");
+        });
         $("form[name=thisform").bootstrapValidator({
             submitHandler: function(validator, form, submitButton) {
                 // validator is the BootstrapValidator instance
                 // form is the jQuery object present the current form
                 form.find('.alert').html('可设置AJAX加载').show();
-            },
-            feedbackIcons: {
-                valid: 'fa fa-check',
-                invalid: 'fa fa-remove',
-                validating: 'fa fa-refresh'
-            },
+            }
         });
 
 
