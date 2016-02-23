@@ -3254,7 +3254,7 @@
          */
         validate: function (validator, $field, options) {
             var value = $field.val();
-            if (value == '') {
+             if (value == ''&&$field.attr("ignore")=="ignore") {
                 return true;
             }
             var regexp = ('string' == typeof options.regexp) ? new RegExp(options.regexp) : options.regexp;

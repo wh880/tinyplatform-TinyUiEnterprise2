@@ -199,12 +199,12 @@
 #dialog("myModal2")
 <script type="text/javascript">
     $(function () {
-        var form=$("form[name=thisform");
-        form.find("input[datatype],select[datatype],textarea[datatype]").each(function(){
+        //var form=$("form[name=thisform");
+        /*form.find("input[datatype],select[datatype],textarea[datatype]").each(function(){
             var datatype=$(this).attr("datatype");
             if(!datatype)  return;
             $(this).attr("required","required");
-        });
+        });*/
         $("form[name=thisform").bootstrapValidator({
             submitHandler: function(validator, form, submitButton) {
                 // validator is the BootstrapValidator instance
