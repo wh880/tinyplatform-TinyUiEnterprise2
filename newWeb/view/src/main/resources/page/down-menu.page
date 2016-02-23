@@ -1,5 +1,5 @@
 <style type="text/css">
-    .down-menu{padding:8px 12px 2px}
+    .down-menu{padding:0 12px 2px}
     .down-menu .list-item{padding:0}
     .down-menu .list-item li{padding-top:8px;border-bottom: 1px dashed #ddd}
     .down-menu .project-item:hover{background:#f6f6f6}
