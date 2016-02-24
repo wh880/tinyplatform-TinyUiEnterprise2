@@ -1,7 +1,7 @@
 <style type="text/css">
     .task-list{padding:8px 12px 2px}
     .task-list .search-box,.task-list .list-item,.statistics-list{padding: 0}
-    .task-list .list-item li{line-height: 20px;margin-bottom:6px;}
+    .task-list .list-item li{line-height: 20px;margin-bottom:6px;display:block}
     .task-list .task-item:hover{background:#f6f6f6}
     .task-list .task-item .task-ico{ margin-right:6px;}
     .task-list .task-item a,.task-item a:link,.task-item a:visited{line-height:30px;color:#383838;overflow:hidden; text-overflow:ellipsis; white-space:nowrap;display:block}
@@ -29,13 +29,13 @@
         <div class="add-item"> <a class="clearfix"> <div class="task-ico pull-left">#faIcon("plus-circle")</div> <span>添加任务分组</span></a></div>
         <ul class="list-item">
             <li class="task-item">
-                <a class="clearfix"> <div class="task-ico pull-left">#faIcon("calendar-plus-o")</div> <span>今天的任务</span></a>
+                <a class="clearfix"> <span class="task-ico">#faIcon("calendar-plus-o")</span> <span>今天的任务</span></a>
             </li>
             <li class="task-item">
-                <a class="clearfix"> <div class="task-ico pull-left">#faIcon("file-text-o")</div> <span>未完成的任务</span></a>
+                <a class="clearfix"> <span class="task-ico">#faIcon("file-text-o")</span> <span>未完成的任务</span></a>
             </li>
             <li class="task-item">
-                <a class="clearfix"> <div class="task-ico pull-left">#faIcon("check-square-o")</div> <span>已完成的任务</span></a>
+                <a class="clearfix"> <span class="task-ico">#faIcon("check-square-o")</span> <span>已完成的任务</span></a>
             </li>
         </ul>
     </div>

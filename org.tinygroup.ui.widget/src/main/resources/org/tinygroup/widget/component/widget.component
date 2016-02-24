@@ -1,5 +1,5 @@
 #macro widgetGrid()#set(widgetGridId=0)
-<section id="widget-grid">
+<section id="widget-grid" class="widget-grid">
     #bodyContent
 </section>
 <script type="text/javascript">
@@ -24,12 +24,27 @@
 #macro widgetMap(MapInfo)#for(var:MapInfo) data-widget-${var.key}="${var.key}"#end#end
 
 ##data-widget-colorbutton="true"  data-widget-fullscreenbutton="true" data-widget-togglebutton="true"
+#*
 #macro widgetItem(col optMap)#set(widgetGridId=widgetGridId+1)
-<article class="col-lg-${col}">
+<article class="col-lg-${col} col-x">
     <div class="jarviswidget " id="wid-id-k${widgetGridId}" data-widget-editbutton="false" data-widget-deletebutton="false"#widgetMap(optMap)>
         #bodyContent
     </div>
 </article>
+#end
+*#
+
+
+#macro widgetLayout(col optMap)
+<article class="col-lg-${col} col-x">
+    #bodyContent
+</article>
+#end
+
+#macro widgetItem()#set(widgetGridId=widgetGridId+1)
+<div class="jarviswidget hide" id="wid-id-k${widgetGridId}" data-widget-editbutton="false" data-widget-deletebutton="false"#widgetMap(optMap)>
+    #bodyContent
+</div>
 #end
 
 #macro widgetItemHead(col)

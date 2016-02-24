@@ -28,6 +28,7 @@ $(function() {
                 layer.open({
                     title:title,
                     type:1,
+                    scrollbar:false,
                     content: str,
                     maxmin:true,
                     area: [width, height]
@@ -38,6 +39,7 @@ $(function() {
                 title:title,
                 type:2,
                 content: url,
+                scrollbar:false,
                 maxmin:true,
                 area: [width, height]
             });

@@ -458,12 +458,12 @@ div.switch.round label:after {
 .input-file{position:absolute; right:0; top:0; cursor: pointer; z-index:1; font-size:30em;opacity:0;filter: alpha(opacity=0);height: 100%;width: 100%;overflow:hidden}
 .form-group .upload-btn{ margin-left:-1px}
 .btn-upload .icon-add,.btn-upload .icon-minus{cursor: pointer;display: inline-block;font-family: Arial;font-size: 30px;height: 31px;line-height: 31px;text-align: center;vertical-align: middle;width: 36px}
-@media (max-width: 767px) {
+/*@media (max-width: 767px) {
 	.btn-upload{ position:static}
 	.input-file{ position:static; opacity:1; font-size:16px;}
 	.upload-btn{ display:none;}
 	.upload-url{ display:none}
-}
+}*/
 .input-file-preview{position: relative;z-index: 2;cursor:pointer}
 /*必填星号*/
 .form-label .c-red{vertical-align:middle; padding-right:3px;}
