@@ -11,7 +11,7 @@
     .list-item .project-item a:hover{text-decoration: none}
     .screen-list .add-item{margin:6px 0;border-bottom:#ddd 1px solid;line-height:32px;}
     .screen-list .add-item a,.add-item a:link,.add-item a:visited{color:#20638f;font-size:15px;}
-    .screen-list .add-item .task-ico{color:#20638f;margin-right:6px;font-size:18px;}
+    .screen-list .add-item .task-ico{color:#20638f;margin-right:6px;font-size:16px;}
     .screen-list .add-item a:hover{color:#c60; text-decoration:none}
     .project-item .s-list-item .main-info{margin-top:-20px;display:block}
     .project-item .s-list-item .main-info .infos-content{overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
