@@ -40,7 +40,7 @@
                         }else{
                             icon=2;
                         }
-                        layer.msg(data.info,{icon:icon,time:1000})
+                        layer.msg(data.info,{icon:icon,time:500})
                     }
                 })
             },
