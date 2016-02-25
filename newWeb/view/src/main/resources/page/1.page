@@ -1,7 +1,7 @@
 
 
 
-#@lAjax("AJAX加载" "/page/tinyForm.pagelet")#@tButton()AJAX加载#end#end
+@lAjax("AJAX加载" "/page/tinyForm.pagelet")#@tButton()AJAX加载#end#end
 
 
 <script>
