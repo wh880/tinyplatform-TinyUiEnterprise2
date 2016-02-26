@@ -41,7 +41,7 @@
 </article>
 #end
 
-#macro widgetItem()#set(widgetGridId=widgetGridId+1)
+#macro widgetItem(optMap)#set(widgetGridId=widgetGridId+1)
 <div class="jarviswidget hide" id="wid-id-k${widgetGridId}" data-widget-editbutton="false" data-widget-deletebutton="false"#widgetMap(optMap)>
     #bodyContent
 </div>

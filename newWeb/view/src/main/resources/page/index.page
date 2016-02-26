@@ -1,9 +1,18 @@
 <style type="text/css">
-#content-wrapper {padding-left: 0;padding-right: 0;}
-.show-stats .progress{height:7px; border-radius:0; margin-top:3px; margin-bottom:15px}
+    #content-wrapper {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .show-stats .progress {
+        height: 7px;
+        border-radius: 0;
+        margin-top: 3px;
+        margin-bottom: 15px
+    }
 </style>
 #@widgetGrid()
-    #@widgetItem(12 {"colorbutton":false})
+    #@widgetItem({"colorbutton":false})
         #@widgetItemHead()
         <span class="widget-icon"><i class="fa  fa-bar-chart"></i></span>
         <h2>即时动态</h2>
@@ -212,7 +221,7 @@
         #end
     #end
 
-    #@widgetItem(6)
+    #@widgetItem()
         #@widgetItemHead()
             <span class="widget-icon"><i class="fa fa-comments txt-color-white"></i></span>
             <h2>地域分布</h2>
@@ -237,7 +246,7 @@
         #end
     #end
 
-    #@widgetItem(6)
+    #@widgetItem()
         #@widgetItemHead()
             <span class="widget-icon">#faIcon("map-marker")</span>
             <h2>项目动态</h2>
