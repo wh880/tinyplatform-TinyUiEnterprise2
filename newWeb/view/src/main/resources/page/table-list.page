@@ -1,0 +1,64 @@
+<style>
+    .table-header .table-title{font-size:16px}
+    .table-boxs{background:#fefefe;box-shadow: 0 0 2px 1px #fdfdfd;}
+    .table-header-wrap .table-header{background:#fcfcfc;height:42px;line-height:42px;padding:0 10px;}
+    .table-handler-set{padding:12px 10px;border-top:#dde 1px solid}
+    .table-info .check-box{display:block; float:left; width:40px;margin-top:-16px;}
+    .table-info .table-info-name{display:block; float:left; width: 30%;padding-right: 20px;}
+    .table-info .table-info-size{display: block; float: left; width:40%;padding-right: 20px;}
+    .table-info .table-info-author{display: block; float: left; width:20%;padding-right: 20px;}
+    .tables-list{padding:0}
+    .table-info-name .project-pic{width:38px;height:38px;border-radius:50%;  margin-right: 10px;  background-color:#74bbd8;}
+    .member-info .member-line{line-height:35px;padding-bottom:12px;}
+    .work-view{border-bottom:#dde 1px solid}
+    @media screen and (max-width:780px){
+        .table-info .table-info-name{display:block; float:left;width:100%;margin-left:30px;margin-top: -8px;}
+        .table-info .table-info-size{display:none;}
+        .table-info .table-info-author{display:none; }
+        .table-info .table-info-update{display:none; }
+    }
+</style>
+#@gridSysRow()
+    #@gridSysCol(12)
+    <div class="table-boxs">
+        <div class="table-header-wrap">
+            <header class="table-header">
+                <div class="table-title l">全部空间</div>
+                <div class="table-header-handler r">
+                    <a class="link-add-handler" > <p class="search-box">#tInput("email" ""{"placeholder":" 搜索成员","class":"input-text"})</p> </a>
+                </div>
+            </header>
+            <div class="table-handler-set clearfix">
+                <div class="table-info">
+                    <span class="table-info-name">空间</span>
+                    <span class="table-info-size">描述</span>
+                    <span class="table-info-author">类别</span>
+                    <span class="table-info-update">操作</span>
+                </div>
+            </div>
+        </div>
+        <div class="tables-content clearfix">
+            <ul class="tables-list">
+                <li class="work-view">
+                    <div class="table-handler-set clearfix">
+                        <div class="table-info">
+                            <a class="table-info-name">
+                                <div class="project-pic pull-left" style="background:url(../img/p1.jpg) no-repeat;"></div>
+                                <div class="member-info">
+                                    <div class="member-name member-line">682016222</div>
+                                </div>
+                            </a>
+                            <span class="table-info-size"> 我来描述一下下</span>
+                            <span class="table-info-author"><span class="label label-success">#faIcon("paperclip") 2016-01-22</span></span>
+                            <span class="table-info-update">
+                                <a href="#" title="空间细节">#faIcon("paperclip")</a>&nbsp;
+                                <a href="#" title="加入收藏">#faIcon("star")</a>
+                            </span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    #end
+#end
