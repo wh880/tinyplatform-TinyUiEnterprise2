@@ -259,7 +259,8 @@ a {
 #main_menu, #main_menu .submenu-title, .menu_toggle {
     display: none
 }
-#main_menu a{text-decoration:none}
+#main_menu a{text-decoration:none;color:#444}
+#main_menu a:hover{color:#369}
 
 .side_menu_active #breadcrumbs, .side_menu_active #main_wrapper {
     margin-left: 240px
