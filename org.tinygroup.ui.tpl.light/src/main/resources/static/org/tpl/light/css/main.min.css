@@ -261,7 +261,8 @@ a {
 #main_menu, #main_menu .submenu-title, .menu_toggle {
     display: none
 }
-#main_menu a{text-decoration:none}
+#main_menu a{text-decoration:none;color:#444}
+#main_menu a:hover{color:#369}
 
 .side_menu_active #breadcrumbs, .side_menu_active #main_wrapper {
     margin-left: 240px
@@ -762,7 +763,7 @@ a {
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 150;
+    z-index: 1020;
     -webkit-transition: 200ms ease;
     transition: 200ms ease
 }
@@ -776,7 +777,7 @@ a {
 
 #main_header .header_notifications {
     list-style: none;
-    margin: 8px 0 0 20px;
+    margin: 8px 22px 0 20px;
     padding: 0;
     float: left
 }
@@ -853,10 +854,6 @@ a {
     left: 15px
 }
 
-#main_header .header_notifications .dropdown-menu-right:after,#main_header .header_notifications .dropdown-menu-right:before {
-    left: auto;
-    right:15px;
-}
 
 #main_header .header_notifications .dropdown-menu ul {
     margin: 0;

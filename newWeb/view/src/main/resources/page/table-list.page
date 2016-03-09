@@ -20,36 +20,8 @@
                     <a class="link-add-handler" > <p class="search-box">#tInput("email" ""{"placeholder":" 搜索成员","class":"input-text"})</p> </a>
                 </div>
             </header>
-            #*<div class="table-handler-set clearfix">
-                <div class="table-info">
-                    <span class="table-info-name">空间</span>
-                    <span class="table-info-size">描述</span>
-                    <span class="table-info-author">类别</span>
-                    <span class="table-info-update">操作</span>
-                </div>
-            </div>*#
         </div>
         <div class="tables-content clearfix">
-            #*<ul class="tables-list">
-                <li class="work-view">
-                    <div class="table-handler-set clearfix">
-                        <div class="table-info">
-                            <a class="table-info-name">
-                                <div class="project-pic pull-left" style="background:url(../img/p1.jpg) no-repeat;"></div>
-                                <div class="member-info">
-                                    <div class="member-name member-line">682016222</div>
-                                </div>
-                            </a>
-                            <span class="table-info-size"> 我来描述一下下</span>
-                            <span class="table-info-author"><span class="label label-success">#faIcon("paperclip") 2016-01-22</span></span>
-                            <span class="table-info-update">
-                                <a href="#" title="空间细节">#faIcon("paperclip")</a>&nbsp;
-                                <a href="#" title="加入收藏">#faIcon("star")</a>
-                            </span>
-                        </div>
-                    </div>
-                </li>
-            </ul>*#
             <table class="table table-bordered">
                 <thead>
                 <tr>
