@@ -934,6 +934,33 @@
 
     };
 
+    $.extend({
+        sortableListSort: function(data) {
+            var tempArr=[],reArr=[];
+            for(var i= 0,l=data.length;i<l;i++){
+                tempArr[data[i].id]=data[i];
+            }
+            this.getData=function(item){
+                if($.inArray(item, reArr)!=-1){
+                    return ;
+                }
+                if(item.pId!=null){
+                    this.getData(tempArr[item.pId]);
+                }
+                reArr.push(item);
+            }
+            for(var i= 0,l=data.length;i<l;i++){
+                this.getData(data[i]);
+            }
+            reArr.sort(function (x, y) {
+                if(typeof(x.docSort) != "undefined" && x.pId == y.pId){
+                    return (parseInt(x.docSort) < parseInt(y.docSort)) ? -1 : 1
+                }
+                return -1;
+            });
+            return reArr;
+        }
+    });
 }(jQuery));
 
 
