@@ -202,7 +202,9 @@ a {
 
 #main_wrapper {
     padding: 10px 10px 40px;
-    background: #fff
+    background: #fff;
+    position:relative;
+    z-index:1;
 }
 
 @media only screen and (min-width: 1120px) {
@@ -760,7 +762,7 @@ a {
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1020;
+    z-index: 150;
     -webkit-transition: 200ms ease;
     transition: 200ms ease
 }
@@ -774,7 +776,7 @@ a {
 
 #main_header .header_notifications {
     list-style: none;
-    margin: 8px 40px 0 20px;
+    margin: 8px 0 0 20px;
     padding: 0;
     float: left
 }
@@ -851,6 +853,10 @@ a {
     left: 15px
 }
 
+#main_header .header_notifications .dropdown-menu-right:after,#main_header .header_notifications .dropdown-menu-right:before {
+    left: auto;
+    right:15px;
+}
 
 #main_header .header_notifications .dropdown-menu ul {
     margin: 0;

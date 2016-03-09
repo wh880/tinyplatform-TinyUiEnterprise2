@@ -8,7 +8,7 @@
             hintCss: {'background-color':'#eee'},
             onChange: function( cEl )
             {
-                console.log(cEl);
+                //console.log(cEl);
                 var hasSibling=$(cEl).siblings().size(),
                     siblingNode="",
                     type="",

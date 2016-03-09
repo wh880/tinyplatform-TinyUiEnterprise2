@@ -86,68 +86,44 @@
                 <div class="brand_section">
                     <img src="#link("/img/logo.png")" alt="" height="35">
                 </div>
-                <ul class="header_menu">
-                    <li><a href="#link("/page/list.page")">#faIcon("desktop")项目</a></li>
-                    <li><a href="#">#faIcon("line-chart")企业</a></li>
-                    <li><a href="#">#faIcon("street-view")我的</a></li>
-                    <li><a href="#">#faIcon("calendar-check-o")日历</a></li>
-                    <li><a href="#">#faIcon("inbox")收件箱</a></li>
-                </ul>
-                <div class="header_user_actions dropdown">
-                    <div data-toggle="dropdown" class="dropdown-toggle user_dropdown">
-                        <div class="user_avatar">
-                            <img src="#link("/img/portraits/1.jpg")" alt="" title="" width="38" height="38">
-                        </div>
-                        <span class="caret"></span>
-                    </div>
-                    <ul class="dropdown-menu dropdown-menu-right">
-                        <li><a href="javascript:void(0);"><span class="label label-warning pull-right">新的</span>资料文件</a></li>
-                        <li><a href="javascript:void(0);"><span class="badge badge-primary pull-right">新的</span>个人中心</a></li>
-                        <li><a href="javascript:void(0);">#faIco("cog")&nbsp;&nbsp;设置</a></li>
-                        <li class="divider"></li>
-                        <li><a href="javascript:void(0);">#faIco("power-off")&nbsp;&nbsp;退出</a></li>
+                <div class="header_menu">
+                    <ul class="menu-part">
+                        <li><a href="#link("/page/list.page")">#faIcon("desktop")项目</a></li>
+                        <li><a href="#">#faIcon("line-chart")企业</a></li>
+                        <li><a href="#">#faIcon("street-view")我的</a></li>
+                        <li><a href="#">#faIcon("calendar-check-o")日历</a></li>
+                        <li><a href="#">#faIcon("inbox")收件箱</a></li>
                     </ul>
                 </div>
-                <ul class="header_notifications" style="float:right">
-                    <li class="dropdown">
-                        <span class="label label-danger">3</span>
-                        <a data-toggle="dropdown" href="index.html#" class="dropdown-toggle">#faIcon("plus-square")</a>
-                        <div class="dropdown-menu">
-                            <ul>
-                                <li>
-                                    <a href="#">第一项</a>
-                                </li>
-                                <li>
-                                    <a href="#">第二项</a>
-                                </li>
 
-                                <li>
-                                    <a href="#">第三项</a>
-                                </li>
-                            </ul>
-                        </div>
+                <ul class="header_notifications" style="float:right">
+                    <li>
+                        <a href="javascript:void(0);" title="增加">#faIcon("plus-square")</a>
                     </li>
-                #* <li>
-                     <a  href="index.html#" >#faIcon("paper-plane")</a>
-                 </li>*#
                     <li class="fullscreen">
                         <a href="javascript:void(0);" onclick="launchFullScreen(document.documentElement);" title="全屏">#faIcon("arrows-alt")</a>
                     </li>
+                    <li>
+                        <a data-toggle="dropdown" class="dropdown-toggle user_dropdown">
+                            #faIcon("user") <span class="f-12">系统管理员</span> #faIcon("caret-down")
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-right">
+                            <li><a href="javascript:void(0);"><span class="label label-warning pull-right">新的</span>资料文件</a></li>
+                            <li><a href="javascript:void(0);"><span class="badge badge-primary pull-right">新的</span>个人中心</a></li>
+                            <li><a href="javascript:void(0);">#faIco("cog")&nbsp;&nbsp;设置</a></li>
+                            <li class="divider"></li>
+                            <li><a href="javascript:void(0);">#faIco("power-off")&nbsp;&nbsp;退出</a></li>
+                        </ul>
+                    </li>
                 </ul>
-                <div class="search_section hidden-sm hidden-xs" style="display:none">
-                    <input type="text" class="form-control input-sm" placeholder="查找更多...">
-                    <button class="btn btn-link btn-sm" type="button"><span class="icon_search"></span></button>
+                <div class="search_section hidden-sm hidden-xs">
+                    <form action="" mothed="get">
+                    <input type="text" class="form-control input-sm" name="textKey" value="${textKey}" placeholder="查找更多...">
+                    <button class="btn btn-link btn-sm" type="button">#faIcon("search")</button>
+                    </form>
                 </div>
             </div>
         </header>
-
-        <!-- breadcrumbs -->
-##        <nav id="breadcrumbs hidden">
-##            <ul>
-##                <li><a href="dashboard.html">首页</a></li>
-##            </ul>
-##        </nav>
-        <!-- main content -->
         <div id="main_wrapper">
             ${pageContent}
             <div class="menu-view">
@@ -205,6 +181,46 @@
         })
         $("#project-list").load("#link("/page/project-list.pagelet")");
         $("#task-list").load("#link("/page/task-list.pagelet")");
+
+        $("#search-btn").on("click",function(){
+
+        });
+        $("input[name=textKey]").autocomplete({
+            source: function( request, response ) {
+                $.ajax({
+                    url: "#link("/data/select2ajax.pagelet")",
+                    dataType: "json",
+                    data: {
+                        term:  request.term
+                    },
+                    success: function( data ) {
+                        response( $.map(data, function( item ) {
+                            return {
+                                label: item.stext,
+                                value: item.stext,
+                                url:"ajian.com"+item.sid
+                            }
+                        }));
+                    }
+                });
+            },
+            search: function() {
+                // 自定义最小长度
+               /* var term = extractLast( this.value );
+                if ( term.length < 2 ) {
+                  //  return false;
+                }*/
+            },
+            focus: function() {
+                // 防止在获得焦点时插入值
+                return false;
+            },
+            select: function( event, ui ) {
+                console.log(ui);
+                return false;
+            }
+        });
+
     })
 </script>
 </body>

@@ -291,6 +291,7 @@ zNodes${tempid}.push({id:${id}, pId:${pid}, name:"${name}"});
                     data= eval(' ' +data+ ' ');
                     data.splice(0, 0, {id:"allcontent", pId:0, name:"全部",add:true});
                     zNodes=data;
+                    try{zTree.destroy();}catch (e){}
                     zTree=$.fn.zTree.init($("#"+ztreeid), setting, zNodes);
                     callback&&callback();
                     //initzTree();
@@ -333,7 +334,8 @@ zNodes${tempid}.push({id:${id}, pId:${pid}, name:"${name}"});
             }
             //className = (className === "dark" ? "":"dark");
             return false;
-        }        function onNodeCreated(event, treeId, treeNode){
+        }
+        function onNodeCreated(event, treeId, treeNode){
             var rightWidth=3;
             if(treeNode.edit) {
                 rightWidth+=35;

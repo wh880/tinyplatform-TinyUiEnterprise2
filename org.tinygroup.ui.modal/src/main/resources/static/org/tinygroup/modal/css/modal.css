@@ -7,7 +7,7 @@
 .mask{position:fixed;top:0;left:0;z-index:999;width:100%;height:100%;background:url(../images/backdrop.png) repeat 0 0;-moz-transition:all 0.3s ease-in;-webkit-transition:all 0.3s ease-in;-o-transition:all 0.3s ease-in;transition:all 0.3s ease-in}
 
 * html .mask{position:absolute;left:expression(documentElement.scrollLeft + documentElement.clientWidth - this.offsetWidth);top:expression(documentElement.scrollTop + documentElement.clientHeight - this.offsetHeight)}
-a,a:link,a:visited,a:hover{cursor:pointer}
+
 /*modal*/
 .modal-open{overflow:hidden}/*当弹出层出现时，隐藏body右侧滚动条*/
 .page-overflow{/*margin-right:16px*/}/*隐藏body滚动条时，页面偏移*/
