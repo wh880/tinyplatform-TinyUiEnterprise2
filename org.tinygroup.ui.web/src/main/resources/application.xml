@@ -249,6 +249,11 @@
 	    <!--<tiny-processor id="umUploadTinyProcessor" class="umUploadTinyProcessor">-->
 			<!--<servlet-mapping url-pattern=".*\.umupload"></servlet-mapping>-->
 		<!--</tiny-processor>-->
+
+		<tiny-processor id="springMvcTinyProcessor" class="springMvcTinyProcessor">
+			<servlet-mapping url-pattern=".*"></servlet-mapping>
+		</tiny-processor>
+
 		<tiny-processor id="uiEngineTinyProcessor" class="uiEngineTinyProcessor">
 			<servlet-mapping url-pattern=".*/uiengine\.uijs"></servlet-mapping>
 			<servlet-mapping url-pattern=".*/uiengine\.uicss"></servlet-mapping>

@@ -46,6 +46,12 @@
 			<version>6.1.14</version>
 			<scope>provided</scope>
 		</dependency>
+		<!--引入SpringMVC-->
+		<dependency>
+			<groupId>org.tinygroup</groupId>
+			<artifactId>org.tinygroup.springmvc</artifactId>
+			<version>${tiny_version}</version>
+		</dependency>
 		<dependency>
 			<groupId>org.tinygroup</groupId>
 			<artifactId>org.tinygroup.templateweblayer</artifactId>
@@ -66,5 +72,7 @@
 			<artifactId>org.tinygroup.ui.view</artifactId>
 			<version>${project.version}</version>
 		</dependency>
+
+
 	</dependencies>
 </project>

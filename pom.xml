@@ -88,6 +88,7 @@
 		<module>org.tinygroup.ui.masonry</module>
 		<module>org.tinygroup.ui.bootstrapvalidator</module>
 		<module>org.tinygroup.ui.sortablelist</module>
+		<module>org.tinygroup.ui.ueditor</module>
 		<module>newWeb</module>
     </modules>
 </project>
