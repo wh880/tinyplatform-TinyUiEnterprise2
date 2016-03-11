@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>宏控件</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" >
+    <link rel="stylesheet" href="#link("/static/org/tinygroup/bootstrap/css/bootstrap.css")">
+    <script type="text/javascript" src="../dialogs/internal.js"></script>
+    <script type="text/javascript" src="#link("/static/org/tinygroup/jquery/js/jquery.1.11.3.min.js")"></script>
+
+    <style>
+        th{text-align:right}
+    </style>
+</head>
+<body>
+<div class="content">
+    <table class="table table-bordered table-striped table-hover">
+        <thead>
+        <tr>
+            <th width="90">选择宏</th>
+            <td>
+                <select id="macroName" class="form-control">  </select>
+            </td>
+        </tr>
+        </thead>
+        <tbody id='itemAttr'></tbody>
+
+    </table>
+</div>
+<script type="text/javascript">
+    var oNode = null,thePlugins = 'macros';
+    var isInit=false;
+    var currentMacro={};
+    var macroList=[];
+    $.ajax({
+        url:"#link("/data/macrolist.pagelet")",
+        dataType:"json",
+        success:function(data){
+            macroList=data;
+            currentMacro=macroList[0];
+            for(var i= 0,l=data.length;i<l;i++) {
+                $("#macroName").append("<option value='" + data[i]["name"] + "'>" + data[i]["name"] + "</option>");
+            }
+            $("#macroName").trigger("change");
+        }
+    });
+    var setParaList=function(){
+        var html="";
+        $("#itemAttr").empty();
+        for(var i= 0,l= currentMacro.parameters.length;i<l;i++){
+            html='<tr><th><span>'+currentMacro.parameters[i]["name"]+'</span></th><td><input type="text" id="para_'+(i+1)+'" class="form-control"></td></tr>';
+            $("#itemAttr").append(html);
+        }
+        if(currentMacro.hasBody==true || currentMacro.hasBody=="true"){
+            $("#itemAttr").append('<tr> <th><span>宏体</span></th><td><textarea id="body" class="form-control"></textarea></td></tr>');
+        }
+        macroInit();
+    }
+    $("#macroName").on("change",function(){
+        var currentMacroName=$(this).val();
+        for(var i= 0,l=macroList.length;i<l;i++) {
+            if(macroList[i]["name"]==currentMacroName){
+                currentMacro=macroList[i];
+                macro_para_length=currentMacro.parameters.length;
+                break;
+            }
+        }
+        setParaList();
+    });
+    var macroInit = function() {
+        if(isInit) return false;
+        isInit=true;
+        if( UE.plugins[thePlugins].editdom ) {
+            oNode = UE.plugins[thePlugins].editdom;
+            _oNode=$(oNode);
+            bodyHtml=_oNode.html();
+            bodyHtml=bodyHtml.replace(/#(e)nd$/,"");
+            bodyHtml=bodyHtml.replace(/^#@[^)]+/,"");
+            bodyHtml=bodyHtml.replace(/^\)/,"");
+            $("#body").val(bodyHtml);
+            $("#macroName").val(_oNode.attr("name")).trigger("change");
+            for(var i= 1;i<=macro_para_length;i++){
+                $("#para_"+i).val(_oNode.attr("para_"+i));
+            }
+        }
+    }
+
+    dialog.oncancel = function () {
+        if( UE.plugins[thePlugins].editdom ) {
+            delete UE.plugins[thePlugins].editdom;
+        }
+    };
+
+    var getMacroNameAndPara=function(){
+        var rehtml=$("#macroName").val()+"(";
+        var paraArr=[];
+        for(var i= 1;i<=macro_para_length;i++){
+            paraArr.push('"'+$("#para_"+i).val()+'"');
+        }
+        rehtml+=paraArr.join(",");
+        rehtml+=")";
+        return rehtml;
+    }
+    dialog.onok = function (){
+        var macroBody=$("#body").val();
+        if(typeof(macroBody)=="undefined") macroBody="";
+        if( oNode ) domUtils.remove(oNode,false);
+        _oNode = $('<span>');
+        _oNode.attr('name',$("#macroName").val());
+        _oNode.attr('tinyPlugins',thePlugins);
+
+        _oNode.attr("para_1",$("#para_1").val());
+        _oNode.attr("para_2",$("#para_2").val());
+        _oNode.attr("para_3",$("#para_3").val());
+
+        _oNode.html("#@"+getMacroNameAndPara()+macroBody+"#"+"end");
+        editor.execCommand('insertHtml',_oNode.prop("outerHTML"));
+        if(oNode) delete UE.plugins[thePlugins].editdom;
+    };
+</script>
+</body>
+</html>
