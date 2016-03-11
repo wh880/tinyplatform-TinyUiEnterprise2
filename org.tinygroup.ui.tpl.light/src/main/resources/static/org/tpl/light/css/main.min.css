@@ -1026,6 +1026,7 @@ a {
     font-size: 15px
 }
 #breadcrumbs .nav-menu-right li + li:before {content: '';}
+#breadcrumbs .nav-menu-right li a:hover{color:#d9534f}
 
 .switchery {
     background-color: #fff;
