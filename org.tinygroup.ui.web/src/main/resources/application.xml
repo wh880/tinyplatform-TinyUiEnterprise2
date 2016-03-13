@@ -8,6 +8,7 @@
 		<property name="TINY_THEME" value="default" />
 		<property name="UPLOAD" value="default" />
 		<property name="UPLOAD_ACTION_URL" value="/action/savepic.pagelet" />
+		<property name="MACROS_LIST" value="/data/macrolist.pagelet" />
 		<!-- 如果没有指定语言或指定语言的内容找不到，则从默认语言查找 -->
 		<property name="TINY_DEFAULT_LOCALE" value="zh_CN" />
 	</application-properties>

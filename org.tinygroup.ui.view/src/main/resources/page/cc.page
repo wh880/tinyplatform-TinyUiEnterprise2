@@ -1,3 +1,4 @@
+#*
 <script>
     UE.plugins['macros'] = function () {
         var me = this,thePlugins = 'macros';
@@ -106,6 +107,7 @@
         return btn;
     });
 </script>
+*#
 
 
 #@ueditor("editor" "editor")#end

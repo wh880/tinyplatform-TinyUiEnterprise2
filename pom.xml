@@ -89,6 +89,7 @@
 		<module>org.tinygroup.ui.bootstrapvalidator</module>
 		<module>org.tinygroup.ui.sortablelist</module>
 		<module>org.tinygroup.ui.ueditor</module>
+		<module>org.tinygroup.ui.ueditormacro</module>
 		<module>newWeb</module>
     </modules>
 </project>
