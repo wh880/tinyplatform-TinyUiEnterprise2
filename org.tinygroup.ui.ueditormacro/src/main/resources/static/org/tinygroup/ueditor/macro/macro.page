@@ -33,7 +33,7 @@
     var currentMacro={};
     var macroList=[];
     $.ajax({
-        url:"#link("/data/macrolist.pagelet")",
+        url:"#link(MACROS_LIST)",
         dataType:"json",
         success:function(data){
             macroList=data;
@@ -42,6 +42,9 @@
                 $("#macroName").append("<option value='" + data[i]["name"] + "'>" + data[i]["name"] + "</option>");
             }
             $("#macroName").trigger("change");
+        },
+        error:function(data) {
+            $("#macroName").append("<option value=''>获取列表出错</option>");
         }
     });
     var setParaList=function(){
