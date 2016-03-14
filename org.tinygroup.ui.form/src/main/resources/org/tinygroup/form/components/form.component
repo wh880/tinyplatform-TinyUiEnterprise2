@@ -90,7 +90,7 @@ $(function(){
 	var checkval=[];
 	#if(instanceOf(checkedValue,"java.lang.String"))
 		var checkvalstr="${checkedValue}";
-		var checkval=checkvalstr.split(",");
+		checkval=checkvalstr.split(",");
 	#else
 		#for(var:checkedValue)
 			checkval.push("${var}");
