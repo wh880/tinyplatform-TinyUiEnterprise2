@@ -62,26 +62,27 @@ UE.plugins['macros'] = function () {
         }
     });
 };
-
-UE.registerUI('button_macros',function(editor,uiName){
-    editor.registerCommand(uiName,{
-        execCommand:function(){
-            editor.execCommand('macros');
-        }
-    });
-    //创建一个button
-    var btn = new UE.ui.Button({
-        //按钮的名字
-        name:uiName,
-        //提示
-        title:"表单设计器",
-        //需要添加的额外样式，指定icon图标，这里默认使用一个重复的icon
-        cssRules :'background-position: -401px -40px;',
-        //点击时执行的命令
-        onclick:function () {
-            //这里可以不用执行命令,做你自己的操作也可
-            editor.execCommand(uiName);
-        }
-    });
-    return btn;
-});
+UE.ueAddonPlus=function(id){
+    UE.registerUI('button_macros',function(editor,uiName){
+        editor.registerCommand(uiName,{
+            execCommand:function(){
+                editor.execCommand('macros');
+            }
+        });
+        //创建一个button
+        var btn = new UE.ui.Button({
+            //按钮的名字
+            name:uiName,
+            //提示
+            title:"宏编辑器",
+            //需要添加的额外样式，指定icon图标，这里默认使用一个重复的icon
+            cssRules :'background-position: -401px -40px;',
+            //点击时执行的命令
+            onclick:function () {
+                //这里可以不用执行命令,做你自己的操作也可
+                editor.execCommand(uiName);
+            }
+        });
+        return btn;
+    },99999,[id]);
+};
