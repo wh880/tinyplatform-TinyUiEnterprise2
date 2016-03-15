@@ -935,25 +935,39 @@
     };
 
     $.extend({
-        sortableListSort: function(data) {
-            var tempArr=[],reArr=[];
-            for(var i= 0,l=data.length;i<l;i++){
-                tempArr[data[i].id]=data[i];
+        sortableListSort: function (data) {
+            var tempArr = [], reArr = [];
+            tempArr = data;
+            for (var i = 0, l = data.length; i < l; i++) {
+                tempArr[data[i].id] = data[i];
             }
-            this.getData=function(item){
-                if($.inArray(item, reArr)!=-1){
-                    return ;
+            this.getItem = function (id) {
+                for (var i = 0, l = tempArr.length; i < l; i++) {
+                    if (tempArr[i].id == id) {
+                        return tempArr[i];
+                    }
                 }
-                if(item.pId!=null){
-                    this.getData(tempArr[item.pId]);
+            }
+
+            this.getData = function (item) {
+                if ($.inArray(item, reArr) != -1) {
+                    return;
+                }
+                if (item.pId != null) {
+                    var p_item = this.getItem(item.pId);
+                    if (typeof(p_item) != 'undefined') {
+                        this.getData(p_item);
+                    } else {
+                        item.pId = null;
+                    }
                 }
                 reArr.push(item);
             }
-            for(var i= 0,l=data.length;i<l;i++){
+            for (var i = 0, l = data.length; i < l; i++) {
                 this.getData(data[i]);
             }
             reArr.sort(function (x, y) {
-                if(typeof(x.docSort) != "undefined" && x.pId == y.pId){
+                if (typeof(x.docSort) != "undefined" && x.pId == y.pId) {
                     return (parseInt(x.docSort) < parseInt(y.docSort)) ? -1 : 1
                 }
                 return -1;
