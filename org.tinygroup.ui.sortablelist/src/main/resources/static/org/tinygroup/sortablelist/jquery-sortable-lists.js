@@ -958,7 +958,8 @@
                     if (typeof(p_item) != 'undefined') {
                         this.getData(p_item);
                     } else {
-                        item.pId = null;
+                        //item.pId = null;
+                        return;
                     }
                 }
                 reArr.push(item);
