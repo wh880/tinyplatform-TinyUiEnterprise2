@@ -1,0 +1,7 @@
+#set(value1="th a quick red fox\njumped over the hairy asdf assad a dogasdfasfddsafff\nffffasdfs dsssssssssssssadfssssssssss\nssssssssssssss\nssssssssssssth a quick red fox\njumped over the hairy asdf assad a dogasdfasfddsafff\nffffasdfs dsssssssssssssadfssssssssss\nssssssssssssss\nssssssssssssth a quick red fox\njumped over the hairy asdf assad a dogasdfasfddsafff\nffffasdfs dsssssssssssssadfssssssssss\nssssssssssssss\nssssssssssssth a quick red fox\njumped over the hairy asdf assad a dogasdfasfddsafff\nffffasdfs dsssssssssssssadfssssssssss\nssssssssssssss\nssssssssssssth a quick red fox")
+#set(value2= "th e quick brown fox\njumped over the lazy dogaa dasdffsf")
+<div class="row">
+    <div class="col-12">
+        #compareMergely(value1,value2)
+    </div>
+</div>

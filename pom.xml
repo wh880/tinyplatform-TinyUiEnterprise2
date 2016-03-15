@@ -90,6 +90,7 @@
 		<module>org.tinygroup.ui.sortablelist</module>
 		<module>org.tinygroup.ui.ueditor</module>
 		<module>org.tinygroup.ui.ueditormacro</module>
+		<module>org.tinygroup.ui.codemirror</module>
 		<module>newWeb</module>
     </modules>
 </project>

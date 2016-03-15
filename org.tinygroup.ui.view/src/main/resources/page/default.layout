@@ -20,7 +20,7 @@
 		var UPLOAD_ACTION_URL = '${TINY_CONTEXT_PATH}${UPLOAD_ACTION_URL}'; #end
 	</script>
 	<link rel="shortcut icon" href="${TINY_CONTEXT_PATH}/img/tiny32.png">
-	#set(DEBUG_MODE=false)
+
 	#if(DEBUG_MODE && DEBUG_MODE=="true")
 		#foreach(component in uiengine.getHealthUiComponents())
 			#if(component.cssResource)#set(resources=component.cssResource.split(","))
@@ -175,6 +175,7 @@
 					#TnavItem("10.4" "屏幕内图片加载" "/page/loadscrollingpic.page")
 					#TnavItem("10.9" "视图控制" "/page/viewsControl.page")
 					#TnavItem("10.10" "图标控制" "/page/iconTab.page")
+					#TnavItem("10.11" "文本比较器" "/page/codemirror.page")
 				#end
 				#@TnavItems("11" "多级导航" {"ico":"fa-sitemap","warningCls":"label label-warning","warning":"6"})
 					#TnavItem("11.1" "一级菜单" "/page/index.page")

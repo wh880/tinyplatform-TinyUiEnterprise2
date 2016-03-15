@@ -1,0 +1,6 @@
+#@uiPageTitle()文本比较器 #end
+<div class="alert alert-info">
+    文本比较器针对二个不同的文本进行行比较支持行内不同信息的比较并可直接替换
+</div>
+
+#showExample("/page/codemirror/code.page")
