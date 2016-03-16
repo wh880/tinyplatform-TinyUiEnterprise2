@@ -7,6 +7,6 @@
 
 #showExample("/page/editor/tbeditormini.page" "trumbowyg简单版")
 #@showPack()org.tinygroup.ui.trumbowyg#end
-#showExample("/page/editor/umEditor.page" "umeditor")
-#@showPack()org.tinygroup.ui.umeditor#end
+#showExample("/page/editor/ueditor.page" "ueditor")
+#@showPack()org.tinygroup.ui.ueditor#end
 
