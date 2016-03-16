@@ -936,17 +936,16 @@
 
     $.extend({
         sortableListSort: function (data) {
-            var tempArr = [], reArr = [];
+            var reArr = [];
             for (var i = 0, l = data.length; i < l; i++) {
                 if(data[i].pId==null||data[i].pId==false||data[i].pId=='0'||data[i].pId==''){
                     data[i].pId=0;
                 }
-                tempArr[data[i].id] = data[i];
             }
             this.getItem = function (id) {
-                for (var i = 0, l = tempArr.length; i < l; i++) {
-                    if (tempArr[i].id == id) {
-                        return tempArr[i];
+                for (var i = 0, l = data.length; i < l; i++) {
+                    if (data[i].id == id) {
+                        return data[i];
                     }
                 }
             }
@@ -959,7 +958,6 @@
                     if (typeof(p_item) != 'undefined') {
                         this.getData(p_item);
                     } else {
-                        //item.pId = null;
                         return;
                     }
                 }
