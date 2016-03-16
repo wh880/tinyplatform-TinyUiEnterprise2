@@ -1,7 +1,7 @@
 <ui-components>
     <ui-component name="tiny.ui.tpl.light" dependencies="tiny.ui.base">
         <css-resource>
-			/static/org/tpl/light/css/main.min.css,			
+			/static/org/tpl/light/css/main.tiny.min.css,
 			/static/org/tpl/light/scrollbar/jquery.mCustomScrollbar.tiny.min.css
 	    </css-resource>
         <js-resource>

@@ -1,7 +1,7 @@
 <ui-components>
     <ui-component name="tiny.ui.trumbowyg" dependencies="tiny.ui.jquery">
 		<css-resource>
-			/static/org/tinygroup/trumbowyg/css/trumbowyg.min.css
+			/static/org/tinygroup/trumbowyg/css/trumbowyg.tiny.min.css
 		</css-resource>
 		<js-resource>
 		  	/static/org/tinygroup/trumbowyg/js/trumbowyg.min.js,
