@@ -1,10 +1,10 @@
 <ui-components>
     <ui-component name="tiny.ui.animation" dependencies="tiny.ui.jquery">
         <css-resource>
-		  /static/org/tinygroup/animation/css/animate-min.css,
+		  /static/org/tinygroup/animation/css/animate-min_tiny.css,
 	    </css-resource>
         <js-resource>
-            /static/org/tinygroup/animation/js/animate.js
+            /static/org/tinygroup/animation/js/animate_tiny.js
         </js-resource>
 	<description>动画 (daneden.github.io/animate.css/)</description>
     </ui-component>

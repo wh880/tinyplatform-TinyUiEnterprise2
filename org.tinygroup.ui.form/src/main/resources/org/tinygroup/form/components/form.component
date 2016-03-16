@@ -474,7 +474,7 @@ $(function(){
             return false;
         });
         $("#${fid}-btn-remove").on("click",function(){
-            qF.delete($("#${fid}-sel").val());
+            qF.del($("#${fid}-sel").val());
             return false;
         })
     })

@@ -108,7 +108,7 @@
         var macroBody=$("#body").val();
         if(typeof(macroBody)=="undefined") macroBody="";
         if( oNode ) domUtils.remove(oNode,false);
-        _oNode = $('<span>');
+        _oNode = $('<pre>');
         _oNode.attr('name',$("#macroName").val());
         _oNode.attr('tinyPlugins',thePlugins);
 
