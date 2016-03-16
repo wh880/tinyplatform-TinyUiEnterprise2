@@ -1,7 +1,7 @@
 <ui-components>
     <ui-component name="tiny.ui.datatables" dependencies="tiny.ui.base,tiny.ui.table">
         <css-resource>
-		  /static/org/tinygroup/dataTables/css/jquery.dataTables.min.css,
+		  /static/org/tinygroup/dataTables/css/jquery.dataTables.tiny.min.css,
 	</css-resource>
 	<js-resource>
 		  /static/org/tinygroup/dataTables/js/jquery.dataTables.min.js,
