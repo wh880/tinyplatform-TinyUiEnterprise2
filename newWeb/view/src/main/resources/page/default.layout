@@ -18,7 +18,7 @@
         var contextPath = "${TINY_CONTEXT_PATH}";#if(UPLOAD_ACTION_URL)
         var UPLOAD_ACTION_URL = '${TINY_CONTEXT_PATH}${UPLOAD_ACTION_URL}'; #end
     </script>
-    #getResource(1)
+    #getResource(DEBUG_MODE)
     <link href="${TINY_CONTEXT_PATH}/css/tinyui.css" rel="stylesheet"/>
     <style>
         .top_menu_active #main_menu{display:none}
