@@ -11,3 +11,30 @@
 .info-wrapper{margin-top:16px;}
 .infos-content{padding-top:3px;}
 .img-circle{margin-right:5px;display: inline-block;float:left}
+/*空间功能列表*/
+.spaces-box{padding:0;margin:0;}
+.spaces-box li{border-radius:3px;color:#fff;text-shadow:0 1px 1px rgba(0,0,0,0.3);position:relative;margin:6px 8px;overflow:hidden;background-size:cover;display: inline-block;width:247px;height:134px;background:#f3f3f3;border:#eee 1px solid;}
+.spaces-box li:hover{opacity:0.9;-webkit-box-shadow:0 8px 20px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow:0 8px 20px rgba(0, 0, 0, 0.2);box-shadow:0 8px 20px rgba(0, 0, 0, 0.2);transform:translate3d(0,-3px,0);transition:box-shadow ease-in-out 218ms,transform 218ms ease-in-out;-webkit-transition: box-shadow ease-in-out 218ms,-webkit-transform 218ms ease-in-out;}
+.project-name{margin:0;padding-right:40px;line-height:32px; font-size:18px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+.project-info{padding:10px 15px 20px;cursor:pointer;height:100%}
+.project-info a{color:#fff;display:none;}
+.project-info:hover a{display:inline-block;text-decoration:none}
+.project-info:hover a:hover{color:#fee; }
+.spaces-box .add-project-button{background:#f9f9f9;padding:33px 15px 20px;cursor:pointer;text-align:center;}
+.add-project-button .create-project-handler,.add-project-button .create-project-handler:visited{color:#999;text-shadow:none;font-size:17px;text-decoration:none}
+.add-project-button .create-project-handler .fa-plus-circle{font-size:35px;display:block;margin-bottom:8px;}
+.add-project-button:hover .create-project-handler{text-decoration:none;color:#368}
+.project-desc{overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+.visibility-label{background:rgba(0,0,0,0.25);color:#fff;padding: 3px 5px;display:inline-block;border-radius:2px;font-size:12px;position:absolute;bottom:10px;}
+/*评论列表*/
+.comments-list{position:relative;border-bottom:#ddd 1px dashed;margin-bottom:9px;}
+.userFace img{border-radius:50%;}
+.author .faceBox{position:absolute; z-index:3; left:0px; top:2px;}
+.innerFace{padding-left:50px;}
+.content-infos{margin-top:8px; margin-bottom:5px;}
+.commentBox {padding:4px;background:#ffe; border:1px solid #999;margin-bottom: 12px; word-wrap: break-word; zoom: 1; position: relative; z-index:1;}
+.commentInfo,.content-item{margin:2px;}
+.author{color:#328E34}
+.operations{color:#1e50a2;text-align:right;padding-right:5px;height:12px;line-height:12px;zoom:1;font-size:12px;}
+.operations li{display:inline-block;margin-left:10px;}
