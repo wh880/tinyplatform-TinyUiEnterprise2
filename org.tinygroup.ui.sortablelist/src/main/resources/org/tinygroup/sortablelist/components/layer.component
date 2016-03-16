@@ -1,1 +1,0 @@
-#macro lAjax(title,url,optionMap)#set(htmlNode=optionMap?.get("node")?:"a",loadModal=optionMap?.get("loadMode")?:"1")<${htmlNode} ly-ajax="layer" href="#link(url)" ly-ajax-width="${optionMap?.width}" ly-ajax-height="${optionMap?.height}" ly-ajax-title="${title}" ly-ajax-modal="${loadModal}">#bodyContent</${htmlNode}>#end

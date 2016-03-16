@@ -1,0 +1,133 @@
+#macro sortableTree(options)#set(treeId=options?.id?:fmt("rap%d",rand()))
+<div id="${treeId}" class="tree-lists-rap"></div>
+<script type="text/javascript">
+    $(function(){
+        var options = {
+            listRap:$("#${treeId}"),
+            placeholderCss: {'background-color': '#f1f1f1'},
+            hintCss: {'background-color':'#eee'},
+            onChange: function( cEl )
+            {
+                var hasSibling=$(cEl).siblings().size(),
+                        siblingNode="",
+                        type="",
+                        data={};
+                if(hasSibling>0){
+                    if($(cEl).prev().size()>0){
+                        data.position="blew";
+                        siblingNode=$(cEl).prev();
+                    }else{
+                        data.position="above";
+                        siblingNode=$(cEl).next();
+                    }
+                    data.targetId=siblingNode.attr("node-id");
+                }else{
+                    data.position="append";
+                    data.targetId=$(cEl).parent().closest("li").attr("node-id");
+
+                }
+                data.currentId=$(cEl).attr("node-id");
+                $.ajax({
+                    url:"#link(options?.moveActionUrl)",
+                    type:"get",
+                    cache:false,
+                    data:data,
+                    dataType:"json",
+                    success:function(data){
+                        if(data.status=="y"||data.status=="success"){
+                            icon=1;
+                        }else{
+                            icon=2;
+                        }
+                        layer.msg(data.info,{icon:icon,time:500})
+                    }
+                })
+            },
+            complete: function( cEl )
+            {
+                //console.log( 'complete',cEl );
+            },
+            isAllowed: function( cEl, hint, target )
+            {
+                if( $(target).closest("li[module='disable']").size()>0)
+                {
+                    hint.css('background-color', '#f88');
+                    return false;
+                }
+                else
+                {
+                    hint.css({'background-color':'#ddd','border':'1px dashed #999'});
+                    return true;
+                }
+            },
+            opener: {
+                active: true,
+                as: 'html',  // if as is not set plugin uses background image
+                close: '<i class="fa fa-minus c3"></i>',  // or 'fa-minus c3',  // or './imgs/Remove2.png',
+                open: '<i class="fa fa-plus"></i>',  // or 'fa-plus',  // or'./imgs/Add2.png',
+                openerCss: {
+                    'display': 'inline-block',
+                    'float': 'left',
+                    'margin-left': '-15px',
+                }
+            },
+            ignoreClass: 'lock'
+        };
+
+        var list_ul=$("<ul></ul>").addClass("tree-lists-class").css("margin-left","15px");
+        $.ajax({
+            url:"#link(options?.initTreeUrl)",
+            cache:false,
+            type:"get",
+            dataType:"json",
+            success:function(data){
+                try{
+                    data=$.sortableListSort(data);
+                    var tempNode=false;
+                    for(var i= 0,l=data.length;i<l;i++){
+                        var item=data[i];
+
+                        var itemNode=$("<li>").attr("id","tree-list-node-"+item.id).append("<div>"+item.name+"</div>");
+                        $.each(item,function(k,v){
+                            switch(k){
+                                case "id":
+                                    itemNode.attr("node-id",v);
+                                    break;
+                                case "open":
+                                    if(v===true||v=="true"){itemNode.addClass("sortableListsOpen")}
+                                    break;
+                                case "lock":
+                                    if(v===true||v=="lock"){itemNode.addClass("lock")}
+                                    break;
+                                default:
+                                    itemNode.attr(k,v);
+                                    break;
+                            }
+                        })
+
+                        if(item.lock) itemNode.addClass("lock");
+                        if (!item.pId) {
+                            list_ul.append(itemNode);
+                        }else{
+                            tempNode=list_ul.find("#tree-list-node-"+item.pId);
+                            if(tempNode.children("ul").size()==0){
+                                tempNode.append($("<ul></ul>").append(itemNode));
+                            }else{
+                                tempNode.children("ul").append(itemNode);
+                            }
+                        }
+                    }
+                    $("#${treeId}").append(list_ul);
+                    $('#${treeId}>.tree-lists-class').sortableLists(options);
+                }catch (e){
+                    layer.msg("初始化错误")
+                }
+
+            }
+
+        })
+
+    });
+
+</script>
+#end
