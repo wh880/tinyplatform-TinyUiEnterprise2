@@ -4,4 +4,34 @@
 #macro mapToJson(JsonMap)#for(var:JsonMap)#break(!var||!var?.key),${var.key}:"${var.value}"#{end}#end
 #macro mapToCss(cssMap)#for(var:cssMap)#break(!var?.value||!var?.key)${var.key}:${var.value};#end#end
 #macro link(linkUrl)#if(linkUrl?.startsWith(TINY_CONTEXT_PATH))${linkUrl}#{else}${(linkUrl?.startsWith("/")?TINY_CONTEXT_PATH:"")+linkUrl}#end#end
+#macro getResource(debug)
+    #if(debug && debug=="true")
+        #foreach(component in uiengine.getHealthUiComponents())
+            #if(component.cssResource)#set(resources=component.cssResource.split(","))
+                #foreach(path in resources)#set(path=path.trim(),newPath=path.replaceAll("[$][{]TINY_THEME[}]","${TINY_THEME}"))
+                <link href="${TINY_CONTEXT_PATH}${newPath.replaceAll("tiny\\.min\\.","")}" rel="stylesheet" />
+                #end
+            #end
+            #if(component.jsResource)
+                #set(resources=component.jsResource.split(","))
+                #foreach(path in resources)#set(path=path.trim())
+                <script src="${TINY_CONTEXT_PATH}${path.replaceAll("tiny\\.min\\.","")}"></script>
+                #end
+            #end
+            #if(component.jsCodelet)
+            <script type="text/javascript">
+				$!{component.jsCodelet}
+			</script>
+            #end
+            #if(component.cssCodelet)
+            <style type="text/css">
+				$!{component.cssCodelet}
+			</style>
+            #end
+        #end
+    #else
+    <link href="${TINY_CONTEXT_PATH}/uiengine.uicss" rel="stylesheet" />
+    <script src="${TINY_CONTEXT_PATH}/uiengine.uijs"></script>
+    #end
+#end
 

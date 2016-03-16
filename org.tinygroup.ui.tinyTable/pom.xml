@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>org.tinygroup</groupId>
-    <artifactId>tinyFlatUi</artifactId>
+    <artifactId>TinyUiEnterprise2</artifactId>
     <version>2.1.1-SNAPSHOT</version>
   </parent>
   <artifactId>org.tinygroup.ui.tinytable</artifactId>

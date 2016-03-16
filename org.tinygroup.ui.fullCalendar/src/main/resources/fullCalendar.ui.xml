@@ -1,7 +1,7 @@
 <ui-components>
     <ui-component name="tiny.ui.fullcalendar" dependencies="tiny.ui.bootstrapdate,tiny.ui.modal">
 		<css-resource>
-			/static/org/tinygroup/fullCalendar/css/fullcalendar.css,
+			/static/org/tinygroup/fullCalendar/css/fullcalendar.tiny.min.css,
 		</css-resource>
 		<js-resource>
 		  <!--/static/org/tinygroup/fullCalendar/js/moment.min.js,

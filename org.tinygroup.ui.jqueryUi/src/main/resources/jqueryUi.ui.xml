@@ -1,10 +1,10 @@
 <ui-components>
     <ui-component name="tiny.ui.jqueryui" dependencies="tiny.ui.jquery">
 		<js-resource>
-			/static/org/tinygroup/jqueryUi/js/jquery-ui.js,
+			/static/org/tinygroup/jqueryUi/js/jquery-ui.tiny.min.js,
 		</js-resource>
 		<css-resource>
-			/static/org/tinygroup/jqueryUi/css/jquery.ui.css,
+			/static/org/tinygroup/jqueryUi/css/jquery.ui.tiny.min.css,
 		</css-resource>
 		<description>jqueryUi (http://jqueryui.com)</description>
     </ui-component>

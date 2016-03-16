@@ -7,9 +7,9 @@
 		  	/static/org/tinygroup/trumbowyg/js/trumbowyg.min.js,
 		  	/static/org/tinygroup/trumbowyg/js/trumbowyg.base64.min.js,
 		  	/static/org/tinygroup/trumbowyg/js/trumbowyg.colors.min.js,
-		  	/static/org/tinygroup/trumbowyg/js/trumbowyg.upload.js,
+		  	/static/org/tinygroup/trumbowyg/js/trumbowyg.upload.tiny.min.js,
 			/static/org/tinygroup/trumbowyg/js/trumbowyg.editlink.min.js,
-		  	/static/org/tinygroup/trumbowyg/js/zh_cn.js
+		  	/static/org/tinygroup/trumbowyg/js/zh_cn.tiny.min.js
 		</js-resource>
 		<description>Trumbowyg编辑器 (alex-d.github.io/Trumbowyg/)</description>
     </ui-component>

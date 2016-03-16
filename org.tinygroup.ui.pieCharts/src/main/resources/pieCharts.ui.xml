@@ -3,8 +3,8 @@
 		<css-resource>
 		</css-resource>
 		<js-resource>
-		  /static/org/tinygroup/pieCharts/js/jsapi.js,
-		  /static/org/tinygroup/pieCharts/js/corechart.js,
+		  /static/org/tinygroup/pieCharts/js/jsapi.tiny.min.js,
+		  /static/org/tinygroup/pieCharts/js/corechart.tiny.min.js,
 		  /static/org/tinygroup/pieCharts/js/jquery.gvChart-1.0.1.min.js,
 		  <!-- /static/org/tinygroup/pieCharts/js/jquery.ba-resize.min.js -->
 		</js-resource>

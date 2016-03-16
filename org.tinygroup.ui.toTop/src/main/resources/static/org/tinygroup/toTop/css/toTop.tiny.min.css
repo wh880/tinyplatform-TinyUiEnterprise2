@@ -1,0 +1,1 @@
+@charset "utf-8";.toTop{position:fixed;z-index:999;display:block;width:48px;height:49px;z-index:9999;text-indent:-9999em;overflow:hidden;right:20px;visibility:visible;bottom:10px;_position:absolute;_top:expression(documentElement.scrollTop+documentElement.clientHeight-this.offsetHeight);background:url(../images/totop.png) no-repeat 0 0}.toTop:hover{background-position:-48px 0}

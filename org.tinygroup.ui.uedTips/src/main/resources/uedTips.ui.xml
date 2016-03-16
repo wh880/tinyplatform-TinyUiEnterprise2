@@ -1,10 +1,10 @@
 <ui-components>
     <ui-component name="tiny.ui.uedtips" dependencies="tiny.ui.jquery">
         <css-resource>
-		  /static/org/tinygroup/uedTips/css/uedTip.css,
+		  /static/org/tinygroup/uedTips/css/uedTip.tiny.min.css,
 		</css-resource>
 		<js-resource>
-		  /static/org/tinygroup/uedTips/js/uedTip.js,
+		  /static/org/tinygroup/uedTips/js/uedTip.tiny.min.js,
 		</js-resource>
 		<description>UED提示 (www.jq22.com)</description>
     </ui-component>

@@ -1,7 +1,7 @@
 <ui-components>
     <ui-component name="tiny.ui.tpl.lightblue" dependencies="tiny.ui.frameCommon">
         <css-resource>
-			/static/org/tinygroup/themes/lightblue.css
+			/static/org/tinygroup/themes/lightblue.tiny.min.css
 		</css-resource>
 		<js-codelet>
            tinyTplList.push({sort:8, name: 'lightblue',   title: '浅蓝', img: contextPath+'/img/themes/lightblue.png' });

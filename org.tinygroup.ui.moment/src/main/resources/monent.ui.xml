@@ -1,7 +1,7 @@
 <ui-components>
     <ui-component name="tiny.ui.moment">
         <js-resource>
-		  /static/org/tinygroup/moment/js/moment.js
+		  /static/org/tinygroup/moment/js/moment.tiny.min.js
 	</js-resource>
 	<description>必须使用的moment包</description>
     </ui-component>

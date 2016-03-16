@@ -1,7 +1,7 @@
 <ui-components>
     <ui-component name="tiny.ui.icontab" dependencies="tiny.ui.jquery">
         <css-resource>
-		  /static/org/tinygroup/iconTab/css/iconTab.css,
+		  /static/org/tinygroup/iconTab/css/iconTab.tiny.min.css,
 	</css-resource>
 	<description>图标控制选项卡 (www.jsdaima.com)</description>
     </ui-component>

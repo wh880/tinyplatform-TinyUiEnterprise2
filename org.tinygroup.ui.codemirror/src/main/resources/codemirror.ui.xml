@@ -1,12 +1,12 @@
 <ui-components>
     <ui-component name="tiny.ui.codemirror" dependencies="tiny.ui.jquery">
 		<js-resource>
-		  	/static/org/tinygroup/codemirror/codemirror.min.js,
-			/static/org/tinygroup/codemirror/mergely.min.js,
+		  	/static/org/tinygroup/codemirror/codemirror.tiny.min.js,
+			/static/org/tinygroup/codemirror/mergely.tiny.min.js,
 		</js-resource>
 		<css-resource>
-		  	/static/org/tinygroup/codemirror/codemirror.css,
-			/static/org/tinygroup/codemirror/mergely.css
+		  	/static/org/tinygroup/codemirror/codemirror.tiny.min.css,
+			/static/org/tinygroup/codemirror/mergely.tiny.min.css
 		</css-resource>
 		<description>codemirror文本比较器 (http://layer.layui.com)</description>
     </ui-component>

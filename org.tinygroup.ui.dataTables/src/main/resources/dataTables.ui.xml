@@ -6,7 +6,7 @@
 	<js-resource>
 		  /static/org/tinygroup/dataTables/js/jquery.dataTables.min.js,
 		  /static/org/tinygroup/dataTables/js/dataTables.fixedHeader.min.js,
-		  /static/org/tinygroup/dataTables/js/dataTables.bootstrap.js
+		  /static/org/tinygroup/dataTables/js/dataTables.bootstrap.tiny.min.js
 	</js-resource>
 	<description>DataTables数据表格 (http://dt.thxopen.com)</description>
     </ui-component>

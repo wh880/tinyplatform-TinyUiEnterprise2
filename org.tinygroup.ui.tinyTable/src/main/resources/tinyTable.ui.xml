@@ -1,11 +1,11 @@
 <ui-components>
     <ui-component name="tiny.ui.tinytable" dependencies="tiny.ui.base">
     <css-resource>
-		  /static/org/tinygroup/tinyTable/css/tinyTable.css,
+		  /static/org/tinygroup/tinyTable/css/tinyTable.tiny.min.css,
 	</css-resource>
 	<js-resource>
-		  /static/org/tinygroup/tinyTable/js/jquery.form.js,
-		  /static/org/tinygroup/tinyTable/js/jquery.twbsPagination.js,
+		  /static/org/tinygroup/tinyTable/js/jquery.form.tiny.min.js,
+		  /static/org/tinygroup/tinyTable/js/jquery.twbsPagination.tiny.min.js,
 	</js-resource>
 	<description>Tiny表格</description>
     </ui-component>

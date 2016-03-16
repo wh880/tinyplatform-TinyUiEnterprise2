@@ -1,10 +1,10 @@
 <ui-components>
     <ui-component name="tiny.ui.gantt" dependencies="tiny.ui.base">
 		<css-resource>
-			/static/org/tinygroup/gantt/css/jsgantt.css,
+			/static/org/tinygroup/gantt/css/jsgantt.tiny.min.css,
 		</css-resource>
 		<js-resource>
-			/static/org/tinygroup/gantt/js/jsgantt.js
+			/static/org/tinygroup/gantt/js/jsgantt.tiny.min.js
 		</js-resource>
 		<description>gantt甘特图 (www.jsgantt.com)</description>
     </ui-component>

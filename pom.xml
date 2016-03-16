@@ -15,7 +15,7 @@
 		<url>http://git.oschina.net/tinyframework/TinyUiEnterprise2.git</url>
 	</scm>
 	<groupId>org.tinygroup</groupId>
-    <artifactId>tinyFlatUi</artifactId>
+    <artifactId>TinyUiEnterprise2</artifactId>
     <version>2.1.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 	<modules>
@@ -118,7 +118,7 @@
 					<!-- 压缩之前先执行聚合文件操作 -->
 					<preProcessAggregates>false</preProcessAggregates>
 					<!-- 压缩后保存文件后缀 -->
-					<suffix>.min</suffix>
+					<suffix>.tiny.min</suffix>
 					<!--<excludeResources>true</excludeResources>-->
 					<!-- 源目录，即需压缩的根目录 -->
 					<sourceDirectory>${project.resources}</sourceDirectory>
@@ -129,10 +129,8 @@
 					</includes>
 					<!-- 以下目录和文件不会被压缩 -->
 					<excludes>
-						<exclude>**/*_tiny.js</exclude>
-						<exclude>**/*_tiny.css</exclude>
-						<exclude>**/*.min.css</exclude>
 						<exclude>**/*.min.js</exclude>
+						<exclude>**/*.min.css</exclude>
 						<exclude>**/ueditor/**</exclude>
 						<exclude>**/umeditor/**</exclude>
 					</excludes>
