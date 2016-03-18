@@ -51,7 +51,7 @@
             evt = evt || window.event;
             var el = evt.target || evt.srcElement;
             var tinyPlugins = el.getAttribute('tinyplugins');
-            if ( /pre/ig.test( el.tagName ) && tinyPlugins==thePlugins) {
+            if ( /div/ig.test( el.tagName ) && tinyPlugins==thePlugins) {
                 var html = popup.formatHtml(
                         '<nobr>宏控件: <span onclick=$$._edittext() class="edui-clickable">编辑</span>&nbsp;&nbsp;<span onclick=$$._delete() class="edui-clickable">删除</span></nobr>' );
                 if ( html ) {
@@ -62,6 +62,30 @@
                     popup.hide();
                 }
             }
+        });
+        var timer,clickcount=0;
+        function dbclick(evt){
+            evt = evt || window.event;
+            var tinyPlugins,el = evt.target || evt.srcElement;
+            while (el){
+                tinyPlugins = el.getAttribute('tinyplugins');
+                if(/div/ig.test( el.tagName ) && tinyPlugins==thePlugins){
+                    break;
+                }
+                el = el.parentNode;
+            }
+            baidu.editor.plugins[thePlugins].editdom=el;
+            me.execCommand(thePlugins);
+        }
+
+        me.addListener('click', function( t, evt ) {
+            clickcount++;
+            if(clickcount==2){
+                dbclick(evt);
+            }
+            timer=setTimeout(function(){
+                clickcount--;
+            },500)
         });
     };
     UE.ueAddonPlus=function(id){
@@ -92,7 +116,26 @@
 
 
 
-#@ueditor("editor" "editor")#end
+#@ueditor("editor" "editor")
+    ss
+<div tinyplugins="macros" contenteditable="false" class="macro-rap">
+    <h3>
+        宏:<span class="macro-name">test2</span>
+    </h3>
+    <ul class="node-para-list">
+        <li>
+            <span class="para-node-name">rrr</span>=<span contenteditable="true" class="para-node-value">a222a21313</span>
+        </li>
+        <li>
+            <span class="para-node-name">rrrww</span>=<span contenteditable="true" class="para-node-value">aaa321</span>
+        </li>
+    </ul>
+    <div class="macro-body" contenteditable="true">
+        aaa321321322
+    </div>
+</div>
+    dsfdf
+#end
 
 
 

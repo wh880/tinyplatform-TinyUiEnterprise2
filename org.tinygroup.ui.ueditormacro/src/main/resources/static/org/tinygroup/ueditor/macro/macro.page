@@ -51,7 +51,7 @@
         var html="";
         $("#itemAttr").empty();
         for(var i= 0,l= currentMacro.parameters.length;i<l;i++){
-            html='<tr class="para-macro"><th><span>'+currentMacro.parameters[i]["name"]+'</span></th><td><input type="text" id="para_'+(i+1)+'" class="form-control"></td></tr>';
+            html='<tr class="para-macro"><th><span>'+currentMacro.parameters[i]["name"]+'</span></th><td><input type="text" id="'+currentMacro.parameters[i]["name"]+'" class="form-control"></td></tr>';
             $("#itemAttr").append(html);
         }
         if(currentMacro.hasBody==true || currentMacro.hasBody=="true"){
@@ -70,21 +70,21 @@
         }
         setParaList();
     });
+
     var macroInit = function() {
+        var _this_para_info,_para_lists,_oNode;
         if(isInit) return false;
         isInit=true;
         if( UE.plugins[thePlugins].editdom ) {
-            oNode = UE.plugins[thePlugins].editdom;
+            oNode=UE.plugins[thePlugins].editdom;
             _oNode=$(oNode);
-            bodyHtml=_oNode.html();
-            bodyHtml=bodyHtml.replace(/#(e)nd$/,"");
-            bodyHtml=bodyHtml.replace(/^#@[^)]+/,"");
-            bodyHtml=bodyHtml.replace(/^\)/,"");
-            $("#body").val(bodyHtml);
-            $("#macroName").val(_oNode.attr("name")).trigger("change");
-            for(var i= 1;i<=macro_para_length;i++){
-                $("#para_"+i).val(_oNode.attr("para_"+i));
+            $("#macroName").val(_oNode.find("h3>span.macro-name:first").html()).trigger("change");
+            _para_lists=_oNode.find(".node-para-list>li");
+            for(var i= 0,l=_para_lists.size();i<l;i++) {
+                _this_para_info=_para_lists.eq(i).children("span");
+                $("#"+_this_para_info.eq(0).html()).val(_this_para_info.eq(1).html())
             }
+            $("#body").val(_oNode.children(".macro-body:first").html());
         }
     }
 
@@ -94,17 +94,7 @@
         }
     };
 
-    var getMacroNameAndPara=function(){
-        var rehtml=$("#macroName").val()+"(";
-        var paraArr=[];
-        for(var i= 1;i<=macro_para_length;i++){
-            paraArr.push('"'+$("#para_"+i).val()+'"');
-        }
-        rehtml+=paraArr.join(",");
-        rehtml+=")";
-        return rehtml;
-    }
-    function printf() {
+   /* function printf() {
         var num = arguments.length;
         var oStr = arguments[0];
         for (var i = 1; i < num; i++) {
@@ -113,33 +103,25 @@
             oStr = oStr.replace(re, arguments[i]);
         }
         return oStr;
-    }
+    }*/
     dialog.onok = function (){
         var macroBody=$("#body").val();
         if(typeof(macroBody)=="undefined") macroBody="";
         if( oNode ) domUtils.remove(oNode,false);
-        /*var tpl='<h3>宏:<span>test</span></h3><ul><li><span>22:</span><span contenteditable="true">12323</span></li>
-                <li><span>url:</span><span contenteditable="true">ss</span></li>
-                </ul>
-                <div class="body" contenteditable="true">
-                sfsdfdsfdffdsbf
-                </div>
-                </div>'*/
-        _oNode = $('<div tinyplugins="macros" contenteditable="false" class="macro_rap">');
-        _oNode.attr('name',$("#macroName").val());
+        var _oNode = $('<div tinyplugins="macros" contenteditable="false" class="macro-rap">');
         _oNode.attr('tinyPlugins',thePlugins);
-        _oNode.append("<h3>宏:<span>"+$("#macroName").val()+"</span></h3>");
-        _oNodeUl=$("<ul>");
-        paras=$("#itemAttr tr.para-macro");
-        console.log(paras.eq(0).html())
+        _oNode.append("<h3>宏:<span class='macro-name'>"+$("#macroName").val()+"</span></h3>");
+        var _oNodeUl=$("<ul>").addClass("node-para-list");
+        var paras=$("#itemAttr tr.para-macro");
         for(var i= 0,l=paras.size();i<l;i++){
             thispara=paras.eq(i);
-            _para=$("<li><span>"+thispara.find("th>span").html()+"</span><span contenteditable='true'>"+thispara.find("input").val()+"</span><li>");
+            _para=$("<li><span class='para-node-name'>"+thispara.find("th>span").html()+"</span>=<span contenteditable='true' class='para-node-value'>"+thispara.find("input").val()+"</span></li>");
             _oNodeUl.append(_para);
         }
         _oNode.append(_oNodeUl);
-
-        //_oNode.html("#@"+getMacroNameAndPara()+macroBody+"#"+"end");
+        if(currentMacro.hasBody==true || currentMacro.hasBody=="true"){
+            _oNode.append($("<div class='macro-body' contenteditable='true'></div>").html($("#body").val()));
+        }
         editor.execCommand('insertHtml',_oNode.prop("outerHTML"));
         if(oNode) delete UE.plugins[thePlugins].editdom;
     };

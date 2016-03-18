@@ -131,7 +131,7 @@
 					<excludes>
 						<exclude>**/*.min.js</exclude>
 						<exclude>**/*.min.css</exclude>
-						<exclude>**/ueditor/**</exclude>
+						<exclude>**/third-party/**</exclude>
 						<exclude>**/umeditor/**</exclude>
 					</excludes>
 					<!-- 压缩后输出文件目录 -->
