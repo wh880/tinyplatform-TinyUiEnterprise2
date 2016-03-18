@@ -1,7 +1,7 @@
 ﻿<ui-components>
     <ui-component name="tiny.ui.ueditormacro" dependencies="tiny.ui.ueditor">
 		<js-resource>
-			/static/org/tinygroup/ueditor/macro/macro.js
+			<!--/static/org/tinygroup/ueditor/macro/macro.js-->
 		</js-resource>
 		<description>UEditor编辑器宏扩展</description>
     </ui-component>

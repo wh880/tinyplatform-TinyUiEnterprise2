@@ -13,7 +13,7 @@
     </style>
 </head>
 <body>
-<div class="content">
+<div class="content" id="macro-show">
     <table class="table table-bordered table-striped table-hover">
         <thead>
         <tr>
@@ -51,7 +51,7 @@
         var html="";
         $("#itemAttr").empty();
         for(var i= 0,l= currentMacro.parameters.length;i<l;i++){
-            html='<tr><th><span>'+currentMacro.parameters[i]["name"]+'</span></th><td><input type="text" id="para_'+(i+1)+'" class="form-control"></td></tr>';
+            html='<tr class="para-macro"><th><span>'+currentMacro.parameters[i]["name"]+'</span></th><td><input type="text" id="para_'+(i+1)+'" class="form-control"></td></tr>';
             $("#itemAttr").append(html);
         }
         if(currentMacro.hasBody==true || currentMacro.hasBody=="true"){
@@ -104,19 +104,42 @@
         rehtml+=")";
         return rehtml;
     }
+    function printf() {
+        var num = arguments.length;
+        var oStr = arguments[0];
+        for (var i = 1; i < num; i++) {
+            var pattern = "\\{" + (i-1) + "\\}";
+            var re = new RegExp(pattern, "g");
+            oStr = oStr.replace(re, arguments[i]);
+        }
+        return oStr;
+    }
     dialog.onok = function (){
         var macroBody=$("#body").val();
         if(typeof(macroBody)=="undefined") macroBody="";
         if( oNode ) domUtils.remove(oNode,false);
-        _oNode = $('<pre>');
+        /*var tpl='<h3>宏:<span>test</span></h3><ul><li><span>22:</span><span contenteditable="true">12323</span></li>
+                <li><span>url:</span><span contenteditable="true">ss</span></li>
+                </ul>
+                <div class="body" contenteditable="true">
+                sfsdfdsfdffdsbf
+                </div>
+                </div>'*/
+        _oNode = $('<div tinyplugins="macros" contenteditable="false" class="macro_rap">');
         _oNode.attr('name',$("#macroName").val());
         _oNode.attr('tinyPlugins',thePlugins);
+        _oNode.append("<h3>宏:<span>"+$("#macroName").val()+"</span></h3>");
+        _oNodeUl=$("<ul>");
+        paras=$("#itemAttr tr.para-macro");
+        console.log(paras.eq(0).html())
+        for(var i= 0,l=paras.size();i<l;i++){
+            thispara=paras.eq(i);
+            _para=$("<li><span>"+thispara.find("th>span").html()+"</span><span contenteditable='true'>"+thispara.find("input").val()+"</span><li>");
+            _oNodeUl.append(_para);
+        }
+        _oNode.append(_oNodeUl);
 
-        _oNode.attr("para_1",$("#para_1").val());
-        _oNode.attr("para_2",$("#para_2").val());
-        _oNode.attr("para_3",$("#para_3").val());
-
-        _oNode.html("#@"+getMacroNameAndPara()+macroBody+"#"+"end");
+        //_oNode.html("#@"+getMacroNameAndPara()+macroBody+"#"+"end");
         editor.execCommand('insertHtml',_oNode.prop("outerHTML"));
         if(oNode) delete UE.plugins[thePlugins].editdom;
     };
