@@ -122,7 +122,7 @@
         if(currentMacro.hasBody==true || currentMacro.hasBody=="true"){
             _oNode.append($("<div class='macro-body' contenteditable='true'></div>").html($("#body").val()));
         }
-        editor.execCommand('insertHtml',_oNode.prop("outerHTML"));
+        editor.execCommand('insertHtml',"<p></p>"+_oNode.prop("outerHTML")+"<p></p>");
         if(oNode) delete UE.plugins[thePlugins].editdom;
     };
 </script>

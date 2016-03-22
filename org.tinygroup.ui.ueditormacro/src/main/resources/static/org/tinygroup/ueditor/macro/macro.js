@@ -48,8 +48,8 @@ UE.plugins['macros'] = function () {
     me.addListener( 'mouseover', function( t, evt ) {
         evt = evt || window.event;
         var el = evt.target || evt.srcElement;
-        var leipiPlugins = el.getAttribute('tinyplugins');
-        if ( /span/ig.test( el.tagName ) && leipiPlugins==thePlugins) {
+        var tinyPlugins = el.getAttribute('tinyplugins');
+        if ( /div/ig.test( el.tagName ) && tinyPlugins==thePlugins) {
             var html = popup.formatHtml(
                 '<nobr>宏控件: <span onclick=$$._edittext() class="edui-clickable">编辑</span>&nbsp;&nbsp;<span onclick=$$._delete() class="edui-clickable">删除</span></nobr>' );
             if ( html ) {
@@ -60,6 +60,30 @@ UE.plugins['macros'] = function () {
                 popup.hide();
             }
         }
+    });
+    var timer,clickcount=0;
+    function dbclick(evt){
+        evt = evt || window.event;
+        var tinyPlugins,el = evt.target || evt.srcElement;
+        while (el){
+            tinyPlugins = el.getAttribute('tinyplugins');
+            if(/div/ig.test( el.tagName ) && tinyPlugins==thePlugins){
+                break;
+            }
+            el = el.parentNode;
+        }
+        baidu.editor.plugins[thePlugins].editdom=el;
+        me.execCommand(thePlugins);
+    }
+
+    me.addListener('click', function( t, evt ) {
+        clickcount++;
+        if(clickcount==2){
+            dbclick(evt);
+        }
+        timer=setTimeout(function(){
+            clickcount--;
+        },500)
     });
 };
 UE.ueAddonPlus=function(id){
