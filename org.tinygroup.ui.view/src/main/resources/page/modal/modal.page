@@ -21,3 +21,7 @@
 #end
 
 #@dialog("stack3")第三个弹出层内容#end
+
+#@minDialog("modal-3")小尺寸直接显示#end
+
+<button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-3">小尺寸直接显示</button>

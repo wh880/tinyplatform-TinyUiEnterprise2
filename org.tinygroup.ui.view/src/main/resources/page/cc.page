@@ -2,6 +2,59 @@
 
 #end*#
 
-#@minDialog("modal-3")sdff#end
+#@minDialog("modal-3")
+<textarea id="show-more-area" class="form-control" style="border:0;height:500px">
+	$("#delall").on("click",function() {
+		var checklist = [];
+		 $("#${tableId}>tbody>tr>td input[type=checkbox]:checked").each(function (e) {
+			  checklist.push($(this).val());
+		 });
+		if(checklist.length==0){
+			layer.msg("请选择记录")
+			 return false;
+		 }$("#delall").on("click",function() {
+		var checklist = [];
+		 $("#${tableId}>tbody>tr>td input[type=checkbox]:checked").each(function (e) {
+			  checklist.push($(this).val());
+		 });
+		if(checklist.length==0){
+			layer.msg("请选择记录")
+			 return false;
+		 }
+$("#delall").on("click",function() {
+		var checklist = [];
+		 $("#${tableId}>tbody>tr>td input[type=checkbox]:checked").each(function (e) {
+			  checklist.push($(this).val());
+		 });
+		if(checklist.length==0){
+			layer.msg("请选择记录")
+			 return false;
+		 }$("#delall").on("click",function() {
+		var checklist = [];
+		 $("#${tableId}>tbody>tr>td input[type=checkbox]:checked").each(function (e) {
+			  checklist.push($(this).val());
+		 });
+		if(checklist.length==0){
+			layer.msg("请选择记录")
+			 return false;
+		 }$("#delall").on("click",function() {
+		var checklist = [];
+		 $("#${tableId}>tbody>tr>td input[type=checkbox]:checked").each(function (e) {
+			  checklist.push($(this).val());
+		 });
+		if(checklist.length==0){
+			layer.msg("请选择记录")
+			 return false;
+		 }$("#delall").on("click",function() {
+		var checklist = [];
+		 $("#${tableId}>tbody>tr>td input[type=checkbox]:checked").each(function (e) {
+			  checklist.push($(this).val());
+		 });
+		if(checklist.length==0){
+			layer.msg("请选择记录")
+			 return false;
+		 }
+</textarea>
+#end
 
-<button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-3">button</button>
+<button type="button" class="btn btn-default" data-toggle="modal" data-width="800" data-target="#modal-3">button</button>
