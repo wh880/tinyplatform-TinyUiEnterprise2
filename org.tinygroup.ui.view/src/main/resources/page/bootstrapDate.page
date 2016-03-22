@@ -16,7 +16,7 @@
     <li>第2参数为表单2Name2值</li>
     <li>第3参数为表单1默认值</li>
     <li>第4参数为表单2默认值</li>
-    <li>第5参数一MAP值可以带入HTML中的各类附加信息比如验证等 也可用dateFormat带入控件日期时间格式</li>
+    <li>第5参数一MAP值可以带入HTML中的各类附加信息比如验证等 也可用dateFormat带入控件日期时间格式(YYYY-MM-DD HH:mm:ss)</li>
 </ul>
 #end
 #showExample("/page/date/between.page" )
