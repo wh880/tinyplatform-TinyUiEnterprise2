@@ -1,4 +1,4 @@
-@charset "utf-8";
+
 /*滚动*/
 .marquee{height:22px;overflow:hidden;line-height:22px}
 .marquee ul li,.scrollText ul li{list-style:none}

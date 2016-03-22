@@ -83,6 +83,14 @@ param aMap A其它额外的元素
     });
 </script>
 #end
+
+#macro minDialog(dialogId,dialogMap)
+<div id="${dialogId}" class="modal hide fade no-padding important-height-auto" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="relative" #mapToHtml(dialogMap)>
+    <div class="modal-body no-padding important-height-auto" >
+        <div class="clear important-height-auto">#bodyContent</div>
+    </div>
+</div>
+#end
 #*
 * singleModel 弹出框 生成一A标签的BT弹出框元素
 *

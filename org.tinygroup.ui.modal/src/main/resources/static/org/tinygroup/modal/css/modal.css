@@ -1,4 +1,4 @@
-@charset "utf-8";
+
 /*对话框
 	Name:			mod_modal
 	Example:		
@@ -76,3 +76,6 @@
 .modal-header .modal-expand{cursor:pointer;position: absolute;right: 35px;top: 10px;font-size: 12px;line-height: 18px;}
 .modal .modal-footer {padding:5px 10px 0;bottom:5px;width:100%;position:absolute;right:10px;z-index:999;border-top:0;}
 .modal .modal-body{position:relative;z-index:1;height: 100%;  overflow-y: auto;overflow-x:hidden;background:#fff}
+
+.important-height-100{height:100%!important;}
+.important-height-auto{height:auto!important;}

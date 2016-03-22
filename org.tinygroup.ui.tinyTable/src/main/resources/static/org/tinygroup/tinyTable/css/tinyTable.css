@@ -1,5 +1,5 @@
-@charset "utf-8";
-/*!*3.3 表格
+
+/*3.3 表格
 	Name:			style_table
 	Example:		<table class="table table-bordered table-striped table-condensed"><thead><tr><th>…</th></tr></thead><tbody><tr><td>…</td></tr></tbody></table>
 	Explain:		表格，None无样式，仅仅有列和行/.table行与行之间以水平线相隔/.table-bordered表格外围均有外边框/.table-striped奇数行背景设为浅灰色/.table-condensed竖直方向padding缩减一半，从8px变为4px，所有的 td 和 th 元素都受影响
