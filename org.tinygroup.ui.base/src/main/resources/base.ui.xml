@@ -6,6 +6,7 @@
 			/static/org/tinygroup/base/js/jquery.cookie.tiny.min.js,
 			<!-- /static/org/tinygroup/base/js/html5shiv.min.js, -->
 			/static/org/tinygroup/base/js/tinyui.tiny.min.js,
+			/static/org/tinygroup/base/js/resize.tiny.min.js,
 		</js-resource>
 		<css-resource>
 			/static/org/tinygroup/base/css/base.tiny.min.css

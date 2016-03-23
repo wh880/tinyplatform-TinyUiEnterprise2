@@ -127,7 +127,7 @@
             }
         },
         fullScreen: function () {
-            console.log("Testt");
+            //console.log("Testt");
             var el = this;
             this.$element.find(".modal-header span[data-expand='modal'] i").toggleClass("fa-expand fa-compress");
             if (!el.fullscreen) {
