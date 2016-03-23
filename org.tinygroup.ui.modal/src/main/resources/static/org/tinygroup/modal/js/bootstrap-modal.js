@@ -75,6 +75,9 @@
             e = $.Event('hide');
             this.$element.trigger(e);
             if (!this.isShown || e.isDefaultPrevented()) return (this.isShown = false);
+            if(this.fullscreen){
+                this.fullScreen();
+            }
             this.isShown = false;
             this.escape();
             this.tab();
