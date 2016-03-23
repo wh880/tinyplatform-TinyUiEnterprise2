@@ -1,5 +1,5 @@
 <ui-components>
-    <ui-component name="tiny.ui.greenyellow" dependencies="tiny.ui.frameCommon">
+    <ui-component name="tiny.ui.tpl.greenyellow" dependencies="tiny.ui.frameCommon">
         <css-resource>
 			/static/org/tinygroup/themes/greenyellow.tiny.min.css
 		</css-resource>
