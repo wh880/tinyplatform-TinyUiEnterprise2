@@ -6,7 +6,7 @@
 	<js-resource>
 		/static/org/tinygroup/modal/js/jquery-drag.tiny.min.js,
 		/static/org/tinygroup/modal/js/bootstrap-modalmanager.tiny.min.js,
-		<!--/static/org/tinygroup/modal/js/bootstrap-modal.tiny.min.js-->
+		/static/org/tinygroup/modal/js/bootstrap-modal.tiny.min.js
 	</js-resource>
 	<description>弹出框 (www.bootcss.com) (www.h-ui.net)</description>
     </ui-component>
