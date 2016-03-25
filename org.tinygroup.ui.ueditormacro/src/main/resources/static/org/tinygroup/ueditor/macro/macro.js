@@ -65,17 +65,15 @@ UE.plugins['macros'] = function () {
     function dbclick(evt){
         evt = evt || window.event;
         var tinyPlugins,el = evt.target || evt.srcElement;
-        while (el){
-            tinyPlugins = el.getAttribute('tinyplugins');
-            if(/div/ig.test( el.tagName ) && tinyPlugins==thePlugins){
-                break;
+        var macroEl=$(el).closest("[tinyplugins]").get(0);
+        if(typeof(macroEl)!='undefined'){
+            tinyPlugins = macroEl.getAttribute('tinyplugins');
+            if(tinyPlugins==thePlugins){
+                baidu.editor.plugins[thePlugins].editdom=macroEl;
+                me.execCommand(thePlugins);
             }
-            el = el.parentNode;
         }
-        baidu.editor.plugins[thePlugins].editdom=el;
-        me.execCommand(thePlugins);
     }
-
     me.addListener('click', function( t, evt ) {
         clickcount++;
         if(clickcount==2){

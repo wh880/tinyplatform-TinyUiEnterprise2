@@ -29,6 +29,7 @@
 </div>
 <script type="text/javascript">
     var oNode = null,thePlugins = 'macros';
+    var range = editor.selection.getRange();
     var isInit=false;
     var currentMacro={};
     var macroList=[];
@@ -105,24 +106,33 @@
         return oStr;
     }*/
     dialog.onok = function (){
-        var macroBody=$("#body").val();
-        if(typeof(macroBody)=="undefined") macroBody="";
+        var para_name,para_val,macro_name,macro_body,paraArr=[];
+        macro_body=$("#body").val();
+        macro_name=$("#macroName").val()
+        if(typeof(macro_body)=="undefined") macro_body="";
+        range.setStartAfter(oNode).select();
         if( oNode ) domUtils.remove(oNode,false);
+
         var _oNode = $('<div tinyplugins="macros" contenteditable="false" class="macro-rap">');
         _oNode.attr('tinyPlugins',thePlugins);
-        _oNode.append("<h3>宏:<span class='macro-name'>"+$("#macroName").val()+"</span></h3>");
+        _oNode.append("<h3>宏:<span class='macro-name'>"+macro_name+"</span></h3>");
         var _oNodeUl=$("<ul>").addClass("node-para-list");
         var paras=$("#itemAttr tr.para-macro");
         for(var i= 0,l=paras.size();i<l;i++){
             thispara=paras.eq(i);
-            _para=$("<li><span class='para-node-name'>"+thispara.find("th>span").html()+"</span>=<span contenteditable='true' class='para-node-value'>"+thispara.find("input").val()+"</span></li>");
+            para_name=thispara.find("th>span").html();
+            para_val=thispara.find("input").val();
+            _para=$("<li><span class='para-node-name'>"+para_name+"</span>=<span contenteditable='true' class='para-node-value'>"+para_val+"</span></li>");
             _oNodeUl.append(_para);
+            paraArr.push(para_name+'="'+para_val+'"');
         }
         _oNode.append(_oNodeUl);
         if(currentMacro.hasBody==true || currentMacro.hasBody=="true"){
-            _oNode.append($("<div class='macro-body' contenteditable='true'></div>").html($("#body").val()));
+            _oNode.append($("<div class='macro-body' contenteditable='true'></div>").html(macro_body));
         }
-        editor.execCommand('insertHtml',"<p></p>"+_oNode.prop("outerHTML")+"<p></p>");
+        _oNode.append($("<div>").addClass("macro-code").css("display","none").html("#@"+macro_name+"("+paraArr.join(",")+")"+macro_body+"#"+""+"end"));
+        _oNode.append("<hr/>");
+        editor.execCommand('insertHtml',_oNode.prop("outerHTML"));
         if(oNode) delete UE.plugins[thePlugins].editdom;
     };
 </script>
