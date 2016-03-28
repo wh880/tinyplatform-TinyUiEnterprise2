@@ -1,0 +1,1 @@
+#macro outMacroCode(codeStr)${eval(codeStr.replaceAll('(?is)<div[^<>]+tinyplugins="macros".*?(#@.*?#end).*?<hr/>\s*</div>','$1').replace('&quot;','"'))}#end
