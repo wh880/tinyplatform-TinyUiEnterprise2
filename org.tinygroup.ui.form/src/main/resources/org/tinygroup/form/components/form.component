@@ -282,6 +282,7 @@ $(function(){
                 secureuri: false,
                 fileElementId: "${uploadid}-file",
                 dataType: 'json',
+                data:{tinyFrame:1,#mapToJson(mapInfo?.fixData)},
                 success: function (data, status) {
                     if(data.state=="SUCCESS"){
                         $("#${uploadid}").val(data.url);
