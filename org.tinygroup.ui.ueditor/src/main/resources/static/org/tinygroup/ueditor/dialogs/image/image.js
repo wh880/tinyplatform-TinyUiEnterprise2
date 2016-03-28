@@ -372,6 +372,7 @@
                 swf: '../../third-party/webuploader/Uploader.swf',
                 server: actionUrl,
                 fileVal: editor.getOpt('imageFieldName'),
+                formData:editor.getOpt('imageFormData'),
                 duplicate: true,
                 fileSingleSizeLimit: imageMaxSize,    // 默认 2 M
                 compress: editor.getOpt('imageCompressEnable') ? {

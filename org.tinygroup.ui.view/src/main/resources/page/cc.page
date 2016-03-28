@@ -1,53 +1,35 @@
-<form action="sss" action="http://127.0.0.1:8001/tt.php" method="post">
-#@ueditor("editor" "editor")
-#[[
-<div tinyplugins="macros">
-    <div contenteditable="false" class="macro-rap">
-        <h3>
-            宏:<span class="macro-name">test</span>
-        </h3>
-        <ul class="node-para-list">
-            <li>
-                <span class="para-node-name">222</span>=<span class="para-node-value">sss</span>
-            </li>
-            <li>
-                <span class="para-node-name">url</span>=<span class="para-node-value">sss</span>
-            </li>
-        </ul>
-        <div class="macro-body" style="width:100%;">
-            sfsdfdsfdffdsbf
-        </div>
-        <div class="macro-code" style="display:none">
-            #@dfsfdsf(&quot;fdsfdsfdsf&quot;)#end
-        </div>
-    </div>
-    <hr/>
+#macro tUploadInput(name value mapInfo)#set(uploadid=fmt("upload%d",rand()),fixData=mapInfo?.fixData)
+#if(fixData)#set(ss=mapInfo.remove("fixData"))#end
+<div class="input-group">
+    <input type="text" id="${uploadid}" name="${name}" class="form-control ${mapInfo?.get("class")}" #mapToHtml(mapInfo)>
+    <span id="${uploadid}-wrap"><input type="file" class="input-file" name="upfile" id="${uploadid}-file"></span>
+    <span class="input-group-addon">#faIcon("cloud-upload") 浏览</span>
 </div>
-    dfsd
-<div tinyplugins="macros">
-    <div contenteditable="false" class="macro-rap">
-        <h3>
-            宏:<span class="macro-name">test</span>
-        </h3>
-        <ul class="node-para-list">
-            <li>
-                <span class="para-node-name">222</span>=<span class="para-node-value">sss</span>
-            </li>
-            <li>
-                <span class="para-node-name">url</span>=<span class="para-node-value">sss</span>
-            </li>
-        </ul>
-        <div class="macro-body" style="width:100%;">
-            sfsdfdsfdffdsbf
-        </div>
-        <div class="macro-code" style="display:none">
-            #@dfsfdsf(&quot;fdsfdsfdsf&quot;)#end
-        </div>
-    </div>
-    <hr/>
-</div>
-]]#
+<script type="text/javascript">
+    $(function(){
+        $("#${uploadid}-wrap").on("change","#${uploadid}-file",function(){
+            $.ajaxFileUpload({
+                url: '#link(UPLOAD_ACTION_URL)',
+                secureuri: false,
+                fileElementId: "${uploadid}-file",
+                dataType: 'json',
+                data:{tinyFrame:1#mapToJson(fixData)},
+                success: function (data, status) {
+                    if(data.state=="SUCCESS"){
+                        $("#${uploadid}").val(data.url);
+                    }
+                }
+            });
+        });
+    });
+</script>
 #end
+
+<form action="sss" action="http://127.0.0.1:8001/tt.php" method="post">
+
+
+
+    #tUploadInput("sss1" "")
 <input type="submit" value="save" />
   </form>
 

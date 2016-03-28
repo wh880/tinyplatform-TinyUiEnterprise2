@@ -267,9 +267,9 @@ $(function(){
 * @param mapInfo 额外的参数可自动带入input表单
 
 *#
-#macro tUploadInput(name value mapInfo)#set(uploadid=fmt("upload%d",rand()))
+#macro tUploadInput(name value mapInfo)#set(uploadid=fmt("upload%d",rand()),fixData=mapInfo?.fixData)
+#if(fixData)#set(ss=mapInfo.remove("fixData"))#end
 <div class="input-group">
-#*<span class="input-group-addon input-file-preview hide" id="preview${fid}">预览</span>*#
     <input type="text" id="${uploadid}" name="${name}" class="form-control ${mapInfo?.get("class")}" #mapToHtml(mapInfo)>
     <span id="${uploadid}-wrap"><input type="file" class="input-file" name="upfile" id="${uploadid}-file"></span>
     <span class="input-group-addon">#faIcon("cloud-upload") 浏览</span>
@@ -282,7 +282,7 @@ $(function(){
                 secureuri: false,
                 fileElementId: "${uploadid}-file",
                 dataType: 'json',
-                data:{tinyFrame:1,#mapToJson(mapInfo?.fixData)},
+                data:{tinyFrame:1#mapToJson(fixData)},
                 success: function (data, status) {
                     if(data.state=="SUCCESS"){
                         $("#${uploadid}").val(data.url);
@@ -362,8 +362,8 @@ $(function(){
 * @param value 表单值
 * @param mapInfo 额外的参数可自动带入input表单 当且仅当mapInfo.preview有值时 有选中预览效果 主要用来显示图片
 *#
-#macro tUploadInputMini(name value mapInfo)
-	#set(uploadid=fmt("upload%d",rand()))
+#macro tUploadInputMini(name value mapInfo)#set(uploadid=fmt("upload%d",rand()),fixData=mapInfo?.fixData)
+#if(fixData)#set(ss=mapInfo.remove("fixData"))#end
 	<input type="hidden" class="form-control" value="${value}" name="${name}" id="${uploadid}" #mapToHtml(mapInfo)><span class="btn btn-primary upload-btn" id="${uploadid}-wrap"><i class="fa fa fa-cloud-upload"></i> 浏览文件 <input type="file" class="input-file" name="upfile" id="${uploadid}-file"></span>
 	<div id="showimg${uploadid}">#if(value)<img src="#link(value)" width="100" alt="" />#end</div>
 	<script type="text/javascript">
@@ -374,6 +374,7 @@ $(function(){
 				secureuri: false,
 				fileElementId: "${uploadid}-file",
 				dataType: 'json',
+                data:{tinyFrame:1,#mapToJson(fixData)},
 				success: function (data, status) {
 					if(data.state=="SUCCESS"){
 						$("#${uploadid}").val(data.url);
