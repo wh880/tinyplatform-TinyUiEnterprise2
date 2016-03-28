@@ -530,6 +530,9 @@ body:after,
   bottom: 0;
   left: 0;
 }
+#tinyfooter a {
+  color: #ffffff;
+}
 #tinyfooter .right {
   float: right;
   text-indent: 0;
