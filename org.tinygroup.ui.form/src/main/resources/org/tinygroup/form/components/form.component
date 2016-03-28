@@ -255,8 +255,8 @@ $(function(){
 * @param mapInfo 额外的参数可自动带入input表单
 
 *#
-#macro tTextarea(name mapInfo)
-	<textarea class="form-control ${mapInfo?.get("class")}" name="${name}" #mapToHtml(mapInfo)>#bodyContent</textarea>
+#macro tTextarea(name tTextareaMapInfo)
+	<textarea class="form-control ${mapInfo?.get("class")}" name="${name}" #mapToHtml(tTextareaMapInfo)>#bodyContent</textarea>
 #end
 
 #*

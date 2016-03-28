@@ -48,7 +48,7 @@
 						</li>
 						<li>
 							<form class="navbar-form pull-left">
-								<input type="text" class="form-control" value="${activeMenuId}" placeholder="查找更多...">
+								<input type="text" class="form-control" value="" placeholder="查找更多...">
 								<span style="left:-27px;top:3px; position:relative;">#faIco("search")</span>
 							</form>
 						</li>

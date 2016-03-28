@@ -110,7 +110,8 @@
         macro_body=$("#body").val();
         macro_name=$("#macroName").val()
         if(typeof(macro_body)=="undefined") macro_body="";
-        range.setStartAfter(oNode).select();
+        try{range.setStartAfter(oNode).select();}catch(e){}
+
         if( oNode ) domUtils.remove(oNode,false);
 
         var _oNode = $('<div tinyplugins="macros" contenteditable="false" class="macro-rap">');
