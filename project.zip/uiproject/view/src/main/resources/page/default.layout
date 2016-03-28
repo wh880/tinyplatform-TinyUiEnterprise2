@@ -59,23 +59,17 @@
 					<ul class="nav navbar-nav pull-right right-navbar-nav">
 
                         <li>
-                            <a href="/tinyuiweb/" title="1.0版">1.0版</a>
-                        </li>
-                        <li>
                             <a href="#link("/")" title="Ajax模式">Ajax模式</a>
                         </li>
                         <li>
                             <a href="#link("/page/")" title="页面跳转模式">页面跳转模式</a>
-                        </li>
-                        <li>
-                            <a href="/tinyuiweb/project.zip" target="_blank" title="基础工程下载">基础工程下载</a>
                         </li>
 						<li class="fullscreen">
 							<a href="javascript:void(0);" onclick="launchFullScreen(document.documentElement);" title="全屏">#faIcon("arrows-alt")</a>
 						</li>
 						<li>
 							<form class="navbar-form pull-left">
-								<input type="text" class="form-control" value="${activeMenuId}" placeholder="查找更多...">
+								<input type="text" class="form-control" value="" placeholder="查找更多...">
 								<span style="left:-27px;top:3px; position:relative;">#faIco("search")</span>
 							</form>
 						</li>

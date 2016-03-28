@@ -165,8 +165,7 @@
         #@tTextarea("remark" {"placeholder":"说点什么...最少输入10个字符","row":"10","datatype":"*10-500","nullmsg":"备注不能为空！"})内容走起#end
     #end
     #@elementItem("内容：")
-        #@tTbditor("bodycontent")最后一个MAP参数为的初始化参数 会自动带入 主要设置宽高及图片上传的API配合#end
-        ##  #@Teditor("contentxx2" "content22" {"initialFrameHeight":"600"})最后一个MAP参数为Ueditor的初始化参数 会自动带入 #end
+        #@ueditor("bodycontent")#end
     #end
 
 
@@ -175,10 +174,8 @@
         #@aButton("btn-success")返回#end
     #end
 
-
-
-
 #end
+<div style="height:50px"></div>
 #dialog("myModal2")
 <script type="text/javascript">
     $(function () {

@@ -35,7 +35,8 @@
 	<file-resolver-configuration
 		resolve-classpath="true">
 		<class-paths>
-			<!-- <class-path path="{TINY_WEBROOT}\WEB-INF\lib" /> -->	
+			<!-- <class-path path="{TINY_WEBROOT}\WEB-INF\lib" /> -->
+			<class-path path="D:\javaworkspace\TinyUiEnterprise2\project.zip\uiproject\view\src\main\resources" />
 		</class-paths>
 		<include-patterns>
 			<include-pattern pattern="org\.tinygroup\.(.)*\.jar" />

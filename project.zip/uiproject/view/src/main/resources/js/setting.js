@@ -23,7 +23,7 @@
 		rtl:          false,
 		menu_right:   false,
 		position_fixed:false,
-		footer_fixed:false,
+		footer_fixed:true,
 		no_menu:false,
 		tinycontainer:false,
 		menupos:"left",
@@ -40,7 +40,9 @@
 		  result.fixed_navbar	= (window.localStorage.demo_fixed_navbar && window.localStorage.demo_fixed_navbar === '1');
 		  result.fixed_menu		= (window.localStorage.demo_fixed_menu && window.localStorage.demo_fixed_menu === '1');
 		  result.rtl			= (window.localStorage.demo_rtl && window.localStorage.demo_rtl === '1');
-		  result.footer_fixed	= (window.localStorage.demo_footer_fixed && window.localStorage.demo_footer_fixed === '1');
+			if(window.localStorage.demo_footer_fixed){
+				result.footer_fixed	= (window.localStorage.demo_footer_fixed && window.localStorage.demo_footer_fixed === '1');
+			}
 		  result.position_fixed	= (window.localStorage.demo_position_fixed && window.localStorage.demo_position_fixed === '1');
 		  //result.menu_right		= (window.localStorage.demo_menu_right && window.localStorage.demo_menu_right === '1');
 		  result.no_menu		= (window.localStorage.demo_no_menu && window.localStorage.demo_no_menu === '1');
