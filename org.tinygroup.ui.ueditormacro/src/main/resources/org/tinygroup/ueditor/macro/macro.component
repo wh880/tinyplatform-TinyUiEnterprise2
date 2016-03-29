@@ -1,1 +1,1 @@
-#macro outMacroCode(codeStr)${eval(codeStr.replaceAll('(?is)<div[^<>]+tinyplugins="macros".*?(#@.*?#end).*?<hr/>\s*</div>','$1').replace('&quot;','"'))}#end
+#macro outMacroCode(codeStr)#return(!instance(codeStr,"java.lang.String"))${eval(codeStr.replaceAll('(?is)<div[^<>]+tinyplugins="macros".*?(#@.*?#end).*?<hr/>\s*</div>','$1').replace('&quot;','"'))}#end

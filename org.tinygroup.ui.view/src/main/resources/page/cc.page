@@ -1,5 +1,8 @@
+#*
 #macro tUploadInput(name value mapInfo)#set(uploadid=fmt("upload%d",rand()),fixData=mapInfo?.fixData)
-#if(fixData)#set(ss=mapInfo.remove("fixData"))#end
+    ##if(fixData)
+        #set(ss=mapInfo.remove("fixData"))
+    ##end
 <div class="input-group">
     <input type="text" id="${uploadid}" name="${name}" class="form-control ${mapInfo?.get("class")}" #mapToHtml(mapInfo)>
     <span id="${uploadid}-wrap"><input type="file" class="input-file" name="upfile" id="${uploadid}-file"></span>
@@ -29,9 +32,13 @@
 
 
 
-    #tUploadInput("sss1" "")
+    #tUploadInput("sss1" "" {"fixData":{"data2":"sss2"}})
 <input type="submit" value="save" />
   </form>
 
 
 
+*#
+
+#macro outMacroCode(codeStr)#return(!instance(codeStr,"java.lang.String"))${eval(codeStr.replaceAll('(?is)<div[^<>]+tinyplugins="macros".*?(#@.*?#end).*?<hr/>\s*</div>','$1').replace('&quot;','"'))}#end
+#outMacroCode("test")

@@ -1,8 +1,4 @@
 #set(pagePostionTitle='<li><a href="'+TINY_CONTEXT_PATH+'">首页</a></li>',activeMenuId="0",topMenuId="0",c=call("getMenuId"),c=call("getTopMenuId"))<!DOCTYPE html>
-<!--[if IE 7 ]>		 <html class="no-js ie ie7 lte7 lte8 lte9" lang="zh-cmn-Hans-CN"> <![endif]-->
-<!--[if IE 8 ]>		 <html class="no-js ie ie8 lte8 lte9" lang="zh-cmn-Hans-CN"> <![endif]-->
-<!--[if IE 9 ]>		 <html class="no-js ie ie9 lte9" lang="zh-cmn-Hans-CN"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="zh-cmn-Hans-CN"> <!--<![endif]-->
 <html lang="zh-cmn-Hans-CN">
 <head>
 	<meta charset="utf-8"/>
@@ -69,12 +65,7 @@
 				</div>
 		#end
 		#@mainMenu()
-##			#@menuHead("欢迎您," "Liyl" "menu-content-demo" "/img/portraits/1.jpg")
-##				<a href="javascript:void(0);" class="btn btn-xs btn-primary btn-outline dark">#faIco("envelope")</a>
-##				<a href="javascript:void(0);" class="btn btn-xs btn-primary btn-outline dark">#faIco("user")</a>
-##				<a href="javascript:void(0);" class="btn btn-xs btn-primary btn-outline dark">#faIco("cog")</a>
-##				<a href="javascript:void(0);" class="btn btn-xs btn-danger btn-outline dark">#faIco("power-off")</a>
-##			#end
+
         	<ul class="navigation">
 				#TnavItem("0" "控制台" "/page/index.page" "fa-home")
 				#TnavItem("1" "概述" "/page/overview.page" "fa-dashboard")
@@ -192,10 +183,16 @@
 		</div>
 	</div>
     <script type="text/javascript">
-        init.push(function () {
+     init.push(function () {
             var menucount=$(".navigation:first>li").size();
             $("#topmenurap .navigation>li").css("width",100/menucount+"%");
-
+			var setFooterPostion=function (){
+				$("#tinypagecontent").css("min-height",$(window).height()-$("#tinypagecontent").offset().top-$("#tinyfooter").height()+$(window).scrollTop()-10+"px");
+			}
+			$(window).on("scroll resize",function(){
+                setFooterPostion();
+			});
+            setFooterPostion();
 			#if(!menuList)
                 var menuList=[];
                 $(".navigation:first a.navitem").each(function(){
@@ -213,7 +210,7 @@
                     }
                 })
 			#end
-        })
+     })
     </script>
 	</body>
 </html>
