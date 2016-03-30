@@ -23765,7 +23765,11 @@ UE.plugin.register('autoupload', function (){
             url = utils.formatUrl(actionUrl + (actionUrl.indexOf('?') == -1 ? '?':'&') + params);
 
         fd.append(fieldName, file, file.name || ('blob.' + file.type.substr('image/'.length)));
+
         fd.append('type', 'ajax');
+		$.each(me.options.imageFormData,function(key,value){
+			fd.append(key,value);
+		})
         xhr.open("post", url, true);
         xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
         xhr.addEventListener('load', function (e) {
@@ -24425,14 +24429,17 @@ UE.plugin.register('simpleupload', function (){
             btnIframeDoc = (btnIframe.contentDocument || btnIframe.contentWindow.document);
             btnIframeBody = btnIframeDoc.body;
             wrapper = btnIframeDoc.createElement('div');
-
-            wrapper.innerHTML = '<form id="edui_form_' + timestrap + '" target="edui_iframe_' + timestrap + '" method="POST" enctype="multipart/form-data" action="' + me.getOpt('serverUrl') + '" ' +
+            var wrapper_html="";
+            wrapper_html = '<form id="edui_form_' + timestrap + '" target="edui_iframe_' + timestrap + '" method="POST" enctype="multipart/form-data" action="' + me.getOpt('serverUrl') + '" ' +
             'style="' + btnStyle + '">' +
             '<input id="edui_input_' + timestrap + '" type="file" accept="image/*" name="' + me.options.imageFieldName + '" ' +
-            'style="' + btnStyle + '">' +
-            '</form>' +
+            'style="' + btnStyle + '">';
+            $.each(me.options.imageFormData,function(key,value){
+                wrapper_html +="<input type='hidden' name='"+key+"' value='"+value+"'/>";
+            })
+            wrapper_html+='</form>' +
             '<iframe id="edui_iframe_' + timestrap + '" name="edui_iframe_' + timestrap + '" style="display:none;width:0;height:0;border:0;margin:0;padding:0;position:absolute;"></iframe>';
-
+            wrapper.innerHTML=wrapper_html;
             wrapper.className = 'edui-' + me.options.theme;
             wrapper.id = me.ui.id + '_iframeupload';
             btnIframeBody.style.cssText = btnStyle;

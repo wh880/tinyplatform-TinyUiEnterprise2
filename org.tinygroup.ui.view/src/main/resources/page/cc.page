@@ -40,5 +40,19 @@
 
 *#
 
-#macro outMacroCode(codeStr)#return(!instance(codeStr,"java.lang.String"))${eval(codeStr.replaceAll('(?is)<div[^<>]+tinyplugins="macros".*?(#@.*?#end).*?<hr/>\s*</div>','$1').replace('&quot;','"'))}#end
-#outMacroCode("test")
+#macro ueditor(ueditorId ueditorName mapInfo)
+<script type="text/plain" id="${ueditorId}" name="${ueditorName}">#bodyContent</script>
+<script type="text/javascript">
+try{UE.ueAddonPlus("${ueditorId}");}catch (e){}
+UE.delEditor('${ueditorId}');
+UE.getEditor('${ueditorId}',{
+    #for(var:mapInfo)
+    ${var.key}:${var.value},#{end}
+}).execCommand('serverparam', {'sname': 'hello'})
+</script>
+#end
+
+
+
+#@ueditor("page-body-ontent" "docText" {"imageFormData":"{objectId:1,objectType:2}"})sss#end
+

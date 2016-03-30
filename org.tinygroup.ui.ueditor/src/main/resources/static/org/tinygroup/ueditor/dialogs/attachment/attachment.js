@@ -163,6 +163,7 @@
                 swf: '../../third-party/webuploader/Uploader.swf',
                 server: actionUrl,
                 fileVal: editor.getOpt('fileFieldName'),
+                formData:editor.getOpt('imageFormData'),
                 duplicate: true,
                 fileSingleSizeLimit: fileMaxSize,
                 compress: false
