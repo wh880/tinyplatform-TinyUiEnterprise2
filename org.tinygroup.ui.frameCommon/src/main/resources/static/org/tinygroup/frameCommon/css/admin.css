@@ -12,9 +12,6 @@ body:after {
 body:after {
   clear: both;
 }
-.ie8 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
 h1.light,
 h2.light,
 h3.light,
