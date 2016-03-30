@@ -126,7 +126,7 @@
         </div>
         <!-- main menu -->
         <style>
-            #body-right-part{position:fixed;width:240px;right:-240px;top:78px;border:1px solid #eee;background:#fff;bottom:0; -webkit-animation-duration: 0.3s;
+            #body-right-part{position:fixed;width:240px;right:-100%;z-index:2;top:78px;border:1px solid #eee;background:#fff;bottom:0; -webkit-animation-duration: 0.3s;
                 animation-duration: 0.3s;}
             #body-right-part.open{right:0;}
             #body-right-part .header-part{padding:10px;background:#f1f1f1}

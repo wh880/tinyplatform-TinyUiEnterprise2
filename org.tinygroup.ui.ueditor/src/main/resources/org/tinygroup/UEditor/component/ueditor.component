@@ -5,10 +5,13 @@ try{UE.ueAddonPlus("${ueditorId}");}catch (e){}
 UE.delEditor('${ueditorId}');
 UE.getEditor('${ueditorId}',{
 	#for(var:mapInfo)
-	${var.key}:"${var.value}",#{end}
+	${var.key}:${var.value},#{end}
 });
 </script>
 #end
+
+
+
 
 #macro ueditorMini(ueditorId ueditorName mapInfo)
 <script type="text/plain" id="${ueditorId}" name="${ueditorName}">#bodyContent</script>
@@ -19,7 +22,7 @@ UE.getEditor('${ueditorId}',{
         'bold italic underline forecolor backcolor removeformat insertorderedlist insertunorderedlist fontfamily fontsize justifyleft justifycenter justifyright link unlink'
     ]],
 	#for(var:mapInfo)
-	${var.key}:"${var.value}",#{end}
+	${var.key}:${var.value},#{end}
 });
 </script>
 #end

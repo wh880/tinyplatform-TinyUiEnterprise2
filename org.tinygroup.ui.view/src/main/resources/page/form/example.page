@@ -182,7 +182,7 @@
 #dialog("myModal2")
 <script type="text/javascript">
     $(function () {
-        $("form[name=thisform").Validform({
+        $("form[name=thisform]").Validform({
             tiptype: function (msg, o, cssctl) {
                 var objtip = $(o.obj).closest(".form-group").children(".valid-msg");
                 cssctl(objtip, o.type);
@@ -202,12 +202,12 @@
                         } else {
                             layer.msg(data.info,{icon:2});
                         }
-                        try {
+                        //try {
                             $(curform).closest(".modal").trigger("close");//当弹出框时触发弹出框关闭
                             $("table.tinytable").trigger("initnav"); ////可配合TINYTABLE 做刷新
-                        } catch (e) {
+                        //} catch (e) {
                             ##console.log(e)
-                        }
+                        //}
                     },
                     error: function () {
                         layer.msg(data.info,{icon:2});

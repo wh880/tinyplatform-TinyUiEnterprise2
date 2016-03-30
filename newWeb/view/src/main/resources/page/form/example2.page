@@ -207,6 +207,7 @@
         });*/
         $("form[name=thisform").bootstrapValidator({
             submitHandler: function(validator, form, submitButton) {
+
                 // validator is the BootstrapValidator instance
                 // form is the jQuery object present the current form
                 form.find('.alert').html('可设置AJAX加载').show();
