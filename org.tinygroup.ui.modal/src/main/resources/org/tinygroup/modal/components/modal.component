@@ -132,3 +132,27 @@ param aMap A其它额外的元素
     });
 </script>
 #end
+
+#macro dialogNoForm(dialogId dialogMap)
+<div id="${dialogId}" class="modal hide fade " tabindex="-1" role="dialog" aria-hidden="true"#mapToHtml(dialogMap)>
+    <div class="modal-header">
+        <span class="modal-expand" data-expand="modal" >#faIcon("expand")</span>
+        <span class="modal-close" data-dismiss="modal" aria-hidden="true">#faIcon("remove")</span>
+        <h3>对话框标题</h3>
+    </div>
+    <div class="modal-body thin-scroll">
+        <div class="clear">#bodyContent</div>
+        <div class="clear"></div>
+    </div>
+    <div class="modal-footer ">
+        <button class="btn radius" data-dismiss="modal" aria-hidden="true">关闭</button>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function(){
+        $("#${dialogId}").on("close",function(e){
+            $(this).modal('hide');
+        })
+    });
+</script>
+#end

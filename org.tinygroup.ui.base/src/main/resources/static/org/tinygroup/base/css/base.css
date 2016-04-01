@@ -1,5 +1,5 @@
 .r{float:right}
-
+.pointer{cursor:pointer}
 .vertical-scroll::-webkit-scrollbar {
     width: 12px
 }
