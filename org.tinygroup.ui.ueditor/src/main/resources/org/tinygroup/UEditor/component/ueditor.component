@@ -10,9 +10,6 @@ UE.getEditor('${ueditorId}',{
 </script>
 #end
 
-
-
-
 #macro ueditorMini(ueditorId ueditorName mapInfo)
 <script type="text/plain" id="${ueditorId}" name="${ueditorName}">#bodyContent</script>
 <script type="text/javascript">
