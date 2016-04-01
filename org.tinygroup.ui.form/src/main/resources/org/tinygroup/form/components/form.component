@@ -484,5 +484,6 @@ $(function(){
 <button class="btn btn-sm" id="${fid}-btn-remove">#faIcon("remove")</button>
 #end
 
-
+##hiddenInput("test","213",{"":""})
 #macro hiddenInput(inputName inputVal inputMap)<input type="hidden" name="${inputName}" value="${inputVal}"#mapToHtml(inputMap)/>#end
+
