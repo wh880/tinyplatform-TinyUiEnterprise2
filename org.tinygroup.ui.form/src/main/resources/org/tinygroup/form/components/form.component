@@ -9,7 +9,7 @@
 
 #macro elementItem(labeTitle colSize sizeList)#set(colSize=colSize?:"sm",sizeList=sizeList?:[2,6,3])
 <div class="form-group normal-form">
-    <label class="col-${colSize}-${sizeList.get(0)} control-label  pl-0 pr-5" for="textArea3">${labeTitle}</label>
+    <label class="col-${colSize}-${sizeList.get(0)} control-label  pl-0 pr-5">${labeTitle}</label>
     <div class="col-${colSize}-${sizeList.get(1)} pl-0">#bodyContent</div>
     <div class="col-${colSize}-${sizeList.get(2)} valid-msg"></div>
 </div>
