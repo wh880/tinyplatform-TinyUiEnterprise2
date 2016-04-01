@@ -57,7 +57,7 @@
 * @param mapInfo 额外参数会自动附加至input标签中 注意不要传ID 因为radio为多个一起使用传入ID将会违背HTML ID规则
 
 *#
-#macro tRadioes(name checkedValue mapInfo)
+#macro tRadioes(name checkedValue mapInfo)#set(checkForNum=0)
 	#bodyContent
 #end
 
@@ -68,7 +68,7 @@
 * @param mapInfo 额外参数会自动附加至input标签中 注意不要传ID 因为radio为多个一起使用传入ID将会违背HTML ID规则 如此参数为空则会自动调用父级map过行传值
 
 *#
-#macro tRadio(value mapInfo)#set(radioId=(mapInfo?.id)?:fmt("rad%d",rand()))
+#macro tRadio(value mapInfo)#set(checkForNum=checkForNum+1,radioId=(mapInfo?.id)?(mapInfo?.id+checkForNum):fmt("rad%d",rand()))
 <div class="radio-custom radio-${mapInfo?.class} pt-5">
     <input type="radio" name="${name}" id="${radioId}" value="${value}" ${value==checkedValue?"checked":""} #mapToHtml(mapInfo)>
     <label for="${radioId}" class="cursor-hand">#bodyContent</label>
@@ -83,7 +83,7 @@
 * @param mapInfo 额外参数会自动附加至input标签中 注意不要传ID 因为Checkbox为多个一起使用传入ID将会违背HTML ID规则
 
 *#
-#macro tCheckboxes(name checkedValue mapInfo)
+#macro tCheckboxes(name checkedValue mapInfo)#set(checkForNum=0)
 #bodyContent
 <script type="text/javascript">
 $(function(){
@@ -113,7 +113,7 @@ $(function(){
 * @param value 表单选项对应的值
 * @param mapInfo 额外参数会自动附加至input标签中 注意不要传ID 因为radio为多个一起使用传入ID将会违背HTML ID规则 如此参数为空则会自动调用父级map过行传值
 *#
-#macro tCheckbox(value mapInfo)#set(checkId=(mapInfo?.id)?:fmt("check%d",rand()))
+#macro tCheckbox(value mapInfo)#set(checkForNum=checkForNum+1,checkId=(mapInfo?.id)?(mapInfo?.id+checkForNum):fmt("check%d",rand()))
 <div class="checkbox-custom pt-5 checkbox-${mapInfo?.class}">
 	<input type="checkbox" name="${name}" id="${checkId}" value="${value}" #mapToHtml(mapInfo)>
 	<label for="${checkId}" class="cursor-hand">#bodyContent</label>
