@@ -2,10 +2,10 @@
     <ui-component name="tiny.ui.tpl.green" dependencies="tiny.ui.frameCommon">
         <css-resource>
             /static/org/tinygroup/themes/green.tiny.min.css
-		</css-resource>
-		<js-codelet>
-           tinyTplList.push({sort:6, name: 'green',  title: '绿色', img: contextPath+'/img/themes/greenyellow.png'});
+        </css-resource>
+        <js-codelet>
+            tinyTplList.push({sort:6, name: 'green', title: '绿色', img: contextPath+'/img/themes/greenyellow.png'});
         </js-codelet>
-		<description>TinyUi框架模板绿色</description>
+        <description>TinyUi框架模板绿色</description>
     </ui-component>
 </ui-components>

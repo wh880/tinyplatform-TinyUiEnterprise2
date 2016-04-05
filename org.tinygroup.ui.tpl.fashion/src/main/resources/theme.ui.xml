@@ -1,11 +1,11 @@
 <ui-components>
     <ui-component name="tiny.ui.tpl.fashion" dependencies="tiny.ui.frameCommon">
         <css-resource>
-			/static/org/tinygroup/themes/fashion.tiny.min.css
-		</css-resource>
-		<js-codelet>
-           tinyTplList.push({sort:4, name: 'fashion',   title: '时尚', img: contextPath+'/img/themes/fashion.png' });
+            /static/org/tinygroup/themes/fashion.tiny.min.css
+        </css-resource>
+        <js-codelet>
+            tinyTplList.push({sort:4, name: 'fashion', title: '时尚', img: contextPath+'/img/themes/fashion.png' });
         </js-codelet>
-		<description>TinyUi框架模板时尚</description>
+        <description>TinyUi框架模板时尚</description>
     </ui-component>
 </ui-components>

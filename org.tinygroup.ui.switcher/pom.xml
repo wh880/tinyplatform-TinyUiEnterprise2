@@ -8,11 +8,11 @@
         <version>2.1.1-SNAPSHOT</version>
     </parent>
     <artifactId>org.tinygroup.ui.switcher</artifactId>
-	<dependencies>
-		<dependency>
-			<groupId>org.tinygroup</groupId>
-			<artifactId>org.tinygroup.ui.jquery</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-	</dependencies>
+    <dependencies>
+        <dependency>
+            <groupId>org.tinygroup</groupId>
+            <artifactId>org.tinygroup.ui.jquery</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
 </project>

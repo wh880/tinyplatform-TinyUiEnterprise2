@@ -1,8 +1,8 @@
 <ui-components>
     <ui-component name="tiny.ui.button" dependencies="tiny.ui.bootstrap">
         <css-resource>
-		  /static/org/tinygroup/button/css/button.tiny.min.css,
-	</css-resource>
-	<description>按钮</description>
+            /static/org/tinygroup/button/css/button.tiny.min.css,
+        </css-resource>
+        <description>按钮</description>
     </ui-component>
 </ui-components>

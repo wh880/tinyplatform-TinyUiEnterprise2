@@ -1,11 +1,11 @@
 <ui-components>
     <ui-component name="tiny.ui.togglebox" dependencies="tiny.ui.tinytable,tiny.ui.ztree">
-    <css-resource>
-		/static/org/tinygroup/togglebox/css/css.tiny.min.css,
-	</css-resource>
-	<js-resource>
+        <css-resource>
+            /static/org/tinygroup/togglebox/css/css.tiny.min.css,
+        </css-resource>
+        <js-resource>
 
-	</js-resource>
-	<description>togglebox </description>
+        </js-resource>
+        <description>togglebox</description>
     </ui-component>
 </ui-components>

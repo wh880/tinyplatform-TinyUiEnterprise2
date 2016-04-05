@@ -1,16 +1,16 @@
 <ui-components>
     <ui-component name="tiny.ui.trumbowyg" dependencies="tiny.ui.jquery">
-		<css-resource>
-			/static/org/tinygroup/trumbowyg/css/trumbowyg.tiny.min.css
-		</css-resource>
-		<js-resource>
-		  	/static/org/tinygroup/trumbowyg/js/trumbowyg.min.js,
-		  	/static/org/tinygroup/trumbowyg/js/trumbowyg.base64.min.js,
-		  	/static/org/tinygroup/trumbowyg/js/trumbowyg.colors.min.js,
-		  	/static/org/tinygroup/trumbowyg/js/trumbowyg.upload.tiny.min.js,
-			/static/org/tinygroup/trumbowyg/js/trumbowyg.editlink.min.js,
-		  	/static/org/tinygroup/trumbowyg/js/zh_cn.tiny.min.js
-		</js-resource>
-		<description>Trumbowyg编辑器 (alex-d.github.io/Trumbowyg/)</description>
+        <css-resource>
+            /static/org/tinygroup/trumbowyg/css/trumbowyg.tiny.min.css
+        </css-resource>
+        <js-resource>
+            /static/org/tinygroup/trumbowyg/js/trumbowyg.min.js,
+            /static/org/tinygroup/trumbowyg/js/trumbowyg.base64.min.js,
+            /static/org/tinygroup/trumbowyg/js/trumbowyg.colors.min.js,
+            /static/org/tinygroup/trumbowyg/js/trumbowyg.upload.tiny.min.js,
+            /static/org/tinygroup/trumbowyg/js/trumbowyg.editlink.min.js,
+            /static/org/tinygroup/trumbowyg/js/zh_cn.tiny.min.js
+        </js-resource>
+        <description>Trumbowyg编辑器 (alex-d.github.io/Trumbowyg/)</description>
     </ui-component>
 </ui-components>

@@ -1,8 +1,8 @@
 <ui-components>
     <ui-component name="tiny.ui.switcher" dependencies="tiny.ui.jquery">
         <js-resource>
-		  /static/org/tinygroup/switcher/js/switcher.tiny.min.js
-	</js-resource>
-	<description>开关</description>
+            /static/org/tinygroup/switcher/js/switcher.tiny.min.js
+        </js-resource>
+        <description>开关</description>
     </ui-component>
 </ui-components>

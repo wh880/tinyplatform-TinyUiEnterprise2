@@ -1,8 +1,8 @@
 <ui-components>
     <ui-component name="tiny.ui.bootstrap" dependencies="tiny.ui.jquery">
         <css-resource>
-			/static/org/tinygroup/bootstrap/css/bootstrap.tiny.min.css
-		</css-resource>
+            /static/org/tinygroup/bootstrap/css/bootstrap.tiny.min.css
+        </css-resource>
         <js-resource>
             /static/org/tinygroup/bootstrap/js/transition.tiny.min.js,
             /static/org/tinygroup/bootstrap/js/affix.tiny.min.js,
@@ -17,6 +17,6 @@
             /static/org/tinygroup/bootstrap/js/popover.tiny.min.js,
             <!--/static/org/tinygroup/bootstrap/js/bootstrap.min.js,-->
         </js-resource>
-		<description>使用bootstrap最新v3.3.5 (www.bootcss.com)</description>
+        <description>使用bootstrap最新v3.3.5 (www.bootcss.com)</description>
     </ui-component>
 </ui-components>

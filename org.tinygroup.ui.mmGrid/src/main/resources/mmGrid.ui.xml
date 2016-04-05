@@ -1,17 +1,17 @@
 <ui-components>
     <ui-component name="tiny.ui.mmgrid" dependencies="tiny.ui.jquery">
         <css-resource>
-		  /static/org/tinygroup/mmGrid/src/mmGrid.tiny.min.css,
-		  /static/org/tinygroup/mmGrid/src/theme/bootstrap/mmGrid-bootstrap.tiny.min.css,
-		  /static/org/tinygroup/mmGrid/src/mmPaginator.tiny.min.css,
-		  /static/org/tinygroup/mmGrid/src/theme/bootstrap/mmPaginator-bootstrap.tiny.min.css
-	</css-resource>
-	<js-resource>
-		  /static/org/tinygroup/mmGrid/examples/js/plugins.tiny.min.js,
-		  /static/org/tinygroup/mmGrid/examples/js/vendor/json2.tiny.min.js,
-		  /static/org/tinygroup/mmGrid/src/mmGrid.tiny.min.js,
-		  /static/org/tinygroup/mmGrid/src/mmPaginator.tiny.min.js,
-	</js-resource>
-	<description>mmGrid数据表格 (http://miemiedev.github.io/mmGrid)</description>
+            /static/org/tinygroup/mmGrid/src/mmGrid.tiny.min.css,
+            /static/org/tinygroup/mmGrid/src/theme/bootstrap/mmGrid-bootstrap.tiny.min.css,
+            /static/org/tinygroup/mmGrid/src/mmPaginator.tiny.min.css,
+            /static/org/tinygroup/mmGrid/src/theme/bootstrap/mmPaginator-bootstrap.tiny.min.css
+        </css-resource>
+        <js-resource>
+            /static/org/tinygroup/mmGrid/examples/js/plugins.tiny.min.js,
+            /static/org/tinygroup/mmGrid/examples/js/vendor/json2.tiny.min.js,
+            /static/org/tinygroup/mmGrid/src/mmGrid.tiny.min.js,
+            /static/org/tinygroup/mmGrid/src/mmPaginator.tiny.min.js,
+        </js-resource>
+        <description>mmGrid数据表格 (http://miemiedev.github.io/mmGrid)</description>
     </ui-component>
 </ui-components>

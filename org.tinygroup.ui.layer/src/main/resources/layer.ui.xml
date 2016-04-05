@@ -1,13 +1,13 @@
 <ui-components>
     <ui-component name="tiny.ui.layer" dependencies="tiny.ui.jquery">
-		<js-resource>
-		  	/static/org/tinygroup/layer/layer.tiny.min.js,
-			/static/org/tinygroup/layer/layer.ajax.tiny.min.js,
-		  	/static/org/tinygroup/layer/extend/layer.ext.tiny.min.js
-		</js-resource>
-		<css-resource>
-		  /static/org/tinygroup/layer/skin/layer.tiny.min.css
-		</css-resource>
-		<description>layer弹出框 (http://layer.layui.com)</description>
+        <js-resource>
+            /static/org/tinygroup/layer/layer.tiny.min.js,
+            /static/org/tinygroup/layer/layer.ajax.tiny.min.js,
+            /static/org/tinygroup/layer/extend/layer.ext.tiny.min.js
+        </js-resource>
+        <css-resource>
+            /static/org/tinygroup/layer/skin/layer.tiny.min.css
+        </css-resource>
+        <description>layer弹出框 (http://layer.layui.com)</description>
     </ui-component>
 </ui-components>

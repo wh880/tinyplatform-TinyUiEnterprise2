@@ -1,5 +1,5 @@
 <ui-components>
     <ui-component name="tiny.ui.public" dependencies="tiny.ui.base,tiny.ui.button,tiny.ui.buttongroup,tiny.ui.gridsystems,tiny.ui.tinytable,tiny.ui.table,tiny.ui.modal,tiny.ui.totop,tiny.ui.datatables,tiny.ui.trumbowyg,tiny.ui.form,tiny.ui.typography,tiny.ui.tab,tiny.ui.fullcalendar,tiny.ui.votecharts,tiny.ui.piecharts,tiny.ui.easycharts,tiny.ui.highcharts,tiny.ui.burndownchart,tiny.ui.timeline,tiny.ui.widget,tiny.ui.togglebox,tiny.ui.masonry"><!--tiny.ui.umeditor,-->
-	<description>公用包</description>
+        <description>公用包</description>
     </ui-component>
 </ui-components>

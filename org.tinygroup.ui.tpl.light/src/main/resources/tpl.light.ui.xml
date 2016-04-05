@@ -1,16 +1,16 @@
 <ui-components>
     <ui-component name="tiny.ui.tpl.light" dependencies="tiny.ui.base">
         <css-resource>
-			/static/org/tpl/light/css/main.tiny.min.css,
-			/static/org/tpl/light/scrollbar/jquery.mCustomScrollbar.tiny.min.css
-	    </css-resource>
+            /static/org/tpl/light/css/main.tiny.min.css,
+            /static/org/tpl/light/scrollbar/jquery.mCustomScrollbar.tiny.min.css
+        </css-resource>
         <js-resource>
             /static/org/tpl/light/js/fastclick.min.js,
-			/static/org/tpl/light/js/retina.min.js,
-			/static/org/tpl/light/scrollbar/jquery.mCustomScrollbar.concat.min.js,
-			/static/org/tpl/light/switchery/switchery.min.js,
-			/static/org/tpl/light/js/yukon_all.tiny.min.js,
+            /static/org/tpl/light/js/retina.min.js,
+            /static/org/tpl/light/scrollbar/jquery.mCustomScrollbar.concat.min.js,
+            /static/org/tpl/light/switchery/switchery.min.js,
+            /static/org/tpl/light/js/yukon_all.tiny.min.js,
         </js-resource>
-	<description>轻模板 </description>
+        <description>轻模板</description>
     </ui-component>
 </ui-components>

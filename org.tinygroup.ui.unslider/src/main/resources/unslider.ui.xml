@@ -1,11 +1,11 @@
 <ui-components>
     <ui-component name="tiny.ui.unslider" dependencies="tiny.ui.bootstrap">
         <css-resource>
-			/static/org/tinygroup/unslider/css/slide.tiny.min.css
-		</css-resource>
+            /static/org/tinygroup/unslider/css/slide.tiny.min.css
+        </css-resource>
         <js-resource>
-			/static/org/tinygroup/unslider/js/jquery.touchSlider.tiny.min.js
-		</js-resource>
-		<description>幻灯片 (http://js.itobe.cn)</description>
+            /static/org/tinygroup/unslider/js/jquery.touchSlider.tiny.min.js
+        </js-resource>
+        <description>幻灯片 (http://js.itobe.cn)</description>
     </ui-component>
 </ui-components>

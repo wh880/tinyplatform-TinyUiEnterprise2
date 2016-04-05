@@ -1,8 +1,8 @@
 <ui-components>
     <ui-component name="tiny.ui.masonry">
         <js-resource>
-		  /static/org/tinygroup/masonry/js/masonry.pkgd.min.js,
-		</js-resource>
-	<description>masonry包 (http://masonry.desandro.com/)</description>
+            /static/org/tinygroup/masonry/js/masonry.pkgd.min.js,
+        </js-resource>
+        <description>masonry包 (http://masonry.desandro.com/)</description>
     </ui-component>
 </ui-components>

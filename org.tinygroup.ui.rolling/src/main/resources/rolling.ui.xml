@@ -1,13 +1,13 @@
 <ui-components>
     <ui-component name="tiny.ui.rolling" dependencies="tiny.ui.bootstrap">
         <css-resource>
-			/static/org/tinygroup/rolling/css/rolling.tiny.min.css,
-		</css-resource>
+            /static/org/tinygroup/rolling/css/rolling.tiny.min.css,
+        </css-resource>
         <js-resource>
-			/static/org/tinygroup/rolling/js/jcarousellite.min.js,
-			/static/org/tinygroup/rolling/js/jquery.textSlider.tiny.min.js,
-			/static/org/tinygroup/rolling/js/dropDown.tiny.min.js
-		</js-resource>
-		<description>滚动 (www.h-ui.net)</description>
+            /static/org/tinygroup/rolling/js/jcarousellite.min.js,
+            /static/org/tinygroup/rolling/js/jquery.textSlider.tiny.min.js,
+            /static/org/tinygroup/rolling/js/dropDown.tiny.min.js
+        </js-resource>
+        <description>滚动 (www.h-ui.net)</description>
     </ui-component>
 </ui-components>
