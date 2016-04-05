@@ -1,1 +1,90 @@
+##${pageContent}
+
 ${pageContent}
+<script type="text/javascript">
+
+    $(function(){
+        //location.hash.replace(/^#/, "");
+        function initPageOtherInfo(e){
+            $(e).parents("li").addClass("active open");
+            var href=$(e).attr("href");
+            var setNavPos=false,currenttxt="";
+            $("#main-menu-inner a").each(function(){
+                if(!setNavPos&&$(this).attr("href")==href){
+                    $('.postion-nav>.breadcrumb').html('<li>所在位置： </li><li>首页</li>');
+                    $(this).parents("li").find("span:first").each(function(){
+                        $('.postion-nav>.breadcrumb').append("<li>"+$(this).html()+"</li>");
+                        currenttxt=$(this).html()+"-"+currenttxt;
+                    });
+                    $(this).closest("li").addClass("active");
+                    setNavPos=true;
+                }else{
+                    $(this).closest("li").removeClass("active");
+                }
+            })
+            $(document).attr("title",currenttxt+" TinyUiEnterprise展示");
+        }
+        function setPageInfo(e){
+            initPageOtherInfo(e);
+            var href=$(e).attr("href");
+            $.pjax({url: href.replace(/\.pagelet/,".page").replace(/\.page/,".pagelet"), container: '#tinypagecontent',replaceStr:".page"});
+        }
+        $(document).on("pjax:end",function(){
+            var hash = location.pathname;
+            $("#main-menu-inner .navigation li a[href]").each(function () {
+                if ($(this).attr("href").indexOf(".page") == "-1") return true;
+                if (!hash || hash == $(this).attr("href")) {
+                    initPageOtherInfo(this);
+                    return false;
+                }
+            });
+        })
+        $("body").on("click","a:not([data-toggle=modal])[href],[data-pjax]",function(){
+            if($(this).attr("href").indexOf(".page")=="-1") return;
+            setPageInfo(this);
+            return false;
+        });
+
+        init.push(function () {
+            var hash = location.pathname;
+            $("#main-menu-inner .navigation li a[href]").each(function () {
+                if ($(this).attr("href").indexOf(".page") == "-1") return true;
+                if (!hash || hash == $(this).attr("href")) {
+                    setPageInfo(this);
+                    return false;
+                }
+            });
+        });
+    });
+
+
+    function TinyAjaxloadContent(a, b) {
+        var time="";
+        a=a.replace(/\.pagelet/,".page").replace(/\.page/,".pagelet");
+        $.ajax({
+            type: "GET",
+            url: a,
+            dataType: "html",
+            beforeSend: function() {
+                b[0] == $("#tinypagecontent")[0] && ($("html").animate({
+                            scrollTop: 0
+                        },
+                        "fast"));
+                time=setTimeout(function(){
+                    $("#tinypagecontent").append('<h1 class="ajax-loading-animation tinyLoadingContent" ><i class="fa fa-cog fa-spin"></i> 加载...</h1>');
+                },150);
+            },
+            success: function(a) {
+                if(time) clearTimeout(time);
+                b.html(a);
+
+                SyntaxHighlighter.highlight();
+            },
+            error: function() {
+                b.html('<h4 class="ajax-loading-error"><i class="fa fa-warning txt-color-orangeDark"></i> Error 404! Page not found.</h4>')
+            },
+            cache:false
+        })
+    }
+
+</script>

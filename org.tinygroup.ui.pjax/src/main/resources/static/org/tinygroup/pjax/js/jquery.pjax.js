@@ -178,7 +178,7 @@ function pjax(options) {
 
   var target = options.target
 
-  var hash = parseURL(options.url).hash
+  var hash = parseURL(options.url,options.replaceStr).hash
 
   var context = options.context = findContainerFor(options.container)
 
@@ -226,7 +226,7 @@ function pjax(options) {
       settings.timeout = 0
     }
 
-    var url = parseURL(settings.url)
+    var url = parseURL(settings.url,options.replaceStr)
     if (hash) url.hash = hash
     options.requestUrl = stripInternalParams(url)
   }
@@ -262,7 +262,7 @@ function pjax(options) {
 
     var container = extractContainer(data, xhr, options)
 
-    var url = parseURL(container.url)
+    var url = parseURL(container.url,options.replaceStr)
     if (hash) {
       url.hash = hash
       container.url = url.href
@@ -584,9 +584,10 @@ function stripInternalParams(url) {
 // url - String URL
 //
 // Returns HTMLAnchorElement that acts like Location.
-function parseURL(url) {
+function parseURL(url,replaceStr) {
   var a = document.createElement('a')
-  a.href = url
+  if(typeof (replaceStr)=="undefined"){replaceStr='.page'}
+  a.href = url.replace(/\.pagelet/,replaceStr)
   return a
 }
 
@@ -693,7 +694,7 @@ function extractContainer(data, xhr, options) {
   // Prefer X-PJAX-URL header if it was set, otherwise fallback to
   // using the original requested url.
   var serverUrl = xhr.getResponseHeader('X-PJAX-URL')
-  obj.url = serverUrl ? stripInternalParams(parseURL(serverUrl)) : options.requestUrl
+  obj.url = serverUrl ? stripInternalParams(parseURL(serverUrl,options.replaceStr)) : options.requestUrl
 
   // Attempt to parse response html into elements
   if (fullDocument) {
