@@ -92,6 +92,7 @@
         <module>org.tinygroup.ui.ueditor</module>
         <module>org.tinygroup.ui.ueditormacro</module>
         <module>org.tinygroup.ui.codemirror</module>
+        <module>org.tinygroup.ui.pjax</module>
         <module>newWeb</module>
     </modules>
 

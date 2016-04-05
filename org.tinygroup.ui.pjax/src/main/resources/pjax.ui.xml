@@ -1,0 +1,9 @@
+<ui-components>
+    <ui-component name="tiny.ui.pjax" dependencies="tiny.ui.jquery">
+        <js-resource>
+            /static/org/tinygroup/pjax/js/jquery.pjax.tiny.min.js,
+        </js-resource>
+       
+        <description>jquery-pjax (https://github.com/defunkt/jquery-pjax/)</description>
+    </ui-component>
+</ui-components>
