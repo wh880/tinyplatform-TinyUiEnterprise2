@@ -4,6 +4,7 @@ ${pageContent}
 <script type="text/javascript">
     $(function(){
         function initPageOtherInfo(e){
+            $("#main-menu-inner li").removeClass("active open");
             $(e).parents("li").addClass("active open");
             var href=$(e).attr("href");
             var setNavPos=false,currenttxt="";

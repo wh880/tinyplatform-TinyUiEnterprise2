@@ -27,7 +27,6 @@
 		#@mainNavbar("TINY-组件化的开发框架")
 				<div class="right clearfix">
 					<ul class="nav navbar-nav pull-right right-navbar-nav">
-
                         <li>
                             <a href="/tinyuiweb/" title="1.0版">1.0版</a>
                         </li>
