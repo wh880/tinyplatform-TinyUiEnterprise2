@@ -2,9 +2,7 @@
 
 ${pageContent}
 <script type="text/javascript">
-
     $(function(){
-        //location.hash.replace(/^#/, "");
         function initPageOtherInfo(e){
             $(e).parents("li").addClass("active open");
             var href=$(e).attr("href");
@@ -33,13 +31,14 @@ ${pageContent}
             var hash = location.pathname;
             $("#main-menu-inner .navigation li a[href]").each(function () {
                 if ($(this).attr("href").indexOf(".page") == "-1") return true;
-                if (!hash || hash == $(this).attr("href")) {
+                if (hash == $(this).attr("href")) {
                     initPageOtherInfo(this);
                     return false;
                 }
             });
-        })
-        $("body").on("click","a:not([data-toggle=modal])[href],[data-pjax]",function(){
+        }).on("pjax:error",function(e){
+            $("#tinypagecontent").html('<h4 class="ajax-loading-error"><i class="fa fa-warning txt-color-orangeDark"></i> Error 404! Page not found.</h4>')
+        }).on("click","a:not([data-toggle=modal])[href],[data-pjax]",function(){
             if($(this).attr("href").indexOf(".page")=="-1") return;
             setPageInfo(this);
             return false;
