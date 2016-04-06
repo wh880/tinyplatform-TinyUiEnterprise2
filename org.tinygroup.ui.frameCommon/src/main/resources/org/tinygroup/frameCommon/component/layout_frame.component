@@ -3,7 +3,7 @@
 *#
 
 #macro getMenuId()
-	#for(var:menuList)#if(var?.url.startsWith(tinyRequestRequestURI))#set(activeMenuId=var.id)#break#end#end
+	#for(var:menuList)#if(var?.url.startsWith(tinyRequestRequestURI))#set(activeMenuId=var?.id?:"")#break#end#end
 #end
 
 #macro TnavItem(navItemId navTitle navItemHref navItemIcon navItemWarning navItemWarningCls)
