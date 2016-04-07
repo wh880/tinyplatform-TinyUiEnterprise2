@@ -20,7 +20,7 @@
             <plugin>
                 <groupId>org.mortbay.jetty</groupId>
                 <artifactId>jetty-maven-plugin</artifactId>
-                <version>7.6.16.v20140903</version>
+                <version>8.1.16.v20140903</version>
                 <configuration>
                     <jvmArgs>-XX:PermSize=512M -XX:MaxPermSize=1024M</jvmArgs>
                     <connectors>
