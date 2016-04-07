@@ -11,12 +11,12 @@
     <dependencies>
         <dependency>
             <groupId>org.tinygroup</groupId>
-            <artifactId>org.tinygroup.ui.bootstrap</artifactId>
+            <artifactId>org.tinygroup.ui.moment</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>org.tinygroup</groupId>
-            <artifactId>org.tinygroup.ui.moment</artifactId>
+            <artifactId>org.tinygroup.ui.bootstrap</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
