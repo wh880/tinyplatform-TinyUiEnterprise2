@@ -1,0 +1,13 @@
+<ui-components>
+    <ui-component name="tiny.ui.cropper" dependencies="tiny.ui.bootstrap">
+        <js-resource>
+            /static/org/tinygroup/cropper/js/cropper.min.js,
+            <!--/static/org/tinygroup/cropper/js/sitelogo.tiny.min.js-->
+        </js-resource>
+        <css-resource>
+            /static/org/tinygroup/cropper/css/cropper.min.css,
+            /static/org/tinygroup/cropper/css/sitelogo.css
+        </css-resource>
+        <description>cropper (https://github.com/fengyuanchen/cropper)</description>
+    </ui-component>
+</ui-components>

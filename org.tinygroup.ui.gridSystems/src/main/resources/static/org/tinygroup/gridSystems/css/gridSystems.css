@@ -1,7 +1,7 @@
 /*栅格系统*/
 .row:after{content:".";display:block;height:0;clear:both;visibility:hidden}
-.row{zoom:1;margin:0;}
-[class^="span-"],[class*=" span-"] {float:left; margin-top:20px}
+.row{zoom:1;/*margin:0;*/}
+/*[class^="span-"],[class*=" span-"] {float:left; margin-top:20px}*/
 .row-980-20 [class^="span-"],.row-980-20 [class*=" span-"]{margin-right:10px}
 .row-980-20{margin-right:-20px}
 .row-980-20 .span-1 {width:40px}
@@ -55,7 +55,7 @@
 .row-percentage-24.girdrap .layloutBg{background:#c00;color: #fff;padding:10px 0; text-align:center;}
 
 /*2.1 响应式栅格系统*/
-.row{ box-sizing:border-box;}
+/*.row{ box-sizing:border-box;}*/
 .col-1,.col-2,.col-3,.col-4,.col-5,.col-6,.col-7,.col-8,.col-9,.col-10,.col-11,.col-12{box-sizing:border-box; float:left;min-height: 1px;/*position: relative;*/}
 .col-1{width:8.33333%}
 .col-2{width:16.66667%}

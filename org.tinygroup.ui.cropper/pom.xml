@@ -5,12 +5,12 @@
         <artifactId>TinyUiEnterprise2</artifactId>
         <version>2.1.1-SNAPSHOT</version>
     </parent>
-    <artifactId>org.tinygroup.ui.datatables</artifactId>
+    <artifactId>org.tinygroup.ui.cropper</artifactId>
 
     <dependencies>
         <dependency>
             <groupId>org.tinygroup</groupId>
-            <artifactId>org.tinygroup.ui.table</artifactId>
+            <artifactId>org.tinygroup.ui.bootstrap</artifactId>
             <version>${project.version}</version>
         </dependency>
     </dependencies>
