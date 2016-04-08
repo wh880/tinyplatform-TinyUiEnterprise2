@@ -58,7 +58,7 @@ UE.getEditor('${ueditorId}',{
 
 
 <div class="ibox-content">
-    <div id="crop-avatar" data-toggle="modal" data-target="#avatar-modal" data-width="800" data-height="500">
+    <div id="crop-avatar" data-toggle="modal" data-target="#avatar-modal" data-width="840" data-height="550">
     <img src="logo.jpg" alt="Logo">
     </div>
 </div>
@@ -70,7 +70,7 @@ UE.getEditor('${ueditorId}',{
         <h3>对话框标题</h3>
     </div>
     <div class="modal-body thin-scroll">
-        <div class="clear"><form class="avatar-form" action="{{url('admin/upload-logo')}}" enctype="multipart/form-data" method="post">
+        <div class="clear"><form class="avatar-form" action="http://127.0.0.1:8001/tt.php" enctype="multipart/form-data" method="post">
             <div class="avatar-body">
                 <div class="avatar-upload">
                     <input class="avatar-src" name="avatar_src" type="hidden">
@@ -117,10 +117,10 @@ UE.getEditor('${ueditorId}',{
         'use strict';
 
         var console = window.console || { log: function () {} };
-        console.log("test");
+
         function CropAvatar($element) {
             this.$container = $element;
-            console.log(this.$container);
+
             this.$avatarView = this.$container.find('.avatar-view');
             this.$avatar = this.$avatarView.find('img');
             this.$avatarModal = $("body").find('#avatar-modal');
@@ -131,8 +131,8 @@ UE.getEditor('${ueditorId}',{
             this.$avatarSrc = this.$avatarForm.find('.avatar-src');
             this.$avatarData = this.$avatarForm.find('.avatar-data');
             this.$avatarInput = this.$avatarForm.find('.avatar-input');
-            this.$avatarSave = this.$avatarForm.find('.avatar-save');
-            this.$avatarBtns = this.$avatarForm.find('.avatar-btns');
+            this.$avatarSave = this.$avatarModal.find('.avatar-save');
+            this.$avatarBtns = this.$avatarModal.find('[data-method="rotate"]');
 
             this.$avatarWrapper = this.$avatarModal.find('.avatar-wrapper');
             this.$avatarPreview = this.$avatarModal.find('.avatar-preview');
@@ -156,7 +156,7 @@ UE.getEditor('${ueditorId}',{
                 }
 
                 this.initTooltip();
-                this.initModal();
+                // this.initModal();
                 this.addListener();
             },
 
@@ -165,6 +165,7 @@ UE.getEditor('${ueditorId}',{
                 this.$avatarInput.on('change', $.proxy(this.change, this));
                 this.$avatarForm.on('submit', $.proxy(this.submit, this));
                 this.$avatarBtns.on('click', $.proxy(this.rotate, this));
+                this.$avatarSave.on('click', $.proxy(this.submit, this));
             },
 
             initTooltip: function () {
@@ -174,9 +175,9 @@ UE.getEditor('${ueditorId}',{
             },
 
             initModal: function () {
-                this.$avatarModal.modal({
-                show: false
-                });
+                //this.$avatarModal.modal({
+                //show: false
+                //});
             },
 
             initPreview: function () {
@@ -265,7 +266,6 @@ UE.getEditor('${ueditorId}',{
                 if (!this.$avatarSrc.val() && !this.$avatarInput.val()) {
                     return false;
                 }
-
                 if (this.support.formData) {
                     this.ajaxUpload();
                     return false;
@@ -274,7 +274,6 @@ UE.getEditor('${ueditorId}',{
 
             rotate: function (e) {
                 var data;
-
                 if (this.active) {
                     data = $(e.target).data();
 
@@ -318,7 +317,9 @@ UE.getEditor('${ueditorId}',{
                     });
 
                     this.active = true;
+
                 }
+                console.log(this.$img.cropper("getCroppedCanvas"));
             },
 
             stopCropper: function () {
@@ -329,10 +330,11 @@ UE.getEditor('${ueditorId}',{
                 }
             },
 
-            ajaxUpload: function () {
+            ajaxUpload: function (e) {
                 var url = this.$avatarForm.attr('action'),
                         data = new FormData(this.$avatarForm[0]),
                         _this = this;
+
 
                 $.ajax(url, {
                     headers: {'X-XSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
@@ -405,14 +407,15 @@ UE.getEditor('${ueditorId}',{
             },
 
             alert: function (msg) {
-                var $alert = [
+               /* var $alert = [
                     '<div class="alert alert-danger avater-alert">',
                     '<button type="button" class="close" data-dismiss="alert">&times;</button>',
                     msg,
                     '</div>'
                 ].join('');
 
-                this.$avatarUpload.after($alert);
+                this.$avatarUpload.after($alert);*/
+                layer.msg(msg,{icon:2,time:1000});
             }
         };
 
