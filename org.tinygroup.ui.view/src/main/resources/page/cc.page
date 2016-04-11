@@ -204,14 +204,14 @@ UE.getEditor('${ueditorId}',{
                 try {
                 data = $(this).contents().find('body').text();
                 } catch (e) {
-                console.log(e.message);
+                //console.log(e.message);
                 }
 
                 if (data) {
                 try {
                 data = $.parseJSON(data);
                 } catch (e) {
-                console.log(e.message);
+                //console.log(e.message);
                 }
 
                 _this.submitDone(data);
@@ -319,7 +319,7 @@ UE.getEditor('${ueditorId}',{
                     this.active = true;
 
                 }
-                console.log(this.$img.cropper("getCroppedCanvas"));
+
             },
 
             stopCropper: function () {
@@ -334,7 +334,6 @@ UE.getEditor('${ueditorId}',{
                 var url = this.$avatarForm.attr('action'),
                         data = new FormData(this.$avatarForm[0]),
                         _this = this;
-
 
                 $.ajax(url, {
                     headers: {'X-XSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},

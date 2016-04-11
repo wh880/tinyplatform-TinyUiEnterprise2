@@ -4,6 +4,7 @@
 #macro mapToJson(JsonMap)#for(var:JsonMap)#break(!var||!var?.key),${var.key}:"${var.value}"#{end}#end
 #macro mapToCss(cssMap)#for(var:cssMap)#break(!var?.value||!var?.key)${var.key}:${var.value};#end#end
 #macro link(linkUrl)#if(linkUrl?.startsWith(TINY_CONTEXT_PATH))${linkUrl}#{else}${(linkUrl?.startsWith("/")?TINY_CONTEXT_PATH:"")+linkUrl}#end#end
+#macro in_Array(seachVal,arrList,arrKey)#set(arrKey=arrKey?:"id")#foreach(var2:arrList)#if(seachVal==var2?.arrKey)1#break#end#{end}0#end
 #macro getResource(debug)
     #if(debug && debug=="true")
         #foreach(component in uiengine.getHealthUiComponents())
