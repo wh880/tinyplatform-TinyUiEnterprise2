@@ -3,7 +3,6 @@
         <js-resource>
             /static/org/tinygroup/pjax/js/jquery.pjax.tiny.min.js,
         </js-resource>
-       
-        <description>jquery-pjax��ˢ��ajax����(https://github.com/defunkt/jquery-pjax/)</description>
+        <description>jQuery的Pjax插件（无刷新ajax加载并解决浏览器前进和后退）(https://github.com/defunkt/jquery-pjax/)</description>
     </ui-component>
 </ui-components>

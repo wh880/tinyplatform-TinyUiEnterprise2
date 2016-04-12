@@ -56,7 +56,7 @@
 
 /*2.1 响应式栅格系统*/
 /*.row{ box-sizing:border-box;}*/
-.col-1,.col-2,.col-3,.col-4,.col-5,.col-6,.col-7,.col-8,.col-9,.col-10,.col-11,.col-12{box-sizing:border-box; float:left;min-height: 1px;/*position: relative;*/}
+.col-1,.col-2,.col-3,.col-4,.col-5,.col-6,.col-7,.col-8,.col-9,.col-10,.col-11,.col-12{box-sizing:border-box; float:left;min-height: 1px;/*position: relative;*/padding-left:15px;padding-right:15px}
 .col-1{width:8.33333%}
 .col-2{width:16.66667%}
 .col-3{width:25%}

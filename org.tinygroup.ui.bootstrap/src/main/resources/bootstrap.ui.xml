@@ -17,6 +17,6 @@
             /static/org/tinygroup/bootstrap/js/popover.tiny.min.js,
             <!--/static/org/tinygroup/bootstrap/js/bootstrap.min.js,-->
         </js-resource>
-        <description>使用bootstrap最新v3.3.5 (www.bootcss.com)</description>
+        <description>bootstrap 3.3.5 (www.bootcss.com)</description>
     </ui-component>
 </ui-components>

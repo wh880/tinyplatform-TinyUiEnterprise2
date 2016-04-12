@@ -43,6 +43,7 @@
                         var e = $.Event('loaded');
                         that.$element.trigger(e);
                         that.removeLoading();
+
                         that.layout();
                     }
                 });
@@ -306,14 +307,14 @@
         })
     };
     $.fn.modal.defaults = {
-        keyboard: false,
+        keyboard: true,
         backdrop: 'static',
-        loading: false,
+        loading: true,
         show: true,
         width: null,
         height: null,
         maxHeight: null,
-        modalOverflow: false,
+        modalOverflow: true,
         consumeTab: false,
         focusOn: null,
         replace: false,

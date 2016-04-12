@@ -6,6 +6,6 @@
         <css-resource>
             /static/org/tinygroup/bootstrapvalidator/css/bootstrapValidator.tiny.min.css
         </css-resource>
-        <description>bootstrapvalidator (https://github.com/nghuuphuoc/bootstrapvalidator/)</description>
+        <description>bootstrapvalidator表单验证 (https://github.com/nghuuphuoc/bootstrapvalidator/)</description>
     </ui-component>
 </ui-components>

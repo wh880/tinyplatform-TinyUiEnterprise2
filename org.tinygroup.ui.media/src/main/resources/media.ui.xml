@@ -3,6 +3,6 @@
         <css-resource>
             /static/org/tinygroup/media/css/media.tiny.min.css,
         </css-resource>
-        <description>媒体 (www.runoob.com)</description>
+        <description>媒体</description>
     </ui-component>
 </ui-components>

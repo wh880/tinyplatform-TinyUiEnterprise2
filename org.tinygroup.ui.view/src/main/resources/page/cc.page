@@ -55,14 +55,13 @@ UE.getEditor('${ueditorId}',{
 
 
 #@ueditor("page-body-ontent" "docText" {"imageFormData":"{objectId:1,objectType:2}"})sss#end*#
-
+#macro get()#set(avatarId="crop-avatar")
 
 <div class="ibox-content">
-    <div id="crop-avatar" data-toggle="modal" data-target="#avatar-modal" data-width="840" data-height="550">
-    <img src="logo.jpg" alt="Logo">
+    <div id="${avatarId}" data-toggle="modal" data-target="#avatar-modal" data-width="840" data-height="550">
+    #bodyContent()<img src="logo.jpg" alt="Logo">
     </div>
 </div>
-
 <div id="avatar-modal" class="modal hide fade " tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-header">
         <span class="modal-expand" data-expand="modal" ><i class="fa fa-expand"></i></span>
@@ -70,7 +69,7 @@ UE.getEditor('${ueditorId}',{
         <h3>对话框标题</h3>
     </div>
     <div class="modal-body thin-scroll">
-        <div class="clear"><form class="avatar-form" action="http://127.0.0.1:8001/tt.php" enctype="multipart/form-data" method="post">
+        <div class="clear"><form class="avatar-form" action="tt.php" enctype="multipart/form-data" method="post">
             <div class="avatar-body">
                 <div class="avatar-upload">
                     <input class="avatar-src" name="avatar_src" type="hidden">
@@ -108,38 +107,28 @@ UE.getEditor('${ueditorId}',{
 </div>
 
 
-<div class="loading" aria-label="Loading" role="img" tabindex="-1"></div>
 
 <script>
-
     $(function () {
-
         'use strict';
-
         var console = window.console || { log: function () {} };
-
         function CropAvatar($element) {
-            this.$container = $element;
+            this._container = $element;
+            this._avatarView = this._container.find('.avatar-view');
+            this._avatar = this._avatarView.find('img');
+            this._avatarModal = $("body").find('#avatar-modal');
 
-            this.$avatarView = this.$container.find('.avatar-view');
-            this.$avatar = this.$avatarView.find('img');
-            this.$avatarModal = $("body").find('#avatar-modal');
-            this.$loading = $("#page-wrapper").find('.loading');
-
-            this.$avatarForm = this.$avatarModal.find('.avatar-form');
-            this.$avatarUpload = this.$avatarForm.find('.avatar-upload');
-            this.$avatarSrc = this.$avatarForm.find('.avatar-src');
-            this.$avatarData = this.$avatarForm.find('.avatar-data');
-            this.$avatarInput = this.$avatarForm.find('.avatar-input');
-            this.$avatarSave = this.$avatarModal.find('.avatar-save');
-            this.$avatarBtns = this.$avatarModal.find('[data-method="rotate"]');
-
-            this.$avatarWrapper = this.$avatarModal.find('.avatar-wrapper');
-            this.$avatarPreview = this.$avatarModal.find('.avatar-preview');
-
+            this._avatarForm = this._avatarModal.find('.avatar-form');
+            this._avatarUpload = this._avatarForm.find('.avatar-upload');
+            this._avatarSrc = this._avatarForm.find('.avatar-src');
+            this._avatarData = this._avatarForm.find('.avatar-data');
+            this._avatarInput = this._avatarForm.find('.avatar-input');
+            this._avatarSave = this._avatarModal.find('.avatar-save');
+            this._avatarBtns = this._avatarModal.find('[data-method="rotate"]');
+            this._avatarWrapper = this._avatarModal.find('.avatar-wrapper');
+            this._avatarPreview = this._avatarModal.find('.avatar-preview');
             this.init();
         }
-
         CropAvatar.prototype = {
             constructor: CropAvatar,
             support: {
@@ -150,96 +139,28 @@ UE.getEditor('${ueditorId}',{
 
             init: function () {
                 this.support.datauri = this.support.fileList && this.support.blobURLs;
-
-                if (!this.support.formData) {
-                    this.initIframe();
-                }
-
-                this.initTooltip();
-                // this.initModal();
                 this.addListener();
             },
 
             addListener: function () {
-                this.$avatarView.on('click', $.proxy(this.click, this));
-                this.$avatarInput.on('change', $.proxy(this.change, this));
-                this.$avatarForm.on('submit', $.proxy(this.submit, this));
-                this.$avatarBtns.on('click', $.proxy(this.rotate, this));
-                this.$avatarSave.on('click', $.proxy(this.submit, this));
-            },
-
-            initTooltip: function () {
-                this.$avatarView.tooltip({
-                placement: 'bottom'
-                });
-            },
-
-            initModal: function () {
-                //this.$avatarModal.modal({
-                //show: false
-                //});
+                this._avatarView.on('click', $.proxy(this.click, this));
+                this._avatarInput.on('change', $.proxy(this.change, this));
+                this._avatarForm.on('submit', $.proxy(this.submit, this));
+                this._avatarBtns.on('click', $.proxy(this.rotate, this));
+                this._avatarSave.on('click', $.proxy(this.submit, this));
             },
 
             initPreview: function () {
-                var url = this.$avatar.attr('src');
-
-                this.$avatarPreview.empty().html('<img src="' + url + '">');
+                var url = this._avatar.attr('src');
+                this._avatarPreview.empty().html('<img src="' + url + '">');
             },
-
-            initIframe: function () {
-                var target = 'upload-iframe-' + (new Date()).getTime(),
-                    $iframe = $('<iframe>').attr({
-                    name: target,
-                    src: ''
-                }),
-                        _this = this;
-
-                // Ready ifrmae
-                    $iframe.one('load', function () {
-
-                // respond response
-                    $iframe.on('load', function () {
-                var data;
-
-                try {
-                data = $(this).contents().find('body').text();
-                } catch (e) {
-                //console.log(e.message);
-                }
-
-                if (data) {
-                try {
-                data = $.parseJSON(data);
-                } catch (e) {
-                //console.log(e.message);
-                }
-
-                _this.submitDone(data);
-                } else {
-                _this.submitFail('Image upload failed!');
-                }
-
-                _this.submitEnd();
-
-                });
-                });
-
-                this.$iframe = $iframe;
-                this.$avatarForm.attr('target', target).after($iframe.hide());
-            },
-
             click: function () {
-                ## this.$avatarModal.modal('show');
-                //console.log("test");
                 this.initPreview();
             },
-
             change: function () {
-                var files,
-                        file;
-
+                var files,file;
                 if (this.support.datauri) {
-                    files = this.$avatarInput.prop('files');
+                    files = this._avatarInput.prop('files');
 
                     if (files.length > 0) {
                         file = files[0];
@@ -254,8 +175,7 @@ UE.getEditor('${ueditorId}',{
                         }
                     }
                 } else {
-                    file = this.$avatarInput.val();
-
+                    file = this._avatarInput.val();
                     if (this.isImageFile(file)) {
                         this.syncUpload();
                     }
@@ -263,7 +183,7 @@ UE.getEditor('${ueditorId}',{
             },
 
             submit: function () {
-                if (!this.$avatarSrc.val() && !this.$avatarInput.val()) {
+                if (!this._avatarSrc.val() && !this._avatarInput.val()) {
                     return false;
                 }
                 if (this.support.formData) {
@@ -276,9 +196,8 @@ UE.getEditor('${ueditorId}',{
                 var data;
                 if (this.active) {
                     data = $(e.target).data();
-
                     if (data.method) {
-                        this.$img.cropper(data.method, data.option);
+                        this._img.cropper(data.method, data.option);
                     }
                 }
             },
@@ -295,25 +214,25 @@ UE.getEditor('${ueditorId}',{
                 var _this = this;
 
                 if (this.active) {
-                    this.$img.cropper('replace', this.url);
+                    this._img.cropper('replace', this.url);
                 } else {
-                    this.$img = $('<img src="' + this.url + '">');
-                    this.$avatarWrapper.empty().html(this.$img);
-                    this.$img.cropper({
-                    aspectRatio: 1,
-                    preview: this.$avatarPreview.selector,
-                    strict: false,
-                    crop: function (data) {
-                    var json = [
-                        '{"x":' + data.x,
-                        '"y":' + data.y,
-                        '"height":' + data.height,
-                        '"width":' + data.width,
-                        '"rotate":' + data.rotate + '}'
-                    ].join();
+                    this._img = $('<img src="' + this.url + '">');
+                    this._avatarWrapper.empty().html(this._img);
+                    this._img.cropper({
+                        aspectRatio: 1,
+                        preview: this._avatarPreview.selector,
+                        strict: false,
+                        crop: function (data) {
+                            var json = [
+                                '{"x":' + data.x,
+                                '"y":' + data.y,
+                                '"height":' + data.height,
+                                '"width":' + data.width,
+                                '"rotate":' + data.rotate + '}'
+                            ].join();
 
-                    _this.$avatarData.val(json);
-                    }
+                            _this._avatarData.val(json);
+                        }
                     });
 
                     this.active = true;
@@ -324,16 +243,23 @@ UE.getEditor('${ueditorId}',{
 
             stopCropper: function () {
                 if (this.active) {
-                    this.$img.cropper('destroy');
-                    this.$img.remove();
+                    this._img.cropper('destroy');
+                    this._img.remove();
                     this.active = false;
                 }
             },
 
             ajaxUpload: function (e) {
-                var url = this.$avatarForm.attr('action'),
-                        data = new FormData(this.$avatarForm[0]),
-                        _this = this;
+                var url = this._avatarForm.attr('action'),
+                    data = new FormData(this._avatarForm[0]),
+                    _this = this;
+                var imginfo=this._img.cropper("getImageData");
+                var canvas=this._img.cropper("getCroppedCanvas",{
+                    width:imginfo.with
+                });
+                var dataurl = canvas.toDataURL('image/png');
+                var blob = window.dataURLtoBlob(dataurl);
+                data.append("image", blob, "image.png");
 
                 $.ajax(url, {
                     headers: {'X-XSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
@@ -362,11 +288,11 @@ UE.getEditor('${ueditorId}',{
             },
 
             syncUpload: function () {
-                this.$avatarSave.click();
+                this._avatarSave.click();
             },
 
             submitStart: function () {
-                this.$loading.fadeIn();
+
             },
 
             submitDone: function (data) {
@@ -378,10 +304,10 @@ UE.getEditor('${ueditorId}',{
                             this.cropDone();
                         } else {
                             this.uploaded = true;
-                            this.$avatarSrc.val(this.url);
+                            this._avatarSrc.val(this.url);
                             this.startCropper();
                         }
-                        this.$avatarInput.val('');
+                        this._avatarInput.val('');
                     } else if (data.message) {
                         this.alert(data.message);
                     }
@@ -395,32 +321,25 @@ UE.getEditor('${ueditorId}',{
             },
 
             submitEnd: function () {
-                this.$loading.fadeOut();
+
             },
 
             cropDone: function () {
-                this.$avatarForm.get(0).reset();
-                this.$avatar.attr('src', this.url);
+                this._avatarForm.get(0).reset();
+                this._avatar.attr('src', this.url);
                 this.stopCropper();
-                this.$avatarModal.modal('hide');
+                this._avatarModal.modal('hide');
             },
 
             alert: function (msg) {
-               /* var $alert = [
-                    '<div class="alert alert-danger avater-alert">',
-                    '<button type="button" class="close" data-dismiss="alert">&times;</button>',
-                    msg,
-                    '</div>'
-                ].join('');
-
-                this.$avatarUpload.after($alert);*/
                 layer.msg(msg,{icon:2,time:1000});
             }
         };
-
         $(function () {
-            return new CropAvatar($('#crop-avatar'));
+            return new CropAvatar($('#${avatarId}'));
         });
-
     });
 </script>
+
+#end
+

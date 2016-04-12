@@ -1,175 +1,1042 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-        "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans-CN">
 <head>
-    <title>完整demo</title>
-    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-    <script type="text/javascript" charset="utf-8" src="ueditor.config.js"></script>
-    <script type="text/javascript" charset="utf-8" src="ueditor.all.min.js"> </script>
-    <!--建议手动加在语言，避免在ie下有时因为加载语言失败导致编辑器加载失败-->
-    <!--这里加载的语言文件会覆盖你在配置项目里添加的语言类型，比如你在配置项目里配置的是英文，这里加载的中文，那最后就是中文-->
-    <script type="text/javascript" charset="utf-8" src="lang/zh-cn/zh-cn.js"></script>
-
-    <style type="text/css">
-        div{
-            width:100%;
-        }
-    </style>
+    <meta charset="utf-8"/>
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <title>
+        TinyUiEnterprise展示
+    </title>
+    <meta name="keywords" content="TinyUi 是基于bootscrap的前端UI组件框架。">
+    <meta name="description" content="java,j2ee,j2ee.top, tinygroup,tinygroup.org,eclipse,插件,idea,TinyFramework,悠然,悠悠然然,Tiny,Framework,CEP,通用事件处理,ui引擎,ui engine,模块化,业务单元,文档生成,xml parser,html parser,xml,html,parser,spider,网络爬虫,flow,流程,业务流,页面流,Java,SOA,框架,组件,分层,水平扩展,分区,分表,db router,db cluster,framework,框架,分布式计算,VFS,Web">
+    <script>
+        var contextPath = "http://127.0.0.1:8003/tinyuiweb2";		var UPLOAD_ACTION_URL = '/tinyuiweb2/action/savepic.pagelet'; 	</script>
+    <link rel="shortcut icon" href="http://127.0.0.1:8003/tinyuiweb2/img/tiny32.png">
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/jquery/js/jquery.1.11.3.min.js"></script>
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/jquery/js/jquery.brower.js"></script>
+    <link href="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/bootstrap/js/transition.js"></script>
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/bootstrap/js/affix.js"></script>
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/bootstrap/js/alert.js"></script>
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/bootstrap/js/button.js"></script>
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/bootstrap/js/carousel.js"></script>
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/bootstrap/js/collapse.js"></script>
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/bootstrap/js/dropdown.js"></script>
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/bootstrap/js/scrollspy.js"></script>
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/bootstrap/js/tab.js"></script>
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/bootstrap/js/tooltip.js"></script>
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/bootstrap/js/popover.js"></script>
+    <link href="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/tab/css/tab.css" rel="stylesheet" />
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/tab/js/tab.js"></script>
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/moment/js/moment.js"></script>
+    <link href="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/jqueryUi/css/jquery.ui.css" rel="stylesheet" />
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/jqueryUi/js/jquery-ui.js"></script>
+    <link href="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/iconTab/css/iconTab.css" rel="stylesheet" />
+    <link href="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/layer/skin/layer.css" rel="stylesheet" />
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/layer/layer.js"></script>
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/layer/layer.ajax.js"></script>
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/layer/extend/layer.ext.js"></script>
+    <link href="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/fontIco/css/font-awesome.css" rel="stylesheet" />
+    <link href="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/animation/css/animate.css" rel="stylesheet" />
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/animation/js/animate.js"></script>
+    <link href="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/base/css/base.css" rel="stylesheet" />
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/base/js/pixel-slimscroll.js"></script>
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/base/js/fastclick-0.6.11.js"></script>
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/base/js/jquery.cookie.js"></script>
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/base/js/tinyui.js"></script>
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/base/js/resize.js"></script>
+    <link href="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/treeview/css/Smart-treeview.css" rel="stylesheet" />
+    <link href="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/treeview/css/treeview.css" rel="stylesheet" />
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/treeview/js/treeview.js"></script>
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/switcher/js/switcher.js"></script>
+    <link href="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/frameCommon/css/admin.css" rel="stylesheet" />
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/frameCommon/js/app.js"></script>
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/frameCommon/js/events.js"></script>
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/frameCommon/js/utils.js"></script>
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/frameCommon/js/main-menu.js"></script>
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/frameCommon/js/main-navbar.js"></script>
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/frameCommon/js/jquery.slimscroll-1.3.2.js"></script>
+    <script type="text/javascript">
+        var tinyTplList=[];			</script>
+    <link href="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/themes/clean.css" rel="stylesheet" />
+    <script type="text/javascript">
+        tinyTplList.push({sort:1, name: 'clean', title: '清爽', img: contextPath+'/img/themes/clean.png' });			</script>
+    <link href="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/themes/greenyellow.css" rel="stylesheet" />
+    <script type="text/javascript">
+        tinyTplList.push({sort:7, name: 'greenyellow', title: '黄绿', img: contextPath+'/img/themes/green.png' });			</script>
+    <link href="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/tinyTable/css/tinyTable.css" rel="stylesheet" />
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/tinyTable/js/jquery.form.js"></script>
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/tinyTable/js/jquery.twbsPagination.js"></script>
+    <link href="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/tabShow/css/tabcut.css" rel="stylesheet" />
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/tabShow/js/artTabs.js"></script>
+    <link href="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/navigation/css/navigation.css" rel="stylesheet" />
+    <link href="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/easyCharts/css/jquery.easy-pie-chart.css" rel="stylesheet" />
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/easyCharts/js/excanvas.js"></script>
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/easyCharts/js/jquery.easy-pie-chart.js"></script>
+    <link href="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/viewsControl/css/style.css" rel="stylesheet" />
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/viewsControl/js/jplist.min.js"></script>
+    <link href="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/voteCharts/css/voteCharts.css" rel="stylesheet" />
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/voteCharts/js/voteCharts.js"></script>
+    <link href="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/example/css/example.css" rel="stylesheet" />
+    <link href="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/cropper/css/cropper.min.css" rel="stylesheet" />
+    <link href="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/cropper/css/sitelogo.css" rel="stylesheet" />
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/cropper/js/cropper.min.js"></script>
+    <link href="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/themes/orange.css" rel="stylesheet" />
+    <script type="text/javascript">
+        tinyTplList.push({sort:9, name: 'orange', title: '橙色', img: contextPath+'/img/themes/orange.png' });			</script>
+    <link href="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/rolling/css/rolling.css" rel="stylesheet" />
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/rolling/js/jcarousellite.min.js"></script>
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/rolling/js/jquery.textSlider.js"></script>
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/rolling/js/dropDown.js"></script>
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/ueditor/ueditor.config.js"></script>
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/ueditor/ueditor.all.js"></script>
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/ueditor/lang/zh-cn/zh-cn.js"></script>
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/ueditor/ueditor.tiny.js"></script>
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/pieCharts/js/jsapi.js"></script>
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/pieCharts/js/corechart.js"></script>
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/pieCharts/js/jquery.gvChart-1.0.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            gvChartInit();
+        });			</script>
+    <link href="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/themes/black.css" rel="stylesheet" />
+    <script type="text/javascript">
+        tinyTplList.push({sort:2, name: 'black', title: '黑色', img: contextPath+'/img/themes/black.png',logoImg: contextPath+'/img/logo-black.png'});			</script>
+    <link href="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/select2/css/css.css" rel="stylesheet" />
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/select2/js/select2.min.js"></script>
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/select2/js/select2_locale_zh-CN.js"></script>
+    <link href="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/widget/css/widgets.css" rel="stylesheet" />
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/widget/js/jarvis.widget.min.js"></script>
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/widget/js/widget.init.js"></script>
+    <link href="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/themes/gray.css" rel="stylesheet" />
+    <script type="text/javascript">
+        tinyTplList.push({sort:5, name: 'gray', title: '灰色', img: contextPath+'/img/themes/gray.png' });			</script>
+    <link href="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/button/css/button.css" rel="stylesheet" />
+    <link href="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/buttonGroup/css/buttonGroup.css" rel="stylesheet" />
+    <link href="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/gridSystems/css/gridSystems.css" rel="stylesheet" />
+    <link href="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/table/css/table.css" rel="stylesheet" />
+    <link href="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/modal/css/modal.css" rel="stylesheet" />
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/modal/js/jquery-drag.js"></script>
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/modal/js/bootstrap-modalmanager.js"></script>
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/modal/js/bootstrap-modal.js"></script>
+    <link href="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/toTop/css/toTop.css" rel="stylesheet" />
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/toTop/js/toTop.js"></script>
+    <link href="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/dataTables/css/jquery.dataTables.css" rel="stylesheet" />
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/dataTables/js/jquery.dataTables.min.js"></script>
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/dataTables/js/dataTables.fixedHeader.min.js"></script>
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/dataTables/js/dataTables.bootstrap.js"></script>
+    <link href="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/trumbowyg/css/trumbowyg.css" rel="stylesheet" />
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/trumbowyg/js/trumbowyg.min.js"></script>
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/trumbowyg/js/trumbowyg.base64.min.js"></script>
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/trumbowyg/js/trumbowyg.colors.min.js"></script>
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/trumbowyg/js/trumbowyg.upload.js"></script>
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/trumbowyg/js/trumbowyg.editlink.min.js"></script>
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/trumbowyg/js/zh_cn.js"></script>
+    <link href="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/bootstrapDate/css/daterangepicker-bs3.css" rel="stylesheet" />
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/bootstrapDate/js/daterangepicker.js"></script>
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/bootstrapDate/js/WdatePicker.js"></script>
+    <link href="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/zTree/css/awesomeStyle/awesome.css" rel="stylesheet" />
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/zTree/js/jquery.ztree.core-3.5.js"></script>
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/zTree/js/jquery.ztree.exhide-3.5.js"></script>
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/zTree/js/jquery.ztree.excheck-3.5.js"></script>
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/zTree/js/jquery.ztree.exedit-3.5.js"></script>
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/zTree/js/ztree.selected.js"></script>
+    <link href="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/bootstrapvalidator/css/bootstrapValidator.css" rel="stylesheet" />
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/bootstrapvalidator/js/bootstrapValidator.js"></script>
+    <link href="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/form/css/form.css" rel="stylesheet" />
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/form/js/Validform_v5.3.2.js"></script>
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/form/js/jquery.form.js"></script>
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/form/js/jquery.icheck.min.js"></script>
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/form/js/ajaxfileupload.js"></script>
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/form/js/jquery.queryFor.js"></script>
+    <link href="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/typography/css/typography.css" rel="stylesheet" />
+    <link href="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/fullCalendar/css/fullcalendar.css" rel="stylesheet" />
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/fullCalendar/js/fullcalendar.min.js"></script>
+    <link href="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/highCharts/css/highCharts.css" rel="stylesheet" />
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/highCharts/js/highcharts.js"></script>
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/highCharts/js/exporting.js"></script>
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/highCharts/js/data.js"></script>
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/highCharts/js/highcharts-3d.js"></script>
+    <link href="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/burndownChart/css/burndownChart.css" rel="stylesheet" />
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/burndownChart/js/burndownChart.js"></script>
+    <link href="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/timeline/css/history.css" rel="stylesheet" />
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/timeline/js/main.js"></script>
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/timeline/js/jquery.timelinr.js"></script>
+    <link href="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/togglebox/css/css.css" rel="stylesheet" />
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/masonry/js/masonry.pkgd.min.js"></script>
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/ueditor/macro/macro.js"></script>
+    <link href="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/codemirror/codemirror.css" rel="stylesheet" />
+    <link href="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/codemirror/mergely.css" rel="stylesheet" />
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/codemirror/codemirror.js"></script>
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/codemirror/mergely.js"></script>
+    <link href="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/themes/fashion.css" rel="stylesheet" />
+    <script type="text/javascript">
+        tinyTplList.push({sort:4, name: 'fashion', title: '时尚', img: contextPath+'/img/themes/fashion.png' });			</script>
+    <link href="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/superBox/css/superBox.css" rel="stylesheet" />
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/superBox/js/superbox.js"></script>
+    <link href="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/themes/green.css" rel="stylesheet" />
+    <script type="text/javascript">
+        tinyTplList.push({sort:6, name: 'green', title: '绿色', img: contextPath+'/img/themes/greenyellow.png'});			</script>
+    <link href="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/gantt/css/jsgantt.css" rel="stylesheet" />
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/gantt/js/jsgantt.js"></script>
+    <link href="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/themes/lightblue.css" rel="stylesheet" />
+    <script type="text/javascript">
+        tinyTplList.push({sort:8, name: 'lightblue', title: '浅蓝', img: contextPath+'/img/themes/lightblue.png' });			</script>
+    <link href="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/zoomPic/css/zoomPic.css" rel="stylesheet" />
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/zoomPic/js/zoominfo.js"></script>
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/pjax/js/jquery.pjax.js"></script>
+    <link href="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/mmGrid/src/mmGrid.css" rel="stylesheet" />
+    <link href="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/mmGrid/src/theme/bootstrap/mmGrid-bootstrap.css" rel="stylesheet" />
+    <link href="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/mmGrid/src/mmPaginator.css" rel="stylesheet" />
+    <link href="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/mmGrid/src/theme/bootstrap/mmPaginator-bootstrap.css" rel="stylesheet" />
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/mmGrid/examples/js/plugins.js"></script>
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/mmGrid/examples/js/vendor/json2.js"></script>
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/mmGrid/src/mmGrid.js"></script>
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/mmGrid/src/mmPaginator.js"></script>
+    <link href="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/syntaxhighlighter/styles/shCore.css" rel="stylesheet" />
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/syntaxhighlighter/scripts/shCore.js"></script>
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/syntaxhighlighter/scripts/shBrushCss.js"></script>
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/syntaxhighlighter/scripts/shBrushJava.js"></script>
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/syntaxhighlighter/scripts/shBrushJScript.js"></script>
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/syntaxhighlighter/scripts/shBrushXml.js"></script>
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/syntaxhighlighter/scripts/shBrushTiny.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            SyntaxHighlighter.highlight();
+        });			</script>
+    <link href="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/themes/purple.css" rel="stylesheet" />
+    <script type="text/javascript">
+        tinyTplList.push({sort:10, name: 'purple', title: '紫色', img: contextPath+'/img/themes/purple.png' });			</script>
+    <link href="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/webupload/lib/webuploader.css" rel="stylesheet" />
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/webupload/lib/webuploader.min.js"></script>
+    <link href="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/unslider/css/slide.css" rel="stylesheet" />
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/unslider/js/jquery.touchSlider.js"></script>
+    <link href="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/maskBar/css/maskBar.css" rel="stylesheet" />
+    <link href="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/uedTips/css/uedTip.css" rel="stylesheet" />
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/uedTips/js/uedTip.js"></script>
+    <link href="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/themes/deepblue.css" rel="stylesheet" />
+    <script type="text/javascript">
+        tinyTplList.push({sort:3, name: 'deepblue', title: '深蓝', img: contextPath+'/img/themes/deepblue.png' });			</script>
+    <link href="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/tourbus/css/jquery-tourbus.css" rel="stylesheet" />
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/tourbus/js/jquery.scrollTo.min.js"></script>
+    <script src="http://127.0.0.1:8003/tinyuiweb2/static/org/tinygroup/tourbus/js/jquery-tourbus.js"></script>
+    <link href="http://127.0.0.1:8003/tinyuiweb2/css/tinyui.css" rel="stylesheet" />
+    <script type="text/javascript" src="http://127.0.0.1:8003/tinyuiweb2/js/jquery.lazylinepainter-1.5.0.js"></script>
 </head>
-<body>
-<div>
-    <h1>完整demo</h1>
-    <script id="editor" type="text/plain" style="width:1024px;height:500px;"></script>
-</div>
-<div id="btns">
-    <div>
-        <button onclick="getAllHtml()">获得整个html的内容</button>
-        <button onclick="getContent()">获得内容</button>
-        <button onclick="setContent()">写入内容</button>
-        <button onclick="setContent(true)">追加内容</button>
-        <button onclick="getContentTxt()">获得纯文本</button>
-        <button onclick="getPlainTxt()">获得带格式的纯文本</button>
-        <button onclick="hasContent()">判断是否有内容</button>
-        <button onclick="setFocus()">使编辑器获得焦点</button>
-        <button onmousedown="isFocus(event)">编辑器是否获得焦点</button>
-        <button onmousedown="setblur(event)" >编辑器失去焦点</button>
+<body class=" main-menu-animated">
+<script>var init = [];</script>
+<script src="http://127.0.0.1:8003/tinyuiweb2/js/setting.js"></script>
+<div id="main-wrapper">
+    <div id="main-navbar" class="navbar navbar-inverse" role="navigation">
+        <button type="button" id="main-menu-toggle"><i class="navbar-icon fa fa-bars icon"></i><span class="hide-menu-text"></span></button>
+        <div class="navbar-inner">
+            <div class="navbar-header">
+                <a href="javascript:void(0);" class="navbar-brand">
+                    <div> TINY-组件化的开发框架</div>
+                </a>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navbar-collapse"><i class="navbar-icon fa fa-bars"></i></button>
+            </div>
+            <div id="main-navbar-collapse" class="collapse navbar-collapse main-navbar-collapse">
+                <div>
+                    <div class="right clearfix">
+                        <ul class="nav navbar-nav pull-right right-navbar-nav">
+                            <li>
+                                <a href="/tinyuiweb/" title="1.0版">1.0版</a>
+                            </li>
+                            <li>
+                                <a href="http://127.0.0.1:8003/tinyuiweb2/" title="Ajax模式">Ajax模式</a>
+                            </li>
+                            <li>
+                                <a href="http://127.0.0.1:8003/tinyuiweb2/page/" title="页面跳转模式">页面跳转模式</a>
+                            </li>
+                            <li>
+                                <a href="http://127.0.0.1:8003/tinyuiweb2/project.zip" target="_blank" title="基础工程下载">基础工程下载</a>
+                            </li>
+                            <li class="fullscreen">
+                                <a href="javascript:void(0);" onclick="launchFullScreen(document.documentElement);" title="全屏"><i class="fa fa-arrows-alt"></i></a>
+                            </li>
+                            <li>
+                                <form class="navbar-form pull-left">
+                                    <input type="text" class="form-control" value="" placeholder="查找更多...">
+                                    <span style="left:-27px;top:3px; position:relative;"><i class="fa fa-search"></i></span>
+                                </form>
+                            </li>
+                            <li class="dropdown">
+                                <a href="javascript:void(0);" class="dropdown-toggle user-menu" data-toggle="dropdown">
+                                    <img src="http://127.0.0.1:8003/tinyuiweb2/img/portraits/1.jpg" alt="">
+                                    <span>密缘之友</span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="javascript:void(0);"><span class="label label-warning pull-right">新的</span>资料文件</a></li>
+                                    <li><a href="javascript:void(0);"><span class="badge badge-primary pull-right">新的</span>个人中心</a></li>
+                                    <li><a href="javascript:void(0);"><i class="fa fa-cog"></i>&nbsp;&nbsp;设置</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="javascript:void(0);"><i class="fa fa-power-off"></i>&nbsp;&nbsp;退出</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div> <!-- main-navbar-collapse end -->
+        </div> <!-- navbar-inner end -->
+    </div> <!-- main-navbar end -->
+    <div id="main-menu" role="navigation">
+        <div id="main-menu-inner">
 
+            <ul class="navigation">
+                <li class="active">
+                    <a href="http://127.0.0.1:8003/tinyuiweb2/page/index.page" class="navitem" title="控制台" data-treeid="0"><i class="menu-icon fa fa-home"></i><span class="mm-text">控制台</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://127.0.0.1:8003/tinyuiweb2/page/overview.page" class="navitem" title="概述" data-treeid="1"><i class="menu-icon fa fa-dashboard"></i><span class="mm-text">概述</span>
+                    </a>
+                </li>
+
+                <li class="mm-dropdown ">
+                    <a href="javascript:void(0);" data-treeid="2"><i class="menu-icon fa fa-th"></i><span class="mm-text">布局</span>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="http://127.0.0.1:8003/tinyuiweb2/page/gridSystem.page" class="navitem" title="栅格系统" data-treeid="2.1"><span class="mm-text">栅格系统</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://127.0.0.1:8003/tinyuiweb2/page/tabShow.page" class="navitem" title="Tabs展现" data-treeid="2.2"><span class="mm-text">Tabs展现</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://127.0.0.1:8003/tinyuiweb2/page/tinytable.page" class="navitem" title="表格列表" data-treeid="2.3"><span class="mm-text">表格列表</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://127.0.0.1:8003/tinyuiweb2/page/togglebox.page" class="navitem" title="togglebox" data-treeid="2.4"><span class="mm-text">togglebox</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="mm-dropdown ">
+                    <a href="javascript:void(0);" data-treeid="3"><i class="menu-icon fa fa-desktop"></i><span class="mm-text">基础</span>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="http://127.0.0.1:8003/tinyuiweb2/page/typography.page" class="navitem" title="排版" data-treeid="3.1"><span class="mm-text">排版</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://127.0.0.1:8003/tinyuiweb2/page/icon.page" class="navitem" title="图标" data-treeid="3.3"><span class="mm-text">图标</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://127.0.0.1:8003/tinyuiweb2/page/button.page" class="navitem" title="按钮" data-treeid="3.4"><span class="mm-text">按钮</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://127.0.0.1:8003/tinyuiweb2/page/buttonGroups.page" class="navitem" title="按钮组" data-treeid="3.5"><span class="mm-text">按钮组</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://127.0.0.1:8003/tinyuiweb2/page/tables.page" class="navitem" title="表格" data-treeid="3.6"><span class="mm-text">表格</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="mm-dropdown ">
+                    <a href="javascript:void(0);" data-treeid="4"><i class="menu-icon fa fa-wrench"></i><span class="mm-text">元素</span>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="http://127.0.0.1:8003/tinyuiweb2/page/labelBadge.page" class="navitem" title="便签与标号" data-treeid="4.1"><span class="mm-text">便签与标号</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://127.0.0.1:8003/tinyuiweb2/page/alert.page" class="navitem" title="警告" data-treeid="4.2"><span class="mm-text">警告</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://127.0.0.1:8003/tinyuiweb2/page/progress.page" class="navitem" title="进度条" data-treeid="4.3"><span class="mm-text">进度条</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://127.0.0.1:8003/tinyuiweb2/page/interfaceElements.page" class="navitem" title="界面元素" data-treeid="4.4"><span class="mm-text">界面元素</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://127.0.0.1:8003/tinyuiweb2/page/nav.page" class="navitem" title="导航" data-treeid="4.5"><span class="mm-text">导航</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="mm-dropdown ">
+                    <a href="javascript:void(0);" data-treeid="5"><i class="menu-icon fa fa-tasks"></i><span class="mm-text">表单</span>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="http://127.0.0.1:8003/tinyuiweb2/page/forms.page" class="navitem" title="表单列表" data-treeid="5.1"><span class="mm-text">表单列表</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://127.0.0.1:8003/tinyuiweb2/page/tinyForm.page" class="navitem" title="表单实例" data-treeid="5.2"><span class="mm-text">表单实例</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://127.0.0.1:8003/tinyuiweb2/page/editor.page" class="navitem" title="编辑器" data-treeid="5.3"><span class="mm-text">编辑器</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://127.0.0.1:8003/tinyuiweb2/page/bootstrapDate.page" class="navitem" title="日期控件" data-treeid="5.4"><span class="mm-text">日期控件</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://127.0.0.1:8003/tinyuiweb2/page/select2.page" class="navitem" title="下拉菜单" data-treeid="5.5"><span class="mm-text">下拉菜单</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://127.0.0.1:8003/tinyuiweb2/page/webupload.page" class="navitem" title="多文件上传" data-treeid="5.7"><span class="mm-text">多文件上传</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://127.0.0.1:8003/tinyuiweb2/page/authorlist.page" class="navitem" title="权限移动" data-treeid="5.8"><span class="mm-text">权限移动</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="mm-dropdown ">
+                    <a href="javascript:void(0);" data-treeid="6"><i class="menu-icon fa fa-files-o"></i><span class="mm-text">图库</span>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="http://127.0.0.1:8003/tinyuiweb2/page/picture.page" class="navitem" title="图片" data-treeid="6.1"><span class="mm-text">图片</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://127.0.0.1:8003/tinyuiweb2/page/thumbnails.page" class="navitem" title="缩略图" data-treeid="6.2"><span class="mm-text">缩略图</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://127.0.0.1:8003/tinyuiweb2/page/media.page" class="navitem" title="媒体插入" data-treeid="6.3"><span class="mm-text">媒体插入</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://127.0.0.1:8003/tinyuiweb2/page/uedTips.page" class="navitem" title="UED提示" data-treeid="6.5"><span class="mm-text">UED提示</span>
+                            </a>
+                        </li>
+                        <li class="mm-dropdown ">
+                            <a href="javascript:void(0);" data-treeid="6.6"><span class="mm-text">图表</span>
+                            </a>
+                            <ul>
+                                <li>
+                                    <a href="http://127.0.0.1:8003/tinyuiweb2/page/charts.page" class="navitem" title="图表展示" data-treeid="6.6.1"><span class="mm-text">图表展示</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://127.0.0.1:8003/tinyuiweb2/page/burndownChart.page" class="navitem" title="燃尽图表" data-treeid="6.6.3"><span class="mm-text">燃尽图表</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://127.0.0.1:8003/tinyuiweb2/page/highCharts.page" class="navitem" title="highCharts图表" data-treeid="6.6.4"><span class="mm-text">highCharts图表</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="mm-dropdown ">
+                    <a href="javascript:void(0);" data-treeid="7"><i class="menu-icon fa fa-random"></i><span class="mm-text">交互</span>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="http://127.0.0.1:8003/tinyuiweb2/page/animate.page" class="navitem" title="动画" data-treeid="7.1"><span class="mm-text">动画</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://127.0.0.1:8003/tinyuiweb2/page/unslider.page" class="navitem" title="幻灯片" data-treeid="7.2"><span class="mm-text">幻灯片</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://127.0.0.1:8003/tinyuiweb2/page/tab.page" class="navitem" title="选项卡" data-treeid="7.3"><span class="mm-text">选项卡</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://127.0.0.1:8003/tinyuiweb2/page/modal.page" class="navitem" title="对话框 弹出层" data-treeid="7.4"><span class="mm-text">对话框 弹出层</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://127.0.0.1:8003/tinyuiweb2/page/rolling.page" class="navitem" title="滚动" data-treeid="7.5"><span class="mm-text">滚动</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://127.0.0.1:8003/tinyuiweb2/page/fold.page" class="navitem" title="折叠" data-treeid="7.7"><span class="mm-text">折叠</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://127.0.0.1:8003/tinyuiweb2/page/maskBar.page" class="navitem" title="遮罩条" data-treeid="7.8"><span class="mm-text">遮罩条</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="mm-dropdown ">
+                    <a href="javascript:void(0);" data-treeid="8"><i class="menu-icon fa fa-legal"></i><span class="mm-text">部件</span>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="http://127.0.0.1:8003/tinyuiweb2/page/kefu.page" class="navitem" title="客服" data-treeid="8.1"><span class="mm-text">客服</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://127.0.0.1:8003/tinyuiweb2/page/toTop.page" class="navitem" title="返回顶部" data-treeid="8.2"><span class="mm-text">返回顶部</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://127.0.0.1:8003/tinyuiweb2/page/share.page" class="navitem" title="分享" data-treeid="8.3"><span class="mm-text">分享</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://127.0.0.1:8003/tinyuiweb2/page/example.page" class="navitem" title="案例" data-treeid="8.4"><span class="mm-text">案例</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://127.0.0.1:8003/tinyuiweb2/page/treeview.page" class="navitem" title="树形视图" data-treeid="8.5"><span class="mm-text">树形视图</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://127.0.0.1:8003/tinyuiweb2/page/calendar.page" class="navitem" title="日历" data-treeid="8.7"><span class="mm-text">日历</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://127.0.0.1:8003/tinyuiweb2/page/workCalendar.page" class="navitem" title="背景日历" data-treeid="8.8"><span class="mm-text">背景日历</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://127.0.0.1:8003/tinyuiweb2/page/gantt.page" class="navitem" title="Gantt图" data-treeid="8.14"><span class="mm-text">Gantt图</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://127.0.0.1:8003/tinyuiweb2/page/tourbus.page" class="navitem" title="操作向导" data-treeid="8.15"><span class="mm-text">操作向导</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://127.0.0.1:8003/tinyuiweb2/page/timeline.page" class="navitem" title="时间轴" data-treeid="8.17"><span class="mm-text">时间轴</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="mm-dropdown ">
+                    <a href="javascript:void(0);" data-treeid="10"><i class="menu-icon fa fa-files-o"></i><span class="mm-text">其它</span>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="http://127.0.0.1:8003/tinyuiweb2/page/error404.page" class="navitem" title="错误404" data-treeid="10.1"><span class="mm-text">错误404</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://127.0.0.1:8003/tinyuiweb2/page/error500.page" class="navitem" title="错误500" data-treeid="10.2"><span class="mm-text">错误500</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://127.0.0.1:8003/tinyuiweb2/page/loadscrollingpic.page" class="navitem" title="屏幕内图片加载" data-treeid="10.4"><span class="mm-text">屏幕内图片加载</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://127.0.0.1:8003/tinyuiweb2/page/viewsControl.page" class="navitem" title="视图控制" data-treeid="10.9"><span class="mm-text">视图控制</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://127.0.0.1:8003/tinyuiweb2/page/iconTab.page" class="navitem" title="图标控制" data-treeid="10.10"><span class="mm-text">图标控制</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://127.0.0.1:8003/tinyuiweb2/page/codemirror.page" class="navitem" title="文本比较器" data-treeid="10.11"><span class="mm-text">文本比较器</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="mm-dropdown ">
+                    <a href="javascript:void(0);" data-treeid="11"><i class="menu-icon fa fa-sitemap"></i><span class="mm-text">多级导航</span>
+                        <span class="label label-warning">6</span>		</a>
+                    <ul>
+                        <li>
+                            <a href="http://127.0.0.1:8003/tinyuiweb2/page/index.page" class="navitem" title="一级菜单" data-treeid="11.1"><span class="mm-text">一级菜单</span>
+                            </a>
+                        </li>
+                        <li class="mm-dropdown ">
+                            <a href="javascript:void(0);" data-treeid="11.2"><span class="mm-text">一级菜单</span>
+                                <span class="label label-warning">5</span>		</a>
+                            <ul>
+                                <li>
+                                    <a href="http://127.0.0.1:8003/tinyuiweb2/page/index.page" class="navitem" title="二级菜单" data-treeid="11.2.1"><span class="mm-text">二级菜单</span>
+                                    </a>
+                                </li>
+                                <li class="mm-dropdown ">
+                                    <a href="javascript:void(0);" data-treeid="11.2.2"><span class="mm-text">二级菜单</span>
+                                        <span class="label label-warning">5</span>		</a>
+                                    <ul>
+                                        <li class="mm-dropdown ">
+                                            <a href="javascript:void(0);" data-treeid="11.2.2.1"><span class="mm-text">三级菜单</span>
+                                                <span class="label label-warning">5</span>		</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="http://127.0.0.1:8003/tinyuiweb2/page/index.page" class="navitem" title="四级菜单" data-treeid="11.2.2.1.1"><span class="mm-text">四级菜单</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="http://127.0.0.1:8003/tinyuiweb2/page/index.page" class="navitem" title="三级菜单" data-treeid="11.2.2.2"><span class="mm-text">三级菜单</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="http://127.0.0.1:8003/tinyuiweb2/page/index.page" class="navitem" title="二级菜单2" data-treeid="11.2.3"><span class="mm-text">二级菜单2</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul><!-- navigation end -->
+            <div class="menu-content">
+                <a href="javascript:void(0)" class="btn btn-primary btn-block btn-outline dark">创建页面</a>
+            </div>
+        </div>
     </div>
-    <div>
-        <button onclick="getText()">获得当前选中的文本</button>
-        <button onclick="insertHtml()">插入给定的内容</button>
-        <button id="enable" onclick="setEnabled()">可以编辑</button>
-        <button onclick="setDisabled()">不可编辑</button>
-        <button onclick=" UE.getEditor('editor').setHide()">隐藏编辑器</button>
-        <button onclick=" UE.getEditor('editor').setShow()">显示编辑器</button>
-        <button onclick=" UE.getEditor('editor').setHeight(300)">设置高度为300默认关闭了自动长高</button>
+    <div id="main-menu-bg"></div>
+
+    <div class="content-wrapper-bg"></div>
+    <div id="content-wrapper">
+        <div class="postion-nav">
+            <ul class="breadcrumb">
+                <li>所在位置： </li>
+                <li><a href="/tinyuiweb2">首页</a></li><li>控制台</li>
+            </ul>
+        </div>
+
+        <div id="tinypagecontent" class="row" style="min-height:490px;">
+
+
+            <div class="ibox-content">
+                <div id="crop-avatar" data-toggle="modal" data-target="#avatar-modal" data-width="840" data-height="550">
+                    <img src="logo.jpg" alt="Logo">
+                </div>
+            </div>
+
+            <div id="avatar-modal" class="modal hide fade " tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-header">
+                    <span class="modal-expand" data-expand="modal" ><i class="fa fa-expand"></i></span>
+                    <span class="modal-close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-remove"></i></span>
+                    <h3>对话框标题</h3>
+                </div>
+                <div class="modal-body thin-scroll">
+                    <div class="clear"><form class="avatar-form" action="tt.php" enctype="multipart/form-data" method="post">
+                        <div class="avatar-body">
+                            <div class="avatar-upload">
+                                <input class="avatar-src" name="avatar_src" type="hidden">
+                                <input class="avatar-data" name="avatar_data" type="hidden">
+                                <label for="avatarInput">图片上传</label>
+                                <input class="avatar-input" id="avatarInput" name="avatar_file" type="file"></div>
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <div class="avatar-wrapper"></div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="avatar-preview preview-lg"></div>
+                                    <div class="avatar-preview preview-md"></div>
+                                    <div class="avatar-preview preview-sm"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="modal-footer">
+                    <div class="pull-left pl-15">
+                        <div class="btn-group">
+                            <button class="btn" data-method="rotate" data-option="-90" type="button" title="Rotate -90 degrees"><i class="fa fa-undo"></i> 向左旋转</button>
+                        </div>
+                        <div class="btn-group">
+                            <button class="btn" data-method="rotate" data-option="90" type="button" title="Rotate 90 degrees"><i class="fa fa-repeat"></i> 向右旋转</button>
+                        </div>
+                    </div>
+                    <div class="pull-right">
+                        <button class="btn btn-success btn-block avatar-save" type="submit"><i class="fa fa-save"></i> 保存修改</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="loading" aria-label="Loading" role="img" tabindex="-1"></div>
+
+            <script>
+
+                $(function () {
+
+                    'use strict';
+
+                    var console = window.console || { log: function () {} };
+
+                    function CropAvatar($element) {
+                        this.$container = $element;
+
+                        this.$avatarView = this.$container.find('.avatar-view');
+                        this.$avatar = this.$avatarView.find('img');
+                        this.$avatarModal = $("body").find('#avatar-modal');
+                        this.$loading = $("#page-wrapper").find('.loading');
+
+                        this.$avatarForm = this.$avatarModal.find('.avatar-form');
+                        this.$avatarUpload = this.$avatarForm.find('.avatar-upload');
+                        this.$avatarSrc = this.$avatarForm.find('.avatar-src');
+                        this.$avatarData = this.$avatarForm.find('.avatar-data');
+                        this.$avatarInput = this.$avatarForm.find('.avatar-input');
+                        this.$avatarSave = this.$avatarModal.find('.avatar-save');
+                        this.$avatarBtns = this.$avatarModal.find('[data-method="rotate"]');
+
+                        this.$avatarWrapper = this.$avatarModal.find('.avatar-wrapper');
+                        this.$avatarPreview = this.$avatarModal.find('.avatar-preview');
+
+                        this.init();
+                    }
+
+                    CropAvatar.prototype = {
+                        constructor: CropAvatar,
+                        support: {
+                            fileList: !!$('<input type="file">').prop('files'),
+                            blobURLs: !!window.URL && URL.createObjectURL,
+                            formData: !!window.FormData
+                        },
+
+                        init: function () {
+                            this.support.datauri = this.support.fileList && this.support.blobURLs;
+
+
+
+                            this.addListener();
+                        },
+
+                        addListener: function () {
+                            this.$avatarView.on('click', $.proxy(this.click, this));
+                            this.$avatarInput.on('change', $.proxy(this.change, this));
+                            this.$avatarForm.on('submit', $.proxy(this.submit, this));
+                            this.$avatarBtns.on('click', $.proxy(this.rotate, this));
+                            this.$avatarSave.on('click', $.proxy(this.submit, this));
+                        },
+
+                        initPreview: function () {
+                            var url = this.$avatar.attr('src');
+                            this.$avatarPreview.empty().html('<img src="' + url + '">');
+                        },
+                        click: function () {
+                            this.initPreview();
+                        },
+
+                        change: function () {
+                            var files,
+                                    file;
+
+                            if (this.support.datauri) {
+                                files = this.$avatarInput.prop('files');
+
+                                if (files.length > 0) {
+                                    file = files[0];
+
+                                    if (this.isImageFile(file)) {
+                                        if (this.url) {
+                                            URL.revokeObjectURL(this.url); // Revoke the old one
+                                        }
+
+                                        this.url = URL.createObjectURL(file);
+                                        this.startCropper();
+                                    }
+                                }
+                            } else {
+                                file = this.$avatarInput.val();
+
+                                if (this.isImageFile(file)) {
+                                    this.syncUpload();
+                                }
+                            }
+                        },
+
+                        submit: function () {
+                            if (!this.$avatarSrc.val() && !this.$avatarInput.val()) {
+                                return false;
+                            }
+                            if (this.support.formData) {
+                                this.ajaxUpload();
+                                return false;
+                            }
+                        },
+
+                        rotate: function (e) {
+                            var data;
+                            if (this.active) {
+                                data = $(e.target).data();
+                                if (data.method) {
+                                    this.$img.cropper(data.method, data.option);
+                                }
+                            }
+                        },
+
+                        isImageFile: function (file) {
+                            if (file.type) {
+                                return /^image\/\w+$/.test(file.type);
+                            } else {
+                                return /\.(jpg|jpeg|png|gif)$/.test(file);
+                            }
+                        },
+
+                        startCropper: function () {
+                            var _this = this;
+
+                            if (this.active) {
+                                this.$img.cropper('replace', this.url);
+                            } else {
+                                this.$img = $('<img src="' + this.url + '">');
+                                this.$avatarWrapper.empty().html(this.$img);
+                                this.$img.cropper({
+                                    aspectRatio: 1,
+                                    preview: this.$avatarPreview.selector,
+                                    strict: false,
+                                    crop: function (data) {
+                                        var json = [
+                                            '{"x":' + data.x,
+                                            '"y":' + data.y,
+                                            '"height":' + data.height,
+                                            '"width":' + data.width,
+                                            '"rotate":' + data.rotate + '}'
+                                        ].join();
+
+                                        _this.$avatarData.val(json);
+                                    }
+                                });
+
+                                this.active = true;
+
+                            }
+
+                        },
+
+                        stopCropper: function () {
+                            if (this.active) {
+                                this.$img.cropper('destroy');
+                                this.$img.remove();
+                                this.active = false;
+                            }
+                        },
+
+                        ajaxUpload: function (e) {
+                            var url = this.$avatarForm.attr('action'),
+                                    data = new FormData(this.$avatarForm[0]),
+                                    _this = this;
+
+                            $.ajax(url, {
+                                headers: {'X-XSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+                                type: 'post',
+                                data: data,
+                                dataType: 'json',
+                                processData: false,
+                                contentType: false,
+
+                                beforeSend: function () {
+                                    _this.submitStart();
+                                },
+
+                                success: function (data) {
+                                    _this.submitDone(data);
+                                },
+
+                                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                                    _this.submitFail(textStatus || errorThrown);
+                                },
+
+                                complete: function () {
+                                    _this.submitEnd();
+                                }
+                            });
+                        },
+
+                        syncUpload: function () {
+                            this.$avatarSave.click();
+                        },
+
+                        submitStart: function () {
+
+                            this.$loading.fadeIn();
+                        },
+
+                        submitDone: function (data) {
+                            if ($.isPlainObject(data)) {
+                                if (data.result) {
+                                    this.url = data.result;
+                                    if (this.support.datauri || this.uploaded) {
+                                        this.uploaded = false;
+                                        this.cropDone();
+                                    } else {
+                                        this.uploaded = true;
+                                        this.$avatarSrc.val(this.url);
+                                        this.startCropper();
+                                    }
+                                    this.$avatarInput.val('');
+                                } else if (data.message) {
+                                    this.alert(data.message);
+                                }
+                            } else {
+                                this.alert('Failed to response');
+                            }
+                        },
+
+                        submitFail: function (msg) {
+                            this.alert(msg);
+                        },
+
+                        submitEnd: function () {
+                            this.$loading.fadeOut();
+                        },
+
+                        cropDone: function () {
+                            this.$avatarForm.get(0).reset();
+                            this.$avatar.attr('src', this.url);
+                            this.stopCropper();
+                            this.$avatarModal.modal('hide');
+                        },
+
+                        alert: function (msg) {
+                            /* var $alert = [
+                             '<div class="alert alert-danger avater-alert">',
+                             '<button type="button" class="close" data-dismiss="alert">&times;</button>',
+                             msg,
+                             '</div>'
+                             ].join('');
+
+                             this.$avatarUpload.after($alert);*/
+                            layer.msg(msg,{icon:2,time:1000});
+                        }
+                    };
+
+                    $(function () {
+                        return new CropAvatar($('#crop-avatar'));
+                    });
+
+                });
+            </script>
+
+        </div>
+
+        <div id="tinyfooter">
+            <div class="tinyfooterrap">
+					<span class="right">
+						<a class="record-num" target="_blank" href="http://www.beianbeian.com/search/tinygroup.org">浙ICP备14043110号-1</a>
+					</span>
+                TinyGroup官方网站 &copy; 2013-2016</div>
+        </div>
     </div>
-
-    <div>
-        <button onclick="getLocalData()" >获取草稿箱内容</button>
-        <button onclick="clearLocalData()" >清空草稿箱</button>
-    </div>
-
 </div>
-<div>
-    <button onclick="createEditor()">
-    创建编辑器</button>
-    <button onclick="deleteEditor()">
-    删除编辑器</button>
 </div>
-
 <script type="text/javascript">
-
-    //实例化编辑器
-    //建议使用工厂方法getEditor创建和引用编辑器实例，如果在某个闭包下引用该编辑器，直接调用UE.getEditor('editor')就能拿到相关的实例
-    var ue = UE.getEditor('editor');
-
-
-    function isFocus(e){
-        alert(UE.getEditor('editor').isFocus());
-        UE.dom.domUtils.preventDefault(e)
-    }
-    function setblur(e){
-        UE.getEditor('editor').blur();
-        UE.dom.domUtils.preventDefault(e)
-    }
-    function insertHtml() {
-        var value = prompt('插入html代码', '');
-        UE.getEditor('editor').execCommand('insertHtml', value)
-    }
-    function createEditor() {
-        enableBtn();
-        UE.getEditor('editor');
-    }
-    function getAllHtml() {
-        alert(UE.getEditor('editor').getAllHtml())
-    }
-    function getContent() {
-        var arr = [];
-        arr.push("使用editor.getContent()方法可以获得编辑器的内容");
-        arr.push("内容为：");
-        arr.push(UE.getEditor('editor').getContent());
-        alert(arr.join("\n"));
-    }
-    function getPlainTxt() {
-        var arr = [];
-        arr.push("使用editor.getPlainTxt()方法可以获得编辑器的带格式的纯文本内容");
-        arr.push("内容为：");
-        arr.push(UE.getEditor('editor').getPlainTxt());
-        alert(arr.join('\n'))
-    }
-    function setContent(isAppendTo) {
-        var arr = [];
-        arr.push("使用editor.setContent('欢迎使用ueditor')方法可以设置编辑器的内容");
-        UE.getEditor('editor').setContent('欢迎使用ueditor', isAppendTo);
-        alert(arr.join("\n"));
-    }
-    function setDisabled() {
-        UE.getEditor('editor').setDisabled('fullscreen');
-        disableBtn("enable");
-    }
-
-    function setEnabled() {
-        UE.getEditor('editor').setEnabled();
-        enableBtn();
-    }
-
-    function getText() {
-        //当你点击按钮时编辑区域已经失去了焦点，如果直接用getText将不会得到内容，所以要在选回来，然后取得内容
-        var range = UE.getEditor('editor').selection.getRange();
-        range.select();
-        var txt = UE.getEditor('editor').selection.getText();
-        alert(txt)
-    }
-
-    function getContentTxt() {
-        var arr = [];
-        arr.push("使用editor.getContentTxt()方法可以获得编辑器的纯文本内容");
-        arr.push("编辑器的纯文本内容为：");
-        arr.push(UE.getEditor('editor').getContentTxt());
-        alert(arr.join("\n"));
-    }
-    function hasContent() {
-        var arr = [];
-        arr.push("使用editor.hasContents()方法判断编辑器里是否有内容");
-        arr.push("判断结果为：");
-        arr.push(UE.getEditor('editor').hasContents());
-        alert(arr.join("\n"));
-    }
-    function setFocus() {
-        UE.getEditor('editor').focus();
-    }
-    function deleteEditor() {
-        disableBtn();
-        UE.getEditor('editor').destroy();
-    }
-    function disableBtn(str) {
-        var div = document.getElementById('btns');
-        var btns = UE.dom.domUtils.getElementsByTagName(div, "button");
-        for (var i = 0, btn; btn = btns[i++];) {
-            if (btn.id == str) {
-                UE.dom.domUtils.removeAttributes(btn, ["disabled"]);
-            } else {
-                btn.setAttribute("disabled", "true");
-            }
+    init.push(function () {
+        var menucount=$(".navigation:first>li").size();
+        $("#topmenurap .navigation>li").css("width",100/menucount+"%");
+        var setFooterPostion=function (){
+            $("#tinypagecontent").css("min-height",$(window).height()-$("#tinypagecontent").offset().top-$("#tinyfooter").height()+$(window).scrollTop()-20+"px");
         }
-    }
-    function enableBtn() {
-        var div = document.getElementById('btns');
-        var btns = UE.dom.domUtils.getElementsByTagName(div, "button");
-        for (var i = 0, btn; btn = btns[i++];) {
-            UE.dom.domUtils.removeAttributes(btn, ["disabled"]);
+        $(window).on("scroll resize",function(){
+            setFooterPostion();
+        });
+        setFooterPostion();
+    });
+
+    $(function(){
+        function initPageOtherInfo(e){
+            $("#main-menu-inner li").removeClass("active open");
+            $(e).parents("li").addClass("active open");
+            var href=$(e).attr("href");
+            var setNavPos=false,currenttxt="";
+            $("#main-menu-inner a").each(function(){
+                if(!setNavPos&&$(this).attr("href")==href){
+                    $('.postion-nav>.breadcrumb').html('<li>所在位置： </li><li>首页</li>');
+                    $(this).parents("li").find("span:first").each(function(){
+                        $('.postion-nav>.breadcrumb').append("<li>"+$(this).html()+"</li>");
+                        currenttxt=$(this).html()+"-"+currenttxt;
+                    });
+                    $(this).closest("li").addClass("active");
+                    setNavPos=true;
+                }else{
+                    $(this).closest("li").removeClass("active");
+                }
+            })
+            $(document).attr("title",currenttxt+" TinyUiEnterprise展示");
         }
+        function setPageInfo(e){
+            initPageOtherInfo(e);
+            var href=$(e).attr("href");
+            $.pjax({url: href.replace(/\.pagelet/,".page").replace(/\.page/,".pagelet"), container: '#tinypagecontent',replaceStr:".page"});
+        }
+        $(document).on("pjax:end",function(){
+            var hash = location.pathname;
+            $("#main-menu-inner .navigation li a[href]").each(function () {
+                if ($(this).attr("href").indexOf(".page") == "-1") return true;
+                if (hash == $(this).attr("href")) {
+                    initPageOtherInfo(this);
+                    return false;
+                }
+            });
+            SyntaxHighlighter.highlight();
+        }).on("pjax:error",function(e){
+            $("#tinypagecontent").html('<h4 class="ajax-loading-error"><i class="fa fa-warning txt-color-orangeDark"></i> Error 404! Page not found.</h4>')
+        }).on("click","a:not([data-toggle=modal])[href],[data-pjax]",function(){
+            if($(this).attr("href").indexOf(".page")=="-1") return;
+            setPageInfo(this);
+            return false;
+        });
+
+        init.push(function () {
+            var hash = location.pathname;
+            $("#main-menu-inner .navigation li a[href]").each(function () {
+                if ($(this).attr("href").indexOf(".page") == "-1") return true;
+                if (!hash || hash == $(this).attr("href")) {
+                    setPageInfo(this);
+                    return false;
+                }
+            });
+        });
+    });
+
+
+    function TinyAjaxloadContent(a, b) {
+        var time="";
+        a=a.replace(/\.pagelet/,".page").replace(/\.page/,".pagelet");
+        $.ajax({
+            type: "GET",
+            url: a,
+            dataType: "html",
+            beforeSend: function() {
+                b[0] == $("#tinypagecontent")[0] && ($("html").animate({
+                            scrollTop: 0
+                        },
+                        "fast"));
+                time=setTimeout(function(){
+                    $("#tinypagecontent").append('<h1 class="ajax-loading-animation tinyLoadingContent" ><i class="fa fa-cog fa-spin"></i> 加载...</h1>');
+                },150);
+            },
+            success: function(a) {
+                if(time) clearTimeout(time);
+                b.html(a);
+
+                SyntaxHighlighter.highlight();
+            },
+            error: function() {
+                b.html('<h4 class="ajax-loading-error"><i class="fa fa-warning txt-color-orangeDark"></i> Error 404! Page not found.</h4>')
+            },
+            cache:false
+        })
     }
 
-    function getLocalData () {
-        alert(UE.getEditor('editor').execCommand( "getlocaldata" ));
-    }
-
-    function clearLocalData () {
-        UE.getEditor('editor').execCommand( "clearlocaldata" );
-        alert("已清空草稿箱")
-    }
 </script>
+
 </body>
 </html>
