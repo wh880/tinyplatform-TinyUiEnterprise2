@@ -55,18 +55,20 @@ UE.getEditor('${ueditorId}',{
 
 
 #@ueditor("page-body-ontent" "docText" {"imageFormData":"{objectId:1,objectType:2}"})sss#end*#
-#macro get()#set(avatarId="crop-avatar")
+
+
+#macro getCropAvatar()#set(avatarId="crop-avatar")
 
 <div class="ibox-content">
     <div id="${avatarId}" data-toggle="modal" data-target="#avatar-modal" data-width="840" data-height="550">
-    #bodyContent()<img src="logo.jpg" alt="Logo">
+    #bodyContent<img src="logo.jpg" alt="Logo">
     </div>
 </div>
 <div id="avatar-modal" class="modal hide fade " tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-header">
         <span class="modal-expand" data-expand="modal" ><i class="fa fa-expand"></i></span>
         <span class="modal-close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-remove"></i></span>
-        <h3>对话框标题</h3>
+        <h3>图片剪取</h3>
     </div>
     <div class="modal-body thin-scroll">
         <div class="clear"><form class="avatar-form" action="tt.php" enctype="multipart/form-data" method="post">
@@ -343,3 +345,4 @@ UE.getEditor('${ueditorId}',{
 
 #end
 
+#@getCropAvatar()<img src="" />#end

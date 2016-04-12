@@ -308,13 +308,13 @@
     };
     $.fn.modal.defaults = {
         keyboard: true,
-        backdrop: 'static',
+        backdrop: '',//static
         loading: true,
         show: true,
         width: null,
         height: null,
         maxHeight: null,
-        modalOverflow: true,
+        modalOverflow: false,
         consumeTab: false,
         focusOn: null,
         replace: false,
@@ -364,6 +364,8 @@
                     function() {
                         $this.focus();
                     })
-            });
+            }).off("shown.bs.modal").on("shown.bs.modal",".modal",function(){
+                $(this).find("form:first").find("select,input[type='text'],textarea").eq(0).focus();
+        });
     });
 }(window.jQuery);
