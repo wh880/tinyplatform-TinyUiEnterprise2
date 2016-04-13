@@ -20,10 +20,10 @@
 
 .modal.container{width: 980px}/*满页面宽度*/
 .modal {position:absolute;top:50%;left:50%; width:500px;margin-left:-250px;z-index:1050;background-color: #f5f5f5;background-clip: padding-box;
-    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 1px 13px rgba(0, 0, 0, 0.3);
     background-clip:padding-box;
     border-radius:3px;
-    border:1px solid rgba(0, 0, 0, 0.3);}/*弹出层，绝对定位，默认【宽度500px，高度自适应，背景白色，6px圆角，带阴影】，自定义宽度可在data-width中设置参数*/
+    border:1px solid rgba(0, 0, 0, 0.1);}/*弹出层，绝对定位，默认【宽度500px，高度自适应，背景白色，6px圆角，带阴影】，自定义宽度可在data-width中设置参数*/
 .fade {opacity: 0;filter: alpha(opacity=0);-webkit-transition: opacity 0.2s linear;-moz-transition: opacity 0.2s linear;-o-transition: opacity 0.2s linear;transition: opacity 0.2s linear}
 .fade.in {opacity: 1;filter: alpha(opacity=100)}
 .modal.fade {top: -100%}/*弹出层进入动画效果*/
