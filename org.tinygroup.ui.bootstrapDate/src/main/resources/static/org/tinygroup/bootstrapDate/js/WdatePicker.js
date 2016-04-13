@@ -53,8 +53,6 @@ var $dp, WdatePicker;
 			m: [5, 6],
 			s: [15, 4]
 		},
-		opposite: false,
-
 		specialDates: null,
 		specialDays: null,
 		disabledDates: null,

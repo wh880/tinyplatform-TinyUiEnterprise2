@@ -965,7 +965,7 @@ jQuery.extend(Mgly.CodeMirrorDiffView.prototype, {
 			var rlt = change['rhs-line-to'] >= 0 ? change['rhs-line-to'] : 0;
 			
 			var ls, le, rs, re;
-			if (this.editor[editor_name1].getOption('lineWrapping') || this.editor[editor_name1].getOption('lineWrapping')) {
+			if (this.editor[editor_name1].getOption('lineWrapping') ) {
 				// If using line-wrapping, we must get the height of the line
 				var tls = this.editor[editor_name1].cursorCoords({line: llf, ch: 0}, 'page');
 				var lhssh = this.editor[editor_name1].getLineHandle(llf);
