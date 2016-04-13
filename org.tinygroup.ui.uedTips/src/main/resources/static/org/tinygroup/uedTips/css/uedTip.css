@@ -6,9 +6,7 @@
 	font-weight:bold;
 	font-size:14px;
 	color:#606060;
-	background-image:url("../images/gb_tip_layer.png");
-	_background-image:url("../images/gb_tip_layer_ie6.png");
-	background-repeat:no-repeat
+	background:url("../images/gb_tip_layer.png") no-repeat center center;
 }
 .zeng_msgbox_layer_wrap {
 	width:100%;

@@ -6,7 +6,7 @@
  
  */
 * html {
-    background-image: url(about:blank);
+    background-image:none;
     background-attachment: fixed
 }
 
@@ -17,8 +17,7 @@ html #layui_layer_skinlayercss {
 }
 
 .layui-layer, .layui-layer-shade {
-    position: fixed;
-    _position: absolute;
+    position: fixed;  
     pointer-events: auto
 }
 
@@ -282,8 +281,8 @@ html #layui_layer_skinlayercss {
     }
     100% {
         opacity: 1;
-        -webkit-transform: translateX(0) rotate(0);
-        transform: translateX(0) rotate(0)
+        -webkit-transform: translateX(0) rotate(0deg);
+        transform: translateX(0) rotate(0deg)
     }
 }
 
@@ -296,9 +295,9 @@ html #layui_layer_skinlayercss {
     }
     100% {
         opacity: 1;
-        -webkit-transform: translateX(0) rotate(0);
-        -ms-transform: translateX(0) rotate(0);
-        transform: translateX(0) rotate(0)
+        -webkit-transform: translateX(0) rotate(0deg);
+        -ms-transform: translateX(0) rotate(0deg);
+        transform: translateX(0) rotate(0deg)
     }
 }
 
@@ -509,7 +508,6 @@ html #layui_layer_skinlayercss {
     position: absolute;
     top: 16px;
     left: 15px;
-    _left: -40px;
     width: 30px;
     height: 30px
 }

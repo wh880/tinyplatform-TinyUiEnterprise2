@@ -293,7 +293,12 @@
 article.sortable-grid {
     min-height: 30px;
 }
-.widget-grid>article.col-x{padding-right:7px;padding-left:7px}
+
+.widget-grid > article.col-x {
+    padding-right: 7px;
+    padding-left: 7px
+}
+
 .jarviswidget {
     margin: 0 0 14px;
     position: relative;

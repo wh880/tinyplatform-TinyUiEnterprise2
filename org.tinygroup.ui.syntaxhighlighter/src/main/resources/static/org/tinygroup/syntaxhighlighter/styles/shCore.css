@@ -158,8 +158,8 @@
 .syntaxhighlighter .toolbar
 {
 	position: absolute !important;
-	right: 0px !important;
-	top: 0px !important;
+	right: 0 !important;
+	top: 0 !important;
 	font-size: 1px !important;
 	padding: 8px 8px 8px 0 !important; /* in px because images don't scale with ems */
 }
