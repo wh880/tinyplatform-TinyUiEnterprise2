@@ -48,7 +48,7 @@ UE.delEditor('${ueditorId}');
 UE.getEditor('${ueditorId}',{
     #for(var:mapInfo)
     ${var.key}:${var.value},#{end}
-}).execCommand('serverparam', {'sname': 'hello'})
+})
 </script>
 #end
 
@@ -56,4 +56,4 @@ UE.getEditor('${ueditorId}',{
 
 #@ueditor("page-body-ontent" "docText" {"imageFormData":"{objectId:1,objectType:2}"})sss#end*#
 
-#getCropAvatar("",{"width":250,"height":350})
+#croppAvatar("",{"width":250,"height":350})

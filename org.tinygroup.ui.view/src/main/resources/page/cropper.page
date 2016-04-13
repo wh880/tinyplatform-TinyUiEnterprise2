@@ -1,0 +1,8 @@
+#@uiPageTitle()图片剪辑#end
+#@showInfo()温馨提示：cropper 为生成特定尺寸的图片剪辑宏 上传接收地址等同于Ueditor之类的统一接口
+<ul class="mt-20">
+    <li>第1参数为显示的图片地址</li>
+    <li>第2参数为附加参数是一MAP width height为生成的尺寸</li>
+</ul>
+#end
+#showExample("/page/cropper/cropper.page" )
