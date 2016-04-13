@@ -314,7 +314,7 @@
         width: null,
         height: null,
         maxHeight: null,
-        modalOverflow: false,
+        modalOverflow:true,
         consumeTab: false,
         focusOn: null,
         replace: false,

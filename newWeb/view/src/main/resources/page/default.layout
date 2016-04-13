@@ -97,7 +97,7 @@
             </div>
         </header>
         <div id="main_wrapper">
-            ${pageContent}
+            <div style="padding-top:50px">${pageContent}</div>
             <div class="menu-view">
                 <div class="meun-boxes dropdown">
                     <div data-toggle="dropdown" style="padding-left:20px;cursor:pointer">示例项目 #faIcon("chevron-down")</div>

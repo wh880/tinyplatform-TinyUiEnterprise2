@@ -13,5 +13,15 @@
             <artifactId>org.tinygroup.ui.jquery</artifactId>
             <version>${project.version}</version>
         </dependency>
+
+
+        <!--引入SpringMVC-->
+        <dependency>
+            <groupId>org.tinygroup</groupId>
+            <artifactId>org.tinygroup.springmvc</artifactId>
+            <version>${tiny_version}</version>
+            <scope>provided</scope>
+        </dependency>
+
     </dependencies>
 </project>
