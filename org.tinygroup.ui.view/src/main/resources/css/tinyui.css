@@ -73,7 +73,7 @@ button.close{padding:0;cursor:pointer;background:transparent;border: 0;-webkit-a
     border-radius: 3px;
     color: #333;
 }
-.grayBtn:hover{background:#f3f3f3;}
+.grayBtn:hover{background:#f2f2f2;}
 
 /*代码标签强调*/
 #tinypagecontent code{color:#c7254e}
