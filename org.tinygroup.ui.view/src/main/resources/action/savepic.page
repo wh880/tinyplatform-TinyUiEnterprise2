@@ -8,5 +8,5 @@ ${response.setContentType("text/html")}
 {"url":"${fileUrl}","result":"success","id":"id"}
 #else
 ${response.setContentType("text/html")}
-{"url":"${fileUrl}","state":"SUCCESS"}
+{"url":"${fileUrl}","state":"success"}
 #end
