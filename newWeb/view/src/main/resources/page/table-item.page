@@ -1,22 +1,3 @@
-<style>
-    .table-header .table-title{font-size:16px}
-    .table-boxs{background:#fefefe;box-shadow: 0 0 2px 1px #fdfdfd;}
-    .table-header-wrap .table-header{background:#fcfcfc;height:42px;line-height:42px;padding:0 10px;}
-    .table-handler-set{padding:12px 10px;border-top:#dde 1px solid}
-    .table-info .check-box{display:block; float:left; width:40px;margin-top:-16px;}
-    .table-info .table-info-name{display:block; float:left; width: 50%;}
-    .table-info .table-info-size{display: block; float: left; width:100px;padding-right: 20px;}
-    .table-info .table-info-author{display: block; float: left; width:150px;padding-right: 20px;}
-    .tables-list{padding:0}
-    .work-view{border-bottom:#dde 1px solid}
-    .work-view:hover{background:#eee}
-    @media screen and (max-width:780px){
-        .table-info .table-info-name{display:block; float:left;width:100%;margin-left:30px;margin-top: -8px;}
-        .table-info .table-info-size{display:none;}
-        .table-info .table-info-author{display:none; }
-        .table-info .table-info-update{display:none; }
-    }
-</style>
 #@gridSysRow()
     #@gridSysCol(12)
     <div class="table-boxs">
