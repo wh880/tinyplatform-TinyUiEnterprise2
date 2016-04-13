@@ -19,6 +19,7 @@
 	#getResource(DEBUG_MODE)
     <link href="${TINY_CONTEXT_PATH}/css/tinyui.css" rel="stylesheet" />
     <script type="text/javascript" src="#link("/js/jquery.lazylinepainter-1.5.0.js")"></script>
+
 </head>
 <body class=" main-menu-animated">
 <script>var init = [];</script>

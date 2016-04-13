@@ -57,7 +57,7 @@ param aMap A其它额外的元素
 * @parbtnM dialogMap 附加到dialog 主标签中的其它属性
 *#
 #macro dialog(dialogId dialogMap)
-<div id="${dialogId}" class="modal hide fade " tabindex="-1" role="dialog" aria-hidden="true"#mapToHtml(dialogMap)>
+<div id="${dialogId}" class="modal hide fade" role="dialog" aria-hidden="true"#mapToHtml(dialogMap)>
     <div class="modal-header">
         <span class="modal-expand" data-expand="modal" >#faIcon("expand")</span>
         <span class="modal-close" data-dismiss="modal" aria-hidden="true">#faIcon("remove")</span>
@@ -85,7 +85,7 @@ param aMap A其它额外的元素
 #end
 
 #macro minDialog(dialogId,dialogMap)
-<div id="${dialogId}" class="modal hide fade no-padding important-height-auto" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="relative" #mapToHtml(dialogMap)>
+<div id="${dialogId}" class="modal hide fade no-padding important-height-auto" role="dialog" aria-hidden="true" data-backdrop="relative" #mapToHtml(dialogMap)>
     <div class="modal-body no-padding important-height-auto" >
         <div class="clear important-height-auto">#bodyContent</div>
     </div>
@@ -134,7 +134,7 @@ param aMap A其它额外的元素
 #end
 
 #macro dialogNoForm(dialogId dialogMap)
-<div id="${dialogId}" class="modal hide fade " tabindex="-1" role="dialog" aria-hidden="true"#mapToHtml(dialogMap)>
+<div id="${dialogId}" class="modal hide fade " role="dialog" aria-hidden="true"#mapToHtml(dialogMap)>
     <div class="modal-header">
         <span class="modal-expand" data-expand="modal" >#faIcon("expand")</span>
         <span class="modal-close" data-dismiss="modal" aria-hidden="true">#faIcon("remove")</span>
