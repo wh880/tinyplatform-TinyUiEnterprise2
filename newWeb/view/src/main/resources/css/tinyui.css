@@ -6,8 +6,8 @@
 .sortable-handle {
     background: #fafafa;
     border-left: #f9f9f9 2px solid;
-    margin:-10px;
-    margin-bottom:15px;
+    margin: -10px;
+    margin-bottom: 15px;
     padding: 6px;
 }
 
@@ -207,31 +207,146 @@
     display: inline-block;
     margin-left: 10px;
 }
-.comments-list{position:relative;border-bottom:#ddd 1px dashed;margin-bottom:9px;}
-.userFace img{border-radius:50%;}
-.author .faceBox{position:absolute; z-index:3; left:0px; top:2px;}
-.innerFace{padding-left:50px;}
-.content-infos{margin-top:8px; margin-bottom:5px;}
-.commentBox {padding:4px;background:#ffe; border:1px solid #999;margin-bottom: 12px; word-wrap: break-word; zoom: 1; position: relative; z-index:1;}
-.commentInfo,.content-item{margin:2px;}
-.author{color:#328E34}
-.operations{color:#1e50a2;text-align:right;padding-right:5px;height:12px;line-height:12px;zoom:1;font-size:12px;}
-.operations li{display:inline-block;margin-left:10px;}
+
+.comments-list {
+    position: relative;
+    border-bottom: #ddd 1px dashed;
+    margin-bottom: 9px;
+}
+
+.userFace img {
+    border-radius: 50%;
+}
+
+.author .faceBox {
+    position: absolute;
+    z-index: 3;
+    left: 0;
+    top: 2px;
+}
+
+.innerFace {
+    padding-left: 50px;
+}
+
+.content-infos {
+    margin-top: 8px;
+    margin-bottom: 5px;
+}
+
+.commentBox {
+    padding: 4px;
+    background: #ffe;
+    border: 1px solid #999;
+    margin-bottom: 12px;
+    word-wrap: break-word;
+    zoom: 1;
+    position: relative;
+    z-index: 1;
+}
+
+.commentInfo, .content-item {
+    margin: 2px;
+}
+
+.author {
+    color: #328E34
+}
+
+.operations {
+    color: #1e50a2;
+    text-align: right;
+    padding-right: 5px;
+    height: 12px;
+    line-height: 12px;
+    zoom: 1;
+    font-size: 12px;
+}
+
+.operations li {
+    display: inline-block;
+    margin-left: 10px;
+}
+
 /*表格列表*/
-.table-header .table-title{font-size:16px}
-.table-boxs{background:#fefefe;box-shadow: 0 0 2px 1px #fdfdfd;}
-.table-header-wrap .table-header{background:#fcfcfc;height:42px;line-height:42px;padding:0 10px;}
-.table-handler-set{padding:12px 10px;border-top:#dde 1px solid}
-.table-info .check-box{display:block; float:left; width:40px;margin-top:-16px;}
-.table-info .table-info-name{display:block; float:left; width: 50%;}
-.table-info .table-info-size{display: block; float: left; width:100px;padding-right: 20px;}
-.table-info .table-info-author{display: block; float: left; width:150px;padding-right: 20px;}
-.tables-list{padding:0}
-.work-view{border-bottom:#dde 1px solid}
-.work-view:hover{background:#eee}
-@media screen and (max-width:780px){
-    .table-info .table-info-name{display:block; float:left;width:100%;margin-left:30px;margin-top: -8px;}
-    .table-info .table-info-size{display:none;}
-    .table-info .table-info-author{display:none; }
-    .table-info .table-info-update{display:none; }
+.table-header .table-title {
+    font-size: 16px
+}
+
+.table-boxs {
+    background: #fefefe;
+    box-shadow: 0 0 2px 1px #fdfdfd;
+}
+
+.table-header-wrap .table-header {
+    background: #fcfcfc;
+    height: 42px;
+    line-height: 42px;
+    padding: 0 10px;
+}
+
+.table-handler-set {
+    padding: 12px 10px;
+    border-top: #dde 1px solid
+}
+
+.table-info .check-box {
+    display: block;
+    float: left;
+    width: 40px;
+    margin-top: -16px;
+}
+
+.table-info .table-info-name {
+    display: block;
+    float: left;
+    width: 50%;
+}
+
+.table-info .table-info-size {
+    display: block;
+    float: left;
+    width: 100px;
+    padding-right: 20px;
+}
+
+.table-info .table-info-author {
+    display: block;
+    float: left;
+    width: 150px;
+    padding-right: 20px;
+}
+
+.tables-list {
+    padding: 0
+}
+
+.work-view {
+    border-bottom: #dde 1px solid
+}
+
+.work-view:hover {
+    background: #eee
+}
+
+@media screen and (max-width: 780px) {
+    .table-info .table-info-name {
+        display: block;
+        float: left;
+        width: 100%;
+        margin-left: 30px;
+        margin-top: -8px;
+    }
+
+    .table-info .table-info-size {
+        display: none;
+    }
+
+    .table-info .table-info-author {
+        display: none;
+    }
+
+    .table-info .table-info-update {
+        display: none;
+    }
 }
