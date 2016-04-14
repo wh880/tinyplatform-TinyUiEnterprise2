@@ -1,49 +1,36 @@
-
 layer.config({
     path: contextPath+"/static/org/tinygroup/layer/",
     shift: 5
 });
 $(function() {
-    $("body").on("click","[ly-ajax]",function(){
-        var url=$(this).attr("href");
-        var type=$(this).attr("ly-ajax-modal");
-        if(!type){
-            type=1;
-        }
-        var title=$(this).attr("ly-ajax-title");
-        if(!title){
-            title="信息";
-        }
-        var width=$(this).attr("ly-ajax-width");
-        if(!width){
-            width="80%";
-        }
-        var height=$(this).attr("ly-ajax-height");
-        if(!height){
-            height="80%";
-        }
-        if(type==1){
-            $.get(url,function(str){
-                layer.closeAll();
-                layer.open({
-                    title:title,
-                    type:1,
-                    scrollbar:false,
-                    content: str,
-                    maxmin:true,
-                    area: [width, height]
-                });
+    $(document).on("click","[ly-ajax]",function(){
+        var $this=$(this);
+        var defaults={
+            title:"",
+            type:1,
+            scrollbar:false,
+            content: "",
+            maxmin:true,
+            shadeClose: true,
+            area: ["80%", "80%"]
+        };
+        var url=$(this).attr("data-url");
+        var option=$.extend({},
+            defaults, $this.data()
+        );
+        if(option.type==1){
+            $.ajax({
+                url:url,
+                success:function(str) {
+                    layer.closeAll();
+                    option.content = str;
+                    layer.open(option);
+                }
             });
         }else{
-            layer.open({
-                title:title,
-                type:2,
-                content: url,
-                scrollbar:false,
-                maxmin:true,
-                area: [width, height]
-            });
+            option.content=url;
+            layer.open(option);
         }
         return false;
     });
-})
+});

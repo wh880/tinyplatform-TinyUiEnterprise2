@@ -56,4 +56,57 @@ UE.getEditor('${ueditorId}',{
 
 #@ueditor("page-body-ontent" "docText" {"imageFormData":"{objectId:1,objectType:2}"})sss#end*#
 
+
 #croppAvatar("",{"width":250,"height":350})
+
+
+#@lAjax("","/page/forms.pagelet",{"data-maxmin":"false"})测试#end
+
+
+<script>
+
+
+    /*$(function() {
+        $("body").on("click","[ly-ajax]",function(){
+            var $this=$(this);
+            var defaults={
+                title:"",
+                type:1,
+                scrollbar:false,
+                content: str,
+                maxmin:true,
+                shadeClose: true,
+                area: [80%, 80%]
+            }
+            var url=$(this).attr("data-url");
+            if(type==1){
+                $.get(url,function(str){
+                    layer.closeAll();
+                    $.extend({},
+                            $.fn.modal.defaults, $this.data()
+                    );
+                    layer.open({
+                        title:title,
+                        type:1,
+                        scrollbar:false,
+                        content: str,
+                        maxmin:true,
+                        shadeClose: true,
+                        area: [width, height]
+                    });
+                });
+            }else{
+                layer.open({
+                    title:title,
+                    type:2,
+                    content: url,
+                    scrollbar:false,
+                    maxmin:true,
+                    area: [width, height]
+                });
+            }
+            return false;
+        });
+    })*/
+</script>
+

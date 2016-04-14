@@ -170,7 +170,7 @@
 					</ul>
 				</div>
 
-				<div id="tinypagecontent" class="row" style="min-height:490px;">
+				<div id="tinypagecontent" class="row" style="min-height:490px;margin:0">
 					${pageContent}
 				</div>
 
