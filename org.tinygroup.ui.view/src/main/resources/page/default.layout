@@ -131,6 +131,7 @@
 					#TnavItem("8.14" "Gantt图" "/page/gantt.page")
 					#TnavItem("8.15" "操作向导" "/page/tourbus.page")
 					#TnavItem("8.17" "时间轴" "/page/timeline.page")
+					#TnavItem("8.18" "图片剪辑上传" "/page/cropper.page")
 				#end
 
 				#@TnavItems("10" "其它" {"ico":"fa-files-o"})

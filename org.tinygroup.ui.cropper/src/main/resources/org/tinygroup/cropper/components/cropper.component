@@ -59,6 +59,7 @@
         var console = window.console || { log: function () {} };
         function CropAvatar($element) {
             this._container = $element;
+            this._avatarView = this._container.find('avatar-view');
             this._avatar = this._container.find('img');
             this._avatarModal = $("body").find('#avatar-modal');
             this._avatarForm = this._avatarModal.find('.avatar-form');
