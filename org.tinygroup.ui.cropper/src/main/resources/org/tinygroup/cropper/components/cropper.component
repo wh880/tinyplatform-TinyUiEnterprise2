@@ -2,7 +2,6 @@
 * picurl 为图片路径
 * cropMap 为自定义MAP参数 其中 width height为需要的尺寸
 * *#
-
 #macro cropperAvatar(picUrl,cropMap)#set(avatarId=fmt("ca%d",rand()),picUrl=picUrl?:"/img/pic.png")
 <span id="${avatarId}" data-toggle="modal" data-target="#avatar-modal" data-width="840" data-height="550">
     <span class="avatar-view"><img src="#link(picUrl)" alt="" data-width="${cropMap?.width?:"160"}" data-height="${cropMap?.height?:"90"}">#bodyContent</span>
@@ -203,88 +202,92 @@
                     width:this.opWidth,
                     height:this.opHeight
                 });
+
                 var dataurl = canvas.toDataURL('image/png');
-                console.log(dataurl);
+                //console.log(dataurl);
                 var blob = window.dataURLtoBlob(dataurl);
                 data.append("image", blob, "image.png");
+                var datafix= $.extend({},${cropMap?.imageFormData?:"{}"});
+    for(var o in datafix){
+        data.append(o, datafix[o]);
+    }
+    $.ajax(url, {
+        headers: {'X-XSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+        type: 'post',
+        data: data,
+        dataType: 'json',
+        processData: false,
+        contentType: false,
 
-                $.ajax(url, {
-                    headers: {'X-XSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
-                    type: 'post',
-                    data: data,
-                    dataType: 'json',
-                    processData: false,
-                    contentType: false,
+        beforeSend: function () {
+            _this.submitStart();
+        },
 
-                    beforeSend: function () {
-                        _this.submitStart();
-                    },
+        success: function (data) {
+            _this.submitDone(data);
+        },
 
-                    success: function (data) {
-                        _this.submitDone(data);
-                    },
+        error: function (XMLHttpRequest, textStatus, errorThrown) {
+            _this.submitFail(textStatus || errorThrown);
+        },
 
-                    error: function (XMLHttpRequest, textStatus, errorThrown) {
-                        _this.submitFail(textStatus || errorThrown);
-                    },
+        complete: function () {
+            _this.submitEnd();
+        }
+    });
+    },
 
-                    complete: function () {
-                        _this.submitEnd();
-                    }
-                });
-            },
+    syncUpload: function () {
+        this._avatarSave.click();
+    },
 
-            syncUpload: function () {
-                this._avatarSave.click();
-            },
+    submitStart: function () {
 
-            submitStart: function () {
+    },
 
-            },
-
-            submitDone: function (data) {
-                if ($.isPlainObject(data)) {
-                    if (data.state=="success") {
-                        this.url = data.url;
-                        if (this.support.datauri || this.uploaded) {
-                            this.uploaded = false;
-                            this.cropDone();
-                        } else {
-                            this.uploaded = true;
-                            this._avatarSrc.val(this.url);
-                            this.startCropper();
-                        }
-                        this._avatarInput.val('');
-                    } else {
-                        this.alert("系统错误");
-                    }
+    submitDone: function (data) {
+        if ($.isPlainObject(data)) {
+            if (data.state=="success") {
+                this.url = data.url;
+                if (this.support.datauri || this.uploaded) {
+                    this.uploaded = false;
+                    this.cropDone();
                 } else {
-                    this.alert('Failed to response');
+                    this.uploaded = true;
+                    this._avatarSrc.val(this.url);
+                    this.startCropper();
                 }
-            },
-
-            submitFail: function (msg) {
-                this.alert(msg);
-            },
-
-            submitEnd: function () {
-
-            },
-
-            cropDone: function () {
-                this._avatarForm.get(0).reset();
-                this._avatar.attr('src', contextPath+this.url);
-                this.stopCropper();
-                this._avatarModal.modal('hide');
-            },
-
-            alert: function (msg) {
-                layer.msg(msg,{icon:2,time:1000});
+                this._avatarInput.val('');
+            } else {
+                this.alert("系统错误");
             }
-        };
-        $(function () {
-            return new CropAvatar($('#${avatarId}'));
-        });
+        } else {
+            this.alert('Failed to response');
+        }
+    },
+
+    submitFail: function (msg) {
+        this.alert(msg);
+    },
+
+    submitEnd: function () {
+
+    },
+
+    cropDone: function () {
+        this._avatarForm.get(0).reset();
+        this._avatar.attr('src', contextPath+this.url);
+        this.stopCropper();
+        this._avatarModal.modal('hide');
+    },
+
+    alert: function (msg) {
+        layer.msg(msg,{icon:2,time:1000});
+    }
+    };
+    $(function () {
+        return new CropAvatar($('#${avatarId}'));
+    });
     });
 </script>
 

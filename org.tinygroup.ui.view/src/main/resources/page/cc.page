@@ -1,112 +1,77 @@
 #*
-#macro tUploadInput(name value mapInfo)#set(uploadid=fmt("upload%d",rand()),fixData=mapInfo?.fixData)
-    ##if(fixData)
-        #set(ss=mapInfo.remove("fixData"))
-    ##end
-<div class="input-group">
-    <input type="text" id="${uploadid}" name="${name}" class="form-control ${mapInfo?.get("class")}" #mapToHtml(mapInfo)>
-    <span id="${uploadid}-wrap"><input type="file" class="input-file" name="upfile" id="${uploadid}-file"></span>
-    <span class="input-group-addon">#faIcon("cloud-upload") 浏览</span>
-</div>
-<script type="text/javascript">
-    $(function(){
-        $("#${uploadid}-wrap").on("change","#${uploadid}-file",function(){
-            $.ajaxFileUpload({
-                url: '#link(UPLOAD_ACTION_URL)',
-                secureuri: false,
-                fileElementId: "${uploadid}-file",
-                dataType: 'json',
-                data:{tinyFrame:1#mapToJson(fixData)},
-                success: function (data, status) {
-                    if(data.state=="SUCCESS"){
-                        $("#${uploadid}").val(data.url);
-                    }
-                }
-            });
-        });
-    });
-</script>
-#end
-
-<form action="sss" action="http://127.0.0.1:8001/tt.php" method="post">
+* picurl 为图片路径
+* cropMap 为自定义MAP参数 其中 width height为需要的尺寸
+* *#
 
 
 
-    #tUploadInput("sss1" "" {"fixData":{"data2":"sss2"}})
-<input type="submit" value="save" />
-  </form>
+
+
+##@ueditor("page-body-ontent" "docText" {"imageFormData":"{objectId:1,objectType:2}"})sss#end*#
 
 
 
-*#
+#cropperAvatar("",{"width":250,"height":350,"imageFormData":"{objectId:'1',objectType:'2'}"})
+
+
+
 #*
-#macro ueditor(ueditorId ueditorName mapInfo)
-<script type="text/plain" id="${ueditorId}" name="${ueditorName}">#bodyContent</script>
-<script type="text/javascript">
-try{UE.ueAddonPlus("${ueditorId}");}catch (e){}
-UE.delEditor('${ueditorId}');
-UE.getEditor('${ueditorId}',{
-    #for(var:mapInfo)
-    ${var.key}:${var.value},#{end}
-})
-</script>
-#end
 
 
-
-#@ueditor("page-body-ontent" "docText" {"imageFormData":"{objectId:1,objectType:2}"})sss#end*#
-
-
-#croppAvatar("",{"width":250,"height":350})
-
-
-#@lAjax("","/page/forms.pagelet",{"data-maxmin":"false"})测试#end
-
+<div id="listContent" style="display:none;">
+    <ul class="list-group">
+        <li class="list-group-item">Cras justo odio</li>
+        <li class="list-group-item">Dapibus ac facilisis in</li>
+        <li class="list-group-item">Morbi leo risus</li>
+        <li class="list-group-item">Porta ac consectetur ac</li>
+        <li class="list-group-item">Vestibulum at eros</li>
+    </ul>
+</div>
+<a href="#" class="show-pop-list">ssss</a>
 
 <script>
 
 
-    /*$(function() {
-        $("body").on("click","[ly-ajax]",function(){
-            var $this=$(this);
-            var defaults={
-                title:"",
-                type:1,
-                scrollbar:false,
-                content: str,
-                maxmin:true,
-                shadeClose: true,
-                area: [80%, 80%]
+    $(function () {
+        var settings = {
+            trigger: 'click',
+            title: 'Pop Title',
+            content: '<p>This is webui popover demo.</p><p>just enjoy it and have fun !</p>',
+            width: 300,
+            multi: true,
+            closeable: false,
+            style: '',
+            padding: true
+        };
+        var asyncSettings = {
+            width: 260,
+            height: 350,
+            closeable: true,
+            padding: false,
+            cache: false,
+            url: '#link("/page/forms.pagelet")',
+            type: 'async',
+            content: function (data) {
+                /*var html = '<ul class="list-group">';
+                for (var key in data) {
+                    html += '<li class="list-group-item"><a href="' + data[key] + '" target="_blank">'
+                            + '<i class="glyphicon glyphicon-leaf"></i> ' + key + '</a>' + '</li>';
+                }
+                html += '</ul>';
+                return html;*/
+                return data;
             }
-            var url=$(this).attr("data-url");
-            if(type==1){
-                $.get(url,function(str){
-                    layer.closeAll();
-                    $.extend({},
-                            $.fn.modal.defaults, $this.data()
-                    );
-                    layer.open({
-                        title:title,
-                        type:1,
-                        scrollbar:false,
-                        content: str,
-                        maxmin:true,
-                        shadeClose: true,
-                        area: [width, height]
-                    });
-                });
-            }else{
-                layer.open({
-                    title:title,
-                    type:2,
-                    content: url,
-                    scrollbar:false,
-                    maxmin:true,
-                    area: [width, height]
-                });
-            }
-            return false;
-        });
-    })*/
+        };
+        $('a.show-pop-list').webuiPopover('destroy').webuiPopover($.extend({}, settings, asyncSettings));
+
+       /* var listContent = $('#listContent').html(),
+                listSettings = {
+                    content: listContent,
+                    title: '',
+                    padding: false
+                };
+        $('a.show-pop-list').webuiPopover('destroy').webuiPopover($.extend({}, settings, listSettings));*/
+    })
 </script>
 
+*#
