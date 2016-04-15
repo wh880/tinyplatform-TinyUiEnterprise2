@@ -2,9 +2,9 @@
 * picurl 为图片路径
 * cropMap 为自定义MAP参数 其中 width height为需要的尺寸
 * *#
-#macro cropperAvatar(picUrl,cropMap)#set(avatarId=fmt("ca%d",rand()),picUrl=picUrl?:"/img/pic.png")
+#macro cropperAvatar(formName,picUrl,cropMap)#set(avatarId=fmt("ca%d",rand()))
 <span id="${avatarId}" data-toggle="modal" data-target="#avatar-modal" data-width="840" data-height="550">
-    <span class="avatar-view"><img src="#link(picUrl)" alt="" data-width="${cropMap?.width?:"160"}" data-height="${cropMap?.height?:"90"}">#bodyContent</span>
+    <input type="hidden" name="${formName}" id="hide${avatarId}" value="${picUrl}" /><img src="#link(picUrl?:"/img/pic.png")" alt="" data-width="${cropMap?.width?:"160"}" data-height="${cropMap?.height?:"90"}">#bodyContent
 </span>
 <div id="avatar-modal" class="modal hide fade " tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-header">
@@ -58,7 +58,6 @@
         var console = window.console || { log: function () {} };
         function CropAvatar($element) {
             this._container = $element;
-            this._avatarView = this._container.find('avatar-view');
             this._avatar = this._container.find('img');
             this._avatarModal = $("body").find('#avatar-modal');
             this._avatarForm = this._avatarModal.find('.avatar-form');
@@ -88,7 +87,7 @@
             },
 
             addListener: function () {
-                this._avatarView.on('click', $.proxy(this.click, this));
+                this._container.on('click', $.proxy(this.click, this));
                 this._avatarInput.on('change', $.proxy(this.change, this));
                 this._avatarForm.on('submit', $.proxy(this.submit, this));
                 this._avatarBtns.on('click', $.proxy(this.rotate, this));
@@ -202,9 +201,7 @@
                     width:this.opWidth,
                     height:this.opHeight
                 });
-
                 var dataurl = canvas.toDataURL('image/png');
-                //console.log(dataurl);
                 var blob = window.dataURLtoBlob(dataurl);
                 data.append("image", blob, "image.png");
                 var datafix= $.extend({},${cropMap?.imageFormData?:"{}"});
@@ -273,10 +270,10 @@
     submitEnd: function () {
 
     },
-
     cropDone: function () {
         this._avatarForm.get(0).reset();
         this._avatar.attr('src', contextPath+this.url);
+        $("#hide${avatarId}").val(this.url);
         this.stopCropper();
         this._avatarModal.modal('hide');
     },
