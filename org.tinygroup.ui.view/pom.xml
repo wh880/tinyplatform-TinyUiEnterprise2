@@ -191,5 +191,10 @@
             <artifactId>org.tinygroup.ui.cropper</artifactId>
             <version>${project.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.tinygroup</groupId>
+            <artifactId>org.tinygroup.ui.popover</artifactId>
+            <version>${project.version}</version>
+        </dependency>
     </dependencies>
 </project>

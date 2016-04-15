@@ -94,6 +94,7 @@
         <module>org.tinygroup.ui.codemirror</module>
         <module>org.tinygroup.ui.pjax</module>
         <module>org.tinygroup.ui.cropper</module>
+        <module>org.tinygroup.ui.popover</module>
         <module>newWeb</module>
     </modules>
 
