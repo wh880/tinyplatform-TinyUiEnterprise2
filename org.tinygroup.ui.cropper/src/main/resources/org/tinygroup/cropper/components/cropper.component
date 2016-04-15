@@ -3,7 +3,7 @@
 * cropMap 为自定义MAP参数 其中 width height为需要的尺寸
 * *#
 
-#macro croppAvatar(picUrl,cropMap)#set(avatarId=fmt("ca%d",rand()),picUrl=picUrl?:"/img/pic.png")
+#macro cropperAvatar(picUrl,cropMap)#set(avatarId=fmt("ca%d",rand()),picUrl=picUrl?:"/img/pic.png")
 <span id="${avatarId}" data-toggle="modal" data-target="#avatar-modal" data-width="840" data-height="550">
     <span class="avatar-view"><img src="#link(picUrl)" alt="" data-width="${cropMap?.width?:"160"}" data-height="${cropMap?.height?:"90"}">#bodyContent</span>
 </span>
