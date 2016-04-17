@@ -1,21 +1,11 @@
-#*
-* picurl 为图片路径
-* cropMap 为自定义MAP参数 其中 width height为需要的尺寸
-* *#
-
-
-
-
-
 ##@ueditor("page-body-ontent" "docText" {"imageFormData":"{objectId:1,objectType:2}"})sss#end*#
 
 
 
-#cropperAvatar("avatar","",{"width":250,"height":350,"imageFormData":"{objectId:'1',objectType:'2'}"})
+##cropperAvatar("avatar","",{"width":250,"height":350,"imageFormData":"{objectId:'1',objectType:'2'}"})
 
 
 
-#*
 
 
 <div id="listContent" style="display:none;">
@@ -27,42 +17,18 @@
         <li class="list-group-item">Vestibulum at eros</li>
     </ul>
 </div>
-<a href="#" class="show-pop-list">ssss</a>
 
+#macro popover(popoverInfo,popurl)<span href="#link(popurl)" data-toggle="popover" #mapToHtml(popoverInfo)>#bodyContent</span>#end
+
+#@popover({"data-title":"你妹","data-width":"500"},"/page/forms.pagelet")ssss#end
+
+<a href="" class="show-pop-list" data-toggle="popover">ssss2</a>
 <script>
 
 
     $(function () {
-        var settings = {
-            trigger: 'click',
-            title: 'Pop Title',
-            content: '<p>This is webui popover demo.</p><p>just enjoy it and have fun !</p>',
-            width: 300,
-            multi: true,
-            closeable: false,
-            style: '',
-            padding: true
-        };
-        var asyncSettings = {
-            width: 260,
-            height: 350,
-            closeable: true,
-            padding: false,
-            cache: false,
-            url: '#link("/page/forms.pagelet")',
-            type: 'async',
-            content: function (data) {
-                /*var html = '<ul class="list-group">';
-                for (var key in data) {
-                    html += '<li class="list-group-item"><a href="' + data[key] + '" target="_blank">'
-                            + '<i class="glyphicon glyphicon-leaf"></i> ' + key + '</a>' + '</li>';
-                }
-                html += '</ul>';
-                return html;*/
-                return data;
-            }
-        };
-        $('a.show-pop-list').webuiPopover('destroy').webuiPopover($.extend({}, settings, asyncSettings));
+
+       // $('[data-toggle="popover"]').webuiPopover('destroy').webuiPopover($.extend({}, settings, asyncSettings));
 
        /* var listContent = $('#listContent').html(),
                 listSettings = {
@@ -74,4 +40,3 @@
     })
 </script>
 
-*#

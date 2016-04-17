@@ -998,3 +998,37 @@
         };
     }));
 })(window, document);
+
+$(document).off("click.popover.data-api").on("click.popover.data-api",'[data-toggle="popover"]',function(){
+    var _this=$(this);
+    var settings = {
+        trigger: 'click',
+        title: '信息',
+        content: '<p>信息.</p>',
+        width: 300,
+        multi: true,
+        closeable: false,
+        style: '',
+        padding: true
+    };
+    var asyncSettings={};
+    if(typeof(_this.attr("href"))!="undefined"&&_this.attr("href")) {
+        asyncSettings = {
+            width: 260,
+            height: 350,
+            closeable: true,
+            padding: false,
+            cache: false,
+            url: _this.attr("href"),
+            type: 'async',
+            content: function (data) {
+                return data;
+            }
+        };
+    }
+    _this.off("click.popover.data-api").webuiPopover('destroy').webuiPopover($.extend({}, settings,asyncSettings));
+    _this.on("hidden.webui.popover",function(){
+        _this.webuiPopover('destroy');
+    }).trigger("click");
+    return false;
+});
