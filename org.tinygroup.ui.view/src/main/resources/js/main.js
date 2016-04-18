@@ -361,12 +361,12 @@ var Core = function (options) {
                 }
                 if (Delay) {
                     var Timer = setTimeout(function () {
-                        This.scroller({trackMargin: Margin,});
+                        This.scroller({trackMargin: Margin});
                         $('#content').scrollLock('on', 'div');
                     }, Delay);
                 }
                 else {
-                    This.scroller({trackMargin: Margin,});
+                    This.scroller({trackMargin: Margin});
                     $('#content').scrollLock('on', 'div');
                 }
             });

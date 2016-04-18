@@ -13,7 +13,7 @@ var $dp, WdatePicker;
 		$skinList: [{
 			name: "default",
 			charset: "gb2312"
-		}, ],
+		}],
 		$wdate: true,
 		$crossFrame: true,
 		$preLoad: false,
