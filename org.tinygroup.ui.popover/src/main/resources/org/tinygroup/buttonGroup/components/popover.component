@@ -1,1 +1,1 @@
-#macro popover(popoverInfo,popurl)<span href="#link(popurl)" data-toggle="popover" #mapToHtml(popoverInfo)>#bodyContent</span>#end
+#macro popover(popoverInfo,popurl)<span href="#link(popurl)" data-toggle="popover" #mapToHtml(popoverInfo) style="cursor:pointer">#bodyContent</span>#end
