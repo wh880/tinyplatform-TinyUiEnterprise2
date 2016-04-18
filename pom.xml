@@ -101,18 +101,18 @@
 
     <!-- 构建相关配置  -->
     <build>
-        <sourceDirectory>src</sourceDirectory><!--项目文件目录-->
-        <outputDirectory>bin</outputDirectory><!--项目文件相关class文件目录-->
-        <testSourceDirectory>test</testSourceDirectory><!--测试类文件目录-->
-        <testOutputDirectory>bin</testOutputDirectory><!--测试类相关class文件目录-->
+        <sourceDirectory>src/main/java</sourceDirectory><!--项目文件目录-->
+        <outputDirectory>target/classes</outputDirectory><!--项目文件相关class文件目录-->
+        <testSourceDirectory>src/test/java</testSourceDirectory><!--测试类文件目录-->
+        <testOutputDirectory>target/test-classes</testOutputDirectory><!--测试类相关class文件目录-->
         <resources><!--项目资源文件目录-->
             <resource>
-                <directory>src\resources</directory>
+                <directory>src/main/resources</directory>
             </resource>
         </resources>
         <testResources><!--测试资源文件目录-->
             <testResource>
-                <directory>test\resources</directory>
+                <directory>src/test/resources</directory>
             </testResource>
         </testResources>
         <!-- maven插件配置 -->
