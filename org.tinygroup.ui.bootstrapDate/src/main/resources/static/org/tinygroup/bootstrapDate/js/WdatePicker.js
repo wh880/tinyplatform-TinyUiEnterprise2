@@ -9,7 +9,7 @@ var $dp, WdatePicker;
 		{
 			name: "zh-cn",
 			charset: "gb2312"
-		}, ],
+		}],
 		$skinList: [{
 			name: "default",
 			charset: "gb2312"

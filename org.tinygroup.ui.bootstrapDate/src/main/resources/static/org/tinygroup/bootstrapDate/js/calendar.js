@@ -143,7 +143,7 @@ My97DP.prototype = {
 		$sdt = this.date = new DPDate();
 		$dp.valueEdited = 0;
 		this.dateFmt = this.doExp($dp.dateFmt);
-		this.autoPickDate = $dp.autoPickDate == null ? ($dp.has.st && $dp.has.st ? false : true) : $dp.autoPickDate;
+		this.autoPickDate = $dp.autoPickDate == null ? ($dp.has.st ? false : true) : $dp.autoPickDate;
 		$dp.autoUpdateOnChanged = $dp.autoUpdateOnChanged == null ? ($dp.isShowOK && $dp.has.d ? false : true) : $dp.autoUpdateOnChanged;
 		this.ddateRe = this._initRe("disabledDates");
 		this.ddayRe = this._initRe("disabledDays");
