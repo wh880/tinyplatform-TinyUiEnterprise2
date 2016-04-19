@@ -6,14 +6,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 
 public class UeditorAction {
-    @RequestMapping("/org/tinygroup/UEditor/config")
+    @RequestMapping("/org/tinygroup/ueditor/config.pagelet")
     public String edtiorConfig() {
-        return "org/tinygroup/UEditor/config.pagelet";
+        return "org/tinygroup/ueditor/config.pagelet";
 
     }
-    @RequestMapping("/org/tinygroup/UEditor/config.pagelet")
-    public String edtiorConfig2() {
-        return "org/tinygroup/UEditor/config.pagelet";
+    @RequestMapping("/org/tinygroup/ueditor/macro/macro.pagelet")
+    public String edtiorMaro() {
+        return "org/tinygroup/ueditor/macro/macro.pagelet";
 
     }
 }

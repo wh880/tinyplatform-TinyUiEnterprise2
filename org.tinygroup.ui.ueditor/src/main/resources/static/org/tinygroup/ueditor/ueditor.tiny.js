@@ -4,7 +4,7 @@ UE.Editor.prototype.getActionUrl = function(action) {
         return UPLOAD_ACTION_URL;
     } else if (action == 'config') {
         //console.log("editor config test");
-        return contextPath+'/org/tinygroup/UEditor/config.pagelet';
+        return contextPath+'/org/tinygroup/ueditor/config.pagelet';
     } else {
         return this._bkGetActionUrl.call(this, action);    }
 }
