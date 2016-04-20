@@ -5,8 +5,8 @@
 </script>
 #elseif(t=="webupload")
 ${response.setContentType("text/html")}
-{"url":"${fileUrl}","result":"success","id":"id"}
+{"url":"${fileUrl}","result":"SUCCESS","id":"id"}
 #else
 ${response.setContentType("text/html")}
-{"url":"${fileUrl}","state":"success"}
+{"url":"${fileUrl}","state":"SUCCESS"}
 #end

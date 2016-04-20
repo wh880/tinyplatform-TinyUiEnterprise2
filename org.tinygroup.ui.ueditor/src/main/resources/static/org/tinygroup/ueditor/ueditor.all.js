@@ -23775,7 +23775,7 @@ UE.plugin.register('autoupload', function (){
         xhr.addEventListener('load', function (e) {
             try{
                 var json = (new Function("return " + utils.trim(e.target.response)))();
-                if (json.state == 'SUCCESS' && json.url) {
+                if (json.state.toLowerCase() == 'success' && json.url) {
                     successHandler(json);
                 } else {
                     errorHandler(json.state);

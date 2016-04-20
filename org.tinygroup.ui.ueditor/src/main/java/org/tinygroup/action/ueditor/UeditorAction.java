@@ -11,7 +11,7 @@ public class UeditorAction {
         return "org/tinygroup/ueditor/config.pagelet";
 
     }
-    @RequestMapping("/org/tinygroup/ueditor/macro/macro.pagelet")
+    @RequestMapping("/static/org/tinygroup/ueditor/macro/macro.pagelet")
     public String edtiorMaro() {
         return "org/tinygroup/ueditor/macro/macro.pagelet";
 

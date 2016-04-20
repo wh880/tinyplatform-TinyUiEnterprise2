@@ -284,7 +284,7 @@ $(function(){
                 dataType: 'json',
                 data:{tinyFrame:1#mapToJson(fixData)},
                 success: function (data, status) {
-                    if(data.state=="SUCCESS"){
+                    if(data.state.toLowerCase()=="success"){
                         $("#${uploadid}").val(data.url);
                     }
                 }
@@ -376,7 +376,7 @@ $(function(){
 				dataType: 'json',
                 data:{tinyFrame:1,#mapToJson(fixData)},
 				success: function (data, status) {
-					if(data.state=="SUCCESS"){
+					if(data.state.toLowerCase()=="success"){
 						$("#${uploadid}").val(data.url);
 						$("#showimg${uploadid}").html("<img src='${TINY_CONTEXT_PATH}"+data.url+"' width='100'>");
 					}
