@@ -301,7 +301,7 @@
 
 .top-list em {
     background-color: #f8f8f8;
-    border: 1px solid #ebebeb;
+    border: 1px solid #ededed;
     color: #333;
     height: 19px;
     font-size: 12px;
@@ -338,6 +338,11 @@
 
 .top-list .darkGreen em {
     background: #1ab394;
+    color: #fff
+}
+
+.top-list .red em {
+    background: #fe5a5a;
     color: #fff
 }
 
