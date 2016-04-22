@@ -29332,6 +29332,7 @@ UE.ui = baidu.editor.ui = {};
 
 
     UE.delEditor = function (id) {
+        $("#edui_fixedlayer").remove();
         var editor;
         if (editor = instances[id]) {
             editor.key && editor.destroy();
