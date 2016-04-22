@@ -13,7 +13,7 @@ public class UeditorAction {
     }
     @RequestMapping("/static/org/tinygroup/ueditor/macro/macro.pagelet")
     public String edtiorMaro() {
-        return "org/tinygroup/ueditor/macro/macro.pagelet";
+        return "static/org/tinygroup/ueditor/macro/macro.pagelet";
 
     }
 }

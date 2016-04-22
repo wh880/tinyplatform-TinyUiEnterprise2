@@ -12,6 +12,7 @@ $(function() {
             content: "",
             maxmin:true,
             shadeClose: true,
+            zIndex:1060,
             area: ["80%", "80%"]
         };
         var url=$(this).attr("data-url");
