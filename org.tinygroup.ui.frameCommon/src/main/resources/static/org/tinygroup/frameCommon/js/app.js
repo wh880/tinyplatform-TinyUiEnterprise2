@@ -12,7 +12,7 @@
       store_state_key: 'mmstate',
       disable_animation_on: ['small'],
       dropdown_close_delay: 300,
-      detect_active: true,
+      detect_active: false,
       detect_active_predicate: function(href, url) {
         return href === url;
       }

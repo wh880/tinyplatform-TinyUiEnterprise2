@@ -120,6 +120,7 @@ $(function(){
 </div>
 #end
 
+
 #*
 * tSwitcher
 *
@@ -152,6 +153,12 @@ $(function(){
 </script>
 #end
 
+#macro checkboxOne(showTitle,checkId)
+<div class="checkbox-custom pt-5">
+    #bodyContent
+    <label for="${checkId}" class="cursor-hand" style="margin-top:0;">${showTitle}</label>
+</div>
+#end
 
 #*
 * tInput input type=text 宏

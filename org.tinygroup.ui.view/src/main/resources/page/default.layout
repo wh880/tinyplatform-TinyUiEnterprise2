@@ -200,8 +200,9 @@
                 $(".navigation:first a.navitem").each(function(){
                     var href=$(this).attr("href");
                     var treeid=$(this).attr("data-treeid");
-                    menuList.push({id:treeid,url:href});
+                    menuList.push({id:treeid,url:href.substring(0,href.lastIndexOf("."))});
                 });
+
                 $.ajax({
                     url:"#link("/action/savemenulist.pagelet")",
                     type:"post",

@@ -6,7 +6,7 @@
         </css-resource>
         <js-resource>
             /static/org/tpl/light/js/fastclick.min.js,
-            /static/org/tpl/light/js/retina.min.js,
+           <!-- /static/org/tpl/light/js/retina.min.js,-->
             /static/org/tpl/light/scrollbar/jquery.mCustomScrollbar.concat.min.js,
             /static/org/tpl/light/switchery/switchery.min.js,
             /static/org/tpl/light/js/yukon_all.tiny.min.js,
