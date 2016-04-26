@@ -942,6 +942,12 @@
                     data[i].pId=0;
                 }
             }
+            data.sort(function (x, y) {
+                if (typeof(x.docSort) != "undefined" && x.pId == y.pId) {
+                    return (parseInt(x.docSort) < parseInt(y.docSort)) ? -1 : 1
+                }
+                return -1;
+            });
             this.getItem = function (id) {
                 for (var i = 0, l = data.length; i < l; i++) {
                     if (data[i].id == id) {
@@ -966,12 +972,6 @@
             for (var i = 0, l = data.length; i < l; i++) {
                 this.getData(data[i]);
             }
-            reArr.sort(function (x, y) {
-                if (typeof(x.docSort) != "undefined" && x.pId == y.pId) {
-                    return (parseInt(x.docSort) < parseInt(y.docSort)) ? -1 : 1
-                }
-                return -1;
-            });
             return reArr;
         }
     });
