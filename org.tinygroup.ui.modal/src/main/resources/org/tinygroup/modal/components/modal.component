@@ -48,7 +48,7 @@ param aMap A其它额外的元素
 * @parbtnM modalMap 其它属性主要用于Modal的属性设计
 *#
 #macro hideModal(btnModalId modalMap)
-    <a data-target="#${btnModalId}Modal" data-toggle="modal" class="hide"#if(modalMap?.url) href="${modalMap?.url}"#end#if(modalMap?.width) data-width="${modalMap?.width}"#end#if(modalMap?.height) data-height="${modaheight}"#end#mapToHtml(modalMap)></a>
+    <a id="${btnModalId}" data-target="#${btnModalId}Modal" data-toggle="modal" class="hide"#if(modalMap?.url) href="${modalMap?.url}"#end#if(modalMap?.width) data-width="${modalMap?.width}"#end#if(modalMap?.height) data-height="${modaheight}"#end#mapToHtml(modalMap)></a>
     #dialog(btnModalId+"Modal")
 #end
 #*
