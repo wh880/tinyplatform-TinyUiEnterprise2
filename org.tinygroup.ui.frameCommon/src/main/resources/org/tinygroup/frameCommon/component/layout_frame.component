@@ -76,7 +76,7 @@
 
 
 
-#macro getTopMenuId()#if(activeMenuId&&activeMenuId.indexOf(".")>-1)#set(topMenuId=activeMenuId.substring(0,activeMenuId.indexOf(".")))#end#end
+#macro getTopMenuId()#if(activeMenuId&&activeMenuId.indexOf(".")>-1)${activeMenuId.substring(0,activeMenuId.indexOf("."))}#end#end
 
 
 
