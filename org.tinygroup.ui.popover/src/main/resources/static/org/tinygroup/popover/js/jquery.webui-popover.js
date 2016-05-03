@@ -1019,6 +1019,7 @@ $(document).off("click.popover.data-api").on("click.popover.data-api",'[data-tog
             closeable: true,
             padding: false,
             cache: false,
+            multi:false,
             url: _this.attr("href"),
             type: 'async',
             content: function (data) {
@@ -1026,7 +1027,7 @@ $(document).off("click.popover.data-api").on("click.popover.data-api",'[data-tog
             }
         };
     }
-    _this.off("click.popover.data-api").webuiPopover('destroy').webuiPopover($.extend({}, settings,asyncSettings));
+    _this.off("click.popover.data-api").webuiPopover('destroy').webuiPopover($.extend({}, settings,asyncSettings,_this.data()));
     _this.on("hidden.webui.popover",function(){
         _this.webuiPopover('destroy');
     }).trigger("click");
