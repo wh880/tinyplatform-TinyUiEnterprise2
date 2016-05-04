@@ -26,7 +26,8 @@
             var that = this;
             this.options = options;
             this.$element = $(element).delegate('[data-dismiss="modal"]', 'click.dismiss.modal', $.proxy(this.hide, this));
-            $(element).delegate('[data-expand="modal"]', 'click.expand.modal', $.proxy(this.fullScreen, this));
+            this.$element.delegate('[data-expand="modal"]', 'click.expand.modal', $.proxy(this.fullScreen, this));
+
             if (this.options.remote) {
                 this.$element.on("hide", function () {
                     $(this).children(".modal-body").html("<p>&nbsp;</p>");
@@ -54,7 +55,7 @@
             manager.appendModal(this);
             this.$element.resizable({
                 resize: function (event, ui) {
-                    that.$element.children(".modal-body").css("height", ui.element.height() - 37 - that.$element.children(".modal-footer").height() - 10 + "px");
+                    that.$element.children(".modal-body").css("height", ui.element.height() -that.$element.otherHeight + "px");
                 }
             });
         },
@@ -87,12 +88,22 @@
             $.support.transition && this.$element.hasClass('fade') ? this.hideWithTransition() : this.hideModal();
         },
         layout: function () {
-            //console.log("test")
             var prop = 'height',// this.options.height ? 'height': 'max-height',
                 modalTitle = this.options.modalTitle,
-                modalUrl = this.options.modalUrl,
-                modalData = this.options.modalData,
+            // modalUrl = this.options.modalUrl,
+            // modalData = this.options.modalData,
                 value = this.options.height;
+            var otherHeight=2;//修证边框部分
+            var _header=this.$element.children(".modal-header");
+            var _footer=this.$element.children(".modal-footer");
+            if(_header.size()>0){
+                otherHeight+=_header.outerHeight();
+            }
+            if(_footer.size()>0){
+                otherHeight+=_footer.outerHeight()+parseInt(_footer.css("bottom"));
+            }
+            this.$element.otherHeight=otherHeight;
+
             if (this.options.width) {
                 this.$element.css('width', this.options.width);
                 var that = this;
@@ -113,24 +124,24 @@
             }
             this.$element.css(prop, '');//.find('.modal-body')
             if (value) {
-                this.$element.children(".modal-body").css("height", value - 37 - this.$element.children(".modal-footer").height() - 10 + "px");
+                this.$element.children(".modal-body").css("height", value - this.$element.otherHeight + "px");
             } else {
                 if (this.$element.children(".modal-body").children("div:first").height() > this.options.maxHeight) {
-                    this.$element.children(".modal-body").css("height", this.options.maxHeight - 37 - this.$element.children(".modal-footer").height() - 10 + "px");
+                    this.$element.children(".modal-body").css("height", this.options.maxHeight - this.$element.otherHeight + "px");
                 } else {
                     this.$element.children(".modal-body").css("height", 'auto');
                 }
             }
-            this.$element.css("height", this.$element.children(".modal-body").height() + 37 + this.$element.children(".modal-footer").height() + 42 + "px");
+            this.$element.css("height", this.$element.children(".modal-body").outerHeight() + this.$element.otherHeight + "px");
             var modalOverflow = $(window).height() - 10 < this.$element.height();
             if (modalOverflow || this.options.modalOverflow) {
                 this.$element.css('margin-top', 0).addClass('modal-overflow');
             } else {
                 this.$element.css('margin-top', 0 - this.$element.height() / 2).removeClass('modal-overflow');
             }
+            this.$element.trigger("resize");
         },
         fullScreen: function () {
-            //console.log("Testt");
             var el = this;
             this.$element.find(".modal-header span[data-expand='modal'] i").toggleClass("fa-expand fa-compress");
             if (!el.fullscreen) {
@@ -152,7 +163,7 @@
                 el.fullscreen = false;
 
             }
-            this.$element.children(".modal-body").css("height", this.$element.height() - 37 - this.$element.children(".modal-footer").height() - 10 + "px");
+            this.$element.children(".modal-body").css("height", this.$element.outerHeight() - this.$element.otherHeight + "px");
             return el.$;
         },
         tab: function () {
@@ -308,7 +319,7 @@
     };
     $.fn.modal.defaults = {
         keyboard: true,
-        backdrop: '',//static
+        backdrop: 'static',
         loading: false,
         show: true,
         width: null,

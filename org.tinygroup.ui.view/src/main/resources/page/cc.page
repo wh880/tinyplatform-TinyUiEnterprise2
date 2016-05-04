@@ -1,3 +1,4 @@
+#*
 <script>
     UE.plugins['tinyat'] = function () {
         var me = this,thePlugins = 'tinyat';
@@ -83,4 +84,64 @@
     };
 </script>
 
-#@ueditor("page-body-ontent" "docText" {"imageFormData":"{objectId:1,objectType:2}"})sss#end
+#@ueditor("page-body-ontent" "docText" {"imageFormData":"{objectId:1,objectType:2}"})sss#end*#
+
+<script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<form id="defaultForm" method="post" action="/Home/Record/save" class="form-horizontal bv-form">
+    <fieldset>
+        <legend>考核对像录入</legend>
+        <input type="hidden" name="action" value="add"/><input type="hidden" name="id" value=""/>
+
+        <div class="form-group">
+            <label class="col-lg-3 control-label">身份证号</label>
+
+            <div class="col-lg-7">
+                <select type="text" class="form-control" id="ssid" name="person_id" value="" required></select>
+            </div>
+        </div>
+        <div class="form-group" style="display:none">
+            <label class="col-lg-3 control-label">人员基本信息</label>
+
+            <div class="col-lg-7">
+                <div id="person-info">加载中...</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-3 control-label">考核指标</label>
+
+            <div class="col-lg-7">
+                <select class="select2 form-control" id="target-id" name="target_id" required>
+                    <option value="">请选择</option>
+                    <option value='1'  target_score='100'>义务献血</option><option value='2'  target_score='-100'>烧麦杆</option>                                            </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-lg-3 control-label">考核分数</label>
+
+            <div class="col-lg-7">
+                <input type="text" class="form-control" name="score" id="target-score" value=""/>
+            </div>
+        </div>
+
+    </fieldset>
+
+    <div class="form-group">
+        <div class="col-lg-7 col-lg-offset-3">
+            <button type="submit" class="btn btn-success">提交</button>
+        </div>
+    </div>
+</form>
+
+<a id="relative-btn" modal-title="关联信息" class="btn btn-primary btn-sm" href="#link("/page/aa.pagelet")" data-toggle="modal" data-target="#modal2" data-width="1000" data-height="500">关联</a>
+
+
+#dialog("modal2")
+
+
+<a ly-ajax="layer" data-url="#link("/page/aa.pagelet")" data-width="80%" data-height="90%" data-title="" data-modal="1">关联</a>
+<script>
+    $(function(){
+        $("#relative-btn").attr({"data-width":$(document).width()*0.9,"data-height":$(document).height()*0.9);
+    })
+</script>
