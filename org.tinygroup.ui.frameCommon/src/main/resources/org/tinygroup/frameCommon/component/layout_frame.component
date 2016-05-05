@@ -3,7 +3,7 @@
 *#
 
 #macro getMenuId()
-	#for(var:menuList)#if(var?.url.startsWith(tinyRequestRequestURI))#set(activeMenuId=var?.id?:"")#break#end#end
+	#for(var:menuList)#if(var?.url && tinyRequestRequestURI.startsWith(var?.url))#set(activeMenuId=var?.id?:"")#break#end#end
 #end
 
 #macro TnavItem(navItemId navTitle navItemHref navItemIcon navItemWarning navItemWarningCls)
@@ -13,7 +13,6 @@
 		</a>
 	</li>
 #end
-
 
 #macro TnavItems(menuId title mapInfo)
 	<li class="mm-dropdown ${mapInfo?.get("class")}#if(activeMenuId?.startsWith(menuId+".")) open#set(pagePostionTitle=pagePostionTitle+'<li>'+title+'</li>')#end">
@@ -30,14 +29,14 @@
 
 #macro navDropDownMenu(dropdownMenuId dropdownMenuTitle dropdownMenuIcon navDropDownMenuWarning navDropDownMenuWarningCls)
 	#set(dropdownMenuId=dropdownMenuId+".")
-<li class="mm-dropdown#if(dropdownMenuId && activeMenuId && activeMenuId?.startsWith(dropdownMenuId)) open#set(pagePostionTitle=pagePostionTitle+'<li>'+dropdownMenuTitle+'</li>')#if(activePath)	#set(activePath=activePath+dropdownMenuId)#{else}#set(activePath=dropdownMenuId)#end#end">
-    <a href="javascript:void(0);" data-treeid="${dropdownMenuId}">#if(dropdownMenuIcon)<i class="menu-icon fa ${dropdownMenuIcon}"></i>#end<span class="mm-text">${dropdownMenuTitle}</span>
-		#@navWarning(navDropDownMenuWarningCls)${navDropDownMenuWarning}#end
-    </a>
-    <ul>
-        #bodyContent
-    </ul>
-</li>
+    <li class="mm-dropdown#if(dropdownMenuId && activeMenuId && activeMenuId?.startsWith(dropdownMenuId)) open#set(pagePostionTitle=pagePostionTitle+'<li>'+dropdownMenuTitle+'</li>')#if(activePath)	#set(activePath=activePath+dropdownMenuId)#{else}#set(activePath=dropdownMenuId)#end#end">
+        <a href="javascript:void(0);" data-treeid="${dropdownMenuId}">#if(dropdownMenuIcon)<i class="menu-icon fa ${dropdownMenuIcon}"></i>#end<span class="mm-text">${dropdownMenuTitle}</span>
+            #@navWarning(navDropDownMenuWarningCls)${navDropDownMenuWarning}#end
+        </a>
+        <ul>
+            #bodyContent
+        </ul>
+    </li>
 #end
 #macro navDropDownMenuNoicon(navDropDownMenuNoiconId navDropDownMenuNoiconTitle navDropDownMenuNoiconWarning navDropDownMenuNoiconWarningCls)
 	#@navDropDownMenu(navDropDownMenuNoiconId,navDropDownMenuNoiconTitle,"",navDropDownMenuNoiconWarning,navDropDownMenuNoiconWarningCls)
@@ -82,29 +81,29 @@
 
 
 #macro tipsDropdown(tipsDropdownTip tipsDropdownIcon tipsDropdownTxt tipsDropdownMore tipsDropdownType tipsDropdownHight)
-								<a href="javascript:void(0);${tipsDropdownType}" class="dropdown-toggle" data-toggle="dropdown">
-									<span class="label">${tipsDropdownTip}</span>
-									<i class="nav-icon fa ${tipsDropdownIcon}"></i>
-									<span class="small-screen-text">${tipsDropdownTxt}</span>
-								</a>
+        <a href="javascript:void(0);${tipsDropdownType}" class="dropdown-toggle" data-toggle="dropdown">
+            <span class="label">${tipsDropdownTip}</span>
+            <i class="nav-icon fa ${tipsDropdownIcon}"></i>
+            <span class="small-screen-text">${tipsDropdownTxt}</span>
+        </a>
 
-								<!-- NOTIFICATIONS -->
+        <!-- NOTIFICATIONS -->
 
-								<!-- Javascript -->
-								<script>
-									init.push(function () {
-										$('#main-navbar-${tipsDropdownType}').slimScroll({ height: ${tipsDropdownHight?:"250"}});
-									});
-								</script>
-								<!-- / Javascript -->
+        <!-- Javascript -->
+        <script>
+            init.push(function () {
+                $('#main-navbar-${tipsDropdownType}').slimScroll({ height: ${tipsDropdownHight?:"250"}});
+            });
+        </script>
+        <!-- / Javascript -->
 
-								<div class="dropdown-menu widget-${tipsDropdownType} no-padding" style="width: 300px">
-									<div class="${tipsDropdownType}-list" id="main-navbar-${tipsDropdownType}">
-										#bodyContent
-									</div> <!-- / .notifications-list -->
-									<a href="javascript:void(0);" class="${tipsDropdownType}-link">${tipsDropdownMore}</a>
-								</div>
-								<!-- / .dropdown-menu -->
+        <div class="dropdown-menu widget-${tipsDropdownType} no-padding" style="width: 300px">
+            <div class="${tipsDropdownType}-list" id="main-navbar-${tipsDropdownType}">
+                #bodyContent
+            </div> <!-- / .notifications-list -->
+            <a href="javascript:void(0);" class="${tipsDropdownType}-link">${tipsDropdownMore}</a>
+        </div>
+        <!-- / .dropdown-menu -->
 #end
 
 

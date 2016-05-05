@@ -1,19 +1,19 @@
 <ui-components>
-    <ui-component name="tiny.ui.frameCommon" dependencies="tiny.ui.base,tiny.ui.jqueryui,tiny.ui.switcher,tiny.ui.fontico">
-        <css-resource>
-            /static/org/tinygroup/frameCommon/css/admin.tiny.min.css
-        </css-resource>
-        <js-resource>
-            /static/org/tinygroup/frameCommon/js/app.tiny.min.js,
-            /static/org/tinygroup/frameCommon/js/events.tiny.min.js,
-            /static/org/tinygroup/frameCommon/js/utils.tiny.min.js,
-            /static/org/tinygroup/frameCommon/js/main-menu.tiny.min.js,
-            /static/org/tinygroup/frameCommon/js/main-navbar.tiny.min.js,
-            /static/org/tinygroup/frameCommon/js/jquery.slimscroll-1.3.2.tiny.min.js,
-        </js-resource>
-        <js-codelet>
-            var tinyTplList=[];
-        </js-codelet>
-        <description>TinyUi框架（基础-框架）</description>
-    </ui-component>
+<ui-component name="tiny.ui.frameCommon" dependencies="tiny.ui.base,tiny.ui.jqueryui,tiny.ui.switcher,tiny.ui.fontico">
+    <css-resource>
+        /static/org/tinygroup/frameCommon/css/admin.tiny.min.css
+    </css-resource>
+    <js-resource>
+        /static/org/tinygroup/frameCommon/js/app.tiny.min.js,
+        /static/org/tinygroup/frameCommon/js/events.tiny.min.js,
+        /static/org/tinygroup/frameCommon/js/utils.tiny.min.js,
+        /static/org/tinygroup/frameCommon/js/main-menu.tiny.min.js,
+        /static/org/tinygroup/frameCommon/js/main-navbar.tiny.min.js,
+        /static/org/tinygroup/frameCommon/js/jquery.slimscroll-1.3.2.tiny.min.js,
+    </js-resource>
+    <js-codelet>
+        var tinyTplList=[];
+    </js-codelet>
+    <description>TinyUi框架（基础-框架）</description>
+</ui-component>
 </ui-components>

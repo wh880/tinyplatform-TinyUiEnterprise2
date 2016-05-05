@@ -120,6 +120,10 @@
    */
 
   window.getScreenSize = function($ssw_point, $tsw_point) {
+
+    if($.support.leadingWhitespace==false){
+      return 'desktop';
+    }
     if ($ssw_point.is(':visible')) {
       return 'small';
     } else if ($tsw_point.is(':visible')) {
