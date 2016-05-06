@@ -626,3 +626,55 @@ zNodes${tempid}.push({id:${id}, pId:${pid}, name:"${name}"});
 		dataformat["${var.key}"]="${var.value}";
 	#{end}
 #end
+
+
+
+#macro checkTreeForm(itemName,checkList,optionMap)#set(treeFormId=fmt("tf%d",rand()))
+<ul id="${treeFormId}" class="ztree check-ztree"></ul>
+<input type="hidden" name="${itemName}" value="${checkList}" id="${treeFormId}-input">
+<SCRIPT type="text/javascript">
+    (function(){
+        var setting = {
+            check: {
+                enable: true,
+                chkboxType : { "Y" : "s", "N" : "ps" }
+            },
+            data: {
+                simpleData: {
+                    enable: true
+                }
+            },
+            callback: {
+                onCheck: onCheck
+            }
+        };
+        var zNodes =[
+            #bodyContent
+        ];
+        var _ztree;
+        var checklist="${checkList}";
+
+        var thisList=checklist.split("${optionMap?.split?:"|"}");
+        for(var i=0,l=thisList.length;i<l;i++){
+            for(var j=0,nl=zNodes.length;j<nl;j++){
+                if(zNodes[j].id==thisList[i]){
+                    zNodes[j].checked=true;
+                }
+            }
+        }
+        function onCheck(e, treeId, treeNode) {
+            var checkNodes=_ztree.getCheckedNodes(true);
+            var checkNodeIds=[];
+            for(var i=0,l=checkNodes.length;i<l;i++){
+                checkNodeIds.push(checkNodes[i]["id"])
+            }
+            console.log(checkNodeIds.join("|"));
+            $("#${treeFormId}-input").val(checkNodeIds.join("|"));
+        }
+        $(function(){
+            _ztree=$.fn.zTree.init($("#${treeFormId}"), setting, zNodes);
+        });
+    })();
+
+</SCRIPT>
+#end

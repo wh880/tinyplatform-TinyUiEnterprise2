@@ -1,101 +1,67 @@
-
-<div class="row">
-    <div class="col-xs-4">
-            <ul class="ul">
-                <a href="1">任务一</a>
-                <a href="2">任务一2</a>
-                <a href="3">任务一3</a>
-                <a href="1">任务一4</a>
-                <a href="1">任务一4</a>
-            </ul>
-    </div>
-    <div class="col-xs-8" id="relative-info">
-
-    </div>
+#macro checkTreeForm(itemName,checkList,optionMap)#set(treeFormId=fmt("tf%d",rand()))
+<div class="zTreeDemoBackground left">
+    <ul id="${treeFormId}" class="ztree check-ztree"></ul>
+    <input type="hidden" name="${itemName}" value="${checkList}" id="${treeFormId}-input">
 </div>
+<SCRIPT type="text/javascript">
+    (function(){
+        var setting = {
+            check: {
+                enable: true,
+                chkboxType : { "Y" : "s", "N" : "ps" }
+            },
+            data: {
+                simpleData: {
+                    enable: true
+                }
+            },
+            callback: {
+                onCheck: onCheck
+            }
+        };
+        var zNodes =[
+            #bodyContent
+        ];
+        var _ztree;
+        var checklist="${checkList}";
 
-
-<div class="row">
-    <div class="col-xs-8 col-xs-offset-2"><input type="text" id="search-input" class="form-control search-popover-input"></div>
-</div>
-
-<script>
-
-
-          
-    $(function(){
-        $("#relative-info").on("click","[data-select]",function(){
-
+        var thisList=checklist.split("${optionMap?.split?:"|"}");
+        for(var i=0,l=thisList.length;i<l;i++){
+            for(var j=0,nl=zNodes.length;j<nl;j++){
+                if(zNodes[j].id==thisList[i]){
+                    zNodes[j].checked=true;
+                }
+            }
+        }
+        function onCheck(e, treeId, treeNode) {
+            var checkNodes=_ztree.getCheckedNodes(true);
+            var checkNodeIds=[];
+            for(var i=0,l=checkNodes.length;i<l;i++){
+                checkNodeIds.push(checkNodes[i]["id"])
+            }
+            console.log(checkNodeIds.join("|"));
+            $("#${treeFormId}-input").val(checkNodeIds.join("|"));
+        }
+        $(function(){
+            _ztree=$.fn.zTree.init($("#${treeFormId}"), setting, zNodes);
         });
-        $(document).off("click.search").on("click.search",function(e){
-           if(!$(e.target).hasClass("search-popover-input")){$("#search-input-box").hide()}
-        });
-        $(".search-popover-input").on("input change focus",function(ee){
-            var _event=ee;
-            var _this=$(this);
-            var _dom=$("#search-input-box");
+    })();
 
-            if(_dom.size()==0){
-                $("body").append("<div id='search-input-box' class='search-input-box'></div>");
-            }
-            if(!_dom.is(":visible")){
-                var box=_this.offset();
-                _dom.css({left:box.left,top:box.top+_this.outerHeight(),"width":_this.outerWidth()}).fadeIn();
-            }
+</SCRIPT>
+#end
 
-
-            var val=$(this).val();
-            val= $.trim(val);
-            if(!val){
-                $("#search-input-box").hide();
-            }else{
-                //$("#search-input-box").fadeIn();
-               $.ajax({
-                    url:"#link("/page/picture.pagelet")",
-                    data:{k:val},
-                    success:function(data){
-                        $("#search-input-box").html(data);
-                    }
-                })
-            }
-
-        })
-    })
-</script>
-
-<div id="avatar-modal" class="modal hide fade " tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-header"><span class="modal-expand" data-expand="modal"><i class="fa fa-expand"></i></span><span class="modal-close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-remove"></i></span>
-        <h3>图片剪取</h3></div>
-    <div class="modal-body thin-scroll">
-        <div class="clear">
-            <form class="avatar-form" action="#link(UPLOAD_ACTION_URL)" enctype="multipart/form-data" method="post">
-                <div class="avatar-body">
-                    <div class="avatar-upload"><input class="avatar-src" name="avatar_src" type="hidden"><input class="avatar-data" name="avatar_data" type="hidden"><label for="avatarInput">图片上传</label><input class="avatar-input" id="avatarInput" name="avatar_file" type="file"></div>
-                    <div class="row">
-                        <div class="col-md-9">
-                            <div class="avatar-wrapper"></div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="avatar-preview preview-lg"></div>
-                            <div class="avatar-preview preview-lg" style="border-radius: 50%"></div>
-                        </div>
-                    </div>
-                </div>
-            </form>
-        </div>
-        <div class="clear"></div>
-    </div>
-    <div class="modal-footer">
-        <div class="pull-left pl-15">
-            <div class="btn-group">
-                <button class="btn" data-method="rotate" data-option="-90" type="button" title="Rotate -90 degrees"><i class="fa fa-undo"></i> 向左旋转</button>
-            </div>
-            <div class="btn-group">
-                <button class="btn" data-method="rotate" data-option="90" type="button" title="Rotate 90 degrees"><i class="fa fa-repeat"></i> 向右旋转</button>
-            </div>
-        </div>
-        <div class="pull-right">
-            <button class="btn btn-success btn-block avatar-save" type="submit"><i class="fa fa-save"></i> 保存修改</button>
-        </div>
-    </div>
-</div>
+#@checkTreeForm("authorlist","221,222,23",{"split":","})
+    { id:1, pId:0, name:"随意勾选 1"},
+    { id:11, pId:1, name:"随意勾选 1-1"},
+    { id:111, pId:11, name:"随意勾选 1-1-1"},
+    { id:112, pId:11, name:"随意勾选 1-1-2"},
+    { id:12, pId:1, name:"随意勾选 1-2"},
+    { id:121, pId:12, name:"随意勾选 1-2-1"},
+    { id:122, pId:12, name:"随意勾选 1-2-2"},
+    { id:2, pId:0, name:"随意勾选 2"},
+    { id:21, pId:2, name:"随意勾选 2-1"},
+    { id:22, pId:2, name:"随意勾选 2-2"},
+    { id:221, pId:22, name:"随意勾选 2-2-1"},
+    { id:222, pId:22, name:"随意勾选 2-2-2"},
+    { id:23, pId:2, name:"随意勾选 2-3"}
+#end

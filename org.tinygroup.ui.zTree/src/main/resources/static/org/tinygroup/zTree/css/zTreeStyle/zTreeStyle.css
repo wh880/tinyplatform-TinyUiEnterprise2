@@ -661,3 +661,5 @@ div#rMenu ul li {
     border: 0;
     overflow: auto
 }
+
+.check-ztree.ztree li span.button.ico_docu,.check-ztree.ztree li span.button.ico_open,.check-ztree.ztree li span.button.ico_close{display:none}
