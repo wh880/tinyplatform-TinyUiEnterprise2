@@ -55,6 +55,12 @@
             <groupId>org.tinygroup</groupId>
             <artifactId>org.tinygroup.ui.typography</artifactId>
             <version>${project.version}</version>
-        </dependency>      
+        </dependency>
+
+        <dependency>
+            <groupId>org.tinygroup</groupId>
+            <artifactId>org.tinygroup.ui.macro</artifactId>
+            <version>${project.version}</version>
+        </dependency>
     </dependencies>
 </project>
