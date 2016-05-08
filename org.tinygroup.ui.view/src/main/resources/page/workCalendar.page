@@ -1,3 +1,0 @@
-#@uiPageTitle()背景日历#end
-#showExample("/page/calendar/workCalendar.page" )
-#@showPack()org.tinygroup.ui.fullCalendar#end

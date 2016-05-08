@@ -1,3 +1,0 @@
-#if(data)
-${session.setAttribute("menuList", jsonConvert(data));}
-#end

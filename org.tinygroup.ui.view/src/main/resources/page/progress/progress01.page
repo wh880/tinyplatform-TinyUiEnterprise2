@@ -1,3 +1,0 @@
-#@processBar("40" "progress-bar-success  progress-bar-striped active")#end
-#@processBar("48" "progress-bar-info progress-bar-striped")#end
-#@processBar("60" "progress-bar-warning")#end

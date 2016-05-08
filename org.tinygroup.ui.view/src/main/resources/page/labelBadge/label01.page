@@ -1,6 +1,0 @@
-#@labelUnit("default")默认#end
-#@labelUnit("primary")主要#end
-#@labelUnit("success")成功#end
-#@labelUnit("info")信息#end
-#@labelUnit("warning")错误#end
-#@labelUnit("danger")危险#end

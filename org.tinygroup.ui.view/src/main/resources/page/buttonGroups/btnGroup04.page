@@ -1,9 +1,0 @@
-<div class="btn-group">
-    #@btnsDownTitle("btn-success")成功#end
-    #@dropDownBody()
-        #@dropDownItem()<a href="#">下拉一</a>#end
-        #@dropDownItem()<a href="#">下拉二</a>#end
-        #@dropDownItem({"role":"separator","class":"divider"})<a href="#">下拉三</a>#end
-        #@dropDownItem()<a href="#">下拉四</a>#end
-    #end
-</div><!-- /btn-group -->

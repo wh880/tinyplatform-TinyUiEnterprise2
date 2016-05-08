@@ -1,4 +1,0 @@
-<h2>1 Bootstrap 多媒体对象（Media Object）</h2>
-#showExample("/page/media/media01.page")
-
-#@showPack()org.tinygroup.ui.bootstrap#end

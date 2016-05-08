@@ -1,8 +1,0 @@
-<ui-components>
-    <ui-component name="tiny.ui.example" dependencies="tiny.ui.base">
-        <css-resource>
-            /static/org/tinygroup/example/css/example.tiny.min.css,
-        </css-resource>
-        <description>案例 (www.h-ui.net)</description>
-    </ui-component>
-</ui-components>

@@ -1,6 +1,0 @@
-#@zoomPicContainer()
-    #zoomImgItem("/img/zoomPic/image01.jpg" "BALLACKHUI 高级程序员" "Tinyframwork用户手册奥")
-    #zoomImgItem("/img/zoomPic/image04.jpg" "ATIZOSE 高级程序员" "欢迎来到Tiny业务需求说明书")
-    #zoomImgItem("/img/zoomPic/image06.jpg" "NISHIHE 高级程序员" "数据库负载均衡框架开源啦 奥")
-    #clearSty()
-#end

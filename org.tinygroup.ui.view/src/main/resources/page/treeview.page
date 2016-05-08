@@ -1,9 +1,0 @@
-<h2>1 jquery树形菜单</h2>
-#@showInfo() <code>温馨提示：</code>整体调用相应的宏即可。#end
-#showExample("/page/treeview/treeview01.page")
-
-<h2>2 Treeview树</h2>
-#@showInfo() <code>温馨提示：</code>整体调用相应的宏即可。#end
-#showExample("/page/treeview/treeview02.page")
-
-#@showPack()org.tinygroup.ui.treeview#end

@@ -1,4 +1,0 @@
-#@tButton("btn-default btn-lg")大按钮#end
-#@tButton("btn-primary")默认按钮#end
-#@tButton("btn-info btn-sm")小按钮#end
-#@tButton("btn-warning btn-xs")超小按钮#end

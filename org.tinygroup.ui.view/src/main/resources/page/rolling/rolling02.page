@@ -1,7 +1,0 @@
-#@rollBoxs("2000000" "500" "3")
-        <li><img width="170" height="143" title="" src="#link("/img/pic.jpg")"></li>
-        <li><img width="170" height="143" title="" src="#link("/img/pic.jpg")"></li>
-        <li><img width="170" height="143" title="" src="#link("/img/pic.jpg")"></li>
-        <li><img width="170" height="143" title="" src="#link("/img/pic.jpg")"></li>
-        <li><img width="170" height="143" title="" src="#link("/img/pic.jpg")"></li>
-#end

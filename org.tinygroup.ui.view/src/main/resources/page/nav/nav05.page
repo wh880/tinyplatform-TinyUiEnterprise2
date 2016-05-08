@@ -1,6 +1,0 @@
-<div class="four steps">
-	#@stepItem()第一步#end
-	#@stepItem("active")第二步#end
-	#@stepItem("disabled")第三步#end
-	#@stepItem("disabled")第四步#end
-</div>

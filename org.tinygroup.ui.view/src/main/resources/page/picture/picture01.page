@@ -1,5 +1,0 @@
-#@superbox()
-    #for(i:[1..24])
-        #superboxList("/img/superbox/superbox-thumb-"+i+".jpg" "/img/superbox/superbox-full-"+i+".jpg")
-    #end
-#end

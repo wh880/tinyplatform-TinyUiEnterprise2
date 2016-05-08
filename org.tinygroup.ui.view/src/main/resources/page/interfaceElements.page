@@ -1,5 +1,0 @@
-<h2>1 字数统计</h2>
-#@showInfo()调用下面的代码使用即可。#end
-#showExample("/page/interfaceElement/element01.page")
-
-#@showPack()org.tinygroup.ui.base#end

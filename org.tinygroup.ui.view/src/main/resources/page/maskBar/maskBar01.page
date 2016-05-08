@@ -1,4 +1,0 @@
-#@maskWraper("width:300px;height:250px; border:solid 1px #ddd;")
-	#maskImg("/img/AD-300x250.gif",300,250)
-	#@maskBar()遮罩条#end
-#end

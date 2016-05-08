@@ -1,3 +1,0 @@
-#macro buttonAnimation(caption dataTra btClass)
-	<input class="btn btn-primary radius animated ${btClass}" type="button"#if(caption) value="${caption}"#end data-tra="${dataTra}"/>
-#end

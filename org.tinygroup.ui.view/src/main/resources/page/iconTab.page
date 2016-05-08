@@ -1,4 +1,0 @@
-<h2>1 图标控制</h2>
-#showExample("/page/iconTab/iconTab.page")
-
-#@showPack()org.tinygroup.ui.icontab#end

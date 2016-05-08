@@ -1,8 +1,0 @@
-
-/*table th带背景 圆角*/
-.table{border-radius:4px;}
-.table-bordered>thead>tr>th, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td, .table-bordered>tbody>tr>td, .table-bordered>tfoot>tr>td{border-right:none;border-bottom:none;}
-.table-bordered>thead>tr>th{background:#f9f9f9}
-/*table th下边框为1px 居中*/
-.table>thead>tr>th{border-bottom:#ddc 1px solid}
-.text-center>tr>th{text-align:center}

@@ -1,5 +1,0 @@
-<h2>1 燃尽图</h2>
-#@showInfo() <code>温馨提示：</code>调用需要宏代码，添加依赖即可生效。#end
-#showExample("/page/burndownChart/burndownChart.page")
-
-#@showPack()org.tinygroup.ui.burndownchart#end
