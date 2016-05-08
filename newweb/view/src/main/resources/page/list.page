@@ -1,0 +1,96 @@
+#@widgetGrid()
+    #@widgetLayout(3)#end
+    #@widgetLayout(3)#end
+    #@widgetLayout(3)#end
+    #@widgetLayout(3)#end
+    #for(var:[1..14])
+        #@widgetItem()
+            #@widgetItemHead()
+            <span class="widget-icon">#faIcon("map-marker")</span>
+            <h2>主要任务</h2>
+            <div class="widget-toolbar">
+                <div class="btn-group">
+                    <button class="btn dropdown-toggle btn-xs btn-default" data-toggle="dropdown">
+                        状态 #faIcon("caret-down") </button>
+                        <ul class="dropdown-menu pull-right js-status-update">
+                            <li><a href="javascript:void(0);">#faIcon("circle text-danger") 未开始</a></li>
+                            <li><a href="javascript:void(0);">#faIcon("circle text-info") 进行中</a></li>
+                            <li><a href="javascript:void(0);">#faIcon("circle text-success") 已结束</a></li>
+                        </ul>
+                </div>
+            </div>
+            #end
+            #@widgetItemBody()
+            <div class="sortable-handle t-list-item">
+                    <span class="check-box">
+                        #tCheckbox("a", {"class":"warning"})
+                    </span>
+                <div class="main-info">
+                    <div class="content-wrapper">
+                        <div class="img-circle"><img src="#link("/img/nopic.png")" alt="" width="26" height="26"></div>
+                        <div class="infos-content">
+                             #@lAjax("AJAX加载" "/page/tinyForm.pagelet")这是一条已完成的任务#end
+                        </div>
+                    </div>
+                    <div class="info-wrapper clearfix">
+                        <span class="label label-success">#faIcon("calendar-minus-o") 2016-01-22</span>
+                    </div>
+                </div>
+            </div>
+            #for(var2:[1..(15-var)])
+            <div class="sortable-handle t-list-item">
+                    <span class="check-box">
+                        #tCheckbox("a", {"class":"warning"})
+                    </span>
+                <div class="main-info">
+                    <div class="content-wrapper">
+                        <div class="img-circle"><img src="#link("/img/nopic.png")" alt="" width="26" height="26"></div>
+                        <div class="infos-content">
+                            这是一条已完成的任务
+                        </div>
+                    </div>
+                    <div class="info-wrapper clearfix">
+                        <span class="label label-warning">#faIcon("calendar-minus-o") 2016-01-20</span>
+                    </div>
+                </div>
+            </div>
+            #end
+            #end
+        #end
+    #end
+<script>
+    $(function(){
+        var layouts=$("#widget-grid article");
+        function getMiniCol(){
+            var reItem=0;
+            var minHeight=9999999999;
+            layouts.each(function(e){
+                var sHeight=$(this).height();
+                if(minHeight>sHeight){
+                    minHeight=sHeight;
+                    reItem=e;
+                }
+            })
+            return reItem;
+        }
+        $("#widget-grid .jarviswidget").each(function(e){
+            $(this).removeClass("hide");
+            layouts.eq(getMiniCol()).append(this);
+        })
+        $("#widget-grid").on("click",".t-list-item",function(e){
+            var check_box=$(this).find(".checkbox-custom>input[type=checkbox]").get(0);
+            if(!$(e.target.parent).hasClass("checkbox-custom")){
+                check_box.checked=!check_box.checked
+            }
+        });
+
+//        $('#widget-grid').masonry({
+//            // options
+//            itemSelector: 'article',
+//            //columnWidth: 200,
+//        });
+    })
+
+</script>
+#end
+

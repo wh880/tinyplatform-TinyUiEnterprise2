@@ -1,0 +1,270 @@
+<style type="text/css">
+    #content-wrapper {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .show-stats .progress {
+        height: 7px;
+        border-radius: 0;
+        margin-top: 3px;
+        margin-bottom: 15px
+    }
+</style>
+#@widgetGrid()
+    #@widgetItem({"colorbutton":false})
+        #@widgetItemHead()
+        <span class="widget-icon"><i class="fa  fa-bar-chart"></i></span>
+        <h2>即时动态</h2>
+        <ul class="nav nav-tabs pull-right" id="myTab">
+            <li class="active"><a data-toggle="tab" href="#s1">#faIcon("clock-o") <span
+                    class="hidden-mobile hidden-tablet">即时状态</span></a></li>
+            <li><a data-toggle="tab" href="#s2">#faIcon("facebook") <span
+                    class="hidden-mobile hidden-tablet">社会网络</span></a></li>
+        </ul>
+        #end
+        #@widgetItemBody()
+
+        <div id="myTabContent" class="tab-content">
+            <div class="tab-pane fade active in padding-10 no-padding-bottom" id="s1">
+                <div class="row no-space">
+                    <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+                        <div style="margin-bottom:-50px;">
+                            #@highChart("barColumn" "min-width:100%;height:260px")#end</div>
+                        <script type="text/javascript">
+                            $(function () {
+                                var colors = Highcharts.getOptions().colors,
+                                        categories = ['2015-10-28', '2015-10-29', '2015-10-30', '2015-10-31'],
+                                        name = '每天解决BUG',
+                                        data = [{
+                                            y: 23,
+                                            color: colors[3],
+                                            drilldown: {
+                                                color: colors[3]
+                                            }
+                                        }, {
+                                            y: 8,
+                                            color: colors[4],
+                                            drilldown: {
+                                                color: colors[3]
+                                            }
+                                        }, {
+                                            y: 12,
+                                            color: colors[8],
+                                            drilldown: {
+                                                color: colors[3]
+                                            }
+                                        },
+                                            , {
+                                                y: 15,
+                                                color: colors[9],
+                                                drilldown: {
+                                                    color: colors[3]
+                                                }
+                                            },];
+
+                                var chart = $('#barColumn').highcharts({
+                                            chart: {
+                                                type: 'column'
+                                            },
+                                            title: {
+                                                text: '每天解决BUG'
+                                            },
+                                            xAxis: {
+                                                categories: categories
+                                            },
+
+                                            tooltip: {
+                                                formatter: function () {
+                                                    var point = this.point,
+                                                            s = this.x + '<br/>解决BUG<b>' + this.y + '</b>个<br/>';
+                                                    return s;
+                                                }
+                                            },
+                                            series: [{
+                                                name: name,
+                                                data: data,
+                                                color: 'white'
+                                            }],
+
+                                        })
+                                        .highcharts(); // return chart
+                            });
+                        </script>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 show-stats">
+                        <div class="row">
+                            <div class="col-xs-6 col-sm-6 col-md-12 col-lg-12">
+                                                        <span class="text">我的任务<span
+                                                                class="pull-right">130/200</span> </span>
+                                <div class="progress">
+                                    <div class="progress-bar bg-color-blueDark"
+                                         style="width:65%;"></div>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-12 col-lg-12">
+                                <span class="text">数据传输<span class="pull-right">440GB</span> </span>
+                                <div class="progress">
+                                    <div class="progress-bar bg-color-blue"
+                                         style="width:34%;"></div>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-12 col-lg-12">
+                                <span class="text">修复BUG<span class="pull-right">77%</span> </span>
+                                <div class="progress">
+                                    <div class="progress-bar bg-color-blue"
+                                         style="width:77%;"></div>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-12 col-lg-12">
+                                <span class="text">用户测试<span class="pull-right">8天</span> </span>
+                                <div class="progress">
+                                    <div class="progress-bar bg-color-greenLight"
+                                         style="width:84%;"></div>
+                                </div>
+                            </div>
+                            <span class="show-stat-buttons ">
+                                <span class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                    <a href="javascript:void(0);" class="btn btn-block hidden-xs btn-default">生成PDF</a> </span>
+                                <span class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                    <a href="javascript:void(0);" class="btn btn-block hidden-xs btn-default">报告问题</a> </span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane fade pd-10" id="s2">
+                #@highChart("dynamicContainer" "min-width:100%;height:232px")#end
+                <script type="text/javascript">
+                    $(function () {
+                        $(document).ready(function () {
+                            Highcharts.setOptions({
+                                global: {
+                                    useUTC: false
+                                }
+                            });
+
+                            var chart;
+                            $('#dynamicContainer').highcharts({
+                                chart: {
+                                    type: 'spline',
+                                    animation: Highcharts.svg, // 不要在旧动画IE
+                                    marginRight: 10,
+                                    events: {
+                                        load: function () {
+
+                                            // 设置图表每秒钟的更新
+                                            var series = this.series[0];
+                                            setInterval(function () {
+                                                var x = (new Date()).getTime(), // 当前时间
+                                                        y = Math.random();
+                                                series.addPoint([x, y], true, true);
+                                            }, 1000);
+                                        }
+                                    }
+                                },
+                                title: {
+                                    text: '现场随机数据'
+                                },
+                                xAxis: {
+                                    type: 'datetime',
+                                    tickPixelInterval: 150
+                                },
+                                yAxis: {
+                                    title: {
+                                        text: 'Value'
+                                    },
+                                    plotLines: [{
+                                        value: 0,
+                                        width: 1,
+                                        color: '#808080'
+                                    }]
+                                },
+                                tooltip: {
+                                    formatter: function () {
+                                        return '<b>' + this.series.name + '</b><br/>' +
+                                                Highcharts.dateFormat('%Y-%m-%d %H:%M:%S', this.x) + '<br/>' +
+                                                Highcharts.numberFormat(this.y, 2);
+                                    }
+                                },
+                                legend: {
+                                    enabled: false
+                                },
+                                exporting: {
+                                    enabled: false
+                                },
+                                series: [{
+                                    name: 'Random data',
+                                    data: (function () {
+                                        // 生成随机数据的数组
+                                        var data = [],
+                                                time = (new Date()).getTime(),
+                                                i;
+
+                                        for (i = -19; i <= 0; i++) {
+                                            data.push({
+                                                x: time + i * 1000,
+                                                y: Math.random()
+                                            });
+                                        }
+                                        return data;
+                                    })()
+                                }]
+                            });
+                        });
+
+                    });
+                </script>
+            </div>
+
+        #end
+    #end
+
+    #@widgetItem()
+        #@widgetItemHead()
+            <span class="widget-icon"><i class="fa fa-comments txt-color-white"></i></span>
+            <h2>地域分布</h2>
+            <div class="widget-toolbar">
+                <div class="btn-group">
+                    <button class="btn dropdown-toggle btn-xs btn-success" data-toggle="dropdown">
+                        下拉&nbsp;#faIcon("caret-down")</button>
+                    <ul class="dropdown-menu pull-right js-status-update">
+                        <li><a href="javascript:void(0);">#faIcon("circle")&nbsp;下拉一</a>
+                        </li>
+                        <li><a href="javascript:void(0);"><i
+                                class="fa fa-circle"></i>&nbsp;下拉二</a>
+                        </li>
+                        <li><a href="javascript:void(0);"><i
+                                class="fa fa-circle fa-circle"></i>&nbsp;下拉三</a></li>
+                    </ul>
+                </div>
+            </div>
+        #end
+        #@widgetItemBody()
+            2222
+        #end
+    #end
+
+    #@widgetItem()
+        #@widgetItemHead()
+            <span class="widget-icon">#faIcon("map-marker")</span>
+            <h2>项目动态</h2>
+            <div class="widget-toolbar hidden-mobile">
+                <span class="onoffswitch-title">#faIcon("location-arrow")&nbsp;实时</span>
+                    <span class="onoffswitch"> <input type="checkbox" name="onoffswitch"
+                                                      class="onoffswitch-checkbox" checked="checked"
+                                                      id="myonoffswitch"/> <label class="onoffswitch-label"
+                                                                                  for="myonoffswitch"> <span
+                            class="onoffswitch-inner" data-swchon-text="是"
+                            data-swchoff-text="否"></span> <span
+                            class="onoffswitch-switch"></span> </label>
+                    </span>
+            </div>
+        #end
+        #@widgetItemBody()
+            3333
+        #end
+    #end
+
+#end

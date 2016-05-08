@@ -1,0 +1,49 @@
+<nav id="breadcrumbs" style="margin-bottom:10px;">
+    <h4>全部空间</h4>
+</nav>
+#@gridSysRow()
+    #@gridSysCol(12)
+    <ul class="spaces-box">
+        <li style="background-image:url(../img/pic-list/cover-bg2.jpg)">
+            <div class="project-info">
+                <div class="edit-set pull-right">
+                    <a href="#" title="收藏" class="fa fa-star"></a>&nbsp;
+                    <a href="#" title="删除" class="fa fa-trash"></a>
+                </div>
+                <p class="project-name">tiny框架</p>
+                <p class="project-desc">让程序更简单...</p>
+                <p class="visibility-label">#faIcon("futbol-o") 公开</p>
+            </div>
+        </li>
+        <li style="background-image:url(../img/pic-list/cover-bg0.jpg)">
+            <div class="project-info">
+                <div class="edit-set pull-right">
+                    <a href="#" title="收藏" class="fa fa-star"></a>&nbsp;
+                    <a href="#" title="删除" class="fa fa-trash"></a>
+                </div>
+                <p class="project-name">tiny框架</p>
+                <p class="project-desc">让程序更简单...</p>
+                <p class="visibility-label">#faIcon("futbol-o") 公开</p>
+            </div>
+        </li>
+        <li style="background-image:url(../img/pic-list/cover-bg2.jpg)">
+            <div class="project-info">
+                <div class="edit-set pull-right">
+                    <a href="#" title="收藏" class="fa fa-star"></a>&nbsp;
+                    <a href="#" title="删除" class="fa fa-trash"></a>
+                </div>
+                <p class="project-name">tiny框架</p>
+                <p class="project-desc">让程序更简单...</p>
+                <p class="visibility-label">#faIcon("futbol-o") 公开</p>
+            </div>
+        </li>
+        <li class="add-project-button">
+            #@aModal("#myModal" "创建空间" "800" "400" "create-project-handler" "")
+                <p> #faIcon("plus-circle")</p>
+                <p><span>创建新项目</span></p>
+            #end
+        </li>
+    </ul>
+    #end
+#end
+#dialog("myModal")

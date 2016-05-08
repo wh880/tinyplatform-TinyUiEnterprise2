@@ -1,0 +1,11 @@
+<ui-components>
+    <ui-component name="tiny.ui.tpl.purple" dependencies="tiny.ui.frameCommon">
+        <css-resource>
+            /static/org/tinygroup/themes/purple.tiny.min.css
+        </css-resource>
+        <js-codelet>
+            tinyTplList.push({sort:10, name: 'purple', title: '紫色', img: contextPath+'/img/themes/purple.png' });
+        </js-codelet>
+        <description>TinyUi框架模板紫色</description>
+    </ui-component>
+</ui-components>

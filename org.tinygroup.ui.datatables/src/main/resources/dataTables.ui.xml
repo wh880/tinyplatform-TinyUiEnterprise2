@@ -1,0 +1,13 @@
+<ui-components>
+    <ui-component name="tiny.ui.datatables" dependencies="tiny.ui.table">
+        <css-resource>
+            /static/org/tinygroup/dataTables/css/jquery.dataTables.tiny.min.css,
+        </css-resource>
+        <js-resource>
+            /static/org/tinygroup/dataTables/js/jquery.dataTables.min.js,
+            /static/org/tinygroup/dataTables/js/dataTables.fixedHeader.min.js,
+            /static/org/tinygroup/dataTables/js/dataTables.bootstrap.tiny.min.js
+        </js-resource>
+        <description>DataTables数据表格 (http://dt.thxopen.com)</description>
+    </ui-component>
+</ui-components>

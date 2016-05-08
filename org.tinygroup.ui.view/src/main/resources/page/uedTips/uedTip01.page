@@ -1,0 +1,4 @@
+#@uedPrompt("btn-default" "图标1" "1000")服务器繁忙，请稍后再试。#end
+#@uedOK("btn-default" "图标2" "1000")设置成功！#end
+#@uedError("btn-default" "图标3" "1000")数据拉取失败#end
+#@uedLoading("btn-default" "图标4" "2000")正在加载中，请稍后...#end

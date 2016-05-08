@@ -1,0 +1,13 @@
+<div class="btn-group">
+  #@tButton("btn-default")按钮 1#end
+  #@tButton("btn-default")按钮 2#end
+
+    <div class="btn-group">
+      #@dropDownTitle()下拉#end
+      #@dropDownBody()
+        #@dropDownItem()<a href="#">下拉链接 1</a>#end
+        #@dropDownItem({"class":"disabled"})<a href="#">下拉链接 2</a>#end
+        #@dropDownItem()<a href="#">下拉链接 3</a>#end
+      #end
+    </div>
+</div>

@@ -1,0 +1,3 @@
+#@uiPageTitle()Tabs展现#end
+#showExample("/page/tabShow/5.1.page")
+#@showPack() org.tinygroup.ui.tabshow #end

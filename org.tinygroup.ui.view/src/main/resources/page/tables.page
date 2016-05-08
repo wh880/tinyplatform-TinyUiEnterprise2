@@ -1,0 +1,91 @@
+#@h2()1 基本表格#end
+#@p()为任意 &lt;table&gt; 标签添加 <code>.table</code> 类是为其赋予基本的样式。此代码较为简单不建议宏封装（封装宏后代码不仅没减少，可读性还不友好），在父元素table后追加<code>.table-hover</code>类可以让 &lt;tbody&gt; 中的每一行对鼠标悬停状态作出响应。#end
+#showExample("/page/tables/tables01.page")
+
+#@h2()2 条纹状表格#end
+#@p()通过在父元素.table后追加<code>.table-striped</code> 类可以给 $!{"<tbody>"} 之内的每一行增加斑马条纹样式。#end
+#showExample("/page/tables/tables02.page")
+
+#@h2()3 带外边框表格#end
+#@p()通过在父元素.table后追加<code>.table-bordered</code> 类可以给table添加外边框。#end
+#showExample("/page/tables/tables03.page")
+
+#@h2()4 奇数行背景设为浅灰色表格#end
+#@p()通过在父元素.table后追加<code>.table-bordered .table-striped</code> 类可以给奇数行增加浅灰色背景。鼠标悬停样式追加<code>.table-hover</code>即可。#end
+#showExample("/page/tables/tables04.page")
+
+#@h2()5 表格定义tr背景色#end
+#@p()通过这些状态类可以为行或单元格设置颜色。#end
+<table class="table table-bordered">
+    <colgroup>
+        <col class="col-xs-1">
+        <col class="col-xs-7">
+    </colgroup>
+    <thead>
+    <tr>
+        <th>Class</th>
+        <th>描述</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <th>
+            <code>.active</code>
+        </th>
+        <td>鼠标悬停在行或单元格上时所设置的颜色</td>
+    </tr>
+    <tr>
+        <th>
+            <code>.success</code>
+        </th>
+        <td>标识成功或积极的动作</td>
+    </tr>
+    <tr>
+        <th>
+            <code>.info</code>
+        </th>
+        <td>标识普通的提示信息或动作</td>
+    </tr>
+    <tr>
+        <th>
+            <code>.warning</code>
+        </th>
+        <td>标识警告或需要用户注意</td>
+    </tr>
+    <tr>
+        <th>
+            <code>.danger</code>
+        </th>
+        <td>标识危险或潜在的带来负面影响的动作</td>
+    </tr>
+    </tbody>
+</table>
+#showExample("/page/tables/tables05.page")
+
+#@h2()6 表格对齐方式#end
+#@p()通过添加类展现对齐方式。#end
+<table class="table table-bordered">
+    <thead class="text-center">
+    <tr>
+        <th>对齐方式</th>
+        <th>class=""</th>
+    </tr>
+    </thead>
+    <tbody >
+    <tr>
+        <td>居左</td>
+        <td>默认或text-left</td>
+    </tr>
+    <tr class="text-center">
+        <td>居中</td>
+        <td>text-cente</td>
+    </tr>
+    <tr class="text-right">
+        <td>居右</td>
+        <td>text-right</td>
+    </tr>
+    </tbody>
+</table>
+#showExample("/page/tables/tables06.page")
+
+#@showPack()org.tinygroup.ui.table#end

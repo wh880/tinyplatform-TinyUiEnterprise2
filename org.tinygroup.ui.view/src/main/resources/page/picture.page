@@ -1,0 +1,13 @@
+<h2>1 响应式图库</h2>
+#showExample("/page/picture/picture01.page")
+#@showPack()org.tinygroup.ui.superbox#end
+
+<h2>2 Bootstrap 三种图片应用</h2>
+#showExample("/page/picture/picture02.page")
+#@showPack()org.tinygroup.ui.bootstrap#end
+
+<h2>3 图片变焦收缩</h2>
+#showExample("/page/picture/picture03.page")
+#@showPack()org.tinygroup.ui.zoompic#end
+
+

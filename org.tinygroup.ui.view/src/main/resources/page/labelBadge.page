@@ -1,0 +1,9 @@
+<h2>1 标签</h2>
+#@showInfo()调用下面的宏即可，没有自己想用的，可以添加参数来定义自己专属标签。#end
+#showExample("/page/labelBadge/label01.page")
+
+<h2>2 标号</h2>
+#@showInfo()调用下面的宏即可，没有自己想用的，可以添加参数来定义自己专属标号#end
+#showExample("/page/labelBadge/label02.page")
+
+#@showPack()org.tinygroup.ui.bootstrap#end

@@ -1,0 +1,50 @@
+#macro error500Box(errorBoxId errorBoxClass)
+		<div#if(errorBoxId) id="${errorBoxId}"#end class="row padding-10 ${errorBoxClass}">
+			<div class="text-center error-box">
+				#bodyContent
+			</div>
+		</div>
+#end
+
+#macro head500(head500Id)
+	<h1#if(head500Id) id="${head500Id}"#end class="error-text tada animated">
+		<i class="fa fa-times-circle text-danger error-icon-shadow"></i> 
+		#bodyContent
+	</h1>
+	
+#end
+
+#macro headdesc(head2Id)
+	<h2#if(head2Id) ${head2Id}#end class="font-xl"><strong>
+		#bodyContent
+	</strong></h2>
+#end
+
+#macro errorLead(leadtext leaddesc)
+	<p class="lead semi-bold">
+							#@strong()${leadtext}#end#br()#br()
+							#@small()
+								${leaddesc}
+							#end
+	</p>
+#end
+
+#macro errorlinkMenu(menuId)
+	<ul#if(menuId) id="${menuId}"#end class="error-search text-left font-md">
+		#bodyContent
+	</ul>
+#end
+
+#macro errorlinkItem(linkitemHref)
+	<li>
+		<a href="${linkitemHref}">
+			#@small()
+				#bodyContent
+			#end
+		</a>
+	</li>
+#end
+
+#macro errorIcon(iconClass)
+	<i class="fa ${iconClass}"></i>
+#end

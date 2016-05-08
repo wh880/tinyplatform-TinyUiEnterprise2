@@ -1,0 +1,146 @@
+//
+// Themes / White / Main navbar
+// --------------------------------------------------
+
+
+#main-navbar {
+  // Header
+  //
+
+  .navbar-header a {
+    color: @navbar-text-color;
+  }
+
+
+  // Collapse
+  //
+
+  .navbar-header,
+  .navbar-collapse {
+    background-color: #f78c40;
+    background-image: linear-gradient(to bottom, #f78c40, #d67632);
+    .box-shadow(none);
+  }
+
+  .navbar-collapse {
+    border-top: 1px solid darken(@navbar-color, 5%);
+  }
+
+  .dropdown > a,
+  .dropdown-menu > li > a,
+  .nav > li > a {
+    color: @navbar-text-color;
+  }
+
+
+  // Navbar buttons
+  //
+
+  .navbar-toggle {
+    color: @navbar-text-color;
+  }
+
+  #main-menu-toggle {
+    background-image: linear-gradient(to bottom, #dd7c37, #b9662b);
+    color: #fff !important;
+    text-shadow: 0 -1px #985813;
+    color: #fff;
+
+    .fa:before {
+      color:#fff;
+    }
+  }
+
+  // Navbar Items
+  //
+
+  li + li,
+  .nav + .nav,
+  .nav + .right {
+    border-top: 1px solid darken(@navbar-color, 5%);
+  }
+
+  .dropdown.open > a {
+    border-top: 1px solid darken(@navbar-color, 12%);
+    border-bottom: 1px solid darken(@navbar-color, 8%);
+    margin-top: -1px;
+    background: darken(@navbar-color, 5%);
+  }
+
+
+  // Navbar forms
+  //
+
+  form.navbar-form {
+    .box-shadow(none);
+
+    .form-control {
+      background: #fff;
+      border-color: @navbar-color;
+      border-radius: 999999px;
+    }
+  }
+}
+
+
+// Desktops
+//
+
+@media (min-width: @screen-tablet) {
+  #main-navbar {
+
+    // Navbar Items
+    //
+
+    li + li,
+    .nav + .nav,
+    .nav + .right {
+      border-top: none;
+    }
+
+
+    // Collapse
+    //
+
+    .navbar-collapse {
+      border-top: none;
+    }
+
+
+    // Dropdowns
+    //
+    .nav > li > a { color: #fff !important;}
+    .nav > li > a {
+      &:hover {
+        background-image: linear-gradient(to bottom, #dd7c37, #b9662b);
+        color: #fff !important;
+      }
+    }
+    .nav > li.active > a{
+      background-image: linear-gradient(to bottom, #dd7c37, #b9662b);
+      color: #fff !important;
+    }
+    .dropdown.open > a {
+      border-top: none;
+      border-bottom: none;
+      margin-top: 0;
+      background-image: linear-gradient(to bottom, #dd7c37, #b9662b);
+    }
+
+    .dropdown-menu {
+      border-radius: @border-radius-base;
+      margin-top: 3px;
+      padding: 5px 0;
+
+      > li > a {
+        color: #fff !important;
+
+        &:hover {
+          background: #eee;
+          color:#666;
+        }
+      }
+    }
+  }
+}
+

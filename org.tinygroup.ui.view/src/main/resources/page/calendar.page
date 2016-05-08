@@ -1,0 +1,3 @@
+#@uiPageTitle()fullCalendar日程表#end
+#showExample("/page/calendar/fullCalendar.page" )
+#@showPack()org.tinygroup.ui.fullCalendar#end

@@ -1,0 +1,17 @@
+#*
+* annulusChart easy饼图
+*
+* * @param annulusdata  data数据
+* * @param annulusPercentage  单位
+* * @param annulusMap  参数Map
+*#
+#macro annulusChart(annulusdata annulusPercentage annulusMap)
+<p class="percentage" data-percent="${annulusdata}" #mapToHtml(annulusMap)><span>#bodyContent</span>${annulusPercentage}</p>
+<script type="text/javascript">
+    var initPieChart = function() {
+        $('.percentage').easyPieChart({
+            animate: 1000
+        });
+    };
+</script>
+#end

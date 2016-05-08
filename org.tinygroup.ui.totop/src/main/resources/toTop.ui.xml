@@ -1,0 +1,11 @@
+<ui-components>
+    <ui-component name="tiny.ui.totop" dependencies="tiny.ui.jquery">
+        <css-resource>
+            /static/org/tinygroup/toTop/css/toTop.tiny.min.css,
+        </css-resource>
+        <js-resource>
+            /static/org/tinygroup/toTop/js/toTop.tiny.min.js,
+        </js-resource>
+        <description>返回顶部 (www.h-ui.net)</description>
+    </ui-component>
+</ui-components>

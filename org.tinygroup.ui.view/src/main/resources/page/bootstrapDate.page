@@ -1,0 +1,23 @@
+#@uiPageTitle()日期控件#end
+#@showInfo()温馨提示：单日期选择控件，有四参数
+    <ul class="mt-20">
+        <li>第一参数为表单Name值</li>
+        <li>第二参数为表单默认值</li>
+        <li>第三参数为时间日期格式具体：yMdHmswW分别代表年月日时分秒星期周,你可以任意组合这些元素来自定义你个性化的日期格式</li>
+        <li>第四参数为一MAP值可以带入HTML中的各类附加信息比如验证等</li>
+    </ul>
+#end
+#showExample("/page/date/date.page" )
+
+#@uiPageTitle()日期时间区间#end
+#@showInfo()温馨提示：有五参数
+<ul class="mt-20">
+    <li>第1参数为表单1Name值</li>
+    <li>第2参数为表单2Name2值</li>
+    <li>第3参数为表单1默认值</li>
+    <li>第4参数为表单2默认值</li>
+    <li>第5参数一MAP值可以带入HTML中的各类附加信息比如验证等 也可用dateFormat带入控件日期时间格式(YYYY-MM-DD HH:mm:ss)</li>
+</ul>
+#end
+#showExample("/page/date/between.page" )
+#@showPack()org.tinygroup.ui.bootstrapdate#end

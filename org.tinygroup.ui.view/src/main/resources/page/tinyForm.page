@@ -1,0 +1,6 @@
+#@uiPageTitle()Tabs展现#end
+#showExample("/page/form/example.page")
+#@showInfo()elementItem 宏为内置布局宏 应用场景一般需要根据具体的页面进去微调 内置的参数为三列分布对应栏为2 6 3 建议重新封装#end
+#@showPack() org.tinygroup.ui.ztree org.tinygroup.ui.form org.tinygroup.ui.select2 #end
+
+

@@ -1,0 +1,9 @@
+#@annulusChart("55" "%")55#end
+#@annulusChart("46" "%")46#end
+#@annulusChart("92" "%")92#end
+#@annulusChart("84" "MB")752#end
+<script type="text/javascript">
+    $(document).ready(function(){
+        initPieChart();
+    });
+</script>

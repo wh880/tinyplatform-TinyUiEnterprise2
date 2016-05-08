@@ -1,0 +1,56 @@
+<style>
+    .table-header .table-title{font-size:16px}
+    .table-boxs{background:#fefefe;box-shadow: 0 0 2px 1px #fdfdfd;}
+    .table-header-wrap .table-header{background:#fcfcfc;height:42px;line-height:42px;padding:0 10px;}
+
+    .tables-content .table-bordered>tbody>tr>td{line-height:32px;padding:3px 6px;min-width:50px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;}
+    .table-info-name .project-pic{width:38px;height:38px;border-radius:50%;  margin-right: 10px;  background-color:#74bbd8;}
+    .member-info .member-line{line-height:32px;padding-bottom:6px;}
+</style>
+#@gridSysRow()
+    #@gridSysCol(12)
+    <div class="table-boxs">
+        <div class="table-header-wrap">
+            <header class="table-header">
+                <div class="table-title l">全部空间</div>
+                <div class="table-header-handler r">
+                    <a class="link-add-handler" > <p class="search-box">#tInput("email" ""{"placeholder":" 搜索成员","class":"input-text"})</p> </a>
+                </div>
+            </header>
+        </div>
+        <div class="tables-content clearfix">
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>空间</th>
+                    <th class="hidden-xs hidden-sm">描述</th>
+                    <th class="hidden-xs hidden-sm">类别</th>
+                    <th class="hidden-xs hidden-sm">操作</th>
+                </tr>
+                </thead>
+                <tbody >
+                <tr>
+                    <td>
+                        <a class="table-info-name">
+                            <div class="project-pic pull-left" style="background:url(../img/p1.jpg) no-repeat;"></div>
+                            <div class="member-info">
+                                <div class="member-name member-line">682016222</div>
+                            </div>
+                        </a>
+                    </td>
+                    <td class="hidden-xs hidden-sm">我来描述一下下</td>
+                    <td class="hidden-xs hidden-sm"><span class="label label-success">#faIcon("paperclip") 2016-01-22</span></td>
+                    <td class="hidden-xs hidden-sm">
+                        <a href="#" title="空间细节">#faIcon("paperclip")</a>&nbsp;
+                        <a href="#" title="加入收藏">#faIcon("star")</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    #end
+#end

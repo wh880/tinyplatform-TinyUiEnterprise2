@@ -1,0 +1,52 @@
+<h2>1 警告框</h2>
+<p>警告框组件通过提供一些灵活的预定义消息，为常见的用户动作提供反馈消息。调用不同参数展示不同的警告信息。目前提供如下：</p>
+<table class="table table-bordered table-borderno">
+    <thead>
+    <tr>
+        <th>警告框</th>
+        <th>参数</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>
+            #@alertItem("alert-success")成功#end
+        </td>
+        <td>
+            <code>alert-success</code>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            #@alertItem("alert-info")消息#end
+        </td>
+        <td>
+            <code>alert-info</code>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            #@alertItem("alert-warning")警告#end
+        </td>
+        <td>
+            <code>alert-warning</code>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            #@alertItem("alert-danger")危险#end
+        </td>
+        <td>
+            <code>alert-danger</code>
+        </td>
+    </tr>
+    </tbody>
+</table>
+#showExample("/page/alert/alert01.page")
+
+<h2>2 可关闭警告框</h2>
+#@showInfo()在上个基础上为警告框添加一个参数<code>dismissible</code>值和一个关闭按钮。#end
+#showExample("/page/alert/alert02.page")
+
+
+#@showPack()org.tinygroup.ui.base#end

@@ -1,0 +1,121 @@
+#*
+* mainnav 导航条ul
+*
+* * @param mainnav  class类
+* * @param mainnavMap  参数Map
+*#
+#macro mainNav(navClass mainnavMap)
+<ul class="main-nav ${navClass}"#mapToHtml(mainnavMap)>#bodyContent</ul>
+#end
+
+#*
+* navInfo 导航条li
+*
+* * @param navHref  Url地址
+* * @param navInfoClass  class类
+*#
+#macro navInfo(navHref navInfoClass)
+<li class="${navInfoClass}"><a href="${navHref}">#bodyContent</a></li>
+#end
+
+#*
+* fullNavBar 下拉菜单导航
+*
+*#
+#macro fullNavBar()#set(fullId=fmt("fid%d",rand()))
+<div class="head-v3" id="${fullId}">
+    #bodyContent
+    <script type="text/javascript">
+        $(function(){
+            var showBody;
+            var timer;
+            var speed=500;
+            $('#${fullId} li.${fullId}-head[target-body]').hover(function(){
+                var targetPart=$(this).attr("target-body");
+                $('#'+targetPart).stop(true,true).slideDown(speed);
+            },function(){
+                var targetPart=$(this).attr("target-body");
+                timer = setTimeout(function(){
+                    if(showBody!=targetPart){
+                        $('#'+targetPart).stop(true,true).slideUp(speed);
+                    }
+                },200);
+            });
+            $('#${fullId} .nav-down-menu').hover(function(){
+                showBody=$(this).attr("id");;
+            },function(){
+                showBody=false;
+                clearTimeout(timer);
+                $(this).stop(true,true).slideUp(speed);
+            });
+
+        });
+    </script>
+</div>
+#end
+#*
+* fullNavHead 菜单头部
+*
+*#
+#macro fullNavHead()
+<div class="navigation-up">
+    <div class="navigation-inner">
+        <div class="navigation-v3">
+            <ul>
+                #bodyContent
+            </ul>
+        </div>
+    </div>
+</div>
+#end
+#*
+* fullNavBody 菜单展开
+*
+*#
+#macro fullNavBody()
+<div class="navigation-down">
+    #bodyContent
+</div>
+#end
+
+#*
+* fullNavHeadItem 菜单项
+*
+*#
+#macro fullNavHeadItem(targetBody)
+<li class="${fullId}-head"#if(targetBody) target-body="${fullId}-${targetBody}"#end>#bodyContent</li>
+#end
+#macro fullNavBodyItem(bodyName)
+<div id="${fullId}-${bodyName}" data-bodyname="${bodyName}" class="nav-down-menu menu-1 " style="display: none"><div class="navigation-down-inner">#bodyContent</div></div>
+#end
+
+#*
+* stepItem 步骤条
+*
+*#
+#macro stepItem(stepItemClass)
+<span class="step ${stepItemClass}">#bodyContent</span>
+#end
+
+
+#*
+* navJustified ul
+*
+* * @param navClass class类
+* * @param navMap  Map参数
+*#
+#macro navJustified(navClass navMap)
+<ul class="nav nav-pills nav-justified ${navClass}"#mapToHtml(navMap)>
+    #bodyContent
+</ul>
+#end
+#*
+* presentation li
+*
+* * @param presentationHref Url
+* * * @param presentationClass class类
+* * @param presentationMap  Map参数
+*#
+#macro presentation(presentationHref presentationClass presentationMap)
+<li role="presentation" class="${presentationClass}"><a href="${presentationHref}">#bodyContent</a></li>
+#end

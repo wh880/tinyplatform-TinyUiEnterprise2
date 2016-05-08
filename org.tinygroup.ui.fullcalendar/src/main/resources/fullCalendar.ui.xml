@@ -1,0 +1,13 @@
+<ui-components>
+    <ui-component name="tiny.ui.fullcalendar" dependencies="tiny.ui.base,tiny.ui.modal">
+        <css-resource>
+            /static/org/tinygroup/fullCalendar/css/fullcalendar.tiny.min.css,
+        </css-resource>
+        <js-resource>
+            <!--/static/org/tinygroup/fullCalendar/js/moment.min.js,
+             /static/org/tinygroup/fullCalendar/js/jquery-ui.custom.min.js, -->
+            /static/org/tinygroup/fullCalendar/js/fullcalendar.min.js,
+        </js-resource>
+        <description>fullCalendar日程表 (www.helloweba.com)</description>
+    </ui-component>
+</ui-components>

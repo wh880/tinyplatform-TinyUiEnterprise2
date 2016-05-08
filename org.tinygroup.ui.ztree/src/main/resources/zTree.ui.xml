@@ -1,0 +1,16 @@
+<ui-components>
+    <ui-component name="tiny.ui.ztree" dependencies="tiny.ui.base">
+        <css-resource>
+            /static/org/tinygroup/zTree/css/awesomeStyle/awesome.tiny.min.css,
+            /static/org/tinygroup/zTree/css/zTreeStyle/zTreeStyle.tiny.min.css
+        </css-resource>
+        <js-resource>
+            /static/org/tinygroup/zTree/js/jquery.ztree.core-3.5.tiny.min.js,
+            /static/org/tinygroup/zTree/js/jquery.ztree.exhide-3.5.tiny.min.js,
+            /static/org/tinygroup/zTree/js/jquery.ztree.excheck-3.5.tiny.min.js,
+            /static/org/tinygroup/zTree/js/jquery.ztree.exedit-3.5.tiny.min.js,
+            /static/org/tinygroup/zTree/js/ztree.selected.tiny.min.js
+        </js-resource>
+        <description>zTree (www.ztree.me)</description>
+    </ui-component>
+</ui-components>

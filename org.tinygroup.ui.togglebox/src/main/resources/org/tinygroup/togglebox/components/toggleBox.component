@@ -1,0 +1,37 @@
+#macro toggleBox(mapInfo)#set(toggleid=fmt("tid%d",rand()))
+<div id="${toggleid}" class="togglebox trans ${mapInfo?.class?:""}" #mapToHtml(mapInfo)>
+<div id="${toggleid}-ico" class="togglenavico trans"><i class="fa fa-caret-right"></i></div>
+#bodyContent
+</div>
+<script type="text/javascript">
+    <!--
+    $(function(){
+        if($("#${toggleid}").hasClass("open")){
+            $("#${toggleid}-ico i").attr("class","fa fa-caret-right");
+        }
+        $("#${toggleid}-ico").on("click",function(){
+            $("#${toggleid}").toggleClass("open");
+            $(this).find("i").toggleClass("fa-caret-left fa-caret-right");
+        });
+    });
+    //-->
+</script>
+#end
+
+#macro toggleLeft(mapInfo)
+<div id="${toggleid}-nav" toggle-state="open" class="trans togglenavpart ${mapInfo?.class?:""}" #mapToHtml(mapInfo)> ##默认为打开状态
+#bodyContent
+</div>
+#end
+
+#macro toggleRight(togglesClass)
+<div id="${toggleid}-body" class="trans togglebodypart ${togglesClass}">
+    #bodyContent
+</div>
+#end
+#macro settoggleLeftTitle(titleIcons)
+<h3 class="navtitle"><i class="fa ${titleIcons}"></i>#bodyContent</h3>
+#end
+#macro settoggleLeftBody(settoggleLeftClass)
+<div class="navbody ${settoggleLeftClass}">#bodyContent</div>
+#end

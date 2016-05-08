@@ -1,0 +1,11 @@
+<style type="text/css">
+    .modal-ok{text-align:center}
+    .success-icon{font-size:68px;color:#20638f;}
+    .success-desc{padding:10px 0 20px;font-size:15px;color:#666;}
+</style>
+#@widgetGrid()
+    <div class="modal-ok">
+        <h1 class="success-icon">#faIcon("check-circle")</h1>
+        <p class="success-desc">项目创建成功，现在邀请伙伴一起加入吧</p>
+    </div>
+#end

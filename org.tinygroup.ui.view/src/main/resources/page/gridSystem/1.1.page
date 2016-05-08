@@ -1,0 +1,22 @@
+#@gridSystem24Col("girdrap") ##该类为红底项目时请去除或更改
+	#@gridSystemCol(24 "layloutBg")24/24#end
+	#@gridSystemCol(23 "layloutBg")23/24#end #@gridSystemCol(1 "layloutBg")1/24#end
+	#@gridSystemCol(22 "layloutBg")22/24#end #@gridSystemCol(2 "layloutBg")2/24#end
+	#@gridSystemCol(21 "layloutBg")21/24#end #@gridSystemCol(3 "layloutBg")3/24#end
+	#@gridSystemCol(20 "layloutBg")20/24#end #@gridSystemCol(4 "layloutBg")4/24#end
+	#@gridSystemCol(19 "layloutBg")19/24#end #@gridSystemCol(5 "layloutBg")5/24#end
+	#@gridSystemCol(18 "layloutBg")18/24#end #@gridSystemCol(6 "layloutBg")6/24#end
+	#@gridSystemCol(17 "layloutBg")17/24#end #@gridSystemCol(7 "layloutBg")7/24#end
+	#@gridSystemCol(16 "layloutBg")16/24#end #@gridSystemCol(8 "layloutBg")8/24#end
+	#@gridSystemCol(15 "layloutBg")15/24#end #@gridSystemCol(9 "layloutBg")9/24#end
+	#@gridSystemCol(14 "layloutBg")14/24#end #@gridSystemCol(10 "layloutBg")10/24#end
+	#@gridSystemCol(13 "layloutBg")13/24#end #@gridSystemCol(11 "layloutBg")11/24#end
+	#@gridSystemCol(12 "layloutBg")12/24#end #@gridSystemCol(12 "layloutBg")12/24#end
+	#@gridSystemCol(11 "layloutBg")11/24#end #@gridSystemCol(13 "layloutBg")13/24#end
+	#@gridSystemCol(10 "layloutBg")10/24#end #@gridSystemCol(14 "layloutBg")14/24#end
+	#@gridSystemCol(9 "layloutBg")9/24#end	 #@gridSystemCol(15 "layloutBg")15/24#end
+	#@gridSystemCol(8 "layloutBg")8/24#end	 #@gridSystemCol(16 "layloutBg")16/24#end
+	#@gridSystemCol(7 "layloutBg")7/24#end	 #@gridSystemCol(17 "layloutBg")17/24#end
+	#@gridSystemCol(6 "layloutBg")6/24#end	 #@gridSystemCol(18 "layloutBg")18/24#end
+	#@gridSystemCol(5 "layloutBg")5/24#end	 #@gridSystemCol(19 "layloutBg")19/24#end
+#end

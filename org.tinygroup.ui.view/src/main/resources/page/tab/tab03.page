@@ -1,0 +1,14 @@
+<!-- Nav tabs -->
+#@navTabs()
+    #@tabsInfo("home" "active")首页#end
+    #@tabsInfo("profile")配置文件#end
+    #@tabsInfo("messages")消息#end
+    #@tabsInfo("settings")设置#end
+#end
+<!-- Tab panes -->
+#@tabPanes()
+    #@tabContent("home" "active")111#end
+    #@tabContent("profile")222#end
+    #@tabContent("messages")333#end
+    #@tabContent("settings")444#end
+#end

@@ -1,0 +1,163 @@
+#*
+* fullCalendar 日期宏
+*
+* @param fcid 对像ID
+* @param defaultDate 默认日期
+* @param dataUrl 事件地址
+* @param doAction 事件处理地址
+*#
+
+#macro fullCalendar(fcid defaultDate dataUrl doAction)
+    #set(wcid=fcid?:fmt("wcid%d",rand()))
+<div  style="position:relative">
+    <div class="workcalendar">
+        <div class='showbody' id="${wcid}"></div>
+        <div id="${wcid}-showtitle" class="wc-showtitle"></div>
+        <script>
+            $(function(){
+                var $modalLink=$("#m${wcid}");
+                var dolink="#link(doAction)";
+                dolink+=dolink.indexOf("?")>-1?"&":"?";
+                dolink+="fcid=${fcid}&"
+                $("#${wcid}-showtitle").on("click",function(){
+                    var that=this;
+                    WdatePicker({
+                        startDate:'%y-%M-01',dateFmt:"yyyy-MM",
+                        onpicked:function(){
+                                $calendar.fullCalendar('gotoDate',$(that).html());
+                        }
+                    })
+                });
+                var $calendar=$('#${wcid}');
+                var olddate=moment().format("YYYY-MM-DD");
+                    $calendar.fullCalendar({
+                    header: {
+                    left: 'prev,next',
+                    center: 'title',
+                    right: 'month,agendaWeek,agendaDay'
+                    },
+                    events: '#link(dataUrl)',
+                    defaultDate:"${defaultDate}",//moment().format("YYYY-MM-DD"),
+                    businessHours: true, // display business hours
+                    editable: true,
+                    eventLimit: true,
+                    dayClick: function(date, allDay, jsEvent, view) {
+                    olddate=date;
+                        $modalLink.attr({"href":dolink+"date="+date.format("YYYY-MM-DD")+"&action=add","modal-title":"增加事件"});
+                        $modalLink.trigger("click");
+                    },
+                    eventClick:function( event, jsEvent, view ) {
+                    olddate=event.start;
+                        $modalLink.attr({"href":dolink+"id="+event.id+"&action=edit","modal-title":"修改事件"});
+                        $modalLink.trigger("click");
+                    }
+                    });
+                $calendar.on("refresh",function(e){
+                $(this).fullCalendar('refetchEvents');//fullCalendar( 'rerenderEvents' );//fullCalendar('refetchResources');
+            })
+            });
+        </script>
+    </div>
+</div>#hideModal("m"+wcid {"url":doAction,"width":"80%"})
+#end
+
+#*
+* workCalendar 工作日期宏
+*
+* @param doAction 事件处理地址
+*#
+#macro workCalendar(doAction)
+    #set(wcid=fmt("wcid%d",rand()))
+<div class="workcalendar">
+    <div class='showbody' id="${wcid}"></div>
+    <div id="${wcid}-showtitle" class="wc-showtitle"></div>
+    <script>
+        $(function(){
+            $("#${wcid}-showtitle").on("click",function(){
+                var that=this;
+                WdatePicker({
+                    startDate:'%y-%M-01',dateFmt:"yyyy-MM",
+                    onpicked:function(){
+                        //$(that).html();//setDate($(that).html())
+                            $calendar.fullCalendar('gotoDate',$(that).html());
+                    }
+                })
+            });
+            var $calendar=$('#${wcid}');
+            $calendar.fullCalendar({
+            header: {
+            left: 'prev,next',
+            center: 'title',
+            right: 'month,agendaWeek,agendaDay'
+
+            },
+            defaultDate:moment().format("YYYY-MM-DD"),
+            businessHours: true, // display business hours
+            editable: true,
+            dayClick: function(date, allDay, jsEvent, view) {
+            var eventData;
+            var arys1=date.format().split('-');
+            var tdate=new Date(arys1[0],parseInt(arys1[1]-1),arys1[2]);
+            var thisw=tdate.getDay();
+            var bgcolor="#f1f1f1"
+            if(thisw % 6==0){
+            bgcolor="#fff";
+            }
+            eventData = {
+            id:date.format("YYYY-MM-DD"),
+            start: date,
+            end: date,
+            overlap: true,
+            rendering: 'background',
+            backgroundColor:bgcolor
+            };
+            var ischange=0;
+            if(this.attr("ischange")==="1"){
+                $calendar.fullCalendar('removeEvents', eventData.id)
+            ischange=1;
+            }else{
+                $calendar.fullCalendar('renderEvent', eventData, true);
+            }
+            ischange=Math.abs(1-ischange)
+            this.attr("ischange",ischange);
+            this.trigger("save",[date.format("YYYY-MM-DD"),ischange]);
+            }
+            });
+            function setFixEvent(eventdate){
+                var arys1=eventdate.split('-');     //日期为输入日期，格式为 2013-3-10
+                var date=new Date(arys1[0],parseInt(arys1[1]-1),arys1[2]);
+                var thisw=date.getDay();
+                var bgcolor="#f1f1f1"
+                if(thisw % 6==0){
+                    bgcolor="#fff";
+                }
+                $("[data-date="+eventdate+"]").attr("ischange",1);
+                var eventData = {
+                    id:eventdate,
+                    start: eventdate,
+                    end: eventdate,
+                    overlap: true,
+                    rendering: 'background',
+                    backgroundColor:bgcolor
+                };
+                    $calendar.fullCalendar('renderEvent', eventData, true);
+            }
+		#bodyContent
+                $calendar.on("save",function(e,date,isadd){//e为对像 date为时间 isadd是否新增 //处理操作到后台
+                $.ajax({
+            type: "GET",
+            cache:false,
+            url: "#link(doAction)",
+            dataType: "html",
+            data:{date:date,isadd:isadd},
+            success: function(a){}
+            });
+            });
+        });
+    </script>
+</div>
+#end
+
+
+
+#fullCalendar('fullCalendar' '2015-02-12' '/data/calendar.pagelet' '/data/calendarEvent.pagelet')

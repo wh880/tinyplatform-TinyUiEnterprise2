@@ -1,0 +1,379 @@
+
+<style type="text/css">.tab-pane button{margin-bottom:6px;}</style>
+<aside>
+
+    <ul class="nav nav-tabs">
+        <li class="active">
+            <a href="#entrances" data-toggle="tab">进入</a>
+        </li>
+        <li>
+            <a href="#exits" data-toggle="tab">退出</a>
+        </li>
+        <li>
+            <a href="#effects" data-toggle="tab">特效</a>
+        </li>
+        <li>
+            <a href="#options" data-toggle="tab">说明</a>
+        </li>
+    </ul>
+
+    <div>
+
+        <div class="tray-bin stretch animations">
+
+            <div class="tab-content pn br-n bg-none">
+                <div id="entrances" class="tab-pane active">
+
+                    <!-- Rotating-->
+                    <h6 class="p10 pt5 pbn fs12"> 转入: </h6>
+
+                    <div class="primary pl5">
+                        <button type="button" class="btn btn-primary btn-gradient btn-alt" data-test="rotateIn">
+                            rotateIn
+                        </button>
+                        <button type="button" class="btn btn-primary btn-gradient btn-alt" data-test="rotateInDownLeft">
+                            rotateInDownLeft
+                        </button>
+                        <button type="button" class="btn btn-primary btn-gradient btn-alt"
+                                data-test="rotateInDownRight">rotateInDownRight
+                        </button>
+                        <button type="button" class="btn btn-primary btn-gradient btn-alt" data-test="rotateInUpLeft">
+                            rotateInUpLeft
+                        </button>
+                        <button type="button" class="btn btn-primary btn-gradient btn-alt" data-test="rotateInUpRight">
+                            rotateInUpRight
+                        </button>
+                    </div>
+
+                    <!-- Fades -->
+                    <h6 class="p10 pbn fs12"> 淡入: </h6>
+
+                    <div class="info pl5">
+                        <button type="button" class="btn btn-info btn-gradient btn-alt" data-test="fadeIn">fadeIn
+                        </button>
+                        <button type="button" class="btn btn-info btn-gradient btn-alt" data-test="fadeInUp">fadeInUp
+                        </button>
+                        <button type="button" class="btn btn-info btn-gradient btn-alt" data-test="fadeInDown">
+                            fadeInDown
+                        </button>
+                        <button type="button" class="btn btn-info btn-gradient btn-alt" data-test="fadeInLeft">
+                            fadeInLeft
+                        </button>
+                        <button type="button" class="btn btn-info btn-gradient btn-alt" data-test="fadeInRight">
+                            fadeInRight
+                        </button>
+                        <button type="button" class="btn btn-info btn-gradient btn-alt" data-test="fadeInUpBig">
+                            fadeInUpBig
+                        </button>
+                        <button type="button" class="btn btn-info btn-gradient btn-alt" data-test="fadeInDownBig">
+                            fadeInDownBig
+                        </button>
+                        <button type="button" class="btn btn-info btn-gradient btn-alt" data-test="fadeInLeftBig">
+                            fadeInLeftBig
+                        </button>
+                        <button type="button" class="btn btn-info btn-gradient btn-alt" data-test="fadeInRightBig">
+                            fadeInRightBig
+                        </button>
+                    </div>
+                    <!-- Bounces -->
+                    <h6 class="p10 pt5 pbn fs12"> 弹入: </h6>
+
+                    <div class="alerts pl5">
+                        <button type="button" class="btn btn-alert btn-gradient btn-alt" data-test="bounceIn">bounceIn
+                        </button>
+                        <button type="button" class="btn btn-alert btn-gradient btn-alt" data-test="bounceInDown">
+                            bounceInDown
+                        </button>
+                        <button type="button" class="btn btn-alert btn-gradient btn-alt" data-test="bounceInUp">
+                            bounceInUp
+                        </button>
+                        <button type="button" class="btn btn-alert btn-gradient btn-alt" data-test="bounceInRight">
+                            bounceInRight
+                        </button>
+                        <button type="button" class="btn btn-alert btn-gradient btn-alt" data-test="bounceInLeft">
+                            bounceInLeft
+                        </button>
+                    </div>
+
+                </div>
+                <div id="exits" class="tab-pane">
+
+                    <!-- Bounces -->
+                    <h6 class="p10 pt5 pbn fs12"> 弹出: </h6>
+
+                    <div class="primary pl5">
+                        <button type="button" class="btn btn-primary btn-gradient btn-alt" data-test="bounceOutRight">
+                            bounceOutRight
+                        </button>
+                        <button type="button" class="btn btn-primary btn-gradient btn-alt" data-test="bounceOutLeft">
+                            bounceOutLeft
+                        </button>
+                        <button type="button" class="btn btn-primary btn-gradient btn-alt" data-test="bounceOut">
+                            bounceOut
+                        </button>
+                        <button type="button" class="btn btn-primary btn-gradient btn-alt" data-test="bounceOutDown">
+                            bounceOutDown
+                        </button>
+                        <button type="button" class="btn btn-primary btn-gradient btn-alt" data-test="bounceOutUp">
+                            bounceOutUp
+                        </button>
+                    </div>
+
+                    <!-- Fades -->
+                    <h6 class="p10 pbn fs12"> 淡出: </h6>
+
+                    <div class="info pl5">
+                        <button type="button" class="btn btn-info btn-gradient btn-alt" data-test="fadeOut">fadeOut
+                        </button>
+                        <button type="button" class="btn btn-info btn-gradient btn-alt" data-test="fadeOutUp">
+                            fadeOutUp
+                        </button>
+                        <button type="button" class="btn btn-info btn-gradient btn-alt" data-test="fadeOutDown">
+                            fadeOutDown
+                        </button>
+                        <button type="button" class="btn btn-info btn-gradient btn-alt" data-test="fadeOutLeft">
+                            fadeOutLeft
+                        </button>
+                        <button type="button" class="btn btn-info btn-gradient btn-alt" data-test="fadeOutRight">
+                            fadeOutRight
+                        </button>
+                        <button type="button" class="btn btn-info btn-gradient btn-alt" data-test="fadeOutUpBig">
+                            fadeOutUpBig
+                        </button>
+                        <button type="button" class="btn btn-info btn-gradient btn-alt" data-test="fadeOutDownBig">
+                            fadeOutDownBig
+                        </button>
+                        <button type="button" class="btn btn-info btn-gradient btn-alt" data-test="fadeOutLeftBig">
+                            fadeOutLeftBig
+                        </button>
+                        <button type="button" class="btn btn-info btn-gradient btn-alt" data-test="fadeOutRightBig">
+                            fadeOutRightBig
+                        </button>
+                    </div>
+
+                    <!-- Fades -->
+                    <h6 class="p10 pbn fs12"> 转出: </h6>
+
+                    <div class="alerts pl5">
+                        <button type="button" class="btn btn-alert btn-gradient btn-alt" data-test="rotateOut">
+                            rotateOut
+                        </button>
+                        <button type="button" class="btn btn-alert btn-gradient btn-alt" data-test="rotateOutDownLeft">
+                            rotateOutDownLeft
+                        </button>
+                        <button type="button" class="btn btn-alert btn-gradient btn-alt" data-test="rotateOutDownRight">
+                            rotateOutDownRight
+                        </button>
+                        <button type="button" class="btn btn-alert btn-gradient btn-alt" data-test="rotateOutUpLeft">
+                            rotateOutUpLeft
+                        </button>
+                        <button type="button" class="btn btn-alert btn-gradient btn-alt" data-test="rotateOutUpRight">
+                            rotateOutUpRight
+                        </button>
+                    </div>
+
+                </div>
+                <div id="effects" class="tab-pane">
+
+                    <!-- Attention Seekers -->
+                    <h6 class="p10 pt5 pbn fs12"> 抖动: </h6>
+
+                    <div class="primary pl5">
+                        <button type="button" class="btn btn-primary btn-gradient btn-alt" data-test="bounce">bounce
+                        </button>
+                        <button type="button" class="btn btn-primary btn-gradient btn-alt" data-test="shake">shake
+                        </button>
+                        <button type="button" class="btn btn-primary btn-gradient btn-alt" data-test="tada">tada
+                        </button>
+                        <button type="button" class="btn btn-primary btn-gradient btn-alt" data-test="swing">swing
+                        </button>
+                        <button type="button" class="btn btn-primary btn-gradient btn-alt" data-test="wobble">wobble
+                        </button>
+                        <button type="button" class="btn btn-primary btn-gradient btn-alt" data-test="pulse">pulse
+                        </button>
+                        <button type="button" class="btn btn-primary btn-gradient btn-alt" data-test="flash">flash
+                        </button>
+                    </div>
+
+                    <!-- Flippers -->
+                    <h6 class="p10 pbn fs12"> Flippers: </h6>
+
+                    <div class="info pl5">
+                        <button type="button" class="btn btn-info btn-gradient btn-alt" data-test="flip">flip</button>
+                        <button type="button" class="btn btn-info btn-gradient btn-alt" data-test="flipInX">flipInX
+                        </button>
+                        <button type="button" class="btn btn-info btn-gradient btn-alt" data-test="flipOutX">flipOutX
+                        </button>
+                        <button type="button" class="btn btn-info btn-gradient btn-alt" data-test="flipInY">flipInY
+                        </button>
+                        <button type="button" class="btn btn-info btn-gradient btn-alt" data-test="flipOutY">flipOutY
+                        </button>
+                    </div>
+
+                    <!-- Sliders -->
+                    <h6 class="p10 pbn fs12"> Sliders: </h6>
+
+                    <div class="alerts pl5">
+                        <button type="button" class="btn btn-alert btn-gradient btn-alt" data-test="slideInDown">
+                            slideInDown
+                        </button>
+                        <button type="button" class="btn btn-alert btn-gradient btn-alt" data-test="slideInLeft">
+                            slideInLeft
+                        </button>
+                        <button type="button" class="btn btn-alert btn-gradient btn-alt" data-test="slideInRight">
+                            slideInRight
+                        </button>
+                        <button type="button" class="btn btn-alert btn-gradient btn-alt" data-test="slideOutUp">
+                            slideOutUp
+                        </button>
+                        <button type="button" class="btn btn-alert btn-gradient btn-alt" data-test="slideOutLeft">
+                            slideOutLeft
+                        </button>
+                        <button type="button" class="btn btn-alert btn-gradient btn-alt" data-test="slideOutRight">
+                            slideOutRight
+                        </button>
+                    </div>
+
+                    <!-- Specials -->
+                    <h6 class="p10 pbn fs12"> Specials: </h6>
+
+                    <div class="warning pl5">
+                        <button type="button" class="btn btn-warning btn-gradient btn-alt" data-test="lightSpeedIn">
+                            lightSpeedIn
+                        </button>
+                        <button type="button" class="btn btn-warning btn-gradient btn-alt" data-test="lightSpeedOut">
+                            lightSpeedOut
+                        </button>
+                        <button type="button" class="btn btn-warning btn-gradient btn-alt" data-test="hinge">hinge
+                        </button>
+                        <button type="button" class="btn btn-warning btn-gradient btn-alt" data-test="rollIn">rollIn
+                        </button>
+                        <button type="button" class="btn btn-warning btn-gradient btn-alt" data-test="rollOut">rollOut
+                        </button>
+                    </div>
+
+                </div>
+                <div id="options" class="tab-pane p10">
+
+
+                    <!-- Animation OnLoad -->
+                    <h5 class="mt5 pbn"> 动画加载: </h5>
+
+                    <p>动画会在页面加载完后执行.</p>
+
+                    <h6 class="mt15">动画元素</h6>
+
+                    <code>&lt;div class="animated fadeIn"&gt;..&lt;/div&gt;</code>
+
+                    <h6 class="mt25">所需样式类:</h6>
+
+                    <p>
+                        <b>"animated"</b> - 动画的基础样式.</p>
+
+                    <p>
+                        <b>"fadeIn"</b> - 效果样式</p>
+
+                    <hr class="short">
+
+                    <!-- Animation Delay -->
+                    <h5 class="mt5">延迟动画!</h5>
+                    <code>data-animate='["100","fadeIn"]' class="animated-delay"</code>
+
+                    <!--   <hr class="alt short"> -->
+
+                    <h6 class="mt25">需要如下样式类:</h6>
+
+                    <p>
+                        <b>animated-delay</b> - 在元素中加个这个类
+                    </p>
+
+                    <p>
+                        <b>data-animate='["1500","fadeIn"]'</b> - 加入这个属性 比如这个的 第一个属性表示延时的时间单位是毫秒 第二个是具体的样式.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</aside>
+<!-- end: .tray-left -->
+
+<!-- begin: .tray-center -->
+<div class="tray tray-center" style="padding:50px;">
+    <div id="mac_wire" class="animated"></div>
+</div>
+
+<!-- end: .tray-center -->
+
+<script type="text/javascript">
+    jQuery(document).ready(function () {
+
+        // Demo Code -Toggle animation nav list bg color
+        $('.animation-nav').click(function () {
+            $('.animation-nav').removeClass('btn-primary').addClass('btn-default');
+            $(this).addClass('btn-primary');
+        });
+
+        // Example animate buttons
+        $('.animations .btn').click(function () {
+            if ($('body.animation-running').length) {
+                return;
+            }
+            $(this).addClass('item-checked');
+            var animateVal = $(this).attr('data-test');
+            testAnim(animateVal)
+        });
+
+        // Simply adds CSS classes required for animation
+        // and then removes them after an elapsed time
+        var animatedObj = $('#mac_wire');
+
+        function testAnim(x) {
+            $('body').addClass('animation-running');
+            animatedObj.removeClass('fadeIn').addClass(x);
+            animatedObj.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+                $('body').removeClass('animation-running');
+                animatedObj.removeClass(x);
+            });
+
+        }
+
+        /* Demo Code - Creates animated SVG(desktop image)
+         * Lazy Line Painter - Path Object
+         * Generated using 'SVG to Lazy Line Converter'
+         *
+         * http://lazylinepainter.info
+         * Copyright 2013, Cam O'Connell
+         *
+         */
+        var pathObj = {
+            "mac_wire": {
+                "strokepath": [{
+                    "path": "M264.41,447.79   c-1.07,13.219-1.292,40.276-2.087,47.116c-1.064,9.147-3.618,11.702-10,13.403c-5.289,1.409-12.453,3.028-15.439,3.796   c-2.985,0.768-3.923,1.287-3.923,1.879c0,0,0,0.031,0.006,0.089c0.003,0.03,0.007,0.059,0.012,0.086   c0.129,0.788,17.132,2.911,25.421,2.911h143.717c8.287,0,25.29-2.123,25.419-2.911c0.006-0.027,0.01-0.056,0.013-0.086   c0.006-0.058,0.006-0.089,0.006-0.089c0-0.592-0.937-1.11-3.923-1.879c-2.986-0.768-10.15-2.387-15.439-3.796   c-6.382-1.701-8.935-4.256-9.999-13.403c-0.795-6.84-1.018-33.897-2.089-47.116",
+                    "duration": 600
+                }, {
+                    "path": "M636.122,7.411H24.392   c-7.962,0-14.438,6.477-14.438,14.438v411.503c0,7.961,6.476,14.438,14.438,14.438h242.261l0,0h127.208l0,0h242.261   c7.962,0,14.438-6.478,14.438-14.438V21.849C650.561,13.888,644.084,7.411,636.122,7.411z M623.411,361.445H37.103V34.56h586.308   V361.445z",
+                    "duration": 1000
+                }],
+                "dimensions": {
+                    "width": 660,
+                    "height": 523
+                }
+            }
+        };
+
+        /*
+         * Setup and Paint your lazyline!
+         */
+         $('#mac_wire').lazylinepainter({
+             "svgData": pathObj,
+             "strokeWidth": 3,
+             "strokeColor": "#e09b99",
+             "delay": 400,
+             "onComplete": function () {
+                 $('body').addClass('svg-fill');
+             }
+         }).lazylinepainter('paint');
+
+    });
+</script>
+#@showPack()org.tinygroup.ui.jquery#end

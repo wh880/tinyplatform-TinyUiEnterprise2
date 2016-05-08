@@ -1,0 +1,5 @@
+<h2>1 手风琴</h2>
+#@showInfo()通过和面板组件创建一个手风琴。#end
+#showExample("/page/fold/fold01.page")
+
+#@showPack()org.tinygroup.ui.bootstrap#end

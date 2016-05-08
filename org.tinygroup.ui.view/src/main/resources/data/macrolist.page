@@ -1,0 +1,16 @@
+[
+    {
+    "hasBody":false,
+    "name":"test",
+    "order":1,
+    "parameters":[{"description":"111","name":"222","order":1},{"description":"123url","name":"url","order":2}],
+    "type":"123"
+    },
+    {
+    "hasBody":true,
+    "name":"test2",
+    "order":2,
+    "parameters":[{"description":"1223","name":"rrr","order":1},{"description":"444","name":"rrrww","order":2}],
+    "type":"1"
+    }
+]

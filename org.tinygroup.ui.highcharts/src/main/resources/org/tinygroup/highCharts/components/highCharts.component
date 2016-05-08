@@ -1,0 +1,50 @@
+#macro highChart(highChartId highChartStyle highChartClass)
+	<div#if(highChartId) id="${highChartId}"#{end}#if(highChartStyle) style="${highChartStyle}"#{end}#if(highChartClass) class="${highChartClass}"#end>
+		#bodyContent
+	</div>
+#end
+
+#macro high3dBar(rangeId0 rangeId1 minBar maxBar high3dBarClass)
+<table #if(high3dBarClass) class="${high3dBarClass}"#{end}>
+	<tr>
+		<td width="80px">α角</td>
+		<td><input id="${rangeId0}" type="range" min="${minBar}" max="${maxBar}" value="15"/> <span id="${rangeId0}-value" class="value"></span></td>
+	</tr>
+	<tr>
+		<td>β角</td>
+		<td><input id="${rangeId1}" type="range" min="${minBar}" max="${maxBar}" value="15"/> <span id="${rangeId1}-value" class="value"></span></td>
+	</tr>
+</table>
+#end
+
+#macro setColumnHighChart(tableSel cssMap)
+	#set(chartId=fmt("cid%d",rand()))<div id="${chartId}" style="#mapToCss(cssMap)"></div>
+<script>
+    $(function(){
+        $("#${chartId}").highcharts({
+            data: {
+                table: $("${tableSel}").get(0)
+            },
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: $("${tableSel}").children("caption").html()
+            },
+            yAxis: {
+                allowDecimals: false,
+                title: {
+                    text: ''
+                }
+            },
+            tooltip: {
+                formatter: function() {
+
+                    return '<b>'+ (this.key) +'</b><br/>'
+                            + this.series.name +':'+this.y ;
+                }
+            }
+        });
+    });
+</script>
+#end

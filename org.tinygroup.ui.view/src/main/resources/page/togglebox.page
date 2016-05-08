@@ -1,0 +1,13 @@
+#@uiPageTitle()togglebox#end
+#@showInfo()温馨提示：
+<ul class="mt-20">
+    <li>第1参数为ID 注意此ID最好传入 为后期可操作DOM做入口  如不传则自动系统生成一个随机ID</li>
+##    <li>第2参数为表单默认值</li>
+##    <li>第3参数为表单附加参数比如验证等相关是一MAP</li>
+</ul>
+#end
+#showExample("/page/toggleboxNew.page" )
+
+
+
+#@showPack()org.tinygroup.ui.tinytable org.tinygroup.ui.form org.tinygroup.ui.ztree#end

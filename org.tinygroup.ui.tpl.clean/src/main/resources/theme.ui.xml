@@ -1,0 +1,11 @@
+<ui-components>
+    <ui-component name="tiny.ui.tpl.clean" dependencies="tiny.ui.frameCommon">
+        <css-resource>
+            /static/org/tinygroup/themes/clean.tiny.min.css
+        </css-resource>
+        <js-codelet>
+            tinyTplList.push({sort:1, name: 'clean', title: '清爽', img: contextPath+'/img/themes/clean.png' });
+        </js-codelet>
+        <description>TinyUi框架模板清爽</description>
+    </ui-component>
+</ui-components>

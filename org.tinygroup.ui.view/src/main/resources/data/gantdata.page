@@ -1,0 +1,8 @@
+[
+
+{"pID":"1", "pName":"21321312","pStart":"2015-10-09","pEnd":"2015-10-12","pColor":"2","pRes":"1",  "pComp":"44.444447", "pGroup":"0", "pParent":"0","pOpen":"1","pDepend":1, "pCaption":"Brian"},
+{"pID":"30", "pName":"Move to WCF from remoting","pStart":"2008-08-12","pEnd":"2008-09-19","pColor":"1","pRes":"Brian",  "pComp":"10", "pGroup":0, "pParent":"0","pOpen":"1","pDepend":1, "pCaption":"Brian"},
+{"pID":"40", "pName":"Yet another task","pStart":"2014-10-12","pEnd":"2015-09-22","pColor":"3","pRes":"Brian",  "pComp":"30", "pGroup":0, "pParent":0,"pOpen":1,"pDepend":"20,30", "pCaption":"Shlomy"}
+
+
+]

@@ -1,0 +1,8 @@
+#*
+* faIcon宏
+*
+* @param faClassName 样式类 具体的请参照tinyui页带入即可生效
+*#
+
+#macro faIcon(faClassName)<i class="fa fa-${faClassName}"></i>#end
+#macro faIco(faClassName)<i class="fa fa-${faClassName}"></i>#end

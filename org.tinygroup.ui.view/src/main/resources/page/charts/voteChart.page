@@ -1,0 +1,13 @@
+#@voteChart("20%" "#d35400" "#e67e22")HTML5#end
+
+#@voteChart("25%" "#2980b9" "#3498db")CSS3#end
+
+#@voteChart("50%" "#2c3e50" "#2c3e50")jQuery#end
+
+#@voteChart("40%" "#46465e" "#5a68a5")PHP#end
+
+#@voteChart("75%" "#333333" "#525252")Wordpres#end
+
+#@voteChart("100%" "#27ae60" "#2ecc71")SEO#end
+
+#@voteChart("70%" "#124e8c" "#4288d0")Photoshop#end

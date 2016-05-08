@@ -1,0 +1,11 @@
+<ui-components>
+    <ui-component name="tiny.ui.sortablelist" dependencies="tiny.ui.jquery">
+        <js-resource>
+            /static/org/tinygroup/sortablelist/jquery-sortable-lists.tiny.min.js,
+        </js-resource>
+        <css-resource>
+            /static/org/tinygroup/sortablelist/sortablelist.tiny.min.css
+        </css-resource>
+        <description>可拖动排序</description>
+    </ui-component>
+</ui-components>

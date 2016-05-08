@@ -1,0 +1,18 @@
+<ui-components>
+    <ui-component name="tiny.ui.piecharts" dependencies="tiny.ui.jquery">
+        <css-resource>
+        </css-resource>
+        <js-resource>
+            /static/org/tinygroup/pieCharts/js/jsapi.tiny.min.js,
+            /static/org/tinygroup/pieCharts/js/corechart.tiny.min.js,
+            /static/org/tinygroup/pieCharts/js/jquery.gvChart-1.0.1.min.js,
+            <!-- /static/org/tinygroup/pieCharts/js/jquery.ba-resize.min.js -->
+        </js-resource>
+        <js-codelet>
+            $(document).ready(function(){
+            gvChartInit();
+            });
+        </js-codelet>
+        <description>饼状图比例分布图 (www.highcharts.com)</description>
+    </ui-component>
+</ui-components>

@@ -1,0 +1,15 @@
+<ui-components>
+    <ui-component name="tiny.ui.form" dependencies="tiny.ui.base,tiny.ui.bootstrapdate,tiny.ui.ztree,tiny.ui.select2,tiny.ui.bootstrapvalidator">
+        <css-resource>
+            /static/org/tinygroup/form/css/form.tiny.min.css
+        </css-resource>
+        <js-resource>
+            /static/org/tinygroup/form/js/Validform_v5.3.2.tiny.min.js,
+            /static/org/tinygroup/form/js/jquery.form.tiny.min.js,
+            /static/org/tinygroup/form/js/jquery.icheck.min.js,
+            /static/org/tinygroup/form/js/ajaxfileupload.tiny.min.js,
+            /static/org/tinygroup/form/js/jquery.queryFor.tiny.min.js
+        </js-resource>
+        <description>表单 (www.bootcss.com) (validform.rjboy.cn)</description>
+    </ui-component>
+</ui-components>

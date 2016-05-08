@@ -1,0 +1,22 @@
+<ui-components>
+    <ui-component name="tiny.ui.bootstrap" dependencies="tiny.ui.jquery">
+        <css-resource>
+            /static/org/tinygroup/bootstrap/css/bootstrap.tiny.min.css
+        </css-resource>
+        <js-resource>
+            /static/org/tinygroup/bootstrap/js/transition.tiny.min.js,
+            /static/org/tinygroup/bootstrap/js/affix.tiny.min.js,
+            /static/org/tinygroup/bootstrap/js/alert.tiny.min.js,
+            /static/org/tinygroup/bootstrap/js/button.tiny.min.js,
+            /static/org/tinygroup/bootstrap/js/carousel.tiny.min.js,
+            /static/org/tinygroup/bootstrap/js/collapse.tiny.min.js,
+            /static/org/tinygroup/bootstrap/js/dropdown.tiny.min.js,
+            /static/org/tinygroup/bootstrap/js/scrollspy.tiny.min.js,
+            /static/org/tinygroup/bootstrap/js/tab.tiny.min.js,
+            /static/org/tinygroup/bootstrap/js/tooltip.tiny.min.js,
+            /static/org/tinygroup/bootstrap/js/popover.tiny.min.js,
+            <!--/static/org/tinygroup/bootstrap/js/bootstrap.min.js,-->
+        </js-resource>
+        <description>bootstrap 3.3.5 (www.bootcss.com)</description>
+    </ui-component>
+</ui-components>

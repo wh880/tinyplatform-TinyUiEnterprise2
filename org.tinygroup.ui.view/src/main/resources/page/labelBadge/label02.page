@@ -1,0 +1,5 @@
+#@badgeItem("default")1#end
+#@badgeItem("success")2#end
+#@badgeItem("important")3#end
+#@badgeItem("info")4#end
+#@badgeItem("danger")5#end

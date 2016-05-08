@@ -1,0 +1,22 @@
+#macro pieChart(pieChartId pieChartStyle pieChartClass)
+	<div#if(pieChartId) id="${pieChartId}"#{end}#if(pieChartStyle) style="${pieChartStyle}"#{end}#if(pieChartClass) class="${pieChartClass}"#end>
+		#bodyContent
+	</div>
+#end
+
+
+#macro pieChartInit(pieChartSelector pieChartType vAxisTitle hAxisTitle hAxisWidth hAxisHeight)
+	<script type="text/javascript">
+		$(function(){
+			$('${pieChartSelector}').gvChart({
+				chartType: '${pieChartType}',
+				gvSettings: {
+					vAxis: {title: '${vAxisTitle}'},
+					hAxis: {title: '${hAxisTitle}'},
+					width: ${hAxisWidth},
+					height: ${hAxisHeight}
+				}
+			});
+		});
+	</script>
+#end

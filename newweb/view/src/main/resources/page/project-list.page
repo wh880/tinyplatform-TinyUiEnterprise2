@@ -1,0 +1,36 @@
+<style type="text/css">
+    .project-list .search-box,.project-list .list-item{padding:8px 12px 2px}
+    .project-list .list-item li{line-height: 20px;margin-bottom:12px;display: block}
+    .project-list .list-item .group-name{border-bottom:#ddd 1px solid;padding-bottom:6px;}
+    .project-list .project-item:hover{background:#f6f6f6}
+    .project-item .project-pic{width:80px;height: 40px;  margin-right: 10px;  background-size:cover;  background-position: center;  background-color:#74bbd8;}
+    .project-item a,.project-item a:link,.project-item a:visited{line-height:40px;color:#383838;overflow:hidden; text-overflow:ellipsis; white-space:nowrap;display:block}
+    .project-item a:hover{text-decoration: none}
+    .project-item i{float:right;margin-right:16px; color: #a6a6a6;margin-top:10px;}
+</style>
+#@widgetGrid()
+    <div class="project-list">
+        <p class="search-box">#tInput("email" ""{"placeholder":"查找项目","class":"input-text"})</p>
+        <ul class="list-item">
+            <li><p class="group-name">个人项目</p></li>
+            <li class="project-item">
+                <a class="clearfix"> <div class="project-pic pull-left" style="background:url(../img/p1.jpg) no-repeat;"></div> <span>示例项目</span>#faIcon("check")</a>
+            </li>
+            <li class="project-item">
+                <a class="clearfix"> <div class="project-pic pull-left" style="background:url(../img/sample.jpg) no-repeat;"></div> <span>示例项目</span></a>
+            </li>
+            <li class="project-item">
+                <a class="clearfix"> <div class="project-pic pull-left" style="background:url(../img/p1.jpg) no-repeat;"></div> <span>示例项目</span></a>
+            </li>
+            <li class="project-item">
+                <a class="clearfix"> <div class="project-pic pull-left" style="background:url(../img/sample.jpg) no-repeat;"></div> <span>示例项目</span></a>
+            </li>
+            <li class="project-item">
+                <a class="clearfix"> <div class="project-pic pull-left" style="background:url(../img/p1.jpg) no-repeat;"></div> <span>示例项目</span></a>
+            </li>
+            <li class="project-item">
+                <a class="clearfix"> <div class="project-pic pull-left" style="background:url(../img/sample.jpg) no-repeat;"></div> <span>示例项目</span></a>
+            </li>
+        </ul>
+    </div>
+#end

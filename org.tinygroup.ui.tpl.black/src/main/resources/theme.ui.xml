@@ -1,0 +1,11 @@
+<ui-components>
+    <ui-component name="tiny.ui.tpl.black" dependencies="tiny.ui.frameCommon">
+        <css-resource>
+            /static/org/tinygroup/themes/black.tiny.min.css
+        </css-resource>
+        <js-codelet>
+            tinyTplList.push({sort:2, name: 'black', title: '黑色', img: contextPath+'/img/themes/black.png',logoImg: contextPath+'/img/logo-black.png'});
+        </js-codelet>
+        <description>TinyUi框架模板黑色</description>
+    </ui-component>
+</ui-components>

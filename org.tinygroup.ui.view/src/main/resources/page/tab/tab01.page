@@ -1,0 +1,10 @@
+#@Ttab()
+<div class="tabBar cl">
+    #@tabHeadCol()选项卡一#end
+    #@tabHeadCol()选项卡二#end
+    #@tabHeadCol()选项卡三#end
+</div>
+    #@tabBodyCol("pd-10")内容一#end
+    #@tabBodyCol("pd-10")内容二#end
+    #@tabBodyCol("pd-10")内容三#end
+#end

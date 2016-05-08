@@ -1,0 +1,23 @@
+<h2>1 投票图表</h2>
+#@showInfo() <code>温馨提示：</code>调用需要宏代码，添加依赖即可生效。#end
+#showExample("/page/charts/voteChart.page")
+
+#@showPack()org.tinygroup.ui.votecharts#end
+
+<h2>2 饼状图比例分布图</h2>
+#@showInfo() <code>温馨提示：</code>调用需要宏代码，添加依赖即可生效。#end
+#showExample("/page/charts/pieChart.page")
+
+#@showPack()org.tinygroup.ui.piecharts#end
+
+<h2>3 easy饼图数据统计</h2>
+#@showInfo() <code>温馨提示：</code>调用需要宏代码，添加依赖即可生效。
+<ul class="mt-10">
+    <li>第1参数为饼图数据值</li>
+    <li>第2参数为饼图单位</li>
+    <li>第3参数为饼图MAP值</li>
+</ul>
+#end
+#showExample("/page/charts/easyChart.page")
+
+#@showPack()org.tinygroup.ui.easycharts#end

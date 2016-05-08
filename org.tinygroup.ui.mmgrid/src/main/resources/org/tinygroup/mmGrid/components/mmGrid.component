@@ -1,0 +1,36 @@
+#macro mmButton(mmbtnId)
+	<button#if(mmbtnId) id="${mmbtnId}"#end class="btn btn-default">
+		#bodyContent
+	</button>
+#end
+
+#macro mmButtonDiv(mmDivStyle mmDivClass)
+	<div#if(mmDivStyle) style="${mmDivStyle}"#{end}#if(mmDivClass) class="${mmDivClass}"#end>
+		#bodyContent
+	</div>
+#end
+
+#macro mmPageDiv(mmPageId mmPageStyle)
+    <div#if(mmPageId) id="${mmPageId}"#{end}#if(mmPageStyle) style="${mmPageStyle}"#end>
+        #bodyContent
+    </div>
+#end
+
+#macro mmSearchInput(mmSearchInputPlaceholder mmSearchInputId mmSearchInputName mmSearchInputStyle mmSearchInputClass)
+	<input#if(mmSearchInputId) id="${mmSearchInputId}"#{end}#if(mmSearchInputName) 
+	name="${mmSearchInputName}"#end class="input-text size-M uneditable-input ${mmSearchInputClass}"
+	#if(mmSearchInputPlaceholder) placeholder="${mmSearchInputPlaceholder}"#{end}#if(mmSearchInputStyle)
+	 style="${mmSearchInputStyle}"#end value="#bodyContent"> 
+#end
+
+#macro mmSearchButton(btnId btnClass)
+	<button#if(btnId) id="${btnId}"#end class="btn btn-success ${btnClass}" >
+		#bodyContent
+	</button>
+#end
+
+#macro mmtable(mmtableId)
+	<table#if(mmtableId) id="${mmtableId}"#end class="mmg">
+		#@tr() #@th()#end   #end
+	</table>
+#end

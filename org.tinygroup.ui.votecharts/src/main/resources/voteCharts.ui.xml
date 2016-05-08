@@ -1,0 +1,11 @@
+<ui-components>
+    <ui-component name="tiny.ui.votecharts" dependencies="tiny.ui.jquery">
+        <css-resource>
+            /static/org/tinygroup/voteCharts/css/voteCharts.tiny.min.css
+        </css-resource>
+        <js-resource>
+            /static/org/tinygroup/voteCharts/js/voteCharts.tiny.min.js,
+        </js-resource>
+        <description>投票图表 (www.html5tricks.com)</description>
+    </ui-component>
+</ui-components>
