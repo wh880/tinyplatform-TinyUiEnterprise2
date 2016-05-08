@@ -1,0 +1,5 @@
+<ui-components>
+    <ui-component name="tiny.ui.minproject" dependencies="tiny.ui.base,tiny.ui.button,tiny.ui.buttongroup,tiny.ui.tinytable,tiny.ui.modal,tiny.ui.form,tiny.ui.typography">
+        <description>项目公用包</description>
+    </ui-component>
+</ui-components>
