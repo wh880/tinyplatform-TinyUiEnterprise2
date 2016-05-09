@@ -1,0 +1,11 @@
+<ui-components>
+    <ui-component name="tiny.ui.wordbox" dependencies="tiny.ui.jquery">
+        <css-resource>
+            /static/org/tinygroup/wordbox/css/wordbox.tiny.min.css
+        </css-resource>
+        <js-resource>
+            /static/org/tinygroup/wordbox/js/wordbox.tiny.min.js
+        </js-resource>
+        <description>wordbox</description>
+    </ui-component>
+</ui-components>
