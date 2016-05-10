@@ -587,7 +587,7 @@ function stripInternalParams(url) {
 function parseURL(url,replaceStr) {
   var a = document.createElement('a')
   if(typeof (replaceStr)=="undefined"){replaceStr='.page'}
-  a.href = url.replace(/\.pagelet/,replaceStr)
+  a.href = url.replace(/\.pagelet/,replaceStr).replace(/\.servicepagelet/,replaceStr);
   return a
 }
 
