@@ -15,18 +15,12 @@
                 <ref bean="tinyFilterFileProcessor"/>
                 <ref bean="tinyProcessorFileProcessor"/>
 
-                <!-- validate -->
-                <ref bean="validateMapFileProcessor"/>
-                <ref bean="validateFileProcessor"/>
-
                 <!-- 模板引擎-->
                 <ref bean="tinyMacroFileProcessor"/>
 
                 <ref bean="fullContextFileFinder"/>
                 <ref bean="uIComponentFileProcessor"/>
 
-                <!-- context2objects -->
-                <ref bean="generatorFileProcessor"/>
             </list>
         </property>
     </bean>
