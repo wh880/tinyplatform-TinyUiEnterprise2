@@ -4,8 +4,9 @@
 * @param value 表单值
 * @param title 显示标题
 *#
-#macro autherItem(value title)
-<li rel="${value}">${title}</li>
+#macro authorItem(value title)
+<option value="${value}">${title}</option>
+##<li rel="${value}">${title}</li>
 #end
 
 #*
@@ -14,61 +15,89 @@
 * @param inputname 表单名
 * @param inputvalue 默认值
 *#
-#macro autherlist(inputname inputvalue)
+#macro authorList(inputname inputvalue)
 	#set(boxid=fmt("bid%d",rand()))
-	<div class="authdiv" id="${boxid}">
-	<ul class="leftul alert alert-info">
-	#bodyContent
-	</ul>
-	<div class="authdivnav">
-		<button type="button" class="btn btn-primary" toggle="backward">#faIcon("backward")</button>
-		<button type="button" class="btn btn-primary" toggle="forward">#faIcon("forward")</button>
-	</div>
-	<ul class="rightul alert alert-success"></ul>
-	<div class="clear"></div>
+<div class="row author-div" id="${boxid}">
+    <div class="author-div-left alert alert-info  col-xs-5">
+        <select size="20" class="form-control" multiple="multiple" id="${boxid}-left">
+            #bodyContent
+        </select>
+    </div>
+    <div class="author-div-nav col-xs-2">
+        <button type="button" class="btn btn-primary" toggle="fast-backward">#faIcon("fast-backward")</button>
+        <button type="button" class="btn btn-primary" toggle="backward">#faIcon("backward")</button>
+        <button type="button" class="btn btn-primary" toggle="forward">#faIcon("forward")</button>
+        <button type="button" class="btn btn-primary" toggle="fast-forward">#faIcon("fast-forward")</button>
+    </div>
+    <div class="author-div-right alert alert-success  col-xs-5">
+        <select size="20" class="form-control" multiple="multiple"  id="${boxid}-right">
+
+        </select>
+    </div>
 </div>
 <input type="hidden" id="${boxid}-input" name="${inputname}" value="${inputvalue}"/>
 <script type="text/javascript">
-$(function () {
-	var $leftul = $("#${boxid}>.leftul");
-	var $rightul = $("#${boxid}>.rightul");
-	var thisauth=$("#${boxid}-input").val().split(",");
-	$("#${boxid}>.leftul>li").each(function(index){
-		if(thisauth.indexOf($(this).attr("rel"))>=0){
-			$rightul.append($(this).clone());
-		}
-	});
-	function setValue(){
-		$("#${boxid}-input").val(thisauth.join(","));
-	}
-	setValue();
+    (function($) {
+        var _leftul = $("#${boxid}-left");
+        var _rightul = $("#${boxid}-right");
+        var thisauth=$("#${boxid}-input").val().split(",");
+        _leftul.children("option").each(function(index){
+            if(thisauth.indexOf($(this).attr("value"))>=0){
+                _rightul.append($(this).clone());
+                $(this).attr("disabled","disabled");
+            }
+        });
+        function setValue(){
+            var currentNodes=[];
+            _rightul.children("option").each(function(){
+                currentNodes.push($(this).attr("value"));
+            })
+            $("#${boxid}-input").val(currentNodes.join(","));
+        }
 
-	$("#${boxid}").on("click","li",function(){
-		$(this).toggleClass("active")
-	}).on("click","[toggle=backward]",function(){
-		var i=0;
-		$("#${boxid}>.rightul>li").each(function(index){
-			if($(this).hasClass("active")){
-				$(this).removeClass("active");
-				$(this).remove();
-				thisauth.splice(index-i,1);
-				i++;
-			}
-		});
-		setValue();
-	}).on("click","[toggle=forward]",function(){
-		$("#${boxid}>.leftul>li").each(function(){
-			if($(this).hasClass("active")){
-				$(this).removeClass("active");
-				if(thisauth.indexOf($(this).attr("rel"))==-1){
-					thisauth.push($(this).attr("rel"));
-					$rightul.append($(this).clone());
-				}
-			}
-		});
-		setValue();
-	})
+        $("#${boxid}").on("click","[toggle=backward]",function(){
+            var _currentNode,
+                    currentVals=_rightul.val();
+            if(!currentVals){
+                return false
+            }
+            for(var i=0,l=currentVals.length;i<l;i++) {
+                _currentNode=_rightul.children("option[value='"+currentVals[i]+"']:first");
+                _leftul.find("option[value='"+_currentNode.attr("value")+"']:first").removeAttr("disabled");
+                _currentNode.remove();
+            }
+            _rightul.val('');
+            setValue();
+        }).on("click","[toggle=forward]",function(){
+            var _currentNode,
+                    currentVals=_leftul.val();
+            if(!currentVals){
+                return false
+            }
+            for(var i=0,l=currentVals.length;i<l;i++) {
+                _currentNode=_leftul.children("option[value='"+currentVals[i]+"']:first");
+                _rightul.append(_currentNode.clone());
+                _currentNode.attr("disabled","disabled");
+            }
+            _leftul.val('');
+            setValue();
+        }).on("click","[toggle='fast-forward']",function(){
+            _rightul.empty();
+            var _currentNode,
+                    currentVals=_leftul.find("option");
+            for(var i=0,l=currentVals.size();i<l;i++) {
+                _currentNode=currentVals.eq(i).removeAttr("disabled");
+                _rightul.append(_currentNode.clone());
+                _currentNode.attr("disabled","disabled");
+            }
+            _leftul.val('');
+            setValue();
+        }).on("click","[toggle='fast-backward']",function(){
+            _rightul.empty();
+            _leftul.find("option").removeAttr("disabled");
+            setValue();
+        })
 
-});
+    })(jQuery);
 </script>
 #end
