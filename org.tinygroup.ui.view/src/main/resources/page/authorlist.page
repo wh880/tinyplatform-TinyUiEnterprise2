@@ -1,23 +1,5 @@
-#@tForm()
-<div class="author-div mb-5 row">
-    <div class="author-div-left pull-left">
-        <input type="text" class="form-control" readonly>
-    </div>
-    <div class=""></div>
-    <div class="author-div-left pull-right">
-        <input type="text" class="form-control" readonly>
-    </div>
-</div>
-    #@authorList("newsauther" "1,2,3,5")
-        #authorItem(1,"刘德华1,52岁")
-        #authorItem(2,"文章1,26岁")
-        #authorItem(3,"孙红雷1,40岁")
-        #authorItem(4,"葛优1,58岁")
-        #authorItem(5,"刘德华2,52岁")
-        #authorItem(11,"文章2,26岁")
-        #authorItem(12,"孙红雷2,40岁")
-        #authorItem(13,"葛优2,58岁")
-    #end
-<div class="text-align-center"><button type="button" class="btn btn-primary">确定</button></div>
-#end
+<h2>2 双列表操作</h2>
+#@showInfo()一般用于权限移动等工作#end
+#showExample("/page/authorlist/authorlist.page")
 
+#@showPack()org.tinygroup.ui.form#end
