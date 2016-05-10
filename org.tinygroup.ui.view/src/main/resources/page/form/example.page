@@ -144,6 +144,23 @@
     #@elementItem("网址：")
         #tInput("website" ""{"placeholder":"http://","datatype":"url","nullmsg":"网址不能为空！"})
     #end
+    #@elementItem("权限：")
+        #@checkTreeForm("authorlist","221,222,23",{"split":","})
+        { id:1, pId:0, name:"随意勾选 1"},
+        { id:11, pId:1, name:"随意勾选 1-1"},
+        { id:111, pId:11, name:"随意勾选 1-1-1"},
+        { id:112, pId:11, name:"随意勾选 1-1-2"},
+        { id:12, pId:1, name:"随意勾选 1-2"},
+        { id:121, pId:12, name:"随意勾选 1-2-1"},
+        { id:122, pId:12, name:"随意勾选 1-2-2"},
+        { id:2, pId:0, name:"随意勾选 2"},
+        { id:21, pId:2, name:"随意勾选 2-1"},
+        { id:22, pId:2, name:"随意勾选 2-2"},
+        { id:221, pId:22, name:"随意勾选 2-2-1"},
+        { id:222, pId:22, name:"随意勾选 2-2-2"},
+        { id:23, pId:2, name:"随意勾选 2-3"}
+        #end
+    #end
     #@elementItem("单选框：")
         #@tRadioes("sex" "women" {"nullmsg":"请选择性别！","datatype":"*"})
             #@tRadio("man")男#end
@@ -165,8 +182,7 @@
         #@tTextarea("remark" {"placeholder":"说点什么...最少输入10个字符","row":"10","datatype":"*10-500","nullmsg":"备注不能为空！"})内容走起#end
     #end
     #@elementItem("内容：")
-        #@tTbditor("bodycontent")最后一个MAP参数为的初始化参数 会自动带入 主要设置宽高及图片上传的API配合#end
-        ##  #@Teditor("contentxx2" "content22" {"initialFrameHeight":"600"})最后一个MAP参数为Ueditor的初始化参数 会自动带入 #end
+        #@ueditor("uncontent" "inputName")测试一下#end
     #end
 
 
