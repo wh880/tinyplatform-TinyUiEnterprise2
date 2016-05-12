@@ -1,4 +1,4 @@
-#macro showPageNav(currentNum,totlNum,contentUrl,pageMap)#set(navId=fmt("nid%d",rand()),contentTarget=pageMap?.contentTarget,targetForm=pageMap?.contentTarget)
+#macro showPageNav(currentNum,totlNum,contentUrl,pageMap)#set(navId=fmt("nid%d",rand()),contentTarget=pageMap?.contentTarget,contentForm=pageMap?.contentForm)
 <div id="${navId}"></div>
 <script type="text/javascript">
     (function($){
@@ -6,8 +6,8 @@
             currentPage=${currentNum?:0},
     showcontent=false;
     var url="#link(contentUrl)";
-    if($("${targetForm}").size()>0){
-        url=url+(url.indexOf("?")!=-1?"&":"?")+$("${targetForm}").formSerialize();
+    if($("${contentForm}").size()>0){
+        url=url+(url.indexOf("?")!=-1?"&":"?")+$("${contentForm}").formSerialize();
     }
     $('#${navId}').twbsPagination({
         totalPages: totalPages,
