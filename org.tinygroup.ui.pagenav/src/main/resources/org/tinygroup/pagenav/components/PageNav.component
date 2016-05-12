@@ -1,5 +1,5 @@
-#macro showPageNav(currentNum,totlNum,contentUrl,contentTarget,targetForm)#set(navId=fmt("nid%d",rand()))
-<div id="${navId}" style="text-align:center"></div>
+#macro showPageNav(currentNum,totlNum,contentUrl,pageMap)#set(navId=fmt("nid%d",rand()),contentTarget=pageMap?.contentTarget,targetForm=pageMap?.contentTarget)
+<div id="${navId}"></div>
 <script type="text/javascript">
     (function($){
         var totalPages=${totlNum?:0},
@@ -7,12 +7,13 @@
     showcontent=false;
     var url="#link(contentUrl)";
     if($("${targetForm}").size()>0){
-        url=url+(url.indexOf("?")>0?"&":"?")+$("${targetForm}").formSerialize();
+        url=url+(url.indexOf("?")!=-1?"&":"?")+$("${targetForm}").formSerialize();
     }
     $('#${navId}').twbsPagination({
         totalPages: totalPages,
         visiblePages: totalPages>7?7:totalPages,
         startPage:currentPage,
+        paginationClass: 'pagination ${pageMap?.showClass?:""}',
         onPageClick:function(event, page) {
             if(!showcontent){
                 showcontent=true;
@@ -29,7 +30,7 @@
                     }
                 });
             }else{
-                window.location.href=url=url+(url.indexOf("?")>0?"&":"?")+"pageNo="+page;
+                window.location.href=url=url+(url.indexOf("?")!=-1?"&":"?")+"pageNo="+page;
             }
 
         },
