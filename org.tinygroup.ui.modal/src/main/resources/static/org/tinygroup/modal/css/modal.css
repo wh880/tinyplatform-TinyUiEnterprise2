@@ -356,3 +356,10 @@
 .important-height-auto {
     height: auto !important;
 }
+
+.model-search{position: absolute;left:170px;right:70px;top:3px;z-index: 99;}
+.model-search>.form-control{background:none;border:0;box-shadow:none;padding-left:30px}
+.model-search>.form-control:focus{outline: none;box-shadow:none;border-width:1px;background:#fff}
+.model-search>.model-search-btn{left:5px;top:5px; position:absolute;background:none;border:0;padding:0;margin:0;color:#999;}
+.model-search>.model-search-btn:focus{outline: none}
+.model-search:focus>.model-search-btn{color:#333}
