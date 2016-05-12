@@ -26,7 +26,11 @@
             <version>${project.version}</version>
         </dependency>
 
-       
+        <dependency>
+            <groupId>org.tinygroup</groupId>
+            <artifactId>org.tinygroup.ui.pagenav</artifactId>
+            <version>${project.version}</version>
+        </dependency>
 
         <dependency>
             <groupId>org.tinygroup</groupId>
