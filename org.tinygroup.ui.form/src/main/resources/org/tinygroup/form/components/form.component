@@ -254,6 +254,10 @@ $(function(){
 	<option value="${optionItemVal}" ${optionItemVal==value?"selected":""}>#bodyContent</option>
 #end
 
+#macro tOption(optionItemVal value)
+<option value="${optionItemVal}" ${optionItemVal==value?"selected":""}>#bodyContent</option>
+#end
+
 #*
 * tTextarea 对应标标签textarea
 *

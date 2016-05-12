@@ -1,46 +1,24 @@
-#macro wordbox(popoverInfo,popurl)
-<div id="box-fixedWidth1" class="wordbox"></div>
+#macro wordbox(tagUrl,tapMap)#set(boxId=fmt("bid%d",rand()))
+<div id="${boxId}" class="wordbox">ddd</div>
 <script type="text/javascript">
     $(function() {
-
-        var titles = ['JavaScript', 'CSS', 'HTML', 'HTML5', 'SVG', 'PHP', 'Python', 'Shell', 'WebGL', '17素材网'];
-        var words = [];
-        for(var i = 0; i < titles.length; i++) {
-            words[i] = {
-                'title' : titles[i],
-                'url' : ''
-            }
-        }
-        var colors3 = ['#49B4E0', '#FCBDA2', '#EBADBD', '#D5C2AF', '#C0BDE5', '#CBCC7F', '#FFDA7F', '#8dd0c3', '#bbbfc6', '#a4d9ef', '#bbdb98'];
-
-
-
-        $('#box-fixedWidth2').wordbox({
-            isLead: true,
-            leadWord: {'title': '全部', 'url': 'http://www.17sucai.com/','title': 'css', 'url': 'http://www.baidu.com/','title': 'JavaScript', 'url': 'http://www.jquery.com/'},
-            words: words,
-            colors: colors3,
-            borderWidth: 2,
-            isFixedWidth: true,
-            width: 280,
-            height: 300
+        $.ajax({
+            url:"#link(tagUrl)",
+            type:"get",
+            cache:false,
+            dataType:"json",
+            success:function(data){
+                var words =[]
+                for(var i=0,l=data.length;i<l;i++){
+                    words.push({"url":data[i]["url"],"title":data[i]["tagName"]});
+                }
+                $('#${boxId}').wordbox({
+                    words: words,
+                    width: ${tapMap?.width?:280},
+                height: ${tapMap?.height?:300}
         });
-
-
-
-        // 鼠标浮动字体变大
-        var fontSize = $('#box-responsive').css('font-size');
-        $('#box-fixedWidth1 .box a').hover(function(event) {
-            $(this).css({'font-size': '1.4em'});
-            event.stopPropagation();
-        }, function(event) {
-            $(this).css({'font-size': fontSize});
-            event.stopPropagation();
-        });
-
+    }
+    })
     });
 </script>
-
-
-<span href="#link(popurl)" data-toggle="popover" #mapToHtml(popoverInfo) style="cursor:pointer">#bodyContent</span>
 #end
