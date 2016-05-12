@@ -27,6 +27,7 @@
                     cache:false,
                     success:function(html){
                         $("${contentTarget}").html(html);
+                        $(document).scrollTop($("${contentTarget}").offset().top-100);
                     }
                 });
             }else{
