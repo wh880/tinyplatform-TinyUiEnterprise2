@@ -1,0 +1,8 @@
+<ui-components>
+    <ui-component name="tiny.ui.pagenav" dependencies="tiny.ui.base">
+        <js-resource>
+            /static/org/tinygroup/pagenav/jquery.twbsPagination.tiny.min.js
+        </js-resource>
+        <description>twbsPagination</description>
+    </ui-component>
+</ui-components>
