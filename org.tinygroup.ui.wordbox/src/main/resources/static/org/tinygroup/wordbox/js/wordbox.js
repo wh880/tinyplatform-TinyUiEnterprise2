@@ -65,7 +65,7 @@
                 wordLen1 = Math.round(wordLen * dot[0]),
                 wordLen2 = wordLen - wordLen1;
 
-            if (wordLen == 1) {
+            if (wordLen === 1) {
                 this._createBox(wrapper,
                     left,
                     top,
@@ -76,11 +76,11 @@
                 return;
             }
 
-            if (wordLen1 == 0) {
+            if (wordLen1 === 0) {
                 wordLen1 = 1;
-                wordLen2--;
-            } else if (wordLen2 == 0) {
-                wordLen2 = 1;
+                //wordLen2--;
+            } else if (wordLen2 === 0) {
+                //wordLen2 = 1;
                 wordLen1--;
             }
 
@@ -103,8 +103,8 @@
                     words.slice(wordLen1));
             } else {
                 // 上下分割
-                var topH = Math.round(height * dot[0]),
-                    bottomH = height - topH;
+                var topH = Math.round(height * dot[0]);
+                    //bottomH = height - topH;
 
                 this.fillRect(wrapper,
                     left,
@@ -163,7 +163,7 @@
                 max = center * (1 + round),
                 rand = Math.random() * (max - min) + min;
 
-            if (num == 1) {
+            if (num === 1) {
                 return [base];
             }
 
@@ -223,8 +223,8 @@
                     }
                     timer = setTimeout(function() {
                         // 响应式 wordbox 根据父级元素宽度和高度的变化来改变自身的宽度和高度，重新绘制
-                        if (_this.$wrapper.width() != _this.$wrapper.parent().width() ||
-                            _this.$wrapper.height() != _this.$wrapper.parent().height()) {
+                        if (_this.$wrapper.width() !== _this.$wrapper.parent().width() ||
+                            _this.$wrapper.height() !== _this.$wrapper.parent().height()) {
                             _this.$wrapper.width(_this.$wrapper.parent().width());
                             _this.$wrapper.height(_this.$wrapper.parent().height());
                             // 清除之前绘制的wordbox

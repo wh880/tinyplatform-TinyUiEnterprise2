@@ -4,7 +4,7 @@
 .word-box-list a:hover{font-size:1.4em;-webkit-transition: all .2s;transition: all .2s;background-color:rgba(0,0,0,0.1)}
 
 .tags-cloud{width:240px;height:250px;position:relative;font-size:12px;color:#333;margin:20px auto 0;text-align:center;}
-.tags-cloud>a{position:absolute;top:0px;left:0px;color:#fff;font-family:Arial;text-decoration:none;padding:1px 5px;white-space:nowrap;display:inline-block;border-radius:3px;}
+.tags-cloud>a{position:absolute;top:0;left:0;color:#fff;font-family:Arial;text-decoration:none;padding:1px 5px;white-space:nowrap;display:inline-block;border-radius:3px;}
 .tags-cloud>a:hover{color:#fff;padding:5px;display:block;background:#D02F53;}
 .tags-cloud>a:nth-child(3n){background:#666;}
 .tags-cloud>a:nth-child(3n+1){background:#F16E50;}

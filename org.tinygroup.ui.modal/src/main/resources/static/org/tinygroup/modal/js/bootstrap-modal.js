@@ -64,9 +64,13 @@
         },
         show: function () {
             var e = $.Event('show');
-            if (this.isShown) return;
+            if (this.isShown){
+                return
+            }
             this.$element.trigger(e);
-            if (e.isDefaultPrevented()) return;
+            if (e.isDefaultPrevented()){
+                return;
+            }
             this.escape();
             this.tab();
             this.options.loading && this.loading();
@@ -75,7 +79,9 @@
             e && e.preventDefault();
             e = $.Event('hide');
             this.$element.trigger(e);
-            if (!this.isShown || e.isDefaultPrevented()) return (this.isShown = false);
+            if (!this.isShown || e.isDefaultPrevented()) {
+                return (this.isShown = false)
+            }
             if (this.fullscreen) {
                 this.fullScreen();
             }
@@ -88,12 +94,10 @@
             $.support.transition && this.$element.hasClass('fade') ? this.hideWithTransition() : this.hideModal();
         },
         layout: function () {
-            var prop = 'height',// this.options.height ? 'height': 'max-height',
+            var prop = 'height',
                 modalTitle = this.options.modalTitle,
-            // modalUrl = this.options.modalUrl,
-            // modalData = this.options.modalData,
                 value = this.options.height;
-            var otherHeight=2;//修证边框部分
+            var otherHeight=2;
             var _header=this.$element.children(".modal-header");
             var _footer=this.$element.children(".modal-footer");
             if(_header.size()>0){
@@ -122,7 +126,7 @@
             if (modalTitle) {
                 this.$element.children('.modal-header').children('h3').html(modalTitle);
             }
-            this.$element.css(prop, '');//.find('.modal-body')
+            this.$element.css(prop, '');
             if (value) {
                 this.$element.children(".modal-body").css("height", value - this.$element.otherHeight + "px");
             } else {
@@ -171,7 +175,7 @@
             if (this.isShown && this.options.consumeTab) {
                 this.$element.on('keydown.tabindex.modal', '[data-tabindex]',
                     function (e) {
-                        if (e.keyCode && e.keyCode == 9) {
+                        if (e.keyCode && e.keyCode === 9) {
                             var $next = $(this),
                                 $rollover = $(this);
                             that.$element.find('[data-tabindex]:enabled:not([readonly])').each(function (e) {
@@ -195,11 +199,13 @@
         escape: function () {
             var that = this;
             if (this.isShown && this.options.keyboard) {
-                if (!this.$element.attr('tabindex')) this.$element.attr('tabindex', -1);
+                if (!this.$element.attr('tabindex')){
+                    this.$element.attr('tabindex', -1)
+                };
 
                 this.$element.on('keyup.dismiss.modal',
                     function (e) {
-                        e.which == 27 && that.hide();
+                        e.which === 27 && that.hide();
                     });
             } else if (!this.isShown) {
                 this.$element.off('keyup.dismiss.modal')
@@ -220,9 +226,7 @@
                 });
         },
         hideModal: function () {
-            //var prop = this.options.height ? 'height': 'max-height';
             var value = this.options.height || this.options.maxHeight;
-
             if (value) {
                 this.$element.children('.modal-body').css('overflow', '').css({"max-height": '', "height": ''});
             }
@@ -246,7 +250,9 @@
 
                 this.$loading = $('<div class="loading-mask ' + animate + '">').append(this.options.spinner).appendTo(this.$element);
 
-                if (doAnimate) this.$loading[0].offsetWidth;
+                if (doAnimate){
+                    this.$loading[0].offsetWidth;
+                }
                 /*force reflow*/
 
                 this.$loading.addClass('in');
@@ -293,7 +299,9 @@
         destroy: function () {
             var e = $.Event('destroy');
             this.$element.trigger(e);
-            if (e.isDefaultPrevented()) return;
+            if (e.isDefaultPrevented()){
+                return;
+            }
             this.$element.off('.modal').removeData('modal').removeClass('in').attr('aria-hidden', true);
 
             if (this.$parent !== this.$element.parent()) {
@@ -311,10 +319,16 @@
             var $this = $(this),
                 data = $this.data('modal'),
                 options = $.extend({},
-                    $.fn.modal.defaults, $this.data(), typeof option == 'object' && option);
-            if (!data) $this.data('modal', (data = new Modal(this, options)));
-            if (typeof option == 'string') data[option].apply(data, [].concat(args));
-            else if (options.show) data.show()
+                    $.fn.modal.defaults, $this.data(), typeof option === 'object' && option);
+            if (!data){
+                $this.data('modal', (data = new Modal(this, options)));
+            }
+            if (typeof option === 'string'){
+                data[option].apply(data, [].concat(args));
+            }
+            else if (options.show){
+                data.show()
+            }
         })
     };
     $.fn.modal.defaults = {
@@ -346,11 +360,8 @@
                         $(this),
                     href = $this.attr('href'),
                     height = $this.attr('data-height'),
-
-                    width = $this.attr('data-width'),
                     modalTitle = $this.attr('modal-title'),
                     modalUrl = $this.attr('modal-url'),
-                    modalData = $this.attr('modal-Data'),
                     $target = $($this.attr('data-target') || (href && href.replace(/.*(?=#[^\s]+$)/, ''))
                     ),
                 //strip for ie7
@@ -361,7 +372,7 @@
                             height: height ? height : 0,
                             maxHeight: $(window).height() * 0.8 - 100,
                             modalTitle: modalTitle ? modalTitle : null,
-                            modalUrl: modalUrl ? modalUrl : null,
+                            modalUrl: modalUrl ? modalUrl : null
                         },
 
                         $target.data(), $this.data())
