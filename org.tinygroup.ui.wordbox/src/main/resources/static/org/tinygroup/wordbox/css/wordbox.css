@@ -9,4 +9,4 @@
 .tags-cloud>a:nth-child(3n){background:#666;}
 .tags-cloud>a:nth-child(3n+1){background:#F16E50;}
 .tags-cloud>a:nth-child(3n+2){background:#006633;}
-.tags-cloud>a.active{z-index:999;background:#0099ff;opacity: 1}
+.tags-cloud>a.active{z-index:999!important;background:#0099ff;opacity: 1}
