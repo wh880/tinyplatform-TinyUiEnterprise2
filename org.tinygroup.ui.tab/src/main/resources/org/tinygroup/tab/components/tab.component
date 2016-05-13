@@ -20,7 +20,9 @@
     #bodyContent
 </div>
 <script type="text/javascript">
-    $.Huitab("#${tabid}>.tabBar>span","#${tabid}>.tabCon","Current","click","0");
+    $(function(){
+        $.Huitab("#${tabid}>.tabBar>span","#${tabid}>.tabCon","Current","click","0");
+    })
 </script>
 #end
 #*
@@ -33,7 +35,9 @@
     #bodyContent
 </div>
 <script type="text/javascript">
-    $.Huitab("#${tabid}>.tabBar>span","#${tabid}>.tabCon","Current","mousemove","1");
+    $(function(){
+        $.Huitab("#${tabid}>.tabBar>span","#${tabid}>.tabCon","Current","mousemove","1");
+    })
 </script>
 #end
 
