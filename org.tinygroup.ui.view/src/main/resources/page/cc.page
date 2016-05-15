@@ -1,116 +1,58 @@
-#*
-<script>
-    UE.plugins['tinyat'] = function () {
-        var me = this,thePlugins = 'tinyat';
-        me.commands[thePlugins] = {
-            execCommand:function () {
-               /* var dialog = new UE.ui.Dialog({
-                    iframeUrl:this.options.UEDITOR_HOME_URL +'macro/macro.pagelet',
-                    name:thePlugins,
-                    editor:this,
-                    title: '宏控件',
-                    cssRules:"width:600px;height:270px;",
-                    buttons:[
-                        {
-                            className:'edui-okbutton',
-                            label:'确定',
-                            onclick:function () {
-                                dialog.close(true);
-                            }
-                        },
-                        {
-                            className:'edui-cancelbutton',
-                            label:'取消',
-                            onclick:function () {
-                                dialog.close(false);
-                            }
-                        }]
-                });
-                dialog.render();
-                dialog.open();*/
-                console.log("ssss");
-            }
-        };
-        var popup = new baidu.editor.ui.Popup( {
-            editor:this,
-            content: '',
-            className: 'edui-bubble',
-            _edittext: function () {
-                baidu.editor.plugins[thePlugins].editdom = popup.anchorEl;
-                me.execCommand(thePlugins);
-                this.hide();
-            },
-            _delete:function(){
-                if( window.confirm('确认删除该控件吗？') ) {
-                    baidu.editor.dom.domUtils.remove(this.anchorEl,false);
-                }
-                this.hide();
-            }
-        } );
-        popup.render();
-        /*me.addListener( 'mouseover', function( t, evt ) {
-            evt = evt || window.event;
-            var el = evt.target || evt.srcElement;
-            var tinyPlugins = el.getAttribute('tinyplugins');
-            if ( /div/ig.test( el.tagName ) && tinyPlugins==thePlugins) {
-                var html = popup.formatHtml(
-                        '<nobr>宏控件: <span onclick=$$._edittext() class="edui-clickable">编辑</span>&nbsp;&nbsp;<span onclick=$$._delete() class="edui-clickable">删除</span></nobr>' );
-                if ( html ) {
-                    popup.getDom( 'content' ).innerHTML = html;
-                    popup.anchorEl = el;
-                    popup.showAnchor( popup.anchorEl );
-                } else {
-                    popup.hide();
-                }
-            }
-        });*/
-
-        me.addListener('keyup', function( t, evt ) {
-            if(evt.keyCode==16){
-                evt = evt || window.event;
-                var el = evt.target || evt.srcElement;
-                console.log("@");
-                var html = popup.formatHtml(
-                        '<nobr><div>张三</div><div>李四</div><div>王五</div></nobr>' );
-                if ( html ) {
-                    popup.getDom( 'content' ).innerHTML = html;
-                    popup.anchorEl = el;
-                    popup.showAnchor( popup.anchorEl );
-                } else {
-                    popup.hide();
-                }
-            }
-        });
-    };
-</script>
-
-#@ueditor("page-body-ontent" "docText" {"imageFormData":"{objectId:1,objectType:2}"})sss#end*#
+<div id="demo-simple" class="demo"></div>
 <style>
-
+.demo {
+    margin: 0 auto;
+    width: 450px;
+    height: 250px;
+}
 </style>
-#macro wordbox(tagUrl,tapMap)#set(boxId=fmt("bid%d",rand()))
-<div id="${boxId}" class="wordbox">ddd</div>
-<script type="text/javascript">
-    $(function() {
-        $.ajax({
-            url:"#link(tagUrl)",
-            type:"get",
-            cache:false,
-            dataType:"json",
-            success:function(data){
-                var words =[]
-                for(var i=0,l=data.length;i<l;i++){
-                    words.push({"url":data[i]["url"],"title":data[i]["tagName"]});
-                }
-                $('#${boxId}').wordbox({
-                    words: words,
-                    width: ${tapMap?.width?:280},
-                    height: ${tapMap?.height?:300}
-                });
-            }
-        })
-    });
-</script>
-#end
+<script>
+    var basic_words = [
+        {text: "Lorem", weight: 13},
+        {text: "Ipsum", weight: 10.5},
+        {text: "Dolor", weight: 9.4},
+        {text: "Sit", weight: 8},
+        {text: "Amet", weight: 6.2},
+        {text: "Consectetur", weight: 5},
+        {text: "Adipiscing", weight: 5},
+        {text: "Elit", weight: 5},
+        {text: "Nam et", weight: 5},
+        {text: "Leo", weight: 4},
+        {text: "Sapien", weight: 4},
+        {text: "Pellentesque", weight: 3},
+        {text: "habitant", weight: 3},
+        {text: "morbi", weight: 3},
+        {text: "tristisque", weight: 3},
+        {text: "senectus", weight: 3},
+        {text: "et netus", weight: 3},
+        {text: "et malesuada", weight: 3},
+        {text: "fames", weight: 2},
+        {text: "ac turpis", weight: 2},
+        {text: "egestas", weight: 2},
+        {text: "Aenean", weight: 2},
+        {text: "vestibulum", weight: 2},
+        {text: "elit", weight: 2},
+        {text: "sit amet", weight: 2},
+        {text: "metus", weight: 2},
+        {text: "adipiscing", weight: 2},
+        {text: "ut ultrices", weight: 2},
+        {text: "justo", weight: 1},
+        {text: "dictum", weight: 1},
+        {text: "Ut et leo", weight: 1},
+        {text: "metus", weight: 1},
+        {text: "at molestie", weight: 1},
+        {text: "purus", weight: 1},
+        {text: "Curabitur", weight: 1},
+        {text: "diam", weight: 1},
+        {text: "dui", weight: 1},
+        {text: "ullamcorper", weight: 1},
+        {text: "id vuluptate ut", weight: 1},
+        {text: "mattis", weight: 1},
+        {text: "et nulla", weight: 1},
+        {text: "Sed", weight: 1}
+    ];
 
-#wordbox("/data/tagdata.pagelet")
+    $('#demo-simple').jQCloud(basic_words);
+
+</script>
+

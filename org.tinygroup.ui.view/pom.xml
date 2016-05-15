@@ -198,7 +198,7 @@
         </dependency>
         <dependency>
             <groupId>org.tinygroup</groupId>
-            <artifactId>org.tinygroup.ui.wordbox</artifactId>
+            <artifactId>org.tinygroup.ui.jqcloud</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
