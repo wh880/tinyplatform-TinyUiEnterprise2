@@ -97,7 +97,7 @@
         <module>org.tinygroup.ui.popover</module>
 		<module>org.tinygroup.ui.minproject</module>
         <module>org.tinygroup.ui.jqcloud</module>
-        <module>org.tinygroup.ui.pagenav</module>
+        <!--<module>org.tinygroup.ui.pagenav</module>-->
         <module>newweb</module>
     </modules>
 
