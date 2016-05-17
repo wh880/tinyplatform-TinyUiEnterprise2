@@ -1,0 +1,126 @@
+<div class="theme-default page-signup">
+<!-- Page background -->
+<div id="page-signup-bg">
+	<!-- Background overlay -->
+	<div class="overlay"></div>
+	<!-- Replace this with your bg image -->
+	<img src="assets/images/signin-bg-1.jpg" alt="">
+</div>
+<!-- / Page background -->
+
+<!-- Container -->
+<div class="signup-container">
+	<!-- Header -->
+	<div class="signup-header">
+		<a href="#" class="signin-logo">
+			<!--<img src="assets/images/logo-big.png" alt="" style="margin-top: -5px;">&nbsp;-->
+			管理系统
+		</a> <!-- / .signin-logo -->
+	</div>
+	<!-- / Header -->
+
+	<!-- Form -->
+	<div class="signup-form">
+		<form action="#" id="signup-form_id">
+			<div class="signup-text">
+				<span>创建一个帐户</span>
+			</div>
+			<p style="color:#c00;height:15px;margin-top:-21px;font-weight:600;display:none">&nbsp;<i class="fa fa-warning"></i>&nbsp;所放提示语...</p>
+
+			<div class="form-group w-icon">
+				<input type="text" name="signup_username" id="signup_username" class="form-control input-lg" placeholder="用户名" />
+				<span class="fa fa-user signup-form-icon"></span>
+			</div>
+			<div class="form-group w-icon">
+				<input type="text" name="userName" id="userName" class="form-control input-lg" placeholder="姓名" />
+				<span class="fa fa-user signup-form-icon"></span>
+			</div>
+			<div class="form-group w-icon">
+				<input type="text" name="signup_email" id="signup_email" class="form-control input-lg" placeholder="邮箱" />
+				<span class="fa fa-phone signup-form-icon"></span>
+			</div>
+
+			<div class="form-group w-icon">
+				<input type="text" name="signup_phone" id="signup_phone" class="form-control input-lg" placeholder="手机号" />
+				<span class="fa fa-envelope signup-form-icon"></span>
+			</div>
+
+			<div class="form-group w-icon">
+				<input type="password" name="signup_password" id="signup_password" class="form-control input-lg" placeholder="密码" />
+				<span class="fa fa-lock signup-form-icon"></span>
+			</div>
+
+			<div class="form-group" style="margin-top: 20px;margin-bottom: 20px;">
+				<label class="checkbox-inline">
+					<input type="checkbox" name="signup_confirm" class="px" id="confirm_id" style="margin-top:4px">
+					<span class="lbl">我同意的<a href="#" target="_blank">条款和条件</a></span>
+				</label>
+			</div>
+
+			<div class="form-actions">
+				<input type="submit" value="注 册" class="signup-btn bg-primary">
+			</div>
+		</form>
+		<!-- / Form -->
+	</div>
+	<!-- Right side -->
+</div>
+<div class="have-account">已经有一个帐户吗? <a href="${TINY_CONTEXT_PATH}/login/login.page">登录</a></div>
+</div>
+<script>
+
+         //验证表单
+        $().ready(function () {
+
+            // 调用
+            $("#signup-form_id").validate({
+                rules: {
+                    signup_username: {
+                        required: true,
+                        minlength: 2
+                    },
+                    userName: {
+                        required: true,
+                        minlength: 2
+                    },
+                    signup_password: {
+                        required: true,
+                        minlength: 5
+                    },
+					signup_phone: {
+                        required: true,
+						digits: true,
+                        minlength: 11
+                    },
+					signup_email: {
+                        required: true,
+                        email: true
+                    },
+                },
+                messages: {
+                    signup_username: {
+                        required: "请输入您的用户名",
+                        minlength: "用户名必须两个字符以上"
+                    },
+                    userName: {
+                        required: "请输入您的姓名",
+                        minlength: "姓名必须两个字符以上"
+                    },
+                    signup_password: {
+                        required: "请输入您的密码",
+                        minlength: "密码必须5个字符以上"
+                    },
+					signup_phone: {
+                        required: "请输入您的手机号",
+                        minlength: "手机号必须是11位",
+						digits: "只能输入数字",
+                    },
+					signup_email: {
+                        required: "请输入您的的E-mail",
+                        email: "请输入正确的E-mail",
+                    },
+                }
+            });
+
+        });
+    </script>

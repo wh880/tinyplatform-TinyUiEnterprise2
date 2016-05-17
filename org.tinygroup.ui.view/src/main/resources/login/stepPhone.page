@@ -1,0 +1,116 @@
+<div class="wizard-example">
+    <div class="theme-default page-signup">
+        <!-- Page background -->
+        <div id="page-signup-bg">
+            <!-- Background overlay -->
+            <div class="overlay"></div>
+            <!-- Replace this with your bg image -->
+            <img src="assets/images/signin-bg-1.jpg" alt="">
+        </div>
+        <!-- / Page background -->
+        <!-- Container -->
+        <div class="signup-container">
+            <!-- signup-header -->
+            <div class="signup-header">
+                <a href="#" class="signin-logo">
+                    找回密码
+                </a>
+            </div>
+            <!-- content_boxbg -->
+            <div class="content_boxbg">
+                <!-- ui-wizard-example -->
+                <div class="wizard ui-wizard-example">
+                    <div class="wizard-wrapper">
+                        <ul class="wizard-steps">
+                            <li data-target="#wizard-example-step1">
+                                <span class="wizard-step-number">1</span>
+								<span class="wizard-step-caption">
+									第一步
+									<span class="wizard-step-description">选择找回方式</span>
+								</span>
+                            </li>
+                            <li data-target="#wizard-example-step2" class="active">
+                                <span class="wizard-step-number">2</span>
+								<span class="wizard-step-caption">
+									第二步
+									<span class="wizard-step-description">进行安全验证</span>
+								</span>
+                            </li>
+                            <li data-target="#wizard-example-step3">
+                                <span class="wizard-step-number">3</span>
+								<span class="wizard-step-caption">
+									第三步
+									<span class="wizard-step-description">设置新密码</span>
+								</span>
+                            </li>
+                            <li data-target="#wizard-example-step4">
+                                <span class="wizard-step-number">4</span>
+                                <span class="wizard-step-caption">完成</span>
+                            </li>
+                        </ul> <!-- / .wizard-steps -->
+                    </div> <!-- / .wizard-wrapper -->
+                    <div class="reseinfotPwd">
+                        <ul class="getPwd phoneGetpwd">
+                            <li>
+                                <form name="thisform" action="stepSetpwd.page" method="post" class="form">
+                                    <div class="row">
+                                        <div class="col-xs-12">
+											<a href="#" class="lockPhone">
+												<i class="iconfont iconfont-shouji">&nbsp;</i>
+												<span  class="typeInfo" style="margin-top:20px;">通过手机号<i>182***8768</i></span>
+											</a>
+                                            <span class="msgsBtn btn radius btn-default">获取验证码</span>
+										</div>
+                                    </div>
+                                    <div class="row">
+										<div class="col-xs-6">
+											<input type="text" name="mobcheckcode" value="" class="form-control "  nullmsg="请填写验证码！" datatype="*2-6" placeholder="请输入验证码" id="mobcheckcode" class="input-text"/>
+										</div>
+										<div class="col-xs-6"><input type="submit" name="submitbtn" value="提交 " class="btn btn-primary" /></div>
+                                    </div>
+                                    <div class="row">
+                                         <div class="col-xs-12"><a href="/tinyuiweb/loginSignup/stepChoose.page">使用其它方式</a></div>
+                                    </div>
+                                </form>
+                            </li>
+                        </ul>
+                        <p class="clearfix"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="have-account">已经有一个帐户吗? <a href="login.page">登录</a></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(function(){
+        var validCode=true;
+        $(".msgsBtn").click (function  () {
+            var time=30;
+            var code=$(this);
+            if (validCode) {
+                validCode=false;
+                code.addClass("msgs1");
+                var t=setInterval(function  () {
+                    time--;
+                    code.html(time+"秒");
+                    if (time==0) {
+                        clearInterval(t);
+                        code.html("重新获取");
+                        validCode=true;
+                        code.removeClass("msgs1");
+
+                    }
+                },1000)
+            }
+        })
+        $("form[name=thisform").Validform({
+            tiptype:1,
+            beforeSubmit:function(curform){
+                //在验证成功后，表单提交前执行的函数，curform参数是当前表单对象。
+                //这里明确return false的话表单将不会提交;
+            }
+        });
+    });
+</script>

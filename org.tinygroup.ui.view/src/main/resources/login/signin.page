@@ -1,0 +1,122 @@
+<div class="theme-default page-signup">
+<!-- Page background -->
+<div id="page-signup-bg">
+	<!-- Background overlay -->
+	<div class="overlay"></div>
+	<!-- Replace this with your bg image -->
+	<img src="assets/images/signin-bg-1.jpg" alt="">
+</div>
+<!-- / Page background -->
+
+<!-- Container -->
+<div class="signup-container">
+	<!-- Header -->
+	<div class="signup-header">
+		<a href="#" class="signin-logo">
+			<!--<img src="assets/images/logo-big.png" alt="" style="margin-top: -5px;">&nbsp;-->
+			找回密码
+		</a> <!-- / .signin-logo -->
+	<!-- / Header -->
+
+	<!-- Form -->
+	<div class="signup-form"  style="margin-top:10px;margin-bottom:10px;">
+		<form action="${TINY_CONTEXT_PATH}/login/stepChoose.page" id="signup-form_id">
+			<div id="tab_demo" class="tabInfobox">
+					<p style="color:#c00;height:15px;margin-top:-21px;font-weight:600;display:none">&nbsp;<i class="fa fa-warning"></i>&nbsp;所放提示语...</p>
+					<div class="form-group w-icon">
+						<input type="text" name="username" id="username" class="form-control input-lg" placeholder="请输入账号">
+						<span class="fa fa-user signup-form-icon"></span>
+					</div>
+					<div class="form-group w-icon yzmInput">
+						<input type="text" name="name_yzm" id="name_yzm" class="form-control input-lg" placeholder="请输入验证码">
+						<span class="fa fa-volume-down signup-form-icon"></span>
+						<span class="yzm"><img src="assets/images/verifycode.jpg" alt=""></span>
+					</div>
+				</div>
+				<div class="form-actions">
+				<input type="submit" value="下一步" class="signup-btn bg-primary">
+			</div>
+			</div>
+
+		</form>
+		<!-- / Form -->
+	</div>
+	<!-- Right side -->
+</div>
+<div class="have-account">已经有一个帐户吗? <a href="${TINY_CONTEXT_PATH}/login/login.page">登录</a></div>
+</div>
+<script type="text/javascript">
+$(function(){
+		jQuery.tabInfobox =function(tabBar,tabCon,class_name,tabEvent,i){
+		var $tab_menu=$(tabBar);
+		// 初始化操作
+		$tab_menu.removeClass(class_name);
+		$(tabBar).eq(i).addClass(class_name);
+		$(tabCon).hide();
+		$(tabCon).eq(i).show();
+
+		$tab_menu.bind(tabEvent,function(){
+			$tab_menu.removeClass(class_name);
+			$(this).addClass(class_name);
+			var index=$tab_menu.index(this);
+			$(tabCon).hide();
+			$(tabCon).eq(index).show();
+		});
+		};
+		 $.tabInfobox("#tab_demo .tabBar span","#tab_demo .tabCon","current","click","0");
+	});
+	</script>
+<script>
+         //验证表单
+        $().ready(function () {
+            // 调用
+            $("#signup-form_id").validate({
+                rules: {
+					username: {
+                        required: true,
+                        minlength: 2
+                    },
+					name_yzm: {
+                        required: true,
+                        name_yzm: true
+                    }
+                },
+                messages: {
+					 username: {
+                        required: "请输入您的用户名",
+                        minlength: "用户名必须两个字符以上"
+                    },
+					name_yzm: {
+                        required: "请输入验证码",
+                        phoneyzm: "请输入正确验证码",
+                    }
+                }
+            });
+
+        });
+    </script>
+	<script type="text/javascript">
+		$(function  () {
+			//获取短信验证码
+			var validCode=true;
+			$(".msgs").click (function  () {
+				var time=30;
+				var code=$(this);
+				if (validCode) {
+					validCode=false;
+					code.addClass("msgs1");
+				var t=setInterval(function  () {
+					time--;
+					code.html(time+"秒");
+					if (time==0) {
+						clearInterval(t);
+					code.html("重新获取");
+						validCode=true;
+					code.removeClass("msgs1");
+
+					}
+				},1000)
+				}
+			})
+		})
+		</script>

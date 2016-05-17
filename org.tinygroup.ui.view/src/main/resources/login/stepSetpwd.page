@@ -1,0 +1,120 @@
+<div class="wizard-example">
+	<div class="theme-default page-signup">
+	<!-- Page background -->
+	<div id="page-signup-bg">
+		<!-- Background overlay -->
+		<div class="overlay"></div>
+		<!-- Replace this with your bg image -->
+		<img src="assets/images/signin-bg-1.jpg" alt="">
+	</div>
+	<!-- / Page background -->
+	<!-- Container -->
+		<div class="signup-container">
+			<!-- signup-header -->
+			<div class="signup-header">
+				<a href="#" class="signin-logo">
+					找回密码
+				</a>
+			</div>
+			<!-- content_boxbg -->
+			<div class="content_boxbg">
+			<!-- ui-wizard-example -->
+				<div class="wizard ui-wizard-example">
+					<div class="wizard-wrapper">
+						<ul class="wizard-steps">
+							<li data-target="#wizard-example-step1">
+								<span class="wizard-step-number">1</span>
+								<span class="wizard-step-caption">
+									第一步
+									<span class="wizard-step-description">选择找回方式</span>
+								</span>
+							</li>
+							<li data-target="#wizard-example-step2">
+								<span class="wizard-step-number">2</span>
+								<span class="wizard-step-caption">
+									第二步
+									<span class="wizard-step-description">进行安全验证</span>
+								</span>
+							</li>
+							<li data-target="#wizard-example-step3" class="active">
+								<span class="wizard-step-number">3</span>
+								<span class="wizard-step-caption">
+									第三步
+									<span class="wizard-step-description">设置新密码</span>
+								</span>
+							</li>
+							<li data-target="#wizard-example-step4">
+								<span class="wizard-step-number">4</span>
+								<span class="wizard-step-caption">完成</span>
+							</li>
+						</ul> <!-- / .wizard-steps -->
+					</div> <!-- / .wizard-wrapper -->
+					<div class="reseinfotPwd">
+						 #@tinyForm("thisform" "../loginSignup/stepComplete.page" "post" {"class":"xxxxxxxxx"})
+							#@elementItem()
+								#@colLabel()旧密码：#end
+								#@formControlDiv("col-6")
+									  #tinyInput("password" "passwordodd" ""{"placeholder":"旧密码","datatype":"*6-18","nullmsg":"请输入旧密码！","id":"passwordodd","class":"input-text"})
+								#end
+								#@validateDiv("col-3")#end
+							#end
+							#@elementItem()
+								#@colLabel()新密码：#end
+								#@formControlDiv("col-6")
+									  #tinyInput("password" "password" ""{"placeholder":"新密码","datatype":"*6-18","nullmsg":"请输入新密码！","id":"password","class":"input-text"})
+								#end
+								#@validateDiv("col-3")#end
+							#end
+							#@elementItem()
+								#@colLabel()确认密码：#end
+								#@formControlDiv("col-6")
+									#tinyInput("password" "password2" ""{"placeholder":"请输入确认密码","datatype":"*6-18","nullmsg":"请输入确认新密码！","recheck":"password","errormsg":"您两次输入的密码不一致！","id":"password2","class":"input-text"})
+								#end
+								#@validateDiv("col-3")#end
+							#end
+							#@elementItem()
+								#@div(divClass="col-10 col-offset-2 form-inline")
+									#tinyInput("submit" "submitbtn" " 提交 " {"class":"btn btn-primary","style":"padding:6px 32px"})
+								#end
+							#end
+						#end
+					</div>
+				</div>
+				<!-- ui-wizard-example end-->
+			</div>
+		</div>
+		<div class="have-account">已经有一个帐户吗? <a href="${TINY_CONTEXT_PATH}/login/login.page">登录</a></div>
+	</div>
+</div>
+
+<script type="text/javascript">
+ $(function(){
+
+$(function(){
+
+
+  $("form[name=thisform").Validform({
+	tiptype:2,
+	ajaxPost:true,
+	beforeSubmit:function(curform){
+		//在验证成功后，表单提交前执行的函数，curform参数是当前表单对象。
+		//这里明确return false的话表单将不会提交;
+	},
+	callback:function(data){
+		if(data.status=="y"){
+			setTimeout(function(){
+				$.Hidemsg(); //公用方法关闭信息提示框;显示方法是$.Showmsg("message goes here.");
+			},2000);
+		}
+		//返回数据data是json对象，{"info":"demo info","status":"y"}
+		//info: 输出提示信息;
+		//status: 返回提交数据的状态,是否提交成功。如可以用"y"表示提交成功，"n"表示提交失败，在action文件返回数据里自定字符，主要用在callback函数里根据该值执行相应的回调操作;
+		//你也可以在action文件返回更多信息在这里获取，进行相应操作；
+		//ajax遇到服务端错误时也会执行回调，这时的data是{ status:**, statusText:**, readyState:**, responseText:** }；
+
+		//这里执行回调操作;
+		//注意：如果不是ajax方式提交表单，传入callback，这时data参数是当前表单对象，回调函数会在表单验证全部通过后执行，然后判断是否提交表单，如果callback里明确return false，则表单不会提交，如果return true或没有return，则会提交表单。
+	}
+ });
+});
+</script>

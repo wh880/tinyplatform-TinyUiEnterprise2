@@ -1,0 +1,74 @@
+<div class="wizard-example">
+	<div class="theme-default page-signup">
+	<!-- Page background -->
+	<div id="page-signup-bg">
+		<!-- Background overlay -->
+		<div class="overlay"></div>
+		<!-- Replace this with your bg image -->
+		<img src="assets/images/signin-bg-1.jpg" alt="">
+	</div>
+	<!-- / Page background -->
+	<!-- Container -->
+		<div class="signup-container">
+			<!-- signup-header -->
+			<div class="signup-header">
+				<a href="#" class="signin-logo">
+					找回密码
+				</a>
+			</div>
+			<!-- content_boxbg -->
+			<div class="content_boxbg">
+			<!-- ui-wizard-example -->
+				<div class="wizard ui-wizard-example">
+					<div class="wizard-wrapper">
+						<ul class="wizard-steps">
+							<li data-target="#wizard-example-step1">
+								<span class="wizard-step-number">1</span>
+								<span class="wizard-step-caption">
+									第一步
+									<span class="wizard-step-description">选择找回方式</span>
+								</span>
+							</li>
+							<li data-target="#wizard-example-step2" class="active">
+								<span class="wizard-step-number">2</span>
+								<span class="wizard-step-caption">
+									第二步
+									<span class="wizard-step-description">进行安全验证</span>
+								</span>
+							</li>
+							<li data-target="#wizard-example-step3">
+								<span class="wizard-step-number">3</span>
+								<span class="wizard-step-caption">
+									第三步
+									<span class="wizard-step-description">设置新密码</span>
+								</span>
+							</li>
+							<li data-target="#wizard-example-step4">
+								<span class="wizard-step-number">4</span>
+								<span class="wizard-step-caption">完成</span>
+							</li>
+						</ul> <!-- / .wizard-steps -->
+					</div> <!-- / .wizard-wrapper -->
+					<div class="reseinfotPwd">
+						<ul class="getPwd">
+							<li>
+								<span class="lockPhone">
+								   <i class="iconfont iconfont-dengdaiwenjian">&nbsp;</i>
+									<span class="typeInfo emailInfo">密码找回邮件<i>76****@126.com</i>发送成功，请您注意：
+									<a href="${TINY_CONTEXT_PATH}/login/stepSetpwd.page">接收邮件</a>!</span>
+								</span>
+								<div class="infoTip">
+									请您注意接收邮件，并按照邮件中的提示操作，完成安全验证。</br>
+									没有收到邮件？ <a href="#">重新发送</a> 或者 <a href="${TINY_CONTEXT_PATH}/login/stepChoose.page">使用其它方式找回</a>
+								</div>
+							</li>
+						</ul>
+						<p class="clearfix"></p>
+					</div>
+				</div>
+				<!-- ui-wizard-example end-->
+			</div>
+		</div>
+		<div class="have-account">已经有一个帐户吗? <a href="${TINY_CONTEXT_PATH}/login/login.page">登录</a></div>
+	</div>
+</div>

@@ -47,7 +47,7 @@
 
 *#
 #macro gridSysCol(colNum colMap)
-	<div class="col-${colNum} ${colMap?.get("class")}"#mapToHtml(colMap)>
+	<div class="col-xs-${colNum} ${colMap?.get("class")}"#mapToHtml(colMap)>
 		#bodyContent
 	</div>
 #end
@@ -61,7 +61,7 @@
 
 *#
 #macro gridSysOffSetCol(colNum offsetNum colMap)
-	<div class="col-${colNum} col-offset-${offsetNum}">
+	<div class="col-xs-${colNum} col-offset-${offsetNum}">
 		#bodyContent
 	</div>
 #end
