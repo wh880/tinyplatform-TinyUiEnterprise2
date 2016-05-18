@@ -164,6 +164,8 @@
                     else {
                         open(li);
                     }
+                } else {
+                    opener.clone(true).removeAttr('class').css({'margin-left': '-13px', 'padding-right': '7px'}).html("&bull;").prependTo(li.children('div').first());  
                 }
             });
         }
@@ -938,8 +940,8 @@
         sortableListSort: function (data) {
             var reArr = [];
             for (var i = 0, l = data.length; i < l; i++) {
-                if(data[i].pId==null||data[i].pId==false||data[i].pId=='0'||data[i].pId==''){
-                    data[i].pId=0;
+                if (data[i].pId == null || data[i].pId == false || data[i].pId == '0' || data[i].pId == '') {
+                    data[i].pId = 0;
                 }
             }
             data.sort(function (x, y) {
