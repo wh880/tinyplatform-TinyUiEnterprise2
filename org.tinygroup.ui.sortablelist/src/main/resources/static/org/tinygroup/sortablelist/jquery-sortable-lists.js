@@ -44,10 +44,8 @@
                     open: '',
                     close: '',
                     openerCss: {
-                        'float': 'left',
-                        'display': 'inline-block',
-                        'background-position': 'center center',
-                        'background-repeat': 'no-repeat'
+                        'margin-left': '-15px',
+                        'padding-right':'10px'
                     },
                     openerClass: ''
                 },

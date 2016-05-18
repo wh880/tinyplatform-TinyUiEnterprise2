@@ -64,12 +64,8 @@
                 active: true,
                 as: 'html',  // if as is not set plugin uses background image
                 close: '<i class="fa fa-minus c3"></i>',  // or 'fa-minus c3',  // or './imgs/Remove2.png',
-                open: '<i class="fa fa-plus"></i>',  // or 'fa-plus',  // or'./imgs/Add2.png',
-                openerCss: {
-                    'display': 'inline-block',
-                    'float': 'left',
-                    'margin-left': '-15px',
-                }
+                open: '<i class="fa fa-plus"></i>'  // or 'fa-plus',  // or'./imgs/Add2.png',
+
             },
             ignoreClass: 'lock'
         };
