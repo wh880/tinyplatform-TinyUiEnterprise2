@@ -26,7 +26,7 @@
 		<!-- Right side -->
 		<div class="signin-form">
 			<!-- Form -->
-			<form action="#link("/login.do")" id="signin-form_id">
+			<form action="/web" id="signin-form_id">
 				<div class="signin-text">
 					<span>登录到后台管理</span>
 				</div> <!-- / .signin-text -->

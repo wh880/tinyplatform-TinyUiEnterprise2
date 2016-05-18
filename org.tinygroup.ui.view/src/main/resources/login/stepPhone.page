@@ -69,7 +69,7 @@
 										<div class="col-xs-6"><input type="submit" name="submitbtn" value="提交 " class="btn btn-primary" /></div>
                                     </div>
                                     <div class="row">
-                                         <div class="col-xs-12"><a href="/tinyuiweb/loginSignup/stepChoose.page">使用其它方式</a></div>
+                                         <div class="col-xs-12"><a href="stepChoose.page">使用其它方式</a></div>
                                     </div>
                                 </form>
                             </li>
