@@ -1,0 +1,85 @@
+#macro initLeftList(options)#set(treeId=options?.id?:fmt("rap%d",rand()))
+<div id="${treeId}" class="tree-lists-rap"></div>
+<script type="text/javascript">
+    $(function () {
+        var options = {
+            listRap: $("#${treeId}"),
+            placeholderCss: {'background-color': '#f1f1f1'},
+            hintCss: {'background-color': '#eee'},
+            opener: {
+                active: true,
+                as: 'html',
+                close: '<i class="fa fa-angle-down tree-item-arrow"></i>',
+                open: '<i class="fa fa-angle-right tree-item-arrow"></i>',
+                openerCss: {
+                    'display': 'inline-block',
+                    'float': 'left',
+                    'margin-left': '-15px',
+                }
+            },
+            ignoreClass: 'lock'
+        };
+        var currentNode = '${options?.currentNodeId?:"0"}';
+        var list_ul = $("<ul></ul>").addClass("tree-lists-class").css("margin-left", "2px");
+        $.ajax({
+            url: "#link(options?.initTreeUrl)",
+            cache: false,
+            type: "get",
+            dataType: "json",
+            success: function (data) {
+                try {
+                    data = $.sortableListSort(data);
+                    var tempNode = false;
+                    for (var i = 0, l = data.length; i < l; i++) {
+                        var item = data[i];
+                        var itemNode = $("<li>").attr("id", "tree-list-node-" + item.id).append("<div><a href='#link(options?.showUrl)" + item.id + "'>" + item.name + "</a></div>");
+                        if (item.id == currentNode) {
+                            itemNode.addClass("active-node");
+                        }
+
+                        $.each(item, function (k, v) {
+                            switch (k) {
+                                case "id":
+                                    itemNode.attr("node-id", v);
+                                    break;
+                                case "open":
+                                    if (v === true || v == "true") {
+                                        itemNode.addClass("sortableListsOpen")
+                                    }
+                                    break;
+                                case "lock":
+                                    if (v === true || v == "lock") {
+                                        itemNode.addClass("lock")
+                                    }
+                                    break;
+                                default:
+                                    itemNode.attr(k, v);
+                                    break;
+                            }
+                        });
+                        itemNode.addClass("lock");
+
+                        if (item.pId == '0' || item.pId == null || item.pId == '') {
+                            list_ul.append(itemNode.addClass("first_level"));
+                        } else {
+                            tempNode = list_ul.find("#tree-list-node-" + item.pId);
+                            if (tempNode.children("ul").size() == 0) {
+                                tempNode.append($("<ul></ul>").append(itemNode));
+                            } else {
+                                tempNode.children("ul").append(itemNode);
+                            }
+                        }
+                    }
+                    $("#${treeId}").append(list_ul);
+                    $("#${treeId} .active-node").parents("li").addClass("sortableListsOpen");
+                    $('#${treeId}>.tree-lists-class').sortableLists(options);
+                } catch (e) {
+                    layer.msg("初始化错误")
+                }
+            }
+        })
+    });
+</script>
+#end
+
+#initLeftList({"initTreeUrl":TINY_CONTEXT_PATH+"/data/sortablelist.pagelet","moveActionUrl":TINY_CONTEXT_PATH+"/doc/sort/update"})
