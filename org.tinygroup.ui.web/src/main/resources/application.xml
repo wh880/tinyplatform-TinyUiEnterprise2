@@ -461,6 +461,7 @@
         <tiny-processor id="tinyTemplateProcessor" class="tinyTemplateProcessor">
             <servlet-mapping url-pattern=".*\.page"></servlet-mapping>
             <servlet-mapping url-pattern=".*\.pagelet"></servlet-mapping>
+            <init-param name="responseContentType" value="text/html;charset=utf-8"/>
         </tiny-processor>
     </tiny-processors>
 
