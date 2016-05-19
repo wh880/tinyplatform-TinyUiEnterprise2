@@ -33,7 +33,7 @@
                 }
             },
             callback: {
-                //beforeClick: beforeClick,
+                ##beforeClick: beforeClick,
                 onClick: onClick
             }
         };
@@ -56,17 +56,16 @@
                         try{zTree.destroy();}catch (e){}
                         zTree=$.fn.zTree.init($treeContent, setting, zNodes);
                         callback&&callback();
-                        //initzTree();
+                        ##initzTree();
                     }
                 });
             }
             refreshdata(function(){
                 initInputVale();
             });
-
             $input.off("refresh").on("refresh",function(e,callback){
-        refreshdata(callback);
-        })
+                refreshdata(callback);
+            })
         #else
             initzTree();
         #end
@@ -94,19 +93,19 @@
             }
         }
         function onClick(e, treeId, treeNode) {
-                $input.val(treeNode.name);
-                $inputV.val(treeNode.id);
-                $input.trigger("setValue",treeNode);
+            $input.val(treeNode.name);
+            $inputV.val(treeNode.id);
+            $input.trigger("setValue",treeNode);
             hideMenu();
         }
         function hideMenu() {
                 $treeRap.fadeOut("fast");
             $("#${sid}-rap").append($treeRap);
         }
-            $input.off("click.tree").on("click.tree",function(){
-            $("body").append($treeRap);
+        $input.off("click.tree").on("click.tree",function(){
+        $("body").append($treeRap);
         var thisOffset = $(this).offset();
-            $treeRap.css({width:$(this).css("width"),left:thisOffset.left + "px", top:thisOffset.top + $(this).outerHeight() + "px"}).slideDown("fast");
+        $treeRap.css({width:$(this).css("width"),left:thisOffset.left + "px", top:thisOffset.top + $(this).outerHeight() + "px"}).slideDown("fast");
         }).on("add",function(e,newNode){
         zTree.addNodes(null, newNode);
         });
@@ -169,7 +168,7 @@
             zTree.showNodes(nodes);
             if(!key){
                 $("#${sid}-msg").hide();
-                //return;
+                ##return;
             }
             var zts = zTree.getNodesByParamFuzzy("name", key);
             if (zts.length==0){
