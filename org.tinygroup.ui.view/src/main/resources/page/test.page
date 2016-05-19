@@ -5,6 +5,7 @@
         margin: 0 auto;
         width: 250px;
         height: 450px;
+        flex-flow: column;
     }
 </style>
 <script>
