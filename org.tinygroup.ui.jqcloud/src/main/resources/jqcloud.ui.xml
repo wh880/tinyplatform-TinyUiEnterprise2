@@ -6,6 +6,6 @@
         <js-resource>
             /static/org/tinygroup/jqcloud/js/jqcloud.tiny.min.js
         </js-resource>
-        <description>wordbox</description>
+        <description>jqcloud (www.lucaongaro.eu)</description>
     </ui-component>
 </ui-components>
