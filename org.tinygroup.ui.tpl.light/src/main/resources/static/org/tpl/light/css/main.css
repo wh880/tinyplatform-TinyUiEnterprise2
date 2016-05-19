@@ -294,7 +294,7 @@ a {
 }
 
 .side_menu_active #main_menu .menu_wrapper {
-    padding-bottom: 35px;
+    padding-bottom: 48px;
     height: 100%;
     position: relative
 }
@@ -352,8 +352,7 @@ a {
     z-index: 102;
     text-align: center;
     display: block;
-    border-top: 1px solid rgba(0, 0, 0, .04);
-    background: rgba(0, 0, 0, .02)
+    background: #eee
 }
 
 .side_menu_active .menu_toggle .icon_menu_toggle {
@@ -363,7 +362,7 @@ a {
 }
 
 .side_menu_active .menu_toggle:hover {
-    background: rgba(0, 0, 0, .1)
+    background: #ddd;
 }
 
 .side_menu_active.side_menu_expanded #main_menu .first_level > a {
