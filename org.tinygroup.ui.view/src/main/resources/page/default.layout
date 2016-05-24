@@ -188,7 +188,6 @@
             "use strict";
             return !this;
         }());
-		alert(advIe);
      init.push(function () {
             var menucount=$(".navigation:first>li").size();
             $("#topmenurap .navigation>li").css("width",100/menucount+"%");

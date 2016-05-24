@@ -24,8 +24,13 @@
         me.addListener( 'keyup', function( t, evt ) {
             evt = evt || window.event;
             var el = evt.target || evt.srcElement;
-            var s=window.getSelection();
-            console.log(evt.which,s);
+            var s= document.getElementsByTagName("body")[0].createTextRange();
+           // s.setEndPoint("StartToStart",document.createTextRange())
+            alert(s.text);
+          /*  var s=window.getSelection();
+            var rng = document.body.createTextRange();
+            console.log(rng.text)
+            console.log(evt.which,s,el);*/
             /*var leipiPlugins = el.getAttribute('tinyplugins');
             if ( /span/ig.test( el.tagName ) && leipiPlugins==thePlugins) {
                 var html = popup.formatHtml(
