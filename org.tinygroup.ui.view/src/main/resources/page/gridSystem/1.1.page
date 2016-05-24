@@ -1,4 +1,4 @@
-#@gridSystem24Col("girdrap") ##该类为红底项目时请去除或更改
+#*#@gridSystem24Col("girdrap") ##该类为红底项目时请去除或更改
 	#@gridSystemCol(24 "layloutBg")24/24#end
 	#@gridSystemCol(23 "layloutBg")23/24#end #@gridSystemCol(1 "layloutBg")1/24#end
 	#@gridSystemCol(22 "layloutBg")22/24#end #@gridSystemCol(2 "layloutBg")2/24#end
@@ -19,4 +19,32 @@
 	#@gridSystemCol(7 "layloutBg")7/24#end	 #@gridSystemCol(17 "layloutBg")17/24#end
 	#@gridSystemCol(6 "layloutBg")6/24#end	 #@gridSystemCol(18 "layloutBg")18/24#end
 	#@gridSystemCol(5 "layloutBg")5/24#end	 #@gridSystemCol(19 "layloutBg")19/24#end
-#end
+#end*#
+
+<div class="row show-grid">
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+</div>
+<div class="row show-grid">
+    <div class="col-md-8">.col-md-8</div>
+    <div class="col-md-4">.col-md-4</div>
+</div>
+<div class="row show-grid">
+    <div class="col-md-4">.col-md-4</div>
+    <div class="col-md-4">.col-md-4</div>
+    <div class="col-md-4">.col-md-4</div>
+</div>
+<div class="row show-grid">
+    <div class="col-md-6">.col-md-6</div>
+    <div class="col-md-6">.col-md-6</div>
+</div>

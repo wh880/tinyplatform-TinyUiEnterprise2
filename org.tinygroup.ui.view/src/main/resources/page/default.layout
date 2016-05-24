@@ -71,7 +71,7 @@
 				#TnavItem("1" "概述" "/page/overview.page" "fa-dashboard")
 
 				#@TnavItems("2" "布局" {"ico":"fa-th"})
-					##TnavItem("2.1" "栅格系统" "/page/gridSystem.page")
+					#TnavItem("2.1" "栅格系统" "/page/gridSystem.page")
 					#TnavItem("2.2" "Tabs展现" "/page/tabShow.page")
 					#TnavItem("2.3" "表格列表" "/page/tinytable.page")
 					#TnavItem("2.4" "togglebox" "/page/togglebox.page")
