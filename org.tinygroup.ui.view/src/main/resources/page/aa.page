@@ -22,11 +22,31 @@
         } );
         popup.render();
         me.addListener( 'keyup', function( t, evt ) {
-            evt = evt || window.event;
-            var el = evt.target || evt.srcElement;
-            var s= document.getElementsByTagName("body")[0].createTextRange();
-           // s.setEndPoint("StartToStart",document.createTextRange())
-            alert(s.text);
+            var range = me.selection.getRange();
+            var el = UE.dom.domUtils.findParentByTagName( range.startContainer, 'span', true );
+            if(!el){
+                el = UE.dom.domUtils.findParentByTagName( range.startContainer, 'p', true );
+            }
+            if(!el){
+                el = UE.dom.domUtils.findParentByTagName( range.startContainer, 'body', true );
+            }
+            var strText=$(el).text();
+            var reg = /@([^@\s]*)$/g;
+            var arr = strText.match(reg);
+            if(arr){
+                var result = arr[0].replace(reg, "$1");
+                var html = popup.formatHtml(
+                        '<nobr>宏控件: <span onclick=$$._edittext() class="edui-clickable">编辑</span>&nbsp;&nbsp;<span onclick=$$._delete() class="edui-clickable">删除</span></nobr>' );
+                if ( html ) {
+                    popup.getDom('content').innerHTML = html;
+                    popup.anchorEl = el;
+                    popup.showAnchor(popup.anchorEl);
+
+                }
+            }else{
+                popup.hide();
+            }
+
           /*  var s=window.getSelection();
             var rng = document.body.createTextRange();
             console.log(rng.text)
