@@ -112,7 +112,7 @@
         msg: function(content, options, end){ //最常用提示层
             var type = typeof options === 'function', rskin = ready.config.skin;
             var skin = (rskin ? rskin + ' ' + rskin + '-msg' : '')||'layui-layer-msg';
-            var shift = doms.anim.length - 1;
+            var shift = 0;//doms.anim.length - 1;
             if(type) end = options;
             return layer.open($.extend({
                 content: content,
@@ -181,7 +181,7 @@
         time: 0, //0表示不自动关闭
         zIndex: 19891014,
         maxWidth: 360,
-        shift: 6,//0
+        shift: 0,//0
         icon: -1,
         scrollbar: true, //是否允许浏览器滚动条
         tips: 2
