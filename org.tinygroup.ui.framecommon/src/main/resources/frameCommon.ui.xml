@@ -1,7 +1,8 @@
 <ui-components>
 <ui-component name="tiny.ui.frameCommon" dependencies="tiny.ui.base,tiny.ui.jqueryui,tiny.ui.switcher,tiny.ui.fontico">
     <css-resource>
-        /static/org/tinygroup/frameCommon/css/admin.tiny.min.css
+        /static/org/tinygroup/frameCommon/css/admin.tiny.min.css,
+        /static/org/tinygroup/frameCommon/css/ie8.tiny.min.css
     </css-resource>
     <js-resource>
         /static/org/tinygroup/frameCommon/js/app.tiny.min.js,
