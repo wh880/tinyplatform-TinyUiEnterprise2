@@ -8,70 +8,62 @@
             editor:this,
             content: '',
             className: 'edui-bubble',
-            _edittext: function () {
-                baidu.editor.plugins[thePlugins].editdom = popup.anchorEl;
-                me.execCommand(thePlugins);
-                this.hide();
-            },
-            _delete:function(){
-                if( window.confirm('确认删除该控件吗？') ) {
-                    baidu.editor.dom.domUtils.remove(this.anchorEl,false);
-                }
+            _edittext: function (e) {
+                var range = me.selection.getRange();
+                var el = UE.dom.domUtils.findParent(range.startContainer);
+               /* var strText=range.startContainer.data;
+                strText=strText.substring(0,range.startOffset);
+                var reg = /@([^@\s]*)$/g;
+                var arr = strText.match(reg);
+                var result = arr[0].replace(reg, "$1");
+                strText.substring(0,range.startOffset);
+                range.setStart(range.startContainer,range.startOffset-result.length-1);
+                range.deleteContents();*/
+
+                me.execCommand('inserthtml',"<span class='tiny-at'>@"+e.innerHTML+"</span> ");
+
+                //popup.anchorEl.innerHTML=e.innerHTML;
                 this.hide();
             }
         } );
         popup.render();
         me.addListener( 'keyup', function( t, evt ) {
+            evt = evt || window.event;
+            var el = evt.target || evt.srcElement;
+            if(evt.location!==0){
+                return;
+            }
             var range = me.selection.getRange();
-            var el = UE.dom.domUtils.findParentByTagName( range.startContainer, 'span', true );
-            if(!el){
-                el = UE.dom.domUtils.findParentByTagName( range.startContainer, 'p', true );
-            }
-            if(!el){
-                el = UE.dom.domUtils.findParentByTagName( range.startContainer, 'body', true );
-            }
-            var strText=$(el).text();
+            var el = UE.dom.domUtils.findParent(range.startContainer);
+            var strText=range.startContainer.data;
+            strText=strText.substring(0,range.startOffset);
             var reg = /@([^@\s]*)$/g;
             var arr = strText.match(reg);
             if(arr){
                 var result = arr[0].replace(reg, "$1");
-                var html = popup.formatHtml(
-                        '<nobr>宏控件: <span onclick=$$._edittext() class="edui-clickable">编辑</span>&nbsp;&nbsp;<span onclick=$$._delete() class="edui-clickable">删除</span></nobr>' );
+                if(el.nodeName.toUpperCase()!=="SPAN"){
+                    strText.substring(0,range.startOffset);
+                    range.setStart(range.startContainer,range.startOffset-result.length-1);
+                    range.deleteContents();
+                    me.execCommand('inserthtml',"<span class='at'>@"+result+"</span>");
+                    el=$(el).children("span.at:last")[0];
+                }
+
+                var tempHtml='';
+                for(var i=0;i<5;i++){
+                    tempHtml+='<div><nobr><span onclick=$$._edittext(this) class="edui-clickable">编辑编辑编辑编辑</span></nobr></div>'
+                }
+                var html = popup.formatHtml(tempHtml);
                 if ( html ) {
                     popup.getDom('content').innerHTML = html;
                     popup.anchorEl = el;
                     popup.showAnchor(popup.anchorEl);
-
                 }
             }else{
                 popup.hide();
             }
 
-          /*  var s=window.getSelection();
-            var rng = document.body.createTextRange();
-            console.log(rng.text)
-            console.log(evt.which,s,el);*/
-            evt = evt || window.event;
-            var el = evt.target || evt.srcElement;
-            var s= document.getElementsByTagName("body")[0].createTextRange();
-           // s.setEndPoint("StartToStart",document.createTextRange())
-            alert(s.text);
-          /*  var s=window.getSelection();
-            var rng = document.body.createTextRange();
-            console.log(rng.text)
-            console.log(evt.which,s,el);*/
-            /*var leipiPlugins = el.getAttribute('tinyplugins');
-            if ( /span/ig.test( el.tagName ) && leipiPlugins==thePlugins) {
-                var html = popup.formatHtml(
-                        '<nobr>宏控件: <span onclick=$$._edittext() class="edui-clickable">编辑</span>&nbsp;&nbsp;<span onclick=$$._delete() class="edui-clickable">删除</span></nobr>' );
-                if ( html ) {
-                    popup.getDom( 'content' ).innerHTML = html;
-                    popup.anchorEl = el;
-                    popup.showAnchor( popup.anchorEl );
-                } else {
-                    popup.hide();
-                }
-            }*/
+
         });
     };
 
