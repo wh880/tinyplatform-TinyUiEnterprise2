@@ -1,146 +1,125 @@
-#set(pagePostionTitle='<li><a href="'+TINY_CONTEXT_PATH+'">首页</a></li>',activeMenuId="0",topMenuId="0",c=call("getMenuId"),c=call("getTopMenuId"))<!DOCTYPE html>
-<!--[if IE 7 ]>		 <html class="no-js ie ie7 lte7 lte8 lte9" lang="zh-cmn-Hans-CN"> <![endif]-->
-<!--[if IE 8 ]>		 <html class="no-js ie ie8 lte8 lte9" lang="zh-cmn-Hans-CN"> <![endif]-->
-<!--[if IE 9 ]>		 <html class="no-js ie ie9 lte9" lang="zh-cmn-Hans-CN"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="zh-cmn-Hans-CN"> <!--<![endif]-->
-<html lang="zh-cmn-Hans-CN">
-<head>
-	<meta charset="utf-8"/>
-	<meta name="renderer" content="webkit|ie-comp|ie-stand">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-	<meta http-equiv="Cache-Control" content="no-siteapp" />
-	<title>
-		#if(activeTitle)${activeTitle} #{end}TinyUiEnterprise展示
-	</title>
-	<meta name="keywords" content="TinyUi 是基于bootscrap的前端UI组件框架。">
-	<meta name="description" content="java,j2ee,j2ee.top, tinygroup,tinygroup.org,eclipse,插件,idea,TinyFramework,悠然,悠悠然然,Tiny,Framework,CEP,通用事件处理,ui引擎,ui engine,模块化,业务单元,文档生成,xml parser,html parser,xml,html,parser,spider,网络爬虫,flow,流程,业务流,页面流,Java,SOA,框架,组件,分层,水平扩展,分区,分表,db router,db cluster,framework,框架,分布式计算,VFS,Web">
-	<script>
-		var contextPath = "${TINY_CONTEXT_PATH}";#if(UPLOAD_ACTION_URL)
-		var UPLOAD_ACTION_URL = '${TINY_CONTEXT_PATH}${UPLOAD_ACTION_URL}'; #end
-	</script>
-	<link rel="shortcut icon" href="${TINY_CONTEXT_PATH}/img/tiny32.png">
-	#if(DEBUG_MODE && DEBUG_MODE=="true")
-		#foreach(component in uiengine.getHealthUiComponents())
-			#if(component.cssResource)#set(resources=component.cssResource.split(","))
-				#foreach(path in resources)#set(path=path.trim(),newPath=path.replaceAll("[$][{]TINY_THEME[}]","${TINY_THEME}"))
-					<link href="${TINY_CONTEXT_PATH}${newPath}" rel="stylesheet" />
-				#end
-			#end
-			#if(component.jsResource)
-				#set(resources=component.jsResource.split(","))
-				#foreach(path in resources)#set(path=path.trim())
-					<script src="${TINY_CONTEXT_PATH}${path}"></script>
-				#end
-			#end
-			#if(component.jsCodelet)
-				<script>
-				$!{component.jsCodelet}
-				</script>
-			#end
-			#if(component.cssCodelet)
-				<style>
-				$!{component.cssCodelet}
-				</style>
-			#end
-		#end
-	#else
-		<link href="${TINY_CONTEXT_PATH}/uiengine.uicss" rel="stylesheet" />
-		<script src="${TINY_CONTEXT_PATH}/uiengine.uijs"></script>
-	#end
-    <link href="${TINY_CONTEXT_PATH}/css/tinyui.css" rel="stylesheet" />
-</head>
-<body class=" main-menu-animated">
-<script>var init = [];</script>
-<script src="${TINY_CONTEXT_PATH}/js/setting.js"></script>
-	<div id="main-wrapper">
-		#@mainNavbar("TINY-组件化的开发框架")
-				<div class="right clearfix">
-					<ul class="nav navbar-nav pull-right right-navbar-nav">
+	#set(pagePostionTitle='<li><a href="'+TINY_CONTEXT_PATH+'">首页</a></li>',activeMenuId="0",topMenuId="0",c=call("getMenuId"),c=call("getTopMenuId"))<!DOCTYPE html>
+    <html lang="zh-cmn-Hans-CN">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="renderer" content="webkit|ie-comp|ie-stand">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta http-equiv="Cache-Control" content="no-siteapp" />
+        <title>
+			#if(activeTitle)${activeTitle} #{end}TinyUiEnterprise展示
+        </title>
+        <meta name="keywords" content="TinyUi 是基于bootscrap的前端UI组件框架。">
+        <meta name="description" content="java,j2ee,j2ee.top, tinygroup,tinygroup.org,eclipse,插件,idea,TinyFramework,悠然,悠悠然然,Tiny,Framework,CEP,通用事件处理,ui引擎,ui engine,模块化,业务单元,文档生成,xml parser,html parser,xml,html,parser,spider,网络爬虫,flow,流程,业务流,页面流,Java,SOA,框架,组件,分层,水平扩展,分区,分表,db router,db cluster,framework,框架,分布式计算,VFS,Web">
+        <script>
+            var contextPath = "${TINY_CONTEXT_PATH}";#if(UPLOAD_ACTION_URL)
+            var UPLOAD_ACTION_URL = '${TINY_CONTEXT_PATH}${UPLOAD_ACTION_URL}'; #end
+        </script>
+		#getResource(DEBUG_MODE)
 
-                        <li>
-                            <a href="#link("/")" title="Ajax模式">Ajax模式</a>
-                        </li>
-                        <li>
-                            <a href="#link("/page/")" title="页面跳转模式">页面跳转模式</a>
-                        </li>
-						<li class="fullscreen">
-							<a href="javascript:void(0);" onclick="launchFullScreen(document.documentElement);" title="全屏">#faIcon("arrows-alt")</a>
-						</li>
-						<li>
-							<form class="navbar-form pull-left">
-								<input type="text" class="form-control" value="" placeholder="查找更多...">
-								<span style="left:-27px;top:3px; position:relative;">#faIco("search")</span>
-							</form>
-						</li>
-						<li class="dropdown">
-							<a href="javascript:void(0);" class="dropdown-toggle user-menu" data-toggle="dropdown">
-								<img src="#link("/img/portraits/1.jpg")" alt="">
-								<span>密缘之友</span>
-							</a>
-							<ul class="dropdown-menu">
-								<li><a href="javascript:void(0);"><span class="label label-warning pull-right">新的</span>资料文件</a></li>
-								<li><a href="javascript:void(0);"><span class="badge badge-primary pull-right">新的</span>个人中心</a></li>
-								<li><a href="javascript:void(0);">#faIco("cog")&nbsp;&nbsp;设置</a></li>
-								<li class="divider"></li>
-								<li><a href="javascript:void(0);">#faIco("power-off")&nbsp;&nbsp;退出</a></li>
-							</ul>
-						</li>
-					</ul>
-				</div>
+    </head>
+    <body class=" main-menu-animated">
+    <script>var init = [];</script>
+    <script src="${TINY_CONTEXT_PATH}/js/setting.js"></script>
+    <div id="main-wrapper">
+		#@mainNavbar("TINY-组件化的开发框架")
+            <div class="right clearfix">
+                <ul class="nav navbar-nav pull-right right-navbar-nav">
+                    <li>
+                        <a href="/tinyuiweb/" title="1.0版">1.0版</a>
+                    </li>
+                    <li>
+                        <a href="#link("/")" title="Ajax模式">Ajax模式</a>
+                    </li>
+                    <li>
+                        <a href="#link("/page/")" title="页面跳转模式">页面跳转模式</a>
+                    </li>
+                    <li>
+                        <a href="#link("/project.zip")" target="_blank" title="基础工程下载">基础工程下载</a>
+                    </li>
+                    <li class="fullscreen">
+                        <a href="javascript:void(0);" onclick="launchFullScreen(document.documentElement);" title="全屏">#faIcon("arrows-alt")</a>
+                    </li>
+                    <li>
+                        <form class="navbar-form pull-left">
+                            <input type="text" class="form-control" value="" placeholder="查找更多...">
+                            <span style="left:-27px;top:3px; position:relative;">#faIco("search")</span>
+                        </form>
+                    </li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle user-menu" data-toggle="dropdown">
+                            <img src="#link("/img/portraits/1.jpg")" alt="">
+                            <span>密缘之友</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="javascript:void(0);"><span class="label label-warning pull-right">新的</span>资料文件</a></li>
+                            <li><a href="javascript:void(0);"><span class="badge badge-primary pull-right">新的</span>个人中心</a></li>
+                            <li><a href="javascript:void(0);">#faIco("cog")&nbsp;&nbsp;设置</a></li>
+                            <li class="divider"></li>
+                            <li><a href="javascript:void(0);">#faIco("power-off")&nbsp;&nbsp;退出</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
 		#end
 		#@mainMenu()
-			#@menuHead("欢迎您," "Liyl" "menu-content-demo" "/img/portraits/1.jpg")
-				<a href="javascript:void(0);" class="btn btn-xs btn-primary btn-outline dark">#faIco("envelope")</a>
-				<a href="javascript:void(0);" class="btn btn-xs btn-primary btn-outline dark">#faIco("user")</a>
-				<a href="javascript:void(0);" class="btn btn-xs btn-primary btn-outline dark">#faIco("cog")</a>
-				<a href="javascript:void(0);" class="btn btn-xs btn-danger btn-outline dark">#faIco("power-off")</a>
-			#end
-        	<ul class="navigation">
+
+            <ul class="navigation">
 				#TnavItem("0" "控制台" "/page/index.page" "fa-home")
 
 				#@TnavItems("2" "页面" {"ico":"fa-th"})
-					#TnavItem("2.3" "表格列表" "/page/tinytable.page")
-					#TnavItem("2.4" "表单" "/page/tinyform.page")
-				#end
-			</ul>
+				#TnavItem("2.3" "表格列表" "/page/tinytable.page")
+				#TnavItem("2.4" "表单" "/page/tinyform.page")
+			#end
+            </ul>
 		#end
 
-		<div class="content-wrapper-bg"></div>
-			<div id="content-wrapper">
-				<div class="postion-nav">
-					<ul class="breadcrumb">
-						<li class="text-light-gray">所在位置： </li>
-						${pagePostionTitle}
-					</ul>
-				</div>
+        <div class="content-wrapper-bg"></div>
+        <div id="content-wrapper">
+            <div class="postion-nav">
+                <ul class="breadcrumb">
+                    <li>所在位置： </li>
+					${pagePostionTitle}
+                </ul>
+            </div>
 
-				<div id="tinypagecontent" class="row" style="min-height:490px;">
-					${pageContent}
-				</div>
+            <div id="tinypagecontent" class="row" style="min-height:490px;margin:0">
+				${pageContent}
+            </div>
 
-				<div id="tinyfooter">
-					<div class="tinyfooterrap">
+            <div id="tinyfooter">
+                <div class="tinyfooterrap">
 					<span class="right">
 						<a class="record-num" target="_blank" href="http://www.beianbeian.com/search/tinygroup.org">浙ICP备14043110号-1</a>
 					</span>
-					TinyGroup官方网站 &copy; 2013-${formatDate(now(),"yyyy")}</div>
-				</div>
-			</div>
-		</div>
-	</div>
+                    TinyGroup官方网站 &copy; 2013-${formatDate(now(),"yyyy")}</div>
+            </div>
+        </div>
+    </div>
+    </div>
     <script type="text/javascript">
+        var advIe =(function(){
+            "use strict";
+            return !this;
+        }());
         init.push(function () {
             var menucount=$(".navigation:first>li").size();
             $("#topmenurap .navigation>li").css("width",100/menucount+"%");
-
+            var setFooterPostion=function (){
+                $("#tinypagecontent").css("min-height",$(window).height()-$("#tinypagecontent").offset().top-$("#tinyfooter").height()+$(window).scrollTop()-20+"px");
+            }
+            $(window).on("scroll resize",function(){
+                setFooterPostion();
+            });
+            setFooterPostion();
 			#if(!menuList)
                 var menuList=[];
                 $(".navigation:first a.navitem").each(function(){
                     var href=$(this).attr("href");
                     var treeid=$(this).attr("data-treeid");
-                    menuList.push({id:treeid,url:href});
+                    menuList.push({id:treeid,url:href.substring(0,href.lastIndexOf("."))});
                 });
+
                 $.ajax({
                     url:"#link("/action/savemenulist.pagelet")",
                     type:"post",
@@ -151,7 +130,97 @@
                     }
                 })
 			#end
-        })
+        });
+
+        if(advIe){
+            $(function(){
+                function initPageOtherInfo(e){
+                    $("#main-menu-inner li").removeClass("active open");
+                    $(e).parents("li").addClass("active open");
+                    var href=$(e).attr("href");
+                    var setNavPos=false,currenttxt="";
+                    $("#main-menu-inner a").each(function(){
+                        if(!setNavPos&&$(this).attr("href")==href){
+                            $('.postion-nav>.breadcrumb').html('<li>所在位置： </li><li>首页</li>');
+                            $(this).parents("li").find("span:first").each(function(){
+                                $('.postion-nav>.breadcrumb').append("<li>"+$(this).html()+"</li>");
+                                currenttxt=$(this).html()+"-"+currenttxt;
+                            });
+                            $(this).closest("li").addClass("active");
+                            setNavPos=true;
+                        }else{
+                            $(this).closest("li").removeClass("active");
+                        }
+                    })
+                    $(document).attr("title",currenttxt+" TinyUiEnterprise展示");
+                }
+                function setPageInfo(e){
+                    initPageOtherInfo(e);
+                    var href=$(e).attr("href");
+                    $.pjax({url: href.replace(/\.pagelet/,".page").replace(/\.page/,".pagelet"), container: '#tinypagecontent',replaceStr:".page"});
+                }
+                $(document).on("pjax:end",function(){
+                    var hash = location.pathname;
+                    $("#main-menu-inner .navigation li a[href]").each(function () {
+                        if ($(this).attr("href").indexOf(".page") == "-1") return true;
+                        if (hash == $(this).attr("href")) {
+                            initPageOtherInfo(this);
+                            return false;
+                        }
+                    });
+                    //SyntaxHighlighter.highlight();
+                }).on("pjax:error",function(e){
+                    $("#tinypagecontent").html('<h4 class="ajax-loading-error"><i class="fa fa-warning txt-color-orangeDark"></i> Error 404! Page not found.</h4>')
+                }).on("click","a:not([data-toggle=modal])[href],[data-pjax]",function(){
+                    if($(this).attr("href").indexOf(".page")=="-1") return;
+                    setPageInfo(this);
+                    return false;
+                });
+
+                init.push(function () {
+                    var hash = location.pathname;
+                    $("#main-menu-inner .navigation li a[href]").each(function () {
+                        if ($(this).attr("href").indexOf(".page") == "-1") return true;
+                        if (!hash || hash == $(this).attr("href")) {
+                            setPageInfo(this);
+                            return false;
+                        }
+                    });
+                });
+            });
+        }
+
+
+        function TinyAjaxloadContent(a, b) {
+            var time="";
+            a=a.replace(/\.pagelet/,".page").replace(/\.page/,".pagelet");
+            $.ajax({
+                type: "GET",
+                url: a,
+                dataType: "html",
+                beforeSend: function() {
+                    b[0] == $("#tinypagecontent")[0] && ($("html").animate({
+                                scrollTop: 0
+                            },
+                            "fast"));
+                    time=setTimeout(function(){
+                        $("#tinypagecontent").append('<h1 class="ajax-loading-animation tinyLoadingContent" ><i class="fa fa-cog fa-spin"></i> 加载...</h1>');
+                    },150);
+                },
+                success: function(a) {
+                    if(time) clearTimeout(time);
+                    b.html(a);
+
+                    //SyntaxHighlighter.highlight();
+                },
+                error: function() {
+                    b.html('<h4 class="ajax-loading-error"><i class="fa fa-warning txt-color-orangeDark"></i> Error 404! Page not found.</h4>')
+                },
+                cache:false
+            })
+        }
+
     </script>
-	</body>
-</html>
+
+    </body>
+    </html>
