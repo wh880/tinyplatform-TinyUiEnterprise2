@@ -6,5 +6,21 @@
         <version>2.2.4-SNAPSHOT</version>
     </parent>
     <artifactId>org.tinygroup.ui.macro</artifactId>
-
+    <dependencies>
+        <dependency>
+            <groupId>org.tinygroup</groupId>
+            <artifactId>org.tinygroup.ui.base</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.tinygroup</groupId>
+            <artifactId>org.tinygroup.ui.syntaxHighlighter</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.tinygroup</groupId>
+            <artifactId>org.tinygroup.ui.example</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
 </project>

@@ -10,11 +10,6 @@
     <dependencies>
         <dependency>
             <groupId>org.tinygroup</groupId>
-            <artifactId>org.tinygroup.ui.base</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.tinygroup</groupId>
             <artifactId>org.tinygroup.ui.button</artifactId>
             <version>${project.version}</version>
         </dependency>
