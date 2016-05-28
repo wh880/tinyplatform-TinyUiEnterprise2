@@ -72,7 +72,7 @@
 
 				#@TnavItems("2" "布局" {"ico":"fa-th"})
 					#TnavItem("2.1" "栅格系统" "/page/gridSystem.page")
-					#TnavItem("2.2" "Tabs展现" "/page/tabShow.page")
+					##TnavItem("2.2" "Tabs展现" "/page/tabShow.page")
 					#TnavItem("2.3" "表格列表" "/page/tinytable.page")
 					#TnavItem("2.4" "togglebox" "/page/togglebox.page")
 				#end
@@ -168,9 +168,10 @@
 						${pagePostionTitle}
 					</ul>
 				</div>
-
-				<div id="tinypagecontent" class="row" style="min-height:490px;margin:0">
-					${pageContent}
+				<div class="container-fluid">
+					<div id="tinypagecontent" class="row" style="min-height:490px;">
+						${pageContent}
+					</div>
 				</div>
 
 				<div id="tinyfooter">
@@ -188,7 +189,9 @@
             "use strict";
             return !this;
         }());
+
      init.push(function () {
+
             var menucount=$(".navigation:first>li").size();
             $("#topmenurap .navigation>li").css("width",100/menucount+"%");
 			var setFooterPostion=function (){

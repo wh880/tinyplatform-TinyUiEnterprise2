@@ -1072,7 +1072,7 @@
             return o.index;
         };
         layer.config({
-            shift: 1
+            shift: 5
         });
     };
 

@@ -14408,7 +14408,7 @@ UE.plugin.register('copy', function () {
 
         ZeroClipboard.config({
             debug: false,
-            swfPath: me.options.UEDITOR_HOME_URL + 'third-party/zeroclipboard/ZeroClipboard.swf'
+            swfPath: window.UEDITOR_HOME_URL + 'third-party/zeroclipboard/ZeroClipboard.swf'
         });
 
         var client = me.zeroclipboard = new ZeroClipboard();
@@ -29365,7 +29365,7 @@ UE.registerUI('message', function(editor) {
     me.addListener('ready', function(){
         holder = document.getElementById(me.ui.id + '_message_holder');
         updateHolderPos();
-        setTimeout(function(){
+        setTimeout(function () {
             updateHolderPos();
         }, 500);
     });
@@ -29404,13 +29404,14 @@ UE.registerUI('message', function(editor) {
     });
 
     function updateHolderPos(){
-        var toolbarbox = me.ui.getDom('toolbarbox');
-        if (toolbarbox) {
-            holder.style.top = toolbarbox.offsetHeight + 3 + 'px';
-        }
-        holder.style.zIndex = Math.max(me.options.zIndex, me.iframe.style.zIndex) + 1;
+        try {
+            var toolbarbox = me.ui.getDom('toolbarbox');
+            if (toolbarbox) {
+                holder.style.top = toolbarbox.offsetHeight + 3 + 'px';
+            }
+            holder.style.zIndex = Math.max(me.options.zIndex, me.iframe.style.zIndex) + 1;
+        }catch (e){}
     }
-
 });
 
 
