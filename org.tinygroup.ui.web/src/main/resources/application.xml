@@ -40,6 +40,7 @@
             <class-path path="D:\javaworkspace\TinyUiEnterprise2\org.tinygroup.ui.ueditor\src\main\resources"/>
             <class-path path="D:\javaworkspace\TinyUiEnterprise2\org.tinygroup.ui.ueditormacro\src\main\resources"/>
             <class-path path="D:\javaworkspace\TinyUiEnterprise2\org.tinygroup.ui.view\src\main\resources"/>
+            <class-path path="D:\javaworkspace\TinyUiEnterprise2\org.tinygroup.ui.bootstraptable\src\main\resources"/>
             <class-path path="F:\test\TinyUiComponentNew\TinyUiEnterprise2\org.tinygroup.ui.view\src\main\resources"/>
         </class-paths>
         <include-patterns>
@@ -259,6 +260,7 @@
             <servlet-mapping url-pattern=".*\.xaf"></servlet-mapping>
             <servlet-mapping url-pattern=".*\.xof"></servlet-mapping>
             <servlet-mapping url-pattern=".*\.eot"></servlet-mapping>
+            <servlet-mapping url-pattern=".*\.json"></servlet-mapping>
         </tiny-processor>
         <tiny-processor id="tinyTemplateProcessor" class="tinyTemplateProcessor">
             <servlet-mapping url-pattern=".*\.page"></servlet-mapping>
