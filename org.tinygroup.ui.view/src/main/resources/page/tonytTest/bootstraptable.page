@@ -1,4 +1,4 @@
-<style>
+#*<style>
     .wrapper-content{ padding:20px; }
     .ibox-title {
         -moz-border-bottom-colors: none;
@@ -656,4 +656,4 @@ function(e, t, o) {
         })
     } ()
 } (document, window, jQuery);
-</script>
+</script>*#
