@@ -17,6 +17,7 @@
 	</script>
 	<link rel="shortcut icon" href="${TINY_CONTEXT_PATH}/img/tiny32.png">
 	#getResource(DEBUG_MODE)
+
     <link href="${TINY_CONTEXT_PATH}/css/tinyui.css" rel="stylesheet" />
     <script type="text/javascript" src="#link("/js/jquery.lazylinepainter-1.5.0.js")"></script>
 </head>
@@ -131,6 +132,7 @@
 					#TnavItem("8.15" "操作向导" "/page/tourbus.page")
 					#TnavItem("8.17" "时间轴" "/page/timeline.page")
 					#TnavItem("8.18" "图片剪辑上传" "/page/cropper.page")
+					#TnavItem("8.19" "标签云" "/page/cloudtag.page")
 				#end
 
 				#@TnavItems("10" "其它" {"ico":"fa-files-o"})

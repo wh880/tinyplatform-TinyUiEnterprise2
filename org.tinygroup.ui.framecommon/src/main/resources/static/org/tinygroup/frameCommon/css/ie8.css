@@ -336,8 +336,7 @@
     display: none !important;
 }
 
-.ie8 #main-wrapper,
-#main-wrapper {
+.ie8 #main-wrapper{
     padding-left: 240px;
 }
 
