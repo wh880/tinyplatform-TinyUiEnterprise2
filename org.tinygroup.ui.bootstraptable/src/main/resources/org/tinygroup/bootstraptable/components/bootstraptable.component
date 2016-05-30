@@ -1,0 +1,9 @@
+#macro bootstrapTable(mapInfo)
+    <table #mapToHtml(mapInfo)>
+        #bodyContent
+    </table>
+#end
+
+
+
+
