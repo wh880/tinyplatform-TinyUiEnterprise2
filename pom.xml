@@ -99,7 +99,7 @@
         <module>org.tinygroup.ui.jqcloud</module>
         <module>org.tinygroup.ui.pagenav</module>
         <module>org.tinygroup.ui.wordbox</module>
-        <!--<module>org.tinygroup.ui.bootstraptable</module>-->
+        <module>org.tinygroup.ui.bootstraptable</module>
         <module>newweb</module>
     </modules>
 
