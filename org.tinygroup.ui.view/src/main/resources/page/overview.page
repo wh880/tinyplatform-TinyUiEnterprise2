@@ -1,7 +1,7 @@
 <style>.check-link a,.check-link a:link,.check-link a:visited{color:#333}.check-link a:hover{color:#389;}</style>
 #@h2()1.使用#end
 #@p()
-	通过Ui封装 使用者相关组件添加相关依赖包就OK了，会很方便、快捷的达到自己想要的效果。比bootstrap更懂中国！
+	通过Ui封装 使用者相关组件添加相关依赖包就OK了，会很方便、快捷的达到自己想要的效果。基出组件bootstrap3.5！
 #end
 
 #@h2()2.组件包#end

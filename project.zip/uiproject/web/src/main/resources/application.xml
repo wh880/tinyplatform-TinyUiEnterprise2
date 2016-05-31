@@ -44,6 +44,9 @@
 
 	<!--tiny-processor实现 -->
 	<tiny-processors>
+		<tiny-processor id="springMvcTinyProcessor" class="springMvcTinyProcessor">
+			<servlet-mapping url-pattern=".*"></servlet-mapping>
+		</tiny-processor>
 		<tiny-processor id="uiEngineTinyProcessor" class="uiEngineTinyProcessor">
 			<servlet-mapping url-pattern=".*/uiengine\.uijs"></servlet-mapping>
 			<servlet-mapping url-pattern=".*/uiengine\.uicss"></servlet-mapping>
@@ -346,7 +349,7 @@
 	</jcs-config>
 
 	<!--文件监控器配置参数，具体参见FileMonitorProcessor配置管理手册，interrupt扫描间隔时间，单位秒 -->
-	<file-monitor interval="10" enable="true" />
+	<file-monitor interval="10" enable="false" />
 
 
 
