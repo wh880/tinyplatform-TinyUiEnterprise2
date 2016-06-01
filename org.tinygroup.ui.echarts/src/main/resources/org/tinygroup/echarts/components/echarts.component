@@ -1,0 +1,18 @@
+#*
+* eCharts echarts饼图
+*
+* * @param annulusdata  data数据
+* * @param annulusPercentage  单位
+* * @param echartsMap  参数Map
+*#
+#macro eCharts(eChartsId eChartsStyle echartsMap)
+<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+<div #if(eChartsId) id="${eChartsId}"#{end} style="#mapToCss(eChartsStyle)" #mapToHtml(echartsMap)></div>
+<script type="text/javascript">
+	// 基于准备好的dom，初始化echarts实例
+	var myChart = echarts.init(document.getElementById('${eChartsId}'));
+	#bodyContent
+	// 使用刚指定的配置项和数据显示图表。
+	myChart.setOption(option);
+</script>
+#end
