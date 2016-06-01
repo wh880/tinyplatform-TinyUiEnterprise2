@@ -109,6 +109,7 @@
 						#TnavItem("6.6.1" "图表展示" "/page/charts.page")
 						#TnavItem("6.6.3" "燃尽图表" "/page/burndownChart.page")
 						#TnavItem("6.6.4" "highCharts图表" "/page/highCharts.page")
+						#TnavItem("6.6.5" "echarts图表" "/page/echarts.page")
 					#end
 				#end
 				#@TnavItems("7" "交互" {"ico":"fa-random"})
