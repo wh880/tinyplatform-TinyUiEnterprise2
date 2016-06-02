@@ -2,8 +2,8 @@
     <ui-component name="tiny.ui.echarts" dependencies="tiny.ui.jquery">
         <css-resource></css-resource>
         <js-resource>
-            /static/org/tinygroup/echarts/js/echarts.min.js,
+            /static/org/tinygroup/echarts/js/echarts-all.js,
         </js-resource>
-        <description>echarts精简只包含基础图表 (http://echarts.baidu.com)</description>
+        <description>echarts图表 (http://echarts.baidu.com/echarts2)</description>
     </ui-component>
 </ui-components>
