@@ -1,4 +1,7 @@
-<h2>1 堆叠区域图</h2>
-#showExample("/page/echarts/stacked-charts.page")
+<h2>1 标准折线图</h2>
+#showExample("/page/echarts/line-charts.page")
+
+<h2>2 标柱状图</h2>
+#showExample("/page/echarts/bar-charts.page")
 
 #@showPack()org.tinygroup.ui.echarts#end
