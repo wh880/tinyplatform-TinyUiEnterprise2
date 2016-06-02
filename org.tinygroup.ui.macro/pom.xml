@@ -14,7 +14,7 @@
         </dependency>
         <dependency>
             <groupId>org.tinygroup</groupId>
-            <artifactId>org.tinygroup.ui.syntaxHighlighter</artifactId>
+            <artifactId>org.tinygroup.ui.syntaxhighlighter</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
