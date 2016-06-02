@@ -32,11 +32,11 @@
                             <a href="/tinyuiweb/" title="1.0版">1.0版</a>
                         </li>
                         <li>
-                            <a href="#link("/")" title="Ajax模式">Ajax模式</a>
+                            <a href="#link("/LayoutIT/index.html")" target="_blank">表单设计器</a>
                         </li>
-                        <li>
+                        #*<li>
                             <a href="#link("/page/")" title="页面跳转模式">页面跳转模式</a>
-                        </li>
+                        </li>*#
                         <li>
                             <a href="#link("/project.zip")" target="_blank" title="基础工程下载">基础工程下载</a>
                         </li>
