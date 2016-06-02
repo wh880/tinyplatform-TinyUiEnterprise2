@@ -15,6 +15,21 @@
 </div>
 #end
 
+
+#*
+* elementItem 此宏为布局表单宏
+*
+* @param labeTitle 标题label
+* @param colSize 为间距大小使默认为sm 有 lg sm 及xs
+* @param sizeList 为一数 布局col值 默认为[2,6,3]
+*#
+#macro elementItemAjax(labeTitle colSize sizeList)#set(colSize=colSize?:"sm",sizeList=sizeList?:[3,8])
+<div class="form-group normal-form">
+    <label class="col-${colSize}-${sizeList.get(0)} control-label  pl-0 pr-5" for="textArea3">${labeTitle}</label>
+    <div class="col-${colSize}-${sizeList.get(1)} pl-0">#bodyContent</div>
+</div>
+#end
+
 #*
 * elementLabelFix 此宏为布局宏label补充内容 无参数
 *
