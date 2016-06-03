@@ -16,4 +16,16 @@
 <h2>5 环形图</h2>
 #showExample("/page/echarts/ring-charts.page")
 
+<h2>6 中国地图</h2>
+#showExample("/page/echarts/map-charts.page")
+
+<h2>7 树形图表</h2>
+#showExample("/page/echarts/tree-charts.page")
+
+<h2>8 字符云</h2>
+#showExample("/page/echarts/cloud-charts.page")
+
+<h2>9 混搭</h2>
+#showExample("/page/echarts/mashup-charts.page")
+
 #@showPack()org.tinygroup.ui.echarts#end
