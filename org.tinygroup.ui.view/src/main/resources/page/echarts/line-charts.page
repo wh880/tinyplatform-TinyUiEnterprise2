@@ -1,4 +1,4 @@
-#@eCharts("main" {"height":"400px","width":"100%"})
+#@eCharts("line-charts" {"height":"400px","width":"100%"})
         option = {
 		legend: {
 			data:['高度(km)与气温(°C)变化关系']

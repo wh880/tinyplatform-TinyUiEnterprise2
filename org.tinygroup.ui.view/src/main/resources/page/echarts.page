@@ -4,7 +4,10 @@
 <h2>1 标准折线图</h2>
 #showExample("/page/echarts/line-charts.page")
 
-<h2>2 标柱状图</h2>
+<h2>2 标准柱状图</h2>
 #showExample("/page/echarts/bar-charts.page")
+
+<h2>3 标准K线图</h2>
+#showExample("/page/echarts/kline-charts.page")
 
 #@showPack()org.tinygroup.ui.echarts#end
