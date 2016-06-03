@@ -10,4 +10,7 @@
 <h2>3 标准K线图</h2>
 #showExample("/page/echarts/kline-charts.page")
 
+<h2>4 标准图表</h2>
+#showExample("/page/echarts/pie-charts.page")
+
 #@showPack()org.tinygroup.ui.echarts#end
