@@ -31,7 +31,7 @@
     },
     data: [
     {
-    name: "Sam S Club",
+    name: "TinyUiEnterprise2",
     value: 10000,
     itemStyle: {
     normal: {
@@ -40,97 +40,97 @@
     }
     },
     {
-    name: "Macys",
+    name: "TinyUiEnterprise",
     value: 6181,
     itemStyle: createRandomItemStyle()
     },
     {
-    name: "Amy Schumer",
+    name: "foundation",
     value: 4386,
     itemStyle: createRandomItemStyle()
     },
     {
-    name: "Jurassic World",
+    name: "tinyKMS",
     value: 4055,
     itemStyle: createRandomItemStyle()
     },
     {
-    name: "Charter Communications",
+    name: "tinyOMS",
     value: 2467,
     itemStyle: createRandomItemStyle()
     },
     {
-    name: "Chick Fil A",
+    name: "tiny",
     value: 2244,
     itemStyle: createRandomItemStyle()
     },
     {
-    name: "Planet Fitness",
+    name: "tinyext",
     value: 1898,
     itemStyle: createRandomItemStyle()
     },
     {
-    name: "Pitch Perfect",
+    name: "sdpm",
     value: 1484,
     itemStyle: createRandomItemStyle()
     },
     {
-    name: "Express",
+    name: "bookexample",
     value: 1112,
     itemStyle: createRandomItemStyle()
     },
     {
-    name: "Home",
+    name: "bizframe",
     value: 965,
     itemStyle: createRandomItemStyle()
     },
     {
-    name: "Johnny Depp",
+    name: "TinySample",
     value: 847,
     itemStyle: createRandomItemStyle()
     },
     {
-    name: "Lena Dunham",
+    name: "TinyConsole",
     value: 582,
     itemStyle: createRandomItemStyle()
     },
     {
-    name: "Lewis Hamilton",
+    name: "dbrouterjdbc3",
     value: 555,
     itemStyle: createRandomItemStyle()
     },
     {
-    name: "KXAN",
+    name: "tinytest",
     value: 550,
     itemStyle: createRandomItemStyle()
     },
     {
-    name: "Mary Ellen Mark",
+    name: "TinySeg",
     value: 462,
     itemStyle: createRandomItemStyle()
     },
     {
-    name: "Farrah Abraham",
+    name: "tinysite",
     value: 366,
     itemStyle: createRandomItemStyle()
     },
     {
-    name: "Rita Ora",
+    name: "tinyarchetype",
     value: 360,
     itemStyle: createRandomItemStyle()
     },
     {
-    name: "Serena Williams",
+    name: "TinyUiComponent",
     value: 282,
     itemStyle: createRandomItemStyle()
     },
     {
-    name: "NCAA baseball tournament",
+    name: "TinyEnterpriseSample",
     value: 273,
     itemStyle: createRandomItemStyle()
     },
     {
-    name: "Point Break",
+    name: "tinyPM",
     value: 265,
     itemStyle: createRandomItemStyle()
     }
