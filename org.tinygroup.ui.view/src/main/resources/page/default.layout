@@ -11,10 +11,7 @@
 	</title>
 	<meta name="keywords" content="TinyUi 是基于bootscrap的前端UI组件框架。">
 	<meta name="description" content="java,j2ee,j2ee.top, tinygroup,tinygroup.org,eclipse,插件,idea,TinyFramework,悠然,悠悠然然,Tiny,Framework,CEP,通用事件处理,ui引擎,ui engine,模块化,业务单元,文档生成,xml parser,html parser,xml,html,parser,spider,网络爬虫,flow,流程,业务流,页面流,Java,SOA,框架,组件,分层,水平扩展,分区,分表,db router,db cluster,framework,框架,分布式计算,VFS,Web">
-	<script>
-		var contextPath = "${TINY_CONTEXT_PATH}";#if(UPLOAD_ACTION_URL)
-		var UPLOAD_ACTION_URL = '${TINY_CONTEXT_PATH}${UPLOAD_ACTION_URL}'; #end
-	</script>
+
 	<link rel="shortcut icon" href="${TINY_CONTEXT_PATH}/img/tiny32.png">
 	#getResource(DEBUG_MODE)
     <link href="${TINY_CONTEXT_PATH}/css/tinyui.css" rel="stylesheet" />
