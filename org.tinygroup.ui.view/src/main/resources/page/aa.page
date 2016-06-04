@@ -1,19 +1,82 @@
-#macro tagsCloud(tapMap)#set(boxId=fmt("bid%d",rand()),tagHeight=tapMap?.height?:300,tagWidth=tapMap?.width?:300)
-<div id="${boxId}" style="margin:0 auto;height:${tagHeight}px;width:${tagWidth}px"></div>
+
 <script>
-    $(function(){
-        var basic_words = [
-        #bodyContent
-        ];
-        $('#${boxId}').jQCloud(basic_words);
-    });
+
+    UE.plugins['tinyat'] = function () {
+        var me = this,thePlugins = 'tinyat';
+
+        var popup = new baidu.editor.ui.Popup( {
+            editor:this,
+            content: '',
+            className: 'edui-bubble',
+            _edittext: function (e) {
+                try{
+                    var range = me.selection.getRange();
+                    var strText=range.startContainer.data;
+                    var _atnode=range.startContainer;
+                    var atnode;
+                    if(_atnode.nodeName=="#text"){
+                        atnode=UE.dom.domUtils.findParent(range.startContainer);;
+                    }else{
+                        atnode=$(_atnode).children(".tinyat:last").get(0);
+                    };
+                    UE.dom.domUtils.remove(atnode, false);
+                    me.execCommand('inserthtml',"<span class='tinyat'>@"+e.innerHTML+"</span>&nbsp;");
+                }catch(e){}
+
+                this.hide();
+            }
+        } );
+        popup.render();
+        me.addListener( 'keyup', function( t, evt ) {
+            evt = evt || window.event;
+            if(evt.location!==0){
+                return;
+            }
+            var range = me.selection.getRange();
+            var el = UE.dom.domUtils.findParent(range.startContainer);
+            var strText=range.startContainer.data;
+           try {
+               strText = strText.substring(0, range.startOffset);
+               var reg = /@([^@\s]*)$/g;
+               var arr = strText.match(reg);
+               if (arr) {
+                   var result = arr[0].replace(reg, "$1");
+                   if (el.nodeName.toUpperCase() !== "SPAN") {
+                       strText.substring(0, range.startOffset);
+                       range.setStart(range.startContainer, range.startOffset - result.length - 1);
+                       range.deleteContents();
+                       me.execCommand('inserthtml', "<span class='tinyat'>@" + result + "</span> ");
+                       el = $(el).children("span.tinyat:last")[0];
+                   }
+
+                    $.ajax({
+                        url:"#link("/data/userdata.pagelet")",
+                        type:"get",
+                        data:{name:result},
+                        dataType:"json",
+                        success:function(data){
+                            var tempHtml = '';
+                            for(var i=0,l=data.length;i<l;i++){
+                                tempHtml += '<div><nobr><span onclick=$$._edittext(this) class="edui-clickable">'+data[i]+'</span></nobr></div>' ;
+
+                            }
+                            var html = popup.formatHtml(tempHtml);
+                            if (html) {
+                                popup.getDom('content').innerHTML = html;
+                                popup.anchorEl = el;
+                                popup.showAnchor(popup.anchorEl);
+                            }
+                        }
+                    });
+
+               } else {
+                   popup.hide();
+               }
+           }catch(e){}
+
+        });
+    };
+
 </script>
 
-
-#end
-
-#@tagsCloud({"width":300,"height":200})
-    #for(var:[1..20])
-        {text: "Lorem${var}", weight: 120+${var},link:'http://www.baidu.com/${var}'},
-    #end
-#end
+#@ueditor("uncontent" "inputName")测试一下#end

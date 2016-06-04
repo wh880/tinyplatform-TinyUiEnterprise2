@@ -1,0 +1,89 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.tinygroup</groupId>
+        <artifactId>uiproject</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <artifactId>view</artifactId>
+
+    <dependencies>
+        <!--皮肤 start-->
+        <dependency>
+            <groupId>org.tinygroup</groupId>
+            <artifactId>org.tinygroup.ui.tpl.black</artifactId>
+            <version>${tiny_ui_version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.tinygroup</groupId>
+            <artifactId>org.tinygroup.ui.tpl.clean</artifactId>
+            <version>${tiny_ui_version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.tinygroup</groupId>
+            <artifactId>org.tinygroup.ui.tpl.deepblue</artifactId>
+            <version>${tiny_ui_version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.tinygroup</groupId>
+            <artifactId>org.tinygroup.ui.tpl.fashion</artifactId>
+            <version>${tiny_ui_version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.tinygroup</groupId>
+            <artifactId>org.tinygroup.ui.tpl.gray</artifactId>
+            <version>${tiny_ui_version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.tinygroup</groupId>
+            <artifactId>org.tinygroup.ui.tpl.green</artifactId>
+            <version>${tiny_ui_version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.tinygroup</groupId>
+            <artifactId>org.tinygroup.ui.tpl.greenyellow</artifactId>
+            <version>${tiny_ui_version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.tinygroup</groupId>
+            <artifactId>org.tinygroup.ui.tpl.lightblue</artifactId>
+            <version>${tiny_ui_version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.tinygroup</groupId>
+            <artifactId>org.tinygroup.ui.tpl.orange</artifactId>
+            <version>${tiny_ui_version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.tinygroup</groupId>
+            <artifactId>org.tinygroup.ui.tpl.purple</artifactId>
+            <version>${tiny_ui_version}</version>
+        </dependency>
+        <!--皮肤 end-->
+
+        <!--公用包 start-->
+        <dependency>
+            <groupId>org.tinygroup</groupId>
+            <artifactId>org.tinygroup.ui.minproject</artifactId>
+            <version>${tiny_ui_version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.tinygroup</groupId>
+            <artifactId>org.tinygroup.ui.pjax</artifactId>
+            <version>${tiny_ui_version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.tinygroup</groupId>
+            <artifactId>org.tinygroup.ui.widget</artifactId>
+            <version>${tiny_ui_version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.tinygroup</groupId>
+            <artifactId>org.tinygroup.ui.highcharts</artifactId>
+            <version>${tiny_ui_version}</version>
+        </dependency>
+        <!--公用包 end-->
+
+    </dependencies>
+</project>

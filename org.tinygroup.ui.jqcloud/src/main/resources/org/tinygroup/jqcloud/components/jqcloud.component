@@ -1,0 +1,11 @@
+#macro jqCloud(tapMap)#set(boxId=fmt("bid%d",rand()),tagHeight=tapMap?.height?:300,tagWidth=tapMap?.width?:300)
+<div class="tags-cloud" id="${boxId}" style="margin: 0 auto;width: ${tagWidth}px;height: ${tagHeight}px"></div>
+<script>
+    (function(){
+        var basic_words = [
+        #bodyContent
+        ];
+        $('#${boxId}').jQCloud(basic_words);
+    }).call(this);
+</script>
+#end

@@ -1,0 +1,16 @@
+#@jqCloud({"width":250,"height":400})
+
+
+    {text: "jvm", weight: 3,link: {href: "#","toggle-pjax":"true","pjax-target":"#tagDiv"}},
+    {text: "海", weight: 2,link: {href: "#","toggle-pjax":"true","pjax-target":"#tagDiv"}},
+    {text: "内存溢出", weight: 2,link: {href: "#","toggle-pjax":"true","pjax-target":"#tagDiv"}},
+    {text: "浙江", weight: 1,link: {href: "#","toggle-pjax":"true","pjax-target":"#tagDiv"}},
+    {text: "HTML5", weight: 1,link: {href: "#","toggle-pjax":"true","pjax-target":"#tagDiv"}},
+    {text: "海滩", weight: 1,link: {href: "#","toggle-pjax":"true","pjax-target":"#tagDiv"}},
+    {text: "hundsun", weight: 1,link: {href: "#","toggle-pjax":"true","pjax-target":"#tagDiv"}},
+    {text: "linux", weight: 1,link: {href: "#","toggle-pjax":"true","pjax-target":"#tagDiv"}},
+    {text: "tiny", weight: 1,link: {href: "#","toggle-pjax":"true","pjax-target":"#tagDiv"}},
+    {text: "curl", weight: 1,link: {href: "#","toggle-pjax":"true","pjax-target":"#tagDiv"}}
+
+
+#end

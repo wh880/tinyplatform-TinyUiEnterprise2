@@ -11,7 +11,7 @@
 
 .gt-ie9 & #main-navbar,
 .gt-ie9 & #main-navbar .navbar-header {
-  #gradient > .vertical(#52aded, #418ce4);
+  #gradient > .vertical(#52aded, @navbar-color);
 }
 
 // Use image for bg on IE 8-9
@@ -31,7 +31,7 @@
 
   &,
   .navbar-header {
-    background: #418ce4;
+    background: @navbar-color;
     .box-shadow(rgba(255, 255, 255, 0.25) 0px 1px 0px inset);
   }
 
@@ -75,7 +75,7 @@
 
   .main-navbar-collapse {
     border-top: 1px solid #185aa7;
-    background: #418ce4;
+    background: @navbar-color;
     .box-shadow(rgba(255, 255, 255, 0.18) 0px 1px 0px inset);
   }
 

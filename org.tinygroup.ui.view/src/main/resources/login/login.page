@@ -1,0 +1,107 @@
+<div class="theme-default page-signin">
+	<div id="page-signin-bg">
+		<div class="overlay"></div>
+		<img src="assets/images/signin-bg-1.jpg" alt="">
+	</div>
+
+	<div class="signin-container">
+		<!-- Left side -->
+		<div class="signin-info">
+			<a href="" class="signin-logo">
+				<!--<img src="assets/images/logo-big.png" alt="" style="margin-top: -5px;">&nbsp;-->
+				管理系统
+			</a> <!-- / .signin-logo -->
+			<div class="slogan">
+				简单 灵活 强大
+			</div> <!-- / .slogan -->
+			<ul>
+				<li><i class="fa fa-sitemap signin-icon"></i>灵活的模块化结构</li>
+				<li><i class="fa fa-file-text-o signin-icon"></i>清晰的结构目录</li>
+				<li><i class="fa fa-outdent signin-icon"></i>让查询变得简单</li>
+				<li><i class="fa fa-heart signin-icon"></i>连接上万用户</li>
+			</ul> <!-- / Info list -->
+		</div>
+		<!-- / Left side -->
+
+		<!-- Right side -->
+		<div class="signin-form">
+			<!-- Form -->
+			<form action="/web" id="signin-form_id">
+				<div class="signin-text">
+					<span>登录到后台管理</span>
+				</div> <!-- / .signin-text -->
+				<p style="color:#c00;height:15px;margin-top:-18px;font-weight:600;display:none">&nbsp;<i class="fa fa-warning"></i>&nbsp;<span class="validateResult">所放提示语...</span></p>
+				<div class="form-group w-icon">
+					<input type="text" name="signin_username" id="signin_username" class="form-control input-lg" placeholder="你输入用户名"/>
+					<span class="fa fa-user signin-form-icon"></span>
+				</div> <!-- / Username -->
+
+				<div class="form-group w-icon">
+					<input type="password" name="password" id="password_id" class="form-control input-lg" placeholder="你输入密码"/>
+					<span class="fa fa-lock signin-form-icon"></span>
+				</div> <!-- / Password -->
+
+				<div class="form-actions">
+					<input type="submit" value="登 录" class="signin-btn bg-primary">
+					<a href="${TINY_CONTEXT_PATH}/login/signin.page" class="forgot-password" id="forgot-password-link">忘记密码?</a>
+					&nbsp;&nbsp;还没有一个帐户<a href="${TINY_CONTEXT_PATH}/login/signup.page">注册</a>
+				</div> <!-- / .form-actions -->
+			</form>
+			<!-- / Form -->
+			<!-- / "Sign In with" block -->
+		</div>
+		<!-- Right side -->
+	</div>
+</div>
+<script>
+
+         //验证表单
+        $().ready(function () {
+
+            // 调用
+            $("#signin-form_id").validate({
+                rules: {
+                    signin_username: {
+                        required: true,
+                        minlength: 2
+                    },
+                    password: {
+                        required: true,
+                        minlength: 5
+                    },
+                },
+                submitHandler : function(form) {
+                	var options = {
+						url:form.action,
+						type:"post",
+						dataType:'json',
+						success:function(data){
+							if(data==1){
+								$(".validateResult").html("用户名或密码错误");
+								$(".validateResult").parent().show();
+							}else{
+								$(".validateResult").html("");
+								$(".validateResult").parent().hide();
+								location.href="#link("/index.page")";
+							}
+							return false;
+						}
+					};
+					$(form).ajaxSubmit(options);
+					return false;
+                },
+                messages: {
+                    signin_username: {
+                        required: "请输入您的用户名",
+                        minlength: "用户名必须两个字符以上"
+                    },
+                    password: {
+                        required: "请输入您的密码",
+                        minlength: "密码必须5个字符以上"
+                    },
+                }
+            });
+
+        });
+    </script>
+

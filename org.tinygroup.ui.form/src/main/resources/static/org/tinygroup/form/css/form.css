@@ -176,7 +176,7 @@ div.switch.round label:after {
 .radio-custom input, .checkbox-custom input {
 	display: none;
 }
-.ie8 .radio-custom input, .checkbox-custom input {
+.ie8 .radio-custom input,.ie8 .checkbox-custom input {
 	display: inline;
 }
 .checkbox-custom label:empty, .radio-custom label:empty {
@@ -231,7 +231,8 @@ div.switch.round label:after {
 	margin-right: 15px;
 	margin-bottom: 5px;
 }
-
+.ie8 .checkbox-custom label,.ie8 .radio-custom label{padding:0}
+.ie8 .checkbox-custom label:before,.ie8 .radio-custom label:before{display:none}
 .checkbox-custom label:before {
 	content: "";
 	position: absolute;

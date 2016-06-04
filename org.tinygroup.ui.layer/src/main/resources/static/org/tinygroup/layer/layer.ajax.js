@@ -1,7 +1,7 @@
-layer.config({
+/*layer.config({
     path: contextPath+"/static/org/tinygroup/layer/",
     shift: 5
-});
+});*/
 $(function() {
     $(document).on("click","[ly-ajax]",function(){
         var $this=$(this);

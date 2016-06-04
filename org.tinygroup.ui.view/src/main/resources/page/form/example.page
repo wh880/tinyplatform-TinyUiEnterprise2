@@ -220,7 +220,7 @@
                         }
                         //try {
                             $(curform).closest(".modal").trigger("close");//当弹出框时触发弹出框关闭
-                            $("table.tinytable").trigger("initnav"); ////可配合TINYTABLE 做刷新
+                            $("table.tinytable").trigger("refresh"); ////可配合TINYTABLE 做刷新
                         //} catch (e) {
                             ##console.log(e)
                         //}

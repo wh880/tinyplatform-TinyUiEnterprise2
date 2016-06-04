@@ -3,14 +3,14 @@
     <parent>
         <groupId>org.tinygroup</groupId>
         <artifactId>TinyUiEnterprise2</artifactId>
-        <version>2.2.1-SNAPSHOT</version>
+        <version>2.2.4-SNAPSHOT</version>
     </parent>
     <artifactId>org.tinygroup.ui.button</artifactId>
 
     <dependencies>
         <dependency>
             <groupId>org.tinygroup</groupId>
-            <artifactId>org.tinygroup.ui.bootstrap</artifactId>
+            <artifactId>org.tinygroup.ui.base</artifactId>
             <version>${project.version}</version>
         </dependency>
     </dependencies>

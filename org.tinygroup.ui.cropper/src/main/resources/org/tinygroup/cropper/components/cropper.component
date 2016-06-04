@@ -51,7 +51,10 @@
 
             initPreview: function () {
                 var url = this._avatar.attr('src');
-                this._avatarPreview.empty().html('<img src="' + url + '">');
+                if(url){
+                    this._avatarPreview.empty().html('<img src="' + url + '">');
+                }
+
             },
             click: function () {
                 this.initPreview();

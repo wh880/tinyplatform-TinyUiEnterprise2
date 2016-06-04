@@ -1,32 +1,15 @@
-<div class="row-demo">
-  #@gridSysRow()
-    #@gridSysCol(1 {"id":"test"})1/12#end
-    #@gridSysCol(1)1/12#end
-    #@gridSysCol(1)1/12#end
-    #@gridSysCol(1)1/12#end
-    #@gridSysCol(1)1/12#end
-    #@gridSysCol(1)1/12#end
-    #@gridSysCol(1)1/12#end
-    #@gridSysCol(1)1/12#end
-    #@gridSysCol(1)1/12#end
-    #@gridSysCol(1)1/12#end
-    #@gridSysCol(1)1/12#end
-    #@gridSysCol(1)1/12#end
-  #end
-  #@gridSysRow()
-    #@gridSysCol(2)2/12(1/6)#end
-    #@gridSysCol(4)4/12(1/3)#end
-    #@gridSysCol(6)6/12(1/2)#end
-  #end
-  #@gridSysRow()
-    #@gridSysCol(3)3/12(1/4)#end
-    #@gridSysCol(9)9/12(3/4)#end
-  #end
-  #@gridSysRow()
-    #@gridSysCol(6)6/12(1/2)#end
-    #@gridSysCol(6)6/12(1/2)#end
-  #end
-  #@gridSysRow()
-    #@gridSysCol(12)12/12(1)#end
-  #end
+<div class="container-fluid">
+    <div class="row show-grid">
+        <div class="col-xs-12 col-md-8">.col-xs-12 .col-md-8</div>
+        <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+    </div>
+    <div class="row show-grid">
+        <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+        <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+        <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+    </div>
+    <div class="row show-grid">
+        <div class="col-xs-6">.col-xs-6</div>
+        <div class="col-xs-6">.col-xs-6</div>
+    </div>
 </div>

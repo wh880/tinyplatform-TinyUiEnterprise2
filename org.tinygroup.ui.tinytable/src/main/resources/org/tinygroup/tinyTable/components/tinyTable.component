@@ -51,7 +51,7 @@
     $(function(){
         $("#${tableId}").on("initnav refresh init",function(){//currentPage
             var url=$('#${tableId}').attr("data-url");
-            $("#${tableId}pageSize").attr("name","");
+            $("#${tableId}pageSize").removeAttr("name");
             if($("#${tableId}form").size()>0){
                 #tinyTableBeforeSend()
                 var url=url+(url.indexOf("?")>0?"&":"?")+$("#${tableId}form").formSerialize();
@@ -66,7 +66,9 @@
             var order;
             var ordertype;
             var pageSize=$("#${tableId}pageSize").val();
-            if(!pageSize) pageSize=10;
+            if(!pageSize){
+                pageSize=10;
+            }
             if($("#${tableId} th.sorting_desc").size()>0){
                 order=$("#${tableId} th.sorting_desc").eq(0).attr("rel");
                 ordertype="desc";
@@ -173,7 +175,6 @@
 			}
 		}
 		$('#${tableId}-nav').html("<div></div>");
-		var page=${page}
 		var pageSize=$("#${tableId}pageSize").val();
 		if(!pageSize) pageSize=10;
 		var totalPages=Math.ceil(${itemNum}/pageSize);

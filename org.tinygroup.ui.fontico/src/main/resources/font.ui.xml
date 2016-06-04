@@ -3,6 +3,6 @@
         <css-resource>
             /static/org/tinygroup/fontIco/css/font-awesome.tiny.min.css
         </css-resource>
-        <description>字体图标 (http://FontAwesome.com)</description>
+        <description>字体图标 (www.fontawesome.io)</description>
     </ui-component>
 </ui-components>

@@ -1,0 +1,140 @@
+#@eCharts("cloud-charts" {"width":"100%","height":"400px"})
+    function createRandomItemStyle() {
+    return {
+    normal: {
+    color: 'rgb(' + [
+    Math.round(Math.random() * 160),
+    Math.round(Math.random() * 160),
+    Math.round(Math.random() * 160)
+    ].join(',') + ')'
+    }
+    };
+    }
+
+    option = {
+    title: {
+    text: 'Tiny框架趋势',
+    link: ''
+    },
+    tooltip: {
+    show: true
+    },
+    series: [{
+    name: 'Tiny框架趋势',
+    type: 'wordCloud',
+    size: ['80%', '80%'],
+    textRotation : [0, 45, 90, -45],
+    textPadding: 0,
+    autoSize: {
+    enable: true,
+    minSize: 14
+    },
+    data: [
+    {
+    name: "TinyUiEnterprise2",
+    value: 10000,
+    itemStyle: {
+    normal: {
+    color: 'black'
+    }
+    }
+    },
+    {
+    name: "TinyUiEnterprise",
+    value: 6181,
+    itemStyle: createRandomItemStyle()
+    },
+    {
+    name: "foundation",
+    value: 4386,
+    itemStyle: createRandomItemStyle()
+    },
+    {
+    name: "tinyKMS",
+    value: 4055,
+    itemStyle: createRandomItemStyle()
+    },
+    {
+    name: "tinyOMS",
+    value: 2467,
+    itemStyle: createRandomItemStyle()
+    },
+    {
+    name: "tiny",
+    value: 2244,
+    itemStyle: createRandomItemStyle()
+    },
+    {
+    name: "tinyext",
+    value: 1898,
+    itemStyle: createRandomItemStyle()
+    },
+    {
+    name: "sdpm",
+    value: 1484,
+    itemStyle: createRandomItemStyle()
+    },
+    {
+    name: "bookexample",
+    value: 1112,
+    itemStyle: createRandomItemStyle()
+    },
+    {
+    name: "bizframe",
+    value: 965,
+    itemStyle: createRandomItemStyle()
+    },
+    {
+    name: "TinySample",
+    value: 847,
+    itemStyle: createRandomItemStyle()
+    },
+    {
+    name: "TinyConsole",
+    value: 582,
+    itemStyle: createRandomItemStyle()
+    },
+    {
+    name: "dbrouterjdbc3",
+    value: 555,
+    itemStyle: createRandomItemStyle()
+    },
+    {
+    name: "tinytest",
+    value: 550,
+    itemStyle: createRandomItemStyle()
+    },
+    {
+    name: "TinySeg",
+    value: 462,
+    itemStyle: createRandomItemStyle()
+    },
+    {
+    name: "tinysite",
+    value: 366,
+    itemStyle: createRandomItemStyle()
+    },
+    {
+    name: "tinyarchetype",
+    value: 360,
+    itemStyle: createRandomItemStyle()
+    },
+    {
+    name: "TinyUiComponent",
+    value: 282,
+    itemStyle: createRandomItemStyle()
+    },
+    {
+    name: "TinyEnterpriseSample",
+    value: 273,
+    itemStyle: createRandomItemStyle()
+    },
+    {
+    name: "tinyPM",
+    value: 265,
+    itemStyle: createRandomItemStyle()
+    }
+    ]
+    }]
+    };
+#end

@@ -1,0 +1,11 @@
+<ui-components>
+    <ui-component name="tiny.ui.jqcloud" dependencies="tiny.ui.jquery">
+        <css-resource>
+            /static/org/tinygroup/jqcloud/css/jqcloud.tiny.min.css
+        </css-resource>
+        <js-resource>
+            /static/org/tinygroup/jqcloud/js/jqcloud.tiny.min.js
+        </js-resource>
+        <description>jqcloud (www.lucaongaro.eu)</description>
+    </ui-component>
+</ui-components>
