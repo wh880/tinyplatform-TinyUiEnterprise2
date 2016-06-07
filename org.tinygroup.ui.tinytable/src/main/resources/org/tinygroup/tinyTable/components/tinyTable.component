@@ -232,7 +232,7 @@
 #macro tinyTableContent(dataUrl currentPage itemNum)
 	<div class="clear"></div>
 	<div class="table-responsive">
-	<table class="dataTable tinytable table table-hover" id="${tableId}" data-url="#link(dataUrl)">
+	<table class="tinytable table table-hover" id="${tableId}" data-url="#link(dataUrl)">
 		#bodyContent
 		<tbody id="${tableId}-Body">
 		</tbody>
