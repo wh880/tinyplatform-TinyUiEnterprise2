@@ -5,16 +5,16 @@
 * * @param annulusPercentage  单位
 * * @param echartsMap  参数Map
 *#
-#macro eCharts(eChartsId eChartsStyle)#set(eChartsId=eChartsId?fmt("echart%d",rand()))
-##<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
-<div id="${eChartsId}" style="#mapToCss(eChartsStyle)"></div>
+#macro eCharts(eChartsId eChartsStyle)#set(eChartsId=eChartsId?:fmt("cid%d",rand()))
+##为ECharts准备一个具备大小（宽高）的Dom
+<div #if(eChartsId) id="${eChartsId}"#{end} style="#mapToCss(eChartsStyle)"></div>
 <script type="text/javascript">
+    $(function(){
 	## 基于准备好的dom，初始化echarts实例
-(function()
 	var myChart = echarts.init(document.getElementById('${eChartsId}'));
 	#bodyContent
-	## 使用刚指定的配置项和数据显示图表。
+	##使用刚指定的配置项和数据显示图表。
 	myChart.setOption(option);
-)();
+    });
 </script>
 #end
