@@ -10,7 +10,7 @@
 	#end
 	<div class="tinyheaderTools form-inline">
 		#setTinyTablePageSize([10,20,30]) ##每页数据条数设置
-		#@mulOperation("delall" "/data/action.pagelet" {"ddd":"eee","name":"test"})<a href="javascript:;" class="btn btn-danger btn-sm">批量删除</a>#end
+		#@mulOpera("delall" "/data/action.pagelet?objectID=22" {"data-title":"批量删除","data-msg":"确定要删除吗"})<a href="javascript:;" class="btn btn-danger btn-sm">批量删除</a>#end
 		<a href="#" class="btn btn-default btn-sm">产品</a>
 		<a href="#" class="btn btn-success btn-sm">Bug</a>
 		<a href="#" class="btn btn-primary btn-sm">工程</a>

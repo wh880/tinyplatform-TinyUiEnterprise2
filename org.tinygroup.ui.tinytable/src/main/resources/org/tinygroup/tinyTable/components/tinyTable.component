@@ -79,7 +79,7 @@
             $.ajax({
                 type: "GET",
                 url: $('#${tableId}').attr("data-url-real"),
-                data:{ page: page,pagesize:pageSize,pageSize:pageSize,order:order,ordertype:ordertype,orderType:ordertype,limit:pageSize,start:(page-1)*pageSize,tinytableid:"${tableId}"},
+                data:{ page: page,pageNo: page,pagesize:pageSize,pageSize:pageSize,order:order,ordertype:ordertype,orderType:ordertype,limit:pageSize,start:(page-1)*pageSize,tinytableid:"${tableId}"},
                 dataType: "html",
                 cache:false,
                 success: function(a) {
@@ -316,7 +316,7 @@
 <a href="javascript:;" class="Item-Remove" data-url="#link(doActionUrl)" data-id="${itemId}">#bodyContent</a>
 #end
 
-#macro mulOperation(operation doActionUrl map)<span id="${operation}-${tableId}">#bodyContent</span><script type="text/javascript">
+#macro mulOperation(operation doActionUrl mulMap)<span id="${operation}-${tableId}">#bodyContent</span><script type="text/javascript">
  $(function(){
   $("#${operation}-${tableId}").on("click",function() {
 		var checklist = [];
@@ -357,6 +357,60 @@
   })
  });
 </script>#end
+
+
+#macro mulOpera(operation doActionUrl mulMap)<span id="${operation}-${tableId}" #mapToHtml(mulMap) action-url="#link(doActionUrl)">#bodyContent</span><script type="text/javascript">
+    $(function(){
+        $("#${operation}-${tableId}").on("click",function() {
+
+            var _self=$(this);
+            var show_title=_self.attr("data-title");
+            if(!show_title){
+                show_title="信息";
+            }
+            var show_msg=_self.attr("data-msg");
+            if(!show_msg){
+                show_msg="请确认?";
+            }
+            var checklist = [];
+            $("#${tableId}>tbody>tr>td input[type=checkbox]:checked").each(function (e) {
+                checklist.push($(this).val());
+            });
+            if(checklist.length==0){
+                layer.msg("请选择记录",{icon: 2})
+                return false;
+            }
+            layer.confirm(show_msg,{title:show_title},function() {
+                $.ajax({
+                    url: _self.attr("action-url"),
+                    data: {ids: checklist.join(","), itemId: checklist, action: "${operation}"},
+                    dataType: "json",
+                    success: function (data) {
+                        if (data.status=="success"||data.status=="y") {
+                            if(data.url){
+                                var url=data.url;
+                                if(url.indexOf("http://")==-1){
+                                    url=contextPath+url;
+                                }
+                                window.location.href=url;
+                            }else{
+                                layer.msg(data.info,{icon: 1},function(){$("#${tableId}").trigger("refresh")});
+                            }
+                        }else{
+                            layer.msg(data.info,{icon:2});
+                        }
+                    },
+                    traditional:true,
+                    error:function(){
+                        layer.msg("系统出错，请确认你的请求地址",{icon: 2});
+                    }
+                })
+            });
+            //return false;
+        })
+    });
+</script>
+#end
 
 
 #macro tinyTableNonavpage(dataUrl itemNum)

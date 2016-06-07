@@ -6,7 +6,7 @@
         <version>2.2.0</version>
     </parent>
     <properties>
-        <tiny_version>2.2.0</tiny_version>
+        <tiny_version>2.2.3</tiny_version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <scm>
