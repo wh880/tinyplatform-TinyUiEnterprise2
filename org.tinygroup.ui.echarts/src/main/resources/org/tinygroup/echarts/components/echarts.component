@@ -9,12 +9,12 @@
 ##为ECharts准备一个具备大小（宽高）的Dom
 <div #if(eChartsId) id="${eChartsId}"#{end} style="#mapToCss(eChartsStyle)"></div>
 <script type="text/javascript">
-    $(function(){
+    (function(){
 	## 基于准备好的dom，初始化echarts实例
 	var myChart = echarts.init(document.getElementById('${eChartsId}'));
 	#bodyContent
 	##使用刚指定的配置项和数据显示图表。
 	myChart.setOption(option);
-    });
+    })();
 </script>
 #end
