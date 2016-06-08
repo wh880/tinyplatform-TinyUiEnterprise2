@@ -21,7 +21,7 @@ defaultMap={
     "data-click-to-select":"true",
     "data-show-columns":"true",
     "data-search":"true",
-    "data-toolbar":tableId+"-toolbar",
+    "data-toolbar":"#"+tableId+"-toolbar",
     "data-show-refresh":"true",
     "data-show-toggle":"true",
     "data-show-columns":"true",
