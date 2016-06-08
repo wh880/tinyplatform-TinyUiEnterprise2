@@ -3,7 +3,7 @@
     <parent>
         <groupId>org.tinygroup</groupId>
         <artifactId>TinyUiEnterprise2</artifactId>
-        <version>2.2.4</version>
+        <version>2.2.5-SNAPSHOT</version>
     </parent>
     <artifactId>org.tinygroup.ui.votecharts</artifactId>
 
