@@ -1801,6 +1801,8 @@
             if (this.options.pagination) {
                 params.limit = this.options.pageSize === this.options.formatAllRows() ?
                     this.options.totalRows : this.options.pageSize;
+                params.pageNo = this.options.pageNumber;
+                params.pageSize = this.options.pageSize;
                 params.offset = this.options.pageSize === this.options.formatAllRows() ?
                     0 : this.options.pageSize * (this.options.pageNumber - 1);
             }

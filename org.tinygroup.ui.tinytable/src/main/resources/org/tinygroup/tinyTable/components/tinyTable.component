@@ -502,7 +502,7 @@
             $.ajax({
                 type: "GET",
                 url: $('#${tableId}').attr("data-url"),
-                data:{ page: page,pagesize:pageSize,order:order,ordertype:ordertype,limit:pageSize,start:(page-1)*pageSize,tinytableid:"${tableId}"},
+                data:{ page: page,pagesize:pageSize,order:order,ordertype:ordertype,limit:pageSize,start:(page-1)*pageSize,offset:(page-1)*pageSize,tinytableid:"${tableId}"},
                 dataType: "html",
                 cache:false,
                 beforeSend: function() {

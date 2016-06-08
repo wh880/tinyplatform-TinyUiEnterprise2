@@ -1,0 +1,55 @@
+
+
+#@btTable("tableid")
+    #@btToolBar()
+    <button type="button" class="btn btn-default">#faIcon("plus")</button>
+    <button type="button" class="btn btn-default">#faIcon("heart")</button>
+    <button type="button" class="btn btn-default mul-remove">#faIcon("trash")</button>
+    #end
+    #@btTableContent("/data/bt_table_data.pagelet",{"data-page-list":"[15, 20, 50, 100, 200,all]","data-page-size":"15"})
+    <th data-field="state" data-checkbox="true"></th>
+    <th data-field="id" data-sortable="true">ID</th>
+    <th data-field="name" data-sortable="true">Item Name</th>
+    <th data-field="price" data-sortable="true">Item Price</th>
+    #end
+    #@btTableOperate()
+    <a href="#" class="remove">#faIcon("remove")</a>
+    #end
+
+<script>
+    $(function(){
+        $("#${tableId}").on("click.remove",".remove",function(){
+            var id=$(this).closest("tr").find("input[type=checkbox]:first").val();
+
+
+            layer.confirm("确定要删除吗",{title:"删除信息"},function(){
+                $.ajax({
+                    url:"#link("/data/bt_table_data.pagelet")",
+                    type:"post",
+                    data:{id:id},
+                    dataType:"json",
+                    success:function(data){
+                        var info="系统错误";
+                        if(typeof(data.info)!='undefined'){
+                            info=data.info;
+                        }
+                        if(data&&data.status&&data.status=="y"){
+                            layer.msg(info);
+                        }else{
+                            layer.msg(info,{icon:2})
+                        }
+                        $("#${tableId}-table").bootstrapTable('refresh');
+                    },
+                    error:function(e){
+                        layer.msg("error",{icon:2})
+                    }
+                })
+            });
+            return false;
+        }).off("click.mulremove").on("click.mulremove",".mul-remove",function(){
+            console.log("批量删除");
+            return false;
+        })
+    })
+</script>
+#end

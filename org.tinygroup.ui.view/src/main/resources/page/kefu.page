@@ -1,3 +1,5 @@
 <h2>1 QQ客服</h2>
 #@showInfo() 三种模式。更多设置请移步 QQ商家-沟通组件.<code>注意：</code>请记着将橙色地方的QQ号换成你自己的。#end
-#showExample("/page/kefu/kefu.page")
+#showExample("/page/kefu/kefu.page")*#
+
+

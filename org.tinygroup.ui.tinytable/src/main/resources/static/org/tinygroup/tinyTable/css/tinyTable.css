@@ -1,4 +1,6 @@
 table.tinytable > thead >tr> .sorting {
+    background-repeat: no-repeat;
+    background-position: center right;
     background-image: url("../images/sort_both.png");
 }
 

@@ -1,59 +1,34 @@
-${renderLayer(renderLayer?:0)}
-<div id="demo-simple" class="demo"></div>
-<style>
-.demo {
-    margin: 0 auto;
-    width: 450px;
-    height: 250px;
-}
-</style>
-<script>
-    var basic_words = [
-        {text: "Lorem", weight: 13},
-        {text: "Ipsum", weight: 10.5},
-        {text: "Dolor", weight: 9.4},
-        {text: "Sit", weight: 8},
-        {text: "Amet", weight: 6.2},
-        {text: "Consectetur", weight: 5},
-        {text: "Adipiscing", weight: 5},
-        {text: "Elit", weight: 5},
-        {text: "Nam et", weight: 5},
-        {text: "Leo", weight: 4},
-        {text: "Sapien", weight: 4},
-        {text: "Pellentesque", weight: 3},
-        {text: "habitant", weight: 3},
-        {text: "morbi", weight: 3},
-        {text: "tristisque", weight: 3},
-        {text: "senectus", weight: 3},
-        {text: "et netus", weight: 3},
-        {text: "et malesuada", weight: 3},
-        {text: "fames", weight: 2},
-        {text: "ac turpis", weight: 2},
-        {text: "egestas", weight: 2},
-        {text: "Aenean", weight: 2},
-        {text: "vestibulum", weight: 2},
-        {text: "elit", weight: 2},
-        {text: "sit amet", weight: 2},
-        {text: "metus", weight: 2},
-        {text: "adipiscing", weight: 2},
-        {text: "ut ultrices", weight: 2},
-        {text: "justo", weight: 1},
-        {text: "dictum", weight: 1},
-        {text: "Ut et leo", weight: 1},
-        {text: "metus", weight: 1},
-        {text: "at molestie", weight: 1},
-        {text: "purus", weight: 1},
-        {text: "Curabitur", weight: 1},
-        {text: "diam", weight: 1},
-        {text: "dui", weight: 1},
-        {text: "ullamcorper", weight: 1},
-        {text: "id vuluptate ut", weight: 1},
-        {text: "mattis", weight: 1},
-        {text: "et nulla", weight: 1},
-        {text: "Sed", weight: 1}
-    ];
-
-    $('#demo-simple').jQCloud(basic_words);
-
-</script>
-
+##${renderLayer(renderLayer?:0)}
+<div class="btn-group hidden-xs" id="toolbar" role="group">
+    <button type="button" class="btn btn-outline btn-default"> <i class="fa fa-plus" aria-hidden="true"></i> </button>
+    <button type="button" class="btn btn-outline btn-default"> <i class="fa fa-heart" aria-hidden="true"></i> </button>
+    <button type="button" class="btn btn-outline btn-default"> <i class="fa fa-trash" aria-hidden="true"></i> </button>
+</div>
+<table id="table"
+       data-toggle="table"
+       data-url="#link("/data/bt_table_data.pagelet")"
+       ##data-height="400"
+       data-side-pagination="server"
+       data-pagination="true"
+       data-page-list="[5, 10, 20, 50, 100, 200]"
+       data-click-to-select="true"
+       data-show-columns="true"
+       data-search="true"
+       data-toolbar="#toolbar"
+       data-show-refresh="true"
+       data-show-toggle="true"
+       data-show-columns="true"
+       data-show-export="true"
+       data-minimum-count-columns="2"
+       data-show-pagination-switch="true"
+       data-id-field="id"
+       data-show-footer="false">
+    <thead>
+    <tr>
+        <th data-field="state" data-checkbox="true"  data-sortable="true"></th>
+        <th data-field="id" data-sortable="true">ID</th>
+        <th data-field="name" data-sortable="true">Item Name</th>
+        <th data-field="price" data-sortable="true">Item Price</th>
+    </tr>
+    </thead>
+</table>

@@ -1,0 +1,10 @@
+#@uiPageTitle()boostraptable#end
+#@showInfo()温馨提示：
+<ul class="mt-20">
+    <li>第1参数为ID 注意此ID最好传入 为后期可操作DOM做入口  如不传则自动系统生成一个随机ID</li>
+
+</ul>
+#end
+#showExample("/page/tables/btTable.page")
+
+#@showPack()org.tinygroup.ui.boostraptablerm#end

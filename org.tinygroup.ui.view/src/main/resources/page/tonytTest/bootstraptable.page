@@ -1,4 +1,4 @@
-#*<style>
+<style>
     .wrapper-content{ padding:20px; }
     .ibox-title {
         -moz-border-bottom-colors: none;
@@ -88,7 +88,7 @@
                 <div class="col-sm-6">
                     <h4 class="example-title">从数据中加载</h4>
                     <div class="example">
-                        #@bootstrapTable({"id":"exampleTableFromData"})
+                        #@bootstrapTable({"id":"exampleTableFromData","data-show-columns":"true"})
                             <thead>
                                 <tr>
                                     <th data-field="Tid">ID</th>
@@ -598,7 +598,7 @@ function(e, t, o) {
         })
     } (),
     function() {
-        o("#exampleTableEvents").bootstrapTable({
+        ("#exampleTableEvents").bootstrapTable({
             url: "data/bootstrap_table_test.json",
             search: !0,
             pagination: !0,
@@ -656,4 +656,4 @@ function(e, t, o) {
         })
     } ()
 } (document, window, jQuery);
-</script>*#
+</script>

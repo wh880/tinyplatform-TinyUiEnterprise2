@@ -127,11 +127,12 @@
             if (type) end = options;
             return layer.open($.extend({
                 content: content,
-                time: 3000,
+                time: 1000,
                 shade: false,
                 skin: skin,
                 title: false,
                 closeBtn: false,
+                icon:1,
                 btn: false,
                 end: end
             }, (type && !ready.config.skin) ? {
@@ -139,7 +140,7 @@
                 shift: shift
             } : function () {
                 options = options || {};
-                if (options.icon === -1 || options.icon === undefined && !ready.config.skin) {
+                if (options.icon === -1) {//|| options.icon === undefined && !ready.config.skin
                     options.skin = skin + ' ' + (options.skin || 'layui-layer-hui');
                 }
                 return options;
