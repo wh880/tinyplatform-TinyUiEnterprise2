@@ -1,18 +1,72 @@
+#macro bootstrapTable(mapInfo)
+<table #mapToHtml(mapInfo)>
+    #bodyContent
+</table>
+#end
 
+#macro btTable(tableId)#set(tableId=tableId?:fmt("t%d",rand()))<div id="${tableId}">#bodyContent</div>
+<script>
+    $(function(){
+        $("#${tableId}-table>thead>tr>.operate").attr("data-formatter",$.trim($("#${tableId}-operate").html()));
+        //$("#${tableId}-table").bootstrapTable('destroy').bootstrapTable();
+        $("#${tableId}-table").bootstrapTable('refreshOptions', {
+            url: '#link("/data/bt_table_data.pagelet?page=2")',
+            pageNumber:1,
+            queryParams:{USER:"AJIAN"}
+        });
+    })
+</script>
+#end
+#macro btTableContent(dataUrl,btMap)#set(
+defaultMap={
+    "data-side-pagination":"server",
+    "data-pagination":"true",
+    "data-page-size":"10",
+    "data-page-list":"[10, 20, 50, 100, 200,all]",
+    "data-click-to-select":"true",
+    "data-show-columns":"true",
+    "data-search":"true",
+    "data-toolbar":"#"+tableId+"-toolbar",
+    "data-show-refresh":"true",
+    "data-show-toggle":"true",
+    "data-show-columns":"true",
+    "data-show-export":"true",
+    "data-show-pagination-switch":"true",
+    "data-id-field":"id",
+    "data-show-footer":"false"
+},btMap=defaultMap.extend(btMap,true))
+<table id="${tableId}-table"  data-url="#link(dataUrl)"  #mapToHtml(btMap)>
+    <thead>
+    <tr>
+        #bodyContent
+        <th data-field="operate" class="operate" data-align="center">操作</th>
+    </tr>
+    </thead>
+</table>
+#end
+#macro btTableOperate()
+<div id="${tableId}-operate" class="hidden">#bodyContent</div>
+#end
+#macro btToolBar()
+<div class="btn-group hidden-xs" id="${tableId}-toolbar" role="group">
+    #bodyContent
+</div>
+#end
 
 #@btTable("tableid")
     #@btToolBar()
     <button type="button" class="btn btn-default">#faIcon("plus")</button>
-    <button type="button" class="btn btn-default">#faIcon("heart")</button>
+    <button type="button" class="btn btn-default opt-refresh">#faIcon("refresh")</button>
     <button type="button" class="btn btn-default mul-remove">#faIcon("trash")</button>
     #end
-    #@btTableContent("/data/bt_table_data.pagelet",{"data-page-list":"[15, 20, 50, 100, 200,all]","data-page-size":"15"})
+    #@btTableContent("/data/bt_table_data.pagelet",{"data-page-list":"[15, 20, 50, 100, 200,all]","data-page-size":"15","data-id-field":"id"})
     <th data-field="state" data-checkbox="true"></th>
-    <th data-field="id" data-sortable="true">ID</th>
+    #*<th data-field="id" data-sortable="true">ID</th>*#
     <th data-field="name" data-sortable="true">Item Name</th>
     <th data-field="price" data-sortable="true">Item Price</th>
     #end
     #@btTableOperate()
+    <a href="#" class="edit">#faIcon("edit")</a>
     <a href="#" class="remove">#faIcon("remove")</a>
     #end
 
@@ -49,6 +103,16 @@
         }).off("click.mulremove").on("click.mulremove",".mul-remove",function(){
             console.log("批量删除");
             return false;
+        }).on("click.edit",".edit",function(){
+            var id=$(this).closest("tr").find("input[type=checkbox]:first").val();
+            window.location.href="#link("data/bt_table_data.pagelet")?id="+id;
+            return false;
+        }).on("click.refresh",".opt-refresh",function(){
+            $("#${tableId}-table").bootstrapTable('refreshOptions', {
+                url: '#link("/data/bt_table_data.pagelet?page=2")',
+                pageNumber:1,
+                queryParams:{USER:"AJIAN"}
+            });
         })
     })
 </script>
