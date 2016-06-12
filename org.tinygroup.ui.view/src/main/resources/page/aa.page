@@ -1,4 +1,6 @@
+#macro siteURL(linkUrl)#if(linkUrl!=null && linkUrl!='')#if(linkUrl?.startsWith(TINY_CONTEXT_PATH))${eval(linkUrl?:"")}#{else}${(linkUrl?.startsWith("/")?TINY_CONTEXT_PATH:"")+eval(linkUrl?:"")}#end#end#end
 
+#siteURL('/')
 <script>
 
     UE.plugins['tinyat'] = function () {

@@ -20,7 +20,7 @@
             #if(component.jsResource)
                 #set(resources=component.jsResource.split(","))
                 #foreach(path in resources)#set(path=path.trim())
-                <script src="${TINY_CONTEXT_PATH}${path.replaceAll("tiny\\.min\\.","")}"></script>
+                <script src="${TINY_CONTEXT_PATH}${path.replaceAll("\\.tiny\\.min\\.",".")}"></script>
                 #end
             #end
             #if(component.jsCodelet)

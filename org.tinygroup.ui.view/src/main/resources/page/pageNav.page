@@ -1,0 +1,3 @@
+<h2>分页</h2>
+#showExample("/page/pageNav/pageNav.page")
+#@showPack()org.tinygroup.ui.pagenav#end

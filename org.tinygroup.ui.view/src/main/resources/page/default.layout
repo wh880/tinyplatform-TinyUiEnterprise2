@@ -81,6 +81,7 @@
 					#TnavItem("3.4" "按钮" "/page/button.page")
 					#TnavItem("3.5" "按钮组" "/page/buttonGroups.page")
 					#TnavItem("3.6" "表格" "/page/tables.page")
+					#TnavItem("3.7" "分页" "/page/pageNav.page")
 				#end
 				#@TnavItems("4" "元素" {"ico":"fa-wrench"})
 					#TnavItem("4.1" "便签与标号" "/page/labelBadge.page")

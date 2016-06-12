@@ -1,0 +1,19 @@
+<div class="wrapper-box full-text-search-page">
+    #@tForm("search-form" "#" "get" {"class":"form-inline","id":"full-text-form"})
+        <div class="well well-sm">
+            用户名:#tInput("username" username?:"" {"size":"10","class":"input-sm"}) 城市:
+            #tInput("city" city?:"" {"size":"10","class":"input-sm"})
+            <input type="submit" class="btn btn-primary btn-sm" value="搜索" />
+            <input type="reset" class="btn btn-primary btn-sm" value="重置" />
+            #saveFormHistory()
+        </div>
+    #end
+
+    <div id="full-text-content">
+        内容
+    </div>
+    <div id="full-text-page"></div>
+
+    #showPageNav(1,5,"/data/pageNav.pagelet",{"contentTarget":"#full-text-content","contentForm":"#full-text-form"})
+
+</div>
