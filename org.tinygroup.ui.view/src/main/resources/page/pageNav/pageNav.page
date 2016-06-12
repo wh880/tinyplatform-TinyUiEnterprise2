@@ -15,5 +15,4 @@
     <div id="full-text-page"></div>
 
     #showPageNav(1,5,"/data/pageNav.pagelet",{"contentTarget":"#full-text-content","contentForm":"#full-text-form"})
-
 </div>

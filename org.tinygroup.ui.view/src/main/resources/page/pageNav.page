@@ -1,3 +1,14 @@
 <h2>分页</h2>
+#@showInfo()
+#[[
+#showPageNav(1,5,"/data/pageNav.pagelet",{"contentTarget":"#full-text-content","contentForm":"#full-text-form"})
+]]#
+<ul class="mt-20">
+    <li>第1参数为当前页</li>
+    <li>第2参数为总页数</li>
+    <li>第3参数为数据页ACTION</li>
+    <li>第4参数为Map 如上contentTarget 更改请求回调的DOM contentForm表单值的带入</li>
+</ul>
+#end
 #showExample("/page/pageNav/pageNav.page")
 #@showPack()org.tinygroup.ui.pagenav#end
