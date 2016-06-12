@@ -213,7 +213,7 @@
                     dataType: "json",
                     success: function (data) {
                         if (data.status == "y") {
-                            layer.msg(data.info,{icon:2});
+                            layer.msg(data.info,{icon:1});
                             $(curform).closest(".modal").trigger("close");
                         } else {
                             layer.msg(data.info,{icon:2});

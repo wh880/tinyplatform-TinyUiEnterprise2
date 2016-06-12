@@ -4,10 +4,12 @@
     </table>
 #end
 
+
 #macro btTable(tableId)#set(tableId=tableId?:fmt("t%d",rand()))<div id="${tableId}">#bodyContent</div>
 <script>
     $(function(){
         $("#${tableId}-table>thead>tr>.operate").attr("data-formatter",$.trim($("#${tableId}-operate").html()));
+        // $("#${tableId}-table").bootstrapTable('destroy').bootstrapTable();
         $("#${tableId}-table").bootstrapTable('destroy').bootstrapTable();
     })
 </script>
@@ -22,11 +24,11 @@ defaultMap={
     "data-show-columns":"true",
     "data-search":"true",
     "data-toolbar":"#"+tableId+"-toolbar",
-    "data-show-refresh":"true",
-    "data-show-toggle":"true",
+    "data-show-refresh":"false",
+    "data-show-toggle":"false",
     "data-show-columns":"true",
     "data-show-export":"true",
-    "data-show-pagination-switch":"true",
+    "data-show-pagination-switch":"false",
     "data-id-field":"id",
     "data-show-footer":"false"
 },btMap=defaultMap.extend(btMap,true))
@@ -34,7 +36,7 @@ defaultMap={
     <thead>
     <tr>
         #bodyContent
-        <th data-field="operate" class="operate" data-align="center">操作</th>
+        <th data-field="operate" class="operate" data-align="center" data-click-to-select="false">操作</th>
     </tr>
     </thead>
 </table>
@@ -46,4 +48,28 @@ defaultMap={
 <div class="btn-group hidden-xs" id="${tableId}-toolbar" role="group">
     #bodyContent
 </div>
+#end
+#macro btForm(formMap)#set(formMap=formMap?:{"id":fmt("f%d",rand())},formid=formMap?.id?:fmt("f%d",rand()),formMap=formMap.extend({"id":formid,"method":"get"},true))
+<form #mapToHtml(formMap)>
+    #bodyContent
+</form>
+<script type="text/javascript">
+    $(function () {
+        $("#${formid}").Validform({
+            tiptype: 1,
+            beforeSubmit: function (curform) {
+                var options=$("#${tableId}-table").bootstrapTable('getOptions');
+                var formData=$("#${formid}").serializeArray();
+                console.log(options);
+                formData.push({name:"sortName",value:options.sortName});
+                formData.push({name:"sortOrder",value:options.sortOrder});
+                $("#${tableId}-table").bootstrapTable('refreshOptions', {
+                    pageNumber:1,
+                    queryParams: formData
+                });
+                return false;
+            }
+        });
+    });
+</script>
 #end

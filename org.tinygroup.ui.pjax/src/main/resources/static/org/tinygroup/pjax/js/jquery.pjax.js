@@ -179,7 +179,7 @@
         var target = options.target
 
         var hash = parseURL(options.url, options.replaceStr).hash
-        console.log(hash);
+        //console.log(hash);
         var context = options.context = findContainerFor(options.container)
 
         // We want the browser to maintain two separate internal caches: one

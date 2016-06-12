@@ -7,4 +7,4 @@
 #end
 #showExample("/page/tables/btTable.page")
 
-#@showPack()org.tinygroup.ui.boostraptablerm#end
+#@showPack()org.tinygroup.ui.boostraptable#end
