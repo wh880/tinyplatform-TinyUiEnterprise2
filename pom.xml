@@ -83,8 +83,8 @@
         <module>org.tinygroup.ui.widget</module>
         <module>org.tinygroup.ui.public</module>
         <module>org.tinygroup.ui.tpl.light</module>
-        <module>org.tinygroup.ui.view</module>
-        <module>org.tinygroup.ui.web</module>
+        <!--<module>org.tinygroup.ui.view</module>
+        <module>org.tinygroup.ui.web</module>-->
         <module>org.tinygroup.ui.macro</module>
         <module>org.tinygroup.ui.masonry</module>
         <module>org.tinygroup.ui.bootstrapvalidator</module>
@@ -101,7 +101,7 @@
         <module>org.tinygroup.ui.wordbox</module>
         <module>org.tinygroup.ui.bootstraptable</module>
 		<module>org.tinygroup.ui.echarts</module>
-        <module>newweb</module>
+        <!--<module>newweb</module>-->
     </modules>
 
 
