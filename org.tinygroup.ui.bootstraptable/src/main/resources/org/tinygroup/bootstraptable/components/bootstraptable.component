@@ -1,16 +1,17 @@
 #macro bootstrapTable(mapInfo)
-    <table #mapToHtml(mapInfo)>
-        #bodyContent
-    </table>
+<table #mapToHtml(mapInfo)>
+    #bodyContent
+</table>
 #end
 
 
 #macro btTable(tableId)#set(tableId=tableId?:fmt("t%d",rand()))<div id="${tableId}">#bodyContent</div>
 <script>
     $(function(){
-        $("#${tableId}-table>thead>tr>.operate").attr("data-formatter",$.trim($("#${tableId}-operate").html()));
+        //$("#${tableId}-table>thead>tr>.operate").attr("data-formatter",$.trim($("#${tableId}-operate").html()));
         // $("#${tableId}-table").bootstrapTable('destroy').bootstrapTable();
         $("#${tableId}-table").bootstrapTable('destroy').bootstrapTable();
+
     })
 </script>
 #end
@@ -27,7 +28,7 @@ defaultMap={
     "data-show-refresh":"false",
     "data-show-toggle":"false",
     "data-show-columns":"true",
-    "data-show-export":"true",
+    "data-show-export":"false",
     "data-show-pagination-switch":"false",
     "data-id-field":"id",
     "data-show-footer":"false"
@@ -58,15 +59,14 @@ defaultMap={
         $("#${formid}").Validform({
             tiptype: 1,
             beforeSubmit: function (curform) {
-                var options=$("#${tableId}-table").bootstrapTable('getOptions');
+                var options=$("#${tableId}-table").bootstrapTable("getOptions");
                 var formData=$("#${formid}").serializeArray();
-                console.log(options);
                 formData.push({name:"sortName",value:options.sortName});
                 formData.push({name:"sortOrder",value:options.sortOrder});
-                $("#${tableId}-table").bootstrapTable('refreshOptions', {
-                    pageNumber:1,
-                    queryParams: formData
-                });
+                formData.push({name:"pageNo",value:1});
+                formData.push({name:"pageSize",value:options.pageSize});
+                options=$.extend({},options,{queryParams: formData});
+                $("#${tableId}-table").bootstrapTable('destroy').bootstrapTable(options);
                 return false;
             }
         });

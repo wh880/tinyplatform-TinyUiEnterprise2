@@ -291,8 +291,8 @@
 	#end
 #end
 
-#macro tinyTableForm()
-	<form id="${tableId}form" action="" method="get" class="form form-inline">
+#macro tinyTableForm(formMap)#set(formMap=formMap?:{"class":"form form-inline"},formclass=formMap?.get("class")?:"form form-inline")
+	<form id="${tableId}form" action="" method="get" class="form ${formclass}">
 		#if(showType!="ajax")
 			<input type="hidden" id="${tableId}order" name="order" value="${order}"/><input type="hidden" id="${tableId}ordertype" name="ordertype" value="${ordertype}"/>
 		#end
@@ -303,7 +303,7 @@
 		$(function(){
 			$("#${tableId}form").on("submit",function(){
 				#if(showType=="ajax")
-					$("#${tableId}").trigger("initnav");
+					$("#${tableId}").trigger("refresh");
 					return false;
 				#end
 			});

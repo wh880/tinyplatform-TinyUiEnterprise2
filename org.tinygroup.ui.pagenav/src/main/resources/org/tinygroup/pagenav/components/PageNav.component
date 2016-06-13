@@ -11,31 +11,31 @@
     }
     $('#${navId}').twbsPagination({
         totalPages: totalPages,
-        visiblePages: totalPages>7?7:totalPages,
-        startPage:currentPage,
+        visiblePages: totalPages > 7 ? 7 : totalPages,
+        startPage: currentPage,
         paginationClass: 'pagination ${pageMap?.showClass?:""}',
-        onPageClick:function(event, page) {
-            if(!showcontent){
-                showcontent=true;
+        onPageClick: function (event, page) {
+            if (!showcontent) {
+                showcontent = true;
                 return;
             }
-            if($("${contentTarget}").size()>0){
+            if ($("${contentTarget}").size() > 0) {
                 $.ajax({
-                    type:"get",
-                    url:url,
-                    data:{pageNo:page},
-                    cache:false,
-                    success:function(html){
+                    type: "get",
+                    url: url,
+                    data: {pageNo: page},
+                    cache: false,
+                    success: function (html) {
                         $("${contentTarget}").html(html);
-                        $(document).scrollTop($("${contentTarget}").offset().top-100);
+                        $(document).scrollTop($("${contentTarget}").offset().top - 100);
                     }
                 });
-            }else{
-                window.location.href=url=url+(url.indexOf("?")!=-1?"&":"?")+"pageNo="+page;
+            } else {
+                window.location.href = url = url + (url.indexOf("?") != -1 ? "&" : "?") + "pageNo=" + page;
             }
 
         },
-        hrefVariable:"pagenum",
+        hrefVariable: "pagenum",
         version: '1.1'
     });
     })(jQuery);

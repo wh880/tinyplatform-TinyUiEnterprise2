@@ -1,3 +1,79 @@
+#macro bootstrapTable(mapInfo)
+<table #mapToHtml(mapInfo)>
+    #bodyContent
+</table>
+#end
+
+
+#macro btTable(tableId)#set(tableId=tableId?:fmt("t%d",rand()))<div id="${tableId}">#bodyContent</div>
+<script>
+    $(function(){
+        //$("#${tableId}-table>thead>tr>.operate").attr("data-formatter",$.trim($("#${tableId}-operate").html()));
+        // $("#${tableId}-table").bootstrapTable('destroy').bootstrapTable();
+        $("#${tableId}-table").bootstrapTable('destroy').bootstrapTable();
+
+    })
+</script>
+#end
+#macro btTableContent(dataUrl,btMap)#set(
+defaultMap={
+    "data-side-pagination":"server",
+    "data-pagination":"true",
+    "data-page-size":"10",
+    "data-page-list":"[10, 20, 50, 100, 200,all]",
+    "data-click-to-select":"true",
+    "data-show-columns":"true",
+    "data-search":"true",
+    "data-toolbar":"#"+tableId+"-toolbar",
+    "data-show-refresh":"false",
+    "data-show-toggle":"false",
+    "data-show-columns":"true",
+    "data-show-export":"false",
+    "data-show-pagination-switch":"false",
+    "data-id-field":"id",
+    "data-show-footer":"false"
+},btMap=defaultMap.extend(btMap,true))
+<table id="${tableId}-table"  data-url="#link(dataUrl)"  #mapToHtml(btMap)>
+    <thead>
+    <tr>
+        #bodyContent
+        <th data-field="operate" class="operate" data-align="center" data-click-to-select="false">操作</th>
+    </tr>
+    </thead>
+</table>
+#end
+#macro btTableOperate()
+<div id="${tableId}-operate" class="hidden">#bodyContent</div>
+#end
+#macro btToolBar()
+<div class="btn-group hidden-xs" id="${tableId}-toolbar" role="group">
+    #bodyContent
+</div>
+#end
+#macro btForm(formMap)#set(formMap=formMap?:{"id":fmt("f%d",rand())},formid=formMap?.id?:fmt("f%d",rand()),formMap=formMap.extend({"id":formid,"method":"get"},true))
+<form #mapToHtml(formMap)>
+    #bodyContent
+</form>
+<script type="text/javascript">
+    $(function () {
+        $("#${formid}").Validform({
+            tiptype: 1,
+            beforeSubmit: function (curform) {
+                var options=$("#${tableId}-table").bootstrapTable("getOptions");
+                var formData=$("#${formid}").serializeArray();
+                formData.push({name:"sortName",value:options.sortName});
+                formData.push({name:"sortOrder",value:options.sortOrder});
+                formData.push({name:"pageNo",value:1});
+                formData.push({name:"pageSize",value:options.pageSize});
+                options=$.extend({},options,{queryParams: formData});
+                $("#${tableId}-table").bootstrapTable('destroy').bootstrapTable(options);
+                return false;
+            }
+        });
+    });
+</script>
+#end
+
 
 #@btTable("tableid")
     #@btForm()

@@ -1,11 +1,11 @@
 <ui-components>
     <ui-component name="tiny.ui.bootstraptable" dependencies="tiny.ui.bootstrap">
         <css-resource>
-            /static/org/tinygroup/bootstraptable/css/bootstrap-table.min.css
+            /static/org/tinygroup/bootstraptable/css/bootstrap-table.tiny.min.css
         </css-resource>
         <js-resource>
-            /static/org/tinygroup/bootstraptable/js/bootstrap-table.min.js,
-            /static/org/tinygroup/bootstraptable/js/locale/bootstrap-table-zh-CN.js
+            /static/org/tinygroup/bootstraptable/js/bootstrap-table.tiny.min.js,
+            /static/org/tinygroup/bootstraptable/js/locale/bootstrap-table-zh-CN.tiny.min.js
         </js-resource>
         <description>bootstraptable (http://bootstrap-table.wenzhixin.net.cn/zh-cn/)</description>
     </ui-component>
