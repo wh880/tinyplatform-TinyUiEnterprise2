@@ -8,7 +8,7 @@
 #macro btTable(tableId)#set(tableId=tableId?:fmt("t%d",rand()))<div id="${tableId}">#bodyContent</div>
 <script>
     $(function(){
-        //$("#${tableId}-table>thead>tr>.operate").attr("data-formatter",$.trim($("#${tableId}-operate").html()));
+        $("#${tableId}-table>thead>tr>.operate").attr("data-formatter",$.trim($("#${tableId}-operate").html()));
         // $("#${tableId}-table").bootstrapTable('destroy').bootstrapTable();
         $("#${tableId}-table").bootstrapTable('destroy').bootstrapTable();
 
