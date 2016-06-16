@@ -1,0 +1,11 @@
+<ui-components>
+    <ui-component name="tiny.ui.rangeslider" dependencies="tiny.ui.jquery">
+        <css-resource>
+            /static/org/tinygroup/rangeslider/css/ion.rangeSlider.tiny.min.css
+        </css-resource>
+        <js-resource>
+            /static/org/tinygroup/rangeslider/js/ion.rangeSlider.tiny.min.js
+        </js-resource>
+        <description>幻灯片 (http://ionden.com/a/plugins/ion.rangeSlider/)</description>
+    </ui-component>
+</ui-components>

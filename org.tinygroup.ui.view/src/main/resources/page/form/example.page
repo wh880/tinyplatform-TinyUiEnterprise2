@@ -64,14 +64,16 @@
         #tPassInput("password2" ""{"placeholder":"密码","datatype":"*6-18","nullmsg":"请再输入一次密码！","autocomplete":"off","recheck":"password","errormsg":"您两次输入的密码不一致！","id":"password2"})
     #end
     #@elementItem("select下拉：")
-        #@tSelect("lang" "zh" {"class":"select2","minimumResultsForSearch":"Infinity","datatype":"*","nullmsg":"","data-ajaxurl":call("link","/data/select2ajax.pagelet")})##,"multiple":"multiple"
+        #@tSelect("lang" "zh" {"class":"select2","datatype":"*","nullmsg":""})
             #@tOptionItem()#end
             #@tOptionItem("zh")中国#end
             #@tOptionItem("en")英国#end
             #@tOptionItem("ta")泰国#end
         #end
     #end
-
+    #@elementItem("满意度：")
+        #selInput("satisfaction" "10" {"data-max":"20"})
+    #end
     #@elementItem("选择城市：")
         #@treeSelect("cityid" 41 {"class":"input-text"}) ##有三个参数 第一个为表单名即name 第二个为默认值 即表里里的VALUE 第三个为MAP对像可自由附加属性比如验证 样式等信息
             #treeSelectItem(1 0 "北京") ##三个参数 第一个为 字段ID  第二个为上一层ID 第三个为显示信息

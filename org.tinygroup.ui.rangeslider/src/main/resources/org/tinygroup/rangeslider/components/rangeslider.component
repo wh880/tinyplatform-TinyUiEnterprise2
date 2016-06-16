@@ -1,0 +1,17 @@
+#macro selInput(inputName,inputVal,inputMap)#set(ssid=fmt("t%d",rand()))
+<input type="text" id="${ssid}" value="${inputVal}" name="${inputName}" #mapToHtml(inputMap)/>
+<script>
+    $(function () {
+        var option={
+            min: 0,
+            max: 10,
+            type: 'single',
+            step: 1,
+            postfix: "分",
+            grid: true
+        };
+        option=$.extend({},option,$("#${ssid}").data());
+        $("#${ssid}").ionRangeSlider(option);
+    });
+</script>
+#end

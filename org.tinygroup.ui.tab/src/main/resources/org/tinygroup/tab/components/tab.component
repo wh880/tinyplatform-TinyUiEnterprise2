@@ -58,7 +58,7 @@
 * * @param infoClass  class类
 *#
 #macro tabsInfo(infoHref infoClass)
-    <li  #if(infoClass) class="${infoClass}"#end><a href="#${infoHref}" data-toggle="tab">#bodyContent</a></li>
+    <li #if(infoClass) class="${infoClass}"#end><a href="#${infoHref}" data-toggle="tab">#bodyContent</a></li>
 #end
 
 #*
@@ -67,7 +67,7 @@
 * * @param panesMap  Map项
 *#
 #macro tabPanes(panesMap)
-<div class="tab-content tabs-content"#mapToHtml(panesMap)>
+<div class="tab-content "#mapToHtml(panesMap)>
     #bodyContent
 </div>
 #end
@@ -79,4 +79,8 @@
 *#
 #macro tabContent(contentId activeCls)
     <div class="tab-pane ${activeCls}" id="${contentId}">#bodyContent</div>
+#end
+
+#macro tabNav(navMap)
+<li class="${navMap?.get("state-class")}"><a href="${navMap?.get("data-target")}" data-toggle="tab" #mapToHtml(navMap)>#bodyContent</a></li>
 #end
