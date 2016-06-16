@@ -1,0 +1,51 @@
+#macro subMainMenu(menuid,dataUrl,MenuMap)
+    #set(mid=menuid ?:fmt("mid%d",rand()))
+<div class="sub-main-nav">
+    <div id="${mid}" class="product-nav-list" data-url="#link(dataUrl)"></div>
+    <div id="${mid}-navigation" state="open" class="viewFramework-product-navbar-collapse">
+        <div class="product-navbar-collapse-inner">
+            <div class="product-navbar-collapse-bg"></div>
+            <div class="product-navbar-collapse">
+                <span class="fa fa-outdent"></span>
+                <span class="fa fa-indent"></span>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(function(){
+        function init(){
+            $.ajax({
+                url: $("#${mid}").data("url"),
+                success: function (data) {
+                    data = $.parseJSON(data);   //转换为js对象
+                    $.menuNav({
+                        id:"${mid}",
+                        menu: data,
+                        linkUrl: '#link(MenuMap?.get("linkUrl"))',
+                        rootId: 0,
+                        currentId:'${MenuMap?.get("currentId")}'
+                    });
+                }
+            });
+        }
+        init();
+        $("#${mid}").off("refresh").on("refresh",function(){
+            init();
+        });
+        $('#${mid}-navigation').click(function(){
+            var state = $(this).attr('state');
+            if(state == 'open'){
+                $(this).attr('state','closed');
+                $('.sub-main-nav').css({"margin-left":"-200px"});
+                $(this).addClass('hide-nav');
+            }else if(state == 'closed'){
+                $(this).attr('state','open');
+                $('.sub-main-nav').css({"margin-left":"0px"});
+                $(this).removeClass('hide-nav');
+            }
+        });
+    })
+    ##$("#sssss").trigger("refresh")
+</script>
+#end

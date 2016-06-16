@@ -1,0 +1,71 @@
+<style>
+    .wrapper-content{ padding:20px; }
+    .ibox-title {
+        -moz-border-bottom-colors: none;
+        -moz-border-left-colors: none;
+        -moz-border-right-colors: none;
+        -moz-border-top-colors: none;
+        background-color: #fff;
+        border-color: #e7eaec;
+        -webkit-border-image: none;
+        -o-border-image: none;
+        border-image: none;
+        border-style: solid solid none;
+        border-width: 4px 0 0;
+        color: inherit;
+        margin-bottom: 0;
+        padding: 14px 15px 7px;
+        min-height: 48px
+    }
+    .ibox-title h5 {
+        display: inline-block;
+        font-size: 14px;
+        margin: 0 0 7px;
+        padding: 0;
+        text-overflow: ellipsis;
+        float: left;
+        font-weight:bold;
+    }
+    .ibox-content {
+        background-color: #fff;
+        color: inherit;
+        padding: 15px 20px 20px;
+        border-color: #e7eaec;
+        -webkit-border-image: none;
+        -o-border-image: none;
+        border-image: none;
+        border-style: solid solid none;
+        border-width: 1px 0
+    }
+</style>
+<div class="wrapper-content">
+    <div class="ibox float-e-margins">
+        <div class="ibox-title">
+            <h5>Bootstrap table <a href="http://bootstrap-table.wenzhixin.net.cn/zh-cn/documentation/" target="_blank">http://bootstrap-table.wenzhixin.net.cn/zh-cn/</a></h5>
+        </div>
+        <div class="ibox-content">
+            <p>Bootstrap table是国人开发的一款基于 Bootstrap 的 jQuery 表格插件，通过简单的设置，就可以拥有强大的单选、多选、排序、分页，以及编辑、导出、过滤（扩展）等等的功能。目前在github上已经有2600多个Star，可见其受欢迎程度。</p>
+            <ul>
+                <li>● 支持 Bootstrap 3 和 Bootstrap 2</li>
+                <li>● 自适应界面</li>
+                <li>● 固定表头</li>
+                <li>● 非常丰富的配置参数</li>
+                <li>● 直接通过标签使用</li>
+                <li>● 显示/隐藏列</li>
+                <li>● 显示/隐藏表头</li>
+                <li>● 通过 AJAX 获取 JSON 格式的数据</li>
+                <li>● 支持排序</li>
+                <li>● 格式化表格</li>
+                <li>● 支持单选或者多选</li>
+                <li>● 强大的分页功能</li>
+                <li>● 支持卡片视图</li>
+                <li>● 支持多语言</li>
+                <li>● 支持插件</li>
+            </ul>
+        </div>
+    </div>
+    #@h2()1、从URL加载#end
+    #showExample("/page/tonytTest/bootstraptable1.page")
+    #@h2()2、从数据中加载#end
+    #showExample("/page/tonytTest/bootstraptable2.page")
+</div>
