@@ -216,7 +216,7 @@
             <artifactId>org.tinygroup.ui.bootstraptable</artifactId>
             <version>${project.version}</version>
         </dependency>
-        <dependency>
+		<dependency>
             <groupId>org.tinygroup</groupId>
             <artifactId>org.tinygroup.ui.echarts</artifactId>
             <version>${project.version}</version>
@@ -224,6 +224,11 @@
         <dependency>
             <groupId>org.tinygroup</groupId>
             <artifactId>org.tinygroup.ui.rangeslider</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.tinygroup</groupId>
+            <artifactId>org.tinygroup.ui.submainmenu</artifactId>
             <version>${project.version}</version>
         </dependency>
     </dependencies>

@@ -1,0 +1,11 @@
+<ui-components>
+    <ui-component name="tiny.ui.submainmenu" dependencies="tiny.ui.bootstrap">
+        <css-resource>
+            /static/org/tinygroup/submainmenu/css/submainmenu.css
+        </css-resource>
+        <js-resource>
+            /static/org/tinygroup/submainmenu/js/submainmenu.js
+        </js-resource>
+        <description>submainmenu</description>
+    </ui-component>
+</ui-components>
