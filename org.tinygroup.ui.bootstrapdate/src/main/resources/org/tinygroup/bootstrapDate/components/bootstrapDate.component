@@ -19,9 +19,10 @@
 #end
 
 #macro dateInputBetween(name1 name2 value1 value2 mapInfo)#set(dateId=mapInfo?.id?:fmt("sid%d",rand()))
-<div class="input-group form-inline" id="${dateId}-rap">
-    <span class="input-group-addon">#faIcon("calendar")</span>
-    <input type="text" name="${name1}" id="${dateId}" class="form-control" value="${value1}"#mapToHtml(mapInfo)/><span style="padding:6px;float:left"> 至</span> <input type="text" name="${name2}" id="${dateId}-2" class="form-control" value="${value2}"#mapToHtml(mapInfo)/>
+<div class="input-group input-daterange" id="${dateId}-rap">
+    <input type="text" name="${name1}" id="${dateId}" class="form-control" value="${value1}"#mapToHtml(mapInfo)/>
+    <span class="input-group-addon">至</span>
+    <input type="text" name="${name2}" id="${dateId}-2" class="form-control" value="${value2}"#mapToHtml(mapInfo)/>
 </div>
 <script type="text/javascript">
     $(function(){
