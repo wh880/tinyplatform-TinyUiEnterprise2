@@ -164,3 +164,45 @@ input[type="button"] {
     width: 100%;
   }
 }
+
+
+
+
+.button-outline-variant(@color; @background; @border){
+  color: @color;
+  background-color: @background;
+  border-color: @border;
+  &.active,
+  &.focus,
+  &:active,
+  &:focus{
+    color: @background;
+    background-color: @color;
+    border-color: @color;
+  }
+}
+
+
+
+.btn-default-outline {
+  .button-outline-variant(@btn-default-color; @btn-default-bg; @btn-default-border);
+}
+.btn-primary-outline {
+  .button-outline-variant(@btn-primary-color; @btn-primary-bg; @btn-primary-border);
+}
+// Success appears as green
+.btn-success-outline {
+  .button-outline-variant(@btn-success-color; @btn-success-bg; @btn-success-border);
+}
+// Info appears as blue-green
+.btn-info-outline {
+  .button-outline-variant(@btn-info-color; @btn-info-bg; @btn-info-border);
+}
+// Warning appears as orange
+.btn-warning-outline {
+  .button-outline-variant(@btn-warning-color; @btn-warning-bg; @btn-warning-border);
+}
+// Danger and error appear as red
+.btn-outline-danger {
+  .button-outline-variant(@btn-danger-color; @btn-danger-bg; @btn-danger-border);
+}
