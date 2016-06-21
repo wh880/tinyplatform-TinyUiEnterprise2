@@ -37,7 +37,7 @@ defaultMap={
     <thead>
     <tr>
         #bodyContent
-        <th data-field="operate" class="operate" data-align="center" data-click-to-select="false">操作</th>
+        <th data-field="${btMap.get("data-id-field")}" class="operate" data-align="center" data-click-to-select="false">操作</th>
     </tr>
     </thead>
 </table>
