@@ -1,6 +1,15 @@
-#macro siteURL(linkUrl)#if(linkUrl!=null && linkUrl!='')#if(linkUrl?.startsWith(TINY_CONTEXT_PATH))${eval(linkUrl?:"")}#{else}${(linkUrl?.startsWith("/")?TINY_CONTEXT_PATH:"")+eval(linkUrl?:"")}#end#end#end
+#macro ueditor(ueditorId ueditorName mapInfo)
+<script type="text/plain" id="${ueditorId}" name="${ueditorName}">#bodyContent</script>
+<script type="text/javascript">
+##try{UE.ueAddonPlus("${ueditorId}");}catch (e){}
+UE.delEditor('${ueditorId}');
+UE.getEditor('${ueditorId}',{
+    #for(var:mapInfo)
+    ${var.key}:${var.value},#{end}
+});
+</script>
+#end
 
-#siteURL('/')
 <script>
 
     UE.plugins['tinyat'] = function () {

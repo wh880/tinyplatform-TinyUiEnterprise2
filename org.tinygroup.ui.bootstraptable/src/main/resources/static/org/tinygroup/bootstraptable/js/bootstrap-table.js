@@ -4,7 +4,6 @@
  * https://github.com/wenzhixin/bootstrap-table/
  */
 
-
 !function ($) {
     'use strict';
 
@@ -264,6 +263,7 @@
         queryParams: function (params) {
             return params;
         },
+        otherParam:{},
         queryParamsType: 'limit', // undefined
         responseHandler: function (res) {
             return res;
@@ -801,10 +801,10 @@
 
         this.$selectAll = this.$header.find('[name="btSelectAll"]');
         this.$selectAll.off('click').on('click', function () {
-                var checked = $(this).prop('checked');
-                that[checked ? 'checkAll' : 'uncheckAll']();
-                that.updateSelected();
-            });
+            var checked = $(this).prop('checked');
+            that[checked ? 'checkAll' : 'uncheckAll']();
+            that.updateSelected();
+        });
     };
 
     BootstrapTable.prototype.initFooter = function () {
@@ -956,7 +956,7 @@
 
         if (this.options.showPaginationSwitch) {
             html.push(sprintf('<button class="btn btn-default" type="button" name="paginationSwitch" title="%s">',
-                    this.options.formatPaginationSwitch()),
+                this.options.formatPaginationSwitch()),
                 sprintf('<i class="%s %s"></i>', this.options.iconsPrefix, this.options.icons.paginationSwitchDown),
                 '</button>');
         }
@@ -965,7 +965,7 @@
             html.push(sprintf('<button class="btn btn-default' +
                     sprintf(' btn-%s', this.options.iconSize) +
                     '" type="button" name="refresh" title="%s">',
-                    this.options.formatRefresh()),
+                this.options.formatRefresh()),
                 sprintf('<i class="%s %s"></i>', this.options.iconsPrefix, this.options.icons.refresh),
                 '</button>');
         }
@@ -974,14 +974,14 @@
             html.push(sprintf('<button class="btn btn-default' +
                     sprintf(' btn-%s', this.options.iconSize) +
                     '" type="button" name="toggle" title="%s">',
-                    this.options.formatToggle()),
+                this.options.formatToggle()),
                 sprintf('<i class="%s %s"></i>', this.options.iconsPrefix, this.options.icons.toggle),
                 '</button>');
         }
 
         if (this.options.showColumns) {
             html.push(sprintf('<div class="keep-open btn-group" title="%s">',
-                    this.options.formatColumns()),
+                this.options.formatColumns()),
                 '<button type="button" class="btn btn-default' +
                 sprintf(' btn-%s', this.options.iconSize) +
                 ' dropdown-toggle" data-toggle="dropdown">',
@@ -1032,8 +1032,8 @@
         if (this.options.showToggle) {
             this.$toolbar.find('button[name="toggle"]')
                 .off('click').on('click', function () {
-                    that.toggleView();
-                });
+                that.toggleView();
+            });
         }
 
         if (this.options.showColumns) {
@@ -1219,7 +1219,7 @@
             '<div class="pull-' + this.options.paginationDetailHAlign + ' pagination-detail">',
             '<span class="pagination-info">',
             this.options.onlyInfoPagination ? this.options.formatDetailPagination(this.options.totalRows) :
-            this.options.formatShowingRows(this.pageFrom, this.pageTo, this.options.totalRows),
+                this.options.formatShowingRows(this.pageFrom, this.pageTo, this.options.totalRows),
             '</span>');
 
         if (!this.options.onlyInfoPagination) {
@@ -1813,9 +1813,10 @@
             params['filter'] = JSON.stringify(this.filterColumnsPartial, null);
         }
 
+
         data = calculateObjectValue(this.options, this.options.queryParams, [params], data);
 
-        $.extend(data, query || {});
+        $.extend(data,this.options.otherParam, query || {});
 
         // false to stop request
         if (data === false) {

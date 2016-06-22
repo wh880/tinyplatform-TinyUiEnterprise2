@@ -51,25 +51,47 @@ defaultMap={
 </div>
 #end
 #macro btForm(formMap)#set(formMap=formMap?:{"id":fmt("f%d",rand())},formid=formMap?.id?:fmt("f%d",rand()),formMap=formMap.extend({"id":formid,"method":"get"},true))
-<form #mapToHtml(formMap)>
+<form style="display:none" #mapToHtml(formMap)>
     #bodyContent
 </form>
 <script type="text/javascript">
-    $(function () {
-        $("#${formid}").Validform({
-            tiptype: 1,
-            beforeSubmit: function (curform) {
-                var options=$("#${tableId}-table").bootstrapTable("getOptions");
-                var formData=$("#${formid}").serializeArray();
-                formData.push({name:"sortName",value:options.sortName});
-                formData.push({name:"sortOrder",value:options.sortOrder});
-                formData.push({name:"pageNo",value:1});
-                formData.push({name:"pageSize",value:options.pageSize});
-                options=$.extend({},options,{queryParams: formData});
-                $("#${tableId}-table").bootstrapTable('destroy').bootstrapTable(options);
-                return false;
+    !function($) {
+        'use strict';
+        var isFirst=true;
+        var sprintf = $.fn.bootstrapTable.utils.sprintf;
+        var showAvdSearch = function (that) {
+            $("#${formid}").toggle(500);
+            if(isFirst) {
+                $("#${formid}").Validform({
+                    tiptype: 1,
+                    beforeSubmit: function (curform) {
+                        var data={};
+                        var formData = $("#${formid}").serializeArray();
+                        $.each( formData, function(i, field){
+                            data[field.name]=field.value;
+                        });
+                        that.options.otherParam=data;
+                        that.refresh(that.options);
+                        return false;
+                    }
+                });
             }
-        });
-    });
+            isFirst=false;
+        };
+        var BootstrapTable = $.fn.bootstrapTable.Constructor,
+                _initToolbar = BootstrapTable.prototype.initToolbar;
+        BootstrapTable.prototype.initToolbar = function () {
+            _initToolbar.apply(this, Array.prototype.slice.apply(arguments));
+            var that = this,html = [];
+            if(this.$toolbar.find('button[name="tinySearch"]').size()==0) {
+                html.push(sprintf('<div class="columns columns-%s btn-group pull-%s" role="group">', this.options.buttonsAlign, this.options.buttonsAlign));
+                html.push('<button class="btn btn-default" type="button" name="tinySearch" title="高级搜索"><i class="fa fa-search"></i></button></div>');
+                this.$toolbar.prepend(html.join(''));
+            }
+            this.$toolbar.find('button[name="tinySearch"]').off('click').on('click', function() {
+            showAvdSearch(that);
+            });
+        };
+    }(jQuery);
 </script>
 #end

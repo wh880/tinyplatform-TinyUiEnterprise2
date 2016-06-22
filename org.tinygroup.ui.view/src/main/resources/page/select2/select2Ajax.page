@@ -1,4 +1,7 @@
 
+
+
+
 #tSelect2Ajax("sel2" "2" "/data/select2ajax.pagelet" {"placeholder":"查询数据","dataId":"sid","dataText":"stext","fixDataVal":"1","datatype":"*","multiple":"multiple"} {"fixData":"pid","fix2":"ajian"})
 #@tSelect2Fix("sel2")
     #@aModal("#myModal" "新增" "600" "" "r" "/page/icon.pagelet")新增#end<a href="#">全部</a>

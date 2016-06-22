@@ -73,8 +73,14 @@
 * @param sMapInfo 标签的其它属性 其中dataId dataText此二属性可定义后台返回的KEY value值 
 * @param fixMap ajax传值时额外的信息
 *#
-#macro tSelect2Ajax(inputName inputValue dataUrl sMapInfo fixMap)#set(sid=sMapInfo?.id?:fmt("s2id%d",rand()),dataId=sMapInfo?.dataId?:"id",dataText=sMapInfo?.dataText?:"text")
-<select id="${sid}" name="${inputName}" class="form-control" value="${inputValue}"#mapToHtml(sMapInfo)#mapToHtml(fixMap)/></select>
+#macro tSelect2Ajax(inputName inputValue dataUrl sMapInfo fixMap)#set(defaultMap={
+    "id":fmt("s2id%d",rand()),
+    "dataId":"id",
+    "name":inputName,
+    "value":inputValue,
+    "dataText":"text"
+},sMapInfo=defaultMap.extend(sMapInfo,true),sid=sMapInfo?.id)
+<select class="form-control" #mapToHtml(sMapInfo)#mapToHtml(fixMap)/></select>
 <script type="text/javascript">
     $(function(){
         var _inputVal=$("#${sid}");
@@ -85,7 +91,7 @@
             dataType:"json",
             success:function(reData){
                 for(var i= 0,l=reData.length;i<l;i++){
-                    _inputVal.append('<option value="'+reData[i].${dataId}+'" selected="selected">'+reData[i].${dataText}+'</option>')
+                    _inputVal.append('<option value="'+reData[i].${sMapInfo.dataId}+'" selected="selected">'+reData[i].${sMapInfo.dataText}+'</option>')
                 }
                 initSelect2();
             }
@@ -98,13 +104,16 @@
                     dataType: 'json',
                     delay: 250,
                     data: function (term, page) {
-                        var data = {#foreach(var:fixMap)${var.key}:_inputVal.attr("${var.key}"),#{end} key:term};
+                        var data={${sMapInfo.dataText}:term.term};
+                        #foreach(var:fixMap)
+                            data["${var.key}"]=_inputVal.attr("${var.key}");
+                        #end
                         return data;
                     },
                     processResults: function (reData, params) {
                         var data = [];
                         for (var i = 0, l = reData.length; i < l; i++) {
-                            data.push({id: reData[i].${dataId}, text: reData[i].${dataText}})
+                            data.push({id: reData[i].${sMapInfo.dataId}, text: reData[i].${sMapInfo.dataText}})
                         }
                         return {results: data};
                     },
