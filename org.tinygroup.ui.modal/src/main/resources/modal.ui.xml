@@ -8,6 +8,6 @@
             /static/org/tinygroup/modal/js/bootstrap-modalmanager.tiny.min.js,
             /static/org/tinygroup/modal/js/bootstrap-modal.tiny.min.js
         </js-resource>
-        <description>弹出框 (www.bootcss.com) (www.h-ui.net)</description>
+        <description>弹出框 (www.bootcss.com)</description>
     </ui-component>
 </ui-components>
