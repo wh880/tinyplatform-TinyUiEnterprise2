@@ -1,4 +1,67 @@
-
+#macro tSelect2Ajax(inputName inputValue dataUrl sMapInfo fixMap)#set(defaultMap={
+    "id":fmt("s2id%d",rand()),
+    "dataId":"id",
+    "name":inputName,
+    "value":inputValue,
+    "dataText":"text"
+},sMapInfo=defaultMap.extend(sMapInfo,true),sid=sMapInfo?.id)
+<select class="form-control" #mapToHtml(sMapInfo)#mapToHtml(fixMap)/></select>
+<script type="text/javascript">
+    $(function(){
+        var _inputVal=$("#${sid}");
+        $.ajax({
+            url:"#link(dataUrl)",
+            type:"get",
+            data:{select2Init:"true",initKey:_inputVal.attr("value")},
+            dataType:"json",
+            success:function(reData){
+                for(var i= 0,l=reData.length;i<l;i++){
+                    _inputVal.append('<option value="'+reData[i].${sMapInfo.dataId}+'" selected="selected">'+reData[i].${sMapInfo.dataText}+'</option>')
+                }
+                initSelect2();
+            }
+        });
+        function initSelect2() {
+            var placeholder = _inputVal.attr("placeholder") ? _inputVal.attr("placeholder") : "";
+            _inputVal.select2({
+                ajax: {
+                    url: "#link(dataUrl)",
+                    dataType: 'json',
+                    delay: 250,
+                    data: function (term, page) {
+                        var data={${sMapInfo.dataText}:term.term};
+                        data["pageNo"]=page;
+                        data["page"]=page;
+                        #foreach(var:fixMap)
+                            data["${var.key}"]=_inputVal.attr("${var.key}");
+                        #end
+                        return data;
+                    },
+                    processResults: function (pager, params) {
+                        var reData=pager.rows;
+                        var data = [];
+                        for (var i = 0, l = reData.length; i < l; i++) {
+                            data.push({id: reData[i].${sMapInfo.dataId}, text: reData[i].${sMapInfo.dataText}})
+                        }
+                        return {
+                            results: data,
+                            pagination: {
+                                more: (params.page * 30) < pager.total
+                            }
+                        };
+                    },
+                    cache: true
+                },
+                escapeMarkup: function (markup) {
+                    return markup;
+                },
+                placeholder: placeholder,
+                allowClear: true,
+            });
+        }
+    })
+</script>
+#end
 
 
 
