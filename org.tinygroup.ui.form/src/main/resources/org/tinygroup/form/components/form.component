@@ -477,7 +477,7 @@ $(function(){
 
 #macro saveFormHistory()#set(fid=fmt("qid-%d",rand()))<button class="btn btn-primary btn-sm" id="${fid}">保存</button>
 <button class="btn btn-sm no-padding no-border" style="margin-left:20px" onclick="return false">
-    <select id="${fid}-sel" class="form-control no-border-radius" style="height:31px;margin-bottom:0"></select>
+    <select id="${fid}-sel" class="form-control no-border-radius" style="margin-bottom:0"></select>
 </button>
 <script type="text/javascript">
     $(function(){
